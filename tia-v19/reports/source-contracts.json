@@ -1,0 +1,12 @@
+{
+  "source_contract_checks_passed": true,
+  "function_definitions": 39,
+  "unique_named_definitions": 49,
+  "unresolved_function_calls": [],
+  "hmi_scalars": 47,
+  "manual_functions": 14,
+  "source_bundle_sha256": "32cb74928aa9cfd842e4769692f586f4df515b3012a964faa0920eea02f5e192",
+  "tia_compiled": false,
+  "hmi_native_binding_verified": false,
+  "hardware_io_verified": false
+}

@@ -1,0 +1,8 @@
+{
+  "missing_tia_exit_code": 1,
+  "missing_tia_report_created": true,
+  "missing_tia_report_zip_created": true,
+  "native_tia_executed": false,
+  "windows_powershell51_executed": false,
+  "scope": "Expected missing-API failure on Linux PowerShell 7.4.6"
+}

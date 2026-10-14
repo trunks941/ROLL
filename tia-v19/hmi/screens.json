@@ -1,0 +1,89 @@
+{
+  "status": "specification; native WinCC controls and binding pending local API/export",
+  "panel": "TP900 Comfort 6AV2124-0JC01-0AX0",
+  "language": "pl-PL",
+  "screens": [
+    {
+      "name": "Przeglad",
+      "title": "Przegląd maszyny",
+      "content": [
+        "Stacje 1–4",
+        "Wózek i bęben",
+        "Aktywny program",
+        "Status połączenia"
+      ]
+    },
+    {
+      "name": "Receptury",
+      "title": "Programy mycia",
+      "programs": [
+        1,
+        2
+      ],
+      "fields": [
+        "Dwell1Seconds",
+        "Drain1Seconds",
+        "Ultrasound1",
+        "Dwell2Seconds",
+        "Drain2Seconds",
+        "Dwell3Seconds",
+        "Drain3Seconds",
+        "Dry4Seconds",
+        "BasketMotion",
+        "BathLift"
+      ],
+      "commands": {
+        "load": 1,
+        "save_and_apply": 2
+      },
+      "commit": "set RecipeCommand then increment RecipeRequest; wait for RecipeAck and check RecipeError"
+    },
+    {
+      "name": "Reczny",
+      "title": "Sterowanie ręczne",
+      "functions_csv": "manual-functions.csv",
+      "held_motion": [
+        "GroundHeld",
+        "WorkHeld"
+      ]
+    },
+    {
+      "name": "Alarmy",
+      "title": "Alarmy",
+      "source": "../../migration-ROLL/comtext_review/messages.csv",
+      "pending": [
+        "translations",
+        "FB91 byte order / inverted acknowledgement bits",
+        "native alarm classes and bindings"
+      ]
+    },
+    {
+      "name": "Nastawy",
+      "title": "Nastawy serwisowe",
+      "parameter_db": [
+        15,
+        19
+      ],
+      "commit": "set DB/index/value then increment ParameterRequest; wait for ParameterAck",
+      "range": [
+        0,
+        127
+      ],
+      "counter_unit": "szt.",
+      "timer_unit": "ms"
+    }
+  ],
+  "heartbeat": {
+    "symbol": "ROLL_HMI.Heartbeat",
+    "period_ms": 500,
+    "plc_timeout_ms": 1500,
+    "pending": "native global cyclic WinCC event"
+  },
+  "basket_motion": {
+    "0": "Brak",
+    "1": "Obrót",
+    "2": "Kołysanie",
+    "3": "Obrót interwałowy",
+    "4": "Obrót / kołysanie"
+  }
+}

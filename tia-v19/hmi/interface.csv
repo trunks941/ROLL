@@ -1,0 +1,48 @@
+﻿tag;plc_symbol;data_type;direction;label_pl;native_binding_verified
+Heartbeat;"""ROLL_HMI"".Heartbeat";DInt;HMI->PLC;;False
+Connected;"""ROLL_HMI"".Connected";Bool;PLC->HMI;Połączenie z panelem;False
+ManualFunction;"""ROLL_HMI"".ManualFunction";Int;HMI->PLC;Wybrana funkcja ręczna;False
+GroundHeld;"""ROLL_HMI"".GroundHeld";Bool;HMI->PLC;Pozycja podstawowa;False
+WorkHeld;"""ROLL_HMI"".WorkHeld";Bool;HMI->PLC;Pozycja robocza;False
+SelectedProgram;"""ROLL_HMI"".SelectedProgram";Int;HMI->PLC;Wybrany program;False
+RecipeCommand;"""ROLL_HMI"".RecipeCommand";Int;HMI->PLC;;False
+RecipeRequest;"""ROLL_HMI"".RecipeRequest";DInt;HMI->PLC;;False
+RecipeAck;"""ROLL_HMI"".RecipeAck";DInt;PLC->HMI;;False
+RecipeError;"""ROLL_HMI"".RecipeError";Int;PLC->HMI;;False
+CurrentProgram;"""ROLL_HMI"".CurrentProgram";Int;PLC->HMI;Aktywny program;False
+ParameterRequest;"""ROLL_HMI"".ParameterRequest";DInt;HMI->PLC;;False
+ParameterAck;"""ROLL_HMI"".ParameterAck";DInt;PLC->HMI;;False
+ParameterDb;"""ROLL_HMI"".ParameterDb";Int;HMI->PLC;;False
+ParameterIndex;"""ROLL_HMI"".ParameterIndex";Int;HMI->PLC;Numer nastawy;False
+ParameterValue;"""ROLL_HMI"".ParameterValue";DInt;HMI->PLC;Wartość nastawy [ms lub szt.];False
+ParameterCurrentValue;"""ROLL_HMI"".ParameterCurrentValue";DInt;PLC->HMI;Aktualna nastawa [ms lub szt.];False
+ParameterSlotPresent;"""ROLL_HMI"".ParameterSlotPresent";Bool;PLC->HMI;Nastawa dostępna;False
+ParameterError;"""ROLL_HMI"".ParameterError";Int;PLC->HMI;;False
+Dwell1Seconds;"""ROLL_HMI"".Dwell1Seconds";Int;HMI->PLC;Zanurzenie — stacja 1 [s];False
+Drain1Seconds;"""ROLL_HMI"".Drain1Seconds";Int;HMI->PLC;Ociekanie — stacja 1 [s];False
+Ultrasound1;"""ROLL_HMI"".Ultrasound1";Bool;HMI->PLC;Ultradźwięki — stacja 1;False
+Dwell2Seconds;"""ROLL_HMI"".Dwell2Seconds";Int;HMI->PLC;Zanurzenie — stacja 2 [s];False
+Drain2Seconds;"""ROLL_HMI"".Drain2Seconds";Int;HMI->PLC;Ociekanie — stacja 2 [s];False
+Dwell3Seconds;"""ROLL_HMI"".Dwell3Seconds";Int;HMI->PLC;Zanurzenie — stacja 3 [s];False
+Drain3Seconds;"""ROLL_HMI"".Drain3Seconds";Int;HMI->PLC;Ociekanie — stacja 3 [s];False
+Dry4Seconds;"""ROLL_HMI"".Dry4Seconds";Int;HMI->PLC;Suszenie — stacja 4 [s];False
+BasketMotion;"""ROLL_HMI"".BasketMotion";Int;HMI->PLC;Ruch bębna;False
+BathLift;"""ROLL_HMI"".BathLift";Bool;HMI->PLC;Ruch pionowy w kąpieli;False
+ProcessTimer1Units;"""ROLL_HMI"".ProcessTimer1Units";Int;PLC->HMI;Pozostały czas zanurzenia / suszenia [jednostki T1];False
+ProcessTimer2Units;"""ROLL_HMI"".ProcessTimer2Units";Int;PLC->HMI;Pozostały czas ociekania [jednostki T2];False
+KeyF1;"""ROLL_HMI"".KeyF[1]";Bool;HMI->PLC;Klawisz F1 (obsługa dawnego OP15);False
+KeyF2;"""ROLL_HMI"".KeyF[2]";Bool;HMI->PLC;Klawisz F2 (obsługa dawnego OP15);False
+KeyF3;"""ROLL_HMI"".KeyF[3]";Bool;HMI->PLC;Klawisz F3 (obsługa dawnego OP15);False
+KeyF4;"""ROLL_HMI"".KeyF[4]";Bool;HMI->PLC;Klawisz F4 (obsługa dawnego OP15);False
+KeyF5;"""ROLL_HMI"".KeyF[5]";Bool;HMI->PLC;Klawisz F5 (obsługa dawnego OP15);False
+KeyF6;"""ROLL_HMI"".KeyF[6]";Bool;HMI->PLC;Klawisz F6 (obsługa dawnego OP15);False
+KeyF7;"""ROLL_HMI"".KeyF[7]";Bool;HMI->PLC;Klawisz F7 (obsługa dawnego OP15);False
+KeyF8;"""ROLL_HMI"".KeyF[8]";Bool;HMI->PLC;Klawisz F8 (obsługa dawnego OP15);False
+KeyF9;"""ROLL_HMI"".KeyF[9]";Bool;HMI->PLC;Klawisz F9 (obsługa dawnego OP15);False
+KeyF10;"""ROLL_HMI"".KeyF[10]";Bool;HMI->PLC;Klawisz F10 (obsługa dawnego OP15);False
+KeyF11;"""ROLL_HMI"".KeyF[11]";Bool;HMI->PLC;Klawisz F11 (obsługa dawnego OP15);False
+KeyF12;"""ROLL_HMI"".KeyF[12]";Bool;HMI->PLC;Klawisz F12 (obsługa dawnego OP15);False
+KeyF13;"""ROLL_HMI"".KeyF[13]";Bool;HMI->PLC;Klawisz F13 (obsługa dawnego OP15);False
+KeyF14;"""ROLL_HMI"".KeyF[14]";Bool;HMI->PLC;Klawisz F14 (obsługa dawnego OP15);False
+KeyF15;"""ROLL_HMI"".KeyF[15]";Bool;HMI->PLC;Klawisz F15 (obsługa dawnego OP15);False
+KeyF16;"""ROLL_HMI"".KeyF[16]";Bool;HMI->PLC;Klawisz F16 (obsługa dawnego OP15);False

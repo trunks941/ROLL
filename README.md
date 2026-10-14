@@ -2,6 +2,8 @@
 
 Komplet materiałów zgromadzonych podczas analizy maszyny Karl Roll KS04201. Główny katalog [migration-ROLL](migration-ROLL/README.md) zawiera oryginalne archiwa, wydruki STEP 5 i COMTEXT, instrukcję S5, komplet 50 stron schematu, zestawienia oraz skrypty analizy offline.
 
+**Budowa TIA V19:** [instrukcja i skrypt lokalny](tia-v19/README.md), [źródło PLC ROLL_ALL.scl](tia-v19/ROLL_ALL.scl). Wygenerowano odpowiedniki 22 PB, nastawy i receptury; 880 porównań logiki PB przeszło. Kompilacja w TIA, fizyczne I/O oraz konfiguracja kontrolek, połączenia i alarmów TP900 pozostają do wykonania. Skrypt tworzy projekt offline na komputerze z TIA i zapisuje raport; chmura nie wygenerowała skompilowanego `.ap19`.
+
 - [Mapa migracji](migration-ROLL/MAPA_MIGRACJI.md)
 - [Wariant modułów I/O S7](migration-ROLL/hardware_review/DOBOR_IO_S7.md)
 - [Zasilanie i blokady sprzętowe](migration-ROLL/schematic_review/ZASILANIE_BLOKADY.md)

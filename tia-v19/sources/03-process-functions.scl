@@ -1,0 +1,77 @@
+FUNCTION "ROLL_FB69" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+BEGIN
+    IF "ROLL_State".M[240, 0] AND "ROLL_State".M[240, 1] THEN
+        "ROLL_SetMWord"(FirstByte := 240, Value := W#16#2005);
+    ELSE
+        "ROLL_SetMWord"(FirstByte := 240, Value := W#16#1005);
+    END_IF;
+END_FUNCTION
+
+FUNCTION "ROLL_ShowRecipe" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+BEGIN
+    "ROLL_HMI".CurrentProgram := "ROLL_State".CurrentProgram;
+    "ROLL_HMI".SelectedProgram := "ROLL_State".CurrentProgram;
+    "ROLL_HMI".Dwell1Seconds := "ROLL_DecodeBCD"(Value := "ROLL_DB205".DW[5]);
+    "ROLL_HMI".Drain1Seconds := "ROLL_DecodeBCD"(Value := "ROLL_DB205".DW[9]);
+    "ROLL_HMI".Dwell2Seconds := "ROLL_DecodeBCD"(Value := "ROLL_DB205".DW[17]);
+    "ROLL_HMI".Drain2Seconds := "ROLL_DecodeBCD"(Value := "ROLL_DB205".DW[21]);
+    "ROLL_HMI".Dwell3Seconds := "ROLL_DecodeBCD"(Value := "ROLL_DB205".DW[25]);
+    "ROLL_HMI".Drain3Seconds := "ROLL_DecodeBCD"(Value := "ROLL_DB205".DW[29]);
+    "ROLL_HMI".Dry4Seconds := "ROLL_DecodeBCD"(Value := "ROLL_DB205".DW[33]);
+    "ROLL_HMI".Ultrasound1 := "ROLL_DB205".DW[13] = W#16#0001;
+    "ROLL_HMI".BasketMotion := WORD_TO_INT("ROLL_DB205".DW[37]);
+    "ROLL_HMI".BathLift := "ROLL_DB205".DW[41] = W#16#0001;
+END_FUNCTION
+
+FUNCTION "ROLL_FB90" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+BEGIN
+    "ROLL_State".M[110, 0] := ("ROLL_DB205".DW[5] AND W#16#0FFF) <> W#16#0000;
+    "ROLL_State".M[110, 1] := ("ROLL_DB205".DW[17] AND W#16#0FFF) <> W#16#0000;
+    "ROLL_State".M[110, 2] := ("ROLL_DB205".DW[25] AND W#16#0FFF) <> W#16#0000;
+    "ROLL_State".M[110, 3] := ("ROLL_DB205".DW[33] AND W#16#0FFF) <> W#16#0000;
+    "ROLL_State".M[111, 0] := "ROLL_DB205".DW[37] = W#16#0001;
+    "ROLL_State".M[111, 1] := "ROLL_DB205".DW[37] = W#16#0002;
+    "ROLL_State".M[111, 2] := "ROLL_DB205".DW[37] = W#16#0003;
+    "ROLL_State".M[111, 5] := "ROLL_DB205".DW[37] = W#16#0004;
+    "ROLL_State".M[111, 3] := "ROLL_DB205".DW[41] = W#16#0001;
+    "ROLL_State".M[111, 4] := "ROLL_DB205".DW[13] = W#16#0001;
+    "ROLL_SetMWord"(FirstByte := 250, Value := W#16#0000);
+END_FUNCTION
+
+FUNCTION "ROLL_FB111" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_TEMP
+    preset : Word;
+    signal : Bool;
+END_VAR
+BEGIN
+    #preset := W#16#2010;
+    IF "ROLL_State".M[40, 5] THEN #preset := "ROLL_DB205".DW[5];
+    ELSIF "ROLL_State".M[42, 1] THEN #preset := "ROLL_DB205".DW[17];
+    ELSIF "ROLL_State".M[43, 5] THEN #preset := "ROLL_DB205".DW[25];
+    ELSIF "ROLL_State".M[45, 2] THEN #preset := "ROLL_DB205".DW[33];
+    END_IF;
+    #signal := "ROLL_State".M[40, 5] OR "ROLL_State".M[42, 1] OR "ROLL_State".M[43, 5] OR "ROLL_State".M[45, 2]
+        OR "ROLL_State".M[46, 5] OR "ROLL_State".M[48, 1] OR "ROLL_State".M[49, 5] OR "ROLL_State".M[51, 1];
+    "ROLL_TimerOp"(Number := 1, Operation := 0, Signal := #signal, Preset := #preset);
+    IF (WORD_TO_INT("ROLL_TimerValue"(Number := 1)) <= 7)
+        AND ("ROLL_State".M[40, 5] OR "ROLL_State".M[42, 1] OR "ROLL_State".M[43, 5]) AND "ROLL_State".M[111, 5] THEN
+        "ROLL_State".M[58, 5] := TRUE;
+    END_IF;
+    IF "ROLL_State".M[63, 1] AND "ROLL_IO".Input[13, 3] THEN "ROLL_State".M[58, 5] := FALSE; END_IF;
+    #preset := W#16#2010;
+    IF "ROLL_State".M[41, 1] THEN #preset := "ROLL_DB205".DW[9];
+    ELSIF "ROLL_State".M[42, 5] THEN #preset := "ROLL_DB205".DW[21];
+    ELSIF "ROLL_State".M[44, 1] THEN #preset := "ROLL_DB205".DW[29];
+    END_IF;
+    #signal := "ROLL_State".M[41, 1] OR "ROLL_State".M[42, 5] OR "ROLL_State".M[44, 1]
+        OR "ROLL_State".M[45, 6] OR "ROLL_State".M[47, 1] OR "ROLL_State".M[48, 5] OR "ROLL_State".M[50, 1];
+    "ROLL_TimerOp"(Number := 2, Operation := 0, Signal := #signal, Preset := #preset);
+END_FUNCTION

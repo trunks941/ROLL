@@ -1,0 +1,367 @@
+// ROLL migration prototype. Compile and verify in TIA V19 before commissioning.
+// No absolute M aliases: byte/word reads below preserve S5 overlapping memory.
+TYPE "ROLL_TimerState"
+VERSION : 0.1
+STRUCT
+    RemainingMs : LReal;
+    BaseMs : Int;
+    Mode : Int;
+    Previous : Bool;
+    Q : Bool;
+END_STRUCT;
+END_TYPE
+
+TYPE "ROLL_CounterState"
+VERSION : 0.1
+STRUCT
+    Value : Int;
+    SetPrevious : Bool;
+    UpPrevious : Bool;
+    DownPrevious : Bool;
+END_STRUCT;
+END_TYPE
+
+DATA_BLOCK "ROLL_State"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+NON_RETAIN
+VAR
+    M : Array[0..255, 0..7] of Bool;
+    Timer : Array[0..127] of "ROLL_TimerState";
+    Counter : Array[0..127] of "ROLL_CounterState";
+    CurrentProgram : Int := 1;
+END_VAR
+BEGIN
+    M[0, 4] := TRUE;
+END_DATA_BLOCK
+
+DATA_BLOCK "ROLL_IO"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+NON_RETAIN
+VAR
+    Input : Array[0..127, 0..7] of Bool;
+    Output : Array[0..127, 0..7] of Bool;
+    Simulation : Bool := TRUE;
+    PhysicalOutputsEnabled : Bool := FALSE;
+    PhysicalIoConfigured : Bool := FALSE;
+    ConversionFault : Bool;
+    FirstCycle : Bool := TRUE;
+    RuntimeMemory : LReal;
+    ClockMs : LReal;
+    HmiElapsedMs : LReal;
+    HmiLastHeartbeat : DInt;
+END_VAR
+BEGIN
+END_DATA_BLOCK
+
+// Flat, symbolic WinCC interface; TP900 control binding is a separate build step.
+DATA_BLOCK "ROLL_HMI"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+NON_RETAIN
+VAR
+    Heartbeat : DInt;
+    Connected : Bool;
+    ManualFunction : Int := 255;
+    GroundHeld : Bool;
+    WorkHeld : Bool;
+    KeyF : Array[1..16] of Bool;
+    SelectedProgram : Int := 1;
+    RecipeCommand : Int := 1;
+    RecipeRequest : DInt;
+    RecipeAck : DInt;
+    RecipeError : Int;
+    CurrentProgram : Int := 1;
+    ParameterRequest : DInt;
+    ParameterAck : DInt;
+    ParameterDb : Int := 15;
+    ParameterIndex : Int;
+    ParameterValue : DInt;
+    ParameterCurrentValue : DInt;
+    ParameterSlotPresent : Bool;
+    ParameterError : Int;
+    Dwell1Seconds : Int := 360;
+    Drain1Seconds : Int := 90;
+    Ultrasound1 : Bool := TRUE;
+    Dwell2Seconds : Int := 240;
+    Drain2Seconds : Int := 60;
+    Dwell3Seconds : Int := 300;
+    Drain3Seconds : Int := 120;
+    Dry4Seconds : Int := 400;
+    BasketMotion : Int := 1;
+    BathLift : Bool;
+    ProcessTimer1Units : Int;
+    ProcessTimer2Units : Int;
+    StatusM : Array[0..255, 0..7] of Bool;
+    LogicalOutputs : Array[16..25, 0..7] of Bool;
+END_VAR
+BEGIN
+END_DATA_BLOCK
+
+FUNCTION "ROLL_GetM" : Word
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_INPUT
+    FirstByte : Int;
+    Width : Int;
+END_VAR
+VAR_TEMP
+    b : Int;
+    n : Int;
+    bit : Int;
+    mask : Word;
+    result : Word;
+END_VAR
+BEGIN
+    #result := W#16#0000;
+    IF (#FirstByte < 0) OR (#FirstByte > 255) OR ((#Width <> 8) AND (#Width <> 16)) OR ((#Width = 16) AND (#FirstByte > 254)) THEN
+        "ROLL_IO".ConversionFault := TRUE;
+        #ROLL_GetM := #result;
+        RETURN;
+    END_IF;
+    FOR #n := 0 TO (#Width / 8) - 1 DO
+        #b := #FirstByte + #n;
+        FOR #bit := 0 TO 7 DO
+            #mask := SHL(IN := W#16#0001, N := #bit + (#Width - 8 - 8 * #n));
+            IF "ROLL_State".M[#b, #bit] THEN #result := #result OR #mask; END_IF;
+        END_FOR;
+    END_FOR;
+    #ROLL_GetM := #result;
+END_FUNCTION
+
+FUNCTION "ROLL_SetMWord" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_INPUT
+    FirstByte : Int;
+    Value : Word;
+END_VAR
+VAR_TEMP
+    bit : Int;
+END_VAR
+BEGIN
+    IF (#FirstByte < 0) OR (#FirstByte > 254) THEN
+        "ROLL_IO".ConversionFault := TRUE;
+        RETURN;
+    END_IF;
+    FOR #bit := 0 TO 7 DO
+        "ROLL_State".M[#FirstByte, #bit] := (#Value AND SHL(IN := W#16#0001, N := #bit + 8)) <> W#16#0000;
+        "ROLL_State".M[#FirstByte + 1, #bit] := (#Value AND SHL(IN := W#16#0001, N := #bit)) <> W#16#0000;
+    END_FOR;
+END_FUNCTION
+
+FUNCTION "ROLL_GetDW" : Word
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_INPUT
+    DbNumber : Int;
+    Index : Int;
+END_VAR
+BEGIN
+    #ROLL_GetDW := W#16#0000;
+    IF (#Index < 0) OR (#Index > 131) THEN
+        "ROLL_IO".ConversionFault := TRUE;
+        RETURN;
+    END_IF;
+    CASE #DbNumber OF
+        15: #ROLL_GetDW := "ROLL_DB15".DW[#Index];
+        19: #ROLL_GetDW := "ROLL_DB19".DW[#Index];
+        ELSE "ROLL_IO".ConversionFault := TRUE;
+    END_CASE;
+END_FUNCTION
+
+FUNCTION "ROLL_DecodeBCD" : Int
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_INPUT
+    Value : Word;
+END_VAR
+VAR_TEMP
+    hundreds : Int;
+    tens : Int;
+    units : Int;
+END_VAR
+BEGIN
+    #hundreds := WORD_TO_INT(SHR(IN := #Value AND W#16#0F00, N := 8));
+    #tens := WORD_TO_INT(SHR(IN := #Value AND W#16#00F0, N := 4));
+    #units := WORD_TO_INT(#Value AND W#16#000F);
+    IF (#hundreds > 9) OR (#tens > 9) OR (#units > 9) THEN
+        "ROLL_IO".ConversionFault := TRUE;
+        #ROLL_DecodeBCD := -1;
+    ELSE
+        #ROLL_DecodeBCD := #hundreds * 100 + #tens * 10 + #units;
+    END_IF;
+END_FUNCTION
+
+FUNCTION "ROLL_EncodeSeconds" : Word
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_INPUT
+    Seconds : Int;
+END_VAR
+BEGIN
+    IF (#Seconds < 0) OR (#Seconds > 999) THEN
+        #ROLL_EncodeSeconds := W#16#FFFF;
+    ELSE
+        #ROLL_EncodeSeconds := W#16#2000 OR SHL(IN := INT_TO_WORD(#Seconds / 100), N := 8)
+            OR SHL(IN := INT_TO_WORD((#Seconds / 10) MOD 10), N := 4) OR INT_TO_WORD(#Seconds MOD 10);
+    END_IF;
+END_FUNCTION
+
+FUNCTION "ROLL_TimerOp" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_INPUT
+    Number : Int;
+    Operation : Int; // 0=SE on-delay; 1=SA off-delay; 2=R reset
+    Signal : Bool;
+    Preset : Word;
+END_VAR
+VAR_TEMP
+    base : Int;
+    count : Int;
+    trigger : Bool;
+END_VAR
+BEGIN
+    IF (#Number < 0) OR (#Number > 127) THEN
+        "ROLL_IO".ConversionFault := TRUE;
+        RETURN;
+    END_IF;
+    IF #Operation = 2 THEN
+        IF #Signal THEN
+            "ROLL_State".Timer[#Number].RemainingMs := 0.0;
+            "ROLL_State".Timer[#Number].Q := FALSE;
+        END_IF;
+        RETURN;
+    END_IF;
+    #trigger := ((#Operation = 0) AND #Signal AND NOT "ROLL_State".Timer[#Number].Previous)
+        OR ((#Operation = 1) AND NOT #Signal AND "ROLL_State".Timer[#Number].Previous);
+    IF #trigger THEN
+        #count := "ROLL_DecodeBCD"(Value := #Preset);
+        #base := WORD_TO_INT(SHR(IN := #Preset AND W#16#F000, N := 12));
+        CASE #base OF
+            0: #base := 10;
+            1: #base := 100;
+            2: #base := 1000;
+            3: #base := 10000;
+            ELSE #base := 0;
+        END_CASE;
+        IF (#base = 0) OR (#count < 0) THEN
+            "ROLL_IO".ConversionFault := TRUE;
+            "ROLL_State".Timer[#Number].RemainingMs := 0.0;
+            "ROLL_State".Timer[#Number].Q := FALSE;
+            RETURN;
+        END_IF;
+        "ROLL_State".Timer[#Number].BaseMs := #base;
+        "ROLL_State".Timer[#Number].RemainingMs := INT_TO_LREAL(#count) * INT_TO_LREAL(#base);
+    END_IF;
+    "ROLL_State".Timer[#Number].Mode := #Operation;
+    IF #Operation = 0 THEN
+        IF NOT #Signal THEN "ROLL_State".Timer[#Number].RemainingMs := 0.0; END_IF;
+        "ROLL_State".Timer[#Number].Q := #Signal AND ("ROLL_State".Timer[#Number].RemainingMs <= 0.0);
+    ELSIF #Operation = 1 THEN
+        IF #Signal THEN "ROLL_State".Timer[#Number].RemainingMs := 0.0; END_IF;
+        "ROLL_State".Timer[#Number].Q := #Signal OR ("ROLL_State".Timer[#Number].RemainingMs > 0.0);
+    ELSE
+        "ROLL_IO".ConversionFault := TRUE;
+    END_IF;
+    "ROLL_State".Timer[#Number].Previous := #Signal;
+END_FUNCTION
+
+FUNCTION "ROLL_TimerValue" : Word
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_INPUT
+    Number : Int;
+END_VAR
+VAR_TEMP
+    count : DInt;
+END_VAR
+BEGIN
+    #ROLL_TimerValue := W#16#0000;
+    IF (#Number < 0) OR (#Number > 127) THEN
+        "ROLL_IO".ConversionFault := TRUE;
+        RETURN;
+    END_IF;
+    IF "ROLL_State".Timer[#Number].BaseMs > 0 THEN
+        #count := CEIL("ROLL_State".Timer[#Number].RemainingMs / INT_TO_LREAL("ROLL_State".Timer[#Number].BaseMs));
+        #ROLL_TimerValue := DINT_TO_WORD(#count);
+    END_IF;
+END_FUNCTION
+
+FUNCTION "ROLL_CounterOp" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_INPUT
+    Number : Int;
+    Operation : Int; // 0=S set; 1=R reset; 2=ZV up; 3=ZR down
+    Signal : Bool;
+    Preset : Word;
+END_VAR
+VAR_TEMP
+    count : Int;
+END_VAR
+BEGIN
+    IF (#Number < 0) OR (#Number > 127) THEN
+        "ROLL_IO".ConversionFault := TRUE;
+        RETURN;
+    END_IF;
+    CASE #Operation OF
+        0:
+            IF #Signal AND NOT "ROLL_State".Counter[#Number].SetPrevious THEN
+                #count := "ROLL_DecodeBCD"(Value := #Preset);
+                IF #count >= 0 THEN "ROLL_State".Counter[#Number].Value := #count; END_IF;
+            END_IF;
+            "ROLL_State".Counter[#Number].SetPrevious := #Signal;
+        1:
+            IF #Signal THEN "ROLL_State".Counter[#Number].Value := 0; END_IF;
+        2:
+            IF #Signal AND NOT "ROLL_State".Counter[#Number].UpPrevious AND ("ROLL_State".Counter[#Number].Value < 999) THEN
+                "ROLL_State".Counter[#Number].Value := "ROLL_State".Counter[#Number].Value + 1;
+            END_IF;
+            "ROLL_State".Counter[#Number].UpPrevious := #Signal;
+        3:
+            IF #Signal AND NOT "ROLL_State".Counter[#Number].DownPrevious AND ("ROLL_State".Counter[#Number].Value > 0) THEN
+                "ROLL_State".Counter[#Number].Value := "ROLL_State".Counter[#Number].Value - 1;
+            END_IF;
+            "ROLL_State".Counter[#Number].DownPrevious := #Signal;
+        ELSE "ROLL_IO".ConversionFault := TRUE;
+    END_CASE;
+END_FUNCTION
+
+FUNCTION "ROLL_AdvanceTime" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_INPUT
+    DeltaMs : LReal;
+END_VAR
+VAR_TEMP
+    n : Int;
+END_VAR
+BEGIN
+    IF #DeltaMs < 0.0 THEN "ROLL_IO".ConversionFault := TRUE; RETURN; END_IF;
+    FOR #n := 0 TO 127 DO
+        IF "ROLL_State".Timer[#n].RemainingMs > 0.0 THEN
+            "ROLL_State".Timer[#n].RemainingMs := "ROLL_State".Timer[#n].RemainingMs - #DeltaMs;
+            IF "ROLL_State".Timer[#n].RemainingMs <= 0.0 THEN
+                "ROLL_State".Timer[#n].RemainingMs := 0.0;
+                "ROLL_State".Timer[#n].Q := "ROLL_State".Timer[#n].Mode = 0;
+            END_IF;
+        END_IF;
+    END_FOR;
+    "ROLL_IO".ClockMs := "ROLL_IO".ClockMs + #DeltaMs;
+    WHILE "ROLL_IO".ClockMs >= 250.0 DO
+        "ROLL_IO".ClockMs := "ROLL_IO".ClockMs - 250.0;
+        "ROLL_State".M[3, 4] := NOT "ROLL_State".M[3, 4];
+        IF NOT "ROLL_State".M[3, 4] THEN
+            "ROLL_State".M[3, 5] := NOT "ROLL_State".M[3, 5];
+            IF NOT "ROLL_State".M[3, 5] THEN
+                "ROLL_State".M[3, 6] := NOT "ROLL_State".M[3, 6];
+                IF NOT "ROLL_State".M[3, 6] THEN
+                    "ROLL_State".M[3, 7] := NOT "ROLL_State".M[3, 7];
+                END_IF;
+            END_IF;
+        END_IF;
+    END_WHILE;
+END_FUNCTION

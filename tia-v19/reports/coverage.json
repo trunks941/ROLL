@@ -1,0 +1,229 @@
+{
+  "format": 1,
+  "status": "SCL generated; local TIA V19 compilation required",
+  "pb_count": 22,
+  "pb_coverage": [
+    {
+      "block": "PB2",
+      "decoded_rows": 763,
+      "executable_rows": 549,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB3",
+      "decoded_rows": 81,
+      "executable_rows": 65,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB4",
+      "decoded_rows": 126,
+      "executable_rows": 101,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB7",
+      "decoded_rows": 194,
+      "executable_rows": 164,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB8",
+      "decoded_rows": 102,
+      "executable_rows": 88,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB9",
+      "decoded_rows": 723,
+      "executable_rows": 599,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB10",
+      "decoded_rows": 716,
+      "executable_rows": 603,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB13",
+      "decoded_rows": 719,
+      "executable_rows": 607,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB14",
+      "decoded_rows": 260,
+      "executable_rows": 227,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB15",
+      "decoded_rows": 86,
+      "executable_rows": 71,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB16",
+      "decoded_rows": 414,
+      "executable_rows": 378,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB17",
+      "decoded_rows": 338,
+      "executable_rows": 305,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB18",
+      "decoded_rows": 228,
+      "executable_rows": 213,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB19",
+      "decoded_rows": 143,
+      "executable_rows": 111,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB20",
+      "decoded_rows": 568,
+      "executable_rows": 398,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB21",
+      "decoded_rows": 520,
+      "executable_rows": 441,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB23",
+      "decoded_rows": 163,
+      "executable_rows": 129,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB24",
+      "decoded_rows": 28,
+      "executable_rows": 19,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB25",
+      "decoded_rows": 148,
+      "executable_rows": 123,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB50",
+      "decoded_rows": 25,
+      "executable_rows": 11,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB51",
+      "decoded_rows": 67,
+      "executable_rows": 32,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    },
+    {
+      "block": "PB52",
+      "decoded_rows": 161,
+      "executable_rows": 84,
+      "source": "02-process.scl",
+      "method": "ordered SCL from MC5 verified against native STEP 5",
+      "tia_compiled": false
+    }
+  ],
+  "adaptations": {
+    "FB69": "SCL pause selection",
+    "FB90": "SCL recipe decoding",
+    "FB111": "SCL two process timers",
+    "FB101": "native HMI parameter commands",
+    "FB105": "initialized persistent data blocks",
+    "FB61": "startup/retention/clock adaptation",
+    "OB13": "250 ms cadence accumulated from cycle time",
+    "OB21/OB22": "OB100 startup",
+    "OB34": "old S5 battery warning requires S7 diagnostic redesign"
+  },
+  "op15_replaced": [
+    "FB3",
+    "FB51",
+    "FB60",
+    "FB62",
+    "FB63",
+    "FB89",
+    "FB91",
+    "FB92",
+    "FB95",
+    "FB96"
+  ],
+  "unresolved": [
+    "TIA compilation",
+    "native retention properties and online RS120 bits 4/5",
+    "CPU catalog/firmware",
+    "configured physical I/O and electrical grouping",
+    "TP900 connection, tags, screen controls and alarm import",
+    "S5 timer phase/jitter equivalence",
+    "power-loss tests and physical commissioning"
+  ],
+  "source_sha256": "e4675bd92c880bf53f66f36e1bc6fb2d6baa6e3f7f5a159ebf0a11b0623de4a3",
+  "target": {
+    "cpu": "6ES7513-1AM03-0AB0",
+    "hmi": "6AV2124-0JC01-0AX0",
+    "stations": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "automatic_feeding": false
+  },
+  "recipe_time_base_seconds": 1,
+  "physical_outputs_default_enabled": false
+}

@@ -1,0 +1,260 @@
+FUNCTION "ROLL_HmiExchange" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_INPUT
+    DeltaMs : LReal;
+END_VAR
+VAR_TEMP
+    b : Int;
+    bit : Int;
+    n : Int;
+    fieldIndex : Int;
+    index : Int;
+    raw : Word;
+    base : DInt;
+    count : DInt;
+    recipe : Array[0..41] of Word;
+END_VAR
+BEGIN
+    // Called at the end of the scan, like the former OP15 functions in OB1.
+    "ROLL_IO".HmiElapsedMs := "ROLL_IO".HmiElapsedMs + #DeltaMs;
+    IF "ROLL_HMI".Heartbeat <> "ROLL_IO".HmiLastHeartbeat THEN
+        "ROLL_IO".HmiLastHeartbeat := "ROLL_HMI".Heartbeat;
+        "ROLL_IO".HmiElapsedMs := 0.0;
+        "ROLL_HMI".Connected := TRUE;
+    END_IF;
+    IF "ROLL_IO".HmiElapsedMs >= 1500.0 THEN "ROLL_HMI".Connected := FALSE; END_IF;
+    "ROLL_State".M[190, 5] := "ROLL_HMI".Connected AND "ROLL_HMI".GroundHeld;
+    "ROLL_State".M[190, 6] := "ROLL_HMI".Connected AND "ROLL_HMI".WorkHeld;
+    "ROLL_State".M[190, 3] := ("ROLL_State".M[190, 5] OR "ROLL_State".M[190, 6]) AND NOT "ROLL_State".M[190, 4];
+    "ROLL_State".M[190, 4] := "ROLL_State".M[190, 5] OR "ROLL_State".M[190, 6];
+    "ROLL_State".M[191, 0] := FALSE;
+    IF ("ROLL_HMI".ManualFunction >= 0) AND ("ROLL_HMI".ManualFunction <= 255) AND "ROLL_HMI".Connected THEN
+        "ROLL_SetMWord"(FirstByte := 238, Value := INT_TO_WORD("ROLL_HMI".ManualFunction));
+    ELSE
+        "ROLL_SetMWord"(FirstByte := 238, Value := W#16#00FF);
+    END_IF;
+    FOR #n := 0 TO 7 DO
+        "ROLL_State".M[192, #n] := "ROLL_HMI".Connected AND "ROLL_HMI".KeyF[#n + 1];
+        "ROLL_State".M[193, #n] := "ROLL_HMI".Connected AND "ROLL_HMI".KeyF[#n + 9];
+    END_FOR;
+
+    // Request/acknowledgement counters prevent partial edits on every scan.
+    // Command 1 loads the retained program; command 2 saves the displayed values.
+    IF "ROLL_HMI".RecipeRequest <> "ROLL_HMI".RecipeAck THEN
+        "ROLL_HMI".RecipeError := 0;
+        IF NOT "ROLL_HMI".Connected THEN
+            "ROLL_HMI".RecipeError := 8;
+        ELSIF ("ROLL_HMI".SelectedProgram < 1) OR ("ROLL_HMI".SelectedProgram > 2) THEN
+            "ROLL_HMI".RecipeError := 1;
+        ELSIF NOT "ROLL_IO".Input[0, 1] THEN
+            "ROLL_HMI".RecipeError := 2; // requires manual operating mode
+        ELSIF ("ROLL_HMI".RecipeCommand <> 1) AND ("ROLL_HMI".RecipeCommand <> 2) THEN
+            "ROLL_HMI".RecipeError := 3;
+        ELSE
+            FOR #n := 0 TO 41 DO
+                IF "ROLL_HMI".SelectedProgram = 1 THEN #recipe[#n] := "ROLL_Recipe1".DW[#n];
+                ELSE #recipe[#n] := "ROLL_Recipe2".DW[#n]; END_IF;
+            END_FOR;
+            IF "ROLL_HMI".RecipeCommand = 2 THEN
+                #recipe[5] := "ROLL_EncodeSeconds"(Seconds := "ROLL_HMI".Dwell1Seconds);
+                #recipe[9] := "ROLL_EncodeSeconds"(Seconds := "ROLL_HMI".Drain1Seconds);
+                #recipe[17] := "ROLL_EncodeSeconds"(Seconds := "ROLL_HMI".Dwell2Seconds);
+                #recipe[21] := "ROLL_EncodeSeconds"(Seconds := "ROLL_HMI".Drain2Seconds);
+                #recipe[25] := "ROLL_EncodeSeconds"(Seconds := "ROLL_HMI".Dwell3Seconds);
+                #recipe[29] := "ROLL_EncodeSeconds"(Seconds := "ROLL_HMI".Drain3Seconds);
+                #recipe[33] := "ROLL_EncodeSeconds"(Seconds := "ROLL_HMI".Dry4Seconds);
+                FOR #n := 0 TO 6 DO
+                    CASE #n OF
+                        0: #fieldIndex := 5; 1: #fieldIndex := 9; 2: #fieldIndex := 17;
+                        3: #fieldIndex := 21; 4: #fieldIndex := 25; 5: #fieldIndex := 29;
+                        6: #fieldIndex := 33;
+                    END_CASE;
+                    IF #recipe[#fieldIndex] = W#16#FFFF THEN "ROLL_HMI".RecipeError := 4; END_IF;
+                END_FOR;
+                IF ("ROLL_HMI".BasketMotion < 0) OR ("ROLL_HMI".BasketMotion > 4) THEN "ROLL_HMI".RecipeError := 5; END_IF;
+                #recipe[37] := INT_TO_WORD("ROLL_HMI".BasketMotion);
+                #recipe[13] := W#16#0000;
+                IF "ROLL_HMI".Ultrasound1 THEN #recipe[13] := W#16#0001; END_IF;
+                #recipe[41] := W#16#0000;
+                IF "ROLL_HMI".BathLift THEN #recipe[41] := W#16#0001; END_IF;
+            END_IF;
+            IF "ROLL_HMI".RecipeError = 0 THEN
+                FOR #n := 0 TO 41 DO
+                    "ROLL_DB205".DW[#n] := #recipe[#n];
+                    IF "ROLL_HMI".RecipeCommand = 2 THEN
+                        IF "ROLL_HMI".SelectedProgram = 1 THEN "ROLL_Recipe1".DW[#n] := #recipe[#n];
+                        ELSE "ROLL_Recipe2".DW[#n] := #recipe[#n]; END_IF;
+                    END_IF;
+                END_FOR;
+                "ROLL_State".CurrentProgram := "ROLL_HMI".SelectedProgram;
+                "ROLL_ShowRecipe"();
+                "ROLL_State".M[190, 1] := TRUE;
+                "ROLL_State".M[190, 2] := FALSE;
+                "ROLL_State".M[191, 4] := TRUE;
+                "ROLL_FB90"();
+            END_IF;
+        END_IF;
+        "ROLL_HMI".RecipeAck := "ROLL_HMI".RecipeRequest;
+    END_IF;
+
+    IF "ROLL_HMI".ParameterRequest <> "ROLL_HMI".ParameterAck THEN
+        "ROLL_HMI".ParameterError := 0;
+        #index := "ROLL_HMI".ParameterIndex;
+        #raw := W#16#FFFF;
+        IF NOT "ROLL_HMI".Connected THEN "ROLL_HMI".ParameterError := 8;
+        ELSIF (#index < 0) OR (#index > 127) THEN "ROLL_HMI".ParameterError := 1;
+        ELSIF NOT "ROLL_IO".Input[0, 1] THEN "ROLL_HMI".ParameterError := 2;
+        ELSIF ("ROLL_HMI".ParameterDb <> 15) AND ("ROLL_HMI".ParameterDb <> 19) THEN "ROLL_HMI".ParameterError := 3;
+        ELSE
+            #raw := "ROLL_GetDW"(DbNumber := "ROLL_HMI".ParameterDb, Index := #index);
+            IF #raw = W#16#FFFF THEN "ROLL_HMI".ParameterError := 4;
+            ELSE
+                #base := 1;
+                IF "ROLL_HMI".ParameterDb = 15 THEN
+                    CASE WORD_TO_INT(SHR(IN := #raw AND W#16#F000, N := 12)) OF
+                        0: #base := 10; 1: #base := 100; 2: #base := 1000; 3: #base := 10000;
+                        ELSE #base := 0;
+                    END_CASE;
+                END_IF;
+                IF #base = 0 THEN "ROLL_HMI".ParameterError := 5;
+                ELSIF ("ROLL_HMI".ParameterValue < 0) OR (("ROLL_HMI".ParameterValue MOD #base) <> 0) THEN "ROLL_HMI".ParameterError := 6;
+                ELSE
+                    #count := "ROLL_HMI".ParameterValue / #base;
+                    IF #count > 999 THEN "ROLL_HMI".ParameterError := 7;
+                    ELSE
+                        #raw := (#raw AND W#16#F000) OR SHL(IN := DINT_TO_WORD(#count / 100), N := 8)
+                            OR SHL(IN := DINT_TO_WORD((#count / 10) MOD 10), N := 4) OR DINT_TO_WORD(#count MOD 10);
+                        IF "ROLL_HMI".ParameterDb = 15 THEN "ROLL_DB15".DW[#index] := #raw;
+                        ELSE "ROLL_DB19".DW[#index] := #raw; END_IF;
+                    END_IF;
+                END_IF;
+            END_IF;
+        END_IF;
+        "ROLL_HMI".ParameterAck := "ROLL_HMI".ParameterRequest;
+    END_IF;
+    "ROLL_HMI".ParameterSlotPresent := FALSE;
+    "ROLL_HMI".ParameterCurrentValue := 0;
+    #index := "ROLL_HMI".ParameterIndex;
+    IF (#index >= 0) AND (#index <= 127) AND (("ROLL_HMI".ParameterDb = 15) OR ("ROLL_HMI".ParameterDb = 19)) THEN
+        #raw := "ROLL_GetDW"(DbNumber := "ROLL_HMI".ParameterDb, Index := #index);
+        IF #raw <> W#16#FFFF THEN
+            #count := INT_TO_DINT("ROLL_DecodeBCD"(Value := #raw));
+            #base := 1;
+            IF "ROLL_HMI".ParameterDb = 15 THEN
+                CASE WORD_TO_INT(SHR(IN := #raw AND W#16#F000, N := 12)) OF
+                    0: #base := 10; 1: #base := 100; 2: #base := 1000; 3: #base := 10000;
+                    ELSE #base := 0;
+                END_CASE;
+            END_IF;
+            IF (#count >= 0) AND (#base > 0) THEN
+                "ROLL_HMI".ParameterSlotPresent := TRUE;
+                "ROLL_HMI".ParameterCurrentValue := #count * #base;
+            END_IF;
+        END_IF;
+    END_IF;
+    IF WORD_TO_INT("ROLL_GetM"(FirstByte := 239, Width := 8)) <> 255 THEN
+        "ROLL_PB18"();
+    ELSE
+        "ROLL_SetMWord"(FirstByte := 250, Value := W#16#0000);
+        "ROLL_SetMWord"(FirstByte := 252, Value := W#16#0000);
+    END_IF;
+    "ROLL_HMI".ProcessTimer1Units := WORD_TO_INT("ROLL_TimerValue"(Number := 1));
+    "ROLL_HMI".ProcessTimer2Units := WORD_TO_INT("ROLL_TimerValue"(Number := 2));
+    FOR #b := 0 TO 255 DO
+        FOR #bit := 0 TO 7 DO "ROLL_HMI".StatusM[#b, #bit] := "ROLL_State".M[#b, #bit]; END_FOR;
+    END_FOR;
+    FOR #b := 16 TO 25 DO
+        FOR #bit := 0 TO 7 DO "ROLL_HMI".LogicalOutputs[#b, #bit] := "ROLL_IO".Output[#b, #bit]; END_FOR;
+    END_FOR;
+END_FUNCTION
+
+FUNCTION "ROLL_Cycle" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_TEMP
+    delta : LReal;
+END_VAR
+BEGIN
+    #delta := RUNTIME("ROLL_IO".RuntimeMemory) * 1000.0;
+    IF "ROLL_IO".FirstCycle THEN
+        #delta := 0.0;
+        "ROLL_IO".FirstCycle := FALSE;
+    END_IF;
+    "ROLL_ReadInputs"();
+    "ROLL_AdvanceTime"(DeltaMs := #delta);
+    // Exact OB1 order for the process blocks; startup DB creation is replaced.
+    IF NOT "ROLL_State".M[0, 2] THEN "ROLL_State".M[0, 1] := FALSE; END_IF;
+    IF "ROLL_State".M[0, 1] THEN "ROLL_State".M[0, 7] := TRUE; END_IF;
+    "ROLL_State".M[0, 5] := NOT "ROLL_State".M[0, 5];
+    IF "ROLL_State".M[3, 2] THEN "ROLL_State".M[3, 3] := TRUE; END_IF;
+    IF "ROLL_IO".Input[0, 2] THEN "ROLL_State".M[3, 3] := FALSE; END_IF;
+    "ROLL_State".M[3, 2] := "ROLL_IO".Input[0, 1] AND NOT "ROLL_State".M[0, 1];
+    "ROLL_PB2"();
+    IF "ROLL_State".M[0, 7] THEN "ROLL_State".M[0, 7] := FALSE; END_IF;
+    "ROLL_PB3"();
+    "ROLL_PB4"();
+    "ROLL_PB19"();
+    "ROLL_PB21"();
+    "ROLL_PB50"();
+    "ROLL_PB51"();
+    "ROLL_PB52"();
+    IF NOT "ROLL_State".M[3, 3] THEN "ROLL_PB8"(); END_IF;
+    IF NOT "ROLL_State".M[3, 3] THEN "ROLL_PB9"(); END_IF;
+    IF NOT "ROLL_State".M[3, 3] THEN "ROLL_PB10"(); END_IF;
+    IF NOT "ROLL_State".M[3, 3] THEN "ROLL_PB14"(); END_IF;
+    IF "ROLL_State".M[3, 3] THEN "ROLL_PB16"(); END_IF;
+    "ROLL_PB7"();
+    "ROLL_PB13"();
+    "ROLL_PB15"();
+    "ROLL_PB17"();
+    "ROLL_PB20"();
+    "ROLL_PB23"();
+    "ROLL_PB24"();
+    "ROLL_PB25"();
+    "ROLL_FB111"();
+    "ROLL_HmiExchange"(DeltaMs := #delta);
+    "ROLL_WriteOutputs"();
+END_FUNCTION
+
+ORGANIZATION_BLOCK OB100
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+VAR_TEMP
+    n : Int;
+END_VAR
+BEGIN
+    // RE plus RS120 bit 3: all M retained. Default T/Z 0..63 retained.
+    FOR #n := 64 TO 127 DO
+        "ROLL_State".Timer[#n].RemainingMs := 0.0;
+        "ROLL_State".Timer[#n].BaseMs := 0;
+        "ROLL_State".Timer[#n].Mode := 0;
+        "ROLL_State".Timer[#n].Q := FALSE;
+        "ROLL_State".Timer[#n].Previous := FALSE;
+        "ROLL_State".Counter[#n].Value := 0;
+        "ROLL_State".Counter[#n].SetPrevious := FALSE;
+        "ROLL_State".Counter[#n].UpPrevious := FALSE;
+        "ROLL_State".Counter[#n].DownPrevious := FALSE;
+    END_FOR;
+    "ROLL_IO".FirstCycle := TRUE;
+    "ROLL_IO".ClockMs := 0.0;
+    "ROLL_IO".RuntimeMemory := 0.0;
+    "ROLL_IO".PhysicalOutputsEnabled := FALSE;
+    "ROLL_HMI".Connected := FALSE;
+    "ROLL_State".M[0, 1] := TRUE;
+    "ROLL_State".M[0, 2] := TRUE;
+    "ROLL_State".M[191, 0] := TRUE;
+    "ROLL_State".M[190, 5] := FALSE;
+    "ROLL_State".M[190, 6] := FALSE;
+    "ROLL_State".M[190, 1] := TRUE;
+    "ROLL_State".M[191, 4] := TRUE;
+    "ROLL_FB90"();
+    "ROLL_ShowRecipe"();
+END_ORGANIZATION_BLOCK
+
+ORGANIZATION_BLOCK OB1
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+BEGIN
+    "ROLL_Cycle"();
+END_ORGANIZATION_BLOCK

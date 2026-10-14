@@ -1,0 +1,343 @@
+DATA_BLOCK "ROLL_DB15"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+NON_RETAIN
+VAR
+    DW : Array[0..131] of Word;
+END_VAR
+BEGIN
+    DW[0] := W#16#FFFF;
+    DW[1] := W#16#FFFF;
+    DW[2] := W#16#FFFF;
+    DW[3] := W#16#FFFF;
+    DW[4] := W#16#FFFF;
+    DW[5] := W#16#FFFF;
+    DW[6] := W#16#FFFF;
+    DW[7] := W#16#FFFF;
+    DW[8] := W#16#FFFF;
+    DW[9] := W#16#FFFF;
+    DW[10] := W#16#FFFF;
+    DW[11] := W#16#FFFF;
+    DW[12] := W#16#FFFF;
+    DW[13] := W#16#FFFF;
+    DW[14] := W#16#FFFF;
+    DW[15] := W#16#FFFF;
+    DW[16] := W#16#FFFF;
+    DW[17] := W#16#3360;
+    DW[18] := W#16#FFFF;
+    DW[19] := W#16#FFFF;
+    DW[20] := W#16#FFFF;
+    DW[21] := W#16#FFFF;
+    DW[22] := W#16#FFFF;
+    DW[23] := W#16#FFFF;
+    DW[24] := W#16#1010;
+    DW[25] := W#16#1020;
+    DW[26] := W#16#FFFF;
+    DW[27] := W#16#FFFF;
+    DW[28] := W#16#FFFF;
+    DW[29] := W#16#FFFF;
+    DW[30] := W#16#FFFF;
+    DW[31] := W#16#3120;
+    DW[32] := W#16#3120;
+    DW[33] := W#16#2900;
+    DW[34] := W#16#FFFF;
+    DW[35] := W#16#FFFF;
+    DW[36] := W#16#FFFF;
+    DW[37] := W#16#FFFF;
+    DW[38] := W#16#FFFF;
+    DW[39] := W#16#FFFF;
+    DW[40] := W#16#FFFF;
+    DW[41] := W#16#FFFF;
+    DW[42] := W#16#FFFF;
+    DW[43] := W#16#FFFF;
+    DW[44] := W#16#FFFF;
+    DW[45] := W#16#FFFF;
+    DW[46] := W#16#FFFF;
+    DW[47] := W#16#FFFF;
+    DW[48] := W#16#FFFF;
+    DW[49] := W#16#FFFF;
+    DW[50] := W#16#FFFF;
+    DW[51] := W#16#FFFF;
+    DW[52] := W#16#FFFF;
+    DW[53] := W#16#2120;
+    DW[54] := W#16#2120;
+    DW[55] := W#16#1010;
+    DW[56] := W#16#2060;
+    DW[57] := W#16#FFFF;
+    DW[58] := W#16#3180;
+    DW[59] := W#16#3180;
+    DW[60] := W#16#2060;
+    DW[61] := W#16#2600;
+    DW[62] := W#16#2600;
+    DW[63] := W#16#2010;
+    DW[64] := W#16#FFFF;
+    DW[65] := W#16#2015;
+    DW[66] := W#16#FFFF;
+    DW[67] := W#16#1050;
+    DW[68] := W#16#FFFF;
+    DW[69] := W#16#FFFF;
+    DW[70] := W#16#FFFF;
+    DW[71] := W#16#FFFF;
+    DW[72] := W#16#FFFF;
+    DW[73] := W#16#FFFF;
+    DW[74] := W#16#FFFF;
+    DW[75] := W#16#2600;
+    DW[76] := W#16#FFFF;
+    DW[77] := W#16#2300;
+    DW[78] := W#16#FFFF;
+    DW[79] := W#16#FFFF;
+    DW[80] := W#16#FFFF;
+    DW[81] := W#16#FFFF;
+    DW[82] := W#16#FFFF;
+    DW[83] := W#16#FFFF;
+    DW[84] := W#16#FFFF;
+    DW[85] := W#16#2120;
+    DW[86] := W#16#FFFF;
+    DW[87] := W#16#FFFF;
+    DW[88] := W#16#FFFF;
+    DW[89] := W#16#FFFF;
+    DW[90] := W#16#FFFF;
+    DW[91] := W#16#FFFF;
+    DW[92] := W#16#FFFF;
+    DW[93] := W#16#FFFF;
+    DW[94] := W#16#FFFF;
+    DW[95] := W#16#FFFF;
+    DW[96] := W#16#FFFF;
+    DW[97] := W#16#FFFF;
+    DW[98] := W#16#FFFF;
+    DW[99] := W#16#FFFF;
+    DW[100] := W#16#FFFF;
+    DW[101] := W#16#FFFF;
+    DW[102] := W#16#2300;
+    DW[103] := W#16#2300;
+    DW[104] := W#16#FFFF;
+    DW[105] := W#16#FFFF;
+    DW[106] := W#16#2010;
+    DW[107] := W#16#2015;
+    DW[108] := W#16#FFFF;
+    DW[109] := W#16#FFFF;
+    DW[110] := W#16#FFFF;
+    DW[111] := W#16#FFFF;
+    DW[112] := W#16#FFFF;
+    DW[113] := W#16#FFFF;
+    DW[114] := W#16#FFFF;
+    DW[115] := W#16#1050;
+    DW[116] := W#16#1050;
+    DW[117] := W#16#1050;
+    DW[118] := W#16#FFFF;
+    DW[119] := W#16#FFFF;
+    DW[120] := W#16#FFFF;
+    DW[121] := W#16#FFFF;
+    DW[122] := W#16#FFFF;
+    DW[123] := W#16#FFFF;
+    DW[124] := W#16#FFFF;
+    DW[125] := W#16#FFFF;
+    DW[126] := W#16#FFFF;
+    DW[127] := W#16#0038;
+    DW[128] := W#16#0011;
+    DW[129] := W#16#0011;
+    DW[130] := W#16#3360;
+    DW[131] := W#16#0000;
+END_DATA_BLOCK
+
+DATA_BLOCK "ROLL_DB19"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+NON_RETAIN
+VAR
+    DW : Array[0..131] of Word;
+END_VAR
+BEGIN
+    DW[0] := W#16#FFFF;
+    DW[1] := W#16#0020;
+    DW[2] := W#16#0014;
+    DW[3] := W#16#FFFF;
+    DW[4] := W#16#FFFF;
+    DW[5] := W#16#FFFF;
+    DW[6] := W#16#FFFF;
+    DW[7] := W#16#FFFF;
+    DW[8] := W#16#FFFF;
+    DW[9] := W#16#FFFF;
+    DW[10] := W#16#FFFF;
+    DW[11] := W#16#FFFF;
+    DW[12] := W#16#FFFF;
+    DW[13] := W#16#FFFF;
+    DW[14] := W#16#FFFF;
+    DW[15] := W#16#FFFF;
+    DW[16] := W#16#FFFF;
+    DW[17] := W#16#FFFF;
+    DW[18] := W#16#FFFF;
+    DW[19] := W#16#FFFF;
+    DW[20] := W#16#FFFF;
+    DW[21] := W#16#FFFF;
+    DW[22] := W#16#FFFF;
+    DW[23] := W#16#FFFF;
+    DW[24] := W#16#FFFF;
+    DW[25] := W#16#FFFF;
+    DW[26] := W#16#FFFF;
+    DW[27] := W#16#FFFF;
+    DW[28] := W#16#FFFF;
+    DW[29] := W#16#FFFF;
+    DW[30] := W#16#FFFF;
+    DW[31] := W#16#FFFF;
+    DW[32] := W#16#FFFF;
+    DW[33] := W#16#FFFF;
+    DW[34] := W#16#FFFF;
+    DW[35] := W#16#FFFF;
+    DW[36] := W#16#FFFF;
+    DW[37] := W#16#FFFF;
+    DW[38] := W#16#FFFF;
+    DW[39] := W#16#FFFF;
+    DW[40] := W#16#FFFF;
+    DW[41] := W#16#FFFF;
+    DW[42] := W#16#FFFF;
+    DW[43] := W#16#FFFF;
+    DW[44] := W#16#FFFF;
+    DW[45] := W#16#FFFF;
+    DW[46] := W#16#FFFF;
+    DW[47] := W#16#FFFF;
+    DW[48] := W#16#FFFF;
+    DW[49] := W#16#FFFF;
+    DW[50] := W#16#FFFF;
+    DW[51] := W#16#FFFF;
+    DW[52] := W#16#FFFF;
+    DW[53] := W#16#FFFF;
+    DW[54] := W#16#FFFF;
+    DW[55] := W#16#FFFF;
+    DW[56] := W#16#FFFF;
+    DW[57] := W#16#FFFF;
+    DW[58] := W#16#FFFF;
+    DW[59] := W#16#FFFF;
+    DW[60] := W#16#FFFF;
+    DW[61] := W#16#FFFF;
+    DW[62] := W#16#FFFF;
+    DW[63] := W#16#FFFF;
+    DW[64] := W#16#FFFF;
+    DW[65] := W#16#FFFF;
+    DW[66] := W#16#FFFF;
+    DW[67] := W#16#FFFF;
+    DW[68] := W#16#FFFF;
+    DW[69] := W#16#FFFF;
+    DW[70] := W#16#FFFF;
+    DW[71] := W#16#FFFF;
+    DW[72] := W#16#FFFF;
+    DW[73] := W#16#FFFF;
+    DW[74] := W#16#FFFF;
+    DW[75] := W#16#FFFF;
+    DW[76] := W#16#FFFF;
+    DW[77] := W#16#FFFF;
+    DW[78] := W#16#FFFF;
+    DW[79] := W#16#FFFF;
+    DW[80] := W#16#FFFF;
+    DW[81] := W#16#FFFF;
+    DW[82] := W#16#FFFF;
+    DW[83] := W#16#FFFF;
+    DW[84] := W#16#FFFF;
+    DW[85] := W#16#FFFF;
+    DW[86] := W#16#FFFF;
+    DW[87] := W#16#FFFF;
+    DW[88] := W#16#FFFF;
+    DW[89] := W#16#FFFF;
+    DW[90] := W#16#FFFF;
+    DW[91] := W#16#FFFF;
+    DW[92] := W#16#FFFF;
+    DW[93] := W#16#FFFF;
+    DW[94] := W#16#FFFF;
+    DW[95] := W#16#FFFF;
+    DW[96] := W#16#FFFF;
+    DW[97] := W#16#FFFF;
+    DW[98] := W#16#FFFF;
+    DW[99] := W#16#FFFF;
+    DW[100] := W#16#FFFF;
+    DW[101] := W#16#FFFF;
+    DW[102] := W#16#FFFF;
+    DW[103] := W#16#FFFF;
+    DW[104] := W#16#FFFF;
+    DW[105] := W#16#FFFF;
+    DW[106] := W#16#FFFF;
+    DW[107] := W#16#FFFF;
+    DW[108] := W#16#FFFF;
+    DW[109] := W#16#FFFF;
+    DW[110] := W#16#FFFF;
+    DW[111] := W#16#FFFF;
+    DW[112] := W#16#FFFF;
+    DW[113] := W#16#FFFF;
+    DW[114] := W#16#FFFF;
+    DW[115] := W#16#FFFF;
+    DW[116] := W#16#FFFF;
+    DW[117] := W#16#FFFF;
+    DW[118] := W#16#FFFF;
+    DW[119] := W#16#FFFF;
+    DW[120] := W#16#FFFF;
+    DW[121] := W#16#FFFF;
+    DW[122] := W#16#FFFF;
+    DW[123] := W#16#FFFF;
+    DW[124] := W#16#FFFF;
+    DW[125] := W#16#FFFF;
+    DW[126] := W#16#FFFF;
+    DW[127] := W#16#FFFF;
+    DW[128] := W#16#0001;
+    DW[129] := W#16#0001;
+    DW[130] := W#16#0020;
+    DW[131] := W#16#0000;
+END_DATA_BLOCK
+
+DATA_BLOCK "ROLL_Recipe1"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+NON_RETAIN
+VAR
+    DW : Array[0..41] of Word;
+END_VAR
+BEGIN
+    DW[5] := W#16#2360;
+    DW[9] := W#16#2090;
+    DW[13] := W#16#0001;
+    DW[17] := W#16#2240;
+    DW[21] := W#16#2060;
+    DW[25] := W#16#2300;
+    DW[29] := W#16#2120;
+    DW[33] := W#16#2400;
+    DW[37] := W#16#0001;
+    DW[41] := W#16#0000;
+END_DATA_BLOCK
+
+DATA_BLOCK "ROLL_Recipe2"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+NON_RETAIN
+VAR
+    DW : Array[0..41] of Word;
+END_VAR
+BEGIN
+    DW[5] := W#16#2360;
+    DW[9] := W#16#2090;
+    DW[13] := W#16#0001;
+    DW[17] := W#16#2240;
+    DW[21] := W#16#2060;
+    DW[25] := W#16#2300;
+    DW[29] := W#16#2120;
+    DW[33] := W#16#2400;
+    DW[37] := W#16#0001;
+    DW[41] := W#16#0000;
+END_DATA_BLOCK
+
+DATA_BLOCK "ROLL_DB205"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+NON_RETAIN
+VAR
+    DW : Array[0..41] of Word;
+END_VAR
+BEGIN
+    DW[5] := W#16#2360;
+    DW[9] := W#16#2090;
+    DW[13] := W#16#0001;
+    DW[17] := W#16#2240;
+    DW[21] := W#16#2060;
+    DW[25] := W#16#2300;
+    DW[29] := W#16#2120;
+    DW[33] := W#16#2400;
+    DW[37] := W#16#0001;
+    DW[41] := W#16#0000;
+END_DATA_BLOCK

@@ -1,0 +1,15 @@
+﻿code;label_pl;legacy_entry;legacy_text_de;press_ground;press_work;release_or_screen_change;native_control_created
+1;Dojazd do pozycji podstawowej;HBGRUND;Fahren in Grundstellung / in <GRUNDARBEIT >;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+7;Drzwi załadunkowe;HBTUER;Tuer Beschickung schliessen/oeffnen  / Tuer ist in <GRUNDARBEIT >;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+20;Podnoszenie / opuszczanie wózka;HBFWSENKHEB;Fahrwagen senken/heben / Fahrwagen ist in <GRUNDARBEIT >;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+21;Przejazd wózka;HBFWVORZURUE;Fahrwagen vor/zurueck / Fahrwagen ist in <GRUNDARBEIT >;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+22;Obrót / ustawienie bębna prosto;HBFWRTSDREH;Fahrwagen Trommel geradest./drehen / Trommel ist in <GRUNDARBEIT >;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+23;Kołysanie / ustawienie bębna prosto;HBFWRTSSCHW;Fahrwagen Trommel geradest./schwenken / Trommel ist in <GRUNDARBEIT >;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+36;Napełnianie stacji 1–3 wodą demineralizowaną;HBFUEST1-3VE;Fuellen Station 1-3 mit VE-Wasser / ist <AUSEIN-HB   > (in <GRUNDARBEIT >;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+50;Napełnianie stacji 1–3 ze zbiornika czystego RAV;HBFUEST1-3_R;Fuellen Station 1-3 aus RAV-Reintank / ist <AUSEIN-HB   > (in <GRUNDARBE;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+60;Przepompowywanie do stacji 1–3 i osadnika;HBUMPST1-N;Umpumpen in Station 1,2,3, Absetzbeh. / ist <AUSEIN-HB   > in <GRUNDARBEI;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+65;Przepompowywanie do zbiornika brudnego RAV;HBSCHMTKUMP;Umpumpen nach Schmutztank RAV / ist<AUSEIN-HB   > in <GRUNDARBEIT >;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+66;Pompa dozowania środka przeciwpiennego RAV;HBDOSIERRAV;Dosierpumpe fuer Schaumbremse RAV / ist <AUSEIN-HB   > (= <GRUNDARBEIT >);ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+72;Przepompowywanie do instalacji odbiorczej;HBENTSORGUMP;Umpumpen nach Entsorgung bauseits / ist <AUSEIN-HB   > in <GRUNDARBEIT >;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+73;Napełnianie parownika RAV ze zbiornika brudnego;HBFUEVDSCHTK;Fuellen RAV Verdampf.aus Schmutztank / ist <AUSEIN-HB   > in <GRUNDARBEIT;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False
+99;Kasowanie znaczników śledzenia kosza;HBSETZMERKWT;Setzmerker loeschen / in <GRUNDARBEIT >;ROLL_HMI.GroundHeld=TRUE;ROLL_HMI.WorkHeld=TRUE;set both held commands FALSE;False

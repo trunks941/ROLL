@@ -1,0 +1,19 @@
+{
+  "cpuIdentifiers": [
+    "OrderNumber:6ES7 513-1AM03-0AB0/V3.1",
+    "OrderNumber:6ES7 513-1AM03-0AB0/V4.0",
+    "OrderNumber:6ES7513-1AM03-0AB0/V3.1",
+    "OrderNumber:6ES7513-1AM03-0AB0/V4.0"
+  ],
+  "hmiIdentifiers": [
+    "OrderNumber:6AV2 124-0JC01-0AX0/17.0.0.0",
+    "OrderNumber:6AV2 124-0JC01-0AX0/19.0.0.0",
+    "OrderNumber:6AV2124-0JC01-0AX0/17.0.0.0",
+    "OrderNumber:6AV2124-0JC01-0AX0/19.0.0.0"
+  ],
+  "screenNames": ["Przeglad", "Receptury", "Reczny", "Alarmy", "Nastawy"],
+  "catalogIdentifiersVerifiedLocally": false,
+  "deliveredCpuFirmwareKnown": false,
+  "physicalIoConfigured": false,
+  "hmiScreenControlsConfigured": false
+}
