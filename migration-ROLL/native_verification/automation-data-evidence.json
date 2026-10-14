@@ -1,0 +1,113 @@
+{
+  "source_blocks": [
+    {
+      "block": "PB7",
+      "source_file": "PB7RROLS.INI",
+      "sha256": "e82e8e5fc742fc3430ad0b3975d2872d3fd68ef9bdfc03ae0d2bf666f258b86e",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 17356,
+        "other_blocks_in_source": []
+      }
+    },
+    {
+      "block": "PB8",
+      "source_file": "PB8ROLLS.INI",
+      "sha256": "cf3ad9dfa4ab17a36adfb3321e1a99240675a30d3300414645a009d45cd1092d",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 9227,
+        "other_blocks_in_source": []
+      }
+    },
+    {
+      "block": "PB9",
+      "source_file": "PB9ROLLS.INI",
+      "sha256": "1365f6f39e38f7aa66d9bd128ce7aff8b441fc917b678b7d6865462c91356896",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 63574,
+        "other_blocks_in_source": []
+      }
+    },
+    {
+      "block": "PB10",
+      "source_file": "PB10ROLS.INI",
+      "sha256": "a0db7ca39b976423309a10675bfbdbfba31b58606d4406670f7e89705fc89872",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 57645,
+        "other_blocks_in_source": []
+      }
+    },
+    {
+      "block": "PB14",
+      "source_file": "PB14ROLS.INI",
+      "sha256": "fe48fe3a7fb4a4e704e5a26d6f4a93f1c0daf5c79860a80182b8b8568632863d",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 22738,
+        "other_blocks_in_source": []
+      }
+    },
+    {
+      "block": "PB15",
+      "source_file": "PB15ROLS.INI",
+      "sha256": "9a2a616e964961d3612225c96128201c64de38b702e9678e216c0a41dcfcf761",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 7191,
+        "other_blocks_in_source": []
+      }
+    },
+    {
+      "block": "PB50",
+      "source_file": "PB50ROLS.INI",
+      "sha256": "51570e7c1f0b167f17eb3020d05b24ed098215787f6cca41390090c7acc5b468",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 1384,
+        "other_blocks_in_source": []
+      }
+    },
+    {
+      "block": "PB51",
+      "source_file": "PB51ROLS.INI",
+      "sha256": "7ddde3e9f33929cad646802123732923a100d13ebe839718bad900a2bcc95555",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 3738,
+        "other_blocks_in_source": [
+          "PB52"
+        ]
+      }
+    },
+    {
+      "block": "PB52",
+      "source_file": "PB51ROLS.INI",
+      "sha256": "7ddde3e9f33929cad646802123732923a100d13ebe839718bad900a2bcc95555",
+      "source_scope": {
+        "source_byte_start": 3738,
+        "source_byte_end": 13537,
+        "other_blocks_in_source": [
+          "PB51"
+        ]
+      }
+    }
+  ],
+  "table_rows": {
+    "automatic-steps-SR.csv": 222,
+    "automation-timer-map.csv": 30,
+    "automation-permits-and-state-map.csv": 41,
+    "tracking-state-SR.csv": 14,
+    "automatic-motion-command-map.csv": 21,
+    "automation-meter-output-map.csv": 2
+  },
+  "automatic_step_bits": 111,
+  "timer_starts": 29,
+  "timer_resets": 1,
+  "tracking_bits_reset_by_M73_7": 7,
+  "M74_0": "Cyclic held-state command from PB15, not a latch; PB16 reads its previous-cycle value",
+  "static_only": true,
+  "runtime_test": false
+}

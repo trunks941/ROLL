@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-14",
+  "confirmed_legacy_MLFBs": [
+    "6ES5 430-7LA12",
+    "6ES5 451-7LA12",
+    "6ES5 454-7LA12"
+  ],
+  "structure": {
+    "DI32": 4,
+    "DQ16_0_5A": 4,
+    "DQ8_2A": 2
+  },
+  "proposed_IO_modules": 10,
+  "DI_capacity": 128,
+  "DQ_capacity": 80,
+  "channel_rows": 208,
+  "legacy_supply_group_rows": 12,
+  "legacy_2A_channels_reduced_to_0_5A": false,
+  "coil_ratings_will_not_be_requested_again": true,
+  "actual_coil_currents_known": false,
+  "power_contact_rating_9A_used_as_coil_current": false,
+  "original_cutoff_routes_preserved_in_requirements": true,
+  "fan": "%Q24.4",
+  "lamp": "%Q16.0",
+  "target_MLFBs_or_terminal_assignments_final": false,
+  "official_S7_module_data_verified": false,
+  "network_check": {
+    "result": "HTTPS proxy CONNECT denied, HTTP 403",
+    "host": "mall.industry.siemens.com",
+    "configuration_draft": "Saved domain additions for user review; requires publication, not applied to runtime",
+    "proposed_domains": [
+      "mall.industry.siemens.com",
+      "support.industry.siemens.com",
+      "sieportal.siemens.com"
+    ]
+  },
+  "design_assumption": "Existing installation operates within the documented legacy module limits; this is a selection envelope, not an electrical acceptance test",
+  "TIA_compiled": false,
+  "PLC_or_hardware_changes": false,
+  "consistency_result": "Passed"
+}

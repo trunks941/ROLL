@@ -1,0 +1,111 @@
+PB 51     -PB 51                     C:04201@ST.S5D                    LEN=79   
+                                                                        Page   1
+Segment  1
+           -T15
+            +-----+
+ -K24.0M  --!T!-!0!
+ KT 060.2 --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+Q   24.0 = K24.0M                    TROMMEL GERADESTELLEN
+T   15   = T15                       ZEITKONTROLLE TROMMEL GERADESTELLEN
+
+
+Segment  2                   Verz. Niveaumangel
+             +---+   -T16
+ -B5.6    --O! & !    +-----+
+ -AUTO_L  ---!   !----!T!-!0!
+             +---+    !     !
+           KT 360.3 --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+I    5.6 = B5.6                      NIVEAU OELABSCHEIDER STAT.1 TGS
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+T   16   = T16                       VERZ.STOERANZEIGE TGS OELABSCHEIDER
+
+Segment  3                   Verz. Schrittkette
+           -T18
+            +-----+
+ -N_1.5   --!T!-!0!
+ KT 010.1 --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+F   37.5 = N_1.5                     SPERRE 3 OEFFNEN                    OPT.
+T   18   = T18                       VERZ.MELDUNG SPERRE 2 GEOEFFNET
+
+Segment  4                   Kontr. WT-Transport
+             +---+
+ -K112.2M ---! & !     +---+
+ -B124.2  --O!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !   -T19
+ -K112.1M ---! & !     !   !    +-----+
+ -B124.1  --O!   !-----!   !----!T!-!0!
+             +---+     +---+    !     !
+                     KT 015.2 --!TV BI!-
+                                !   DE!-
+                              --!R   Q!-
+                                +-----+
+
+Q  112.2 = K112.2M                   WT-TRANSPORT EINFAHREN
+I  124.2 = B124.2                    WT-TRANSPORT EINGEFAHREN
+Q  112.1 = K112.1M                   WT-TRANSPORT AUSFAHREN
+I  124.1 = B124.1                    WT-TRANSPORT AUSGEFAHREN
+T   19   = T19                       ZEITKONTROLLE WT-TRANSPORT EIN-/AUSFAHR.
+
+
+PB 51     -PB 51                     C:04201@ST.S5D                    LEN=79   
+                                                                        Page   2
+Segment  5                   Verz. Schrittkette
+             +---+
+ -B123.4  ---!>=1!     +---+
+ -B123.5  ---!   !-----! & !   -T20
+             +---+     !   !    +-----+
+           -K112.0M ---!   !----!T!-!0!
+                       +---+    !     !
+                     KT 010.1 --!TV BI!-
+                                !   DE!-
+                              --!R   Q!-
+                                +-----+
+
+I  123.4 = B123.4                    WT AN SPERRE 3
+I  123.5 = B123.5                    WT VOR SPERRE 4
+Q  112.0 = K112.0M                   ROLLENBAHN 1 BELADEN
+T   20   = T20                       VERZ.SCHRITTKETTE N1
+
+Segment  6                   Einschaltzeit Bahn 1
+           -T21
+            +-----+
+ -B123.4  --!T!-!0!
+ KT 050.1 --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+I  123.4 = B123.4                    WT AN SPERRE 3
+T   21   = T21                       EINSCHALTZEIT BAHN 1
+
+Segment  7
+             +---+   -T95
+ -B125.0  ---! & !    +-----+
+ -B125.1  ---!   !----!T!-!0!
+             +---+    !     !
+           KT 005.2 --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+I  125.0 = B125.0                    WT AN SPERRE 6
+I  125.1 = B125.1                    WT AM ENDE BAHN 2
+T   95   = T95                       VERZ.ENTLADESPEICHER VOLL
+
+Segment  8
+ 
+                    :BE
+

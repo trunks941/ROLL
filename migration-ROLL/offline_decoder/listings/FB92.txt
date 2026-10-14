@@ -1,0 +1,394 @@
+FB92: MENUE — MENUEVERTEILER FUER OP
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x1C00; block bytes: 828; SHA256: 6db359fd293bfa33005104ee94400fd9f45a79686b193f44378711f64a0e7267
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 5C 84 00 00 00 01 9E
+Code starts at block offset 0x0014.
+FB name: 'ANZ-SCH '; entry SPA bytes: 2D05
+0014 [001C14]  80C0                       U      M 192.0 ; F1-TAST — TASTE F1 BETAETIGT
+0016 [001C16]  A0C4                       UN     M 196.0 ; FF-F1 — FLIP-FLOP TASTE F1
+0018 [001C18]  A0C2                       UN     M 194.0 ; FLHM-F1 — FLANKENHILSMERKER TASTE F1 BETAETIGT
+001A [001C1A]  90C4                       S      M 196.0 ; FF-F1 — FLIP-FLOP TASTE F1
+001C [001C1C]  90C2                       S      M 194.0 ; FLHM-F1 — FLANKENHILSMERKER TASTE F1 BETAETIGT
+001E [001C1E]  1D5F2D01                   SPB    FB 95 ; AUFTRAG — AUFTRAGSAUSGABE AN OP
+       Call descriptor @0020: 2D01; argument words: 0
+0022 [001C22]  1082                       BLD    130
+0024 [001C24]  80C0                       U      M 192.0 ; F1-TAST — TASTE F1 BETAETIGT
+0026 [001C26]  80C4                       U      M 196.0 ; FF-F1 — FLIP-FLOP TASTE F1
+0028 [001C28]  A0C2                       UN     M 194.0 ; FLHM-F1 — FLANKENHILSMERKER TASTE F1 BETAETIGT
+002A [001C2A]  B0C4                       R      M 196.0 ; FF-F1 — FLIP-FLOP TASTE F1
+002C [001C2C]  90C2                       S      M 194.0 ; FLHM-F1 — FLANKENHILSMERKER TASTE F1 BETAETIGT
+002E [001C2E]  1082                       BLD    130
+0030 [001C30]  A0C0                       UN     M 192.0 ; F1-TAST — TASTE F1 BETAETIGT
+0032 [001C32]  B0C2                       R      M 194.0 ; FLHM-F1 — FLANKENHILSMERKER TASTE F1 BETAETIGT
+0034 [001C34]  1082                       BLD    130
+0036 [001C36]  85C1                       U      M 193.5 ; F14-TAST — TASTE F14 BETAETIGT
+0038 [001C38]  89C0                       O      M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+003A [001C3A]  8AC0                       O      M 192.2 ; F3-TAST — TASTE F3 BETAETIGT
+003C [001C3C]  8BC0                       O      M 192.3 ; F4-TAST — TASTE F4 BETAETIGT
+003E [001C3E]  8CC0                       O      M 192.4 ; F5-TAST — TASTE F5 BETAETIGT
+0040 [001C40]  8DC0                       O      M 192.5 ; F6-TAST — TASTE F6 BETAETIGT
+0042 [001C42]  8EC1                       O      M 193.6 ; F15-TAST — TASTE F15 BETAETIGT
+0044 [001C44]  88C6                       O      M 198.0 ; T-UEB — UEBRNAHMETASTE BETAETIGT
+0046 [001C46]  B0C4                       R      M 196.0 ; FF-F1 — FLIP-FLOP TASTE F1
+0048 [001C48]  10FF                       BLD    255
+004A [001C4A]  81C0                       U      M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+004C [001C4C]  A1C4                       UN     M 196.1 ; FF-F2 — FLIP-FLOP TASTE F2
+004E [001C4E]  A1C2                       UN     M 194.1 ; FLHM-F2 — FLANKENHILFSMERKER TASTE F2 BETAETIGT
+0050 [001C50]  91C4                       S      M 196.1 ; FF-F2 — FLIP-FLOP TASTE F2
+0052 [001C52]  91C2                       S      M 194.1 ; FLHM-F2 — FLANKENHILFSMERKER TASTE F2 BETAETIGT
+0054 [001C54]  1082                       BLD    130
+0056 [001C56]  81C0                       U      M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+0058 [001C58]  81C4                       U      M 196.1 ; FF-F2 — FLIP-FLOP TASTE F2
+005A [001C5A]  A1C2                       UN     M 194.1 ; FLHM-F2 — FLANKENHILFSMERKER TASTE F2 BETAETIGT
+005C [001C5C]  B1C4                       R      M 196.1 ; FF-F2 — FLIP-FLOP TASTE F2
+005E [001C5E]  91C2                       S      M 194.1 ; FLHM-F2 — FLANKENHILFSMERKER TASTE F2 BETAETIGT
+0060 [001C60]  1082                       BLD    130
+0062 [001C62]  A1C0                       UN     M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+0064 [001C64]  B1C2                       R      M 194.1 ; FLHM-F2 — FLANKENHILFSMERKER TASTE F2 BETAETIGT
+0066 [001C66]  1082                       BLD    130
+0068 [001C68]  1082                       BLD    130
+006A [001C6A]  85C1                       U      M 193.5 ; F14-TAST — TASTE F14 BETAETIGT
+006C [001C6C]  88C0                       O      M 192.0 ; F1-TAST — TASTE F1 BETAETIGT
+006E [001C6E]  89C0                       O      M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+0070 [001C70]  8BC0                       O      M 192.3 ; F4-TAST — TASTE F4 BETAETIGT
+0072 [001C72]  8B00                       O      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0074 [001C74]  8DC0                       O      M 192.5 ; F6-TAST — TASTE F6 BETAETIGT
+0076 [001C76]  8EC1                       O      M 193.6 ; F15-TAST — TASTE F15 BETAETIGT
+0078 [001C78]  FB00                       O      
+007A [001C7A]  80C6                       U      M 198.0 ; T-UEB — UEBRNAHMETASTE BETAETIGT
+007C [001C7C]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+007E [001C7E]  B1C4                       R      M 196.1 ; FF-F2 — FLIP-FLOP TASTE F2
+0080 [001C80]  1082                       BLD    130
+0082 [001C82]  10FF                       BLD    255
+0084 [001C84]  1082                       BLD    130
+0086 [001C86]  84C0                       U      M 192.4 ; F5-TAST — TASTE F5 BETAETIGT
+0088 [001C88]  A4C4                       UN     M 196.4 ; FF-F5 — FLIP-FLOP TASTE F5
+008A [001C8A]  A4C2                       UN     M 194.4 ; FLHM-F5 — FLANKENHILFSMERKER TASTE F5 BETAETIGT
+008C [001C8C]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+008E [001C8E]  94C4                       S      M 196.4 ; FF-F5 — FLIP-FLOP TASTE F5
+0090 [001C90]  94C2                       S      M 194.4 ; FLHM-F5 — FLANKENHILFSMERKER TASTE F5 BETAETIGT
+0092 [001C92]  1082                       BLD    130
+0094 [001C94]  1082                       BLD    130
+0096 [001C96]  84C0                       U      M 192.4 ; F5-TAST — TASTE F5 BETAETIGT
+0098 [001C98]  84C4                       U      M 196.4 ; FF-F5 — FLIP-FLOP TASTE F5
+009A [001C9A]  A4C2                       UN     M 194.4 ; FLHM-F5 — FLANKENHILFSMERKER TASTE F5 BETAETIGT
+009C [001C9C]  B4C4                       R      M 196.4 ; FF-F5 — FLIP-FLOP TASTE F5
+009E [001C9E]  94C2                       S      M 194.4 ; FLHM-F5 — FLANKENHILFSMERKER TASTE F5 BETAETIGT
+00A0 [001CA0]  1082                       BLD    130
+00A2 [001CA2]  A4C0                       UN     M 192.4 ; F5-TAST — TASTE F5 BETAETIGT
+00A4 [001CA4]  B4C2                       R      M 194.4 ; FLHM-F5 — FLANKENHILFSMERKER TASTE F5 BETAETIGT
+00A6 [001CA6]  1082                       BLD    130
+00A8 [001CA8]  85C1                       U      M 193.5 ; F14-TAST — TASTE F14 BETAETIGT
+00AA [001CAA]  88C0                       O      M 192.0 ; F1-TAST — TASTE F1 BETAETIGT
+00AC [001CAC]  89C0                       O      M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+00AE [001CAE]  8B00                       O      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00B0 [001CB0]  8BC0                       O      M 192.3 ; F4-TAST — TASTE F4 BETAETIGT
+00B2 [001CB2]  8B00                       O      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00B4 [001CB4]  B4C4                       R      M 196.4 ; FF-F5 — FLIP-FLOP TASTE F5
+00B6 [001CB6]  1082                       BLD    130
+00B8 [001CB8]  10FF                       BLD    255
+00BA [001CBA]  1082                       BLD    130
+00BC [001CBC]  85C0                       U      M 192.5 ; F6-TAST — TASTE F6 BETAETIGT
+00BE [001CBE]  A5C4                       UN     M 196.5 ; FF-F6 — FLIP-FLOP TASTE F6
+00C0 [001CC0]  A5C2                       UN     M 194.5 ; FLHM-F6 — FLANKENHILFSMERKER TASTE F6 BETAETIGT
+00C2 [001CC2]  95C4                       S      M 196.5 ; FF-F6 — FLIP-FLOP TASTE F6
+00C4 [001CC4]  95C2                       S      M 194.5 ; FLHM-F6 — FLANKENHILFSMERKER TASTE F6 BETAETIGT
+00C6 [001CC6]  1082                       BLD    130
+00C8 [001CC8]  85C0                       U      M 192.5 ; F6-TAST — TASTE F6 BETAETIGT
+00CA [001CCA]  85C4                       U      M 196.5 ; FF-F6 — FLIP-FLOP TASTE F6
+00CC [001CCC]  A5C2                       UN     M 194.5 ; FLHM-F6 — FLANKENHILFSMERKER TASTE F6 BETAETIGT
+00CE [001CCE]  B5C4                       R      M 196.5 ; FF-F6 — FLIP-FLOP TASTE F6
+00D0 [001CD0]  95C2                       S      M 194.5 ; FLHM-F6 — FLANKENHILFSMERKER TASTE F6 BETAETIGT
+00D2 [001CD2]  1082                       BLD    130
+00D4 [001CD4]  A5C0                       UN     M 192.5 ; F6-TAST — TASTE F6 BETAETIGT
+00D6 [001CD6]  B5C2                       R      M 194.5 ; FLHM-F6 — FLANKENHILFSMERKER TASTE F6 BETAETIGT
+00D8 [001CD8]  1082                       BLD    130
+00DA [001CDA]  85C1                       U      M 193.5 ; F14-TAST — TASTE F14 BETAETIGT
+00DC [001CDC]  88C0                       O      M 192.0 ; F1-TAST — TASTE F1 BETAETIGT
+00DE [001CDE]  89C0                       O      M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+00E0 [001CE0]  8AC0                       O      M 192.2 ; F3-TAST — TASTE F3 BETAETIGT
+00E2 [001CE2]  8BC0                       O      M 192.3 ; F4-TAST — TASTE F4 BETAETIGT
+00E4 [001CE4]  8B00                       O      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00E6 [001CE6]  8EC1                       O      M 193.6 ; F15-TAST — TASTE F15 BETAETIGT
+00E8 [001CE8]  B5C4                       R      M 196.5 ; FF-F6 — FLIP-FLOP TASTE F6
+00EA [001CEA]  10FF                       BLD    255
+00EC [001CEC]  1082                       BLD    130
+00EE [001CEE]  85C1                       U      M 193.5 ; F14-TAST — TASTE F14 BETAETIGT
+00F0 [001CF0]  A5C5                       UN     M 197.5 ; FF-F14 — FLIP-FLOP TASTE F14
+00F2 [001CF2]  A5C3                       UN     M 195.5 ; FLHM-F14 — FLANKENHILFSMERKER TASTE F14 BETAETIGT
+00F4 [001CF4]  95C5                       S      M 197.5 ; FF-F14 — FLIP-FLOP TASTE F14
+00F6 [001CF6]  95C3                       S      M 195.5 ; FLHM-F14 — FLANKENHILFSMERKER TASTE F14 BETAETIGT
+00F8 [001CF8]  1082                       BLD    130
+00FA [001CFA]  85C1                       U      M 193.5 ; F14-TAST — TASTE F14 BETAETIGT
+00FC [001CFC]  85C5                       U      M 197.5 ; FF-F14 — FLIP-FLOP TASTE F14
+00FE [001CFE]  A5C3                       UN     M 195.5 ; FLHM-F14 — FLANKENHILFSMERKER TASTE F14 BETAETIGT
+0100 [001D00]  88C0                       O      M 192.0 ; F1-TAST — TASTE F1 BETAETIGT
+0102 [001D02]  89C0                       O      M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+0104 [001D04]  8AC0                       O      M 192.2 ; F3-TAST — TASTE F3 BETAETIGT
+0106 [001D06]  8BC0                       O      M 192.3 ; F4-TAST — TASTE F4 BETAETIGT
+0108 [001D08]  8B00                       O      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+010A [001D0A]  8DC0                       O      M 192.5 ; F6-TAST — TASTE F6 BETAETIGT
+010C [001D0C]  8EC1                       O      M 193.6 ; F15-TAST — TASTE F15 BETAETIGT
+010E [001D0E]  B5C5                       R      M 197.5 ; FF-F14 — FLIP-FLOP TASTE F14
+0110 [001D10]  95C3                       S      M 195.5 ; FLHM-F14 — FLANKENHILFSMERKER TASTE F14 BETAETIGT
+0112 [001D12]  1082                       BLD    130
+0114 [001D14]  A5C1                       UN     M 193.5 ; F14-TAST — TASTE F14 BETAETIGT
+0116 [001D16]  B5C3                       R      M 195.5 ; FLHM-F14 — FLANKENHILFSMERKER TASTE F14 BETAETIGT
+0118 [001D18]  1082                       BLD    130
+011A [001D1A]  10FF                       BLD    255
+011C [001D1C]  83C0                       U      M 192.3 ; F4-TAST — TASTE F4 BETAETIGT
+011E [001D1E]  A3C2                       UN     M 194.3 ; FLHM-F4 — FALNKENHILFSMERKER TASTE F4 BETAETIGT
+0120 [001D20]  1D5F2D01                   SPB    FB 95 ; AUFTRAG — AUFTRAGSAUSGABE AN OP
+       Call descriptor @0122: 2D01; argument words: 0
+0124 [001D24]  1082                       BLD    130
+0126 [001D26]  83C0                       U      M 192.3 ; F4-TAST — TASTE F4 BETAETIGT
+0128 [001D28]  9BC2                       =      M 194.3 ; FLHM-F4 — FALNKENHILFSMERKER TASTE F4 BETAETIGT
+012A [001D2A]  1082                       BLD    130
+012C [001D2C]  10FF                       BLD    255
+012E [001D2E]  1083                       BLD    131
+0130 [001D30]  1082                       BLD    130
+0132 [001D32]  20D3                       A      DB 211 ; OP->AG — DATENAUSTAUSCH VOM OP ZUM AG ........RAM
+0134 [001D34]  1082                       BLD    130
+0136 [001D36]  3205                       L      DW 5
+0138 [001D38]  30200114                   L      KY 1,20
+013C [001D3C]  2160                       ><F    
+013E [001D3E]  FA26                       SPB=   @018A (relative +38 words)
+0140 [001D40]  1082                       BLD    130
+0142 [001D42]  1082                       BLD    130
+0144 [001D44]  1082                       BLD    130
+0146 [001D46]  1082                       BLD    130
+0148 [001D48]  1082                       BLD    130
+014A [001D4A]  1082                       BLD    130
+014C [001D4C]  1082                       BLD    130
+014E [001D4E]  2206                       L      DL 6
+0150 [001D50]  1082                       BLD    130
+0152 [001D52]  30040001                   L      KF +1
+0156 [001D56]  2180                       !=F    
+0158 [001D58]  90BD                       S      M 189.0 ; N1_ANZ — SCHRITTKETTE N1 WIRD ANGEZEIGT
+015A [001D5A]  1082                       BLD    130
+015C [001D5C]  7002                       TAK    
+015E [001D5E]  30040002                   L      KF +2
+0162 [001D62]  2180                       !=F    
+0164 [001D64]  91BD                       S      M 189.1 ; N2_ANZ — SCHRITTKETTE N2 WIRD ANGEZEIGT
+0166 [001D66]  1082                       BLD    130
+0168 [001D68]  7002                       TAK    
+016A [001D6A]  30040003                   L      KF +3
+016E [001D6E]  2180                       !=F    
+0170 [001D70]  92BD                       S      M 189.2 ; N3_ANZ — SCHRITTKETTE N3 WIRD ANGEZEIGT
+0172 [001D72]  1082                       BLD    130
+0174 [001D74]  7002                       TAK    
+0176 [001D76]  3004000B                   L      KF +11
+017A [001D7A]  2180                       !=F    
+017C [001D7C]  93BD                       S      M 189.3 ; N11_ANZ — SCHRITTKETTE N11 WIRD ANGEZEIGT
+017E [001D7E]  1082                       BLD    130
+0180 [001D80]  3D5F2D01                   SPA    FB 95 ; AUFTRAG — AUFTRAGSAUSGABE AN OP
+       Call descriptor @0182: 2D01; argument words: 0
+0184 [001D84]  1082                       BLD    130
+0186 [001D86]  2D12                       SPA=   @01AA (relative +18 words)
+0188 [001D88]  1082                       BLD    130
+018A [001D8A]  1082                       BLD    130
+018C [001D8C]  1082                       BLD    130
+018E [001D8E]  12C0                       L      MW 192 ; MW192 — TASTATURABBILD OP15
+0190 [001D90]  30400000                   L      KH 0000
+0194 [001D94]  2160                       ><F    
+0196 [001D96]  87BE                       U      M 190.7 ; FLANK — FLANKE MIND. EINE F-TASTE BETAETIGT
+0198 [001D98]  FA03                       SPB=   @019E (relative +3 words)
+019A [001D9A]  2D08                       SPA=   @01AA (relative +8 words)
+019C [001D9C]  1082                       BLD    130
+019E [001D9E]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+01A0 [001DA0]  B0BD                       R      M 189.0 ; N1_ANZ — SCHRITTKETTE N1 WIRD ANGEZEIGT
+01A2 [001DA2]  B1BD                       R      M 189.1 ; N2_ANZ — SCHRITTKETTE N2 WIRD ANGEZEIGT
+01A4 [001DA4]  B2BD                       R      M 189.2 ; N3_ANZ — SCHRITTKETTE N3 WIRD ANGEZEIGT
+01A6 [001DA6]  B3BD                       R      M 189.3 ; N11_ANZ — SCHRITTKETTE N11 WIRD ANGEZEIGT
+01A8 [001DA8]  1082                       BLD    130
+01AA [001DAA]  10FF                       BLD    255
+01AC [001DAC]  1082                       BLD    130
+01AE [001DAE]  20D2                       A      DB 210 ; AG->OP — DATENAUSTAUSCH VOM AG ZUM OP ........RAM
+01B0 [001DB0]  1082                       BLD    130
+01B2 [001DB2]  80BD                       U      M 189.0 ; N1_ANZ — SCHRITTKETTE N1 WIRD ANGEZEIGT
+01B4 [001DB4]  FA10                       SPB=   @01D4 (relative +16 words)
+01B6 [001DB6]  1082                       BLD    130
+01B8 [001DB8]  30400000                   L      KH 0000
+01BC [001DBC]  3332                       T      DW 50
+01BE [001DBE]  3333                       T      DW 51
+01C0 [001DC0]  3334                       T      DW 52
+01C2 [001DC2]  3335                       T      DW 53
+01C4 [001DC4]  3336                       T      DW 54
+01C6 [001DC6]  3337                       T      DW 55
+01C8 [001DC8]  3338                       T      DW 56
+01CA [001DCA]  3339                       T      DW 57
+01CC [001DCC]  333A                       T      DW 58
+01CE [001DCE]  2D40                       SPA=   @024E (relative +64 words)
+01D0 [001DD0]  1082                       BLD    130
+01D2 [001DD2]  1082                       BLD    130
+01D4 [001DD4]  3D602D0312253232           SPA    FB 96 ; SWAP — LOW- UND HIGH-BYTE TAUSCHEN
+       Call descriptor @01D6: 2D03; argument words: 2
+       Argument @01D8 1225: INPU (E/W) = MW 37
+       Argument @01DA 3232: OUTP (A/W) = DW 50
+01DC [001DDC]  3D602D0312273233           SPA    FB 96 ; SWAP — LOW- UND HIGH-BYTE TAUSCHEN
+       Call descriptor @01DE: 2D03; argument words: 2
+       Argument @01E0 1227: INPU (E/W) = MW 39
+       Argument @01E2 3233: OUTP (A/W) = DW 51
+01E4 [001DE4]  3D602D0312293234           SPA    FB 96 ; SWAP — LOW- UND HIGH-BYTE TAUSCHEN
+       Call descriptor @01E6: 2D03; argument words: 2
+       Argument @01E8 1229: INPU (E/W) = MW 41
+       Argument @01EA 3234: OUTP (A/W) = DW 52
+01EC [001DEC]  3D602D03122B3235           SPA    FB 96 ; SWAP — LOW- UND HIGH-BYTE TAUSCHEN
+       Call descriptor @01EE: 2D03; argument words: 2
+       Argument @01F0 122B: INPU (E/W) = MW 43
+       Argument @01F2 3235: OUTP (A/W) = DW 53
+01F4 [001DF4]  3D602D03122D3236           SPA    FB 96 ; SWAP — LOW- UND HIGH-BYTE TAUSCHEN
+       Call descriptor @01F6: 2D03; argument words: 2
+       Argument @01F8 122D: INPU (E/W) = MW 45
+       Argument @01FA 3236: OUTP (A/W) = DW 54
+01FC [001DFC]  3D602D03122F3237           SPA    FB 96 ; SWAP — LOW- UND HIGH-BYTE TAUSCHEN
+       Call descriptor @01FE: 2D03; argument words: 2
+       Argument @0200 122F: INPU (E/W) = MW 47
+       Argument @0202 3237: OUTP (A/W) = DW 55
+0204 [001E04]  3D602D0312313238           SPA    FB 96 ; SWAP — LOW- UND HIGH-BYTE TAUSCHEN
+       Call descriptor @0206: 2D03; argument words: 2
+       Argument @0208 1231: INPU (E/W) = MW 49
+       Argument @020A 3238: OUTP (A/W) = DW 56
+020C [001E0C]  3D602D0312333239           SPA    FB 96 ; SWAP — LOW- UND HIGH-BYTE TAUSCHEN
+       Call descriptor @020E: 2D03; argument words: 2
+       Argument @0210 1233: INPU (E/W) = MW 51
+       Argument @0212 3239: OUTP (A/W) = DW 57
+0214 [001E14]  1082                       BLD    130
+0216 [001E16]  0A35                       L      MB 53 ; MB53 — SCHRITTKETTE N1
+0218 [001E18]  2B3A                       T      DR 58
+021A [001E1A]  1082                       BLD    130
+021C [001E1C]  3232                       L      DW 50
+021E [001E1E]  3233                       L      DW 51
+0220 [001E20]  4900                       OW     
+0222 [001E22]  3234                       L      DW 52
+0224 [001E24]  4900                       OW     
+0226 [001E26]  3235                       L      DW 53
+0228 [001E28]  4900                       OW     
+022A [001E2A]  3236                       L      DW 54
+022C [001E2C]  4900                       OW     
+022E [001E2E]  3237                       L      DW 55
+0230 [001E30]  4900                       OW     
+0232 [001E32]  3238                       L      DW 56
+0234 [001E34]  4900                       OW     
+0236 [001E36]  3239                       L      DW 57
+0238 [001E38]  4900                       OW     
+023A [001E3A]  323A                       L      DW 58
+023C [001E3C]  4900                       OW     
+023E [001E3E]  30400000                   L      KH 0000
+0242 [001E42]  2160                       ><F    
+0244 [001E44]  FA05                       SPB=   @024E (relative +5 words)
+0246 [001E46]  30408000                   L      KH 8000
+024A [001E4A]  333A                       T      DW 58
+024C [001E4C]  1082                       BLD    130
+024E [001E4E]  1082                       BLD    130
+0250 [001E50]  10FF                       BLD    255
+0252 [001E52]  1082                       BLD    130
+0254 [001E54]  10FF                       BLD    255
+0256 [001E56]  1082                       BLD    130
+0258 [001E58]  2D17                       SPA=   @0286 (relative +23 words)
+025A [001E5A]  1082                       BLD    130
+025C [001E5C]  1082                       BLD    130
+025E [001E5E]  82BD                       U      M 189.2 ; N3_ANZ — SCHRITTKETTE N3 WIRD ANGEZEIGT
+0260 [001E60]  FA07                       SPB=   @026E (relative +7 words)
+0262 [001E62]  1082                       BLD    130
+0264 [001E64]  30400000                   L      KH 0000
+0268 [001E68]  336F                       T      DW 111
+026A [001E6A]  2D0D                       SPA=   @0284 (relative +13 words)
+026C [001E6C]  1082                       BLD    130
+026E [001E6E]  0A49                       L      MB 73 ; MB73 — WT-VERFOLGUNG
+0270 [001E70]  2B6F                       T      DR 111
+0272 [001E72]  1082                       BLD    130
+0274 [001E74]  30400000                   L      KH 0000
+0278 [001E78]  2160                       ><F    
+027A [001E7A]  FA05                       SPB=   @0284 (relative +5 words)
+027C [001E7C]  30408000                   L      KH 8000
+0280 [001E80]  336F                       T      DW 111
+0282 [001E82]  1082                       BLD    130
+0284 [001E84]  1082                       BLD    130
+0286 [001E86]  10FF                       BLD    255
+0288 [001E88]  1082                       BLD    130
+028A [001E8A]  2D1C                       SPA=   @02C2 (relative +28 words)
+028C [001E8C]  1082                       BLD    130
+028E [001E8E]  83BD                       U      M 189.3 ; N11_ANZ — SCHRITTKETTE N11 WIRD ANGEZEIGT
+0290 [001E90]  FA07                       SPB=   @029E (relative +7 words)
+0292 [001E92]  1082                       BLD    130
+0294 [001E94]  30400000                   L      KH 0000
+0298 [001E98]  336E                       T      DW 110
+029A [001E9A]  2D14                       SPA=   @02C2 (relative +20 words)
+029C [001E9C]  1082                       BLD    130
+029E [001E9E]  1082                       BLD    130
+02A0 [001EA0]  0A3A                       L      MB 58 ; MB58 — SCHRITTKETTE N11
+02A2 [001EA2]  2B6E                       T      DR 110
+02A4 [001EA4]  0A3B                       L      MB 59 ; MB59 — SCHRITTKETTE N11
+02A6 [001EA6]  3040007F                   L      KH 007F
+02AA [001EAA]  4100                       UW     
+02AC [001EAC]  236E                       T      DL 110
+02AE [001EAE]  1082                       BLD    130
+02B0 [001EB0]  326E                       L      DW 110
+02B2 [001EB2]  30400000                   L      KH 0000
+02B6 [001EB6]  2160                       ><F    
+02B8 [001EB8]  FA05                       SPB=   @02C2 (relative +5 words)
+02BA [001EBA]  30408000                   L      KH 8000
+02BE [001EBE]  336E                       T      DW 110
+02C0 [001EC0]  1082                       BLD    130
+02C2 [001EC2]  10FF                       BLD    255
+02C4 [001EC4]  1082                       BLD    130
+02C6 [001EC6]  323D                       L      DW 61
+02C8 [001EC8]  13FA                       T      MW 250 ; MW250 — SCHMIERMERKER
+02CA [001ECA]  323E                       L      DW 62
+02CC [001ECC]  13FC                       T      MW 252 ; MW252 — SCHMIERMERKER
+02CE [001ECE]  1082                       BLD    130
+02D0 [001ED0]  A0C0                       UN     M 192.0 ; F1-TAST — TASTE F1 BETAETIGT
+02D2 [001ED2]  A1C0                       UN     M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+02D4 [001ED4]  A2C0                       UN     M 192.2 ; F3-TAST — TASTE F3 BETAETIGT
+02D6 [001ED6]  A3C0                       UN     M 192.3 ; F4-TAST — TASTE F4 BETAETIGT
+02D8 [001ED8]  A5C0                       UN     M 192.5 ; F6-TAST — TASTE F6 BETAETIGT
+02DA [001EDA]  A5C1                       UN     M 193.5 ; F14-TAST — TASTE F14 BETAETIGT
+02DC [001EDC]  A6C1                       UN     M 193.6 ; F15-TAST — TASTE F15 BETAETIGT
+02DE [001EDE]  FA08                       SPB=   @02EE (relative +8 words)
+02E0 [001EE0]  1082                       BLD    130
+02E2 [001EE2]  30400000                   L      KH 0000
+02E6 [001EE6]  0BFA                       T      MB 250 ; MB250 — SCHMIERMERKERBYTE
+02E8 [001EE8]  0BFB                       T      MB 251 ; MB251 — SCHMIERMERKERBYTE
+02EA [001EEA]  0BFC                       T      MB 252 ; MB252 — SCHMIERMERKERBYTE
+02EC [001EEC]  1082                       BLD    130
+02EE [001EEE]  80C0                       U      M 192.0 ; F1-TAST — TASTE F1 BETAETIGT
+02F0 [001EF0]  90FB                       S      M 251.0 ; M251.0 — SCHMIERMERKER
+02F2 [001EF2]  91FB                       S      M 251.1 ; M251.1 — SCHMIERMERKER
+02F4 [001EF4]  1082                       BLD    130
+02F6 [001EF6]  81C0                       U      M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+02F8 [001EF8]  92FB                       S      M 251.2 ; M251.2 — SCHMIERMERKER
+02FA [001EFA]  93FB                       S      M 251.3 ; M251.3 — SCHMIERMERKER
+02FC [001EFC]  1082                       BLD    130
+02FE [001EFE]  82C0                       U      M 192.2 ; F3-TAST — TASTE F3 BETAETIGT
+0300 [001F00]  94FB                       S      M 251.4 ; M251.4 — SCHMIERMERKER
+0302 [001F02]  95FB                       S      M 251.5 ; M251.5 — SCHMIERMERKER
+0304 [001F04]  1082                       BLD    130
+0306 [001F06]  83C0                       U      M 192.3 ; F4-TAST — TASTE F4 BETAETIGT
+0308 [001F08]  96FB                       S      M 251.6 ; M251.6 — SCHMIERMERKER
+030A [001F0A]  97FB                       S      M 251.7 ; M251.7 — SCHMIERMERKER
+030C [001F0C]  1082                       BLD    130
+030E [001F0E]  85C0                       U      M 192.5 ; F6-TAST — TASTE F6 BETAETIGT
+0310 [001F10]  92FA                       S      M 250.2 ; M250.2 — SCHMIERMERKER
+0312 [001F12]  93FA                       S      M 250.3 ; M250.3 — SCHMIERMERKER
+0314 [001F14]  1082                       BLD    130
+0316 [001F16]  87C0                       U      M 192.7 ; F8-TAST — TASTE F8 BETAETIGT
+0318 [001F18]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+031A [001F1A]  9EFA                       =      M 250.6 ; M250.6 — SCHMIERMERKER
+031C [001F1C]  9FFA                       =      M 250.7 ; M250.7 — SCHMIERMERKER
+031E [001F1E]  1082                       BLD    130
+0320 [001F20]  85C1                       U      M 193.5 ; F14-TAST — TASTE F14 BETAETIGT
+0322 [001F22]  92FC                       S      M 252.2 ; M252.2 — SCHMIERMERKER
+0324 [001F24]  93FC                       S      M 252.3 ; M252.3 — SCHMIERMERKER
+0326 [001F26]  1082                       BLD    130
+0328 [001F28]  86C1                       U      M 193.6 ; F15-TAST — TASTE F15 BETAETIGT
+032A [001F2A]  94FC                       S      M 252.4 ; M252.4 — SCHMIERMERKER
+032C [001F2C]  95FC                       S      M 252.5 ; M252.5 — SCHMIERMERKER
+032E [001F2E]  1082                       BLD    130
+0330 [001F30]  12FA                       L      MW 250 ; MW250 — SCHMIERMERKER
+0332 [001F32]  333D                       T      DW 61
+0334 [001F34]  12FC                       L      MW 252 ; MW252 — SCHMIERMERKER
+0336 [001F36]  333E                       T      DW 62
+0338 [001F38]  1082                       BLD    130
+033A [001F3A]  6500                       BE     

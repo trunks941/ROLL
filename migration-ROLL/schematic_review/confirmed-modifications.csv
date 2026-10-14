@@ -1,0 +1,4 @@
+﻿id;pages;function;devices;user_confirmed_installed_and_working;confirmation_date;PLC_relationship;migration_requirement
+PUMP_ST2;5 | 45;Station 2 circulation pump;KM45.16 / Q5.11 / F5.12;True;2026-10-13;"Hardwired pump circuit; no dedicated PLC output inferred";Retain current installed hardwired pump function and its existing command/interlock paths
+DERAILMENT;19;Wagensicherung / Entgleisung;Sensors and K19.14 in A3.5 path;True;2026-10-13;"Existing E3.5 status; independent A3.5 contact cuts drive 11L+";Retain independent hardware derailment protection and its connection to A3.5
+CLOCK;25 | 28;Heating clock K-UHR;K-UHR relay and contacts;True;2026-10-13;Drawing shows relationships to E3.1 clock and E0.2 AUTO;Retain current installed clock function and its contact interface

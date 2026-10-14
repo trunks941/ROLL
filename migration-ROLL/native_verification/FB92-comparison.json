@@ -1,0 +1,116 @@
+{
+  "block": "FB92",
+  "source_file": "FB92ROLS.INI",
+  "sha256": "70881915aa2b926a8b6baea2e9566a31cccd7c49f1252f5bca7b62dc664c3cc9",
+  "size_bytes": 20698,
+  "pages": 9,
+  "networks": 12,
+  "block_bytes": 828,
+  "positions_compared": 360,
+  "executing_instructions": 266,
+  "BLD_display_rows": 94,
+  "jumps_compared": 16,
+  "addressed_positions": 360,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [
+    {
+      "argument_offset": 472,
+      "name": "INPU",
+      "value": "MW 37",
+      "raw_hex": "1225"
+    },
+    {
+      "argument_offset": 474,
+      "name": "OUTP",
+      "value": "DW 50",
+      "raw_hex": "3232"
+    },
+    {
+      "argument_offset": 480,
+      "name": "INPU",
+      "value": "MW 39",
+      "raw_hex": "1227"
+    },
+    {
+      "argument_offset": 482,
+      "name": "OUTP",
+      "value": "DW 51",
+      "raw_hex": "3233"
+    },
+    {
+      "argument_offset": 488,
+      "name": "INPU",
+      "value": "MW 41",
+      "raw_hex": "1229"
+    },
+    {
+      "argument_offset": 490,
+      "name": "OUTP",
+      "value": "DW 52",
+      "raw_hex": "3234"
+    },
+    {
+      "argument_offset": 496,
+      "name": "INPU",
+      "value": "MW 43",
+      "raw_hex": "122B"
+    },
+    {
+      "argument_offset": 498,
+      "name": "OUTP",
+      "value": "DW 53",
+      "raw_hex": "3235"
+    },
+    {
+      "argument_offset": 504,
+      "name": "INPU",
+      "value": "MW 45",
+      "raw_hex": "122D"
+    },
+    {
+      "argument_offset": 506,
+      "name": "OUTP",
+      "value": "DW 54",
+      "raw_hex": "3236"
+    },
+    {
+      "argument_offset": 512,
+      "name": "INPU",
+      "value": "MW 47",
+      "raw_hex": "122F"
+    },
+    {
+      "argument_offset": 514,
+      "name": "OUTP",
+      "value": "DW 55",
+      "raw_hex": "3237"
+    },
+    {
+      "argument_offset": 520,
+      "name": "INPU",
+      "value": "MW 49",
+      "raw_hex": "1231"
+    },
+    {
+      "argument_offset": 522,
+      "name": "OUTP",
+      "value": "DW 56",
+      "raw_hex": "3238"
+    },
+    {
+      "argument_offset": 528,
+      "name": "INPU",
+      "value": "MW 51",
+      "raw_hex": "1233"
+    },
+    {
+      "argument_offset": 530,
+      "name": "OUTP",
+      "value": "DW 57",
+      "raw_hex": "3239"
+    }
+  ],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

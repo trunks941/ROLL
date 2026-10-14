@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-14",
+  "file": "/workspace/migration-ROLL-weryfikacja-STEP5.zip",
+  "files": 539,
+  "size_bytes": 61736636,
+  "sha256": "0f4e33e402818e6a9f968103dbf5755108fe5a13350b72a832796ac6b073a31d",
+  "CRC": "Passed",
+  "all_members_identical_to_workspace": true,
+  "confirmed_legacy_IO_types": 3,
+  "structural_S7_IO_modules": 10,
+  "official_S7_catalog_data_verified": false
+}

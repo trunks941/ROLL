@@ -1,0 +1,10 @@
+﻿source;offset;absolute_offset;raw_hex;reference_table_operand;decoded_operand;target_number;archive_DB_present;archive_DX_present;previous_command;previous_operand;status
+FB105;58;8634;7805000F;DX 15;DB 15;15;False;False;L;KF +131;"DB operand verified against native STEP 5 FB105RLS.INI; upstream DX label retained separately; PLC behavior not simulated"
+FB105;140;8716;78050013;DX 19;DB 19;19;False;False;L;KF +131;"DB operand verified against native STEP 5 FB105RLS.INI; upstream DX label retained separately; PLC behavior not simulated"
+FB105;220;8796;78050029;DX 41;DB 41;41;True;False;L;KF +40;"DB operand verified against native STEP 5 FB105RLS.INI; upstream DX label retained separately; PLC behavior not simulated"
+FB105;230;8806;78050033;DX 51;DB 51;51;True;False;L;KF +186;"DB operand verified against native STEP 5 FB105RLS.INI; upstream DX label retained separately; PLC behavior not simulated"
+FB105;250;8826;780500CD;DX 205;DB 205;205;True;False;L;KF +220;"DB operand verified against native STEP 5 FB105RLS.INI; upstream DX label retained separately; PLC behavior not simulated"
+FB105;264;8840;780500D2;DX 210;DB 210;210;True;False;L;KF +128;"DB operand verified against native STEP 5 FB105RLS.INI; upstream DX label retained separately; PLC behavior not simulated"
+FB105;274;8850;780500D3;DX 211;DB 211;211;True;False;L;KF +10;"DB operand verified against native STEP 5 FB105RLS.INI; upstream DX label retained separately; PLC behavior not simulated"
+FB105;288;8864;7805003C;DX 60;DB 60;60;True;False;L;KF +50;"DB operand verified against native STEP 5 FB105RLS.INI; upstream DX label retained separately; PLC behavior not simulated"
+FB105;298;8874;780500D5;DX 213;DB 213;213;True;False;L;KF +10;"DB operand verified against native STEP 5 FB105RLS.INI; upstream DX label retained separately; PLC behavior not simulated"

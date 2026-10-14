@@ -1,0 +1,10 @@
+﻿block;native_word_address;block_byte_offset;raw_hex;loaded_KF;created_data_words;created_DW_first;created_DW_last;archival_data_words;manual_pdf_page;manual_printed_page;note
+DB15;0018;58;7805000F;131;132;0;131;;234;8-36;"Positive parameter; KF 0 deletes rather than creates a DB. Existing DB unaffected by generation; later copying is separate."
+DB19;0041;140;78050013;131;132;0;131;;234;8-36;"Positive parameter; KF 0 deletes rather than creates a DB. Existing DB unaffected by generation; later copying is separate."
+DB41;0069;220;78050029;40;41;0;40;41;234;8-36;"Positive parameter; KF 0 deletes rather than creates a DB. Existing DB unaffected by generation; later copying is separate."
+DB51;006E;230;78050033;186;187;0;186;187;234;8-36;"Positive parameter; KF 0 deletes rather than creates a DB. Existing DB unaffected by generation; later copying is separate."
+DB205;0078;250;780500CD;220;221;0;220;221;234;8-36;"Positive parameter; KF 0 deletes rather than creates a DB. Existing DB unaffected by generation; later copying is separate."
+DB210;007F;264;780500D2;128;129;0;128;129;234;8-36;"Positive parameter; KF 0 deletes rather than creates a DB. Existing DB unaffected by generation; later copying is separate."
+DB211;0084;274;780500D3;10;11;0;10;11;234;8-36;"Positive parameter; KF 0 deletes rather than creates a DB. Existing DB unaffected by generation; later copying is separate."
+DB60;008B;288;7805003C;50;51;0;50;51;234;8-36;"Positive parameter; KF 0 deletes rather than creates a DB. Existing DB unaffected by generation; later copying is separate."
+DB213;0090;298;780500D5;10;11;0;10;11;234;8-36;"Positive parameter; KF 0 deletes rather than creates a DB. Existing DB unaffected by generation; later copying is separate."

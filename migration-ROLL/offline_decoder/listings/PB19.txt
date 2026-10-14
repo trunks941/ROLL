@@ -1,0 +1,149 @@
+PB19: PB 19 — VERARBEITUNGSEBENE HEIZUNGEN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xC180; block bytes: 302; SHA256: dfda63ad1408edc41910789f9c3c554e5c2f2c31f32af0349fff4c702fc004a6
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 13 80 00 00 00 00 97
+Code starts at block offset 0x000A.
+000A [00C18A]  E603                       UN     E 3.6 ; Q/PU_GE — MOTORSCHUTZSCHALTER PUMPEN/GEBLAESE
+000C [00C18C]  C205                       U      E 5.2 ; B5.2 — NIVEAU STATION 1 UEF
+000E [00C18E]  C405                       U      E 5.4 ; B5.4 — NIVEAU OELABSCHEIDER STAT.1 UEF
+0010 [00C190]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+0012 [00C192]  A006                       UN     M 6.0 ; STOER_09 — STATION 1 UEBERFUELLT ..............B5.2
+0014 [00C194]  A206                       UN     M 6.2 ; STOER_11 — OELABSCHEIDER UEBERFUELLT ..........B5.4
+0016 [00C196]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0018 [00C198]  BA00                       U(     
+001A [00C19A]  C903                       O      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+001C [00C19C]  8D1F                       O      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+001E [00C19E]  BF00                       )      
+0020 [00C1A0]  9852                       =      M 82.0 ; M82.0 — EINSCHALTBED.FUER HEIZUNG STATION 1-n
+0022 [00C1A2]  10FF                       BLD    255
+0024 [00C1A4]  E603                       UN     E 3.6 ; Q/PU_GE — MOTORSCHUTZSCHALTER PUMPEN/GEBLAESE
+0026 [00C1A6]  C508                       U      E 8.5 ; B8.5 — THERMOSTAT GEBLAESE WARMLUFT STATION 4
+0028 [00C1A8]  C308                       U      E 8.3 ; K18.3MF — SICHERHEITSABSCH.HEIZUNG STATION 4
+002A [00C1AA]  A305                       UN     M 5.3 ; STOER_04 — MOTOR GEBL.WARMLUFT ST.4 ZU HEISS ..B8.5
+002C [00C1AC]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+002E [00C1AE]  A00C                       UN     M 12.0 ; STOER_57 — TEMP.-BEGR.HEIZ.ST.4 AUSGELOEST
+0030 [00C1B0]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0032 [00C1B2]  BA00                       U(     
+0034 [00C1B4]  C903                       O      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+0036 [00C1B6]  8D1F                       O      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0038 [00C1B8]  BF00                       )      
+003A [00C1BA]  9A52                       =      M 82.2 ; M82.2 — EINSCHALTBED.FUER WARMLUFT STATION 4
+003C [00C1BC]  10FF                       BLD    255
+003E [00C1BE]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0040 [00C1C0]  8028                       U      M 40.0 ; N_1.24 — BELADESTATION, VERT.-TRANSPORT HEBEN
+0042 [00C1C2]  9352                       S      M 82.3 ; M82.3 — SM HEIZUNG STAT.4 GRUNDLAST
+0044 [00C1C4]  A51F                       UN     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0046 [00C1C6]  B352                       R      M 82.3 ; M82.3 — SM HEIZUNG STAT.4 GRUNDLAST
+0048 [00C1C8]  0000                       NOP0   
+004A [00C1CA]  10FF                       BLD    255
+004C [00C1CC]  806E                       U      M 110.0 ; STAT1 — STATION 1 ANFAHREN
+004E [00C1CE]  A16E                       UN     M 110.1 ; STAT2 — STATION 2 ANFAHREN
+0050 [00C1D0]  A26E                       UN     M 110.2 ; STAT3 — STATION 3 ANFAHREN
+0052 [00C1D2]  836E                       U      M 110.3 ; STAT4 — STATION 4 ANFAHREN
+0054 [00C1D4]  8028                       U      M 40.0 ; N_1.24 — BELADESTATION, VERT.-TRANSPORT HEBEN
+0056 [00C1D6]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0058 [00C1D8]  10FF                       BLD    255
+005A [00C1DA]  806E                       U      M 110.0 ; STAT1 — STATION 1 ANFAHREN
+005C [00C1DC]  816E                       U      M 110.1 ; STAT2 — STATION 2 ANFAHREN
+005E [00C1DE]  A26E                       UN     M 110.2 ; STAT3 — STATION 3 ANFAHREN
+0060 [00C1E0]  836E                       U      M 110.3 ; STAT4 — STATION 4 ANFAHREN
+0062 [00C1E2]  8129                       U      M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+0064 [00C1E4]  88F0                       O      M 240.0 ; M240.0 — SCHMIERMERKER
+0066 [00C1E6]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0068 [00C1E8]  10FF                       BLD    255
+006A [00C1EA]  806E                       U      M 110.0 ; STAT1 — STATION 1 ANFAHREN
+006C [00C1EC]  A16E                       UN     M 110.1 ; STAT2 — STATION 2 ANFAHREN
+006E [00C1EE]  826E                       U      M 110.2 ; STAT3 — STATION 3 ANFAHREN
+0070 [00C1F0]  836E                       U      M 110.3 ; STAT4 — STATION 4 ANFAHREN
+0072 [00C1F2]  8129                       U      M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+0074 [00C1F4]  88F0                       O      M 240.0 ; M240.0 — SCHMIERMERKER
+0076 [00C1F6]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0078 [00C1F8]  10FF                       BLD    255
+007A [00C1FA]  806E                       U      M 110.0 ; STAT1 — STATION 1 ANFAHREN
+007C [00C1FC]  816E                       U      M 110.1 ; STAT2 — STATION 2 ANFAHREN
+007E [00C1FE]  826E                       U      M 110.2 ; STAT3 — STATION 3 ANFAHREN
+0080 [00C200]  836E                       U      M 110.3 ; STAT4 — STATION 4 ANFAHREN
+0082 [00C202]  8129                       U      M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+0084 [00C204]  88F0                       O      M 240.0 ; M240.0 — SCHMIERMERKER
+0086 [00C206]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0088 [00C208]  10FF                       BLD    255
+008A [00C20A]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+008C [00C20C]  80F0                       U      M 240.0 ; M240.0 — SCHMIERMERKER
+008E [00C20E]  9452                       S      M 82.4 ; M82.4 — SM HEIZUNG STAT.4 VOLLE LEISTUNG
+0090 [00C210]  AD1F                       ON     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0092 [00C212]  8D2D                       O      M 45.5 ; N_1.69 — VERT.-TR.HEBEN BIS OBEN STATION 4
+0094 [00C214]  B452                       R      M 82.4 ; M82.4 — SM HEIZUNG STAT.4 VOLLE LEISTUNG
+0096 [00C216]  0000                       NOP0   
+0098 [00C218]  10FF                       BLD    255
+009A [00C21A]  BA00                       U(     
+009C [00C21C]  8B52                       O      M 82.3 ; M82.3 — SM HEIZUNG STAT.4 GRUNDLAST
+009E [00C21E]  F916                       O      T 22 ; T22_* — NACHLAUF GEBLAESE WARMLUFT STATION 4
+00A0 [00C220]  BF00                       )      
+00A2 [00C222]  A452                       UN     M 82.4 ; M82.4 — SM HEIZUNG STAT.4 VOLLE LEISTUNG
+00A4 [00C224]  E391                       UN     A 17.3 ; K17.3M — GEBLAESE WARMLUFT STAT.4 SCHNELL
+00A6 [00C226]  FC5B                       UN     T 91 ; T91_* — UMSCHALTZEIT M17.2 SCHNELL->LANGSAM
+00A8 [00C228]  C508                       U      E 8.5 ; B8.5 — THERMOSTAT GEBLAESE WARMLUFT STATION 4
+00AA [00C22A]  DA91                       =      A 17.2 ; K17.2M — GEBLAESE WARMLUFT STAT.4 LANGSAM
+00AC [00C22C]  10FF                       BLD    255
+00AE [00C22E]  8452                       U      M 82.4 ; M82.4 — SM HEIZUNG STAT.4 VOLLE LEISTUNG
+00B0 [00C230]  FC5A                       UN     T 90 ; T90_* — UMSCHALTZEIT M17.2 LANGSAM->SCHNELL
+00B2 [00C232]  C003                       U      E 3.0 ; STEUSP — STEUERSPANNUNG VORHANDEN
+00B4 [00C234]  E291                       UN     A 17.2 ; K17.2M — GEBLAESE WARMLUFT STAT.4 LANGSAM
+00B6 [00C236]  C508                       U      E 8.5 ; B8.5 — THERMOSTAT GEBLAESE WARMLUFT STATION 4
+00B8 [00C238]  DB91                       =      A 17.3 ; K17.3M — GEBLAESE WARMLUFT STAT.4 SCHNELL
+00BA [00C23A]  10FF                       BLD    255
+00BC [00C23C]  C092                       U      A 18.0 ; K18.0M — HEIZUNG WARMLUFT STATION 4
+00BE [00C23E]  30023060                   L      KT 060.3
+00C2 [00C242]  1416                       SA     T 22 ; T22_* — NACHLAUF GEBLAESE WARMLUFT STATION 4
+00C4 [00C244]  0000                       NOP0   
+00C6 [00C246]  0000                       NOP0   
+00C8 [00C248]  0000                       NOP0   
+00CA [00C24A]  0000                       NOP0   
+00CC [00C24C]  10FF                       BLD    255
+00CE [00C24E]  C291                       U      A 17.2 ; K17.2M — GEBLAESE WARMLUFT STAT.4 LANGSAM
+00D0 [00C250]  30021005                   L      KT 005.1
+00D4 [00C254]  145A                       SA     T 90 ; T90_* — UMSCHALTZEIT M17.2 LANGSAM->SCHNELL
+00D6 [00C256]  0000                       NOP0   
+00D8 [00C258]  0000                       NOP0   
+00DA [00C25A]  0000                       NOP0   
+00DC [00C25C]  0000                       NOP0   
+00DE [00C25E]  10FF                       BLD    255
+00E0 [00C260]  C391                       U      A 17.3 ; K17.3M — GEBLAESE WARMLUFT STAT.4 SCHNELL
+00E2 [00C262]  30021040                   L      KT 040.1
+00E6 [00C266]  145B                       SA     T 91 ; T91_* — UMSCHALTZEIT M17.2 SCHNELL->LANGSAM
+00E8 [00C268]  0000                       NOP0   
+00EA [00C26A]  0000                       NOP0   
+00EC [00C26C]  0000                       NOP0   
+00EE [00C26E]  0000                       NOP0   
+00F0 [00C270]  10FF                       BLD    255
+00F2 [00C272]  8252                       U      M 82.2 ; M82.2 — EINSCHALTBED.FUER WARMLUFT STATION 4
+00F4 [00C274]  BA00                       U(     
+00F6 [00C276]  8B52                       O      M 82.3 ; M82.3 — SM HEIZUNG STAT.4 GRUNDLAST
+00F8 [00C278]  8C52                       O      M 82.4 ; M82.4 — SM HEIZUNG STAT.4 VOLLE LEISTUNG
+00FA [00C27A]  BF00                       )      
+00FC [00C27C]  BA00                       U(     
+00FE [00C27E]  CA91                       O      A 17.2 ; K17.2M — GEBLAESE WARMLUFT STAT.4 LANGSAM
+0100 [00C280]  CB91                       O      A 17.3 ; K17.3M — GEBLAESE WARMLUFT STAT.4 SCHNELL
+0102 [00C282]  F95A                       O      T 90 ; T90_* — UMSCHALTZEIT M17.2 LANGSAM->SCHNELL
+0104 [00C284]  F95B                       O      T 91 ; T91_* — UMSCHALTZEIT M17.2 SCHNELL->LANGSAM
+0106 [00C286]  BF00                       )      
+0108 [00C288]  A00C                       UN     M 12.0 ; STOER_57 — TEMP.-BEGR.HEIZ.ST.4 AUSGELOEST
+010A [00C28A]  A713                       UN     M 19.7 ; STOER120 — 
+010C [00C28C]  C308                       U      E 8.3 ; K18.3MF — SICHERHEITSABSCH.HEIZUNG STATION 4
+010E [00C28E]  C408                       U      E 8.4 ; A8.4 — STATION 4 TEMPERATURKONTROLLE
+0110 [00C290]  D892                       =      A 18.0 ; K18.0M — HEIZUNG WARMLUFT STATION 4
+0112 [00C292]  10FF                       BLD    255
+0114 [00C294]  C092                       U      A 18.0 ; K18.0M — HEIZUNG WARMLUFT STATION 4
+0116 [00C296]  D992                       =      A 18.1 ; K18.1M — HEIZUNG WARMLUFT STATION 4
+0118 [00C298]  10FF                       BLD    255
+011A [00C29A]  C092                       U      A 18.0 ; K18.0M — HEIZUNG WARMLUFT STATION 4
+011C [00C29C]  8452                       U      M 82.4 ; M82.4 — SM HEIZUNG STAT.4 VOLLE LEISTUNG
+011E [00C29E]  DA92                       =      A 18.2 ; K18.2M — HEIZUNG WARMLUFT STATION 4
+0120 [00C2A0]  10FF                       BLD    255
+0122 [00C2A2]  C092                       U      A 18.0 ; K18.0M — HEIZUNG WARMLUFT STATION 4
+0124 [00C2A4]  8452                       U      M 82.4 ; M82.4 — SM HEIZUNG STAT.4 VOLLE LEISTUNG
+0126 [00C2A6]  DB92                       =      A 18.3 ; K18.3M — HEIZUNG WARMLUFT STATION 4
+0128 [00C2A8]  10FF                       BLD    255
+012A [00C2AA]  1083                       BLD    131
+012C [00C2AC]  6500                       BE     

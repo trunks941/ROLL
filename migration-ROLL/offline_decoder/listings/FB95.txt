@@ -1,0 +1,43 @@
+FB95: AUFTRAG — AUFTRAGSAUSGABE AN OP
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x1F80; block bytes: 102; SHA256: e0d982d5e49082de259aa303a08065b91d0060299cfbc1f78588284e3ef1c268
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 5F 84 00 00 00 00 33
+Code starts at block offset 0x0014.
+FB name: 'AG-AUFTR'; entry SPA bytes: 2D05
+0014 [001F94]  2033                       A      DB 51 ; DB 51 — OP15-KOMMUNIKATION ..................RAM
+0016 [001F96]  1082                       BLD    130
+0018 [001F98]  1082                       BLD    130
+001A [001F9A]  1082                       BLD    130
+001C [001F9C]  0ABD                       L      MB 189 ; SCHRITTE — SCHRITTKETTENAUSWAHL
+001E [001F9E]  30040000                   L      KF +0
+0022 [001FA2]  2160                       ><F    
+0024 [001FA4]  FB00                       O      
+0026 [001FA6]  80C4                       U      M 196.0 ; FF-F1 — FLIP-FLOP TASTE F1
+0028 [001FA8]  80C2                       U      M 194.0 ; FLHM-F1 — FLANKENHILSMERKER TASTE F1 BETAETIGT
+002A [001FAA]  FA03                       SPB=   @0030 (relative +3 words)
+002C [001FAC]  2D0B                       SPA=   @0042 (relative +11 words)
+002E [001FAE]  1082                       BLD    130
+0030 [001FB0]  300400CE                   L      KF +206
+0034 [001FB4]  3320                       T      DW 32
+0036 [001FB6]  30400000                   L      KH 0000
+003A [001FBA]  3321                       T      DW 33
+003C [001FBC]  1082                       BLD    130
+003E [001FBE]  6501                       BEA    
+0040 [001FC0]  1082                       BLD    130
+0042 [001FC2]  85C5                       U      M 197.5 ; FF-F14 — FLIP-FLOP TASTE F14
+0044 [001FC4]  85C3                       U      M 195.5 ; FLHM-F14 — FLANKENHILFSMERKER TASTE F14 BETAETIGT
+0046 [001FC6]  FA03                       SPB=   @004C (relative +3 words)
+0048 [001FC8]  2D0B                       SPA=   @005E (relative +11 words)
+004A [001FCA]  1082                       BLD    130
+004C [001FCC]  300400CE                   L      KF +206
+0050 [001FD0]  3324                       T      DW 36
+0052 [001FD2]  30040008                   L      KF +8
+0056 [001FD6]  3325                       T      DW 37
+0058 [001FD8]  1082                       BLD    130
+005A [001FDA]  6501                       BEA    
+005C [001FDC]  1082                       BLD    130
+005E [001FDE]  1082                       BLD    130
+0060 [001FE0]  1082                       BLD    130
+0062 [001FE2]  1082                       BLD    130
+0064 [001FE4]  6500                       BE     

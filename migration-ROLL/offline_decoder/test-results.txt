@@ -1,0 +1,22 @@
+test_32_bit_immediate_is_six_bytes (__main__.DecoderFixtures.test_32_bit_immediate_is_six_bytes) ... ok
+test_fb_call_span_skips_argument_words (__main__.DecoderFixtures.test_fb_call_span_skips_argument_words) ... ok
+test_fb_declarations_consume_six_bytes_each (__main__.DecoderFixtures.test_fb_declarations_consume_six_bytes_each) ... ok
+test_inline_16_bit_immediate_and_alignment (__main__.DecoderFixtures.test_inline_16_bit_immediate_and_alignment) ... ok
+test_invalid_call_parameter_count_explicit_and_aligned (__main__.DecoderFixtures.test_invalid_call_parameter_count_explicit_and_aligned) ... ok
+test_io_area_and_bit_masks (__main__.DecoderFixtures.test_io_area_and_bit_masks) ... ok
+test_jump_into_immediate_explicitly_reported (__main__.DecoderFixtures.test_jump_into_immediate_explicitly_reported) ... ok
+test_kc_preserves_file_order_and_flags_native_comparison (__main__.DecoderFixtures.test_kc_preserves_file_order_and_flags_native_comparison) ... ok
+test_kz_bcd_is_not_binary_value (__main__.DecoderFixtures.test_kz_bcd_is_not_binary_value) ... ok
+test_legacy_s5_equal_and_unequal_labels (__main__.DecoderFixtures.test_legacy_s5_equal_and_unequal_labels) ... ok
+test_signed_jump_from_jump_own_word (__main__.DecoderFixtures.test_signed_jump_from_jump_own_word) ... ok
+test_timer_bcd_and_base (__main__.DecoderFixtures.test_timer_bcd_and_base) ... ok
+test_unknown_word_retained_without_claimed_semantics (__main__.DecoderFixtures.test_unknown_word_retained_without_claimed_semantics) ... ok
+test_whole_word_advance_for_bad_14bit_table_entry (__main__.DecoderFixtures.test_whole_word_advance_for_bad_14bit_table_entry) ... ok
+test_eight_fb96_arguments_match_independent_byte_review (__main__.SuppliedProgramRegressions.test_eight_fb96_arguments_match_independent_byte_review) ... ok
+test_nine_fb105_create_db_operands_match_native_step5 (__main__.SuppliedProgramRegressions.test_nine_fb105_create_db_operands_match_native_step5) ... ok
+test_program_coverage_and_only_documented_jump_overlap (__main__.SuppliedProgramRegressions.test_program_coverage_and_only_documented_jump_overlap) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.392s
+
+OK

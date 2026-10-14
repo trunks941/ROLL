@@ -1,0 +1,113 @@
+{
+  "block": "PB50",
+  "source_file": "PB50ROLS.INI",
+  "size_bytes": 1384,
+  "sha256": "51570e7c1f0b167f17eb3020d05b24ed098215787f6cca41390090c7acc5b468",
+  "source_scope": {
+    "source_byte_start": 0,
+    "source_byte_end": 1384,
+    "other_blocks_in_source": []
+  },
+  "pages": 1,
+  "block_bytes": 64,
+  "networks": 5,
+  "matched": 5,
+  "reviews": [
+    {
+      "network": 1,
+      "result": "Match",
+      "method": "All native STL positions in this network compared",
+      "actions": [
+        {
+          "command": "OPEN_DB",
+          "target": "DB 15",
+          "condition": "",
+          "condition_ast": null,
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 2,
+      "result": "Match",
+      "method": "All native STL positions in this network compared",
+      "actions": [
+        {
+          "command": "R",
+          "target": "M 0.2",
+          "condition": "M0.1",
+          "condition_ast": [
+            "READ",
+            "M 0.1"
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 3,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 11",
+          "condition": "(NOT M0.1 AND E3.0)",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "M 0.1"
+              ]
+            ],
+            [
+              "READ",
+              "E 3.0"
+            ]
+          ],
+          "preset": "KT008.2"
+        }
+      ]
+    },
+    {
+      "network": 4,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 13",
+          "condition": "M29.0",
+          "condition_ast": [
+            "READ",
+            "M 29.0"
+          ],
+          "preset": "KT020.1"
+        }
+      ]
+    },
+    {
+      "network": 5,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "BE",
+          "target": "",
+          "condition": "",
+          "condition_ast": null,
+          "preset": ""
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "native_addressed_STL_positions": 7,
+  "offline_positions_in_context": 25,
+  "offline_executing_instructions": 19,
+  "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+  "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+  "result": "All native network action expressions and operands match."
+}

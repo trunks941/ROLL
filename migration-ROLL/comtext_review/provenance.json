@@ -1,0 +1,73 @@
+{
+  "source": "originals/comtext-native/ROLL@@LS.INI",
+  "sha256": "c1bfee8acb6d6a69d3e22973ea03b51c9a278d31500ef4da000fa846f32c4714",
+  "size_bytes": 522880,
+  "encoding_for_derived_text": "CP437",
+  "scope": "Native COMTEXT printout; no COMTEXT runtime or PLC hardware accessed",
+  "project_header": {
+    "system": "CH-ROHRBOGEN 04201",
+    "prepared": "04.03.94",
+    "prepared_by_literal": "GL 05.05.98",
+    "display": "2 * 40"
+  },
+  "active_protocol": {
+    "name": "AS511",
+    "interface": "TTY",
+    "baud": 9600,
+    "parity": "EVEN",
+    "data_bits": 8,
+    "stop_bits": 1,
+    "printed_pages": [
+      87,
+      88
+    ]
+  },
+  "interface_DB": {
+    "number": 51,
+    "printed_page": 92
+  },
+  "recipe_compression": {
+    "value": "OFF",
+    "printed_page": 87
+  },
+  "counts": {
+    "printed_pages": 128,
+    "screens": 4,
+    "recipes": 1,
+    "screen_entries_bound": 18,
+    "recipe_entries_bound": 10,
+    "entry_catalog_definitions": 42,
+    "display_fields": 16,
+    "process_links": 15,
+    "configured_exchange_areas": 9,
+    "function_keys": 16,
+    "events": 121,
+    "alarms": 120,
+    "help_texts": 36,
+    "menus": 14,
+    "menu_items": 46
+  },
+  "limits": [
+    "Recipe records with actual operator values are not listed",
+    "Configured objects and unused definitions must be distinguished",
+    "FB91 byte order and FB89/90/111 recipe consumers verified natively; wire message numbering, FB51 body and remaining process behavior still need verification",
+    "COMTEXT KC format is kept literal, not treated as STEP 5 KC text syntax"
+  ],
+  "native_keyboard_evidence": {
+    "block": "FB3",
+    "source_file": "FB3ROLLS.INI",
+    "sha256": "be07d1cfbaca4326f4ad3453b361b6fc07c4960dbd446ba3e19d57774fb33983",
+    "positions_compared": 216,
+    "evidence_file": "native_verification/FB3-comparison.json",
+    "scope": "Native comparison of FB3 keyboard decoding; process consumers still require verification"
+  },
+  "user_confirmations": {
+    "rotation_and_swing_mode": {
+      "display_label": "drehen/schwenken",
+      "symbolic_value_in_printout": 4,
+      "available_on_current_OP15": true,
+      "source": "User reply: Tak, ten tryb jest dostępny",
+      "migration_requirement": "Preserve the rotation/swing option on TP900; the printed numeric limit 0..3 is not sufficient to remove it"
+    }
+  }
+}

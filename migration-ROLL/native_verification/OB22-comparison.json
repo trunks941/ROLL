@@ -1,0 +1,19 @@
+{
+  "block": "OB22",
+  "source_file": "OB22ROLS.INI",
+  "sha256": "2c8a76d773bde230906dc47b401b3bd1a607f2d67bade52c7119876c834ae725",
+  "size_bytes": 1026,
+  "pages": 1,
+  "networks": 2,
+  "block_bytes": 42,
+  "positions_compared": 15,
+  "executing_instructions": 9,
+  "BLD_display_rows": 6,
+  "jumps_compared": 0,
+  "addressed_positions": 15,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

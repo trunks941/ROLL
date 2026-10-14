@@ -1,0 +1,160 @@
+FB 89     -FB 89                     C:04201@ST.S5D                    LEN=141  
+                                                                        Page   1
+Segment  1
+Name :REZEPTUR
+ 
+0005      :
+0006      :***
+
+Segment  2
+0007      :
+0008      :
+0009      :C   DB  51    -DB 51                TD/OP-DB oeffnen
+000A      :
+000B      :L   DW  64                          Steuer- und Rueckmeldebits
+000C      :T   FW 240    -MW240                zwischenspeichern
+000D      :
+000E      :L   KT 005.2                        Ueberw.-Zeit fuer Rezept-
+0010      :A   F  191.5  -M191.5                  uebertragung starten
+0011      :AN  F  191.6  -M191.6
+0012      :SD  T  100    -T100_*
+0013      :
+0014      :
+0015      :
+0016      :A   F  240.7  -M240.7               Kennung: "Rez.-Uebertr.laeuft"
+0017      :S   F  191.5  -M191.5
+0018      :A   F  240.6  -M240.6               Kennung: "Rez.-Uebertr.Ende"
+0019      :S   F  191.6  -M191.6
+001A      :
+001B      :AN  F  191.5  -M191.5               Uebertr. laeuft ?
+001C      :JC  =M001                              nein --> Ende
+001D      :                                       ja
+001E      :A   F  240.6  -M240.6               Uebertr. beendet und Rez.fach
+001F      :A   F  240.3  -M240.3                  gesperrt ?
+0020      :O   F  191.7  -M191.7                  oder schon quittiert
+0021      :JC  =M002                              ja --> auswerten
+0022      :                                       nein
+0023      :AN  T  100    -T100_*                  Uebertragungszeit abgelaufen
+0024      :JC  =M001                                 nein --> warten
+0025      :                                          ja
+0026      :                                       Fehler "Rez.Uebertr.dauer"
+0027      :                                       -----------------------------
+0028      :A   F    0.4  -M0.4
+0029      :S   F   16.2  -STOER_91                   Fehler setzen
+002A      :=   F  190.2  -PROG_NIO                   "Fehlerkennung" setzen
+002B      :L   FW 240    -MW240                      Quittung mit FE geben
+002C      :L   KM 00010000 00000000
+002E      :OW
+002F      :T   FW 240    -MW240
+0030      :JU  =M003                                 --> Quittung
+0031 M005 :L   KM 00000111 11111111                  alle Steuerbits fuer
+0033      :L   FW 240    -MW240                      Rezeptuebertr. rueck-
+0034      :AW                                        setzen
+0035      :T   FW 240    -MW240
+0036      :A   F    0.4  -M0.4                       Merker ruecksetzen
+0037      :R   F  191.5  -M191.5                        Uebertr. laeuft
+0038      :R   F  191.6  -M191.6                        Quittiert
+0039      :R   F  191.7  -M191.7
+003A      :AN  F  190.2  -PROG_NIO                      "OK-Kennung" setzen
+003B      :=   F  190.1  -PROG_IO
+003C      :                                        --> Ende
+003D      :JU  =M004
+003E      :                                    Rezeptfach auswerten
+003F M002 :                                    --------------------------------
+0040      :                                    wurde schon quittiert ?
+0041      :A   F  191.7  -M191.7                  ja --> Fach freig.u.Bits
+0042      :JC  =M005                              nein
+
+FB 89     -FB 89                     C:04201@ST.S5D                    LEN=141  
+                                                                        Page   2
+0043      :
+0044      :                                       Fehler: "Rez. Uebertr.zeit
+0045      :A   F    0.4  -M0.4                       ueberschritten" loeschen
+0046      :R   F   16.2  -STOER_91
+0047      :C   DB 205    -REZEPT               Rezeptfach oeffnen
+0048      :                                    Rezept-Nr. / DS-Nr.
+0049      :L   DW   0                          ablegen
+004A      :T   FW 242    -MW242
+004B      :                                    Pruefen ob R-Nr. = 1
+004C      :L   FY 242    -MB242                1 = Fahrprogramme
+004D      :L   KH 0001
+004F      :><F
+0050      :JC  =M004                           Pruefen ob DS-Nr. >= 1
+0051      :L   FY 243    -MB243                1-99 = Fahrprogramme
+0052      :L   KF +1
+0054      :<F
+0055      :JC  =M004                           Pruefen ob DS-Nr. <= 10
+0056      :L   FY 243    -MB243                1-99 = Fahrprogramme
+0057      :L   KF +99
+0059      :>F
+005A      :JC  =M004
+005B      :JU  FB  90    -PRG-AUF
+005C Name :PRG-AUF
+005D      :                                    aufbereitetes Programm i.O.?
+005E      :C   DB 205    -REZEPT               wird keine Station angefahren
+005F      :                                    wird die Stoerung "Prog.N.I.O"
+0060      :                                    gesetzt
+0061      :L   DW   5                          Station 1
+0062      :L   KF +0
+0064      :>F
+0065      :JC  =M006
+0066      :L   DW  17                          Station 2
+0067      :L   KF +0
+0069      :>F
+006A      :JC  =M006
+006B      :L   DW  25                          Station 3
+006C      :L   KF +0
+006E      :>F
+006F      :JC  =M006
+0070      :L   DW  33                          Station 4
+0071      :L   KF +0
+0073      :>F
+0074      :JC  =M006
+0075      :A   F    0.4  -M0.4
+0076      :=   F  190.2  -PROG_NIO             --> Programm nicht in Ordnung
+0077      :R   F  190.1  -PROG_IO
+0078      :S   F   16.1  -STOER_90             --> Stoerung setzen
+0079 M006 :C   DB  51    -DB 51                Quittung: Rez. ok setzen
+007A      :L   DW  64
+007B      :L   KM 00100000 00000000
+007D      :OW
+007E      :T   FW 240    -MW240
+007F      :                                    Steuermerker: "Quittung" setzen
+0080 M003 :A   F    0.4  -M0.4
+0081      :S   F  191.7  -M191.7
+0082      :                                    TD/OP wieder oeffnen
+0083 M004 :C   DB  51    -DB 51
+0084      :L   FW 240    -MW240                Zwischenspeicher Rueckm. Prg.bea
+0085      :T   DW  64                          an DW64 ausgeben
+0086 M001 :***
+
+FW 240   = MW240                     SCHMIERMERKER
+F  191.5 = M191.5                    REZEPTUEBERTRAGUNG LAEUFT
+F  191.6 = M191.6                    ENDE REZEPTUEBERTRAGUNG
+
+FB 89     -FB 89                     C:04201@ST.S5D                    LEN=141  
+                                                                        Page   3
+T  100   = T100_*                    KONTROLLE REZEPTUEBERTRAGUNG 1
+F  240.7 = M240.7                    SCHMIERMERKER
+F  240.6 = M240.6                    SCHMIERMERKER
+F  240.3 = M240.3                    SCHMIERMERKER
+F  191.7 = M191.7                    REZEPTUEBERTRAGUNG QUITTIERT
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F   16.2 = STOER_91                  PROGRAMMUEBERTRAG.VOM OP DAUERT Z.LANGE
+F  190.2 = PROG_NIO                  VON OP15: PROGRAMM EINGELESEN U.N.I.O.
+F  190.1 = PROG_IO                   VON OP15: PROGRAMM EINGELESEN U.I.O.
+FW 242   = MW242                     SCHMIERMERKER
+FY 242   = MB242                     SCHMIERMERKERBYTE
+FY 243   = MB243                     SCHMIERMERKERBYTE
+F   16.1 = STOER_90                  ANGEWAEHLTES PROGR.IM OP FEHLERHAFT
+
+DB  51   = DB 51                     OP15-KOMMUNIKATION ..................RAM
+DB 205   = REZEPT                    OP15 REZEPTFACH .....................RAM
+
+FB  90   = PRG-AUF                   PROGRAMMAUFBEREITUNG FUER AG
+
+Segment  3
+ 
+                    :BE
+
+

@@ -1,0 +1,15 @@
+﻿menu_number;title;return_link;printed_pages
+1;;;109
+2;Hauptmenü;MSG. LEVEL;110,111
+3;St+rmeldungen;MENU           2;113,114
+4;Betriebsmeldungen;MENU           2;115,116
+6;Programmeingabe und /nderung;MENU           2;117
+8;PG-Funktionen;MENU           2;118
+9;Sonderfunktionen;MENU           2;119,120
+10;Paßwort;MENU           2;121
+12;St+rmeld DRUCKEN;MENU           3;122
+14;Betriebsmeld DRUCKEN;MENU           4;123
+22;Parametrierung;MENU           9;124,125
+23;Meldetexte;MENU           9;126
+24;Systemmeldungen;MENU           9;127
+31;Schritte;RETURN;128

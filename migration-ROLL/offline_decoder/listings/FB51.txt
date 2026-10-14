@@ -1,0 +1,458 @@
+FB51: FB_OP15 — STANDARDFUNKTIONSBAUSTEIN FUER OP15
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xE80; block bytes: 1052; SHA256: 84e0ddf9327de9d86c180824aed164d5bde4b406d4dc24ad7a7ba35d8413daf4
+Directory flags: 87; assembler flag: False
+Raw block header [0..9]: 70 70 08 33 87 02 13 BB 02 0E
+Code starts at block offset 0x0014.
+FB name: 'TDOP:511'; entry SPA bytes: 2D05
+0014 [000E94]  2D02                       SPA=   @0018 (relative +2 words)
+0016 [000E96]  6500                       BE     
+0018 [000E98]  1033                       BLD    51
+001A [000E9A]  13E8                       T      MW 232 ; MW232 — MERKERWORT 232
+001C [000E9C]  30200100                   L      KY 1,0
+0020 [000EA0]  13FE                       T      MW 254 ; MW254 — SCHMIERMERKER
+0022 [000EA2]  80EB                       U      M 235.0
+0024 [000EA4]  B0EB                       R      M 235.0
+0026 [000EA6]  1033                       BLD    51
+0028 [000EA8]  0AE8                       L      MB 232
+002A [000EAA]  3004000A                   L      KF +10
+002E [000EAE]  2140                       <F     
+0030 [000EB0]  30200165                   L      KY 1,101
+0034 [000EB4]  FA1F                       SPB=   @0072 (relative +31 words)
+0036 [000EB6]  3040E400                   L      KH E400
+003A [000EBA]  0AE8                       L      MB 232
+003C [000EBC]  6101                       SLW    1
+003E [000EBE]  7900                       +F     
+0040 [000EC0]  4000                       LIR    0
+0042 [000EC2]  13EC                       T      MW 236 ; MW236 — MERKERWORT 236
+0044 [000EC4]  30040000                   L      KF +0
+0048 [000EC8]  2180                       !=F    
+004A [000ECA]  30200166                   L      KY 1,102
+004E [000ECE]  FA12                       SPB=   @0072 (relative +18 words)
+0050 [000ED0]  12EC                       L      MW 236 ; MW236 — MERKERWORT 236
+0052 [000ED2]  30040002                   L      KF +2
+0056 [000ED6]  5900                       -F     
+0058 [000ED8]  4000                       LIR    0
+005A [000EDA]  30040005                   L      KF +5
+005E [000EDE]  5900                       -F     
+0060 [000EE0]  3004007F                   L      KF +127
+0064 [000EE4]  21C0                       <=F    
+0066 [000EE6]  30200167                   L      KY 1,103
+006A [000EEA]  FA04                       SPB=   @0072 (relative +4 words)
+006C [000EEC]  4EE7                       B      MW 231 ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+006E [000EEE]  2000                       A      DB 0
+0070 [000EF0]  2D03                       SPA=   @0076 (relative +3 words)
+0072 [000EF2]  13FE                       T      MW 254 ; MW254 — SCHMIERMERKER
+0074 [000EF4]  90EB                       S      M 235.0
+0076 [000EF6]  1033                       BLD    51
+0078 [000EF8]  80EB                       U      M 235.0
+007A [000EFA]  FA23                       SPB=   @00C0 (relative +35 words)
+007C [000EFC]  3209                       L      DW 9
+007E [000EFE]  13E6                       T      MW 230 ; MW230 — MERKERWORT 230
+0080 [000F00]  3204                       L      DW 4
+0082 [000F02]  13E4                       T      MW 228 ; MW228 — MERKERWORT 228
+0084 [000F04]  3240                       L      DW 64
+0086 [000F06]  13E0                       T      MW 224 ; MW224 — MERKERWORT 224
+0088 [000F08]  3241                       L      DW 65
+008A [000F0A]  13E2                       T      MW 226 ; MW226 — MERKERWORT 226
+008C [000F0C]  2269                       L      DL 105
+008E [000F0E]  0BEB                       T      MB 235
+0090 [000F10]  80EB                       U      M 235.0
+0092 [000F12]  B0EB                       R      M 235.0
+0094 [000F14]  3265                       L      DW 101
+0096 [000F16]  13D0                       T      MW 208 ; MW208 — MERKERWORT 208
+0098 [000F18]  86E6                       U      M 230.6
+009A [000F1A]  A6D0                       UN     M 208.6 ; M208.6 — SCHMIERMERKER FUER OP15
+009C [000F1C]  FB00                       O      
+009E [000F1E]  A6E6                       UN     M 230.6
+00A0 [000F20]  86D0                       U      M 208.6 ; M208.6 — SCHMIERMERKER FUER OP15
+00A2 [000F22]  95EB                       S      M 235.5
+00A4 [000F24]  3262                       L      DW 98
+00A6 [000F26]  30040000                   L      KF +0
+00AA [000F2A]  2160                       ><F    
+00AC [000F2C]  FA04                       SPB=   @00B4 (relative +4 words)
+00AE [000F2E]  300400C8                   L      KF +200
+00B2 [000F32]  3362                       T      DW 98
+00B4 [000F34]  30405010                   L      KH 5010
+00B8 [000F38]  331F                       T      DW 31
+00BA [000F3A]  30400200                   L      KH 0200
+00BE [000F3E]  3363                       T      DW 99
+00C0 [000F40]  1033                       BLD    51
+00C2 [000F42]  80EB                       U      M 235.0
+00C4 [000F44]  FA35                       SPB=   @012E (relative +53 words)
+00C6 [000F46]  81E1                       U      M 225.1
+00C8 [000F48]  A7E4                       UN     M 228.7
+00CA [000F4A]  A7E6                       UN     M 230.7
+00CC [000F4C]  82E6                       U      M 230.2
+00CE [000F4E]  97E4                       S      M 228.7
+00D0 [000F50]  A0E1                       UN     M 225.0
+00D2 [000F52]  FA09                       SPB=   @00E4 (relative +9 words)
+00D4 [000F54]  B0E1                       R      M 225.0
+00D6 [000F56]  91E1                       S      M 225.1
+00D8 [000F58]  30808000                   L      KM 1000000000000000
+00DC [000F5C]  13E4                       T      MW 228 ; MW228 — MERKERWORT 228
+00DE [000F5E]  30040000                   L      KF +0
+00E2 [000F62]  3309                       T      DW 9
+00E4 [000F64]  A1E1                       UN     M 225.1
+00E6 [000F66]  82E6                       U      M 230.2
+00E8 [000F68]  91E1                       S      M 225.1
+00EA [000F6A]  97E4                       S      M 228.7
+00EC [000F6C]  AFE4                       ON     M 228.7
+00EE [000F6E]  AFE6                       ON     M 230.7
+00F0 [000F70]  FA1B                       SPB=   @0126 (relative +27 words)
+00F2 [000F72]  95EB                       S      M 235.5
+00F4 [000F74]  30040000                   L      KF +0
+00F8 [000F78]  13E4                       T      MW 228 ; MW228 — MERKERWORT 228
+00FA [000F7A]  3300                       T      DW 0
+00FC [000F7C]  3305                       T      DW 5
+00FE [000F7E]  337F                       T      DW 127
+0100 [000F80]  13E2                       T      MW 226 ; MW226 — MERKERWORT 226
+0102 [000F82]  12E0                       L      MW 224 ; MW224 — MERKERWORT 224
+0104 [000F84]  308007FB                   L      KM 0000011111111011
+0108 [000F88]  4100                       UW     
+010A [000F8A]  13E0                       T      MW 224 ; MW224 — MERKERWORT 224
+010C [000F8C]  12EC                       L      MW 236 ; MW236 — MERKERWORT 236
+010E [000F8E]  300400FC                   L      KF +252
+0112 [000F92]  7900                       +F     
+0114 [000F94]  13DA                       T      MW 218 ; MW218 — MERKERWORT 218
+0116 [000F96]  30040001                   L      KF +1
+011A [000F9A]  7900                       +F     
+011C [000F9C]  12DA                       L      MW 218 ; MW218 — MERKERWORT 218
+011E [000F9E]  0336                       TNB    54
+0120 [000FA0]  30040020                   L      KF +32
+0124 [000FA4]  3367                       T      DW 103
+0126 [000FA6]  A7E4                       UN     M 228.7
+0128 [000FA8]  A7E6                       UN     M 230.7
+012A [000FAA]  A2E6                       UN     M 230.2
+012C [000FAC]  B1E1                       R      M 225.1
+012E [000FAE]  1033                       BLD    51
+0130 [000FB0]  80EB                       U      M 235.0
+0132 [000FB2]  89E1                       O      M 225.1
+0134 [000FB4]  FA2C                       SPB=   @018C (relative +44 words)
+0136 [000FB6]  0AE8                       L      MB 232
+0138 [000FB8]  3020FE00                   L      KY 254,0
+013C [000FBC]  4900                       OW     
+013E [000FBE]  321E                       L      DW 30
+0140 [000FC0]  2160                       ><F    
+0142 [000FC2]  30200169                   L      KY 1,105
+0146 [000FC6]  FA1B                       SPB=   @017C (relative +27 words)
+0148 [000FC8]  A1E6                       UN     M 230.1
+014A [000FCA]  9AE1                       =      M 225.2
+014C [000FCC]  A1E6                       UN     M 230.1
+014E [000FCE]  85EB                       U      M 235.5
+0150 [000FD0]  B1E4                       R      M 228.1
+0152 [000FD2]  A1E6                       UN     M 230.1
+0154 [000FD4]  A1E4                       UN     M 228.1
+0156 [000FD6]  FA1B                       SPB=   @018C (relative +27 words)
+0158 [000FD8]  91E4                       S      M 228.1
+015A [000FDA]  80E4                       U      M 228.0
+015C [000FDC]  80E6                       U      M 230.0
+015E [000FDE]  FB00                       O      
+0160 [000FE0]  A0E4                       UN     M 228.0
+0162 [000FE2]  A0E6                       UN     M 230.0
+0164 [000FE4]  FA0F                       SPB=   @0182 (relative +15 words)
+0166 [000FE6]  3262                       L      DW 98
+0168 [000FE8]  3266                       L      DW 102
+016A [000FEA]  21C0                       <=F    
+016C [000FEC]  FA06                       SPB=   @0178 (relative +6 words)
+016E [000FEE]  30040001                   L      KF +1
+0172 [000FF2]  7900                       +F     
+0174 [000FF4]  3366                       T      DW 102
+0176 [000FF6]  2D0B                       SPA=   @018C (relative +11 words)
+0178 [000FF8]  30200173                   L      KY 1,115
+017C [000FFC]  13FE                       T      MW 254 ; MW254 — SCHMIERMERKER
+017E [000FFE]  90EB                       S      M 235.0
+0180 [001000]  2D06                       SPA=   @018C (relative +6 words)
+0182 [001002]  A0E4                       UN     M 228.0
+0184 [001004]  98E4                       =      M 228.0
+0186 [001006]  30040000                   L      KF +0
+018A [00100A]  3366                       T      DW 102
+018C [00100C]  1033                       BLD    51
+018E [00100E]  80EB                       U      M 235.0
+0190 [001010]  89E1                       O      M 225.1
+0192 [001012]  FA45                       SPB=   @021C (relative +69 words)
+0194 [001014]  3265                       L      DW 101
+0196 [001016]  13D0                       T      MW 208 ; MW208 — MERKERWORT 208
+0198 [001018]  85E4                       U      M 228.5
+019A [00101A]  85D0                       U      M 208.5 ; M208.5 — SCHMIERMERKER FUER OP15
+019C [00101C]  FB00                       O      
+019E [00101E]  A5E4                       UN     M 228.5
+01A0 [001020]  A5D0                       UN     M 208.5 ; M208.5 — SCHMIERMERKER FUER OP15
+01A2 [001022]  FA3D                       SPB=   @021C (relative +61 words)
+01A4 [001024]  30040002                   L      KF +2
+01A8 [001028]  3205                       L      DW 5
+01AA [00102A]  2120                       >F     
+01AC [00102C]  FA2B                       SPB=   @0202 (relative +43 words)
+01AE [00102E]  2180                       !=F    
+01B0 [001030]  FA0B                       SPB=   @01C6 (relative +11 words)
+01B2 [001032]  30040003                   L      KF +3
+01B6 [001036]  3205                       L      DW 5
+01B8 [001038]  2180                       !=F    
+01BA [00103A]  FA0E                       SPB=   @01D6 (relative +14 words)
+01BC [00103C]  30040004                   L      KF +4
+01C0 [001040]  2180                       !=F    
+01C2 [001042]  FA12                       SPB=   @01E6 (relative +18 words)
+01C4 [001044]  2D1F                       SPA=   @0202 (relative +31 words)
+01C6 [001046]  95E2                       S      M 226.5
+01C8 [001048]  3206                       L      DW 6
+01CA [00104A]  3342                       T      DW 66
+01CC [00104C]  3207                       L      DW 7
+01CE [00104E]  3343                       T      DW 67
+01D0 [001050]  3208                       L      DW 8
+01D2 [001052]  3344                       T      DW 68
+01D4 [001054]  2D1B                       SPA=   @020A (relative +27 words)
+01D6 [001056]  96E2                       S      M 226.6
+01D8 [001058]  3206                       L      DW 6
+01DA [00105A]  3345                       T      DW 69
+01DC [00105C]  3207                       L      DW 7
+01DE [00105E]  3346                       T      DW 70
+01E0 [001060]  3208                       L      DW 8
+01E2 [001062]  3347                       T      DW 71
+01E4 [001064]  2D13                       SPA=   @020A (relative +19 words)
+01E6 [001066]  97E2                       S      M 226.7
+01E8 [001068]  3206                       L      DW 6
+01EA [00106A]  3248                       L      DW 72
+01EC [00106C]  4900                       OW     
+01EE [00106E]  3348                       T      DW 72
+01F0 [001070]  3207                       L      DW 7
+01F2 [001072]  3249                       L      DW 73
+01F4 [001074]  4900                       OW     
+01F6 [001076]  3349                       T      DW 73
+01F8 [001078]  3208                       L      DW 8
+01FA [00107A]  324A                       L      DW 74
+01FC [00107C]  4900                       OW     
+01FE [00107E]  334A                       T      DW 74
+0200 [001080]  2D05                       SPA=   @020A (relative +5 words)
+0202 [001082]  3020010A                   L      KY 1,10
+0206 [001086]  13FE                       T      MW 254 ; MW254 — SCHMIERMERKER
+0208 [001088]  90EB                       S      M 235.0
+020A [00108A]  A5E4                       UN     M 228.5
+020C [00108C]  9DE4                       =      M 228.5
+020E [00108E]  30040000                   L      KF +0
+0212 [001092]  3305                       T      DW 5
+0214 [001094]  A0EB                       UN     M 235.0
+0216 [001096]  FA03                       SPB=   @021C (relative +3 words)
+0218 [001098]  12E4                       L      MW 228 ; MW228 — MERKERWORT 228
+021A [00109A]  3304                       T      DW 4
+021C [00109C]  1033                       BLD    51
+021E [00109E]  80EB                       U      M 235.0
+0220 [0010A0]  89E1                       O      M 225.1
+0222 [0010A2]  FA30                       SPB=   @0282 (relative +48 words)
+0224 [0010A4]  3265                       L      DW 101
+0226 [0010A6]  13D0                       T      MW 208 ; MW208 — MERKERWORT 208
+0228 [0010A8]  87E0                       U      M 224.7
+022A [0010AA]  FA0B                       SPB=   @0240 (relative +11 words)
+022C [0010AC]  87D1                       U      M 209.7 ; M209.7 — SCHMIERMERKER FUER OP15
+022E [0010AE]  A7E7                       UN     M 231.7
+0230 [0010B0]  FB00                       O      
+0232 [0010B2]  A7D1                       UN     M 209.7 ; M209.7 — SCHMIERMERKER FUER OP15
+0234 [0010B4]  87E7                       U      M 231.7
+0236 [0010B6]  97E0                       S      M 224.7
+0238 [0010B8]  FA0D                       SPB=   @0252 (relative +13 words)
+023A [0010BA]  83E0                       U      M 224.3
+023C [0010BC]  9FE5                       =      M 229.7
+023E [0010BE]  2D0A                       SPA=   @0252 (relative +10 words)
+0240 [0010C0]  86D1                       U      M 209.6 ; M209.6 — SCHMIERMERKER FUER OP15
+0242 [0010C2]  A6E7                       UN     M 231.6
+0244 [0010C4]  FB00                       O      
+0246 [0010C6]  A6D1                       UN     M 209.6 ; M209.6 — SCHMIERMERKER FUER OP15
+0248 [0010C8]  86E7                       U      M 231.6
+024A [0010CA]  B7E0                       R      M 224.7
+024C [0010CC]  96E0                       S      M 224.6
+024E [0010CE]  93E0                       S      M 224.3
+0250 [0010D0]  97E5                       S      M 229.7
+0252 [0010D2]  A6E0                       UN     M 224.6
+0254 [0010D4]  B5E0                       R      M 224.5
+0256 [0010D6]  B4E0                       R      M 224.4
+0258 [0010D8]  FA15                       SPB=   @0282 (relative +21 words)
+025A [0010DA]  A4E0                       UN     M 224.4
+025C [0010DC]  FA09                       SPB=   @026E (relative +9 words)
+025E [0010DE]  B6E0                       R      M 224.6
+0260 [0010E0]  95E5                       S      M 229.5
+0262 [0010E2]  B4E0                       R      M 224.4
+0264 [0010E4]  B7E5                       R      M 229.7
+0266 [0010E6]  B3E0                       R      M 224.3
+0268 [0010E8]  A6E5                       UN     M 229.6
+026A [0010EA]  9EE5                       =      M 229.6
+026C [0010EC]  2D0B                       SPA=   @0282 (relative +11 words)
+026E [0010EE]  A5E0                       UN     M 224.5
+0270 [0010F0]  83E0                       U      M 224.3
+0272 [0010F2]  FA08                       SPB=   @0282 (relative +8 words)
+0274 [0010F4]  B5E0                       R      M 224.5
+0276 [0010F6]  B6E0                       R      M 224.6
+0278 [0010F8]  B5E5                       R      M 229.5
+027A [0010FA]  A6E5                       UN     M 229.6
+027C [0010FC]  9EE5                       =      M 229.6
+027E [0010FE]  83E0                       U      M 224.3
+0280 [001100]  9FE5                       =      M 229.7
+0282 [001102]  1033                       BLD    51
+0284 [001104]  80EB                       U      M 235.0
+0286 [001106]  89E1                       O      M 225.1
+0288 [001108]  FA38                       SPB=   @02F8 (relative +56 words)
+028A [00110A]  A5EB                       UN     M 235.5
+028C [00110C]  FA36                       SPB=   @02F8 (relative +54 words)
+028E [00110E]  3040EED1                   L      KH EED1
+0292 [001112]  13F4                       T      MW 244 ; MW244 — SCHMIERMERKER
+0294 [001114]  3267                       L      DW 103
+0296 [001116]  13F8                       T      MW 248 ; MW248 — SCHMIERMERKER
+0298 [001118]  30040003                   L      KF +3
+029C [00111C]  7900                       +F     
+029E [00111E]  13DA                       T      MW 218 ; MW218 — MERKERWORT 218
+02A0 [001120]  4EDA                       B      MW 218 ; MW218 — MERKERWORT 218 ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+02A2 [001122]  3200                       L      DW 0
+02A4 [001124]  13FE                       T      MW 254 ; MW254 — SCHMIERMERKER
+02A6 [001126]  A2FE                       UN     M 254.2 ; M254.2 — SCHMIERMERKER
+02A8 [001128]  FA09                       SPB=   @02BA (relative +9 words)
+02AA [00112A]  30040000                   L      KF +0
+02AE [00112E]  4EF8                       B      MW 248 ; MW248 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+02B0 [001130]  3300                       T      DW 0
+02B2 [001132]  30200800                   L      KY 8,0
+02B6 [001136]  4EDA                       B      MW 218 ; MW218 — MERKERWORT 218 ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+02B8 [001138]  3300                       T      DW 0
+02BA [00113A]  30040008                   L      KF +8
+02BE [00113E]  0BFA                       T      MB 250 ; MB250 — SCHMIERMERKERBYTE
+02C0 [001140]  4EF8                       B      MW 248 ; MW248 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+02C2 [001142]  3200                       L      DW 0
+02C4 [001144]  13DC                       T      MW 220 ; MW220 — MERKERWORT 220
+02C6 [001146]  30040000                   L      KF +0
+02CA [00114A]  2160                       ><F    
+02CC [00114C]  FA17                       SPB=   @02FA (relative +23 words)
+02CE [00114E]  12F8                       L      MW 248 ; MW248 — SCHMIERMERKER
+02D0 [001150]  30040004                   L      KF +4
+02D4 [001154]  7900                       +F     
+02D6 [001156]  13F8                       T      MW 248 ; MW248 — SCHMIERMERKER
+02D8 [001158]  3004003C                   L      KF +60
+02DC [00115C]  21C0                       <=F    
+02DE [00115E]  FA04                       SPB=   @02E6 (relative +4 words)
+02E0 [001160]  30040020                   L      KF +32
+02E4 [001164]  13F8                       T      MW 248 ; MW248 — SCHMIERMERKER
+02E6 [001166]  0AFA                       L      MB 250 ; MB250 — SCHMIERMERKERBYTE
+02E8 [001168]  30040001                   L      KF +1
+02EC [00116C]  5900                       -F     
+02EE [00116E]  0BFA                       T      MB 250 ; MB250 — SCHMIERMERKERBYTE
+02F0 [001170]  15E8                       SPP=   @02C0 (relative -24 words)
+02F2 [001172]  30200100                   L      KY 1,0
+02F6 [001176]  13FE                       T      MW 254 ; MW254 — SCHMIERMERKER
+02F8 [001178]  2D4E                       SPA=   @0394 (relative +78 words)
+02FA [00117A]  12F8                       L      MW 248 ; MW248 — SCHMIERMERKER
+02FC [00117C]  3367                       T      DW 103
+02FE [00117E]  30040001                   L      KF +1
+0302 [001182]  7900                       +F     
+0304 [001184]  13D8                       T      MW 216 ; MW216 — MERKERWORT 216
+0306 [001186]  30040002                   L      KF +2
+030A [00118A]  7900                       +F     
+030C [00118C]  13DA                       T      MW 218 ; MW218 — MERKERWORT 218
+030E [00118E]  4ED8                       B      MW 216 ; MW216 — MERKERWORT 216 ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+0310 [001190]  3200                       L      DW 0
+0312 [001192]  13DE                       T      MW 222 ; MW222 — MERKERWORT 222
+0314 [001194]  0ADC                       L      MB 220
+0316 [001196]  30040003                   L      KF +3
+031A [00119A]  21A0                       >=F    
+031C [00119C]  302010DD                   L      KY 16,221
+0320 [0011A0]  FA37                       SPB=   @038E (relative +55 words)
+0322 [0011A2]  0ADC                       L      MB 220
+0324 [0011A4]  30040001                   L      KF +1
+0328 [0011A8]  2180                       !=F    
+032A [0011AA]  302010DE                   L      KY 16,222
+032E [0011AE]  FA30                       SPB=   @038E (relative +48 words)
+0330 [0011B0]  0ADC                       L      MB 220
+0332 [0011B2]  30040002                   L      KF +2
+0336 [0011B6]  2180                       !=F    
+0338 [0011B8]  FA2F                       SPB=   @0396 (relative +47 words)
+033A [0011BA]  0ADD                       L      MB 221
+033C [0011BC]  3004000A                   L      KF +10
+0340 [0011C0]  2140                       <F     
+0342 [0011C2]  302010C9                   L      KY 16,201
+0346 [0011C6]  FA24                       SPB=   @038E (relative +36 words)
+0348 [0011C8]  3040E400                   L      KH E400
+034C [0011CC]  0ADD                       L      MB 221
+034E [0011CE]  6101                       SLW    1
+0350 [0011D0]  7900                       +F     
+0352 [0011D2]  4000                       LIR    0
+0354 [0011D4]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0356 [0011D6]  30040000                   L      KF +0
+035A [0011DA]  2180                       !=F    
+035C [0011DC]  302010CA                   L      KY 16,202
+0360 [0011E0]  FA17                       SPB=   @038E (relative +23 words)
+0362 [0011E2]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0364 [0011E4]  3004FFFE                   L      KF -2
+0368 [0011E8]  7900                       +F     
+036A [0011EA]  4000                       LIR    0
+036C [0011EC]  30040005                   L      KF +5
+0370 [0011F0]  5900                       -F     
+0372 [0011F2]  12DE                       L      MW 222 ; MW222 — MERKERWORT 222
+0374 [0011F4]  5900                       -F     
+0376 [0011F6]  30040004                   L      KF +4
+037A [0011FA]  2140                       <F     
+037C [0011FC]  302010CB                   L      KY 16,203
+0380 [001200]  FA07                       SPB=   @038E (relative +7 words)
+0382 [001202]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0384 [001204]  12DE                       L      MW 222 ; MW222 — MERKERWORT 222
+0386 [001206]  6101                       SLW    1
+0388 [001208]  7900                       +F     
+038A [00120A]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+038C [00120C]  2D11                       SPA=   @03AE (relative +17 words)
+038E [00120E]  13FE                       T      MW 254 ; MW254 — SCHMIERMERKER
+0390 [001210]  90EB                       S      M 235.0
+0392 [001212]  2D28                       SPA=   @03E2 (relative +40 words)
+0394 [001214]  2D30                       SPA=   @03F4 (relative +48 words)
+0396 [001216]  12DE                       L      MW 222 ; MW222 — MERKERWORT 222
+0398 [001218]  300400C0                   L      KF +192
+039C [00121C]  2120                       >F     
+039E [00121E]  302010D3                   L      KY 16,211
+03A2 [001222]  FAF6                       SPB=   @038E (relative -10 words)
+03A4 [001224]  3040EE00                   L      KH EE00
+03A8 [001228]  12DE                       L      MW 222 ; MW222 — MERKERWORT 222
+03AA [00122A]  7900                       +F     
+03AC [00122C]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+03AE [00122E]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+03B0 [001230]  30040007                   L      KF +7
+03B4 [001234]  7900                       +F     
+03B6 [001236]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+03B8 [001238]  12F4                       L      MW 244 ; MW244 — SCHMIERMERKER
+03BA [00123A]  0308                       TNB    8
+03BC [00123C]  302010D7                   L      KY 16,215
+03C0 [001240]  A1E4                       UN     M 228.1
+03C2 [001242]  82E1                       U      M 225.2
+03C4 [001244]  FAE5                       SPB=   @038E (relative -27 words)
+03C6 [001246]  B5EB                       R      M 235.5
+03C8 [001248]  12CA                       L      MW 202 ; MW202 — MERKERWORT 202
+03CA [00124A]  3300                       T      DW 0
+03CC [00124C]  12CC                       L      MW 204 ; MW204 — MERKERWORT 204
+03CE [00124E]  3301                       T      DW 1
+03D0 [001250]  12CE                       L      MW 206 ; MW206 — MERKERWORT 206
+03D2 [001252]  3302                       T      DW 2
+03D4 [001254]  12D0                       L      MW 208 ; MW208 — MERKERWORT 208
+03D6 [001256]  3303                       T      DW 3
+03D8 [001258]  30200400                   L      KY 4,0
+03DC [00125C]  13FE                       T      MW 254 ; MW254 — SCHMIERMERKER
+03DE [00125E]  A6E4                       UN     M 228.6
+03E0 [001260]  9EE4                       =      M 228.6
+03E2 [001262]  12FE                       L      MW 254 ; MW254 — SCHMIERMERKER
+03E4 [001264]  4EDA                       B      MW 218 ; MW218 — MERKERWORT 218 ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+03E6 [001266]  3300                       T      DW 0
+03E8 [001268]  A4FE                       UN     M 254.4 ; M254.4 — SCHMIERMERKER
+03EA [00126A]  FA05                       SPB=   @03F4 (relative +5 words)
+03EC [00126C]  30040000                   L      KF +0
+03F0 [001270]  4EF8                       B      MW 248 ; MW248 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+03F2 [001272]  3300                       T      DW 0
+03F4 [001274]  1033                       BLD    51
+03F6 [001276]  80EB                       U      M 235.0
+03F8 [001278]  FA0C                       SPB=   @0410 (relative +12 words)
+03FA [00127A]  12E4                       L      MW 228 ; MW228 — MERKERWORT 228
+03FC [00127C]  3304                       T      DW 4
+03FE [00127E]  3364                       T      DW 100
+0400 [001280]  12E6                       L      MW 230 ; MW230 — MERKERWORT 230
+0402 [001282]  3365                       T      DW 101
+0404 [001284]  12E0                       L      MW 224 ; MW224 — MERKERWORT 224
+0406 [001286]  3340                       T      DW 64
+0408 [001288]  12E2                       L      MW 226 ; MW226 — MERKERWORT 226
+040A [00128A]  3341                       T      DW 65
+040C [00128C]  0AEB                       L      MB 235
+040E [00128E]  2369                       T      DL 105
+0410 [001290]  80EB                       U      M 235.0
+0412 [001292]  12FE                       L      MW 254 ; MW254 — SCHMIERMERKER
+0414 [001294]  1033                       BLD    51
+0416 [001296]  2D02                       SPA=   @041A (relative +2 words) ; FLAGS: JUMP_TARGET_NOT_INSTRUCTION_BOUNDARY
+       Alternate branch-target decode @041A: 6500 BE ; overlaps linear listing.
+0418 [001298]  30406500                   L      KH 6500

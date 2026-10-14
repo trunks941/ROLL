@@ -1,0 +1,821 @@
+{
+  "block": "PB23",
+  "source_file": "PB23ROLS.INI",
+  "size_bytes": 13854,
+  "sha256": "ddb7d6733371e4d03746632f52a26a8d9c1dbda073ac0a31e2a65168d383542d",
+  "source_scope": {
+    "source_byte_start": 0,
+    "source_byte_end": 13854,
+    "other_blocks_in_source": []
+  },
+  "pages": 5,
+  "block_bytes": 344,
+  "networks": 19,
+  "matched": 19,
+  "reviews": [
+    {
+      "network": 1,
+      "result": "Match",
+      "method": "All native STL positions in this network compared",
+      "actions": [
+        {
+          "command": "OPEN_DB",
+          "target": "DB 15",
+          "condition": "",
+          "condition_ast": null,
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 2,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 240.0",
+          "condition": "((M40.3 OR M40.4 OR M40.5) AND M111.4)",
+          "condition_ast": [
+            "AND",
+            [
+              "OR",
+              [
+                "READ",
+                "M 40.3"
+              ],
+              [
+                "READ",
+                "M 40.4"
+              ],
+              [
+                "READ",
+                "M 40.5"
+              ]
+            ],
+            [
+              "READ",
+              "M 111.4"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 3,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SA",
+          "target": "T 51",
+          "condition": "M240.0",
+          "condition_ast": [
+            "READ",
+            "M 240.0"
+          ],
+          "preset": "KT120.2"
+        },
+        {
+          "command": "=",
+          "target": "A 19.0",
+          "condition": "T51",
+          "condition_ast": [
+            "READ",
+            "T 51"
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 4,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 52",
+          "condition": "(NOT M6.1 AND (M40.4 OR M40.5) AND A19.0 AND M240.0 AND M35.2 AND T70)",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "M 6.1"
+              ]
+            ],
+            [
+              "OR",
+              [
+                "READ",
+                "M 40.4"
+              ],
+              [
+                "READ",
+                "M 40.5"
+              ]
+            ],
+            [
+              "READ",
+              "A 19.0"
+            ],
+            [
+              "READ",
+              "M 240.0"
+            ],
+            [
+              "READ",
+              "M 35.2"
+            ],
+            [
+              "READ",
+              "T 70"
+            ]
+          ],
+          "preset": "KT050.1"
+        },
+        {
+          "command": "=",
+          "target": "A 19.1",
+          "condition": "T52",
+          "condition_ast": [
+            "READ",
+            "T 52"
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 5,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "S",
+          "target": "M 103.7",
+          "condition": "(E0.2 AND E0.4)",
+          "condition_ast": [
+            "AND",
+            [
+              "READ",
+              "E 0.2"
+            ],
+            [
+              "READ",
+              "E 0.4"
+            ]
+          ],
+          "preset": ""
+        },
+        {
+          "command": "R",
+          "target": "M 103.7",
+          "condition": "NOT T59",
+          "condition_ast": [
+            "NOT",
+            [
+              "READ",
+              "T 59"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 6,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 76",
+          "condition": "T59",
+          "condition_ast": [
+            "READ",
+            "T 59"
+          ],
+          "preset": "KT360.3"
+        }
+      ]
+    },
+    {
+      "network": 7,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 19.5",
+          "condition": "(NOT M13.3 AND NOT M5.6 AND NOT M6.2 AND NOT M6.3 AND ((NOT T76 AND E2.2) OR M103.7 OR M152.0) AND (E2.2 OR M152.0) AND E3.4 AND E5.6 AND T59)",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "M 13.3"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 5.6"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 6.2"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 6.3"
+              ]
+            ],
+            [
+              "OR",
+              [
+                "AND",
+                [
+                  "NOT",
+                  [
+                    "READ",
+                    "T 76"
+                  ]
+                ],
+                [
+                  "READ",
+                  "E 2.2"
+                ]
+              ],
+              [
+                "READ",
+                "M 103.7"
+              ],
+              [
+                "READ",
+                "M 152.0"
+              ]
+            ],
+            [
+              "OR",
+              [
+                "READ",
+                "E 2.2"
+              ],
+              [
+                "READ",
+                "M 152.0"
+              ]
+            ],
+            [
+              "READ",
+              "E 3.4"
+            ],
+            [
+              "READ",
+              "E 5.6"
+            ],
+            [
+              "READ",
+              "T 59"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 8,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 240.0",
+          "condition": "(NOT M5.6 AND NOT M6.1 AND (E0.1 OR E0.2) AND E3.1 AND E3.4 AND M0.3 AND M100.0 AND T70)",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "M 5.6"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 6.1"
+              ]
+            ],
+            [
+              "OR",
+              [
+                "READ",
+                "E 0.1"
+              ],
+              [
+                "READ",
+                "E 0.2"
+              ]
+            ],
+            [
+              "READ",
+              "E 3.1"
+            ],
+            [
+              "READ",
+              "E 3.4"
+            ],
+            [
+              "READ",
+              "M 0.3"
+            ],
+            [
+              "READ",
+              "M 100.0"
+            ],
+            [
+              "READ",
+              "T 70"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 9,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 20.4",
+          "condition": "(NOT A20.6 AND NOT M5.6 AND NOT M8.5 AND NOT T96 AND ((M100.0 AND M103.1) OR M102.6 OR M104.6))",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "A 20.6"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 5.6"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 8.5"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "T 96"
+              ]
+            ],
+            [
+              "OR",
+              [
+                "AND",
+                [
+                  "READ",
+                  "M 100.0"
+                ],
+                [
+                  "READ",
+                  "M 103.1"
+                ]
+              ],
+              [
+                "READ",
+                "M 102.6"
+              ],
+              [
+                "READ",
+                "M 104.6"
+              ]
+            ]
+          ],
+          "preset": ""
+        },
+        {
+          "command": "=",
+          "target": "A 22.6",
+          "condition": "(NOT A20.6 AND NOT M5.6 AND NOT M8.5 AND NOT T96 AND ((M100.0 AND M103.1) OR M102.6 OR M104.6))",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "A 20.6"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 5.6"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 8.5"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "T 96"
+              ]
+            ],
+            [
+              "OR",
+              [
+                "AND",
+                [
+                  "READ",
+                  "M 100.0"
+                ],
+                [
+                  "READ",
+                  "M 103.1"
+                ]
+              ],
+              [
+                "READ",
+                "M 102.6"
+              ],
+              [
+                "READ",
+                "M 104.6"
+              ]
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 10,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 20.6",
+          "condition": "(NOT A20.1 AND (M104.0 OR M104.1 OR M104.4 OR M152.1) AND M99.7)",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "A 20.1"
+              ]
+            ],
+            [
+              "OR",
+              [
+                "READ",
+                "M 104.0"
+              ],
+              [
+                "READ",
+                "M 104.1"
+              ],
+              [
+                "READ",
+                "M 104.4"
+              ],
+              [
+                "READ",
+                "M 152.1"
+              ]
+            ],
+            [
+              "READ",
+              "M 99.7"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 11,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 240.0",
+          "condition": "(M102.7 OR M103.2 OR M104.5)",
+          "condition_ast": [
+            "OR",
+            [
+              "READ",
+              "M 102.7"
+            ],
+            [
+              "READ",
+              "M 103.2"
+            ],
+            [
+              "READ",
+              "M 104.5"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 12,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 20.1",
+          "condition": "(NOT M13.4 AND NOT M6.0 AND NOT M6.2 AND NOT M7.7 AND E3.1 AND E5.0 AND E5.2 AND E5.4 AND M240.0)",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "M 13.4"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 6.0"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 6.2"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "M 7.7"
+              ]
+            ],
+            [
+              "READ",
+              "E 3.1"
+            ],
+            [
+              "READ",
+              "E 5.0"
+            ],
+            [
+              "READ",
+              "E 5.2"
+            ],
+            [
+              "READ",
+              "E 5.4"
+            ],
+            [
+              "READ",
+              "M 240.0"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 13,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 22.2",
+          "condition": "M103.1",
+          "condition_ast": [
+            "READ",
+            "M 103.1"
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 14,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 22.3",
+          "condition": "(M102.1 OR M102.2 OR M102.3 OR M102.6 OR M102.7 OR M103.2)",
+          "condition_ast": [
+            "OR",
+            [
+              "READ",
+              "M 102.1"
+            ],
+            [
+              "READ",
+              "M 102.2"
+            ],
+            [
+              "READ",
+              "M 102.3"
+            ],
+            [
+              "READ",
+              "M 102.6"
+            ],
+            [
+              "READ",
+              "M 102.7"
+            ],
+            [
+              "READ",
+              "M 103.2"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 15,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 21.3",
+          "condition": "T85",
+          "condition_ast": [
+            "READ",
+            "T 85"
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 16,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SA",
+          "target": "T 47",
+          "condition": "A20.6",
+          "condition_ast": [
+            "READ",
+            "A 20.6"
+          ],
+          "preset": "KT020.1"
+        }
+      ]
+    },
+    {
+      "network": 17,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 21.4",
+          "condition": "(NOT A21.5 AND NOT A22.3 AND NOT A22.6 AND ((A21.4 AND T47) OR M104.0 OR M152.1))",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "A 21.5"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "A 22.3"
+              ]
+            ],
+            [
+              "NOT",
+              [
+                "READ",
+                "A 22.6"
+              ]
+            ],
+            [
+              "OR",
+              [
+                "AND",
+                [
+                  "READ",
+                  "A 21.4"
+                ],
+                [
+                  "READ",
+                  "T 47"
+                ]
+              ],
+              [
+                "READ",
+                "M 104.0"
+              ],
+              [
+                "READ",
+                "M 152.1"
+              ]
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 18,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 21.5",
+          "condition": "(NOT A21.4 AND M152.0)",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "A 21.4"
+              ]
+            ],
+            [
+              "READ",
+              "M 152.0"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 19,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "BE",
+          "target": "",
+          "condition": "",
+          "condition_ast": null,
+          "preset": ""
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "native_addressed_STL_positions": 3,
+  "offline_positions_in_context": 163,
+  "offline_executing_instructions": 144,
+  "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+  "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+  "result": "All native network action expressions and operands match."
+}

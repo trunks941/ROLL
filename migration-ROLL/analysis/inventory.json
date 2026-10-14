@@ -1,0 +1,173 @@
+{
+  "scope": "Offline archive inventory; not a validated S7 program or decoded OP15 project",
+  "s5_sha256": "6cf64ac0fd5a1d1c133fe508470acffd6345b6631f8f52e2694558d6725ae00e",
+  "op15_sha256": "25a12b5001dfcfa074bdd8be67c34040f7428f6af4d90747b1d406f3976ef46b",
+  "files": [
+    {
+      "path": "originals/OP15/OP15/1998_05_11/04201.O15",
+      "bytes": 90240,
+      "sha256": "25a12b5001dfcfa074bdd8be67c34040f7428f6af4d90747b1d406f3976ef46b"
+    },
+    {
+      "path": "originals/s5/s5/1998_07_03/04201@PJ.INI",
+      "bytes": 384,
+      "sha256": "0a62d63df0913d076749432943f70537a6f917c01dad7855120079819a42dc93"
+    },
+    {
+      "path": "originals/s5/s5/1998_07_03/04201@ST.S5D",
+      "bytes": 100224,
+      "sha256": "6cf64ac0fd5a1d1c133fe508470acffd6345b6631f8f52e2694558d6725ae00e"
+    },
+    {
+      "path": "originals/s5/s5/1998_07_03/04201@Z0.INI",
+      "bytes": 88064,
+      "sha256": "d8d833910512f11da83ac83928c763f260ee4b586d974dae6a458e179f833793"
+    },
+    {
+      "path": "originals/s5/s5/1998_07_03/04201@Z0.SEQ",
+      "bytes": 63488,
+      "sha256": "368f257fd3ab8c2acad03faa17faeb5fa0a22a6e7fe1761cf2a38cbbd4970b10"
+    },
+    {
+      "path": "originals/s5/s5/1998_07_03/04201@Z1.INI",
+      "bytes": 14336,
+      "sha256": "c39e286fd541d4d6b06636567a870ef4ce7e4e227a63341f6523428040b65f70"
+    },
+    {
+      "path": "originals/s5/s5/1998_07_03/04201@Z2.INI",
+      "bytes": 8192,
+      "sha256": "157ad6e7ac2aa1071854d5c816902ef09e1252a6ef03d7348ebc01559a32f23d"
+    },
+    {
+      "path": "originals/s5/s5/1998_07_03/04201@ZF.INI",
+      "bytes": 256,
+      "sha256": "614b261bb35920ef90b331119584cde23d16e7b928de6ab1924bf5652f734c12"
+    },
+    {
+      "path": "originals/s5/s5/1998_07_03/04201@ZF.SEQ",
+      "bytes": 256,
+      "sha256": "614b261bb35920ef90b331119584cde23d16e7b928de6ab1924bf5652f734c12"
+    },
+    {
+      "path": "originals/s5/s5/1998_07_03/04201@ZT.SEQ",
+      "bytes": 256,
+      "sha256": "4724092f300e1ef7c2bf75dd2dcd89fd4148c9e224c04b058515914094a4e7f0"
+    }
+  ],
+  "symbols": 1254,
+  "symbol_counts": {
+    "E": 98,
+    "A": 63,
+    "M": 866,
+    "MB": 39,
+    "MW": 50,
+    "Z": 3,
+    "T": 75,
+    "OB": 6,
+    "PB": 22,
+    "FB": 20,
+    "DB": 12
+  },
+  "symbol_alarm_candidates": 116,
+  "program_block_counts": {
+    "PB": 22,
+    "FB": 21,
+    "OB": 6,
+    "DB": 14
+  },
+  "program_block_count": 63,
+  "sections": [
+    {
+      "index": 0,
+      "offset": 49024,
+      "type": "PB",
+      "count": 22,
+      "directory_chain_verified": true
+    },
+    {
+      "index": 1,
+      "offset": 2816,
+      "type": "FB",
+      "count": 21,
+      "directory_chain_verified": true
+    },
+    {
+      "index": 2,
+      "offset": 66176,
+      "type": "FV",
+      "count": 1
+    },
+    {
+      "index": 3,
+      "offset": 384,
+      "type": "OB",
+      "count": 6,
+      "directory_chain_verified": true
+    },
+    {
+      "index": 4,
+      "offset": 10112,
+      "type": "DB",
+      "count": 14,
+      "directory_chain_verified": true
+    },
+    {
+      "index": 5,
+      "offset": 1664,
+      "type": "DV",
+      "count": 6
+    },
+    {
+      "index": 6,
+      "offset": 40576,
+      "type": "PK",
+      "count": 15
+    },
+    {
+      "index": 7,
+      "offset": 17408,
+      "type": "FK",
+      "count": 13
+    },
+    {
+      "index": 8,
+      "offset": 35968,
+      "type": "OK",
+      "count": 4
+    },
+    {
+      "index": 9,
+      "offset": 36736,
+      "type": "DK",
+      "count": 2
+    },
+    {
+      "index": 10,
+      "offset": 37504,
+      "type": "BB",
+      "count": 21
+    },
+    {
+      "index": 11,
+      "offset": 16384,
+      "type_hex": "20",
+      "status": "unsupported auxiliary section"
+    }
+  ],
+  "symbol_blocks_without_active_body": [
+    "DB15",
+    "DB19"
+  ],
+  "active_blocks_without_symbol": [
+    "FB0",
+    "DB0",
+    "DB1",
+    "DB219",
+    "DB50"
+  ],
+  "db1_ascii": "DB1 TFB: OB13 100 ; SDP: WD 500 ; END ",
+  "op15_marker": "V3_10   ",
+  "op15_text_fragments": 1886,
+  "s5_comment_records": 922,
+  "ob1_calls": 27
+}

@@ -1,0 +1,154 @@
+PB25: PB 25 — LAMPENANSTEUERUNG
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xF100; block bytes: 336; SHA256: eda662b213dc73fa1ce4ae146b6fcc088dd3789bded6e6a26d9e09416da4c09f
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 19 80 00 00 00 00 A8
+Code starts at block offset 0x000A.
+000A [00F10A]  1083                       BLD    131
+000C [00F10C]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+000E [00F10E]  10FF                       BLD    255
+0010 [00F110]  0A05                       L      MB 5 ; MB5 — STOERMERKERBYTE 5
+0012 [00F112]  30400000                   L      KH 0000
+0016 [00F116]  2160                       ><F    
+0018 [00F118]  9857                       =      M 87.0 ; M87.0 — HM STOERUNG IN MERKERBYTE 5
+001A [00F11A]  10FF                       BLD    255
+001C [00F11C]  0A06                       L      MB 6 ; MB6 — STOERMERKERBYTE 6
+001E [00F11E]  30400000                   L      KH 0000
+0022 [00F122]  2160                       ><F    
+0024 [00F124]  9957                       =      M 87.1 ; M87.1 — HM STOERUNG IN MERKERBYTE 6
+0026 [00F126]  10FF                       BLD    255
+0028 [00F128]  0A07                       L      MB 7 ; MB7 — STOERMERKERBYTE 7
+002A [00F12A]  30400000                   L      KH 0000
+002E [00F12E]  2160                       ><F    
+0030 [00F130]  9A57                       =      M 87.2 ; M87.2 — HM STOERUNG IN MERKERBYTE 7
+0032 [00F132]  10FF                       BLD    255
+0034 [00F134]  0A08                       L      MB 8 ; MB8 — STOERMERKERBYTE 8
+0036 [00F136]  30400000                   L      KH 0000
+003A [00F13A]  2160                       ><F    
+003C [00F13C]  9B57                       =      M 87.3 ; M87.3 — HM STOERUNG IN MERKERBYTE 8
+003E [00F13E]  10FF                       BLD    255
+0040 [00F140]  0A09                       L      MB 9 ; MB9 — STOERMERKERBYTE 9
+0042 [00F142]  30400000                   L      KH 0000
+0046 [00F146]  2160                       ><F    
+0048 [00F148]  9C57                       =      M 87.4 ; M87.4 — HM STOERUNG IN MERKERBYTE 9
+004A [00F14A]  10FF                       BLD    255
+004C [00F14C]  0A0A                       L      MB 10 ; MB10 — STOERMERKERBYTE 10
+004E [00F14E]  30400000                   L      KH 0000
+0052 [00F152]  2160                       ><F    
+0054 [00F154]  9D57                       =      M 87.5 ; M87.5 — HM STOERUNG IN MERKERBYTE 10
+0056 [00F156]  10FF                       BLD    255
+0058 [00F158]  0A0B                       L      MB 11 ; MB11 — STOERMERKERBYTE 11
+005A [00F15A]  30400000                   L      KH 0000
+005E [00F15E]  2160                       ><F    
+0060 [00F160]  9E57                       =      M 87.6 ; M87.6 — HM STOERUNG IN MERKERBYTE 11
+0062 [00F162]  10FF                       BLD    255
+0064 [00F164]  0A0C                       L      MB 12 ; MB12 — STOERMERKERBYTE 12
+0066 [00F166]  30400000                   L      KH 0000
+006A [00F16A]  2160                       ><F    
+006C [00F16C]  9F57                       =      M 87.7 ; M87.7 — HM STOERUNG IN MERKERBYTE 12
+006E [00F16E]  10FF                       BLD    255
+0070 [00F170]  0A0D                       L      MB 13 ; MB13 — STOERMERKERBYTE 13
+0072 [00F172]  30400000                   L      KH 0000
+0076 [00F176]  2160                       ><F    
+0078 [00F178]  9858                       =      M 88.0 ; M88.0 — HM STOERUNG IN MERKERBYTE 13
+007A [00F17A]  10FF                       BLD    255
+007C [00F17C]  0A0E                       L      MB 14 ; MB14 — STOERMERKERBYTE 14
+007E [00F17E]  30400000                   L      KH 0000
+0082 [00F182]  2160                       ><F    
+0084 [00F184]  9958                       =      M 88.1 ; M88.1 — HM STOERUNG IN MERKERBYTE 14
+0086 [00F186]  10FF                       BLD    255
+0088 [00F188]  0A0F                       L      MB 15 ; MB15 — STOERMERKERBYTE 15
+008A [00F18A]  30400000                   L      KH 0000
+008E [00F18E]  2160                       ><F    
+0090 [00F190]  9A58                       =      M 88.2 ; M88.2 — HM STOERUNG IN MERKERBYTE 15
+0092 [00F192]  10FF                       BLD    255
+0094 [00F194]  0A10                       L      MB 16 ; MB16 — STOERMERKERBYTE 16
+0096 [00F196]  30400000                   L      KH 0000
+009A [00F19A]  2160                       ><F    
+009C [00F19C]  9B58                       =      M 88.3 ; M88.3 — HM STOERUNG IN MERKERBYTE 16
+009E [00F19E]  10FF                       BLD    255
+00A0 [00F1A0]  0A11                       L      MB 17 ; MB17 — STOERMERKERBYTE 17
+00A2 [00F1A2]  30400000                   L      KH 0000
+00A6 [00F1A6]  2160                       ><F    
+00A8 [00F1A8]  9C58                       =      M 88.4 ; M88.4 — HM STOERUNG IN MERKERBYTE 17
+00AA [00F1AA]  10FF                       BLD    255
+00AC [00F1AC]  0A12                       L      MB 18 ; MB18 — STOERMERKERBYTE 18
+00AE [00F1AE]  30400000                   L      KH 0000
+00B2 [00F1B2]  2160                       ><F    
+00B4 [00F1B4]  9D58                       =      M 88.5 ; M88.5 — HM STOERUNG IN MERKERBYTE 18
+00B6 [00F1B6]  10FF                       BLD    255
+00B8 [00F1B8]  0A13                       L      MB 19 ; MB19 — STOERMERKERBYTE 19
+00BA [00F1BA]  30400000                   L      KH 0000
+00BE [00F1BE]  2160                       ><F    
+00C0 [00F1C0]  9E58                       =      M 88.6 ; M88.6 — HM STOERUNG IN MERKERBYTE 19
+00C2 [00F1C2]  10FF                       BLD    255
+00C4 [00F1C4]  8857                       O      M 87.0 ; M87.0 — HM STOERUNG IN MERKERBYTE 5
+00C6 [00F1C6]  8957                       O      M 87.1 ; M87.1 — HM STOERUNG IN MERKERBYTE 6
+00C8 [00F1C8]  8A57                       O      M 87.2 ; M87.2 — HM STOERUNG IN MERKERBYTE 7
+00CA [00F1CA]  8B57                       O      M 87.3 ; M87.3 — HM STOERUNG IN MERKERBYTE 8
+00CC [00F1CC]  8C57                       O      M 87.4 ; M87.4 — HM STOERUNG IN MERKERBYTE 9
+00CE [00F1CE]  8D57                       O      M 87.5 ; M87.5 — HM STOERUNG IN MERKERBYTE 10
+00D0 [00F1D0]  8E57                       O      M 87.6 ; M87.6 — HM STOERUNG IN MERKERBYTE 11
+00D2 [00F1D2]  8F57                       O      M 87.7 ; M87.7 — HM STOERUNG IN MERKERBYTE 12
+00D4 [00F1D4]  8858                       O      M 88.0 ; M88.0 — HM STOERUNG IN MERKERBYTE 13
+00D6 [00F1D6]  8958                       O      M 88.1 ; M88.1 — HM STOERUNG IN MERKERBYTE 14
+00D8 [00F1D8]  8A58                       O      M 88.2 ; M88.2 — HM STOERUNG IN MERKERBYTE 15
+00DA [00F1DA]  8B58                       O      M 88.3 ; M88.3 — HM STOERUNG IN MERKERBYTE 16
+00DC [00F1DC]  8C58                       O      M 88.4 ; M88.4 — HM STOERUNG IN MERKERBYTE 17
+00DE [00F1DE]  8D58                       O      M 88.5 ; M88.5 — HM STOERUNG IN MERKERBYTE 18
+00E0 [00F1E0]  8E58                       O      M 88.6 ; M88.6 — HM STOERUNG IN MERKERBYTE 19
+00E2 [00F1E2]  9F58                       =      M 88.7 ; M88.7 — SM STOERUNGEN
+00E4 [00F1E4]  10FF                       BLD    255
+00E6 [00F1E6]  8F58                       O      M 88.7 ; M88.7 — SM STOERUNGEN
+00E8 [00F1E8]  CA01                       O      E 1.2 ; LT — TASTER LAMPENTEST
+00EA [00F1EA]  DC90                       =      A 16.4 ; H_STOER — STOERUNG BEDIENPULT/SCHALTSCHRANK
+00EC [00F1EC]  10FF                       BLD    255
+00EE [00F1EE]  861F                       U      M 31.6 ; REINIG_E — REINIGUNG BEENDET
+00F0 [00F1F0]  8603                       U      M 3.6 ; TAKT_1 — TAKT 1 SEK.
+00F2 [00F1F2]  CA01                       O      E 1.2 ; LT — TASTER LAMPENTEST
+00F4 [00F1F4]  DD90                       =      A 16.5 ; H_REINIG — REINIGUNG BEENDET
+00F6 [00F1F6]  10FF                       BLD    255
+00F8 [00F1F8]  CC03                       O      E 3.4 ; STEU_EIN — STEUERUNG EIN
+00FA [00F1FA]  CA01                       O      E 1.2 ; LT — TASTER LAMPENTEST
+00FC [00F1FC]  D890                       =      A 16.0 ; H_STEU — STEUERUNG EIN
+00FE [00F1FE]  10FF                       BLD    255
+0100 [00F200]  804A                       U      M 74.0 ; M74.0 — MERKER FAHREN IN GRUNDSTELLUNG
+0102 [00F202]  8603                       U      M 3.6 ; TAKT_1 — TAKT 1 SEK.
+0104 [00F204]  FB00                       O      
+0106 [00F206]  841C                       U      M 28.4 ; M28.4 — ZUSAMMENFASSUNG GRUNDSTELLUNG
+0108 [00F208]  A51F                       UN     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+010A [00F20A]  CA01                       O      E 1.2 ; LT — TASTER LAMPENTEST
+010C [00F20C]  DA90                       =      A 16.2 ; H_GRUND — ANLAGE IN GRUNDSTELLUNG BEDIENPULT
+010E [00F20E]  10FF                       BLD    255
+0110 [00F210]  8603                       U      M 3.6 ; TAKT_1 — TAKT 1 SEK.
+0112 [00F212]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0114 [00F214]  8C1F                       O      M 31.4 ; AUTO_E — AUTOMATIK EIN
+0116 [00F216]  CA01                       O      E 1.2 ; LT — TASTER LAMPENTEST
+0118 [00F218]  DB90                       =      A 16.3 ; H_AUTO — AUTOMATIK EIN BEDIENPULT
+011A [00F21A]  10FF                       BLD    255
+011C [00F21C]  C002                       U      E 2.0 ; S2.0 — BELEUCHTUNG IN DER ANLAGE
+011E [00F21E]  DB93                       =      A 19.3 ; K19.3M — BELEUCHTUNG ANLAGE
+0120 [00F220]  10FF                       BLD    255
+0122 [00F222]  BA00                       U(     
+0124 [00F224]  8E35                       O      M 53.6 ; N_1.134 — SPRUNG ZU N 1.0
+0126 [00F226]  FB00                       O      
+0128 [00F228]  C00E                       U      E 14.0 ; A14.0 — BESCHICKUNGSTUERE ANLAGE GESCHLOSSEN
+012A [00F22A]  8125                       U      M 37.1 ; N_1.1 — SCHRITTKETTE STARTEN
+012C [00F22C]  BF00                       )      
+012E [00F22E]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0130 [00F230]  FB00                       O      
+0132 [00F232]  8714                       U      M 20.7 ; HB_07 — TUER REINIGUNGSNLAGE OEFFNEN
+0134 [00F234]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0136 [00F236]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+0138 [00F238]  9547                       S      M 71.5 ; M71.5 — HM REINIGUNG BEENDET
+013A [00F23A]  8225                       U      M 37.2 ; N_1.2 — WARENTRAEGER VORHANDEN, PROGRAMM LESEN
+013C [00F23C]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+013E [00F23E]  FB00                       O      
+0140 [00F240]  8714                       U      M 20.7 ; HB_07 — TUER REINIGUNGSNLAGE OEFFNEN
+0142 [00F242]  85BE                       U      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0144 [00F244]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+0146 [00F246]  B547                       R      M 71.5 ; M71.5 — HM REINIGUNG BEENDET
+0148 [00F248]  8547                       U      M 71.5 ; M71.5 — HM REINIGUNG BEENDET
+014A [00F24A]  DF91                       =      A 17.7 ; K17.7A — POT.FREI.MELD.: REINIGUNG BEENDET
+014C [00F24C]  10FF                       BLD    255
+014E [00F24E]  6500                       BE     

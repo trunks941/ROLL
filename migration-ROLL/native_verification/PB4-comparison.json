@@ -1,0 +1,638 @@
+{
+  "block": "PB4",
+  "source_file": "PB4ROLLS.INI",
+  "size_bytes": 7527,
+  "sha256": "b871271505422d07efcb0418c136c80d41dfa7480a1d8e69d6e959ce3dcb1993",
+  "source_scope": {
+    "source_byte_start": 0,
+    "source_byte_end": 7527,
+    "other_blocks_in_source": []
+  },
+  "pages": 5,
+  "block_bytes": 262,
+  "networks": 26,
+  "matched": 26,
+  "reviews": [
+    {
+      "network": 1,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 23.5",
+          "condition": "(30 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              30
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 2,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 23.6",
+          "condition": "(31 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              31
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 3,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 24.0",
+          "condition": "(35 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              35
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 4,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 24.1",
+          "condition": "(36 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              36
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 5,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 24.2",
+          "condition": "(37 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              37
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 6,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 24.3",
+          "condition": "(38 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              38
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 7,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 24.4",
+          "condition": "(39 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              39
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 8,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 25.0",
+          "condition": "(50 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              50
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 9,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 25.1",
+          "condition": "(51 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              51
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 10,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 25.2",
+          "condition": "(52 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              52
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 11,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 25.3",
+          "condition": "(53 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              53
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 12,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 25.4",
+          "condition": "(55 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              55
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 13,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 25.5",
+          "condition": "(56 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              56
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 14,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 25.6",
+          "condition": "(57 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              57
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 15,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 25.7",
+          "condition": "(58 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              58
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 16,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 26.0",
+          "condition": "(60 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              60
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 17,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 26.1",
+          "condition": "(61 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              61
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 18,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 26.2",
+          "condition": "(62 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              62
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 19,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 26.3",
+          "condition": "(63 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              63
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 20,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 26.5",
+          "condition": "(65 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              65
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 21,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 26.6",
+          "condition": "(66 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              66
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 22,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 27.1",
+          "condition": "(69 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              69
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 23,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 27.4",
+          "condition": "(72 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              72
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 24,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 27.5",
+          "condition": "(73 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              73
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 25,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 27.7",
+          "condition": "(99 EQ MB239)",
+          "condition_ast": [
+            "EQ",
+            [
+              "NUMBER",
+              99
+            ],
+            [
+              "READ",
+              "MB 239"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 26,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "BE",
+          "target": "",
+          "condition": "",
+          "condition_ast": null,
+          "preset": ""
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "native_addressed_STL_positions": 0,
+  "offline_positions_in_context": 126,
+  "offline_executing_instructions": 101,
+  "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+  "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+  "result": "All native network action expressions and operands match."
+}

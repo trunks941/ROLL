@@ -1,0 +1,167 @@
+PB52: PB 52 — BAUSTEIN FUER ZAEHLER UND ZEITEN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xF600; block bytes: 346; SHA256: 546ffb06644c9b79d3be5d6cafd7d4d2392cafb92dcabb9bd4be921347ae6941
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 34 80 00 00 00 00 AD
+Code starts at block offset 0x000A.
+000A [00F60A]  1083                       BLD    131
+000C [00F60C]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+000E [00F60E]  10FF                       BLD    255
+0010 [00F610]  E505                       UN     E 5.5 ; B5.5 — NIVEAU OELABSCHEIDER STAT.1 MIN
+0012 [00F612]  A306                       UN     M 6.3 ; STOER_12 — NIVEAUMANGEL IM OELABSCHEIDER MIN ..B5.5
+0014 [00F614]  8528                       U      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+0016 [00F616]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0018 [00F618]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+001A [00F61A]  3211                       L      DW 17
+001C [00F61C]  2411                       SE     T 17 ; T17_V — VERZ.STOERANZEIGE NIVEAUKONTR.OELABSCH.
+001E [00F61E]  0000                       NOP0   
+0020 [00F620]  0000                       NOP0   
+0022 [00F622]  0000                       NOP0   
+0024 [00F624]  0000                       NOP0   
+0026 [00F626]  10FF                       BLD    255
+0028 [00F628]  E305                       UN     E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+002A [00F62A]  A106                       UN     M 6.1 ; STOER_10 — NIVEAUMANGEL STATION 1 MIN .........B5.3
+002C [00F62C]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+002E [00F62E]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+0030 [00F630]  321F                       L      DW 31
+0032 [00F632]  241F                       SE     T 31 ; T31_V — VERZ.NIVEAUKONTROLLE STATION 1
+0034 [00F634]  0000                       NOP0   
+0036 [00F636]  0000                       NOP0   
+0038 [00F638]  0000                       NOP0   
+003A [00F63A]  0000                       NOP0   
+003C [00F63C]  10FF                       BLD    255
+003E [00F63E]  E006                       UN     E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+0040 [00F640]  A406                       UN     M 6.4 ; STOER_13 — NIVEAUMANGEL STATION 2 .............B6.0
+0042 [00F642]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0044 [00F644]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+0046 [00F646]  3220                       L      DW 32
+0048 [00F648]  2420                       SE     T 32 ; T32_V — VERZ.NIVEAUKONTROLLE STATION 2
+004A [00F64A]  0000                       NOP0   
+004C [00F64C]  0000                       NOP0   
+004E [00F64E]  0000                       NOP0   
+0050 [00F650]  0000                       NOP0   
+0052 [00F652]  10FF                       BLD    255
+0054 [00F654]  E206                       UN     E 6.2 ; B6.2 — NIVEAU STATION 3 MIN
+0056 [00F656]  A506                       UN     M 6.5 ; STOER_14 — NIVEAUMANGEL STATION 3 .............B6.2
+0058 [00F658]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+005A [00F65A]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+005C [00F65C]  3221                       L      DW 33
+005E [00F65E]  2421                       SE     T 33 ; T33_V — VERZ.NIVEAUKONTROLLE STATION 3
+0060 [00F660]  0000                       NOP0   
+0062 [00F662]  0000                       NOP0   
+0064 [00F664]  0000                       NOP0   
+0066 [00F666]  0000                       NOP0   
+0068 [00F668]  10FF                       BLD    255
+006A [00F66A]  A400                       UN     M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+006C [00F66C]  A706                       UN     M 6.7 ; STOER_16 — NIVEAUMANGEL STATION 4 ...........(OPT.)
+006E [00F66E]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0070 [00F670]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+0072 [00F672]  30023030                   L      KT 030.3
+0076 [00F676]  2423                       SE     T 35 ; T35 — VERZ.NIVEAUKONTROLLE STATION 4   (OPT.)
+0078 [00F678]  0000                       NOP0   
+007A [00F67A]  0000                       NOP0   
+007C [00F67C]  0000                       NOP0   
+007E [00F67E]  0000                       NOP0   
+0080 [00F680]  10FF                       BLD    255
+0082 [00F682]  A400                       UN     M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0084 [00F684]  A007                       UN     M 7.0 ; STOER_17 — NIVEAUMANGEL STATION 5 ...........(OPT.)
+0086 [00F686]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0088 [00F688]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+008A [00F68A]  30023030                   L      KT 030.3
+008E [00F68E]  2424                       SE     T 36 ; T36 — VERZ.NIVEAUKONTROLLE STATION 5   (OPT.)
+0090 [00F690]  0000                       NOP0   
+0092 [00F692]  0000                       NOP0   
+0094 [00F694]  0000                       NOP0   
+0096 [00F696]  0000                       NOP0   
+0098 [00F698]  10FF                       BLD    255
+009A [00F69A]  A400                       UN     M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+009C [00F69C]  A107                       UN     M 7.1 ; STOER_18 — NIVEAUMANGEL STATION 6 ...........(OPT.)
+009E [00F69E]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+00A0 [00F6A0]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+00A2 [00F6A2]  30023030                   L      KT 030.3
+00A6 [00F6A6]  2425                       SE     T 37 ; T37 — VERZ.NIVEAUKONTROLLE STATION 6   (OPT.)
+00A8 [00F6A8]  0000                       NOP0   
+00AA [00F6AA]  0000                       NOP0   
+00AC [00F6AC]  0000                       NOP0   
+00AE [00F6AE]  0000                       NOP0   
+00B0 [00F6B0]  10FF                       BLD    255
+00B2 [00F6B2]  A400                       UN     M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+00B4 [00F6B4]  A207                       UN     M 7.2 ; STOER_19 — NIVEAUMANGEL STATION 7 ...........(OPT.)
+00B6 [00F6B6]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+00B8 [00F6B8]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+00BA [00F6BA]  30023030                   L      KT 030.3
+00BE [00F6BE]  2426                       SE     T 38 ; T38 — VERZ.NIVEAUKONTROLLE STATION 7   (OPT.)
+00C0 [00F6C0]  0000                       NOP0   
+00C2 [00F6C2]  0000                       NOP0   
+00C4 [00F6C4]  0000                       NOP0   
+00C6 [00F6C6]  0000                       NOP0   
+00C8 [00F6C8]  10FF                       BLD    255
+00CA [00F6CA]  C17B                       U      E 123.1 ; B123.1 — WT AN SPERRE 1 UND SPERRE 1 FREI
+00CC [00F6CC]  30021005                   L      KT 005.1
+00D0 [00F6D0]  242D                       SE     T 45 ; T45 — VERZ.UEBERFAHREN SPERRE 1
+00D2 [00F6D2]  0000                       NOP0   
+00D4 [00F6D4]  0000                       NOP0   
+00D6 [00F6D6]  0000                       NOP0   
+00D8 [00F6D8]  0000                       NOP0   
+00DA [00F6DA]  10FF                       BLD    255
+00DC [00F6DC]  BA00                       U(     
+00DE [00F6DE]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+00E0 [00F6E0]  8603                       U      M 3.6 ; TAKT_1 — TAKT 1 SEK.
+00E2 [00F6E2]  323A                       L      DW 58
+00E4 [00F6E4]  143A                       SA     T 58 ; T58_V — NACHLAUFZEIT 1 WOCHENSCHALTUHR
+00E6 [00F6E6]  0000                       NOP0   
+00E8 [00F6E8]  0000                       NOP0   
+00EA [00F6EA]  0000                       NOP0   
+00EC [00F6EC]  F83A                       U      T 58 ; T58_V — NACHLAUFZEIT 1 WOCHENSCHALTUHR
+00EE [00F6EE]  BF00                       )      
+00F0 [00F6F0]  8603                       U      M 3.6 ; TAKT_1 — TAKT 1 SEK.
+00F2 [00F6F2]  323B                       L      DW 59
+00F4 [00F6F4]  143B                       SA     T 59 ; T59_V — NACHLAUFZEIT 2 WOCHENSCHALTUHR
+00F6 [00F6F6]  0000                       NOP0   
+00F8 [00F6F8]  0000                       NOP0   
+00FA [00F6FA]  0000                       NOP0   
+00FC [00F6FC]  0000                       NOP0   
+00FE [00F6FE]  10FF                       BLD    255
+0100 [00F700]  FC3E                       UN     T 62 ; T62_V — AUTOM.NACHFUELLEN STAT.1-3 EINZEIT
+0102 [00F702]  323F                       L      DW 63
+0104 [00F704]  243F                       SE     T 63 ; T63_V — AUTOM.NACHFUELLEN STAT.1-3 AUSZEIT
+0106 [00F706]  0000                       NOP0   
+0108 [00F708]  0000                       NOP0   
+010A [00F70A]  0000                       NOP0   
+010C [00F70C]  F83F                       U      T 63 ; T63_V — AUTOM.NACHFUELLEN STAT.1-3 AUSZEIT
+010E [00F70E]  323E                       L      DW 62
+0110 [00F710]  143E                       SA     T 62 ; T62_V — AUTOM.NACHFUELLEN STAT.1-3 EINZEIT
+0112 [00F712]  A067                       UN     M 103.0 ; M103.0 — ANF.OEAS AUTOM.NACHF.UEB.ST.2-1-OEAS
+0114 [00F714]  A367                       UN     M 103.3 ; M103.3 — ANF.STAT.1,2 AUTOM.NACHFUELLEN
+0116 [00F716]  A467                       UN     M 103.4 ; M103.4 — ANF.STAT.3 AUTOM. NACHFUELLEN
+0118 [00F718]  FC77                       UN     T 119 ; T119_* — NACHLAUF FUELLEN STATION 3
+011A [00F71A]  3C3E                       R      T 62 ; T62_V — AUTOM.NACHFUELLEN STAT.1-3 EINZEIT
+011C [00F71C]  0000                       NOP0   
+011E [00F71E]  0000                       NOP0   
+0120 [00F720]  0000                       NOP0   
+0122 [00F722]  10FF                       BLD    255
+0124 [00F724]  C305                       U      E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+0126 [00F726]  30022010                   L      KT 010.2
+012A [00F72A]  1446                       SA     T 70 ; T70 — VERZ.HEIZUNG AUS STATION 1
+012C [00F72C]  0000                       NOP0   
+012E [00F72E]  0000                       NOP0   
+0130 [00F730]  0000                       NOP0   
+0132 [00F732]  0000                       NOP0   
+0134 [00F734]  10FF                       BLD    255
+0136 [00F736]  C206                       U      E 6.2 ; B6.2 — NIVEAU STATION 3 MIN
+0138 [00F738]  30022010                   L      KT 010.2
+013C [00F73C]  1448                       SA     T 72 ; T72 — VERZ.HEIZUNG AUS STATION 3
+013E [00F73E]  0000                       NOP0   
+0140 [00F740]  0000                       NOP0   
+0142 [00F742]  0000                       NOP0   
+0144 [00F744]  0000                       NOP0   
+0146 [00F746]  10FF                       BLD    255
+0148 [00F748]  8029                       U      M 41.0 ; N_1.32 — VERT.-TRANSP.HEBEN BIS OBEN ST.1
+014A [00F74A]  3255                       L      DW 85
+014C [00F74C]  1455                       SA     T 85 ; T85_V — UMSCHALTZEIT BADABFLUTEN STATION 1
+014E [00F74E]  0000                       NOP0   
+0150 [00F750]  0000                       NOP0   
+0152 [00F752]  0000                       NOP0   
+0154 [00F754]  0000                       NOP0   
+0156 [00F756]  10FF                       BLD    255
+0158 [00F758]  6500                       BE     

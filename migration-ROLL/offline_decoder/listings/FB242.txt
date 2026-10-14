@@ -1,0 +1,14 @@
+FB242: MUL:16 — MULTIPLIKATION
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x2700; block bytes: 56; SHA256: a6f95065fa834925f26f18c04dd0e25bdda360e4895c5f12f743d94e134c47b0
+Directory flags: 8D; assembler flag: True
+Raw block header [0..9]: 70 70 08 F2 8D 81 0B C2 00 1C
+Code starts at block offset 0x0032.
+FB name: 'MUL:16  '; entry SPA bytes: 2D14
+  Formal #1 @0014 02205A312020: Z1 E/W
+  Formal #2 @001A 02205A322020: Z2 E/W
+  Formal #3 @0020 08805A333D30: Z3=0 A/BI
+  Formal #4 @0026 08205A333220: Z32 A/W
+  Formal #5 @002C 08205A333120: Z31 A/W
+UNSUPPORTED_ASSEMBLER_BODY: retained as raw bytes; no instruction claims.
+0032 [002732]  78 08 00 00 65 00

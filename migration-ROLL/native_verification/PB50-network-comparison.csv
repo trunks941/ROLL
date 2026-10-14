@@ -1,0 +1,6 @@
+﻿network;method;result;action_order;conditions;presets
+1;All native STL positions in this network compared;Match;OPEN_DB DB 15;OPEN_DB DB 15: ;
+2;All native STL positions in this network compared;Match;R M 0.2;R M 0.2: M0.1;
+3;Static native FBD action-expression comparison;Match;SE T 11;SE T 11: (NOT M0.1 AND E3.0);T 11: KT008.2
+4;Static native FBD action-expression comparison;Match;SE T 13;SE T 13: M29.0;T 13: KT020.1
+5;Static native FBD action-expression comparison;Match;BE ;BE : ;

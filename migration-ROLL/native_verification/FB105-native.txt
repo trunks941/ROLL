@@ -1,0 +1,394 @@
+FB 105    -DBERZ                     C:04201@ST.S5D                    LEN=166  
+                                                                        Page   1
+Segment  1
+Name :DBERZ
+ 
+     :A   -M240.0
+     :JC  =M001
+     :
+     :
+     :
+     :
+     :
+     :
+     :
+     :AN  -M240.0
+     :S   -M240.0
+     :BEU
+     :
+M001 :***
+
+F  240.0 = M240.0                    SCHMIERMERKER
+
+Segment  2                   DB FUER VARIABLE ZEITWERTE ERZEU
+     :A   -M240.1
+     :JC  =M001
+     :
+     :L   KF +131                              Laege des DB's
+     :G   -DBVZEIT
+     :
+     :L   KF +128                              Anzahl der Datenumtraege
+     :T   -MW242
+     :
+     :
+     :AN  -M240.1
+     :S   -M240.1
+M001 :***
+
+F  240.1 = M240.1                    SCHMIERMERKER
+FW 242   = MW242                     SCHMIERMERKER
+
+DB  15   = DBVZEIT                   VARIABLE ZEITEN .....................RAM
+
+Segment  3                   WERTE VARIABLER ZEITEN EINTRAGEN
+     :A   -M240.2
+     :JC  =M001
+     :
+     :L   -MW242
+     :L   KF +0
+     :!=F
+     :S   -M240.2
+     :BEC
+     :
+     :L   -MW242
+     :L   KF +1
+     :-F
+     :T   -MW242
+     :
+     :C   -DBDEF_T
+     :DO  -MW242
+     :L   DW   0
+     :C   -DBVZEIT
+     :DO  -MW242
+     :T   DW   0
+     :BEU
+     :
+M001 :***
+
+FB 105    -DBERZ                     C:04201@ST.S5D                    LEN=166  
+                                                                        Page   2
+F  240.2 = M240.2                    SCHMIERMERKER
+FW 242   = MW242                     SCHMIERMERKER
+
+DB  12   = DBDEF_T                   DEFAULTWERTE DER VARIABLEN ZEITEN
+DB  15   = DBVZEIT                   VARIABLE ZEITEN .....................RAM
+
+Segment  4                   DB FUER VARIABLE ZAEHLER ERZEUG
+     :A   -M240.6
+     :JC  =M001
+     :
+     :L   KF +131                              Laege des DB's
+     :G   -DBVZAEHL
+     :
+     :L   KF +128                              Anzahl der Datenumtraege
+     :T   -MW242
+     :
+     :
+     :AN  -M240.6
+     :S   -M240.6
+M001 :***
+
+F  240.6 = M240.6                    SCHMIERMERKER
+FW 242   = MW242                     SCHMIERMERKER
+
+DB  19   = DBVZAEHL                  VARIABLE ZAEHLER ....................RAM
+
+Segment  5                   WERTE VAR.ZAEHLER EINTRAGEN
+     :A   -M240.7
+     :JC  =M001
+     :
+     :L   -MW242
+     :L   KF +0
+     :!=F
+     :S   -M240.7
+     :BEC
+     :
+     :L   -MW242
+     :L   KF +1
+     :-F
+     :T   -MW242
+     :
+     :C   -DBDEF_Z
+     :DO  -MW242
+     :L   DW   0
+     :C   -DBVZAEHL
+     :DO  -MW242
+     :T   DW   0
+     :BEU
+     :
+M001 :***
+
+F  240.7 = M240.7                    SCHMIERMERKER
+FW 242   = MW242                     SCHMIERMERKER
+
+DB  16   = DBDEF_Z                   DEFAULTWERTE DER VARIABLEN ZAEHLER
+DB  19   = DBVZAEHL                  VARIABLE ZAEHLER ....................RAM
+
+Segment  6                   DB's fuer OP15
+     :STL
+     :
+     :L   KF +40
+     :G   -DB_RETT
+     :
+     :L   KF +186
+
+FB 105    -DBERZ                     C:04201@ST.S5D                    LEN=166  
+                                                                        Page   3
+     :G   -DB 51                               OP15
+     :
+     :C   -DB 51
+     :L   KH 00F0                              Rezepte
+     :T   DW  98
+     :
+     :L   KF +220
+     :G   -REZEPT                              Rezepte
+     :
+     :JU  -OB 31
+     :
+     :L   KF +128
+     :G   -AG->OP                              AG -> OP
+     :
+     :L   KF +10
+     :G   -OP->AG                              OP -> AG
+     :
+     :JU  -OB 31
+     :
+     :L   KF +50
+     :G   -DB 60
+     :
+     :L   KF +10
+     :G   -DBAUF                               Auftragsverwaltung OP 15
+     :
+     :***
+
+
+DB  41   = DB_RETT                   MERKER 200-239 RETTEN ...............RAM
+DB  51   = DB 51                     OP15-KOMMUNIKATION ..................RAM
+DB 205   = REZEPT                    OP15 REZEPTFACH .....................RAM
+DB 210   = AG->OP                    DATENAUSTAUSCH VOM AG ZUM OP ........RAM
+DB 211   = OP->AG                    DATENAUSTAUSCH VOM OP ZUM AG ........RAM
+DB  60   = DB 60                     ARBEITS-DB F.FB60 (REZEPTUEBERTR.) ..RAM
+DB 213   = DBAUF                     DB FUER AUFTRAEGE OP15-AG ...........RAM
+
+OB  31   = OB 31                     ZYKLUSZEITTRIGGERUNG
+
+Segment  7                   sonstige DB's
+     :STL
+     :
+     :JU  -OB 31
+     :
+     :***
+
+OB  31   = OB 31                     ZYKLUSZEITTRIGGERUNG
+
+Segment  8                   Endekennung
+     :STL
+     :
+     :AN  -M0.4
+     :S   -M0.4
+     :A   -M0.3
+     :R   -M0.3
+     :
+     :BE
+
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+
+
+FB 105    -DBERZ                     C:04201@ST.S5D                    LEN=166  
+                                                                        Page   1
+Segment  1
+Name :DBERZ
+ 
+0005      :A   F  240.0  -M240.0
+0006      :JC  =M001
+0007      :
+0008      :
+0009      :
+000A      :
+000B      :
+000C      :
+000D      :
+000E      :AN  F  240.0  -M240.0
+000F      :S   F  240.0  -M240.0
+0010      :BEU
+0011      :
+0012 M001 :***
+
+F  240.0 = M240.0                    SCHMIERMERKER
+
+Segment  2                   DB FUER VARIABLE ZEITWERTE ERZEU
+0013      :A   F  240.1  -M240.1
+0014      :JC  =M001
+0015      :
+0016      :L   KF +131                         Laege des DB's
+0018      :G   DB  15    -DBVZEIT
+001A      :
+001B      :L   KF +128                         Anzahl der Datenumtraege
+001D      :T   FW 242    -MW242
+001E      :
+001F      :
+0020      :AN  F  240.1  -M240.1
+0021      :S   F  240.1  -M240.1
+0022 M001 :***
+
+F  240.1 = M240.1                    SCHMIERMERKER
+FW 242   = MW242                     SCHMIERMERKER
+
+DB  15   = DBVZEIT                   VARIABLE ZEITEN .....................RAM
+
+Segment  3                   WERTE VARIABLER ZEITEN EINTRAGEN
+0023      :A   F  240.2  -M240.2
+0024      :JC  =M001
+0025      :
+0026      :L   FW 242    -MW242
+0027      :L   KF +0
+0029      :!=F
+002A      :S   F  240.2  -M240.2
+002B      :BEC
+002C      :
+002D      :L   FW 242    -MW242
+002E      :L   KF +1
+0030      :-F
+0031      :T   FW 242    -MW242
+0032      :
+0033      :C   DB  12    -DBDEF_T
+0034      :DO  FW 242    -MW242
+0035      :L   DW   0
+0036      :C   DB  15    -DBVZEIT
+0037      :DO  FW 242    -MW242
+0038      :T   DW   0
+0039      :BEU
+003A      :
+003B M001 :***
+
+FB 105    -DBERZ                     C:04201@ST.S5D                    LEN=166  
+                                                                        Page   2
+F  240.2 = M240.2                    SCHMIERMERKER
+FW 242   = MW242                     SCHMIERMERKER
+
+DB  12   = DBDEF_T                   DEFAULTWERTE DER VARIABLEN ZEITEN
+DB  15   = DBVZEIT                   VARIABLE ZEITEN .....................RAM
+
+Segment  4                   DB FUER VARIABLE ZAEHLER ERZEUG
+003C      :A   F  240.6  -M240.6
+003D      :JC  =M001
+003E      :
+003F      :L   KF +131                         Laege des DB's
+0041      :G   DB  19    -DBVZAEHL
+0043      :
+0044      :L   KF +128                         Anzahl der Datenumtraege
+0046      :T   FW 242    -MW242
+0047      :
+0048      :
+0049      :AN  F  240.6  -M240.6
+004A      :S   F  240.6  -M240.6
+004B M001 :***
+
+F  240.6 = M240.6                    SCHMIERMERKER
+FW 242   = MW242                     SCHMIERMERKER
+
+DB  19   = DBVZAEHL                  VARIABLE ZAEHLER ....................RAM
+
+Segment  5                   WERTE VAR.ZAEHLER EINTRAGEN
+004C      :A   F  240.7  -M240.7
+004D      :JC  =M001
+004E      :
+004F      :L   FW 242    -MW242
+0050      :L   KF +0
+0052      :!=F
+0053      :S   F  240.7  -M240.7
+0054      :BEC
+0055      :
+0056      :L   FW 242    -MW242
+0057      :L   KF +1
+0059      :-F
+005A      :T   FW 242    -MW242
+005B      :
+005C      :C   DB  16    -DBDEF_Z
+005D      :DO  FW 242    -MW242
+005E      :L   DW   0
+005F      :C   DB  19    -DBVZAEHL
+0060      :DO  FW 242    -MW242
+0061      :T   DW   0
+0062      :BEU
+0063      :
+0064 M001 :***
+
+F  240.7 = M240.7                    SCHMIERMERKER
+FW 242   = MW242                     SCHMIERMERKER
+
+DB  16   = DBDEF_Z                   DEFAULTWERTE DER VARIABLEN ZAEHLER
+DB  19   = DBVZAEHL                  VARIABLE ZAEHLER ....................RAM
+
+Segment  6                   DB's fuer OP15
+0065      :STL
+0066      :
+0067      :L   KF +40
+0069      :G   DB  41    -DB_RETT
+006B      :
+006C      :L   KF +186
+
+FB 105    -DBERZ                     C:04201@ST.S5D                    LEN=166  
+                                                                        Page   3
+006E      :G   DB  51    -DB 51                OP15
+0070      :
+0071      :C   DB  51    -DB 51
+0072      :L   KH 00F0                         Rezepte
+0074      :T   DW  98
+0075      :
+0076      :L   KF +220
+0078      :G   DB 205    -REZEPT               Rezepte
+007A      :
+007B      :JU  OB  31    -OB 31
+007C      :
+007D      :L   KF +128
+007F      :G   DB 210    -AG->OP               AG -> OP
+0081      :
+0082      :L   KF +10
+0084      :G   DB 211    -OP->AG               OP -> AG
+0086      :
+0087      :JU  OB  31    -OB 31
+0088      :
+0089      :L   KF +50
+008B      :G   DB  60    -DB 60
+008D      :
+008E      :L   KF +10
+0090      :G   DB 213    -DBAUF                Auftragsverwaltung OP 15
+0092      :
+0093      :***
+
+
+DB  41   = DB_RETT                   MERKER 200-239 RETTEN ...............RAM
+DB  51   = DB 51                     OP15-KOMMUNIKATION ..................RAM
+DB 205   = REZEPT                    OP15 REZEPTFACH .....................RAM
+DB 210   = AG->OP                    DATENAUSTAUSCH VOM AG ZUM OP ........RAM
+DB 211   = OP->AG                    DATENAUSTAUSCH VOM OP ZUM AG ........RAM
+DB  60   = DB 60                     ARBEITS-DB F.FB60 (REZEPTUEBERTR.) ..RAM
+DB 213   = DBAUF                     DB FUER AUFTRAEGE OP15-AG ...........RAM
+
+OB  31   = OB 31                     ZYKLUSZEITTRIGGERUNG
+
+Segment  7                   sonstige DB's
+0094      :STL
+0095      :
+0096      :JU  OB  31    -OB 31
+0097      :
+0098      :***
+
+OB  31   = OB 31                     ZYKLUSZEITTRIGGERUNG
+
+Segment  8                   Endekennung
+0099      :STL
+009A      :
+009B      :AN  F    0.4  -M0.4
+009C      :S   F    0.4  -M0.4
+009D      :A   F    0.3  -M0.3
+009E      :R   F    0.3  -M0.3
+009F      :
+00A0      :BE
+
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+
+

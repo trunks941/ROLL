@@ -1,0 +1,18 @@
+﻿native_word_address;block_byte_offset;network;native_content;command;operand;raw_hex;size_bytes;jump_target_block_byte_offset;position_note
+0000;10;1;STL;BLD;131;1083;2;;
+0001;12;1;;BLD;130;1082;2;;
+0002;14;1;AN  F    3.4  -TKT_0,25;UN;M 3.4;A403;2;;
+0003;16;1;=   F    3.4  -TKT_0,25;=;M 3.4;9C03;2;;
+0004;18;1;BEC;BEB;;0500;2;;
+0005;20;1;;BLD;130;1082;2;;
+0006;22;1;AN  F    3.5  -TAKT_0,5;UN;M 3.5;A503;2;;
+0007;24;1;=   F    3.5  -TAKT_0,5;=;M 3.5;9D03;2;;
+0008;26;1;BEC;BEB;;0500;2;;
+0009;28;1;;BLD;130;1082;2;;
+000A;30;1;AN  F    3.6  -TAKT_1;UN;M 3.6;A603;2;;
+000B;32;1;=   F    3.6  -TAKT_1;=;M 3.6;9E03;2;;
+000C;34;1;BEC;BEB;;0500;2;;
+000D;36;1;;BLD;130;1082;2;;
+000E;38;1;AN  F    3.7  -TAKT_2;UN;M 3.7;A703;2;;
+000F;40;1;=   F    3.7  -TAKT_2;=;M 3.7;9F03;2;;
+0010;42;1;BE;BE;;6500;2;;

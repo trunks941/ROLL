@@ -1,0 +1,19 @@
+{
+  "block": "FB89",
+  "source_file": "FB89ROLS.INI",
+  "sha256": "3c1d220fa6922a8e8528697176bc36315964d11650b39d10423cb5579e278af4",
+  "size_bytes": 7525,
+  "pages": 3,
+  "networks": 3,
+  "block_bytes": 282,
+  "positions_compared": 119,
+  "executing_instructions": 90,
+  "BLD_display_rows": 29,
+  "jumps_compared": 13,
+  "addressed_positions": 118,
+  "unaddressed_final_instructions": 1,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

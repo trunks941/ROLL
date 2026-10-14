@@ -1,0 +1,226 @@
+[
+  {
+    "file": "FB89ROLS.INI",
+    "bytes": 7525,
+    "sha256": "3c1d220fa6922a8e8528697176bc36315964d11650b39d10423cb5579e278af4",
+    "pages": [
+      "1",
+      "2",
+      "3"
+    ],
+    "addressed_lines": 118,
+    "mnemonics": [
+      "***",
+      "-----------------------------",
+      "--------------------------------",
+      "-->",
+      "<F",
+      "=",
+      "><F",
+      ">F",
+      "A",
+      "AN",
+      "AW",
+      "C",
+      "Fehler",
+      "Fehler:",
+      "JC",
+      "JU",
+      "L",
+      "O",
+      "OW",
+      "Pruefen",
+      "R",
+      "Rezept-Nr.",
+      "Rezeptfach",
+      "S",
+      "SD",
+      "Steuermerker:",
+      "T",
+      "TD/OP",
+      "aufbereitetes",
+      "gesetzt",
+      "ja",
+      "nein",
+      "wird",
+      "wurde"
+    ]
+  },
+  {
+    "file": "FB111RLS.INI",
+    "bytes": 5331,
+    "sha256": "602a4a87f4682f137e2a7624bf45b69225937c2a40258651166835c10965168e",
+    "pages": [
+      "1",
+      "2",
+      "3"
+    ],
+    "addressed_lines": 95,
+    "mnemonics": [
+      ")",
+      "***",
+      "<=F",
+      "A",
+      "A(",
+      "AN",
+      "AW",
+      "BE",
+      "C",
+      "JC",
+      "JU",
+      "L",
+      "O",
+      "R",
+      "S",
+      "SD",
+      "STL"
+    ]
+  },
+  {
+    "file": "FB91ROLS.INI",
+    "bytes": 5996,
+    "sha256": "a6978602c717b3cdd75bed940e90987197d54579c21d8f98da48710e2ba25a46",
+    "pages": [
+      "1",
+      "2",
+      "3"
+    ],
+    "addressed_lines": 102,
+    "mnemonics": [
+      "***",
+      "BE",
+      "C",
+      "L",
+      "T",
+      "XOW"
+    ]
+  },
+  {
+    "file": "FB92ROLS.INI",
+    "bytes": 20698,
+    "sha256": "70881915aa2b926a8b6baea2e9566a31cccd7c49f1252f5bca7b62dc664c3cc9",
+    "pages": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "addressed_lines": 360,
+    "mnemonics": [
+      "!=F",
+      "***",
+      "----------------------",
+      "=",
+      "><F",
+      "A",
+      "ALLE",
+      "AN",
+      "AW",
+      "BE",
+      "C",
+      "Datenanzeige",
+      "JC",
+      "JU",
+      "L",
+      "O",
+      "OW",
+      "PRUEFE",
+      "R",
+      "S",
+      "STL",
+      "Schrittanzeige",
+      "Stoeranzeige",
+      "T",
+      "TAK",
+      "Tastenaenderung"
+    ]
+  },
+  {
+    "file": "FB90ROLS.INI",
+    "bytes": 4920,
+    "sha256": "eb4dd5a76324735f90ea0eaeb522790d2943f80911c553a86e09629fc17a21b2",
+    "pages": [
+      "1",
+      "2"
+    ],
+    "addressed_lines": 82,
+    "mnemonics": [
+      "!=F",
+      "***",
+      "=",
+      "><F",
+      "AW",
+      "BE",
+      "C",
+      "L",
+      "T"
+    ]
+  },
+  {
+    "file": "FB95ROLS.INI",
+    "bytes": 1888,
+    "sha256": "5efc9281d70720e2a7d7ba81936f368fd24fa592ff017cd79c5390b41a6b918a",
+    "pages": [
+      "1"
+    ],
+    "addressed_lines": 36,
+    "mnemonics": [
+      "--------------",
+      "><F",
+      "A",
+      "BE",
+      "BEU",
+      "C",
+      "JC",
+      "JU",
+      "L",
+      "O",
+      "T",
+      "zur"
+    ]
+  },
+  {
+    "file": "FB96ROLS.INI",
+    "bytes": 858,
+    "sha256": "b4167ceda586269bdf7633f9271f4e8d80597df8addb701d6c180aca7ab98946",
+    "pages": [
+      "1"
+    ],
+    "addressed_lines": 18,
+    "mnemonics": [
+      "BE",
+      "L",
+      "OW",
+      "SLW",
+      "SRW",
+      "T"
+    ]
+  },
+  {
+    "file": "PB16ROLS.INI",
+    "bytes": 37526,
+    "sha256": "0863b18063b58d0da3fcda158360ea38055ddeb51e8b9aaf5745ab85a1ed2f03",
+    "pages": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "addressed_lines": 0,
+    "mnemonics": []
+  }
+]

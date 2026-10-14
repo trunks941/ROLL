@@ -1,0 +1,729 @@
+PB9: PB 9 — 1.RICHTIMPULS F.STEUERUNGSSCHRITTKETTEN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xC780; block bytes: 1456; SHA256: 5cac31373a0f69fd3df20d091b86530e0bd4be74f7cda555d6df15db683e77b4
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 09 80 00 00 00 02 D8
+Code starts at block offset 0x000A.
+000A [00C78A]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+000C [00C78C]  A120                       UN     M 32.1 ; FLMRIMP — FLANKENMERKER F.RICHTIMPULS M 32.0
+000E [00C78E]  A220                       UN     M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0010 [00C790]  9820                       =      M 32.0 ; RISTSCHR — RICHTIMPULS FUER STEUERUNGSSCHRITTKETTEN
+0012 [00C792]  10FF                       BLD    255
+0014 [00C794]  8020                       U      M 32.0 ; RISTSCHR — RICHTIMPULS FUER STEUERUNGSSCHRITTKETTEN
+0016 [00C796]  9120                       S      M 32.1 ; FLMRIMP — FLANKENMERKER F.RICHTIMPULS M 32.0
+0018 [00C798]  EA00                       ON     E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+001A [00C79A]  C900                       O      E 0.1 ; HAND — BETRIEBSART HAND
+001C [00C79C]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+001E [00C79E]  B120                       R      M 32.1 ; FLMRIMP — FLANKENMERKER F.RICHTIMPULS M 32.0
+0020 [00C7A0]  0000                       NOP0   
+0022 [00C7A2]  10FF                       BLD    255
+0024 [00C7A4]  EA00                       ON     E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0026 [00C7A6]  C900                       O      E 0.1 ; HAND — BETRIEBSART HAND
+0028 [00C7A8]  9A20                       =      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+002A [00C7AA]  10FF                       BLD    255
+002C [00C7AC]  A005                       UN     M 5.0 ; STOER_01 — HORIZ.TRANSPORTMOTOR ZU HEISS .....B11.7
+002E [00C7AE]  A205                       UN     M 5.2 ; STOER_03 — VERT.-TRANSPORTMOTOR ZU HEISS .....B13.0
+0030 [00C7B0]  A009                       UN     M 9.0 ; STOER_33 — BELADEFEHLER ......................S13.7
+0032 [00C7B2]  A00C                       UN     M 12.0 ; STOER_57 — TEMP.-BEGR.HEIZ.ST.4 AUSGELOEST
+0034 [00C7B4]  9923                       =      M 35.1 ; M35.1 — HM F.WEITERSCHALTBED.SCHRITTKETTE N1
+0036 [00C7B6]  10FF                       BLD    255
+0038 [00C7B8]  C400                       U      E 0.4 ; AUTO_EIN — AUTOMATIK EIN
+003A [00C7BA]  9223                       S      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+003C [00C7BC]  AD1F                       ON     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+003E [00C7BE]  8B10                       O      M 16.3 ; STOER_92 — SCHRITTKETTENUEBERWACHUNG N1 ANGESPROCH.
+0040 [00C7C0]  A81D                       ON     M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+0042 [00C7C2]  A923                       ON     M 35.1 ; M35.1 — HM F.WEITERSCHALTBED.SCHRITTKETTE N1
+0044 [00C7C4]  B223                       R      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0046 [00C7C6]  0000                       NOP0   
+0048 [00C7C8]  10FF                       BLD    255
+004A [00C7CA]  8820                       O      M 32.0 ; RISTSCHR — RICHTIMPULS FUER STEUERUNGSSCHRITTKETTEN
+004C [00C7CC]  8E35                       O      M 53.6 ; N_1.134 — SPRUNG ZU N 1.0
+004E [00C7CE]  9025                       S      M 37.0 ; N_1.0 — SCHRITTKETTE VORBEREITEN
+0050 [00C7D0]  8925                       O      M 37.1 ; N_1.1 — SCHRITTKETTE STARTEN
+0052 [00C7D2]  8826                       O      M 38.0 ; N_1.8 — WT AN SPERRE 4                      OPT.
+0054 [00C7D4]  8D27                       O      M 39.5 ; N_1.21 — WT-TRANSPORT OBEN                   OPT.
+0056 [00C7D6]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0058 [00C7D8]  B025                       R      M 37.0 ; N_1.0 — SCHRITTKETTE VORBEREITEN
+005A [00C7DA]  0000                       NOP0   
+005C [00C7DC]  10FF                       BLD    255
+005E [00C7DE]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0060 [00C7E0]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0062 [00C7E2]  A635                       UN     M 53.6 ; N_1.134 — SPRUNG ZU N 1.0
+0064 [00C7E4]  8025                       U      M 37.0 ; N_1.0 — SCHRITTKETTE VORBEREITEN
+0066 [00C7E6]  E57B                       UN     E 123.5 ; B123.5 — WT VOR SPERRE 4
+0068 [00C7E8]  E67B                       UN     E 123.6 ; B123.6 — SPERRE 4 FREIFAHREN
+006A [00C7EA]  9125                       S      M 37.1 ; N_1.1 — SCHRITTKETTE STARTEN
+006C [00C7EC]  8A25                       O      M 37.2 ; N_1.2 — WARENTRAEGER VORHANDEN, PROGRAMM LESEN
+006E [00C7EE]  8E27                       O      M 39.6 ; N_1.22 — WT-TRANSPORT EINFAHREN              OPT.
+0070 [00C7F0]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0072 [00C7F2]  B125                       R      M 37.1 ; N_1.1 — SCHRITTKETTE STARTEN
+0074 [00C7F4]  0000                       NOP0   
+0076 [00C7F6]  10FF                       BLD    255
+0078 [00C7F8]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+007A [00C7FA]  8125                       U      M 37.1 ; N_1.1 — SCHRITTKETTE STARTEN
+007C [00C7FC]  A109                       UN     M 9.1 ; STOER_34 — RESERVE
+007E [00C7FE]  E3F1                       UN     A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+0080 [00C800]  BA00                       U(     
+0082 [00C802]  C47B                       U      E 123.4 ; B123.4 — WT AN SPERRE 3
+0084 [00C804]  C47C                       U      E 124.4 ; S124.4 — WT-TRANSPORT UNTEN
+0086 [00C806]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0088 [00C808]  FB00                       O      
+008A [00C80A]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+008C [00C80C]  C500                       U      E 0.5 ; START — START REINIGEN
+008E [00C80E]  C30E                       U      E 14.3 ; B14.3 — WT IN WT-AUFNAHME
+0090 [00C810]  BF00                       )      
+0092 [00C812]  9225                       S      M 37.2 ; N_1.2 — WARENTRAEGER VORHANDEN, PROGRAMM LESEN
+0094 [00C814]  8B25                       O      M 37.3 ; N_1.3 — PROGRAMM GELESEN, PROGRAMM IST I.ORDNUNG
+0096 [00C816]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0098 [00C818]  B225                       R      M 37.2 ; N_1.2 — WARENTRAEGER VORHANDEN, PROGRAMM LESEN
+009A [00C81A]  0000                       NOP0   
+009C [00C81C]  10FF                       BLD    255
+009E [00C81E]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+00A0 [00C820]  8225                       U      M 37.2 ; N_1.2 — WARENTRAEGER VORHANDEN, PROGRAMM LESEN
+00A2 [00C822]  C00E                       U      E 14.0 ; A14.0 — BESCHICKUNGSTUERE ANLAGE GESCHLOSSEN
+00A4 [00C824]  A010                       UN     M 16.0 ; STOER_89 — ANGEWAEHLTES PROGR.IM OP NICHT VORHANDEN
+00A6 [00C826]  A110                       UN     M 16.1 ; STOER_90 — ANGEWAEHLTES PROGR.IM OP FEHLERHAFT
+00A8 [00C828]  A410                       UN     M 16.4 ; STOER_93 — PROGRAMMNR.0 AUF PLATZ 4             OPT
+00AA [00C82A]  81BE                       U      M 190.1 ; PROG_IO — VON OP15: PROGRAMM EINGELESEN U.I.O.
+00AC [00C82C]  A5BF                       UN     M 191.5 ; M191.5 — REZEPTUEBERTRAGUNG LAEUFT
+00AE [00C82E]  84BF                       U      M 191.4 ; M191.4 — REINIGUNGSPROGRAMM IST I.ORDNUNG
+00B0 [00C830]  9325                       S      M 37.3 ; N_1.3 — PROGRAMM GELESEN, PROGRAMM IST I.ORDNUNG
+00B2 [00C832]  8D25                       O      M 37.5 ; N_1.5 — SPERRE 3 OEFFNEN                    OPT.
+00B4 [00C834]  8828                       O      M 40.0 ; N_1.24 — BELADESTATION, VERT.-TRANSPORT HEBEN
+00B6 [00C836]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+00B8 [00C838]  B325                       R      M 37.3 ; N_1.3 — PROGRAMM GELESEN, PROGRAMM IST I.ORDNUNG
+00BA [00C83A]  0000                       NOP0   
+00BC [00C83C]  10FF                       BLD    255
+00BE [00C83E]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+00C0 [00C840]  8325                       U      M 37.3 ; N_1.3 — PROGRAMM GELESEN, PROGRAMM IST I.ORDNUNG
+00C2 [00C842]  E57B                       UN     E 123.5 ; B123.5 — WT VOR SPERRE 4
+00C4 [00C844]  E67B                       UN     E 123.6 ; B123.6 — SPERRE 4 FREIFAHREN
+00C6 [00C846]  C17C                       U      E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+00C8 [00C848]  C47C                       U      E 124.4 ; S124.4 — WT-TRANSPORT UNTEN
+00CA [00C84A]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00CC [00C84C]  9525                       S      M 37.5 ; N_1.5 — SPERRE 3 OEFFNEN                    OPT.
+00CE [00C84E]  8E25                       O      M 37.6 ; N_1.6 — SPERRE 3 GEOEFFNET                  OPT.
+00D0 [00C850]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+00D2 [00C852]  B525                       R      M 37.5 ; N_1.5 — SPERRE 3 OEFFNEN                    OPT.
+00D4 [00C854]  0000                       NOP0   
+00D6 [00C856]  10FF                       BLD    255
+00D8 [00C858]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+00DA [00C85A]  E2F1                       UN     A 113.2 ; Y113.2 — SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+00DC [00C85C]  C3F1                       U      A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+00DE [00C85E]  F812                       U      T 18 ; T18 — VERZ.MELDUNG SPERRE 2 GEOEFFNET
+00E0 [00C860]  8525                       U      M 37.5 ; N_1.5 — SPERRE 3 OEFFNEN                    OPT.
+00E2 [00C862]  9625                       S      M 37.6 ; N_1.6 — SPERRE 3 GEOEFFNET                  OPT.
+00E4 [00C864]  8F25                       O      M 37.7 ; N_1.7 — WT FAEHRT ZU SPERRE 4               OPT.
+00E6 [00C866]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+00E8 [00C868]  B625                       R      M 37.6 ; N_1.6 — SPERRE 3 GEOEFFNET                  OPT.
+00EA [00C86A]  0000                       NOP0   
+00EC [00C86C]  10FF                       BLD    255
+00EE [00C86E]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+00F0 [00C870]  8625                       U      M 37.6 ; N_1.6 — SPERRE 3 GEOEFFNET                  OPT.
+00F2 [00C872]  A525                       UN     M 37.5 ; N_1.5 — SPERRE 3 OEFFNEN                    OPT.
+00F4 [00C874]  9725                       S      M 37.7 ; N_1.7 — WT FAEHRT ZU SPERRE 4               OPT.
+00F6 [00C876]  8826                       O      M 38.0 ; N_1.8 — WT AN SPERRE 4                      OPT.
+00F8 [00C878]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+00FA [00C87A]  B725                       R      M 37.7 ; N_1.7 — WT FAEHRT ZU SPERRE 4               OPT.
+00FC [00C87C]  0000                       NOP0   
+00FE [00C87E]  10FF                       BLD    255
+0100 [00C880]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0102 [00C882]  A246                       UN     M 70.2 ; M70.2 — SM WT'S UEBERFAHREN SPERRE 3
+0104 [00C884]  C57B                       U      E 123.5 ; B123.5 — WT VOR SPERRE 4
+0106 [00C886]  BA00                       U(     
+0108 [00C888]  8725                       U      M 37.7 ; N_1.7 — WT FAEHRT ZU SPERRE 4               OPT.
+010A [00C88A]  F814                       U      T 20 ; T20 — VERZ.SCHRITTKETTE N1
+010C [00C88C]  FB00                       O      
+010E [00C88E]  841C                       U      M 28.4 ; M28.4 — ZUSAMMENFASSUNG GRUNDSTELLUNG
+0110 [00C890]  C47C                       U      E 124.4 ; S124.4 — WT-TRANSPORT UNTEN
+0112 [00C892]  8025                       U      M 37.0 ; N_1.0 — SCHRITTKETTE VORBEREITEN
+0114 [00C894]  E2F1                       UN     A 113.2 ; Y113.2 — SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+0116 [00C896]  C3F1                       U      A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+0118 [00C898]  BF00                       )      
+011A [00C89A]  9026                       S      M 38.0 ; N_1.8 — WT AN SPERRE 4                      OPT.
+011C [00C89C]  8C27                       O      M 39.4 ; N_1.20 — WT-TRANSPORT HEBEN                  OPT.
+011E [00C89E]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0120 [00C8A0]  B026                       R      M 38.0 ; N_1.8 — WT AN SPERRE 4                      OPT.
+0122 [00C8A2]  0000                       NOP0   
+0124 [00C8A4]  10FF                       BLD    255
+0126 [00C8A6]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0128 [00C8A8]  8026                       U      M 38.0 ; N_1.8 — WT AN SPERRE 4                      OPT.
+012A [00C8AA]  C47C                       U      E 124.4 ; S124.4 — WT-TRANSPORT UNTEN
+012C [00C8AC]  E57C                       UN     E 124.5 ; S124.5 — WT-TRANSPORT OBEN
+012E [00C8AE]  9427                       S      M 39.4 ; N_1.20 — WT-TRANSPORT HEBEN                  OPT.
+0130 [00C8B0]  8D27                       O      M 39.5 ; N_1.21 — WT-TRANSPORT OBEN                   OPT.
+0132 [00C8B2]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0134 [00C8B4]  B427                       R      M 39.4 ; N_1.20 — WT-TRANSPORT HEBEN                  OPT.
+0136 [00C8B6]  0000                       NOP0   
+0138 [00C8B8]  10FF                       BLD    255
+013A [00C8BA]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+013C [00C8BC]  E47C                       UN     E 124.4 ; S124.4 — WT-TRANSPORT UNTEN
+013E [00C8BE]  C57C                       U      E 124.5 ; S124.5 — WT-TRANSPORT OBEN
+0140 [00C8C0]  BA00                       U(     
+0142 [00C8C2]  8C27                       O      M 39.4 ; N_1.20 — WT-TRANSPORT HEBEN                  OPT.
+0144 [00C8C4]  FB00                       O      
+0146 [00C8C6]  8025                       U      M 37.0 ; N_1.0 — SCHRITTKETTE VORBEREITEN
+0148 [00C8C8]  841C                       U      M 28.4 ; M28.4 — ZUSAMMENFASSUNG GRUNDSTELLUNG
+014A [00C8CA]  BF00                       )      
+014C [00C8CC]  9527                       S      M 39.5 ; N_1.21 — WT-TRANSPORT OBEN                   OPT.
+014E [00C8CE]  8E27                       O      M 39.6 ; N_1.22 — WT-TRANSPORT EINFAHREN              OPT.
+0150 [00C8D0]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0152 [00C8D2]  B527                       R      M 39.5 ; N_1.21 — WT-TRANSPORT OBEN                   OPT.
+0154 [00C8D4]  0000                       NOP0   
+0156 [00C8D6]  10FF                       BLD    255
+0158 [00C8D8]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+015A [00C8DA]  8527                       U      M 39.5 ; N_1.21 — WT-TRANSPORT OBEN                   OPT.
+015C [00C8DC]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+015E [00C8DE]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+0160 [00C8E0]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0162 [00C8E2]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+0164 [00C8E4]  C17C                       U      E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+0166 [00C8E6]  E27C                       UN     E 124.2 ; B124.2 — WT-TRANSPORT EINGEFAHREN
+0168 [00C8E8]  9627                       S      M 39.6 ; N_1.22 — WT-TRANSPORT EINFAHREN              OPT.
+016A [00C8EA]  8F27                       O      M 39.7 ; N_1.23 — WT-TRANSPORT EINGEFAHREN            OPT.
+016C [00C8EC]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+016E [00C8EE]  B627                       R      M 39.6 ; N_1.22 — WT-TRANSPORT EINFAHREN              OPT.
+0170 [00C8F0]  0000                       NOP0   
+0172 [00C8F2]  10FF                       BLD    255
+0174 [00C8F4]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0176 [00C8F6]  8627                       U      M 39.6 ; N_1.22 — WT-TRANSPORT EINFAHREN              OPT.
+0178 [00C8F8]  E17C                       UN     E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+017A [00C8FA]  C27C                       U      E 124.2 ; B124.2 — WT-TRANSPORT EINGEFAHREN
+017C [00C8FC]  9727                       S      M 39.7 ; N_1.23 — WT-TRANSPORT EINGEFAHREN            OPT.
+017E [00C8FE]  8828                       O      M 40.0 ; N_1.24 — BELADESTATION, VERT.-TRANSPORT HEBEN
+0180 [00C900]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0182 [00C902]  B727                       R      M 39.7 ; N_1.23 — WT-TRANSPORT EINGEFAHREN            OPT.
+0184 [00C904]  0000                       NOP0   
+0186 [00C906]  10FF                       BLD    255
+0188 [00C908]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+018A [00C90A]  BA00                       U(     
+018C [00C90C]  8F27                       O      M 39.7 ; N_1.23 — WT-TRANSPORT EINGEFAHREN            OPT.
+018E [00C90E]  8B25                       O      M 37.3 ; N_1.3 — PROGRAMM GELESEN, PROGRAMM IST I.ORDNUNG
+0190 [00C910]  BF00                       )      
+0192 [00C912]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+0194 [00C914]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+0196 [00C916]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0198 [00C918]  E50C                       UN     E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+019A [00C91A]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+019C [00C91C]  9028                       S      M 40.0 ; N_1.24 — BELADESTATION, VERT.-TRANSPORT HEBEN
+019E [00C91E]  8928                       O      M 40.1 ; N_1.25 — VERT.-TRANSPORT OBEN, BELADESTATION
+01A0 [00C920]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+01A2 [00C922]  B028                       R      M 40.0 ; N_1.24 — BELADESTATION, VERT.-TRANSPORT HEBEN
+01A4 [00C924]  0000                       NOP0   
+01A6 [00C926]  10FF                       BLD    255
+01A8 [00C928]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+01AA [00C92A]  8028                       U      M 40.0 ; N_1.24 — BELADESTATION, VERT.-TRANSPORT HEBEN
+01AC [00C92C]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+01AE [00C92E]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+01B0 [00C930]  9128                       S      M 40.1 ; N_1.25 — VERT.-TRANSPORT OBEN, BELADESTATION
+01B2 [00C932]  8A28                       O      M 40.2 ; N_1.26 — HORIZ.-TRANSP.VOR BIS STATION 1
+01B4 [00C934]  8E29                       O      M 41.6 ; N_1.38 — HORIZ.-TRANSPORT VOR BIS STATION 2
+01B6 [00C936]  8A2B                       O      M 43.2 ; N_1.50 — HORIZ.-TRANSPORT VOR BIS STATION 3
+01B8 [00C938]  8F2C                       O      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+01BA [00C93A]  8A2E                       O      M 46.2 ; N_1.74 — HORIZ.-TRANSPORT VOR BIS STATION 5
+01BC [00C93C]  8E2F                       O      M 47.6 ; N_1.86 — HORIZ.-TRANSPORT VOR BIS STATION 6
+01BE [00C93E]  8A31                       O      M 49.2 ; N_1.98 — HORIZ.-TRANSPORT VOR BIS STATION 7
+01C0 [00C940]  8E32                       O      M 50.6 ; N_1.110 — HORIZ.-TRANSPORT VOR BIS STATION 8
+01C2 [00C942]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+01C4 [00C944]  B128                       R      M 40.1 ; N_1.25 — VERT.-TRANSPORT OBEN, BELADESTATION
+01C6 [00C946]  0000                       NOP0   
+01C8 [00C948]  10FF                       BLD    255
+01CA [00C94A]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+01CC [00C94C]  8128                       U      M 40.1 ; N_1.25 — VERT.-TRANSPORT OBEN, BELADESTATION
+01CE [00C94E]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+01D0 [00C950]  806E                       U      M 110.0 ; STAT1 — STATION 1 ANFAHREN
+01D2 [00C952]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+01D4 [00C954]  E10B                       UN     E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+01D6 [00C956]  9228                       S      M 40.2 ; N_1.26 — HORIZ.-TRANSP.VOR BIS STATION 1
+01D8 [00C958]  8B28                       O      M 40.3 ; N_1.27 — HORIZ.-TRANSP.IN STATION 1
+01DA [00C95A]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+01DC [00C95C]  B228                       R      M 40.2 ; N_1.26 — HORIZ.-TRANSP.VOR BIS STATION 1
+01DE [00C95E]  0000                       NOP0   
+01E0 [00C960]  10FF                       BLD    255
+01E2 [00C962]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+01E4 [00C964]  8228                       U      M 40.2 ; N_1.26 — HORIZ.-TRANSP.VOR BIS STATION 1
+01E6 [00C966]  C10B                       U      E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+01E8 [00C968]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+01EA [00C96A]  9328                       S      M 40.3 ; N_1.27 — HORIZ.-TRANSP.IN STATION 1
+01EC [00C96C]  8C28                       O      M 40.4 ; N_1.28 — VERT.-TRANSPORT SENKEN STATION 1
+01EE [00C96E]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+01F0 [00C970]  B328                       R      M 40.3 ; N_1.27 — HORIZ.-TRANSP.IN STATION 1
+01F2 [00C972]  0000                       NOP0   
+01F4 [00C974]  10FF                       BLD    255
+01F6 [00C976]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+01F8 [00C978]  8328                       U      M 40.3 ; N_1.27 — HORIZ.-TRANSP.IN STATION 1
+01FA [00C97A]  E10C                       UN     E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+01FC [00C97C]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+01FE [00C97E]  9428                       S      M 40.4 ; N_1.28 — VERT.-TRANSPORT SENKEN STATION 1
+0200 [00C980]  8D28                       O      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+0202 [00C982]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0204 [00C984]  B428                       R      M 40.4 ; N_1.28 — VERT.-TRANSPORT SENKEN STATION 1
+0206 [00C986]  0000                       NOP0   
+0208 [00C988]  10FF                       BLD    255
+020A [00C98A]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+020C [00C98C]  8428                       U      M 40.4 ; N_1.28 — VERT.-TRANSPORT SENKEN STATION 1
+020E [00C98E]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0210 [00C990]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+0212 [00C992]  9528                       S      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+0214 [00C994]  8E28                       O      M 40.6 ; N_1.30 — ENDE TAUCHZEIT STATION 1
+0216 [00C996]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0218 [00C998]  B528                       R      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+021A [00C99A]  0000                       NOP0   
+021C [00C99C]  10FF                       BLD    255
+021E [00C99E]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0220 [00C9A0]  8528                       U      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+0222 [00C9A2]  F801                       U      T 1 ; T1_* — TAUCHZEIT IN ALLEN STATIONEN
+0224 [00C9A4]  9628                       S      M 40.6 ; N_1.30 — ENDE TAUCHZEIT STATION 1
+0226 [00C9A6]  8F28                       O      M 40.7 ; N_1.31 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 1(RES.)
+0228 [00C9A8]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+022A [00C9AA]  B628                       R      M 40.6 ; N_1.30 — ENDE TAUCHZEIT STATION 1
+022C [00C9AC]  0000                       NOP0   
+022E [00C9AE]  10FF                       BLD    255
+0230 [00C9B0]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0232 [00C9B2]  8628                       U      M 40.6 ; N_1.30 — ENDE TAUCHZEIT STATION 1
+0234 [00C9B4]  9728                       S      M 40.7 ; N_1.31 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 1(RES.)
+0236 [00C9B6]  8829                       O      M 41.0 ; N_1.32 — VERT.-TRANSP.HEBEN BIS OBEN ST.1
+0238 [00C9B8]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+023A [00C9BA]  B728                       R      M 40.7 ; N_1.31 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 1(RES.)
+023C [00C9BC]  0000                       NOP0   
+023E [00C9BE]  10FF                       BLD    255
+0240 [00C9C0]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0242 [00C9C2]  8728                       U      M 40.7 ; N_1.31 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 1(RES.)
+0244 [00C9C4]  E50C                       UN     E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+0246 [00C9C6]  BA00                       U(     
+0248 [00C9C8]  AD6F                       ON     M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+024A [00C9CA]  FB00                       O      
+024C [00C9CC]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+024E [00C9CE]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+0250 [00C9D0]  BF00                       )      
+0252 [00C9D2]  9029                       S      M 41.0 ; N_1.32 — VERT.-TRANSP.HEBEN BIS OBEN ST.1
+0254 [00C9D4]  8929                       O      M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+0256 [00C9D6]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0258 [00C9D8]  B029                       R      M 41.0 ; N_1.32 — VERT.-TRANSP.HEBEN BIS OBEN ST.1
+025A [00C9DA]  0000                       NOP0   
+025C [00C9DC]  10FF                       BLD    255
+025E [00C9DE]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0260 [00C9E0]  8029                       U      M 41.0 ; N_1.32 — VERT.-TRANSP.HEBEN BIS OBEN ST.1
+0262 [00C9E2]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+0264 [00C9E4]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+0266 [00C9E6]  9129                       S      M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+0268 [00C9E8]  8A29                       O      M 41.2 ; N_1.34 — ENDE ABTROPFZEIT STATION 1
+026A [00C9EA]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+026C [00C9EC]  B129                       R      M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+026E [00C9EE]  0000                       NOP0   
+0270 [00C9F0]  10FF                       BLD    255
+0272 [00C9F2]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0274 [00C9F4]  F802                       U      T 2 ; T2_* — ABTROPFZEIT IN ALLEN STATIONEN
+0276 [00C9F6]  8129                       U      M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+0278 [00C9F8]  9229                       S      M 41.2 ; N_1.34 — ENDE ABTROPFZEIT STATION 1
+027A [00C9FA]  8B29                       O      M 41.3 ; N_1.35 — TROMMEL GERADESTELLEN STATION 1
+027C [00C9FC]  8E29                       O      M 41.6 ; N_1.38 — HORIZ.-TRANSPORT VOR BIS STATION 2
+027E [00C9FE]  8A2B                       O      M 43.2 ; N_1.50 — HORIZ.-TRANSPORT VOR BIS STATION 3
+0280 [00CA00]  8F2C                       O      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+0282 [00CA02]  8A2E                       O      M 46.2 ; N_1.74 — HORIZ.-TRANSPORT VOR BIS STATION 5
+0284 [00CA04]  8E2F                       O      M 47.6 ; N_1.86 — HORIZ.-TRANSPORT VOR BIS STATION 6
+0286 [00CA06]  8A31                       O      M 49.2 ; N_1.98 — HORIZ.-TRANSPORT VOR BIS STATION 7
+0288 [00CA08]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+028A [00CA0A]  B229                       R      M 41.2 ; N_1.34 — ENDE ABTROPFZEIT STATION 1
+028C [00CA0C]  0000                       NOP0   
+028E [00CA0E]  10FF                       BLD    255
+0290 [00CA10]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0292 [00CA12]  8229                       U      M 41.2 ; N_1.34 — ENDE ABTROPFZEIT STATION 1
+0294 [00CA14]  A16E                       UN     M 110.1 ; STAT2 — STATION 2 ANFAHREN
+0296 [00CA16]  A26E                       UN     M 110.2 ; STAT3 — STATION 3 ANFAHREN
+0298 [00CA18]  9329                       S      M 41.3 ; N_1.35 — TROMMEL GERADESTELLEN STATION 1
+029A [00CA1A]  8C29                       O      M 41.4 ; N_1.36 — TROMMEL IST GERADE STATION 1
+029C [00CA1C]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+029E [00CA1E]  B329                       R      M 41.3 ; N_1.35 — TROMMEL GERADESTELLEN STATION 1
+02A0 [00CA20]  0000                       NOP0   
+02A2 [00CA22]  10FF                       BLD    255
+02A4 [00CA24]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+02A6 [00CA26]  8329                       U      M 41.3 ; N_1.35 — TROMMEL GERADESTELLEN STATION 1
+02A8 [00CA28]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+02AA [00CA2A]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+02AC [00CA2C]  9429                       S      M 41.4 ; N_1.36 — TROMMEL IST GERADE STATION 1
+02AE [00CA2E]  8F2C                       O      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+02B0 [00CA30]  8E32                       O      M 50.6 ; N_1.110 — HORIZ.-TRANSPORT VOR BIS STATION 8
+02B2 [00CA32]  8834                       O      M 52.0 ; N_1.120 — HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+02B4 [00CA34]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+02B6 [00CA36]  B429                       R      M 41.4 ; N_1.36 — TROMMEL IST GERADE STATION 1
+02B8 [00CA38]  0000                       NOP0   
+02BA [00CA3A]  10FF                       BLD    255
+02BC [00CA3C]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+02BE [00CA3E]  816E                       U      M 110.1 ; STAT2 — STATION 2 ANFAHREN
+02C0 [00CA40]  E20B                       UN     E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+02C2 [00CA42]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+02C4 [00CA44]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+02C6 [00CA46]  BA00                       U(     
+02C8 [00CA48]  8A29                       O      M 41.2 ; N_1.34 — ENDE ABTROPFZEIT STATION 1
+02CA [00CA4A]  FB00                       O      
+02CC [00CA4C]  8128                       U      M 40.1 ; N_1.25 — VERT.-TRANSPORT OBEN, BELADESTATION
+02CE [00CA4E]  A06E                       UN     M 110.0 ; STAT1 — STATION 1 ANFAHREN
+02D0 [00CA50]  BF00                       )      
+02D2 [00CA52]  9629                       S      M 41.6 ; N_1.38 — HORIZ.-TRANSPORT VOR BIS STATION 2
+02D4 [00CA54]  8F29                       O      M 41.7 ; N_1.39 — HORIZ.-TRANSPORT IN STATION 2
+02D6 [00CA56]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+02D8 [00CA58]  B629                       R      M 41.6 ; N_1.38 — HORIZ.-TRANSPORT VOR BIS STATION 2
+02DA [00CA5A]  0000                       NOP0   
+02DC [00CA5C]  10FF                       BLD    255
+02DE [00CA5E]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+02E0 [00CA60]  8629                       U      M 41.6 ; N_1.38 — HORIZ.-TRANSPORT VOR BIS STATION 2
+02E2 [00CA62]  C20B                       U      E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+02E4 [00CA64]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+02E6 [00CA66]  9729                       S      M 41.7 ; N_1.39 — HORIZ.-TRANSPORT IN STATION 2
+02E8 [00CA68]  882A                       O      M 42.0 ; N_1.40 — VERT.-TRANSPORT SENKEN STATION 2
+02EA [00CA6A]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+02EC [00CA6C]  B729                       R      M 41.7 ; N_1.39 — HORIZ.-TRANSPORT IN STATION 2
+02EE [00CA6E]  0000                       NOP0   
+02F0 [00CA70]  10FF                       BLD    255
+02F2 [00CA72]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+02F4 [00CA74]  8729                       U      M 41.7 ; N_1.39 — HORIZ.-TRANSPORT IN STATION 2
+02F6 [00CA76]  E10C                       UN     E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+02F8 [00CA78]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+02FA [00CA7A]  902A                       S      M 42.0 ; N_1.40 — VERT.-TRANSPORT SENKEN STATION 2
+02FC [00CA7C]  892A                       O      M 42.1 ; N_1.41 — VERT.-TRANSPORT UNTEN STATION 2
+02FE [00CA7E]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0300 [00CA80]  B02A                       R      M 42.0 ; N_1.40 — VERT.-TRANSPORT SENKEN STATION 2
+0302 [00CA82]  0000                       NOP0   
+0304 [00CA84]  10FF                       BLD    255
+0306 [00CA86]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0308 [00CA88]  802A                       U      M 42.0 ; N_1.40 — VERT.-TRANSPORT SENKEN STATION 2
+030A [00CA8A]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+030C [00CA8C]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+030E [00CA8E]  912A                       S      M 42.1 ; N_1.41 — VERT.-TRANSPORT UNTEN STATION 2
+0310 [00CA90]  8A2A                       O      M 42.2 ; N_1.42 — ENDE TAUCHZEIT STATION 2
+0312 [00CA92]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0314 [00CA94]  B12A                       R      M 42.1 ; N_1.41 — VERT.-TRANSPORT UNTEN STATION 2
+0316 [00CA96]  0000                       NOP0   
+0318 [00CA98]  10FF                       BLD    255
+031A [00CA9A]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+031C [00CA9C]  F801                       U      T 1 ; T1_* — TAUCHZEIT IN ALLEN STATIONEN
+031E [00CA9E]  812A                       U      M 42.1 ; N_1.41 — VERT.-TRANSPORT UNTEN STATION 2
+0320 [00CAA0]  922A                       S      M 42.2 ; N_1.42 — ENDE TAUCHZEIT STATION 2
+0322 [00CAA2]  8B2A                       O      M 42.3 ; N_1.43 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 2(RES.)
+0324 [00CAA4]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0326 [00CAA6]  B22A                       R      M 42.2 ; N_1.42 — ENDE TAUCHZEIT STATION 2
+0328 [00CAA8]  0000                       NOP0   
+032A [00CAAA]  10FF                       BLD    255
+032C [00CAAC]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+032E [00CAAE]  822A                       U      M 42.2 ; N_1.42 — ENDE TAUCHZEIT STATION 2
+0330 [00CAB0]  932A                       S      M 42.3 ; N_1.43 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 2(RES.)
+0332 [00CAB2]  8C2A                       O      M 42.4 ; N_1.44 — VERT.-TRANSPORT HEBEN BIS OBEN ST.2
+0334 [00CAB4]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0336 [00CAB6]  B32A                       R      M 42.3 ; N_1.43 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 2(RES.)
+0338 [00CAB8]  0000                       NOP0   
+033A [00CABA]  10FF                       BLD    255
+033C [00CABC]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+033E [00CABE]  832A                       U      M 42.3 ; N_1.43 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 2(RES.)
+0340 [00CAC0]  E50C                       UN     E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+0342 [00CAC2]  BA00                       U(     
+0344 [00CAC4]  AD6F                       ON     M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+0346 [00CAC6]  FB00                       O      
+0348 [00CAC8]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+034A [00CACA]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+034C [00CACC]  BF00                       )      
+034E [00CACE]  942A                       S      M 42.4 ; N_1.44 — VERT.-TRANSPORT HEBEN BIS OBEN ST.2
+0350 [00CAD0]  8D2A                       O      M 42.5 ; N_1.45 — VERT.-TRANSPORT OBEN STATION 2
+0352 [00CAD2]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0354 [00CAD4]  B42A                       R      M 42.4 ; N_1.44 — VERT.-TRANSPORT HEBEN BIS OBEN ST.2
+0356 [00CAD6]  0000                       NOP0   
+0358 [00CAD8]  10FF                       BLD    255
+035A [00CADA]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+035C [00CADC]  842A                       U      M 42.4 ; N_1.44 — VERT.-TRANSPORT HEBEN BIS OBEN ST.2
+035E [00CADE]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+0360 [00CAE0]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+0362 [00CAE2]  952A                       S      M 42.5 ; N_1.45 — VERT.-TRANSPORT OBEN STATION 2
+0364 [00CAE4]  8E2A                       O      M 42.6 ; N_1.46 — ENDE ABTROPFZEIT STATION 2
+0366 [00CAE6]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0368 [00CAE8]  B52A                       R      M 42.5 ; N_1.45 — VERT.-TRANSPORT OBEN STATION 2
+036A [00CAEA]  0000                       NOP0   
+036C [00CAEC]  10FF                       BLD    255
+036E [00CAEE]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0370 [00CAF0]  F802                       U      T 2 ; T2_* — ABTROPFZEIT IN ALLEN STATIONEN
+0372 [00CAF2]  852A                       U      M 42.5 ; N_1.45 — VERT.-TRANSPORT OBEN STATION 2
+0374 [00CAF4]  962A                       S      M 42.6 ; N_1.46 — ENDE ABTROPFZEIT STATION 2
+0376 [00CAF6]  8F2A                       O      M 42.7 ; N_1.47 — TROMMEL GERADESTELLEN STATION 2
+0378 [00CAF8]  8A2B                       O      M 43.2 ; N_1.50 — HORIZ.-TRANSPORT VOR BIS STATION 3
+037A [00CAFA]  8F2C                       O      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+037C [00CAFC]  8A2E                       O      M 46.2 ; N_1.74 — HORIZ.-TRANSPORT VOR BIS STATION 5
+037E [00CAFE]  8E2F                       O      M 47.6 ; N_1.86 — HORIZ.-TRANSPORT VOR BIS STATION 6
+0380 [00CB00]  8A31                       O      M 49.2 ; N_1.98 — HORIZ.-TRANSPORT VOR BIS STATION 7
+0382 [00CB02]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0384 [00CB04]  B62A                       R      M 42.6 ; N_1.46 — ENDE ABTROPFZEIT STATION 2
+0386 [00CB06]  0000                       NOP0   
+0388 [00CB08]  10FF                       BLD    255
+038A [00CB0A]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+038C [00CB0C]  862A                       U      M 42.6 ; N_1.46 — ENDE ABTROPFZEIT STATION 2
+038E [00CB0E]  A26E                       UN     M 110.2 ; STAT3 — STATION 3 ANFAHREN
+0390 [00CB10]  972A                       S      M 42.7 ; N_1.47 — TROMMEL GERADESTELLEN STATION 2
+0392 [00CB12]  882B                       O      M 43.0 ; N_1.48 — TROMMEL IST GERADE STATION 2
+0394 [00CB14]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0396 [00CB16]  B72A                       R      M 42.7 ; N_1.47 — TROMMEL GERADESTELLEN STATION 2
+0398 [00CB18]  0000                       NOP0   
+039A [00CB1A]  10FF                       BLD    255
+039C [00CB1C]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+039E [00CB1E]  872A                       U      M 42.7 ; N_1.47 — TROMMEL GERADESTELLEN STATION 2
+03A0 [00CB20]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+03A2 [00CB22]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+03A4 [00CB24]  902B                       S      M 43.0 ; N_1.48 — TROMMEL IST GERADE STATION 2
+03A6 [00CB26]  8F2C                       O      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+03A8 [00CB28]  8E32                       O      M 50.6 ; N_1.110 — HORIZ.-TRANSPORT VOR BIS STATION 8
+03AA [00CB2A]  8834                       O      M 52.0 ; N_1.120 — HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+03AC [00CB2C]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+03AE [00CB2E]  B02B                       R      M 43.0 ; N_1.48 — TROMMEL IST GERADE STATION 2
+03B0 [00CB30]  0000                       NOP0   
+03B2 [00CB32]  10FF                       BLD    255
+03B4 [00CB34]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+03B6 [00CB36]  826E                       U      M 110.2 ; STAT3 — STATION 3 ANFAHREN
+03B8 [00CB38]  E30B                       UN     E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+03BA [00CB3A]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+03BC [00CB3C]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+03BE [00CB3E]  BA00                       U(     
+03C0 [00CB40]  8E2A                       O      M 42.6 ; N_1.46 — ENDE ABTROPFZEIT STATION 2
+03C2 [00CB42]  FB00                       O      
+03C4 [00CB44]  8229                       U      M 41.2 ; N_1.34 — ENDE ABTROPFZEIT STATION 1
+03C6 [00CB46]  A16E                       UN     M 110.1 ; STAT2 — STATION 2 ANFAHREN
+03C8 [00CB48]  FB00                       O      
+03CA [00CB4A]  8128                       U      M 40.1 ; N_1.25 — VERT.-TRANSPORT OBEN, BELADESTATION
+03CC [00CB4C]  A06E                       UN     M 110.0 ; STAT1 — STATION 1 ANFAHREN
+03CE [00CB4E]  A16E                       UN     M 110.1 ; STAT2 — STATION 2 ANFAHREN
+03D0 [00CB50]  BF00                       )      
+03D2 [00CB52]  922B                       S      M 43.2 ; N_1.50 — HORIZ.-TRANSPORT VOR BIS STATION 3
+03D4 [00CB54]  8B2B                       O      M 43.3 ; N_1.51 — HORIZ.-TRANSPORT IN STATION 3
+03D6 [00CB56]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+03D8 [00CB58]  B22B                       R      M 43.2 ; N_1.50 — HORIZ.-TRANSPORT VOR BIS STATION 3
+03DA [00CB5A]  0000                       NOP0   
+03DC [00CB5C]  10FF                       BLD    255
+03DE [00CB5E]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+03E0 [00CB60]  822B                       U      M 43.2 ; N_1.50 — HORIZ.-TRANSPORT VOR BIS STATION 3
+03E2 [00CB62]  C30B                       U      E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+03E4 [00CB64]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+03E6 [00CB66]  932B                       S      M 43.3 ; N_1.51 — HORIZ.-TRANSPORT IN STATION 3
+03E8 [00CB68]  8C2B                       O      M 43.4 ; N_1.52 — VERT.-TRANSPORT SENKEN STATION 3
+03EA [00CB6A]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+03EC [00CB6C]  B32B                       R      M 43.3 ; N_1.51 — HORIZ.-TRANSPORT IN STATION 3
+03EE [00CB6E]  0000                       NOP0   
+03F0 [00CB70]  10FF                       BLD    255
+03F2 [00CB72]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+03F4 [00CB74]  832B                       U      M 43.3 ; N_1.51 — HORIZ.-TRANSPORT IN STATION 3
+03F6 [00CB76]  E10C                       UN     E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+03F8 [00CB78]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+03FA [00CB7A]  942B                       S      M 43.4 ; N_1.52 — VERT.-TRANSPORT SENKEN STATION 3
+03FC [00CB7C]  8D2B                       O      M 43.5 ; N_1.53 — VERT.-TRANSPORT UNTEN STATION 3
+03FE [00CB7E]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0400 [00CB80]  B42B                       R      M 43.4 ; N_1.52 — VERT.-TRANSPORT SENKEN STATION 3
+0402 [00CB82]  0000                       NOP0   
+0404 [00CB84]  10FF                       BLD    255
+0406 [00CB86]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0408 [00CB88]  842B                       U      M 43.4 ; N_1.52 — VERT.-TRANSPORT SENKEN STATION 3
+040A [00CB8A]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+040C [00CB8C]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+040E [00CB8E]  952B                       S      M 43.5 ; N_1.53 — VERT.-TRANSPORT UNTEN STATION 3
+0410 [00CB90]  8E2B                       O      M 43.6 ; N_1.54 — ENDE TAUCHZEIT STATION 3
+0412 [00CB92]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0414 [00CB94]  B52B                       R      M 43.5 ; N_1.53 — VERT.-TRANSPORT UNTEN STATION 3
+0416 [00CB96]  0000                       NOP0   
+0418 [00CB98]  10FF                       BLD    255
+041A [00CB9A]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+041C [00CB9C]  F801                       U      T 1 ; T1_* — TAUCHZEIT IN ALLEN STATIONEN
+041E [00CB9E]  852B                       U      M 43.5 ; N_1.53 — VERT.-TRANSPORT UNTEN STATION 3
+0420 [00CBA0]  962B                       S      M 43.6 ; N_1.54 — ENDE TAUCHZEIT STATION 3
+0422 [00CBA2]  8F2B                       O      M 43.7 ; N_1.55 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 3(RES.)
+0424 [00CBA4]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0426 [00CBA6]  B62B                       R      M 43.6 ; N_1.54 — ENDE TAUCHZEIT STATION 3
+0428 [00CBA8]  0000                       NOP0   
+042A [00CBAA]  10FF                       BLD    255
+042C [00CBAC]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+042E [00CBAE]  862B                       U      M 43.6 ; N_1.54 — ENDE TAUCHZEIT STATION 3
+0430 [00CBB0]  972B                       S      M 43.7 ; N_1.55 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 3(RES.)
+0432 [00CBB2]  882C                       O      M 44.0 ; N_1.56 — VERT.-TR.HEBEN BIS OBEN STATION 3
+0434 [00CBB4]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0436 [00CBB6]  B72B                       R      M 43.7 ; N_1.55 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 3(RES.)
+0438 [00CBB8]  0000                       NOP0   
+043A [00CBBA]  10FF                       BLD    255
+043C [00CBBC]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+043E [00CBBE]  872B                       U      M 43.7 ; N_1.55 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 3(RES.)
+0440 [00CBC0]  E50C                       UN     E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+0442 [00CBC2]  BA00                       U(     
+0444 [00CBC4]  AD6F                       ON     M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+0446 [00CBC6]  FB00                       O      
+0448 [00CBC8]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+044A [00CBCA]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+044C [00CBCC]  BF00                       )      
+044E [00CBCE]  902C                       S      M 44.0 ; N_1.56 — VERT.-TR.HEBEN BIS OBEN STATION 3
+0450 [00CBD0]  892C                       O      M 44.1 ; N_1.57 — VERT.-TRANSPORT OBEN STATION 3
+0452 [00CBD2]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0454 [00CBD4]  B02C                       R      M 44.0 ; N_1.56 — VERT.-TR.HEBEN BIS OBEN STATION 3
+0456 [00CBD6]  0000                       NOP0   
+0458 [00CBD8]  10FF                       BLD    255
+045A [00CBDA]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+045C [00CBDC]  802C                       U      M 44.0 ; N_1.56 — VERT.-TR.HEBEN BIS OBEN STATION 3
+045E [00CBDE]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+0460 [00CBE0]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+0462 [00CBE2]  912C                       S      M 44.1 ; N_1.57 — VERT.-TRANSPORT OBEN STATION 3
+0464 [00CBE4]  8A2C                       O      M 44.2 ; N_1.58 — ENDE ABTROPFZEIT STATION 3
+0466 [00CBE6]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0468 [00CBE8]  B12C                       R      M 44.1 ; N_1.57 — VERT.-TRANSPORT OBEN STATION 3
+046A [00CBEA]  0000                       NOP0   
+046C [00CBEC]  10FF                       BLD    255
+046E [00CBEE]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0470 [00CBF0]  F802                       U      T 2 ; T2_* — ABTROPFZEIT IN ALLEN STATIONEN
+0472 [00CBF2]  812C                       U      M 44.1 ; N_1.57 — VERT.-TRANSPORT OBEN STATION 3
+0474 [00CBF4]  922C                       S      M 44.2 ; N_1.58 — ENDE ABTROPFZEIT STATION 3
+0476 [00CBF6]  8B2C                       O      M 44.3 ; N_1.59 — TROMMEL GERADESTELLEN STATION 3
+0478 [00CBF8]  8F2C                       O      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+047A [00CBFA]  8A2E                       O      M 46.2 ; N_1.74 — HORIZ.-TRANSPORT VOR BIS STATION 5
+047C [00CBFC]  8E2F                       O      M 47.6 ; N_1.86 — HORIZ.-TRANSPORT VOR BIS STATION 6
+047E [00CBFE]  8A31                       O      M 49.2 ; N_1.98 — HORIZ.-TRANSPORT VOR BIS STATION 7
+0480 [00CC00]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0482 [00CC02]  B22C                       R      M 44.2 ; N_1.58 — ENDE ABTROPFZEIT STATION 3
+0484 [00CC04]  0000                       NOP0   
+0486 [00CC06]  10FF                       BLD    255
+0488 [00CC08]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+048A [00CC0A]  822C                       U      M 44.2 ; N_1.58 — ENDE ABTROPFZEIT STATION 3
+048C [00CC0C]  932C                       S      M 44.3 ; N_1.59 — TROMMEL GERADESTELLEN STATION 3
+048E [00CC0E]  8C2C                       O      M 44.4 ; N_1.60 — TROMMEL IST GERADE STATION 3
+0490 [00CC10]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0492 [00CC12]  B32C                       R      M 44.3 ; N_1.59 — TROMMEL GERADESTELLEN STATION 3
+0494 [00CC14]  0000                       NOP0   
+0496 [00CC16]  10FF                       BLD    255
+0498 [00CC18]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+049A [00CC1A]  832C                       U      M 44.3 ; N_1.59 — TROMMEL GERADESTELLEN STATION 3
+049C [00CC1C]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+049E [00CC1E]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+04A0 [00CC20]  942C                       S      M 44.4 ; N_1.60 — TROMMEL IST GERADE STATION 3
+04A2 [00CC22]  8F2C                       O      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+04A4 [00CC24]  8E32                       O      M 50.6 ; N_1.110 — HORIZ.-TRANSPORT VOR BIS STATION 8
+04A6 [00CC26]  8834                       O      M 52.0 ; N_1.120 — HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+04A8 [00CC28]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+04AA [00CC2A]  B42C                       R      M 44.4 ; N_1.60 — TROMMEL IST GERADE STATION 3
+04AC [00CC2C]  0000                       NOP0   
+04AE [00CC2E]  10FF                       BLD    255
+04B0 [00CC30]  8128                       U      M 40.1 ; N_1.25 — VERT.-TRANSPORT OBEN, BELADESTATION
+04B2 [00CC32]  A06E                       UN     M 110.0 ; STAT1 — STATION 1 ANFAHREN
+04B4 [00CC34]  A16E                       UN     M 110.1 ; STAT2 — STATION 2 ANFAHREN
+04B6 [00CC36]  A26E                       UN     M 110.2 ; STAT3 — STATION 3 ANFAHREN
+04B8 [00CC38]  FB00                       O      
+04BA [00CC3A]  8429                       U      M 41.4 ; N_1.36 — TROMMEL IST GERADE STATION 1
+04BC [00CC3C]  A16E                       UN     M 110.1 ; STAT2 — STATION 2 ANFAHREN
+04BE [00CC3E]  A26E                       UN     M 110.2 ; STAT3 — STATION 3 ANFAHREN
+04C0 [00CC40]  FB00                       O      
+04C2 [00CC42]  802B                       U      M 43.0 ; N_1.48 — TROMMEL IST GERADE STATION 2
+04C4 [00CC44]  A26E                       UN     M 110.2 ; STAT3 — STATION 3 ANFAHREN
+04C6 [00CC46]  8C2C                       O      M 44.4 ; N_1.60 — TROMMEL IST GERADE STATION 3
+04C8 [00CC48]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+04CA [00CC4A]  10FF                       BLD    255
+04CC [00CC4C]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+04CE [00CC4E]  836E                       U      M 110.3 ; STAT4 — STATION 4 ANFAHREN
+04D0 [00CC50]  80F0                       U      M 240.0 ; M240.0 — SCHMIERMERKER
+04D2 [00CC52]  E40B                       UN     E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+04D4 [00CC54]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+04D6 [00CC56]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+04D8 [00CC58]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+04DA [00CC5A]  972C                       S      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+04DC [00CC5C]  882D                       O      M 45.0 ; N_1.64 — HORIZ.-TRANSPORT IN STATION 4
+04DE [00CC5E]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+04E0 [00CC60]  B72C                       R      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+04E2 [00CC62]  0000                       NOP0   
+04E4 [00CC64]  10FF                       BLD    255
+04E6 [00CC66]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+04E8 [00CC68]  872C                       U      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+04EA [00CC6A]  C40B                       U      E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+04EC [00CC6C]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+04EE [00CC6E]  902D                       S      M 45.0 ; N_1.64 — HORIZ.-TRANSPORT IN STATION 4
+04F0 [00CC70]  892D                       O      M 45.1 ; N_1.65 — VERT.-TRANSPORT SENKEN STATION 4
+04F2 [00CC72]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+04F4 [00CC74]  B02D                       R      M 45.0 ; N_1.64 — HORIZ.-TRANSPORT IN STATION 4
+04F6 [00CC76]  0000                       NOP0   
+04F8 [00CC78]  10FF                       BLD    255
+04FA [00CC7A]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+04FC [00CC7C]  802D                       U      M 45.0 ; N_1.64 — HORIZ.-TRANSPORT IN STATION 4
+04FE [00CC7E]  E10C                       UN     E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0500 [00CC80]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+0502 [00CC82]  912D                       S      M 45.1 ; N_1.65 — VERT.-TRANSPORT SENKEN STATION 4
+0504 [00CC84]  8A2D                       O      M 45.2 ; N_1.66 — VERT.-TRANSPORT UNTEN STATION 4
+0506 [00CC86]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0508 [00CC88]  B12D                       R      M 45.1 ; N_1.65 — VERT.-TRANSPORT SENKEN STATION 4
+050A [00CC8A]  0000                       NOP0   
+050C [00CC8C]  10FF                       BLD    255
+050E [00CC8E]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0510 [00CC90]  812D                       U      M 45.1 ; N_1.65 — VERT.-TRANSPORT SENKEN STATION 4
+0512 [00CC92]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0514 [00CC94]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+0516 [00CC96]  922D                       S      M 45.2 ; N_1.66 — VERT.-TRANSPORT UNTEN STATION 4
+0518 [00CC98]  8B2D                       O      M 45.3 ; N_1.67 — ENDE TAUCHZEIT STATION 4
+051A [00CC9A]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+051C [00CC9C]  B22D                       R      M 45.2 ; N_1.66 — VERT.-TRANSPORT UNTEN STATION 4
+051E [00CC9E]  0000                       NOP0   
+0520 [00CCA0]  10FF                       BLD    255
+0522 [00CCA2]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0524 [00CCA4]  F801                       U      T 1 ; T1_* — TAUCHZEIT IN ALLEN STATIONEN
+0526 [00CCA6]  822D                       U      M 45.2 ; N_1.66 — VERT.-TRANSPORT UNTEN STATION 4
+0528 [00CCA8]  932D                       S      M 45.3 ; N_1.67 — ENDE TAUCHZEIT STATION 4
+052A [00CCAA]  8C2D                       O      M 45.4 ; N_1.68 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 4(RES.)
+052C [00CCAC]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+052E [00CCAE]  B32D                       R      M 45.3 ; N_1.67 — ENDE TAUCHZEIT STATION 4
+0530 [00CCB0]  0000                       NOP0   
+0532 [00CCB2]  10FF                       BLD    255
+0534 [00CCB4]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0536 [00CCB6]  832D                       U      M 45.3 ; N_1.67 — ENDE TAUCHZEIT STATION 4
+0538 [00CCB8]  942D                       S      M 45.4 ; N_1.68 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 4(RES.)
+053A [00CCBA]  8D2D                       O      M 45.5 ; N_1.69 — VERT.-TR.HEBEN BIS OBEN STATION 4
+053C [00CCBC]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+053E [00CCBE]  B42D                       R      M 45.4 ; N_1.68 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 4(RES.)
+0540 [00CCC0]  0000                       NOP0   
+0542 [00CCC2]  10FF                       BLD    255
+0544 [00CCC4]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0546 [00CCC6]  842D                       U      M 45.4 ; N_1.68 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 4(RES.)
+0548 [00CCC8]  E50C                       UN     E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+054A [00CCCA]  952D                       S      M 45.5 ; N_1.69 — VERT.-TR.HEBEN BIS OBEN STATION 4
+054C [00CCCC]  8E2D                       O      M 45.6 ; N_1.70 — VERT.-TRANSPORT OBEN STATION 4
+054E [00CCCE]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0550 [00CCD0]  B52D                       R      M 45.5 ; N_1.69 — VERT.-TR.HEBEN BIS OBEN STATION 4
+0552 [00CCD2]  0000                       NOP0   
+0554 [00CCD4]  10FF                       BLD    255
+0556 [00CCD6]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0558 [00CCD8]  852D                       U      M 45.5 ; N_1.69 — VERT.-TR.HEBEN BIS OBEN STATION 4
+055A [00CCDA]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+055C [00CCDC]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+055E [00CCDE]  962D                       S      M 45.6 ; N_1.70 — VERT.-TRANSPORT OBEN STATION 4
+0560 [00CCE0]  8F2D                       O      M 45.7 ; N_1.71 — ENDE ABTROPFZEIT STATION 4
+0562 [00CCE2]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0564 [00CCE4]  B62D                       R      M 45.6 ; N_1.70 — VERT.-TRANSPORT OBEN STATION 4
+0566 [00CCE6]  0000                       NOP0   
+0568 [00CCE8]  10FF                       BLD    255
+056A [00CCEA]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+056C [00CCEC]  BA00                       U(     
+056E [00CCEE]  F902                       O      T 2 ; T2_* — ABTROPFZEIT IN ALLEN STATIONEN
+0570 [00CCF0]  8C00                       O      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0572 [00CCF2]  BF00                       )      
+0574 [00CCF4]  862D                       U      M 45.6 ; N_1.70 — VERT.-TRANSPORT OBEN STATION 4
+0576 [00CCF6]  972D                       S      M 45.7 ; N_1.71 — ENDE ABTROPFZEIT STATION 4
+0578 [00CCF8]  882E                       O      M 46.0 ; N_1.72 — TROMMEL GERADESTELLEN STATION 4
+057A [00CCFA]  8A2E                       O      M 46.2 ; N_1.74 — HORIZ.-TRANSPORT VOR BIS STATION 5
+057C [00CCFC]  8E2F                       O      M 47.6 ; N_1.86 — HORIZ.-TRANSPORT VOR BIS STATION 6
+057E [00CCFE]  8A31                       O      M 49.2 ; N_1.98 — HORIZ.-TRANSPORT VOR BIS STATION 7
+0580 [00CD00]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0582 [00CD02]  B72D                       R      M 45.7 ; N_1.71 — ENDE ABTROPFZEIT STATION 4
+0584 [00CD04]  0000                       NOP0   
+0586 [00CD06]  10FF                       BLD    255
+0588 [00CD08]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+058A [00CD0A]  872D                       U      M 45.7 ; N_1.71 — ENDE ABTROPFZEIT STATION 4
+058C [00CD0C]  902E                       S      M 46.0 ; N_1.72 — TROMMEL GERADESTELLEN STATION 4
+058E [00CD0E]  892E                       O      M 46.1 ; N_1.73 — TROMMEL IST GERADE STATION 4
+0590 [00CD10]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+0592 [00CD12]  B02E                       R      M 46.0 ; N_1.72 — TROMMEL GERADESTELLEN STATION 4
+0594 [00CD14]  0000                       NOP0   
+0596 [00CD16]  10FF                       BLD    255
+0598 [00CD18]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+059A [00CD1A]  802E                       U      M 46.0 ; N_1.72 — TROMMEL GERADESTELLEN STATION 4
+059C [00CD1C]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+059E [00CD1E]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+05A0 [00CD20]  912E                       S      M 46.1 ; N_1.73 — TROMMEL IST GERADE STATION 4
+05A2 [00CD22]  8E32                       O      M 50.6 ; N_1.110 — HORIZ.-TRANSPORT VOR BIS STATION 8
+05A4 [00CD24]  8834                       O      M 52.0 ; N_1.120 — HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+05A6 [00CD26]  8A20                       O      M 32.2 ; STSCHRKR — STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+05A8 [00CD28]  B12E                       R      M 46.1 ; N_1.73 — TROMMEL IST GERADE STATION 4
+05AA [00CD2A]  0000                       NOP0   
+05AC [00CD2C]  10FF                       BLD    255
+05AE [00CD2E]  6500                       BE     

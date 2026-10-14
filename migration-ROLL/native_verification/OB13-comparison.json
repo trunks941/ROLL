@@ -1,0 +1,19 @@
+{
+  "block": "OB13",
+  "source_file": "OB13ROLS.INI",
+  "sha256": "a28a28db25a791f42cba75cf655cc924ef5a21d95b544a9537a2e225599a43fa",
+  "size_bytes": 801,
+  "pages": 1,
+  "networks": 1,
+  "block_bytes": 44,
+  "positions_compared": 17,
+  "executing_instructions": 12,
+  "BLD_display_rows": 5,
+  "jumps_compared": 0,
+  "addressed_positions": 17,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

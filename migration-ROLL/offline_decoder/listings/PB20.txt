@@ -1,0 +1,574 @@
+PB20: PB 20 — VERFAHRENSTECHNIK RAV
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xF780; block bytes: 1164; SHA256: 6cfecf23ff71289539e1ef2b2ac30067a133d4f3596a7d76ef7370c9d708e166
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 14 80 00 00 00 02 46
+Code starts at block offset 0x000A.
+000A [00F78A]  1083                       BLD    131
+000C [00F78C]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+000E [00F78E]  10FF                       BLD    255
+0010 [00F790]  BA00                       U(     
+0012 [00F792]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0014 [00F794]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+0016 [00F796]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0018 [00F798]  851A                       U      M 26.5 ; HB_65 — UMPUMPEN IN SCHMUTZTANK RAV
+001A [00F79A]  FB00                       O      
+001C [00F79C]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+001E [00F79E]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0020 [00F7A0]  BF00                       )      
+0022 [00F7A2]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0024 [00F7A4]  E007                       UN     E 7.0 ; B7.0 — NIVEAU RAV SCHMUTZTANK MAX
+0026 [00F7A6]  9808                       =      M 8.0 ; STOER_25 — RAV SCHMUTZTANK VOLL ...............B7.0
+0028 [00F7A8]  10FF                       BLD    255
+002A [00F7AA]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+002C [00F7AC]  E107                       UN     E 7.1 ; B7.1 — NIVEAU RAV SCHMUTZTANK MIN
+002E [00F7AE]  F83D                       U      T 61 ; T61_V_* — VERZ.NIVEAUMANGEL SCHMUTZTANK RAV
+0030 [00F7B0]  C601                       U      E 1.6 ; S1.6_1 — DESTILLIEREN RAV 1=MIT NACHFUELLEN
+0032 [00F7B2]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0034 [00F7B4]  9108                       S      M 8.1 ; STOER_26 — RAV NIVEAUMANGEL SCHMUTZTANK .......B7.1
+0036 [00F7B6]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0038 [00F7B8]  B108                       R      M 8.1 ; STOER_26 — RAV NIVEAUMANGEL SCHMUTZTANK .......B7.1
+003A [00F7BA]  0000                       NOP0   
+003C [00F7BC]  10FF                       BLD    255
+003E [00F7BE]  E107                       UN     E 7.1 ; B7.1 — NIVEAU RAV SCHMUTZTANK MIN
+0040 [00F7C0]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+0042 [00F7C2]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0044 [00F7C4]  323D                       L      DW 61
+0046 [00F7C6]  243D                       SE     T 61 ; T61_V_* — VERZ.NIVEAUMANGEL SCHMUTZTANK RAV
+0048 [00F7C8]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+004A [00F7CA]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+004C [00F7CC]  3C3D                       R      T 61 ; T61_V_* — VERZ.NIVEAUMANGEL SCHMUTZTANK RAV
+004E [00F7CE]  0000                       NOP0   
+0050 [00F7D0]  0000                       NOP0   
+0052 [00F7D2]  0000                       NOP0   
+0054 [00F7D4]  10FF                       BLD    255
+0056 [00F7D6]  E207                       UN     E 7.2 ; B7.2 — NIVEAU RAV VERDAMPFER MAX
+0058 [00F7D8]  F837                       U      T 55 ; T55_V_* — VERZ.VERDAMPFER RAV VOLL
+005A [00F7DA]  9208                       S      M 8.2 ; STOER_27 — RAV VERDAMPFER VOLL ................B7.2
+005C [00F7DC]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+005E [00F7DE]  B208                       R      M 8.2 ; STOER_27 — RAV VERDAMPFER VOLL ................B7.2
+0060 [00F7E0]  0000                       NOP0   
+0062 [00F7E2]  10FF                       BLD    255
+0064 [00F7E4]  E207                       UN     E 7.2 ; B7.2 — NIVEAU RAV VERDAMPFER MAX
+0066 [00F7E6]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0068 [00F7E8]  A208                       UN     M 8.2 ; STOER_27 — RAV VERDAMPFER VOLL ................B7.2
+006A [00F7EA]  3237                       L      DW 55
+006C [00F7EC]  2437                       SE     T 55 ; T55_V_* — VERZ.VERDAMPFER RAV VOLL
+006E [00F7EE]  0000                       NOP0   
+0070 [00F7F0]  0000                       NOP0   
+0072 [00F7F2]  0000                       NOP0   
+0074 [00F7F4]  0000                       NOP0   
+0076 [00F7F6]  10FF                       BLD    255
+0078 [00F7F8]  E307                       UN     E 7.3 ; B7.3 — NIVEAU RAV VERDAMPFER MIN
+007A [00F7FA]  F83C                       U      T 60 ; T60_V_* — VERZ.STOER VERDAMPFER RAV MIN
+007C [00F7FC]  C695                       U      A 21.6 ; Y21.6 — MV ZULAUF VERDAMPFER RAV
+007E [00F7FE]  9308                       S      M 8.3 ; STOER_28 — RAV VERDAMPFER LEER ................B7.3
+0080 [00F800]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0082 [00F802]  B308                       R      M 8.3 ; STOER_28 — RAV VERDAMPFER LEER ................B7.3
+0084 [00F804]  0000                       NOP0   
+0086 [00F806]  10FF                       BLD    255
+0088 [00F808]  E307                       UN     E 7.3 ; B7.3 — NIVEAU RAV VERDAMPFER MIN
+008A [00F80A]  C695                       U      A 21.6 ; Y21.6 — MV ZULAUF VERDAMPFER RAV
+008C [00F80C]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+008E [00F80E]  323C                       L      DW 60
+0090 [00F810]  243C                       SE     T 60 ; T60_V_* — VERZ.STOER VERDAMPFER RAV MIN
+0092 [00F812]  0000                       NOP0   
+0094 [00F814]  0000                       NOP0   
+0096 [00F816]  0000                       NOP0   
+0098 [00F818]  0000                       NOP0   
+009A [00F81A]  10FF                       BLD    255
+009C [00F81C]  E407                       UN     E 7.4 ; B7.4 — NIVEAU RAV DESTILLATBEH.MAX
+009E [00F81E]  30022010                   L      KT 010.2
+00A2 [00F822]  2458                       SE     T 88 ; T88_* — VERZ.STOER REINTANK MAX
+00A4 [00F824]  0000                       NOP0   
+00A6 [00F826]  0000                       NOP0   
+00A8 [00F828]  0000                       NOP0   
+00AA [00F82A]  0000                       NOP0   
+00AC [00F82C]  10FF                       BLD    255
+00AE [00F82E]  E407                       UN     E 7.4 ; B7.4 — NIVEAU RAV DESTILLATBEH.MAX
+00B0 [00F830]  F858                       U      T 88 ; T88_* — VERZ.STOER REINTANK MAX
+00B2 [00F832]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+00B4 [00F834]  9C08                       =      M 8.4 ; STOER_29 — RAV DESTILLATBEHAELTER VOLL ........B7.4
+00B6 [00F836]  10FF                       BLD    255
+00B8 [00F838]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+00BA [00F83A]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+00BC [00F83C]  F860                       U      T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+00BE [00F83E]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+00C0 [00F840]  BA00                       U(     
+00C2 [00F842]  8819                       O      M 25.0 ; HB_50 — FUELLEN AUS RAV IN STATION 1-3,OEAS
+00C4 [00F844]  8919                       O      M 25.1 ; HB_51 — 
+00C6 [00F846]  BF00                       )      
+00C8 [00F848]  9508                       S      M 8.5 ; STOER_30 — RAV NIVEAUMANGEL DESTILLATBEH. .....B7.5
+00CA [00F84A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00CC [00F84C]  B508                       R      M 8.5 ; STOER_30 — RAV NIVEAUMANGEL DESTILLATBEH. .....B7.5
+00CE [00F84E]  0000                       NOP0   
+00D0 [00F850]  10FF                       BLD    255
+00D2 [00F852]  E009                       UN     E 9.0 ; K18.5MF — RAV WE.1 SICHERHEITSABSCHALTUNG
+00D4 [00F854]  C609                       U      E 9.6 ; B9.6 — KONTROLLE KUEHLUNG
+00D6 [00F856]  BA00                       U(     
+00D8 [00F858]  CE01                       O      E 1.6 ; S1.6_1 — DESTILLIEREN RAV 1=MIT NACHFUELLEN
+00DA [00F85A]  CF01                       O      E 1.7 ; S1.6_2 — DESTILLIEREN RAV 2=OHNE NACHFUELLEN
+00DC [00F85C]  BF00                       )      
+00DE [00F85E]  940C                       S      M 12.4 ; STOER_61 — RAV TEMP.-BEGR.WE 1 AUSGEL. .....E9.0
+00E0 [00F860]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00E2 [00F862]  B40C                       R      M 12.4 ; STOER_61 — RAV TEMP.-BEGR.WE 1 AUSGEL. .....E9.0
+00E4 [00F864]  0000                       NOP0   
+00E6 [00F866]  10FF                       BLD    255
+00E8 [00F868]  E309                       UN     E 9.3 ; K18.7MF — RAV WE.1 SICHERHEITSABSCHALTUNG
+00EA [00F86A]  C609                       U      E 9.6 ; B9.6 — KONTROLLE KUEHLUNG
+00EC [00F86C]  BA00                       U(     
+00EE [00F86E]  CE01                       O      E 1.6 ; S1.6_1 — DESTILLIEREN RAV 1=MIT NACHFUELLEN
+00F0 [00F870]  CF01                       O      E 1.7 ; S1.6_2 — DESTILLIEREN RAV 2=OHNE NACHFUELLEN
+00F2 [00F872]  BF00                       )      
+00F4 [00F874]  950C                       S      M 12.5 ; STOER_62 — RAV TEMP.-BEGR.WE 2 AUSGEL. .....E9.3
+00F6 [00F876]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00F8 [00F878]  B50C                       R      M 12.5 ; STOER_62 — RAV TEMP.-BEGR.WE 2 AUSGEL. .....E9.3
+00FA [00F87A]  0000                       NOP0   
+00FC [00F87C]  10FF                       BLD    255
+00FE [00F87E]  E709                       UN     E 9.7 ; A9.7 — RAV TEMPERATURKONTROLLE (IM SUD)
+0100 [00F880]  BA00                       U(     
+0102 [00F882]  CE01                       O      E 1.6 ; S1.6_1 — DESTILLIEREN RAV 1=MIT NACHFUELLEN
+0104 [00F884]  CF01                       O      E 1.7 ; S1.6_2 — DESTILLIEREN RAV 2=OHNE NACHFUELLEN
+0106 [00F886]  BF00                       )      
+0108 [00F888]  960C                       S      M 12.6 ; STOER_63 — RAV UEBERTEMPERATUR IM SUD ......E9.7
+010A [00F88A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+010C [00F88C]  B60C                       R      M 12.6 ; STOER_63 — RAV UEBERTEMPERATUR IM SUD ......E9.7
+010E [00F88E]  0000                       NOP0   
+0110 [00F890]  10FF                       BLD    255
+0112 [00F892]  E609                       UN     E 9.6 ; B9.6 — KONTROLLE KUEHLUNG
+0114 [00F894]  970C                       S      M 12.7 ; STOER_64 — RAV KUEHLUNGSKONTROLLE AUSGELOEST
+0116 [00F896]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0118 [00F898]  C609                       U      E 9.6 ; B9.6 — KONTROLLE KUEHLUNG
+011A [00F89A]  B70C                       R      M 12.7 ; STOER_64 — RAV KUEHLUNGSKONTROLLE AUSGELOEST
+011C [00F89C]  0000                       NOP0   
+011E [00F89E]  10FF                       BLD    255
+0120 [00F8A0]  E107                       UN     E 7.1 ; B7.1 — NIVEAU RAV SCHMUTZTANK MIN
+0122 [00F8A2]  3238                       L      DW 56
+0124 [00F8A4]  1438                       SA     T 56 ; T56_V_* — NACHFUELLZEIT SCHMUTZTANK RAV
+0126 [00F8A6]  0000                       NOP0   
+0128 [00F8A8]  0000                       NOP0   
+012A [00F8AA]  0000                       NOP0   
+012C [00F8AC]  0000                       NOP0   
+012E [00F8AE]  10FF                       BLD    255
+0130 [00F8B0]  E307                       UN     E 7.3 ; B7.3 — NIVEAU RAV VERDAMPFER MIN
+0132 [00F8B2]  3241                       L      DW 65
+0134 [00F8B4]  2441                       SE     T 65 ; T65_V_* — VERZ.VERDAMPFER NIVEAU MIN
+0136 [00F8B6]  0000                       NOP0   
+0138 [00F8B8]  0000                       NOP0   
+013A [00F8BA]  0000                       NOP0   
+013C [00F8BC]  0000                       NOP0   
+013E [00F8BE]  10FF                       BLD    255
+0140 [00F8C0]  C307                       U      E 7.3 ; B7.3 — NIVEAU RAV VERDAMPFER MIN
+0142 [00F8C2]  30022020                   L      KT 020.2
+0146 [00F8C6]  1442                       SA     T 66 ; T66_* — VERZ.HEIZUNG AUS VERDAMPFER
+0148 [00F8C8]  0000                       NOP0   
+014A [00F8CA]  0000                       NOP0   
+014C [00F8CC]  0000                       NOP0   
+014E [00F8CE]  0000                       NOP0   
+0150 [00F8D0]  10FF                       BLD    255
+0152 [00F8D2]  C307                       U      E 7.3 ; B7.3 — NIVEAU RAV VERDAMPFER MIN
+0154 [00F8D4]  8196                       U      M 150.1 ; M150.1 — VERDAMPFER RAV NACHFUELLEN IM AB
+0156 [00F8D6]  3243                       L      DW 67
+0158 [00F8D8]  2443                       SE     T 67 ; T67_V_* — NACHFUELLZEIT VERDAMPFER RAV
+015A [00F8DA]  0000                       NOP0   
+015C [00F8DC]  0000                       NOP0   
+015E [00F8DE]  0000                       NOP0   
+0160 [00F8E0]  0000                       NOP0   
+0162 [00F8E2]  10FF                       BLD    255
+0164 [00F8E4]  E507                       UN     E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+0166 [00F8E6]  30022005                   L      KT 005.2
+016A [00F8EA]  2460                       SE     T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+016C [00F8EC]  0000                       NOP0   
+016E [00F8EE]  0000                       NOP0   
+0170 [00F8F0]  0000                       NOP0   
+0172 [00F8F2]  0000                       NOP0   
+0174 [00F8F4]  10FF                       BLD    255
+0176 [00F8F6]  C507                       U      E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+0178 [00F8F8]  30022030                   L      KT 030.2
+017C [00F8FC]  2461                       SE     T 97 ; T97_* — VERZ.MELDUNG DESTILLATBEH.NICHT LEER
+017E [00F8FE]  0000                       NOP0   
+0180 [00F900]  0000                       NOP0   
+0182 [00F902]  0000                       NOP0   
+0184 [00F904]  0000                       NOP0   
+0186 [00F906]  10FF                       BLD    255
+0188 [00F908]  C492                       U      A 18.4 ; K18.4M — HEIZUNG VERDAMPFER RAV WE 1
+018A [00F90A]  E592                       UN     A 18.5 ; K18.5M — HEIZUNG VERDAMPFER RAV WE 1
+018C [00F90C]  FB00                       O      
+018E [00F90E]  C692                       U      A 18.6 ; K18.6M — HEIZUNG VERDAMPFER RAV WE 2
+0190 [00F910]  E792                       UN     A 18.7 ; K18.7M — HEIZUNG VERDAMPFER RAV WE 2
+0192 [00F912]  9E95                       =      M 149.6 ; M149.6 — HM EINSCHALTVERZOEG.HEIZUNG RAV
+0194 [00F914]  10FF                       BLD    255
+0196 [00F916]  8494                       U      M 148.4 ; M148.4 — RAV EINSCHALTVERZOEG.HEIZUNGEN
+0198 [00F918]  30021010                   L      KT 010.1
+019C [00F91C]  2459                       SE     T 89 ; T89_* — RAV EINSCHALTVERZ.HEIZUNG
+019E [00F91E]  0000                       NOP0   
+01A0 [00F920]  0000                       NOP0   
+01A2 [00F922]  0000                       NOP0   
+01A4 [00F924]  0000                       NOP0   
+01A6 [00F926]  10FF                       BLD    255
+01A8 [00F928]  8695                       U      M 149.6 ; M149.6 — HM EINSCHALTVERZOEG.HEIZUNG RAV
+01AA [00F92A]  9494                       S      M 148.4 ; M148.4 — RAV EINSCHALTVERZOEG.HEIZUNGEN
+01AC [00F92C]  F859                       U      T 89 ; T89_* — RAV EINSCHALTVERZ.HEIZUNG
+01AE [00F92E]  B494                       R      M 148.4 ; M148.4 — RAV EINSCHALTVERZOEG.HEIZUNGEN
+01B0 [00F930]  0000                       NOP0   
+01B2 [00F932]  10FF                       BLD    255
+01B4 [00F934]  C008                       U      E 8.0 ; A8.0 — STATION 1 TEMPERATURKONTROLLE
+01B6 [00F936]  F846                       U      T 70 ; T70 — VERZ.HEIZUNG AUS STATION 1
+01B8 [00F938]  9893                       =      M 147.0 ; M147.0 — WAERMETRANSPORT ZU STATION 1 MOEGLICH
+01BA [00F93A]  10FF                       BLD    255
+01BC [00F93C]  A093                       UN     M 147.0 ; M147.0 — WAERMETRANSPORT ZU STATION 1 MOEGLICH
+01BE [00F93E]  324B                       L      DW 75
+01C0 [00F940]  244B                       SE     T 75 ; T75_V_* — VERZ.HEIZUNGSVENTIL SCHLIESSEN STATION 1
+01C2 [00F942]  0000                       NOP0   
+01C4 [00F944]  0000                       NOP0   
+01C6 [00F946]  0000                       NOP0   
+01C8 [00F948]  0000                       NOP0   
+01CA [00F94A]  10FF                       BLD    255
+01CC [00F94C]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01CE [00F94E]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01D0 [00F950]  9993                       =      M 147.1 ; M147.1 — WAERMETRANSPORT ZU STATION 2 MOEGLICH
+01D2 [00F952]  10FF                       BLD    255
+01D4 [00F954]  C208                       U      E 8.2 ; A8.2 — STATION 3 TEMPERATURKONTROLLE
+01D6 [00F956]  F848                       U      T 72 ; T72 — VERZ.HEIZUNG AUS STATION 3
+01D8 [00F958]  9A93                       =      M 147.2 ; M147.2 — WAERMETRANSPORT ZU STATION 3 MOEGLICH
+01DA [00F95A]  10FF                       BLD    255
+01DC [00F95C]  A293                       UN     M 147.2 ; M147.2 — WAERMETRANSPORT ZU STATION 3 MOEGLICH
+01DE [00F95E]  324D                       L      DW 77
+01E0 [00F960]  244D                       SE     T 77 ; T77_V_* — VERZ.HEIZUNGSVENTIL SCHLIESSEN STATION 3
+01E2 [00F962]  0000                       NOP0   
+01E4 [00F964]  0000                       NOP0   
+01E6 [00F966]  0000                       NOP0   
+01E8 [00F968]  0000                       NOP0   
+01EA [00F96A]  10FF                       BLD    255
+01EC [00F96C]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01EE [00F96E]  9895                       =      M 149.0 ; M149.0 — RAV HEIZLEISTUNG  25%
+01F0 [00F970]  10FF                       BLD    255
+01F2 [00F972]  8893                       O      M 147.0 ; M147.0 — WAERMETRANSPORT ZU STATION 1 MOEGLICH
+01F4 [00F974]  8A93                       O      M 147.2 ; M147.2 — WAERMETRANSPORT ZU STATION 3 MOEGLICH
+01F6 [00F976]  9995                       =      M 149.1 ; M149.1 — RAV HEIZLEISTUNG  50%
+01F8 [00F978]  10FF                       BLD    255
+01FA [00F97A]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01FC [00F97C]  9A95                       =      M 149.2 ; M149.2 — RAV HEIZLEISTUNG  75%
+01FE [00F97E]  10FF                       BLD    255
+0200 [00F980]  8093                       U      M 147.0 ; M147.0 — WAERMETRANSPORT ZU STATION 1 MOEGLICH
+0202 [00F982]  8293                       U      M 147.2 ; M147.2 — WAERMETRANSPORT ZU STATION 3 MOEGLICH
+0204 [00F984]  9B95                       =      M 149.3 ; M149.3 — RAV HEIZLEISTUNG 100%
+0206 [00F986]  10FF                       BLD    255
+0208 [00F988]  A006                       UN     M 6.0 ; STOER_09 — STATION 1 UEBERFUELLT ..............B5.2
+020A [00F98A]  A206                       UN     M 6.2 ; STOER_11 — OELABSCHEIDER UEBERFUELLT ..........B5.4
+020C [00F98C]  A208                       UN     M 8.2 ; STOER_27 — RAV VERDAMPFER VOLL ................B7.2
+020E [00F98E]  A60C                       UN     M 12.6 ; STOER_63 — RAV UEBERTEMPERATUR IM SUD ......E9.7
+0210 [00F990]  C709                       U      E 9.7 ; A9.7 — RAV TEMPERATURKONTROLLE (IM SUD)
+0212 [00F992]  A70C                       UN     M 12.7 ; STOER_64 — RAV KUEHLUNGSKONTROLLE AUSGELOEST
+0214 [00F994]  C609                       U      E 9.6 ; B9.6 — KONTROLLE KUEHLUNG
+0216 [00F996]  A40D                       UN     M 13.4 ; STOER_69 — DRUCKLUFTMANGEL ...................B10.7
+0218 [00F998]  BA00                       U(     
+021A [00F99A]  CE01                       O      E 1.6 ; S1.6_1 — DESTILLIEREN RAV 1=MIT NACHFUELLEN
+021C [00F99C]  CF01                       O      E 1.7 ; S1.6_2 — DESTILLIEREN RAV 2=OHNE NACHFUELLEN
+021E [00F99E]  BF00                       )      
+0220 [00F9A0]  F842                       U      T 66 ; T66_* — VERZ.HEIZUNG AUS VERDAMPFER
+0222 [00F9A2]  C407                       U      E 7.4 ; B7.4 — NIVEAU RAV DESTILLATBEH.MAX
+0224 [00F9A4]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+0226 [00F9A6]  9A96                       =      M 150.2 ; M150.2 — RAV HEIZUNG VERDAMPFER ALLG.EIN
+0228 [00F9A8]  10FF                       BLD    255
+022A [00F9AA]  8296                       U      M 150.2 ; M150.2 — RAV HEIZUNG VERDAMPFER ALLG.EIN
+022C [00F9AC]  BA00                       U(     
+022E [00F9AE]  CC92                       O      A 18.4 ; K18.4M — HEIZUNG VERDAMPFER RAV WE 1
+0230 [00F9B0]  C909                       O      E 9.1 ; B9.1_1 — RAV WE.1 MANOMETER
+0232 [00F9B2]  BF00                       )      
+0234 [00F9B4]  E209                       UN     E 9.2 ; B9.1_2 — RAV WE.1 MANOMETER
+0236 [00F9B6]  C009                       U      E 9.0 ; K18.5MF — RAV WE.1 SICHERHEITSABSCHALTUNG
+0238 [00F9B8]  A40C                       UN     M 12.4 ; STOER_61 — RAV TEMP.-BEGR.WE 1 AUSGEL. .....E9.0
+023A [00F9BA]  BA00                       U(     
+023C [00F9BC]  8895                       O      M 149.0 ; M149.0 — RAV HEIZLEISTUNG  25%
+023E [00F9BE]  8995                       O      M 149.1 ; M149.1 — RAV HEIZLEISTUNG  50%
+0240 [00F9C0]  8A95                       O      M 149.2 ; M149.2 — RAV HEIZLEISTUNG  75%
+0242 [00F9C2]  8B95                       O      M 149.3 ; M149.3 — RAV HEIZLEISTUNG 100%
+0244 [00F9C4]  BF00                       )      
+0246 [00F9C6]  DC92                       =      A 18.4 ; K18.4M — HEIZUNG VERDAMPFER RAV WE 1
+0248 [00F9C8]  10FF                       BLD    255
+024A [00F9CA]  BA00                       U(     
+024C [00F9CC]  C909                       O      E 9.1 ; B9.1_1 — RAV WE.1 MANOMETER
+024E [00F9CE]  CC92                       O      A 18.4 ; K18.4M — HEIZUNG VERDAMPFER RAV WE 1
+0250 [00F9D0]  CD92                       O      A 18.5 ; K18.5M — HEIZUNG VERDAMPFER RAV WE 1
+0252 [00F9D2]  BF00                       )      
+0254 [00F9D4]  E209                       UN     E 9.2 ; B9.1_2 — RAV WE.1 MANOMETER
+0256 [00F9D6]  C009                       U      E 9.0 ; K18.5MF — RAV WE.1 SICHERHEITSABSCHALTUNG
+0258 [00F9D8]  8296                       U      M 150.2 ; M150.2 — RAV HEIZUNG VERDAMPFER ALLG.EIN
+025A [00F9DA]  A40C                       UN     M 12.4 ; STOER_61 — RAV TEMP.-BEGR.WE 1 AUSGEL. .....E9.0
+025C [00F9DC]  BA00                       U(     
+025E [00F9DE]  8A95                       O      M 149.2 ; M149.2 — RAV HEIZLEISTUNG  75%
+0260 [00F9E0]  8B95                       O      M 149.3 ; M149.3 — RAV HEIZLEISTUNG 100%
+0262 [00F9E2]  BF00                       )      
+0264 [00F9E4]  DD92                       =      A 18.5 ; K18.5M — HEIZUNG VERDAMPFER RAV WE 1
+0266 [00F9E6]  10FF                       BLD    255
+0268 [00F9E8]  8296                       U      M 150.2 ; M150.2 — RAV HEIZUNG VERDAMPFER ALLG.EIN
+026A [00F9EA]  BA00                       U(     
+026C [00F9EC]  CE92                       O      A 18.6 ; K18.6M — HEIZUNG VERDAMPFER RAV WE 2
+026E [00F9EE]  CC09                       O      E 9.4 ; B9.4_1 — RAV WE.1 MANOMETER
+0270 [00F9F0]  BF00                       )      
+0272 [00F9F2]  E509                       UN     E 9.5 ; B9.4_2 — RAV WE.1 MANOMETER
+0274 [00F9F4]  C309                       U      E 9.3 ; K18.7MF — RAV WE.1 SICHERHEITSABSCHALTUNG
+0276 [00F9F6]  BA00                       U(     
+0278 [00F9F8]  8995                       O      M 149.1 ; M149.1 — RAV HEIZLEISTUNG  50%
+027A [00F9FA]  8A95                       O      M 149.2 ; M149.2 — RAV HEIZLEISTUNG  75%
+027C [00F9FC]  8B95                       O      M 149.3 ; M149.3 — RAV HEIZLEISTUNG 100%
+027E [00F9FE]  BF00                       )      
+0280 [00FA00]  A50C                       UN     M 12.5 ; STOER_62 — RAV TEMP.-BEGR.WE 2 AUSGEL. .....E9.3
+0282 [00FA02]  DE92                       =      A 18.6 ; K18.6M — HEIZUNG VERDAMPFER RAV WE 2
+0284 [00FA04]  10FF                       BLD    255
+0286 [00FA06]  BA00                       U(     
+0288 [00FA08]  CC09                       O      E 9.4 ; B9.4_1 — RAV WE.1 MANOMETER
+028A [00FA0A]  CE92                       O      A 18.6 ; K18.6M — HEIZUNG VERDAMPFER RAV WE 2
+028C [00FA0C]  CF92                       O      A 18.7 ; K18.7M — HEIZUNG VERDAMPFER RAV WE 2
+028E [00FA0E]  BF00                       )      
+0290 [00FA10]  E509                       UN     E 9.5 ; B9.4_2 — RAV WE.1 MANOMETER
+0292 [00FA12]  C309                       U      E 9.3 ; K18.7MF — RAV WE.1 SICHERHEITSABSCHALTUNG
+0294 [00FA14]  A50C                       UN     M 12.5 ; STOER_62 — RAV TEMP.-BEGR.WE 2 AUSGEL. .....E9.3
+0296 [00FA16]  8296                       U      M 150.2 ; M150.2 — RAV HEIZUNG VERDAMPFER ALLG.EIN
+0298 [00FA18]  8395                       U      M 149.3 ; M149.3 — RAV HEIZLEISTUNG 100%
+029A [00FA1A]  DF92                       =      A 18.7 ; K18.7M — HEIZUNG VERDAMPFER RAV WE 2
+029C [00FA1C]  10FF                       BLD    255
+029E [00FA1E]  A093                       UN     M 147.0 ; M147.0 — WAERMETRANSPORT ZU STATION 1 MOEGLICH
+02A0 [00FA20]  F84B                       U      T 75 ; T75_V_* — VERZ.HEIZUNGSVENTIL SCHLIESSEN STATION 1
+02A2 [00FA22]  8293                       U      M 147.2 ; M147.2 — WAERMETRANSPORT ZU STATION 3 MOEGLICH
+02A4 [00FA24]  D895                       =      A 21.0 ; Y21.0 — MV HEIZUNG STATION 1
+02A6 [00FA26]  10FF                       BLD    255
+02A8 [00FA28]  A293                       UN     M 147.2 ; M147.2 — WAERMETRANSPORT ZU STATION 3 MOEGLICH
+02AA [00FA2A]  F84D                       U      T 77 ; T77_V_* — VERZ.HEIZUNGSVENTIL SCHLIESSEN STATION 3
+02AC [00FA2C]  8093                       U      M 147.0 ; M147.0 — WAERMETRANSPORT ZU STATION 1 MOEGLICH
+02AE [00FA2E]  DA95                       =      A 21.2 ; Y21.2 — MV HEIZUNG STATION 3
+02B0 [00FA30]  10FF                       BLD    255
+02B2 [00FA32]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+02B4 [00FA34]  9096                       S      M 150.0 ; M150.0 — VERDAMPFER RAV FUELLEN IM HB
+02B6 [00FA36]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+02B8 [00FA38]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+02BA [00FA3A]  AD1B                       ON     M 27.5 ; HB_73 — VERDAMPFER RAV FUELL.AUS SCHMUTZT.
+02BC [00FA3C]  E907                       ON     E 7.1 ; B7.1 — NIVEAU RAV SCHMUTZTANK MIN
+02BE [00FA3E]  EA07                       ON     E 7.2 ; B7.2 — NIVEAU RAV VERDAMPFER MAX
+02C0 [00FA40]  CB07                       O      E 7.3 ; B7.3 — NIVEAU RAV VERDAMPFER MIN
+02C2 [00FA42]  B096                       R      M 150.0 ; M150.0 — VERDAMPFER RAV FUELLEN IM HB
+02C4 [00FA44]  0000                       NOP0   
+02C6 [00FA46]  10FF                       BLD    255
+02C8 [00FA48]  C107                       U      E 7.1 ; B7.1 — NIVEAU RAV SCHMUTZTANK MIN
+02CA [00FA4A]  30022020                   L      KT 020.2
+02CE [00FA4E]  1439                       SA     T 57 ; T57_* — VERZ.SCHMUTZTANK MIN UNTERSCHRITTEN
+02D0 [00FA50]  0000                       NOP0   
+02D2 [00FA52]  0000                       NOP0   
+02D4 [00FA54]  0000                       NOP0   
+02D6 [00FA56]  0000                       NOP0   
+02D8 [00FA58]  10FF                       BLD    255
+02DA [00FA5A]  BA00                       U(     
+02DC [00FA5C]  F841                       U      T 65 ; T65_V_* — VERZ.VERDAMPFER NIVEAU MIN
+02DE [00FA5E]  E307                       UN     E 7.3 ; B7.3 — NIVEAU RAV VERDAMPFER MIN
+02E0 [00FA60]  FB00                       O      
+02E2 [00FA62]  8196                       U      M 150.1 ; M150.1 — VERDAMPFER RAV NACHFUELLEN IM AB
+02E4 [00FA64]  FC43                       UN     T 67 ; T67_V_* — NACHFUELLZEIT VERDAMPFER RAV
+02E6 [00FA66]  BF00                       )      
+02E8 [00FA68]  C207                       U      E 7.2 ; B7.2 — NIVEAU RAV VERDAMPFER MAX
+02EA [00FA6A]  A40D                       UN     M 13.4 ; STOER_69 — DRUCKLUFTMANGEL ...................B10.7
+02EC [00FA6C]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+02EE [00FA6E]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+02F0 [00FA70]  FC3D                       UN     T 61 ; T61_V_* — VERZ.NIVEAUMANGEL SCHMUTZTANK RAV
+02F2 [00FA72]  F839                       U      T 57 ; T57_* — VERZ.SCHMUTZTANK MIN UNTERSCHRITTEN
+02F4 [00FA74]  9996                       =      M 150.1 ; M150.1 — VERDAMPFER RAV NACHFUELLEN IM AB
+02F6 [00FA76]  10FF                       BLD    255
+02F8 [00FA78]  8996                       O      M 150.1 ; M150.1 — VERDAMPFER RAV NACHFUELLEN IM AB
+02FA [00FA7A]  8896                       O      M 150.0 ; M150.0 — VERDAMPFER RAV FUELLEN IM HB
+02FC [00FA7C]  DE95                       =      A 21.6 ; Y21.6 — MV ZULAUF VERDAMPFER RAV
+02FE [00FA7E]  10FF                       BLD    255
+0300 [00FA80]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0302 [00FA82]  C601                       U      E 1.6 ; S1.6_1 — DESTILLIEREN RAV 1=MIT NACHFUELLEN
+0304 [00FA84]  C007                       U      E 7.0 ; B7.0 — NIVEAU RAV SCHMUTZTANK MAX
+0306 [00FA86]  BA00                       U(     
+0308 [00FA88]  E907                       ON     E 7.1 ; B7.1 — NIVEAU RAV SCHMUTZTANK MIN
+030A [00FA8A]  FB00                       O      
+030C [00FA8C]  C507                       U      E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+030E [00FA8E]  E407                       UN     E 7.4 ; B7.4 — NIVEAU RAV DESTILLATBEH.MAX
+0310 [00FA90]  FB00                       O      
+0312 [00FA92]  8694                       U      M 148.6 ; M148.6 — RAV SCHMUTZTANK NACHFUELLEN IM AB
+0314 [00FA94]  FC6A                       UN     T 106 ; T106_* — EINSCHALTDAUER FUELLEN SMT RAV
+0316 [00FA96]  BF00                       )      
+0318 [00FA98]  9E94                       =      M 148.6 ; M148.6 — RAV SCHMUTZTANK NACHFUELLEN IM AB
+031A [00FA9A]  10FF                       BLD    255
+031C [00FA9C]  8397                       U      M 151.3 ; M151.3 — RAV FUELLEN SMT AUS STATION 4
+031E [00FA9E]  A398                       UN     M 152.3 ; M152.3 — RAV NACHFUELLEN SMT AUS STATION 4 LAEUFT
+0320 [00FAA0]  8399                       U      M 153.3 ; M153.3 — STATION 4 HAT MIND. 1x IN SMT GESPEIST
+0322 [00FAA2]  F869                       U      T 105 ; T105_* — BEARBEITUNGSDAUER SMT RAV FUELLEN AUS 4
+0324 [00FAA4]  FB00                       O      
+0326 [00FAA6]  A097                       UN     M 151.0 ; M151.0 — RAV FUELLEN SMT AUS OEAS
+0328 [00FAA8]  A197                       UN     M 151.1 ; M151.1 — RAV FUELLEN SMT AUS STATION 2
+032A [00FAAA]  A297                       UN     M 151.2 ; M151.2 — RAV FUELLEN SMT AUS STATION 3
+032C [00FAAC]  A397                       UN     M 151.3 ; M151.3 — RAV FUELLEN SMT AUS STATION 4
+032E [00FAAE]  9097                       S      M 151.0 ; M151.0 — RAV FUELLEN SMT AUS OEAS
+0330 [00FAB0]  8997                       O      M 151.1 ; M151.1 — RAV FUELLEN SMT AUS STATION 2
+0332 [00FAB2]  8A97                       O      M 151.2 ; M151.2 — RAV FUELLEN SMT AUS STATION 3
+0334 [00FAB4]  B097                       R      M 151.0 ; M151.0 — RAV FUELLEN SMT AUS OEAS
+0336 [00FAB6]  0000                       NOP0   
+0338 [00FAB8]  10FF                       BLD    255
+033A [00FABA]  8097                       U      M 151.0 ; M151.0 — RAV FUELLEN SMT AUS OEAS
+033C [00FABC]  3266                       L      DW 102
+033E [00FABE]  2466                       SE     T 102 ; T102_V_* — BEARBEITUNGSDAUER SMT RAV FUELLEN AUS OE
+0340 [00FAC0]  0000                       NOP0   
+0342 [00FAC2]  0000                       NOP0   
+0344 [00FAC4]  0000                       NOP0   
+0346 [00FAC6]  0000                       NOP0   
+0348 [00FAC8]  10FF                       BLD    255
+034A [00FACA]  8097                       U      M 151.0 ; M151.0 — RAV FUELLEN SMT AUS OEAS
+034C [00FACC]  FC6A                       UN     T 106 ; T106_* — EINSCHALTDAUER FUELLEN SMT RAV
+034E [00FACE]  9098                       S      M 152.0 ; M152.0 — RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+0350 [00FAD0]  AE94                       ON     M 148.6 ; M148.6 — RAV SCHMUTZTANK NACHFUELLEN IM AB
+0352 [00FAD2]  F96A                       O      T 106 ; T106_* — EINSCHALTDAUER FUELLEN SMT RAV
+0354 [00FAD4]  B098                       R      M 152.0 ; M152.0 — RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+0356 [00FAD6]  0000                       NOP0   
+0358 [00FAD8]  10FF                       BLD    255
+035A [00FADA]  8098                       U      M 152.0 ; M152.0 — RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+035C [00FADC]  C595                       U      A 21.5 ; Y21.5 — MV FUELLEN SCHMUTZTANK AUS OELABSCH.ST.1
+035E [00FADE]  9099                       S      M 153.0 ; M153.0 — OEAS HAT MIND. 1x IN SMT GESPEIST
+0360 [00FAE0]  A097                       UN     M 151.0 ; M151.0 — RAV FUELLEN SMT AUS OEAS
+0362 [00FAE2]  B099                       R      M 153.0 ; M153.0 — OEAS HAT MIND. 1x IN SMT GESPEIST
+0364 [00FAE4]  0000                       NOP0   
+0366 [00FAE6]  10FF                       BLD    255
+0368 [00FAE8]  8097                       U      M 151.0 ; M151.0 — RAV FUELLEN SMT AUS OEAS
+036A [00FAEA]  A098                       UN     M 152.0 ; M152.0 — RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+036C [00FAEC]  8099                       U      M 153.0 ; M153.0 — OEAS HAT MIND. 1x IN SMT GESPEIST
+036E [00FAEE]  F866                       U      T 102 ; T102_V_* — BEARBEITUNGSDAUER SMT RAV FUELLEN AUS OE
+0370 [00FAF0]  9197                       S      M 151.1 ; M151.1 — RAV FUELLEN SMT AUS STATION 2
+0372 [00FAF2]  8297                       U      M 151.2 ; M151.2 — RAV FUELLEN SMT AUS STATION 3
+0374 [00FAF4]  B197                       R      M 151.1 ; M151.1 — RAV FUELLEN SMT AUS STATION 2
+0376 [00FAF6]  0000                       NOP0   
+0378 [00FAF8]  10FF                       BLD    255
+037A [00FAFA]  8197                       U      M 151.1 ; M151.1 — RAV FUELLEN SMT AUS STATION 2
+037C [00FAFC]  3267                       L      DW 103
+037E [00FAFE]  2467                       SE     T 103 ; T103_V_* — BEARBEITUNGSDAUER SMT RAV FUELLEN AUS 2
+0380 [00FB00]  0000                       NOP0   
+0382 [00FB02]  0000                       NOP0   
+0384 [00FB04]  0000                       NOP0   
+0386 [00FB06]  0000                       NOP0   
+0388 [00FB08]  10FF                       BLD    255
+038A [00FB0A]  8197                       U      M 151.1 ; M151.1 — RAV FUELLEN SMT AUS STATION 2
+038C [00FB0C]  FC6A                       UN     T 106 ; T106_* — EINSCHALTDAUER FUELLEN SMT RAV
+038E [00FB0E]  9198                       S      M 152.1 ; M152.1 — RAV NACHFUELLEN SMT AUS STATION 2 LAEUFT
+0390 [00FB10]  AE94                       ON     M 148.6 ; M148.6 — RAV SCHMUTZTANK NACHFUELLEN IM AB
+0392 [00FB12]  F96A                       O      T 106 ; T106_* — EINSCHALTDAUER FUELLEN SMT RAV
+0394 [00FB14]  B198                       R      M 152.1 ; M152.1 — RAV NACHFUELLEN SMT AUS STATION 2 LAEUFT
+0396 [00FB16]  0000                       NOP0   
+0398 [00FB18]  10FF                       BLD    255
+039A [00FB1A]  8198                       U      M 152.1 ; M152.1 — RAV NACHFUELLEN SMT AUS STATION 2 LAEUFT
+039C [00FB1C]  C694                       U      A 20.6 ; K20.6M — PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+039E [00FB1E]  9199                       S      M 153.1 ; M153.1 — STATION 2 HAT MIND. 1x IN SMT GESPEIST
+03A0 [00FB20]  A197                       UN     M 151.1 ; M151.1 — RAV FUELLEN SMT AUS STATION 2
+03A2 [00FB22]  B199                       R      M 153.1 ; M153.1 — STATION 2 HAT MIND. 1x IN SMT GESPEIST
+03A4 [00FB24]  0000                       NOP0   
+03A6 [00FB26]  10FF                       BLD    255
+03A8 [00FB28]  8197                       U      M 151.1 ; M151.1 — RAV FUELLEN SMT AUS STATION 2
+03AA [00FB2A]  A198                       UN     M 152.1 ; M152.1 — RAV NACHFUELLEN SMT AUS STATION 2 LAEUFT
+03AC [00FB2C]  8199                       U      M 153.1 ; M153.1 — STATION 2 HAT MIND. 1x IN SMT GESPEIST
+03AE [00FB2E]  F867                       U      T 103 ; T103_V_* — BEARBEITUNGSDAUER SMT RAV FUELLEN AUS 2
+03B0 [00FB30]  9297                       S      M 151.2 ; M151.2 — RAV FUELLEN SMT AUS STATION 3
+03B2 [00FB32]  8397                       U      M 151.3 ; M151.3 — RAV FUELLEN SMT AUS STATION 4
+03B4 [00FB34]  B297                       R      M 151.2 ; M151.2 — RAV FUELLEN SMT AUS STATION 3
+03B6 [00FB36]  0000                       NOP0   
+03B8 [00FB38]  10FF                       BLD    255
+03BA [00FB3A]  8297                       U      M 151.2 ; M151.2 — RAV FUELLEN SMT AUS STATION 3
+03BC [00FB3C]  30020002                   L      KT 002.0
+03C0 [00FB40]  2468                       SE     T 104 ; T104_* — BEARBEITUNGSDAUER SMT RAV FUELLEN AUS 3
+03C2 [00FB42]  0000                       NOP0   
+03C4 [00FB44]  0000                       NOP0   
+03C6 [00FB46]  0000                       NOP0   
+03C8 [00FB48]  0000                       NOP0   
+03CA [00FB4A]  10FF                       BLD    255
+03CC [00FB4C]  8297                       U      M 151.2 ; M151.2 — RAV FUELLEN SMT AUS STATION 3
+03CE [00FB4E]  FC6A                       UN     T 106 ; T106_* — EINSCHALTDAUER FUELLEN SMT RAV
+03D0 [00FB50]  9298                       S      M 152.2 ; M152.2 — RAV NACHFUELLEN SMT AUS STATION 3 LAEUFT
+03D2 [00FB52]  AE94                       ON     M 148.6 ; M148.6 — RAV SCHMUTZTANK NACHFUELLEN IM AB
+03D4 [00FB54]  F96A                       O      T 106 ; T106_* — EINSCHALTDAUER FUELLEN SMT RAV
+03D6 [00FB56]  B298                       R      M 152.2 ; M152.2 — RAV NACHFUELLEN SMT AUS STATION 3 LAEUFT
+03D8 [00FB58]  0000                       NOP0   
+03DA [00FB5A]  10FF                       BLD    255
+03DC [00FB5C]  8298                       U      M 152.2 ; M152.2 — RAV NACHFUELLEN SMT AUS STATION 3 LAEUFT
+03DE [00FB5E]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+03E0 [00FB60]  9299                       S      M 153.2 ; M153.2 — STATION 3 HAT MIND. 1x IN SMT GESPEIST
+03E2 [00FB62]  A297                       UN     M 151.2 ; M151.2 — RAV FUELLEN SMT AUS STATION 3
+03E4 [00FB64]  B299                       R      M 153.2 ; M153.2 — STATION 3 HAT MIND. 1x IN SMT GESPEIST
+03E6 [00FB66]  0000                       NOP0   
+03E8 [00FB68]  10FF                       BLD    255
+03EA [00FB6A]  8297                       U      M 151.2 ; M151.2 — RAV FUELLEN SMT AUS STATION 3
+03EC [00FB6C]  A298                       UN     M 152.2 ; M152.2 — RAV NACHFUELLEN SMT AUS STATION 3 LAEUFT
+03EE [00FB6E]  8299                       U      M 153.2 ; M153.2 — STATION 3 HAT MIND. 1x IN SMT GESPEIST
+03F0 [00FB70]  F868                       U      T 104 ; T104_* — BEARBEITUNGSDAUER SMT RAV FUELLEN AUS 3
+03F2 [00FB72]  9397                       S      M 151.3 ; M151.3 — RAV FUELLEN SMT AUS STATION 4
+03F4 [00FB74]  8097                       U      M 151.0 ; M151.0 — RAV FUELLEN SMT AUS OEAS
+03F6 [00FB76]  B397                       R      M 151.3 ; M151.3 — RAV FUELLEN SMT AUS STATION 4
+03F8 [00FB78]  0000                       NOP0   
+03FA [00FB7A]  10FF                       BLD    255
+03FC [00FB7C]  8397                       U      M 151.3 ; M151.3 — RAV FUELLEN SMT AUS STATION 4
+03FE [00FB7E]  30020002                   L      KT 002.0
+0402 [00FB82]  2469                       SE     T 105 ; T105_* — BEARBEITUNGSDAUER SMT RAV FUELLEN AUS 4
+0404 [00FB84]  0000                       NOP0   
+0406 [00FB86]  0000                       NOP0   
+0408 [00FB88]  0000                       NOP0   
+040A [00FB8A]  0000                       NOP0   
+040C [00FB8C]  10FF                       BLD    255
+040E [00FB8E]  8397                       U      M 151.3 ; M151.3 — RAV FUELLEN SMT AUS STATION 4
+0410 [00FB90]  FC6A                       UN     T 106 ; T106_* — EINSCHALTDAUER FUELLEN SMT RAV
+0412 [00FB92]  9398                       S      M 152.3 ; M152.3 — RAV NACHFUELLEN SMT AUS STATION 4 LAEUFT
+0414 [00FB94]  AE94                       ON     M 148.6 ; M148.6 — RAV SCHMUTZTANK NACHFUELLEN IM AB
+0416 [00FB96]  F96A                       O      T 106 ; T106_* — EINSCHALTDAUER FUELLEN SMT RAV
+0418 [00FB98]  B398                       R      M 152.3 ; M152.3 — RAV NACHFUELLEN SMT AUS STATION 4 LAEUFT
+041A [00FB9A]  0000                       NOP0   
+041C [00FB9C]  10FF                       BLD    255
+041E [00FB9E]  8398                       U      M 152.3 ; M152.3 — RAV NACHFUELLEN SMT AUS STATION 4 LAEUFT
+0420 [00FBA0]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0422 [00FBA2]  9399                       S      M 153.3 ; M153.3 — STATION 4 HAT MIND. 1x IN SMT GESPEIST
+0424 [00FBA4]  A397                       UN     M 151.3 ; M151.3 — RAV FUELLEN SMT AUS STATION 4
+0426 [00FBA6]  B399                       R      M 153.3 ; M153.3 — STATION 4 HAT MIND. 1x IN SMT GESPEIST
+0428 [00FBA8]  0000                       NOP0   
+042A [00FBAA]  10FF                       BLD    255
+042C [00FBAC]  8898                       O      M 152.0 ; M152.0 — RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+042E [00FBAE]  8998                       O      M 152.1 ; M152.1 — RAV NACHFUELLEN SMT AUS STATION 2 LAEUFT
+0430 [00FBB0]  8A98                       O      M 152.2 ; M152.2 — RAV NACHFUELLEN SMT AUS STATION 3 LAEUFT
+0432 [00FBB2]  8B98                       O      M 152.3 ; M152.3 — RAV NACHFUELLEN SMT AUS STATION 4 LAEUFT
+0434 [00FBB4]  30022010                   L      KT 010.2
+0438 [00FBB8]  246A                       SE     T 106 ; T106_* — EINSCHALTDAUER FUELLEN SMT RAV
+043A [00FBBA]  0000                       NOP0   
+043C [00FBBC]  0000                       NOP0   
+043E [00FBBE]  0000                       NOP0   
+0440 [00FBC0]  0000                       NOP0   
+0442 [00FBC2]  10FF                       BLD    255
+0444 [00FBC4]  8098                       U      M 152.0 ; M152.0 — RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+0446 [00FBC6]  C593                       U      A 19.5 ; K19.5M — PUMPE P1 BADABFLUTEN STATION 1
+0448 [00FBC8]  E495                       UN     A 21.4 ; Y21.4 — MV ZULAUF SCHMUTZTANK RAV
+044A [00FBCA]  DD95                       =      A 21.5 ; Y21.5 — MV FUELLEN SCHMUTZTANK AUS OELABSCH.ST.1
+044C [00FBCC]  10FF                       BLD    255
+044E [00FBCE]  8198                       U      M 152.1 ; M152.1 — RAV NACHFUELLEN SMT AUS STATION 2 LAEUFT
+0450 [00FBD0]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0452 [00FBD2]  10FF                       BLD    255
+0454 [00FBD4]  8298                       U      M 152.2 ; M152.2 — RAV NACHFUELLEN SMT AUS STATION 3 LAEUFT
+0456 [00FBD6]  E595                       UN     A 21.5 ; Y21.5 — MV FUELLEN SCHMUTZTANK AUS OELABSCH.ST.1
+0458 [00FBD8]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+045A [00FBDA]  10FF                       BLD    255
+045C [00FBDC]  8398                       U      M 152.3 ; M152.3 — RAV NACHFUELLEN SMT AUS STATION 4 LAEUFT
+045E [00FBDE]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0460 [00FBE0]  10FF                       BLD    255
+0462 [00FBE2]  C695                       U      A 21.6 ; Y21.6 — MV ZULAUF VERDAMPFER RAV
+0464 [00FBE4]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0466 [00FBE6]  326B                       L      DW 107
+0468 [00FBE8]  146B                       SA     T 107 ; T107_V_* — NACHLAUF ZUDOSIERUNG SCHAUMBEMSE
+046A [00FBEA]  0000                       NOP0   
+046C [00FBEC]  0000                       NOP0   
+046E [00FBEE]  0000                       NOP0   
+0470 [00FBF0]  0000                       NOP0   
+0472 [00FBF2]  10FF                       BLD    255
+0474 [00FBF4]  861A                       U      M 26.6 ; HB_66 — SCHAUMBREMSE IN RAV-VERDAMPFER DOSIEREN
+0476 [00FBF6]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0478 [00FBF8]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+047A [00FBFA]  FB00                       O      
+047C [00FBFC]  BA00                       U(     
+047E [00FBFE]  CE95                       O      A 21.6 ; Y21.6 — MV ZULAUF VERDAMPFER RAV
+0480 [00FC00]  F96B                       O      T 107 ; T107_V_* — NACHLAUF ZUDOSIERUNG SCHAUMBEMSE
+0482 [00FC02]  BF00                       )      
+0484 [00FC04]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0486 [00FC06]  DD94                       =      A 20.5 ; K20.5M — DOSIERPUMPE P7 SCHAUMBREMSE RAV-VERD.
+0488 [00FC08]  10FF                       BLD    255
+048A [00FC0A]  6500                       BE     

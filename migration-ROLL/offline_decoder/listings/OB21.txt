@@ -1,0 +1,22 @@
+OB21: OB 21 — NEUSTART NACH STOP
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x480; block bytes: 42; SHA256: 8e9ca70910ad039aff2b1791f2fb631cce413759a60f4256c9444a11e8231289
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 10 15 80 00 00 00 00 15
+Code starts at block offset 0x000A.
+000A [00048A]  1083                       BLD    131
+000C [00048C]  1082                       BLD    130
+000E [00048E]  3D3D2D01                   SPA    FB 61 ; TAKTEIN — EINSTELLUNG ZEITINTERVALL FUER OB 13
+       Call descriptor @0010: 2D01; argument words: 0
+0012 [000492]  10FF                       BLD    255
+0014 [000494]  1083                       BLD    131
+0016 [000496]  A100                       UN     M 0.1 ; RI/NEUST — RICHTIMPULSMERKER FUER NEUSTART
+0018 [000498]  9100                       S      M 0.1 ; RI/NEUST — RICHTIMPULSMERKER FUER NEUSTART
+001A [00049A]  A200                       UN     M 0.2 ; HM/RINEU — HM F.RICHTIMPULSMERKER F.NEUSTART
+001C [00049C]  9200                       S      M 0.2 ; HM/RINEU — HM F.RICHTIMPULSMERKER F.NEUSTART
+001E [00049E]  1082                       BLD    130
+0020 [0004A0]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0022 [0004A2]  AC00                       ON     M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0024 [0004A4]  90BF                       S      M 191.0 ; OP15_ANL — OP15: KENNUNG FUER HOCHLAUF
+0026 [0004A6]  1082                       BLD    130
+0028 [0004A8]  6500                       BE     

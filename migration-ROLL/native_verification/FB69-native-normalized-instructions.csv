@@ -1,0 +1,14 @@
+﻿native_word_address;block_byte_offset;network;native_content;command;operand;raw_hex;size_bytes;jump_target_block_byte_offset;position_note
+0005;20;1;;BLD;130;1082;2;;
+0006;22;1;A   F  240.0  -M240.0               Abtropfzeit laeuft;U;M 240.0;80F0;2;;
+0007;24;1;;BLD;130;1082;2;;
+0008;26;1;A   F  240.1  -M240.1               Betriebsart Schwenken;U;M 240.1;81F0;2;;
+0009;28;1;JC  =M001                           lange Pause;SPB=;@002A;FA07;2;42;
+000A;30;1;;BLD;130;1082;2;;
+000B;32;1;L   KT 005.1                        --> kurze Pause;L;KT 005.1;30021005;4;;
+000D;36;1;T   FW 240    -MW240;T;MW 240;13F0;2;;
+000E;38;1;BEU;BEA;;6501;2;;
+000F;40;1;;BLD;130;1082;2;;
+0010;42;1;L   KT 005.2                        Fahrwagen ist unten -->;L;KT 005.2;30022005;4;;
+0012;46;1;T   FW 240    -MW240                lange Pause;T;MW 240;13F0;2;;
+0013;48;1;BE;BE;;6500;2;;

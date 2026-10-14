@@ -1,0 +1,201 @@
+{
+  "blocks": [
+    {
+      "block": "PB7",
+      "source_file": "PB7RROLS.INI",
+      "size_bytes": 17356,
+      "sha256": "e82e8e5fc742fc3430ad0b3975d2872d3fd68ef9bdfc03ae0d2bf666f258b86e",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 17356,
+        "other_blocks_in_source": []
+      },
+      "pages": 7,
+      "block_bytes": 398,
+      "networks": 27,
+      "matched": 27,
+      "native_addressed_STL_positions": 0,
+      "offline_positions_in_context": 194,
+      "offline_executing_instructions": 168,
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+      "result": "All native network action expressions and operands match."
+    },
+    {
+      "block": "PB8",
+      "source_file": "PB8ROLLS.INI",
+      "size_bytes": 9227,
+      "sha256": "cf3ad9dfa4ab17a36adfb3321e1a99240675a30d3300414645a009d45cd1092d",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 9227,
+        "other_blocks_in_source": []
+      },
+      "pages": 4,
+      "block_bytes": 218,
+      "networks": 6,
+      "matched": 6,
+      "native_addressed_STL_positions": 0,
+      "offline_positions_in_context": 102,
+      "offline_executing_instructions": 97,
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+      "result": "All native network action expressions and operands match."
+    },
+    {
+      "block": "PB9",
+      "source_file": "PB9ROLLS.INI",
+      "size_bytes": 63574,
+      "sha256": "1365f6f39e38f7aa66d9bd128ce7aff8b441fc917b678b7d6865462c91356896",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 63574,
+        "other_blocks_in_source": []
+      },
+      "pages": 24,
+      "block_bytes": 1456,
+      "networks": 65,
+      "matched": 65,
+      "native_addressed_STL_positions": 0,
+      "offline_positions_in_context": 723,
+      "offline_executing_instructions": 659,
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+      "result": "All native network action expressions and operands match."
+    },
+    {
+      "block": "PB10",
+      "source_file": "PB10ROLS.INI",
+      "size_bytes": 57645,
+      "sha256": "a0db7ca39b976423309a10675bfbdbfba31b58606d4406670f7e89705fc89872",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 57645,
+        "other_blocks_in_source": []
+      },
+      "pages": 24,
+      "block_bytes": 1442,
+      "networks": 61,
+      "matched": 61,
+      "native_addressed_STL_positions": 0,
+      "offline_positions_in_context": 716,
+      "offline_executing_instructions": 656,
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+      "result": "All native network action expressions and operands match."
+    },
+    {
+      "block": "PB14",
+      "source_file": "PB14ROLS.INI",
+      "size_bytes": 22738,
+      "sha256": "fe48fe3a7fb4a4e704e5a26d6f4a93f1c0daf5c79860a80182b8b8568632863d",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 22738,
+        "other_blocks_in_source": []
+      },
+      "pages": 9,
+      "block_bytes": 530,
+      "networks": 23,
+      "matched": 23,
+      "native_addressed_STL_positions": 3,
+      "offline_positions_in_context": 260,
+      "offline_executing_instructions": 237,
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+      "result": "All native network action expressions and operands match."
+    },
+    {
+      "block": "PB15",
+      "source_file": "PB15ROLS.INI",
+      "size_bytes": 7191,
+      "sha256": "9a2a616e964961d3612225c96128201c64de38b702e9678e216c0a41dcfcf761",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 7191,
+        "other_blocks_in_source": []
+      },
+      "pages": 3,
+      "block_bytes": 182,
+      "networks": 9,
+      "matched": 9,
+      "native_addressed_STL_positions": 0,
+      "offline_positions_in_context": 86,
+      "offline_executing_instructions": 78,
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+      "result": "All native network action expressions and operands match."
+    },
+    {
+      "block": "PB50",
+      "source_file": "PB50ROLS.INI",
+      "size_bytes": 1384,
+      "sha256": "51570e7c1f0b167f17eb3020d05b24ed098215787f6cca41390090c7acc5b468",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 1384,
+        "other_blocks_in_source": []
+      },
+      "pages": 1,
+      "block_bytes": 64,
+      "networks": 5,
+      "matched": 5,
+      "native_addressed_STL_positions": 7,
+      "offline_positions_in_context": 25,
+      "offline_executing_instructions": 19,
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+      "result": "All native network action expressions and operands match."
+    },
+    {
+      "block": "PB51",
+      "source_file": "PB51ROLS.INI",
+      "size_bytes": 13537,
+      "sha256": "7ddde3e9f33929cad646802123732923a100d13ebe839718bad900a2bcc95555",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 3738,
+        "other_blocks_in_source": [
+          "PB52"
+        ]
+      },
+      "pages": 2,
+      "block_bytes": 158,
+      "networks": 8,
+      "matched": 8,
+      "native_addressed_STL_positions": 0,
+      "offline_positions_in_context": 67,
+      "offline_executing_instructions": 60,
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+      "result": "All native network action expressions and operands match."
+    },
+    {
+      "block": "PB52",
+      "source_file": "PB51ROLS.INI",
+      "size_bytes": 13537,
+      "sha256": "7ddde3e9f33929cad646802123732923a100d13ebe839718bad900a2bcc95555",
+      "source_scope": {
+        "source_byte_start": 3738,
+        "source_byte_end": 13537,
+        "other_blocks_in_source": [
+          "PB51"
+        ]
+      },
+      "pages": 5,
+      "block_bytes": 346,
+      "networks": 16,
+      "matched": 16,
+      "native_addressed_STL_positions": 3,
+      "offline_positions_in_context": 161,
+      "offline_executing_instructions": 145,
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+      "result": "All native network action expressions and operands match."
+    }
+  ],
+  "total_networks": 220,
+  "native_addressed_STL_positions": 13,
+  "total_offline_positions_in_context": 2334,
+  "total_offline_executing_instructions": 2119
+}

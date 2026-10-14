@@ -1,0 +1,23 @@
+OB13: OB 13 — ZEITGESTEUERTER BAUSTEIN,TAKTERZEUGUNG
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x400; block bytes: 44; SHA256: 486123c8fc5dcd6a5fb3bee5d5c29573a4d33e879f8c2641d43125d2054b8f01
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 10 0D 80 00 00 00 00 16
+Code starts at block offset 0x000A.
+000A [00040A]  1083                       BLD    131
+000C [00040C]  1082                       BLD    130
+000E [00040E]  A403                       UN     M 3.4 ; TKT_0,25 — TAKT 0,25 SEK.
+0010 [000410]  9C03                       =      M 3.4 ; TKT_0,25 — TAKT 0,25 SEK.
+0012 [000412]  0500                       BEB    
+0014 [000414]  1082                       BLD    130
+0016 [000416]  A503                       UN     M 3.5 ; TAKT_0,5 — TAKT 0,5 SEK.
+0018 [000418]  9D03                       =      M 3.5 ; TAKT_0,5 — TAKT 0,5 SEK.
+001A [00041A]  0500                       BEB    
+001C [00041C]  1082                       BLD    130
+001E [00041E]  A603                       UN     M 3.6 ; TAKT_1 — TAKT 1 SEK.
+0020 [000420]  9E03                       =      M 3.6 ; TAKT_1 — TAKT 1 SEK.
+0022 [000422]  0500                       BEB    
+0024 [000424]  1082                       BLD    130
+0026 [000426]  A703                       UN     M 3.7 ; TAKT_2 — TAKT 2 SEK.
+0028 [000428]  9F03                       =      M 3.7 ; TAKT_2 — TAKT 2 SEK.
+002A [00042A]  6500                       BE     

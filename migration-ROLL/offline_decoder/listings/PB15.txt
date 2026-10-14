@@ -1,0 +1,92 @@
+PB15: PB 15 — MERKER FUER AUTOM.GRUNDSTELLUNG FAHREN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xDB80; block bytes: 182; SHA256: ed0d321c34546093b9c3673a421b17b7c9080e3d56d3aa081d44f1ff54549853
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 0F 80 00 00 00 00 5B
+Code starts at block offset 0x000A.
+000A [00DB8A]  C47B                       U      E 123.4 ; B123.4 — WT AN SPERRE 3
+000C [00DB8C]  E2F1                       UN     A 113.2 ; Y113.2 — SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+000E [00DB8E]  C3F1                       U      A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+0010 [00DB90]  9246                       S      M 70.2 ; M70.2 — SM WT'S UEBERFAHREN SPERRE 3
+0012 [00DB92]  E47B                       UN     E 123.4 ; B123.4 — WT AN SPERRE 3
+0014 [00DB94]  C57B                       U      E 123.5 ; B123.5 — WT VOR SPERRE 4
+0016 [00DB96]  8F49                       O      M 73.7 ; M73.7 — KORREKTUR SM WT-VERFOLGUNG
+0018 [00DB98]  B246                       R      M 70.2 ; M70.2 — SM WT'S UEBERFAHREN SPERRE 3
+001A [00DB9A]  0000                       NOP0   
+001C [00DB9C]  10FF                       BLD    255
+001E [00DB9E]  BA00                       U(     
+0020 [00DBA0]  8847                       O      M 71.0 ; M71.0 — SM WT AN SPERRE 4 AUS REINIGUNG
+0022 [00DBA2]  FB00                       O      
+0024 [00DBA4]  C67B                       U      E 123.6 ; B123.6 — SPERRE 4 FREIFAHREN
+0026 [00DBA6]  804A                       U      M 74.0 ; M74.0 — MERKER FAHREN IN GRUNDSTELLUNG
+0028 [00DBA8]  A214                       UN     M 20.2 ; HB_02 — FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+002A [00DBAA]  BF00                       )      
+002C [00DBAC]  C17C                       U      E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+002E [00DBAE]  C47C                       U      E 124.4 ; S124.4 — WT-TRANSPORT UNTEN
+0030 [00DBB0]  C2F1                       U      A 113.2 ; Y113.2 — SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+0032 [00DBB2]  9346                       S      M 70.3 ; M70.3 — SM WT'S UEBERFAHREN SPERRE 4
+0034 [00DBB4]  E57B                       UN     E 123.5 ; B123.5 — WT VOR SPERRE 4
+0036 [00DBB6]  E67B                       UN     E 123.6 ; B123.6 — SPERRE 4 FREIFAHREN
+0038 [00DBB8]  8F49                       O      M 73.7 ; M73.7 — KORREKTUR SM WT-VERFOLGUNG
+003A [00DBBA]  B346                       R      M 70.3 ; M70.3 — SM WT'S UEBERFAHREN SPERRE 4
+003C [00DBBC]  0000                       NOP0   
+003E [00DBBE]  10FF                       BLD    255
+0040 [00DBC0]  C17B                       U      E 123.1 ; B123.1 — WT AN SPERRE 1 UND SPERRE 1 FREI
+0042 [00DBC2]  F82D                       U      T 45 ; T45 — VERZ.UEBERFAHREN SPERRE 1
+0044 [00DBC4]  A147                       UN     M 71.1 ; M71.1 — DATENPLATZ 1 (NACH SPERRE 1) BELEGT
+0046 [00DBC6]  84BF                       U      M 191.4 ; M191.4 — REINIGUNGSPROGRAMM IST I.ORDNUNG
+0048 [00DBC8]  841F                       U      M 31.4 ; AUTO_E — AUTOMATIK EIN
+004A [00DBCA]  A010                       UN     M 16.0 ; STOER_89 — ANGEWAEHLTES PROGR.IM OP NICHT VORHANDEN
+004C [00DBCC]  A110                       UN     M 16.1 ; STOER_90 — ANGEWAEHLTES PROGR.IM OP FEHLERHAFT
+004E [00DBCE]  A410                       UN     M 16.4 ; STOER_93 — PROGRAMMNR.0 AUF PLATZ 4             OPT
+0050 [00DBD0]  9446                       S      M 70.4 ; M70.4 — SM WT'S UEBERFAHREN SPERRE 1
+0052 [00DBD2]  E97B                       ON     E 123.1 ; B123.1 — WT AN SPERRE 1 UND SPERRE 1 FREI
+0054 [00DBD4]  8F49                       O      M 73.7 ; M73.7 — KORREKTUR SM WT-VERFOLGUNG
+0056 [00DBD6]  B446                       R      M 70.4 ; M70.4 — SM WT'S UEBERFAHREN SPERRE 1
+0058 [00DBD8]  0000                       NOP0   
+005A [00DBDA]  10FF                       BLD    255
+005C [00DBDC]  C67B                       U      E 123.6 ; B123.6 — SPERRE 4 FREIFAHREN
+005E [00DBDE]  9546                       S      M 70.5 ; M70.5 — SM WT ZWISCHEN SPERRE 4 UND 5
+0060 [00DBE0]  C87D                       O      E 125.0 ; B125.0 — WT AN SPERRE 6
+0062 [00DBE2]  8F49                       O      M 73.7 ; M73.7 — KORREKTUR SM WT-VERFOLGUNG
+0064 [00DBE4]  B546                       R      M 70.5 ; M70.5 — SM WT ZWISCHEN SPERRE 4 UND 5
+0066 [00DBE6]  0000                       NOP0   
+0068 [00DBE8]  10FF                       BLD    255
+006A [00DBEA]  C07D                       U      E 125.0 ; B125.0 — WT AN SPERRE 6
+006C [00DBEC]  E17D                       UN     E 125.1 ; B125.1 — WT AM ENDE BAHN 2
+006E [00DBEE]  C4F1                       U      A 113.4 ; Y113.4 — SPERRE 5 OEFFNEN, SPERRE 6 SCHLIESSEN
+0070 [00DBF0]  9646                       S      M 70.6 ; M70.6 — SM WT'S UEBERFAHREN SPERRE 6
+0072 [00DBF2]  C17D                       U      E 125.1 ; B125.1 — WT AM ENDE BAHN 2
+0074 [00DBF4]  C5F1                       U      A 113.5 ; Y113.5 — SPERRE 5 SCHLIESSEN, SPERRE 6 OEFFNEN
+0076 [00DBF6]  8F49                       O      M 73.7 ; M73.7 — KORREKTUR SM WT-VERFOLGUNG
+0078 [00DBF8]  B646                       R      M 70.6 ; M70.6 — SM WT'S UEBERFAHREN SPERRE 6
+007A [00DBFA]  0000                       NOP0   
+007C [00DBFC]  10FF                       BLD    255
+007E [00DBFE]  F82D                       U      T 45 ; T45 — VERZ.UEBERFAHREN SPERRE 1
+0080 [00DC00]  A147                       UN     M 71.1 ; M71.1 — DATENPLATZ 1 (NACH SPERRE 1) BELEGT
+0082 [00DC02]  C17B                       U      E 123.1 ; B123.1 — WT AN SPERRE 1 UND SPERRE 1 FREI
+0084 [00DC04]  9746                       S      M 70.7 ; M70.7 — SM WT ZWISCHEN SPERRE 1 UND 3
+0086 [00DC06]  CC7B                       O      E 123.4 ; B123.4 — WT AN SPERRE 3
+0088 [00DC08]  8F49                       O      M 73.7 ; M73.7 — KORREKTUR SM WT-VERFOLGUNG
+008A [00DC0A]  B746                       R      M 70.7 ; M70.7 — SM WT ZWISCHEN SPERRE 1 UND 3
+008C [00DC0C]  0000                       NOP0   
+008E [00DC0E]  10FF                       BLD    255
+0090 [00DC10]  C3F1                       U      A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+0092 [00DC12]  C57B                       U      E 123.5 ; B123.5 — WT VOR SPERRE 4
+0094 [00DC14]  9047                       S      M 71.0 ; M71.0 — SM WT AN SPERRE 4 AUS REINIGUNG
+0096 [00DC16]  8B46                       O      M 70.3 ; M70.3 — SM WT'S UEBERFAHREN SPERRE 4
+0098 [00DC18]  8F49                       O      M 73.7 ; M73.7 — KORREKTUR SM WT-VERFOLGUNG
+009A [00DC1A]  B047                       R      M 71.0 ; M71.0 — SM WT AN SPERRE 4 AUS REINIGUNG
+009C [00DC1C]  0000                       NOP0   
+009E [00DC1E]  10FF                       BLD    255
+00A0 [00DC20]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+00A2 [00DC22]  BA00                       U(     
+00A4 [00DC24]  8914                       O      M 20.1 ; HB_01 — FAHREN IN GRUNDSTELLUNG
+00A6 [00DC26]  8A14                       O      M 20.2 ; HB_02 — FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+00A8 [00DC28]  BF00                       )      
+00AA [00DC2A]  85BE                       U      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+00AC [00DC2C]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+00AE [00DC2E]  A41C                       UN     M 28.4 ; M28.4 — ZUSAMMENFASSUNG GRUNDSTELLUNG
+00B0 [00DC30]  984A                       =      M 74.0 ; M74.0 — MERKER FAHREN IN GRUNDSTELLUNG
+00B2 [00DC32]  10FF                       BLD    255
+00B4 [00DC34]  6500                       BE     

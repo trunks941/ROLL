@@ -1,0 +1,17 @@
+FB243: DIV:16 — DIVISION
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xD00; block bytes: 74; SHA256: eb0099f3213c24a7d760ebcacfece02b81a8a2422a002483317f80b5ecd9e440
+Directory flags: 8D; assembler flag: True
+Raw block header [0..9]: 70 70 08 F3 8D 81 0B C6 00 25
+Code starts at block offset 0x0044.
+FB name: 'DIV:16  '; entry SPA bytes: 2D1D
+  Formal #1 @0014 02205A312020: Z1 E/W
+  Formal #2 @001A 02205A322020: Z2 E/W
+  Formal #3 @0020 08804F562020: OV A/BI
+  Formal #4 @0026 088046454820: FEH A/BI
+  Formal #5 @002C 08805A333D30: Z3=0 A/BI
+  Formal #6 @0032 08805A343D30: Z4=0 A/BI
+  Formal #7 @0038 08205A332020: Z3 A/W
+  Formal #8 @003E 08205A342020: Z4 A/W
+UNSUPPORTED_ASSEMBLER_BODY: retained as raw bytes; no instruction claims.
+0044 [000D44]  78 08 00 00 65 00

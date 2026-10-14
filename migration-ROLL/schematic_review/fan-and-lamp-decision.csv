@@ -1,0 +1,3 @@
+﻿S5_address;target_S7_address;role;original_writer;original_condition;drawing_page;decision;as_built_wiring_confirmed;code_or_hardware_action_performed
+A24.4;%Q24.4;Drum fan;PB13 n44 order1;(A24.0 OR A24.2);49;Retain original output and condition;False;False
+A16.0;%Q16.0;Control ON lamp / lamp test;PB25 n20 order1;(E1.2 OR E3.4);41;Retain original output and condition;False;False

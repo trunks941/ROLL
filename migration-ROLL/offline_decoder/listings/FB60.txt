@@ -1,0 +1,325 @@
+FB60: FB 60 — REZEPTUEBERTRAGUNG VOM OP 15
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x1300; block bytes: 702; SHA256: e8e4a4e998106fe6b54a511555f90e5989ac7c14050cea8c22230fff794d1cb3
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 3C 84 00 00 00 01 5F
+Code starts at block offset 0x0014.
+FB name: 'FB 60   '; entry SPA bytes: 2D05
+0014 [001314]  1082                       BLD    130
+0016 [001316]  1082                       BLD    130
+0018 [001318]  203C                       A      DB 60 ; DB 60 — ARBEITS-DB F.FB60 (REZEPTUEBERTR.) ..RAM
+001A [00131A]  320A                       L      DW 10
+001C [00131C]  3004000C                   L      KF +12
+0020 [001320]  2180                       !=F    
+0022 [001322]  A1BE                       UN     M 190.1 ; PROG_IO — VON OP15: PROGRAMM EINGELESEN U.I.O.
+0024 [001324]  A2BE                       UN     M 190.2 ; PROG_NIO — VON OP15: PROGRAMM EINGELESEN U.N.I.O.
+0026 [001326]  30022005                   L      KT 005.2
+002A [00132A]  2465                       SE     T 101 ; T101_* — KONTROLLE REZEPTUEBERTRAGUNG 2
+002C [00132C]  1082                       BLD    130
+002E [00132E]  3201                       L      DW 1
+0030 [001330]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0032 [001332]  1082                       BLD    130
+0034 [001334]  1082                       BLD    130
+0036 [001336]  1082                       BLD    130
+0038 [001338]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+003A [00133A]  98F1                       =      M 241.0 ; M241.0 — SCHMIERMERKER
+003C [00133C]  99F1                       =      M 241.1 ; M241.1 — SCHMIERMERKER
+003E [00133E]  8C00                       O      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0040 [001340]  9FF0                       =      M 240.7 ; M240.7 — SCHMIERMERKER
+0042 [001342]  1082                       BLD    130
+0044 [001344]  1082                       BLD    130
+0046 [001346]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0048 [001348]  3301                       T      DW 1
+004A [00134A]  1082                       BLD    130
+004C [00134C]  10FF                       BLD    255
+004E [00134E]  A451                       UN     M 81.4 ; PRG_LES — AN OP15: PROGRAMM EINLESEN
+0050 [001350]  FA06                       SPB=   @005C (relative +6 words)
+0052 [001352]  81F0                       U      M 240.1 ; M240.1 — SCHMIERMERKER
+0054 [001354]  0500                       BEB    
+0056 [001356]  2D10                       SPA=   @0076 (relative +16 words)
+0058 [001358]  1082                       BLD    130
+005A [00135A]  1082                       BLD    130
+005C [00135C]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+005E [00135E]  9CBF                       =      M 191.4 ; M191.4 — REINIGUNGSPROGRAMM IST I.ORDNUNG
+0060 [001360]  99F0                       =      M 240.1 ; M240.1 — SCHMIERMERKER
+0062 [001362]  9FF1                       =      M 241.7 ; M241.7 — SCHMIERMERKER
+0064 [001364]  1082                       BLD    130
+0066 [001366]  3004000A                   L      KF +10
+006A [00136A]  330A                       T      DW 10
+006C [00136C]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+006E [00136E]  3301                       T      DW 1
+0070 [001370]  6501                       BEA    
+0072 [001372]  1082                       BLD    130
+0074 [001374]  1082                       BLD    130
+0076 [001376]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0078 [001378]  3301                       T      DW 1
+007A [00137A]  10FF                       BLD    255
+007C [00137C]  A0F0                       UN     M 240.0 ; M240.0 — SCHMIERMERKER
+007E [00137E]  FA07                       SPB=   @008C (relative +7 words)
+0080 [001380]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0082 [001382]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0084 [001384]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0086 [001386]  3301                       T      DW 1
+0088 [001388]  6501                       BEA    
+008A [00138A]  1082                       BLD    130
+008C [00138C]  0000                       NOP0   
+008E [00138E]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0090 [001390]  9AF0                       =      M 240.2 ; M240.2 — SCHMIERMERKER
+0092 [001392]  A7F0                       UN     M 240.7 ; M240.7 — SCHMIERMERKER
+0094 [001394]  FA0E                       SPB=   @00B0 (relative +14 words)
+0096 [001396]  1082                       BLD    130
+0098 [001398]  3004000A                   L      KF +10
+009C [00139C]  320A                       L      DW 10
+009E [00139E]  2120                       >F     
+00A0 [0013A0]  FA11                       SPB=   @00C2 (relative +17 words)
+00A2 [0013A2]  3004000D                   L      KF +13
+00A6 [0013A6]  2120                       >F     
+00A8 [0013A8]  FA0D                       SPB=   @00C2 (relative +13 words)
+00AA [0013AA]  2D18                       SPA=   @00DA (relative +24 words)
+00AC [0013AC]  1082                       BLD    130
+00AE [0013AE]  1082                       BLD    130
+00B0 [0013B0]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+00B2 [0013B2]  9FFF                       =      M 255.7 ; M255.7 — SCHMIERMERKER
+00B4 [0013B4]  B3F0                       R      M 240.3 ; M240.3 — SCHMIERMERKER
+00B6 [0013B6]  B4F0                       R      M 240.4 ; M240.4 — SCHMIERMERKER
+00B8 [0013B8]  B5F0                       R      M 240.5 ; M240.5 — SCHMIERMERKER
+00BA [0013BA]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+00BC [0013BC]  3301                       T      DW 1
+00BE [0013BE]  6501                       BEA    
+00C0 [0013C0]  1082                       BLD    130
+00C2 [0013C2]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+00C4 [0013C4]  93F0                       S      M 240.3 ; M240.3 — SCHMIERMERKER
+00C6 [0013C6]  B4F0                       R      M 240.4 ; M240.4 — SCHMIERMERKER
+00C8 [0013C8]  B5F0                       R      M 240.5 ; M240.5 — SCHMIERMERKER
+00CA [0013CA]  B7F1                       R      M 241.7 ; M241.7 — SCHMIERMERKER
+00CC [0013CC]  1082                       BLD    130
+00CE [0013CE]  3004000A                   L      KF +10
+00D2 [0013D2]  330A                       T      DW 10
+00D4 [0013D4]  2D03                       SPA=   @00DA (relative +3 words)
+00D6 [0013D6]  1082                       BLD    130
+00D8 [0013D8]  1082                       BLD    130
+00DA [0013DA]  0000                       NOP0   
+00DC [0013DC]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+00DE [0013DE]  3301                       T      DW 1
+00E0 [0013E0]  10FF                       BLD    255
+00E2 [0013E2]  1082                       BLD    130
+00E4 [0013E4]  320A                       L      DW 10
+00E6 [0013E6]  3004000A                   L      KF +10
+00EA [0013EA]  2160                       ><F    
+00EC [0013EC]  FA40                       SPB=   @016C (relative +64 words)
+00EE [0013EE]  1082                       BLD    130
+00F0 [0013F0]  A0F0                       UN     M 240.0 ; M240.0 — SCHMIERMERKER
+00F2 [0013F2]  FA05                       SPB=   @00FC (relative +5 words)
+00F4 [0013F4]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00F6 [0013F6]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+00F8 [0013F8]  2D3A                       SPA=   @016C (relative +58 words)
+00FA [0013FA]  1082                       BLD    130
+00FC [0013FC]  0000                       NOP0   
+00FE [0013FE]  83F1                       U      M 241.3 ; M241.3 — SCHMIERMERKER
+0100 [001400]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0102 [001402]  FA2D                       SPB=   @015C (relative +45 words)
+0104 [001404]  1082                       BLD    130
+0106 [001406]  1082                       BLD    130
+0108 [001408]  20D3                       A      DB 211 ; OP->AG — DATENAUSTAUSCH VOM OP ZUM AG ........RAM
+010A [00140A]  3208                       L      DW 8
+010C [00140C]  203C                       A      DB 60 ; DB 60 — ARBEITS-DB F.FB60 (REZEPTUEBERTR.) ..RAM
+010E [00140E]  13D2                       T      MW 210 ; MW210 — MERKERWORT 210
+0110 [001410]  1082                       BLD    130
+0112 [001412]  30040001                   L      KF +1
+0116 [001416]  2140                       <F     
+0118 [001418]  FA13                       SPB=   @013E (relative +19 words)
+011A [00141A]  7002                       TAK    
+011C [00141C]  30040063                   L      KF +99
+0120 [001420]  2120                       >F     
+0122 [001422]  FA0E                       SPB=   @013E (relative +14 words)
+0124 [001424]  1082                       BLD    130
+0126 [001426]  12D2                       L      MW 210 ; MW210 — MERKERWORT 210
+0128 [001428]  330C                       T      DW 12
+012A [00142A]  320B                       L      DW 11
+012C [00142C]  2180                       !=F    
+012E [00142E]  8C00                       O      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0130 [001430]  FA0D                       SPB=   @014A (relative +13 words)
+0132 [001432]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0134 [001434]  9FFF                       =      M 255.7 ; M255.7 — SCHMIERMERKER
+0136 [001436]  A4F1                       UN     M 241.4 ; M241.4 — SCHMIERMERKER
+0138 [001438]  FA1A                       SPB=   @016C (relative +26 words)
+013A [00143A]  2D08                       SPA=   @014A (relative +8 words)
+013C [00143C]  1082                       BLD    130
+013E [00143E]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0140 [001440]  97FF                       S      M 255.7 ; M255.7 — SCHMIERMERKER
+0142 [001442]  9BF1                       =      M 241.3 ; M241.3 — SCHMIERMERKER
+0144 [001444]  2D14                       SPA=   @016C (relative +20 words)
+0146 [001446]  1082                       BLD    130
+0148 [001448]  1082                       BLD    130
+014A [00144A]  12D2                       L      MW 210 ; MW210 — MERKERWORT 210
+014C [00144C]  330B                       T      DW 11
+014E [00144E]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0150 [001450]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0152 [001452]  3004000B                   L      KF +11
+0156 [001456]  330A                       T      DW 10
+0158 [001458]  2D0A                       SPA=   @016C (relative +10 words)
+015A [00145A]  1082                       BLD    130
+015C [00145C]  0000                       NOP0   
+015E [00145E]  A4F1                       UN     M 241.4 ; M241.4 — SCHMIERMERKER
+0160 [001460]  FAEF                       SPB=   @013E (relative -17 words)
+0162 [001462]  1082                       BLD    130
+0164 [001464]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0166 [001466]  9BF1                       =      M 241.3 ; M241.3 — SCHMIERMERKER
+0168 [001468]  2D02                       SPA=   @016C (relative +2 words)
+016A [00146A]  1082                       BLD    130
+016C [00146C]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+016E [00146E]  3301                       T      DW 1
+0170 [001470]  10FF                       BLD    255
+0172 [001472]  1082                       BLD    130
+0174 [001474]  1082                       BLD    130
+0176 [001476]  320A                       L      DW 10
+0178 [001478]  3004000B                   L      KF +11
+017C [00147C]  2160                       ><F    
+017E [00147E]  FA36                       SPB=   @01EA (relative +54 words)
+0180 [001480]  1082                       BLD    130
+0182 [001482]  A0F0                       UN     M 240.0 ; M240.0 — SCHMIERMERKER
+0184 [001484]  FA05                       SPB=   @018E (relative +5 words)
+0186 [001486]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0188 [001488]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+018A [00148A]  2D30                       SPA=   @01EA (relative +48 words)
+018C [00148C]  1082                       BLD    130
+018E [00148E]  1082                       BLD    130
+0190 [001490]  2033                       A      DB 51 ; DB 51 — OP15-KOMMUNIKATION ..................RAM
+0192 [001492]  323C                       L      DW 60
+0194 [001494]  30400000                   L      KH 0000
+0198 [001498]  2160                       ><F    
+019A [00149A]  FA28                       SPB=   @01EA (relative +40 words)
+019C [00149C]  1082                       BLD    130
+019E [00149E]  1082                       BLD    130
+01A0 [0014A0]  1082                       BLD    130
+01A2 [0014A2]  1082                       BLD    130
+01A4 [0014A4]  20D5                       A      DB 213 ; DBAUF — DB FUER AUFTRAEGE OP15-AG ...........RAM
+01A6 [0014A6]  1082                       BLD    130
+01A8 [0014A8]  30200046                   L      KY 0,70
+01AC [0014AC]  3301                       T      DW 1
+01AE [0014AE]  1082                       BLD    130
+01B0 [0014B0]  30040001                   L      KF +1
+01B4 [0014B4]  3302                       T      DW 2
+01B6 [0014B6]  1082                       BLD    130
+01B8 [0014B8]  203C                       A      DB 60 ; DB 60 — ARBEITS-DB F.FB60 (REZEPTUEBERTR.) ..RAM
+01BA [0014BA]  320B                       L      DW 11
+01BC [0014BC]  20D5                       A      DB 213 ; DBAUF — DB FUER AUFTRAEGE OP15-AG ...........RAM
+01BE [0014BE]  3303                       T      DW 3
+01C0 [0014C0]  1082                       BLD    130
+01C2 [0014C2]  1082                       BLD    130
+01C4 [0014C4]  2033                       A      DB 51 ; DB 51 — OP15-KOMMUNIKATION ..................RAM
+01C6 [0014C6]  302000D5                   L      KY 0,213
+01CA [0014CA]  333C                       T      DW 60
+01CC [0014CC]  1082                       BLD    130
+01CE [0014CE]  30200001                   L      KY 0,1
+01D2 [0014D2]  333D                       T      DW 61
+01D4 [0014D4]  1082                       BLD    130
+01D6 [0014D6]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01D8 [0014D8]  99BE                       =      M 190.1 ; PROG_IO — VON OP15: PROGRAMM EINGELESEN U.I.O.
+01DA [0014DA]  9ABE                       =      M 190.2 ; PROG_NIO — VON OP15: PROGRAMM EINGELESEN U.N.I.O.
+01DC [0014DC]  1082                       BLD    130
+01DE [0014DE]  203C                       A      DB 60 ; DB 60 — ARBEITS-DB F.FB60 (REZEPTUEBERTR.) ..RAM
+01E0 [0014E0]  1082                       BLD    130
+01E2 [0014E2]  3004000C                   L      KF +12
+01E6 [0014E6]  330A                       T      DW 10
+01E8 [0014E8]  1082                       BLD    130
+01EA [0014EA]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+01EC [0014EC]  3301                       T      DW 1
+01EE [0014EE]  10FF                       BLD    255
+01F0 [0014F0]  320A                       L      DW 10
+01F2 [0014F2]  3004000C                   L      KF +12
+01F6 [0014F6]  2160                       ><F    
+01F8 [0014F8]  FA3D                       SPB=   @0272 (relative +61 words)
+01FA [0014FA]  1082                       BLD    130
+01FC [0014FC]  A0F0                       UN     M 240.0 ; M240.0 — SCHMIERMERKER
+01FE [0014FE]  FA05                       SPB=   @0208 (relative +5 words)
+0200 [001500]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0202 [001502]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0204 [001504]  2D37                       SPA=   @0272 (relative +55 words)
+0206 [001506]  1082                       BLD    130
+0208 [001508]  1082                       BLD    130
+020A [00150A]  1082                       BLD    130
+020C [00150C]  81BE                       U      M 190.1 ; PROG_IO — VON OP15: PROGRAMM EINGELESEN U.I.O.
+020E [00150E]  FA29                       SPB=   @0260 (relative +41 words)
+0210 [001510]  1082                       BLD    130
+0212 [001512]  A2BE                       UN     M 190.2 ; PROG_NIO — VON OP15: PROGRAMM EINGELESEN U.N.I.O.
+0214 [001514]  FA0D                       SPB=   @022E (relative +13 words)
+0216 [001516]  1082                       BLD    130
+0218 [001518]  1082                       BLD    130
+021A [00151A]  0000                       NOP0   
+021C [00151C]  203C                       A      DB 60 ; DB 60 — ARBEITS-DB F.FB60 (REZEPTUEBERTR.) ..RAM
+021E [00151E]  320C                       L      DW 12
+0220 [001520]  320B                       L      DW 11
+0222 [001522]  2160                       ><F    
+0224 [001524]  8903                       O      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0226 [001526]  C001                       U      E 1.0 ; STOER_Q — TASTER STOERUNG QUITTIEREN
+0228 [001528]  FA0B                       SPB=   @023E (relative +11 words)
+022A [00152A]  2D24                       SPA=   @0272 (relative +36 words)
+022C [00152C]  1082                       BLD    130
+022E [00152E]  FC65                       UN     T 101 ; T101_* — KONTROLLE REZEPTUEBERTRAGUNG 2
+0230 [001530]  FA21                       SPB=   @0272 (relative +33 words)
+0232 [001532]  1082                       BLD    130
+0234 [001534]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0236 [001536]  9010                       S      M 16.0 ; STOER_89 — ANGEWAEHLTES PROGR.IM OP NICHT VORHANDEN
+0238 [001538]  2DF1                       SPA=   @021A (relative -15 words)
+023A [00153A]  1082                       BLD    130
+023C [00153C]  1082                       BLD    130
+023E [00153E]  1082                       BLD    130
+0240 [001540]  3004000A                   L      KF +10
+0244 [001544]  330A                       T      DW 10
+0246 [001546]  1082                       BLD    130
+0248 [001548]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+024A [00154A]  B010                       R      M 16.0 ; STOER_89 — ANGEWAEHLTES PROGR.IM OP NICHT VORHANDEN
+024C [00154C]  1082                       BLD    130
+024E [00154E]  30040001                   L      KF +1
+0252 [001552]  7900                       +F     
+0254 [001554]  330C                       T      DW 12
+0256 [001556]  2D0E                       SPA=   @0272 (relative +14 words)
+0258 [001558]  1082                       BLD    130
+025A [00155A]  1082                       BLD    130
+025C [00155C]  1082                       BLD    130
+025E [00155E]  1082                       BLD    130
+0260 [001560]  1082                       BLD    130
+0262 [001562]  1082                       BLD    130
+0264 [001564]  203C                       A      DB 60 ; DB 60 — ARBEITS-DB F.FB60 (REZEPTUEBERTR.) ..RAM
+0266 [001566]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0268 [001568]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+026A [00156A]  3004000D                   L      KF +13
+026E [00156E]  330A                       T      DW 10
+0270 [001570]  1082                       BLD    130
+0272 [001572]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0274 [001574]  3301                       T      DW 1
+0276 [001576]  10FF                       BLD    255
+0278 [001578]  320A                       L      DW 10
+027A [00157A]  3004000D                   L      KF +13
+027E [00157E]  2160                       ><F    
+0280 [001580]  FA1C                       SPB=   @02B8 (relative +28 words)
+0282 [001582]  1082                       BLD    130
+0284 [001584]  A0F0                       UN     M 240.0 ; M240.0 — SCHMIERMERKER
+0286 [001586]  FA05                       SPB=   @0290 (relative +5 words)
+0288 [001588]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+028A [00158A]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+028C [00158C]  2D16                       SPA=   @02B8 (relative +22 words)
+028E [00158E]  1082                       BLD    130
+0290 [001590]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0292 [001592]  91F0                       S      M 240.1 ; M240.1 — SCHMIERMERKER
+0294 [001594]  94BF                       S      M 191.4 ; M191.4 — REINIGUNGSPROGRAMM IST I.ORDNUNG
+0296 [001596]  1082                       BLD    130
+0298 [001598]  83F0                       U      M 240.3 ; M240.3 — SCHMIERMERKER
+029A [00159A]  FA06                       SPB=   @02A6 (relative +6 words)
+029C [00159C]  1082                       BLD    130
+029E [00159E]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+02A0 [0015A0]  9FFF                       =      M 255.7 ; M255.7 — SCHMIERMERKER
+02A2 [0015A2]  2D07                       SPA=   @02B0 (relative +7 words)
+02A4 [0015A4]  1082                       BLD    130
+02A6 [0015A6]  3004000A                   L      KF +10
+02AA [0015AA]  330A                       T      DW 10
+02AC [0015AC]  2D02                       SPA=   @02B0 (relative +2 words)
+02AE [0015AE]  1082                       BLD    130
+02B0 [0015B0]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+02B2 [0015B2]  3301                       T      DW 1
+02B4 [0015B4]  6501                       BEA    
+02B6 [0015B6]  1082                       BLD    130
+02B8 [0015B8]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+02BA [0015BA]  3301                       T      DW 1
+02BC [0015BC]  6500                       BE     

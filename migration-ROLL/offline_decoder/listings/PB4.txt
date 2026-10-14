@@ -1,0 +1,132 @@
+PB4: PB 4 — MERKER FUER HANDBETRIEB
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xEF80; block bytes: 262; SHA256: 9e28f5e02463f32c5f76c5acbcf318e0ba3022aef62c1bb96a2e7bb894b5bb9a
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 04 80 00 00 00 00 83
+Code starts at block offset 0x000A.
+000A [00EF8A]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+000C [00EF8C]  281E                       L      KB 30
+000E [00EF8E]  2180                       !=F    
+0010 [00EF90]  9D17                       =      M 23.5 ; HB_30 — 
+0012 [00EF92]  10FF                       BLD    255
+0014 [00EF94]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0016 [00EF96]  281F                       L      KB 31
+0018 [00EF98]  2180                       !=F    
+001A [00EF9A]  9E17                       =      M 23.6 ; HB_31 — 
+001C [00EF9C]  10FF                       BLD    255
+001E [00EF9E]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0020 [00EFA0]  2823                       L      KB 35
+0022 [00EFA2]  2180                       !=F    
+0024 [00EFA4]  9818                       =      M 24.0 ; HB_35 — 
+0026 [00EFA6]  10FF                       BLD    255
+0028 [00EFA8]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+002A [00EFAA]  2824                       L      KB 36
+002C [00EFAC]  2180                       !=F    
+002E [00EFAE]  9918                       =      M 24.1 ; HB_36 — FUELLEN VE-WASSER IN STAT.1-3,OEAS
+0030 [00EFB0]  10FF                       BLD    255
+0032 [00EFB2]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0034 [00EFB4]  2825                       L      KB 37
+0036 [00EFB6]  2180                       !=F    
+0038 [00EFB8]  9A18                       =      M 24.2 ; HB_37 — 
+003A [00EFBA]  10FF                       BLD    255
+003C [00EFBC]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+003E [00EFBE]  2826                       L      KB 38
+0040 [00EFC0]  2180                       !=F    
+0042 [00EFC2]  9B18                       =      M 24.3 ; HB_38 — 
+0044 [00EFC4]  10FF                       BLD    255
+0046 [00EFC6]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0048 [00EFC8]  2827                       L      KB 39
+004A [00EFCA]  2180                       !=F    
+004C [00EFCC]  9C18                       =      M 24.4 ; HB_39 — 
+004E [00EFCE]  10FF                       BLD    255
+0050 [00EFD0]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0052 [00EFD2]  2832                       L      KB 50
+0054 [00EFD4]  2180                       !=F    
+0056 [00EFD6]  9819                       =      M 25.0 ; HB_50 — FUELLEN AUS RAV IN STATION 1-3,OEAS
+0058 [00EFD8]  10FF                       BLD    255
+005A [00EFDA]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+005C [00EFDC]  2833                       L      KB 51
+005E [00EFDE]  2180                       !=F    
+0060 [00EFE0]  9919                       =      M 25.1 ; HB_51 — 
+0062 [00EFE2]  10FF                       BLD    255
+0064 [00EFE4]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0066 [00EFE6]  2834                       L      KB 52
+0068 [00EFE8]  2180                       !=F    
+006A [00EFEA]  9A19                       =      M 25.2 ; HB_52 — 
+006C [00EFEC]  10FF                       BLD    255
+006E [00EFEE]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0070 [00EFF0]  2835                       L      KB 53
+0072 [00EFF2]  2180                       !=F    
+0074 [00EFF4]  9B19                       =      M 25.3 ; HB_53 — 
+0076 [00EFF6]  10FF                       BLD    255
+0078 [00EFF8]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+007A [00EFFA]  2837                       L      KB 55
+007C [00EFFC]  2180                       !=F    
+007E [00EFFE]  9C19                       =      M 25.4 ; HB_55 — 
+0080 [00F000]  10FF                       BLD    255
+0082 [00F002]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0084 [00F004]  2838                       L      KB 56
+0086 [00F006]  2180                       !=F    
+0088 [00F008]  9D19                       =      M 25.5 ; HB_56 — 
+008A [00F00A]  10FF                       BLD    255
+008C [00F00C]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+008E [00F00E]  2839                       L      KB 57
+0090 [00F010]  2180                       !=F    
+0092 [00F012]  9E19                       =      M 25.6 ; HB_57 — 
+0094 [00F014]  10FF                       BLD    255
+0096 [00F016]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0098 [00F018]  283A                       L      KB 58
+009A [00F01A]  2180                       !=F    
+009C [00F01C]  9F19                       =      M 25.7 ; HB_58 — 
+009E [00F01E]  10FF                       BLD    255
+00A0 [00F020]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00A2 [00F022]  283C                       L      KB 60
+00A4 [00F024]  2180                       !=F    
+00A6 [00F026]  981A                       =      M 26.0 ; HB_60 — UMPUMPEN IN STATION 1-3,ABSETZBEHAELTER
+00A8 [00F028]  10FF                       BLD    255
+00AA [00F02A]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00AC [00F02C]  283D                       L      KB 61
+00AE [00F02E]  2180                       !=F    
+00B0 [00F030]  991A                       =      M 26.1 ; HB_61 — 
+00B2 [00F032]  10FF                       BLD    255
+00B4 [00F034]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00B6 [00F036]  283E                       L      KB 62
+00B8 [00F038]  2180                       !=F    
+00BA [00F03A]  9A1A                       =      M 26.2 ; HB_62 — 
+00BC [00F03C]  10FF                       BLD    255
+00BE [00F03E]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00C0 [00F040]  283F                       L      KB 63
+00C2 [00F042]  2180                       !=F    
+00C4 [00F044]  9B1A                       =      M 26.3 ; HB_63 — 
+00C6 [00F046]  10FF                       BLD    255
+00C8 [00F048]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00CA [00F04A]  2841                       L      KB 65
+00CC [00F04C]  2180                       !=F    
+00CE [00F04E]  9D1A                       =      M 26.5 ; HB_65 — UMPUMPEN IN SCHMUTZTANK RAV
+00D0 [00F050]  10FF                       BLD    255
+00D2 [00F052]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00D4 [00F054]  2842                       L      KB 66
+00D6 [00F056]  2180                       !=F    
+00D8 [00F058]  9E1A                       =      M 26.6 ; HB_66 — SCHAUMBREMSE IN RAV-VERDAMPFER DOSIEREN
+00DA [00F05A]  10FF                       BLD    255
+00DC [00F05C]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00DE [00F05E]  2845                       L      KB 69
+00E0 [00F060]  2180                       !=F    
+00E2 [00F062]  991B                       =      M 27.1 ; HB_69 — 
+00E4 [00F064]  10FF                       BLD    255
+00E6 [00F066]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00E8 [00F068]  2848                       L      KB 72
+00EA [00F06A]  2180                       !=F    
+00EC [00F06C]  9C1B                       =      M 27.4 ; HB_72 — UMPUMPEN IN ENTSORGUNG BAUSEITS
+00EE [00F06E]  10FF                       BLD    255
+00F0 [00F070]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00F2 [00F072]  2849                       L      KB 73
+00F4 [00F074]  2180                       !=F    
+00F6 [00F076]  9D1B                       =      M 27.5 ; HB_73 — VERDAMPFER RAV FUELL.AUS SCHMUTZT.
+00F8 [00F078]  10FF                       BLD    255
+00FA [00F07A]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00FC [00F07C]  2863                       L      KB 99
+00FE [00F07E]  2180                       !=F    
+0100 [00F080]  9F1B                       =      M 27.7 ; HB_99 — KORREKTUR SETZM. WT-VERFOLGUNG
+0102 [00F082]  10FF                       BLD    255
+0104 [00F084]  6500                       BE     

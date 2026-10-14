@@ -1,0 +1,18 @@
+﻿source_MB;target_DB;target_DW;target_half;condition;evidence
+37;210;50;DR;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+38;210;50;DL;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+39;210;51;DR;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+40;210;51;DL;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+41;210;52;DR;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+42;210;52;DL;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+43;210;53;DR;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+44;210;53;DL;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+45;210;54;DR;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+46;210;54;DL;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+47;210;55;DR;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+48;210;55;DL;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+49;210;56;DR;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+50;210;56;DL;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+51;210;57;DR;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+52;210;57;DL;M189.0 (N1 display active);Verified FB92 call arguments and native FB96 byte swap
+53;210;58;DR;M189.0 (N1 display active);Native FB92 0106/0107

@@ -1,0 +1,109 @@
+FB91: STOER — STOERANZEIGE AUFBEREITEN FUER OP
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x1B00; block bytes: 240; SHA256: 569a21aa48c8ee4a132a27bd295d7f64ca46fe57f1bbf968e7600d0cb0cb959b
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 5B 84 00 00 00 00 78
+Code starts at block offset 0x0014.
+FB name: 'STOER   '; entry SPA bytes: 2D05
+0014 [001B14]  20D2                       A      DB 210 ; AG->OP — DATENAUSTAUSCH VOM AG ZUM OP ........RAM
+0016 [001B16]  1082                       BLD    130
+0018 [001B18]  1205                       L      MW 5 ; MW5 — STOERMERKERWORT 5
+001A [001B1A]  3040FFFF                   L      KH FFFF
+001E [001B1E]  5100                       XOW    
+0020 [001B20]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0022 [001B22]  1207                       L      MW 7 ; MW7 — STOERMERKERWORT 7
+0024 [001B24]  3040FFFF                   L      KH FFFF
+0028 [001B28]  5100                       XOW    
+002A [001B2A]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+002C [001B2C]  1209                       L      MW 9 ; MW9 — STOERMERKERWORT 9
+002E [001B2E]  3040FFFF                   L      KH FFFF
+0032 [001B32]  5100                       XOW    
+0034 [001B34]  13F4                       T      MW 244 ; MW244 — SCHMIERMERKER
+0036 [001B36]  1082                       BLD    130
+0038 [001B38]  0A05                       L      MB 5 ; MB5 — STOERMERKERBYTE 5
+003A [001B3A]  2B00                       T      DR 0
+003C [001B3C]  0A06                       L      MB 6 ; MB6 — STOERMERKERBYTE 6
+003E [001B3E]  2300                       T      DL 0
+0040 [001B40]  0A07                       L      MB 7 ; MB7 — STOERMERKERBYTE 7
+0042 [001B42]  2B01                       T      DR 1
+0044 [001B44]  0A08                       L      MB 8 ; MB8 — STOERMERKERBYTE 8
+0046 [001B46]  2301                       T      DL 1
+0048 [001B48]  0A09                       L      MB 9 ; MB9 — STOERMERKERBYTE 9
+004A [001B4A]  2B02                       T      DR 2
+004C [001B4C]  0A0A                       L      MB 10 ; MB10 — STOERMERKERBYTE 10
+004E [001B4E]  2302                       T      DL 2
+0050 [001B50]  1082                       BLD    130
+0052 [001B52]  0AF0                       L      MB 240 ; MB240 — SCHMIERMERKERBYTE
+0054 [001B54]  2B11                       T      DR 17
+0056 [001B56]  0AF1                       L      MB 241 ; MB241 — SCHMIERMERKERBYTE
+0058 [001B58]  2311                       T      DL 17
+005A [001B5A]  0AF2                       L      MB 242 ; MB242 — SCHMIERMERKERBYTE
+005C [001B5C]  2B12                       T      DR 18
+005E [001B5E]  0AF3                       L      MB 243 ; MB243 — SCHMIERMERKERBYTE
+0060 [001B60]  2312                       T      DL 18
+0062 [001B62]  0AF4                       L      MB 244 ; MB244 — SCHMIERMERKERBYTE
+0064 [001B64]  2B13                       T      DR 19
+0066 [001B66]  0AF5                       L      MB 245 ; MB245 — SCHMIERMERKERBYTE
+0068 [001B68]  2313                       T      DL 19
+006A [001B6A]  10FF                       BLD    255
+006C [001B6C]  120B                       L      MW 11 ; MW11 — STOERMERKERWORT 11
+006E [001B6E]  3040FFFF                   L      KH FFFF
+0072 [001B72]  5100                       XOW    
+0074 [001B74]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0076 [001B76]  120D                       L      MW 13 ; MW13 — STOERMERKERWORT 13
+0078 [001B78]  3040FFFF                   L      KH FFFF
+007C [001B7C]  5100                       XOW    
+007E [001B7E]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+0080 [001B80]  120F                       L      MW 15 ; MW15 — STOERMERKERWORT 15
+0082 [001B82]  3040FFFF                   L      KH FFFF
+0086 [001B86]  5100                       XOW    
+0088 [001B88]  13F4                       T      MW 244 ; MW244 — SCHMIERMERKER
+008A [001B8A]  1211                       L      MW 17 ; MW17 — STOERMERKERWORT 17
+008C [001B8C]  3040FFFF                   L      KH FFFF
+0090 [001B90]  5100                       XOW    
+0092 [001B92]  13F6                       T      MW 246 ; MW246 — SCHMIERMERKER
+0094 [001B94]  1213                       L      MW 19 ; MW19 — STOERMERKERWORT 19
+0096 [001B96]  3040FFFF                   L      KH FFFF
+009A [001B9A]  5100                       XOW    
+009C [001B9C]  13F8                       T      MW 248 ; MW248 — SCHMIERMERKER
+009E [001B9E]  1082                       BLD    130
+00A0 [001BA0]  0A0B                       L      MB 11 ; MB11 — STOERMERKERBYTE 11
+00A2 [001BA2]  2B03                       T      DR 3
+00A4 [001BA4]  0A0C                       L      MB 12 ; MB12 — STOERMERKERBYTE 12
+00A6 [001BA6]  2303                       T      DL 3
+00A8 [001BA8]  0A0D                       L      MB 13 ; MB13 — STOERMERKERBYTE 13
+00AA [001BAA]  2B04                       T      DR 4
+00AC [001BAC]  0A0E                       L      MB 14 ; MB14 — STOERMERKERBYTE 14
+00AE [001BAE]  2304                       T      DL 4
+00B0 [001BB0]  0A0F                       L      MB 15 ; MB15 — STOERMERKERBYTE 15
+00B2 [001BB2]  2B05                       T      DR 5
+00B4 [001BB4]  0A10                       L      MB 16 ; MB16 — STOERMERKERBYTE 16
+00B6 [001BB6]  2305                       T      DL 5
+00B8 [001BB8]  0A11                       L      MB 17 ; MB17 — STOERMERKERBYTE 17
+00BA [001BBA]  2B06                       T      DR 6
+00BC [001BBC]  0A12                       L      MB 18 ; MB18 — STOERMERKERBYTE 18
+00BE [001BBE]  2306                       T      DL 6
+00C0 [001BC0]  0A13                       L      MB 19 ; MB19 — STOERMERKERBYTE 19
+00C2 [001BC2]  2B07                       T      DR 7
+00C4 [001BC4]  1082                       BLD    130
+00C6 [001BC6]  0AF0                       L      MB 240 ; MB240 — SCHMIERMERKERBYTE
+00C8 [001BC8]  2B14                       T      DR 20
+00CA [001BCA]  0AF1                       L      MB 241 ; MB241 — SCHMIERMERKERBYTE
+00CC [001BCC]  2314                       T      DL 20
+00CE [001BCE]  0AF2                       L      MB 242 ; MB242 — SCHMIERMERKERBYTE
+00D0 [001BD0]  2B15                       T      DR 21
+00D2 [001BD2]  0AF3                       L      MB 243 ; MB243 — SCHMIERMERKERBYTE
+00D4 [001BD4]  2315                       T      DL 21
+00D6 [001BD6]  0AF4                       L      MB 244 ; MB244 — SCHMIERMERKERBYTE
+00D8 [001BD8]  2B16                       T      DR 22
+00DA [001BDA]  0AF5                       L      MB 245 ; MB245 — SCHMIERMERKERBYTE
+00DC [001BDC]  2316                       T      DL 22
+00DE [001BDE]  0AF6                       L      MB 246 ; MB246 — SCHMIERMERKERBYTE
+00E0 [001BE0]  2B17                       T      DR 23
+00E2 [001BE2]  0AF7                       L      MB 247 ; MB247 — SCHMIERMERKERBYTE
+00E4 [001BE4]  2317                       T      DL 23
+00E6 [001BE6]  0AF8                       L      MB 248 ; MB248 — SCHMIERMERKERBYTE
+00E8 [001BE8]  2B18                       T      DR 24
+00EA [001BEA]  0AF9                       L      MB 249 ; MB249 — SCHMIERMERKERBYTE
+00EC [001BEC]  2318                       T      DL 24
+00EE [001BEE]  6500                       BE     

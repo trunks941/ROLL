@@ -1,0 +1,17 @@
+﻿network;method;result;action_order;conditions;presets
+1;All native STL positions in this network compared;Match;OPEN_DB DB 15;OPEN_DB DB 15: ;
+2;Static native FBD action-expression comparison;Match;SE T 17;SE T 17: (NOT E5.5 AND NOT M6.3 AND E3.1 AND M4.1 AND M40.5);T 17: DW17
+3;Static native FBD action-expression comparison;Match;SE T 31;SE T 31: (NOT E5.3 AND NOT M6.1 AND E3.1 AND M4.1);T 31: DW31
+4;Static native FBD action-expression comparison;Match;SE T 32;SE T 32: (NOT E6.0 AND NOT M6.4 AND E3.1 AND M4.1);T 32: DW32
+5;Static native FBD action-expression comparison;Match;SE T 33;SE T 33: (NOT E6.2 AND NOT M6.5 AND E3.1 AND M4.1);T 33: DW33
+6;Static native FBD action-expression comparison;Match;SE T 35;SE T 35: (NOT M0.4 AND NOT M6.7 AND E3.1 AND M4.1);T 35: KT030.3
+7;Static native FBD action-expression comparison;Match;SE T 36;SE T 36: (NOT M0.4 AND NOT M7.0 AND E3.1 AND M4.1);T 36: KT030.3
+8;Static native FBD action-expression comparison;Match;SE T 37;SE T 37: (NOT M0.4 AND NOT M7.1 AND E3.1 AND M4.1);T 37: KT030.3
+9;Static native FBD action-expression comparison;Match;SE T 38;SE T 38: (NOT M0.4 AND NOT M7.2 AND E3.1 AND M4.1);T 38: KT030.3
+10;Static native FBD action-expression comparison;Match;SE T 45;SE T 45: E123.1;T 45: KT005.1
+11;Static native FBD action-expression comparison;Match;SA T 58 | SA T 59;SA T 58: (E3.1 AND M3.6) | SA T 59: (M3.6 AND T58);T 58: DW58 | T 59: DW59
+12;Static native FBD action-expression comparison;Match;SE T 63 | SA T 62 | R T 62;SE T 63: NOT T62 | SA T 62: T63 | R T 62: (NOT M103.0 AND NOT M103.3 AND NOT M103.4 AND NOT T119);T 63: DW63 | T 62: DW62
+13;Static native FBD action-expression comparison;Match;SA T 70;SA T 70: E5.3;T 70: KT010.2
+14;Static native FBD action-expression comparison;Match;SA T 72;SA T 72: E6.2;T 72: KT010.2
+15;Static native FBD action-expression comparison;Match;SA T 85;SA T 85: M41.0;T 85: DW85
+16;Static native FBD action-expression comparison;Match;BE ;BE : ;

@@ -1,0 +1,13 @@
+FB241: COD:16 — FESTPUNKTZAHL NACH BCD WANDELN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x2680; block bytes: 50; SHA256: 3735176e462defa6a3337c77926053c8e3965937d6799c740794f31083a44202
+Directory flags: 8D; assembler flag: True
+Raw block header [0..9]: 70 70 08 F1 8D 81 0B CE 00 19
+Code starts at block offset 0x002C.
+FB name: 'COD:16  '; entry SPA bytes: 2D11
+  Formal #1 @0014 02204455414C: DUAL E/W
+  Formal #2 @001A 088053424344: SBCD A/BI
+  Formal #3 @0020 084042434432: BCD2 A/BY
+  Formal #4 @0026 082042434431: BCD1 A/W
+UNSUPPORTED_ASSEMBLER_BODY: retained as raw bytes; no instruction claims.
+002C [0026AC]  78 08 00 00 65 00

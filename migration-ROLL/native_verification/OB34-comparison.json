@@ -1,0 +1,19 @@
+{
+  "block": "OB34",
+  "source_file": "OB34ROLS.INI",
+  "sha256": "d4d0e4917ec45b876e65b972ec51daa4982b0f6e2699b469a078e61db171d202",
+  "size_bytes": 404,
+  "pages": 1,
+  "networks": 1,
+  "block_bytes": 18,
+  "positions_compared": 4,
+  "executing_instructions": 3,
+  "BLD_display_rows": 1,
+  "jumps_compared": 0,
+  "addressed_positions": 4,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

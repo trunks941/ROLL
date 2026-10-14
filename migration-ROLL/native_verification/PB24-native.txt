@@ -1,0 +1,50 @@
+PB 24     -PB 24                     C:04201@ST.S5D                    LEN=33   
+                                                                        Page   1
+Segment  1
+0000      :STL
+0001      :C   DB  15    -DBVZEIT
+0002      :***
+
+DB  15   = DBVZEIT                   VARIABLE ZEITEN .....................RAM
+
+Segment  2
+             +---+
+ -LECK    ---! & !
+ -STOER_68---!   !    +------+
+ -T59_V   ---!   !--+-! =    ! -M240.0
+             +---+    +------+
+
+I    5.0 = LECK                      LECKWARNSONDE BODENWANNE I.O.
+F   13.3 = STOER_68                  LECKWARNSONDE BODENWANNE ANGESPR.  B 5.0
+T   59   = T59_V                     NACHLAUFZEIT 2 WOCHENSCHALTUHR
+F  240.0 = M240.0                    SCHMIERMERKER
+
+Segment  3
+           -T54_V_*
+            +-----+
+ -T53_V_* -O!T!-!0!
+ DW 54    --!TV BI!-
+            !   DE!-
+            !     !  -T53_V_*
+            !     !   +-----+
+          --!R   Q!---!0!-!T!
+            +-----+   !     !
+           DW 53    --!TV BI!-
+                      !   DE!-
+                      !     !    +---+
+           -M240.0  --!R   Q!----! & !
+                      +-----+    !   !    +------+
+                     -N_1.29  --O!   !--+-! =    ! -K19.4M
+                                 +---+    +------+
+
+T   53   = T53_V_*                   OELSKIMMER EINZEIT
+T   54   = T54_V_*                   OELSKIMMER AUSZEIT
+F  240.0 = M240.0                    SCHMIERMERKER
+F   40.5 = N_1.29                    VERT.-TRANSPORT UNTEN STATION 1
+Q   19.4 = K19.4M                    OELSKIMMER OELABSCHEIDER STATION 1
+
+Segment  4
+ 
+                    :BE
+
+

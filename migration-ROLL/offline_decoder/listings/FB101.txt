@@ -1,0 +1,82 @@
+FB101: ZEI/ZAE — ZEITEN-/ZAEHLEREINSTELLUNG MIT OP15
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x2080; block bytes: 182; SHA256: 25434399224a95cb469bec03b1cb24c19eeabe7d22e4c1031138364be30a9cf4
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 65 84 00 00 00 00 5B
+Code starts at block offset 0x0014.
+FB name: 'AENDER  '; entry SPA bytes: 2D05
+0014 [002094]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+0016 [002096]  1082                       BLD    130
+0018 [002098]  3280                       L      DW 128
+001A [00209A]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+001C [00209C]  30040080                   L      KF +128
+0020 [0020A0]  2140                       <F     
+0022 [0020A2]  FA06                       SPB=   @002E (relative +6 words)
+0024 [0020A4]  30040000                   L      KF +0
+0028 [0020A8]  3380                       T      DW 128
+002A [0020AA]  2D1D                       SPA=   @0064 (relative +29 words)
+002C [0020AC]  1082                       BLD    130
+002E [0020AE]  4EF0                       B      MW 240 ; MW240 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+0030 [0020B0]  3200                       L      DW 0
+0032 [0020B2]  3040FFFF                   L      KH FFFF
+0036 [0020B6]  2160                       ><F    
+0038 [0020B8]  FA06                       SPB=   @0044 (relative +6 words)
+003A [0020BA]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+003C [0020BC]  1101                       I      1
+003E [0020BE]  3380                       T      DW 128
+0040 [0020C0]  2D12                       SPA=   @0064 (relative +18 words)
+0042 [0020C2]  1082                       BLD    130
+0044 [0020C4]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0046 [0020C6]  3281                       L      DW 129
+0048 [0020C8]  2180                       !=F    
+004A [0020CA]  FA09                       SPB=   @005C (relative +9 words)
+004C [0020CC]  4EF0                       B      MW 240 ; MW240 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+004E [0020CE]  3200                       L      DW 0
+0050 [0020D0]  3382                       T      DW 130
+0052 [0020D2]  1082                       BLD    130
+0054 [0020D4]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0056 [0020D6]  3381                       T      DW 129
+0058 [0020D8]  2D06                       SPA=   @0064 (relative +6 words)
+005A [0020DA]  1082                       BLD    130
+005C [0020DC]  3282                       L      DW 130
+005E [0020DE]  4EF0                       B      MW 240 ; MW240 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+0060 [0020E0]  3300                       T      DW 0
+0062 [0020E2]  1082                       BLD    130
+0064 [0020E4]  10FF                       BLD    255
+0066 [0020E6]  2013                       A      DB 19 ; DBVZAEHL — VARIABLE ZAEHLER ....................RAM
+0068 [0020E8]  1082                       BLD    130
+006A [0020EA]  3280                       L      DW 128
+006C [0020EC]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+006E [0020EE]  30040080                   L      KF +128
+0072 [0020F2]  2140                       <F     
+0074 [0020F4]  FA05                       SPB=   @007E (relative +5 words)
+0076 [0020F6]  30040000                   L      KF +0
+007A [0020FA]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+007C [0020FC]  1082                       BLD    130
+007E [0020FE]  4EF0                       B      MW 240 ; MW240 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+0080 [002100]  3200                       L      DW 0
+0082 [002102]  3040FFFF                   L      KH FFFF
+0086 [002106]  2160                       ><F    
+0088 [002108]  FA06                       SPB=   @0094 (relative +6 words)
+008A [00210A]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+008C [00210C]  1101                       I      1
+008E [00210E]  3380                       T      DW 128
+0090 [002110]  2D12                       SPA=   @00B4 (relative +18 words)
+0092 [002112]  1082                       BLD    130
+0094 [002114]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0096 [002116]  3281                       L      DW 129
+0098 [002118]  2180                       !=F    
+009A [00211A]  FA09                       SPB=   @00AC (relative +9 words)
+009C [00211C]  4EF0                       B      MW 240 ; MW240 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+009E [00211E]  3200                       L      DW 0
+00A0 [002120]  3382                       T      DW 130
+00A2 [002122]  1082                       BLD    130
+00A4 [002124]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+00A6 [002126]  3381                       T      DW 129
+00A8 [002128]  2D06                       SPA=   @00B4 (relative +6 words)
+00AA [00212A]  1082                       BLD    130
+00AC [00212C]  3282                       L      DW 130
+00AE [00212E]  4EF0                       B      MW 240 ; MW240 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+00B0 [002130]  3300                       T      DW 0
+00B2 [002132]  1082                       BLD    130
+00B4 [002134]  6500                       BE     

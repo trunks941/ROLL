@@ -1,0 +1,102 @@
+FB111: FB 111 — ZEITEN FUER N1 SETZEN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x2300; block bytes: 218; SHA256: 785b8c5dda9469cfcceeade2c4cd02d8ee90cc1005999244acf2452457778554
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 6F 84 00 00 00 00 6D
+Code starts at block offset 0x0014.
+FB name: 'N1ZEIT  '; entry SPA bytes: 2D05
+0014 [002314]  20CD                       A      DB 205 ; REZEPT — OP15 REZEPTFACH .....................RAM
+0016 [002316]  1082                       BLD    130
+0018 [002318]  A528                       UN     M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+001A [00231A]  FA05                       SPB=   @0024 (relative +5 words)
+001C [00231C]  1082                       BLD    130
+001E [00231E]  3205                       L      DW 5
+0020 [002320]  2D1B                       SPA=   @0056 (relative +27 words)
+0022 [002322]  1082                       BLD    130
+0024 [002324]  A12A                       UN     M 42.1 ; N_1.41 — VERT.-TRANSPORT UNTEN STATION 2
+0026 [002326]  FA05                       SPB=   @0030 (relative +5 words)
+0028 [002328]  1082                       BLD    130
+002A [00232A]  3211                       L      DW 17
+002C [00232C]  2D15                       SPA=   @0056 (relative +21 words)
+002E [00232E]  1082                       BLD    130
+0030 [002330]  A52B                       UN     M 43.5 ; N_1.53 — VERT.-TRANSPORT UNTEN STATION 3
+0032 [002332]  FA05                       SPB=   @003C (relative +5 words)
+0034 [002334]  1082                       BLD    130
+0036 [002336]  3219                       L      DW 25
+0038 [002338]  2D0F                       SPA=   @0056 (relative +15 words)
+003A [00233A]  1082                       BLD    130
+003C [00233C]  A22D                       UN     M 45.2 ; N_1.66 — VERT.-TRANSPORT UNTEN STATION 4
+003E [00233E]  FA05                       SPB=   @0048 (relative +5 words)
+0040 [002340]  1082                       BLD    130
+0042 [002342]  3221                       L      DW 33
+0044 [002344]  2D09                       SPA=   @0056 (relative +9 words)
+0046 [002346]  1082                       BLD    130
+0048 [002348]  A52E                       UN     M 46.5 ; N_1.77 — VERT.-TRANSPORT UNTEN STATION 5
+004A [00234A]  FA03                       SPB=   @0050 (relative +3 words)
+004C [00234C]  1082                       BLD    130
+004E [00234E]  1082                       BLD    130
+0050 [002350]  30022010                   L      KT 010.2
+0054 [002354]  1082                       BLD    130
+0056 [002356]  8528                       U      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+0058 [002358]  892A                       O      M 42.1 ; N_1.41 — VERT.-TRANSPORT UNTEN STATION 2
+005A [00235A]  8D2B                       O      M 43.5 ; N_1.53 — VERT.-TRANSPORT UNTEN STATION 3
+005C [00235C]  8A2D                       O      M 45.2 ; N_1.66 — VERT.-TRANSPORT UNTEN STATION 4
+005E [00235E]  8D2E                       O      M 46.5 ; N_1.77 — VERT.-TRANSPORT UNTEN STATION 5
+0060 [002360]  8930                       O      M 48.1 ; N_1.89 — VERT.-TRANSPORT UNTEN STATION 6
+0062 [002362]  8D31                       O      M 49.5 ; N_1.101 — VERT.-TRANSPORT UNTEN STATION 7
+0064 [002364]  8933                       O      M 51.1 ; N_1.113 — VERT.-TRANSPORT UNTEN STATION 8
+0066 [002366]  2401                       SE     T 1 ; T1_* — TAUCHZEIT IN ALLEN STATIONEN
+0068 [002368]  10FF                       BLD    255
+006A [00236A]  1083                       BLD    131
+006C [00236C]  1082                       BLD    130
+006E [00236E]  0201                       L      T 1 ; T1_* — TAUCHZEIT IN ALLEN STATIONEN
+0070 [002370]  30400FFF                   L      KH 0FFF
+0074 [002374]  4100                       UW     
+0076 [002376]  30040007                   L      KF +7
+007A [00237A]  21C0                       <=F    
+007C [00237C]  BA00                       U(     
+007E [00237E]  8528                       U      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+0080 [002380]  892A                       O      M 42.1 ; N_1.41 — VERT.-TRANSPORT UNTEN STATION 2
+0082 [002382]  8D2B                       O      M 43.5 ; N_1.53 — VERT.-TRANSPORT UNTEN STATION 3
+0084 [002384]  BF00                       )      
+0086 [002386]  856F                       U      M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+0088 [002388]  953A                       S      M 58.5 ; TRANFGER — ANFORDERUNG AN TROMMEL: GERADESTELLEN
+008A [00238A]  1082                       BLD    130
+008C [00238C]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+008E [00238E]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+0090 [002390]  B53A                       R      M 58.5 ; TRANFGER — ANFORDERUNG AN TROMMEL: GERADESTELLEN
+0092 [002392]  1082                       BLD    130
+0094 [002394]  10FF                       BLD    255
+0096 [002396]  20CD                       A      DB 205 ; REZEPT — OP15 REZEPTFACH .....................RAM
+0098 [002398]  1082                       BLD    130
+009A [00239A]  A129                       UN     M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+009C [00239C]  FA05                       SPB=   @00A6 (relative +5 words)
+009E [00239E]  1082                       BLD    130
+00A0 [0023A0]  3209                       L      DW 9
+00A2 [0023A2]  2D11                       SPA=   @00C4 (relative +17 words)
+00A4 [0023A4]  1082                       BLD    130
+00A6 [0023A6]  A52A                       UN     M 42.5 ; N_1.45 — VERT.-TRANSPORT OBEN STATION 2
+00A8 [0023A8]  FA05                       SPB=   @00B2 (relative +5 words)
+00AA [0023AA]  1082                       BLD    130
+00AC [0023AC]  3215                       L      DW 21
+00AE [0023AE]  2D0B                       SPA=   @00C4 (relative +11 words)
+00B0 [0023B0]  1082                       BLD    130
+00B2 [0023B2]  A12C                       UN     M 44.1 ; N_1.57 — VERT.-TRANSPORT OBEN STATION 3
+00B4 [0023B4]  FA05                       SPB=   @00BE (relative +5 words)
+00B6 [0023B6]  1082                       BLD    130
+00B8 [0023B8]  321D                       L      DW 29
+00BA [0023BA]  2D05                       SPA=   @00C4 (relative +5 words)
+00BC [0023BC]  1082                       BLD    130
+00BE [0023BE]  30022010                   L      KT 010.2
+00C2 [0023C2]  1082                       BLD    130
+00C4 [0023C4]  8129                       U      M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+00C6 [0023C6]  8D2A                       O      M 42.5 ; N_1.45 — VERT.-TRANSPORT OBEN STATION 2
+00C8 [0023C8]  892C                       O      M 44.1 ; N_1.57 — VERT.-TRANSPORT OBEN STATION 3
+00CA [0023CA]  8E2D                       O      M 45.6 ; N_1.70 — VERT.-TRANSPORT OBEN STATION 4
+00CC [0023CC]  892F                       O      M 47.1 ; N_1.81 — VERT.-TRANSPORT OBEN STATION 5
+00CE [0023CE]  8D30                       O      M 48.5 ; N_1.93 — VERT.-TRANSPORT OBEN STATION 6
+00D0 [0023D0]  8932                       O      M 50.1 ; N_1.105 — VERT.-TRANSPORT OBEN STATION 7
+00D2 [0023D2]  2402                       SE     T 2 ; T2_* — ABTROPFZEIT IN ALLEN STATIONEN
+00D4 [0023D4]  10FF                       BLD    255
+00D6 [0023D6]  1083                       BLD    131
+00D8 [0023D8]  6500                       BE     

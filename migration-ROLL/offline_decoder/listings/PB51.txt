@@ -1,0 +1,73 @@
+PB51: PB 51 — BAUSTEIN FUER ZAEHLER UND ZEITEN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xF500; block bytes: 158; SHA256: 1024152db4beff2f92213ab24f2b3d2cf4f2d06deba73ba1da1a3bfc177ce064
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 33 80 00 00 00 00 4F
+Code starts at block offset 0x000A.
+000A [00F50A]  C098                       U      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+000C [00F50C]  30022060                   L      KT 060.2
+0010 [00F510]  240F                       SE     T 15 ; T15 — ZEITKONTROLLE TROMMEL GERADESTELLEN
+0012 [00F512]  0000                       NOP0   
+0014 [00F514]  0000                       NOP0   
+0016 [00F516]  0000                       NOP0   
+0018 [00F518]  0000                       NOP0   
+001A [00F51A]  10FF                       BLD    255
+001C [00F51C]  E605                       UN     E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+001E [00F51E]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0020 [00F520]  30023360                   L      KT 360.3
+0024 [00F524]  2410                       SE     T 16 ; T16 — VERZ.STOERANZEIGE TGS OELABSCHEIDER
+0026 [00F526]  0000                       NOP0   
+0028 [00F528]  0000                       NOP0   
+002A [00F52A]  0000                       NOP0   
+002C [00F52C]  0000                       NOP0   
+002E [00F52E]  10FF                       BLD    255
+0030 [00F530]  8525                       U      M 37.5 ; N_1.5 — SPERRE 3 OEFFNEN                    OPT.
+0032 [00F532]  30021010                   L      KT 010.1
+0036 [00F536]  2412                       SE     T 18 ; T18 — VERZ.MELDUNG SPERRE 2 GEOEFFNET
+0038 [00F538]  0000                       NOP0   
+003A [00F53A]  0000                       NOP0   
+003C [00F53C]  0000                       NOP0   
+003E [00F53E]  0000                       NOP0   
+0040 [00F540]  10FF                       BLD    255
+0042 [00F542]  C2F0                       U      A 112.2 ; K112.2M — WT-TRANSPORT EINFAHREN
+0044 [00F544]  E27C                       UN     E 124.2 ; B124.2 — WT-TRANSPORT EINGEFAHREN
+0046 [00F546]  FB00                       O      
+0048 [00F548]  C1F0                       U      A 112.1 ; K112.1M — WT-TRANSPORT AUSFAHREN
+004A [00F54A]  E17C                       UN     E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+004C [00F54C]  30022015                   L      KT 015.2
+0050 [00F550]  2413                       SE     T 19 ; T19 — ZEITKONTROLLE WT-TRANSPORT EIN-/AUSFAHR.
+0052 [00F552]  0000                       NOP0   
+0054 [00F554]  0000                       NOP0   
+0056 [00F556]  0000                       NOP0   
+0058 [00F558]  0000                       NOP0   
+005A [00F55A]  10FF                       BLD    255
+005C [00F55C]  BA00                       U(     
+005E [00F55E]  CC7B                       O      E 123.4 ; B123.4 — WT AN SPERRE 3
+0060 [00F560]  CD7B                       O      E 123.5 ; B123.5 — WT VOR SPERRE 4
+0062 [00F562]  BF00                       )      
+0064 [00F564]  C0F0                       U      A 112.0 ; K112.0M — ROLLENBAHN 1 BELADEN
+0066 [00F566]  30021010                   L      KT 010.1
+006A [00F56A]  2414                       SE     T 20 ; T20 — VERZ.SCHRITTKETTE N1
+006C [00F56C]  0000                       NOP0   
+006E [00F56E]  0000                       NOP0   
+0070 [00F570]  0000                       NOP0   
+0072 [00F572]  0000                       NOP0   
+0074 [00F574]  10FF                       BLD    255
+0076 [00F576]  C47B                       U      E 123.4 ; B123.4 — WT AN SPERRE 3
+0078 [00F578]  30021050                   L      KT 050.1
+007C [00F57C]  2415                       SE     T 21 ; T21 — EINSCHALTZEIT BAHN 1
+007E [00F57E]  0000                       NOP0   
+0080 [00F580]  0000                       NOP0   
+0082 [00F582]  0000                       NOP0   
+0084 [00F584]  0000                       NOP0   
+0086 [00F586]  10FF                       BLD    255
+0088 [00F588]  C07D                       U      E 125.0 ; B125.0 — WT AN SPERRE 6
+008A [00F58A]  C17D                       U      E 125.1 ; B125.1 — WT AM ENDE BAHN 2
+008C [00F58C]  30022005                   L      KT 005.2
+0090 [00F590]  245F                       SE     T 95 ; T95 — VERZ.ENTLADESPEICHER VOLL
+0092 [00F592]  0000                       NOP0   
+0094 [00F594]  0000                       NOP0   
+0096 [00F596]  0000                       NOP0   
+0098 [00F598]  0000                       NOP0   
+009A [00F59A]  10FF                       BLD    255
+009C [00F59C]  6500                       BE     

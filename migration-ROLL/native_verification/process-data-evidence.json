@@ -1,0 +1,12 @@
+{
+  "manual_selector_codes": 41,
+  "active_COMTEXT_manual_entries": 14,
+  "active_entries_with_compared_selector": 14,
+  "transport_and_drum_output_writes": 22,
+  "timer_operations": 10,
+  "counter_operations": 7,
+  "alarm_bits_with_PB2_write": 102,
+  "alarm_bits_without_PB2_write": 18,
+  "status_is_not_always_physical_feedback": true,
+  "runtime_test": false
+}

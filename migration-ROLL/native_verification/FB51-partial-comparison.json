@@ -1,0 +1,51 @@
+{
+  "block": "FB51",
+  "source_file": "FB51ROLS.INI",
+  "size_bytes": 478,
+  "sha256": "405d21b840863cc311d3a968a5d15ab8fa7a6591850776a50e4c5fa836604ddb",
+  "archived_block_bytes": 1052,
+  "repeated_reports": 2,
+  "unique_native_positions": 2,
+  "fully_verified": false,
+  "prefix_mnemonics_and_addresses_match": true,
+  "jump_targets_verified": false,
+  "prefix": [
+    {
+      "native_word_address": "0005",
+      "block_byte_offset": 20,
+      "native_instruction": "JU =M001",
+      "raw_hex": "2D02",
+      "offline_target_block_byte_offset": 24,
+      "native_target_status": "M001 is not defined in the supplied listing"
+    },
+    {
+      "native_word_address": "0006",
+      "block_byte_offset": 22,
+      "native_instruction": "BE",
+      "raw_hex": "6500"
+    }
+  ],
+  "editor_confirmation": {
+    "date": "2026-10-09",
+    "source": "User reply in conversation",
+    "question": "Czy w edytorze STEP 5 widzisz tylko JU =M001 i BE, czy cały dłuższy kod bloku?",
+    "answer_literal": "Edytor pokazuje tylko te dwie linie",
+    "visible_instructions": [
+      "JU =M001",
+      "BE"
+    ],
+    "interpretation": "The editor view and supplied listing expose only the prefix. No specific protection mechanism or missing tail is inferred."
+  },
+  "unresolved_tail": {
+    "jump_offset": "0416",
+    "offline_target": "041A",
+    "overlapping_linear_instruction": "0418: L KH 6500",
+    "native_confirmation": false
+  },
+  "limitations": [
+    "Body, length and tail are not exposed by the native listing.",
+    "The missing target label prevents native verification of even the prefix jump target.",
+    "The duplicate prefix is not an additional verified block.",
+    "No protection mechanism is inferred; no whole-block or runtime validation."
+  ]
+}

@@ -1,0 +1,20 @@
+FB69: FB 69 — ERMITTLUNG PAUSENZEIT BEIM SCHWENKEN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x1780; block bytes: 50; SHA256: be5dbe778efefc60f303ef8673ccd19b6c834cf5e19b3eb887c296da3c74c9f0
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 45 84 00 00 00 00 19
+Code starts at block offset 0x0014.
+FB name: 'SW PAUSE'; entry SPA bytes: 2D05
+0014 [001794]  1082                       BLD    130
+0016 [001796]  80F0                       U      M 240.0 ; M240.0 — SCHMIERMERKER
+0018 [001798]  1082                       BLD    130
+001A [00179A]  81F0                       U      M 240.1 ; M240.1 — SCHMIERMERKER
+001C [00179C]  FA07                       SPB=   @002A (relative +7 words)
+001E [00179E]  1082                       BLD    130
+0020 [0017A0]  30021005                   L      KT 005.1
+0024 [0017A4]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0026 [0017A6]  6501                       BEA    
+0028 [0017A8]  1082                       BLD    130
+002A [0017AA]  30022005                   L      KT 005.2
+002E [0017AE]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0030 [0017B0]  6500                       BE     

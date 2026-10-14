@@ -1,0 +1,19 @@
+{
+  "block": "FB60",
+  "source_file": "FB60ROLS.INI",
+  "sha256": "45f1766604e46eaf8f4b2cdae47c048941450cca44a10361777ff95fba8bb61d",
+  "size_bytes": 20996,
+  "pages": 7,
+  "networks": 7,
+  "block_bytes": 702,
+  "positions_compared": 318,
+  "executing_instructions": 230,
+  "BLD_display_rows": 88,
+  "jumps_compared": 41,
+  "addressed_positions": 318,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

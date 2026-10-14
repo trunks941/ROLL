@@ -1,0 +1,25 @@
+{
+  "table_rows": {
+    "plant-output-map.csv": 37,
+    "plant-timer-map.csv": 34,
+    "plant-state-SR.csv": 94,
+    "plant-alarm-writes.csv": 18,
+    "all-output-writer-order.csv": 61,
+    "runtime-parameter-use-map.csv": 28,
+    "runtime-db-factory-reconstruction.csv": 264
+  },
+  "plant_output_writes": 37,
+  "all_identified_output_bits": 60,
+  "multiply_written_output_bits": [
+    "A21.5"
+  ],
+  "plant_timer_starts": 32,
+  "plant_timer_resets": 2,
+  "parameter_slots_with_confirmed_timer_or_counter_consumer": 28,
+  "runtime_DB_snapshot_values_available": true,
+  "first_preparation_words": 264,
+  "A17_7": "PB25 writes M71.5 cleaning-completed contact; OP15 door status reads this output, not a door position sensor",
+  "A20_5": "PB20: held K16 in HAND with function 66, or automatic dosing with valve A21.6 and T107 off-delay",
+  "static_only": true,
+  "runtime_test": false
+}

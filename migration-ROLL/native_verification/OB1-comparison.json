@@ -1,0 +1,26 @@
+{
+  "source_file": "OB1ROLLS.INI",
+  "sha256": "a582ff2216b18114ddeebf290979cf3695750436ce112af7e427656e787c8506",
+  "size_bytes": 4566,
+  "pages": 3,
+  "networks": 6,
+  "native_language": "English STEP 5 mnemonics",
+  "native_presentation": {
+    "STL": [
+      1,
+      2,
+      5,
+      6
+    ],
+    "FBD": [
+      3,
+      4
+    ]
+  },
+  "textual_instructions_compared": 44,
+  "textual_instructions_match": true,
+  "calls_compared": 27,
+  "calls_sequence_and_conditionality_match": true,
+  "FBD_networks": "Networks 3 and 4 match decoded logic by manual inspection; original machine code for these networks was not re-exported as native STL.",
+  "limitations": "This validates the displayed OB1 documentation against the decoder, not called-block semantics, system timing, HMI, TIA compilation or machine behaviour."
+}

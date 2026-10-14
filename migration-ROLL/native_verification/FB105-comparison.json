@@ -1,0 +1,120 @@
+{
+  "source_file": "FB105RLS.INI",
+  "sha256": "947e446a3f2937a85925e4a39cff7caf6256722626bc8b90989aec81008eb81c",
+  "size_bytes": 10915,
+  "printed_pages": 6,
+  "listing_variants": [
+    "symbolic",
+    "absolute_operands_and_hex_instruction_word_addresses"
+  ],
+  "networks_per_variant": 8,
+  "native_address_to_block_byte_offset": "10 + 2 * hexadecimal native word address",
+  "positions_compared": 131,
+  "executing_instructions": 82,
+  "BLD_display_rows": 49,
+  "jumps_compared": 5,
+  "jumps": [
+    {
+      "block_byte_offset": 22,
+      "target_block_byte_offset": 46,
+      "network": 1
+    },
+    {
+      "block_byte_offset": 50,
+      "target_block_byte_offset": 78,
+      "network": 2
+    },
+    {
+      "block_byte_offset": 82,
+      "target_block_byte_offset": 128,
+      "network": 3
+    },
+    {
+      "block_byte_offset": 132,
+      "target_block_byte_offset": 160,
+      "network": 4
+    },
+    {
+      "block_byte_offset": 164,
+      "target_block_byte_offset": 210,
+      "network": 5
+    }
+  ],
+  "verified_create_operations": [
+    {
+      "native_word_address": "0018",
+      "block_byte_offset": 58,
+      "raw_hex": "7805000F",
+      "native_command": "G",
+      "operand": "DB 15",
+      "previous_load": "KF +131"
+    },
+    {
+      "native_word_address": "0041",
+      "block_byte_offset": 140,
+      "raw_hex": "78050013",
+      "native_command": "G",
+      "operand": "DB 19",
+      "previous_load": "KF +131"
+    },
+    {
+      "native_word_address": "0069",
+      "block_byte_offset": 220,
+      "raw_hex": "78050029",
+      "native_command": "G",
+      "operand": "DB 41",
+      "previous_load": "KF +40"
+    },
+    {
+      "native_word_address": "006E",
+      "block_byte_offset": 230,
+      "raw_hex": "78050033",
+      "native_command": "G",
+      "operand": "DB 51",
+      "previous_load": "KF +186"
+    },
+    {
+      "native_word_address": "0078",
+      "block_byte_offset": 250,
+      "raw_hex": "780500CD",
+      "native_command": "G",
+      "operand": "DB 205",
+      "previous_load": "KF +220"
+    },
+    {
+      "native_word_address": "007F",
+      "block_byte_offset": 264,
+      "raw_hex": "780500D2",
+      "native_command": "G",
+      "operand": "DB 210",
+      "previous_load": "KF +128"
+    },
+    {
+      "native_word_address": "0084",
+      "block_byte_offset": 274,
+      "raw_hex": "780500D3",
+      "native_command": "G",
+      "operand": "DB 211",
+      "previous_load": "KF +10"
+    },
+    {
+      "native_word_address": "008B",
+      "block_byte_offset": 288,
+      "raw_hex": "7805003C",
+      "native_command": "G",
+      "operand": "DB 60",
+      "previous_load": "KF +50"
+    },
+    {
+      "native_word_address": "0090",
+      "block_byte_offset": 298,
+      "raw_hex": "780500D5",
+      "native_command": "G",
+      "operand": "DB 213",
+      "previous_load": "KF +10"
+    }
+  ],
+  "resolved_decoder_issue": "All nine 7805 occurrences in FB105 are G DB (German E DB), not E DX. The upstream table remains an unchanged reference; decoder operand mapping is corrected separately.",
+  "comparison": "All native absolute-address positions, commands, operands, networks and jump targets match after the nine DB label corrections.",
+  "limitations": "Native documentation comparison; not a PLC execution test. Loaded creation length values are visible, but behavior on existing DBs, retention and startup conditions require CPU documentation and remaining listings."
+}

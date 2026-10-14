@@ -1,0 +1,17 @@
+﻿network;method;result;action_order;conditions;presets
+1;Static native FBD action-expression comparison;Match;= M 80.5;= M 80.5: (M70.2 OR M70.3 OR M70.4 OR M70.6 OR M71.0);
+2;Static native FBD action-expression comparison;Match;= M 250.0;= M 250.0: ((NOT A112.0 AND NOT A112.5 AND M20.5) OR (NOT A112.0 AND M20.3) OR (NOT A112.5 AND M20.4) OR (NOT A17.7 AND M20.7) OR ((M20.1 OR M20.2) AND M28.4));
+3;Static native FBD action-expression comparison;Match;= M 250.0;= M 250.0: ((NOT A113.0 AND M22.2) OR (NOT A113.1 AND M22.3) OR (NOT A113.3 AND A113.2 AND M22.4) OR (NOT A113.5 AND A113.4 AND M22.5) OR (E124.1 AND M22.0) OR (E124.4 AND M22.1) OR M250.0);
+4;Static native FBD action-expression comparison;Match;= M 250.0;= M 250.0: (((E11.1 OR E11.2 OR E11.3 OR E11.4 OR E119.6 OR E119.7 OR E120.0 OR E120.1) AND E12.5 AND E12.7 AND M23.0) OR ((M23.2 OR M23.3) AND M63.1) OR (E11.0 AND E11.6 AND M23.1) OR (E11.0 AND E12.1 AND E12.7 AND M23.0) OR M250.0);
+5;Static native FBD action-expression comparison;Match;= M 250.0;= M 250.0: ((NOT A20.1 AND M24.1) OR M250.0);
+6;Static native FBD action-expression comparison;Match;= M 250.0;= M 250.0: (((NOT A20.4 OR NOT A22.6) AND M25.0) OR M250.0);
+7;Static native FBD action-expression comparison;Match;= M 250.0;= M 250.0: ((NOT A20.5 AND M26.6) OR (NOT A20.6 AND M26.0) OR (NOT A21.4 AND M26.5) OR M250.0);
+8;Static native FBD action-expression comparison;Match;= M 250.0;= M 250.0: ((NOT A20.6 AND M27.4) OR (NOT A21.6 AND M27.5) OR (NOT M80.5 AND M27.7) OR M250.0);
+9;Static native FBD action-expression comparison;Match;= M 252.0;= M 252.0: (((A112.0 OR A112.5) AND M20.5) OR (A112.0 AND M20.3) OR (A112.5 AND M20.4) OR (A17.7 AND M20.7));
+10;Static native FBD action-expression comparison;Match;= M 252.0;= M 252.0: ((NOT A113.2 AND A113.3 AND M22.4) OR (NOT A113.4 AND A113.5 AND M22.5) OR (A113.0 AND M22.2) OR (A113.1 AND M22.3) OR (E124.2 AND M22.0) OR (E124.5 AND M22.1) OR M252.0);
+11;Static native FBD action-expression comparison;Match;= M 252.0;= M 252.0: ((NOT A23.1 AND (E11.1 OR E11.2 OR E11.3 OR E11.4 OR E119.6 OR E119.7 OR E120.0 OR E120.1) AND E11.6 AND M23.1) OR (NOT M63.1 AND (M23.2 OR M23.3)) OR ((((E11.1 OR E11.2 OR E11.3 OR E11.4 OR E119.6 OR E119.7 OR E120.0 OR E120.1) AND E12.1) OR (E11.0 AND E12.5)) AND E12.7 AND M23.0) OR M252.0);
+12;Static native FBD action-expression comparison;Match;= M 252.0;= M 252.0: ((A20.1 AND M24.1) OR M252.0);
+13;Static native FBD action-expression comparison;Match;= M 252.0;= M 252.0: ((A20.4 AND A22.6 AND M25.0) OR M252.0);
+14;Static native FBD action-expression comparison;Match;= M 252.0;= M 252.0: ((A20.6 AND M26.0) OR M252.0);
+15;Static native FBD action-expression comparison;Match;= M 252.0;= M 252.0: ((A20.5 AND M26.6) OR (A20.6 AND M27.4) OR (A21.4 AND M26.5) OR (A21.6 AND M27.5) OR (M27.7 AND M80.5) OR M252.0);
+16;Static native FBD action-expression comparison;Match;BE ;BE : ;

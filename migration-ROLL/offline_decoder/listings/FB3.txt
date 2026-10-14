@@ -1,0 +1,228 @@
+FB3: FB 3 — OP15:AUFBEREITUNG DER BILDNUMMERN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x2400; block bytes: 494; SHA256: 41a0db4e3dd885143eb88a6c15306b0014f80e566acffc35d75893db05da7af2
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 03 84 00 00 00 00 F7
+Code starts at block offset 0x0014.
+FB name: 'OP15    '; entry SPA bytes: 2D05
+0014 [002414]  3D3E2D01                   SPA    FB 62 ; RETT200 — MERKER M200.0-M239.7 VOR FB51 RETTEN
+       Call descriptor @0016: 2D01; argument words: 0
+0018 [002418]  1082                       BLD    130
+001A [00241A]  A0BF                       UN     M 191.0 ; OP15_ANL — OP15: KENNUNG FUER HOCHLAUF
+001C [00241C]  FA07                       SPB=   @002A (relative +7 words)
+001E [00241E]  2033                       A      DB 51 ; DB 51 — OP15-KOMMUNIKATION ..................RAM
+0020 [002420]  30040001                   L      KF +1
+0024 [002424]  3340                       T      DW 64
+0026 [002426]  80BF                       U      M 191.0 ; OP15_ANL — OP15: KENNUNG FUER HOCHLAUF
+0028 [002428]  B0BF                       R      M 191.0 ; OP15_ANL — OP15: KENNUNG FUER HOCHLAUF
+002A [00242A]  1082                       BLD    130
+002C [00242C]  30203300                   L      KY 51,0
+0030 [002430]  3D332D01                   SPA    FB 51 ; FB_OP15 — STANDARDFUNKTIONSBAUSTEIN FUER OP15
+       Call descriptor @0032: 2D01; argument words: 0
+0034 [002434]  9BBF                       =      M 191.3 ; M191.3 — OP15 STANDRD-FB(51): FEHLER BEI FB51
+0036 [002436]  13BB                       T      MW 187 ; MW187 — AUFTRAEGE OP15
+0038 [002438]  1082                       BLD    130
+003A [00243A]  3D3F2D01                   SPA    FB 63 ; LADE200 — MERKER M200.0-M239.7 NACH FB51 LADEN
+       Call descriptor @003C: 2D01; argument words: 0
+003E [00243E]  1082                       BLD    130
+0040 [002440]  10FF                       BLD    255
+0042 [002442]  20D3                       A      DB 211 ; OP->AG — DATENAUSTAUSCH VOM OP ZUM AG ........RAM
+0044 [002444]  1082                       BLD    130
+0046 [002446]  3205                       L      DW 5
+0048 [002448]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+004A [00244A]  3206                       L      DW 6
+004C [00244C]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+004E [00244E]  1082                       BLD    130
+0050 [002450]  3040FFFF                   L      KH FFFF
+0054 [002454]  0BEF                       T      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0056 [002456]  1082                       BLD    130
+0058 [002458]  0ABC                       L      MB 188 ; MB188 — OP15 FEHLERMELDUNGEN
+005A [00245A]  30040073                   L      KF +115
+005E [00245E]  2180                       !=F    
+0060 [002460]  FA18                       SPB=   @0090 (relative +24 words)
+0062 [002462]  0ABC                       L      MB 188 ; MB188 — OP15 FEHLERMELDUNGEN
+0064 [002464]  300400BC                   L      KF +188
+0068 [002468]  2180                       !=F    
+006A [00246A]  FA13                       SPB=   @0090 (relative +19 words)
+006C [00246C]  1082                       BLD    130
+006E [00246E]  1082                       BLD    130
+0070 [002470]  0AF0                       L      MB 240 ; MB240 — SCHMIERMERKERBYTE
+0072 [002472]  30040001                   L      KF +1
+0076 [002476]  2160                       ><F    
+0078 [002478]  FA0C                       SPB=   @0090 (relative +12 words)
+007A [00247A]  1082                       BLD    130
+007C [00247C]  0AF1                       L      MB 241 ; MB241 — SCHMIERMERKERBYTE
+007E [00247E]  3004000A                   L      KF +10
+0082 [002482]  2180                       !=F    
+0084 [002484]  FA03                       SPB=   @008A (relative +3 words)
+0086 [002486]  2D05                       SPA=   @0090 (relative +5 words)
+0088 [002488]  1082                       BLD    130
+008A [00248A]  0AF2                       L      MB 242 ; MB242 — SCHMIERMERKERBYTE
+008C [00248C]  0BEF                       T      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+008E [00248E]  1082                       BLD    130
+0090 [002490]  10FF                       BLD    255
+0092 [002492]  3200                       L      DW 0
+0094 [002494]  13F4                       T      MW 244 ; MW244 — SCHMIERMERKER
+0096 [002496]  3201                       L      DW 1
+0098 [002498]  13F6                       T      MW 246 ; MW246 — SCHMIERMERKER
+009A [00249A]  1082                       BLD    130
+009C [00249C]  3202                       L      DW 2
+009E [00249E]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+00A0 [0024A0]  3203                       L      DW 3
+00A2 [0024A2]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+00A4 [0024A4]  1082                       BLD    130
+00A6 [0024A6]  0ABC                       L      MB 188 ; MB188 — OP15 FEHLERMELDUNGEN
+00A8 [0024A8]  30040073                   L      KF +115
+00AC [0024AC]  2180                       !=F    
+00AE [0024AE]  FA0A                       SPB=   @00C2 (relative +10 words)
+00B0 [0024B0]  1082                       BLD    130
+00B2 [0024B2]  0ABC                       L      MB 188 ; MB188 — OP15 FEHLERMELDUNGEN
+00B4 [0024B4]  300400BC                   L      KF +188
+00B8 [0024B8]  2180                       !=F    
+00BA [0024BA]  FA04                       SPB=   @00C2 (relative +4 words)
+00BC [0024BC]  1082                       BLD    130
+00BE [0024BE]  2D09                       SPA=   @00D0 (relative +9 words)
+00C0 [0024C0]  1082                       BLD    130
+00C2 [0024C2]  30400000                   L      KH 0000
+00C6 [0024C6]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+00C8 [0024C8]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+00CA [0024CA]  13F4                       T      MW 244 ; MW244 — SCHMIERMERKER
+00CC [0024CC]  13F6                       T      MW 246 ; MW246 — SCHMIERMERKER
+00CE [0024CE]  1082                       BLD    130
+00D0 [0024D0]  87F0                       U      M 240.7 ; M240.7 — SCHMIERMERKER
+00D2 [0024D2]  9EBE                       =      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+00D4 [0024D4]  1082                       BLD    130
+00D6 [0024D6]  84F0                       U      M 240.4 ; M240.4 — SCHMIERMERKER
+00D8 [0024D8]  9DBE                       =      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+00DA [0024DA]  1082                       BLD    130
+00DC [0024DC]  87F2                       U      M 242.7 ; M242.7 — SCHMIERMERKER
+00DE [0024DE]  9FBE                       =      M 190.7 ; FLANK — FLANKE MIND. EINE F-TASTE BETAETIGT
+00E0 [0024E0]  87F2                       U      M 242.7 ; M242.7 — SCHMIERMERKER
+00E2 [0024E2]  B7F2                       R      M 242.7 ; M242.7 — SCHMIERMERKER
+00E4 [0024E4]  1082                       BLD    130
+00E6 [0024E6]  85BE                       U      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+00E8 [0024E8]  8EBE                       O      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+00EA [0024EA]  A4BE                       UN     M 190.4 ; FLHM-02 — FLHM FUER M190.3
+00EC [0024EC]  9BBE                       =      M 190.3 ; FL-BEWEG — FLANKE DER BEWEG.-TASTEN (GND-ARBST.)
+00EE [0024EE]  94BE                       S      M 190.4 ; FLHM-02 — FLHM FUER M190.3
+00F0 [0024F0]  1082                       BLD    130
+00F2 [0024F2]  A5BE                       UN     M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+00F4 [0024F4]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+00F6 [0024F6]  B4BE                       R      M 190.4 ; FLHM-02 — FLHM FUER M190.3
+00F8 [0024F8]  1082                       BLD    130
+00FA [0024FA]  80F1                       U      M 241.0 ; M241.0 — SCHMIERMERKER
+00FC [0024FC]  98C0                       =      M 192.0 ; F1-TAST — TASTE F1 BETAETIGT
+00FE [0024FE]  1082                       BLD    130
+0100 [002500]  81F1                       U      M 241.1 ; M241.1 — SCHMIERMERKER
+0102 [002502]  99C0                       =      M 192.1 ; F2-TAST — TASTE F2 BETAETIGT
+0104 [002504]  1082                       BLD    130
+0106 [002506]  82F1                       U      M 241.2 ; M241.2 — SCHMIERMERKER
+0108 [002508]  9AC0                       =      M 192.2 ; F3-TAST — TASTE F3 BETAETIGT
+010A [00250A]  1082                       BLD    130
+010C [00250C]  83F1                       U      M 241.3 ; M241.3 — SCHMIERMERKER
+010E [00250E]  9BC0                       =      M 192.3 ; F4-TAST — TASTE F4 BETAETIGT
+0110 [002510]  1082                       BLD    130
+0112 [002512]  84F1                       U      M 241.4 ; M241.4 — SCHMIERMERKER
+0114 [002514]  9CC0                       =      M 192.4 ; F5-TAST — TASTE F5 BETAETIGT
+0116 [002516]  1082                       BLD    130
+0118 [002518]  85F1                       U      M 241.5 ; M241.5 — SCHMIERMERKER
+011A [00251A]  9DC0                       =      M 192.5 ; F6-TAST — TASTE F6 BETAETIGT
+011C [00251C]  1082                       BLD    130
+011E [00251E]  86F1                       U      M 241.6 ; M241.6 — SCHMIERMERKER
+0120 [002520]  9EC0                       =      M 192.6 ; F7-TAST — TASTE F7 BETAETIGT
+0122 [002522]  1082                       BLD    130
+0124 [002524]  87F1                       U      M 241.7 ; M241.7 — SCHMIERMERKER
+0126 [002526]  9FC0                       =      M 192.7 ; F8-TAST — TASTE F8 BETAETIGT
+0128 [002528]  1082                       BLD    130
+012A [00252A]  80F0                       U      M 240.0 ; M240.0 — SCHMIERMERKER
+012C [00252C]  98C1                       =      M 193.0 ; F9-TAST — TASTE F9 BETAETIGT
+012E [00252E]  1082                       BLD    130
+0130 [002530]  81F0                       U      M 240.1 ; M240.1 — SCHMIERMERKER
+0132 [002532]  99C1                       =      M 193.1 ; F10-TAST — TASTE F10 BETAETIGT
+0134 [002534]  1082                       BLD    130
+0136 [002536]  82F0                       U      M 240.2 ; M240.2 — SCHMIERMERKER
+0138 [002538]  9AC1                       =      M 193.2 ; F11-TAST — TASTE F11 BETAETIGT
+013A [00253A]  1082                       BLD    130
+013C [00253C]  83F0                       U      M 240.3 ; M240.3 — SCHMIERMERKER
+013E [00253E]  9BC1                       =      M 193.3 ; F12-TAST — TASTE F12 BETAETIGT
+0140 [002540]  1082                       BLD    130
+0142 [002542]  84F0                       U      M 240.4 ; M240.4 — SCHMIERMERKER
+0144 [002544]  9CC1                       =      M 193.4 ; F13-TAST — TASTE F13 BETAETIGT
+0146 [002546]  1082                       BLD    130
+0148 [002548]  85F0                       U      M 240.5 ; M240.5 — SCHMIERMERKER
+014A [00254A]  9DC1                       =      M 193.5 ; F14-TAST — TASTE F14 BETAETIGT
+014C [00254C]  1082                       BLD    130
+014E [00254E]  86F0                       U      M 240.6 ; M240.6 — SCHMIERMERKER
+0150 [002550]  9EC1                       =      M 193.6 ; F15-TAST — TASTE F15 BETAETIGT
+0152 [002552]  1082                       BLD    130
+0154 [002554]  87F0                       U      M 240.7 ; M240.7 — SCHMIERMERKER
+0156 [002556]  9FC1                       =      M 193.7 ; F16-TAST — TASTE F16 BETAETIGT
+0158 [002558]  1082                       BLD    130
+015A [00255A]  12F2                       L      MW 242 ; MW242 — SCHMIERMERKER
+015C [00255C]  3303                       T      DW 3
+015E [00255E]  1082                       BLD    130
+0160 [002560]  86F5                       U      M 245.6 ; M245.6 — SCHMIERMERKER
+0162 [002562]  98C6                       =      M 198.0 ; T-UEB — UEBRNAHMETASTE BETAETIGT
+0164 [002564]  1082                       BLD    130
+0166 [002566]  87F6                       U      M 246.7 ; M246.7 — SCHMIERMERKER
+0168 [002568]  B7F6                       R      M 246.7 ; M246.7 — SCHMIERMERKER
+016A [00256A]  12F6                       L      MW 246 ; MW246 — SCHMIERMERKER
+016C [00256C]  3301                       T      DW 1
+016E [00256E]  1082                       BLD    130
+0170 [002570]  10FF                       BLD    255
+0172 [002572]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0174 [002574]  3040FFFF                   L      KH FFFF
+0178 [002578]  2160                       ><F    
+017A [00257A]  FA07                       SPB=   @0188 (relative +7 words)
+017C [00257C]  30400000                   L      KH 0000
+0180 [002580]  13FA                       T      MW 250 ; MW250 — SCHMIERMERKER
+0182 [002582]  13FC                       T      MW 252 ; MW252 — SCHMIERMERKER
+0184 [002584]  2D05                       SPA=   @018E (relative +5 words)
+0186 [002586]  1082                       BLD    130
+0188 [002588]  7512                       SPA    PB 18 ; PB 18 — EINZELGRUND- UND EINZELARBEITSSTELLUNG
+018A [00258A]  1082                       BLD    130
+018C [00258C]  1082                       BLD    130
+018E [00258E]  30400000                   L      KH 0000
+0192 [002592]  1082                       BLD    130
+0194 [002594]  20D2                       A      DB 210 ; AG->OP — DATENAUSTAUSCH VOM AG ZUM OP ........RAM
+0196 [002596]  333C                       T      DW 60
+0198 [002598]  323E                       L      DW 62
+019A [00259A]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+019C [00259C]  80FA                       U      M 250.0 ; M250.0 — SCHMIERMERKER
+019E [00259E]  98F2                       =      M 242.0 ; M242.0 — SCHMIERMERKER
+01A0 [0025A0]  99F2                       =      M 242.1 ; M242.1 — SCHMIERMERKER
+01A2 [0025A2]  80FC                       U      M 252.0 ; M252.0 — SCHMIERMERKER
+01A4 [0025A4]  9EF2                       =      M 242.6 ; M242.6 — SCHMIERMERKER
+01A6 [0025A6]  9FF2                       =      M 242.7 ; M242.7 — SCHMIERMERKER
+01A8 [0025A8]  12F2                       L      MW 242 ; MW242 — SCHMIERMERKER
+01AA [0025AA]  333E                       T      DW 62
+01AC [0025AC]  1082                       BLD    130
+01AE [0025AE]  1082                       BLD    130
+01B0 [0025B0]  1082                       BLD    130
+01B2 [0025B2]  A0FA                       UN     M 250.0 ; M250.0 — SCHMIERMERKER
+01B4 [0025B4]  FA04                       SPB=   @01BC (relative +4 words)
+01B6 [0025B6]  30040001                   L      KF +1
+01BA [0025BA]  2D08                       SPA=   @01CA (relative +8 words)
+01BC [0025BC]  A0FC                       UN     M 252.0 ; M252.0 — SCHMIERMERKER
+01BE [0025BE]  FA04                       SPB=   @01C6 (relative +4 words)
+01C0 [0025C0]  30040002                   L      KF +2
+01C4 [0025C4]  2D03                       SPA=   @01CA (relative +3 words)
+01C6 [0025C6]  30040000                   L      KF +0
+01CA [0025CA]  333C                       T      DW 60
+01CC [0025CC]  10FF                       BLD    255
+01CE [0025CE]  1083                       BLD    131
+01D0 [0025D0]  1082                       BLD    130
+01D2 [0025D2]  20D2                       A      DB 210 ; AG->OP — DATENAUSTAUSCH VOM AG ZUM OP ........RAM
+01D4 [0025D4]  1082                       BLD    130
+01D6 [0025D6]  0C01                       LC     T 1 ; T1_* — TAUCHZEIT IN ALLEN STATIONEN
+01D8 [0025D8]  3346                       T      DW 70
+01DA [0025DA]  1082                       BLD    130
+01DC [0025DC]  0C02                       LC     T 2 ; T2_* — ABTROPFZEIT IN ALLEN STATIONEN
+01DE [0025DE]  3347                       T      DW 71
+01E0 [0025E0]  1082                       BLD    130
+01E2 [0025E2]  10FF                       BLD    255
+01E4 [0025E4]  3D5B2D01                   SPA    FB 91 ; STOER — STOERANZEIGE AUFBEREITEN FUER OP
+       Call descriptor @01E6: 2D01; argument words: 0
+01E8 [0025E8]  3D5C2D01                   SPA    FB 92 ; MENUE — MENUEVERTEILER FUER OP
+       Call descriptor @01EA: 2D01; argument words: 0
+01EC [0025EC]  6500                       BE     

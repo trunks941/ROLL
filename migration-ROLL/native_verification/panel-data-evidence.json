@@ -1,0 +1,21 @@
+{
+  "alarm_bits_with_memory_map": 120,
+  "alarm_byte_writes": 15,
+  "PLC_ack_byte_writes": 16,
+  "extra_ack_byte": "DB210 DL24 = NOT MB20; no matching alarm-byte write in FB91",
+  "alarm_area_not_written_by_FB91": [
+    "DL7",
+    "DW8..16"
+  ],
+  "ack_area_not_written_by_FB91": [
+    "DW25..33"
+  ],
+  "N1_event_source_bytes": 17,
+  "N1_event_limit": "DL58 is preserved during active copying; 8000 is written to DW58 when the OR of DW50..58 is zero",
+  "source_blocks": [
+    "FB91",
+    "FB92",
+    "FB96"
+  ],
+  "runtime_test": false
+}

@@ -1,0 +1,270 @@
+PB 4      -PB 4                      C:04201@ST.S5D                    LEN=131  
+                                                                        Page   1
+Segment  1
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 30    --!    Q!-+-! =    ! -HB_30
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   23.5 = HB_30
+
+
+Segment  2
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 31    --!    Q!-+-! =    ! -HB_31
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   23.6 = HB_31
+
+Segment  3
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 35    --!    Q!-+-! =    ! -HB_35
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   24.0 = HB_35
+
+Segment  4
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 36    --!    Q!-+-! =    ! -HB_36
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   24.1 = HB_36                     FUELLEN VE-WASSER IN STAT.1-3,OEAS
+
+Segment  5
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 37    --!    Q!-+-! =    ! -HB_37
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   24.2 = HB_37
+
+Segment  6
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 38    --!    Q!-+-! =    ! -HB_38
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   24.3 = HB_38
+
+
+PB 4      -PB 4                      C:04201@ST.S5D                    LEN=131  
+                                                                        Page   2
+Segment  7
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 39    --!    Q!-+-! =    ! -HB_39
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   24.4 = HB_39
+
+Segment  8
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 50    --!    Q!-+-! =    ! -HB_50
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   25.0 = HB_50                     FUELLEN AUS RAV IN STATION 1-3,OEAS
+
+Segment  9
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 51    --!    Q!-+-! =    ! -HB_51
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   25.1 = HB_51
+
+Segment  10
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 52    --!    Q!-+-! =    ! -HB_52
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   25.2 = HB_52
+
+Segment  11
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 53    --!    Q!-+-! =    ! -HB_53
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   25.3 = HB_53
+
+Segment  12
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 55    --!    Q!-+-! =    ! -HB_55
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   25.4 = HB_55
+
+
+PB 4      -PB 4                      C:04201@ST.S5D                    LEN=131  
+                                                                        Page   3
+Segment  13
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 56    --!    Q!-+-! =    ! -HB_56
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   25.5 = HB_56
+
+Segment  14
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 57    --!    Q!-+-! =    ! -HB_57
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   25.6 = HB_57
+
+Segment  15
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 58    --!    Q!-+-! =    ! -HB_58
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   25.7 = HB_58
+
+Segment  16
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 60    --!    Q!-+-! =    ! -HB_60
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   26.0 = HB_60                     UMPUMPEN IN STATION 1-3,ABSETZBEHAELTER
+
+Segment  17
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 61    --!    Q!-+-! =    ! -HB_61
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   26.1 = HB_61
+
+Segment  18
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 62    --!    Q!-+-! =    ! -HB_62
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   26.2 = HB_62
+
+
+PB 4      -PB 4                      C:04201@ST.S5D                    LEN=131  
+                                                                        Page   4
+Segment  19
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 63    --!    Q!-+-! =    ! -HB_63
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   26.3 = HB_63
+
+Segment  20
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 65    --!    Q!-+-! =    ! -HB_65
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   26.5 = HB_65                     UMPUMPEN IN SCHMUTZTANK RAV
+
+Segment  21
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 66    --!    Q!-+-! =    ! -HB_66
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   26.6 = HB_66                     SCHAUMBREMSE IN RAV-VERDAMPFER DOSIEREN
+
+Segment  22
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 69    --!    Q!-+-! =    ! -HB_69
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   27.1 = HB_69
+
+Segment  23
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 72    --!    Q!-+-! =    ! -HB_72
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   27.4 = HB_72                     UMPUMPEN IN ENTSORGUNG BAUSEITS
+
+Segment  24
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 73    --!    Q!-+-! =    ! -HB_73
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   27.5 = HB_73                     VERDAMPFER RAV FUELL.AUS SCHMUTZT.
+
+
+PB 4      -PB 4                      C:04201@ST.S5D                    LEN=131  
+                                                                        Page   5
+Segment  25
+            +-----+
+ -HANDFUNK--!!=  F!
+            !     !   +------+
+ KB 99    --!    Q!-+-! =    ! -HB_99
+            +-----+   +------+
+
+FY 239   = HANDFUNK                  HANDBETRIEB: AKTUELLE FUNKTION
+F   27.7 = HB_99                     KORREKTUR SETZM. WT-VERFOLGUNG
+
+Segment  26
+ 
+                    :BE
+
+

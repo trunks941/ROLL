@@ -1,0 +1,217 @@
+{
+  "block": "PB51",
+  "source_file": "PB51ROLS.INI",
+  "size_bytes": 13537,
+  "sha256": "7ddde3e9f33929cad646802123732923a100d13ebe839718bad900a2bcc95555",
+  "source_scope": {
+    "source_byte_start": 0,
+    "source_byte_end": 3738,
+    "other_blocks_in_source": [
+      "PB52"
+    ]
+  },
+  "pages": 2,
+  "block_bytes": 158,
+  "networks": 8,
+  "matched": 8,
+  "reviews": [
+    {
+      "network": 1,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 15",
+          "condition": "A24.0",
+          "condition_ast": [
+            "READ",
+            "A 24.0"
+          ],
+          "preset": "KT060.2"
+        }
+      ]
+    },
+    {
+      "network": 2,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 16",
+          "condition": "(NOT E5.6 AND M31.5)",
+          "condition_ast": [
+            "AND",
+            [
+              "NOT",
+              [
+                "READ",
+                "E 5.6"
+              ]
+            ],
+            [
+              "READ",
+              "M 31.5"
+            ]
+          ],
+          "preset": "KT360.3"
+        }
+      ]
+    },
+    {
+      "network": 3,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 18",
+          "condition": "M37.5",
+          "condition_ast": [
+            "READ",
+            "M 37.5"
+          ],
+          "preset": "KT010.1"
+        }
+      ]
+    },
+    {
+      "network": 4,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 19",
+          "condition": "((NOT E124.1 AND A112.1) OR (NOT E124.2 AND A112.2))",
+          "condition_ast": [
+            "OR",
+            [
+              "AND",
+              [
+                "NOT",
+                [
+                  "READ",
+                  "E 124.1"
+                ]
+              ],
+              [
+                "READ",
+                "A 112.1"
+              ]
+            ],
+            [
+              "AND",
+              [
+                "NOT",
+                [
+                  "READ",
+                  "E 124.2"
+                ]
+              ],
+              [
+                "READ",
+                "A 112.2"
+              ]
+            ]
+          ],
+          "preset": "KT015.2"
+        }
+      ]
+    },
+    {
+      "network": 5,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 20",
+          "condition": "((E123.4 OR E123.5) AND A112.0)",
+          "condition_ast": [
+            "AND",
+            [
+              "OR",
+              [
+                "READ",
+                "E 123.4"
+              ],
+              [
+                "READ",
+                "E 123.5"
+              ]
+            ],
+            [
+              "READ",
+              "A 112.0"
+            ]
+          ],
+          "preset": "KT010.1"
+        }
+      ]
+    },
+    {
+      "network": 6,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 21",
+          "condition": "E123.4",
+          "condition_ast": [
+            "READ",
+            "E 123.4"
+          ],
+          "preset": "KT050.1"
+        }
+      ]
+    },
+    {
+      "network": 7,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "SE",
+          "target": "T 95",
+          "condition": "(E125.0 AND E125.1)",
+          "condition_ast": [
+            "AND",
+            [
+              "READ",
+              "E 125.0"
+            ],
+            [
+              "READ",
+              "E 125.1"
+            ]
+          ],
+          "preset": "KT005.2"
+        }
+      ]
+    },
+    {
+      "network": 8,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "BE",
+          "target": "",
+          "condition": "",
+          "condition_ast": null,
+          "preset": ""
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "native_addressed_STL_positions": 0,
+  "offline_positions_in_context": 67,
+  "offline_executing_instructions": 60,
+  "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+  "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+  "result": "All native network action expressions and operands match."
+}

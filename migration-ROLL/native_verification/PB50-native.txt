@@ -1,0 +1,49 @@
+PB 50     -PB 50                     C:04201@ST.S5D                    LEN=32   
+                                                                        Page   1
+Segment  1
+0000      :STL
+0001      :C   DB  15    -DBVZEIT
+0002      :***
+
+DB  15   = DBVZEIT                   VARIABLE ZEITEN .....................RAM
+
+Segment  2
+0003      :STL
+0004      :A   F    0.1  -RI/NEUST
+0005      :R   F    0.2  -HM/RINEU
+0006      :***
+
+F    0.1 = RI/NEUST                  RICHTIMPULSMERKER FUER NEUSTART
+F    0.2 = HM/RINEU                  HM F.RICHTIMPULSMERKER F.NEUSTART
+
+Segment  3
+             +---+   -T11
+ -STEUSP  ---! & !    +-----+
+ -RI/NEUST--O!   !----!T!-!0!
+             +---+    !     !
+           KT 008.2 --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+I    3.0 = STEUSP                    STEUERSPANNUNG VORHANDEN
+F    0.1 = RI/NEUST                  RICHTIMPULSMERKER FUER NEUSTART
+T   11   = T11                       VERZ.STOERUNGSANZ.ALLGEMEIN
+
+Segment  4
+           -T13
+            +-----+
+ -M29.0   --!T!-!0!
+ KT 020.1 --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+F   29.0 = M29.0                     FREIGABE AUSGAENGE ANTRIEBE
+T   13   = T13                       VERZ.FREIGABE BAHNEN
+
+Segment  5
+ 
+                    :BE
+
+

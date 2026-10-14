@@ -1,0 +1,923 @@
+﻿block;source_comment_block;record_offset;index;record_type;text_de
+DB12;DK12;28;;title;DB mit Defaultwerten
+DB12;DK12;49;0;0x80;Defaultwert Zeit 0
+DB12;DK12;70;1;0x80;Defaultwert Zeit 1
+DB12;DK12;91;2;0x80;z.B.   1 * 0,01 s
+DB12;DK12;111;3;0x80;z.B.  10 * 0,1 s
+DB12;DK12;130;4;0x80;z.B. 999 * 1 s
+DB206;DK206;28;;title;Auftraege an OP15
+DB206;DK206;46;0;0x80;Menue
+DB206;DK206;54;1;0x80; 1 anzeigen
+DB206;DK206;68;2;0x80;(Menue 1 = Meldeebene)
+DB206;DK206;93;4;0x80;Reserve
+DB206;DK206;103;8;0x80;Prozessbild fuer HB
+DB206;DK206;125;9;0x80; 10 anzeigen
+DB206;DK206;140;10;0x80; Eintrag 0
+DB206;DK206;153;11;0x80; Feld 0
+DB206;DK206;163;12;0x80;Reserve
+DB206;DK206;173;16;0x80;Reserve
+DB206;DK206;183;20;0x80;Reserve
+DB206;DK206;193;24;0x80;Reserve
+FB3;FK3;26;1;0x00;NW1
+FB3;FK3;32;3;0x80;Merkerbereiche retten
+FB3;FK3;56;6;0x80;Erkennung Hochlauf aus
+FB3;FK3;81;8;0x80;Hochlaufauftrag an OP15
+FB3;FK3;107;10;0x80;Kennung ruecksetzen
+FB3;FK3;129;13;0x80;Zeiger auf TD/OP-Baustein
+FB3;FK3;157;14;0x80;Kommunikation mit OP20
+FB3;FK3;182;16;0x80;Fehlermerker setzen
+FB3;FK3;204;17;0x80;Fehlerstatus rueckmelden
+FB3;FK3;231;19;0x80;gerettete Merker laden
+FB3;FK3;256;2;0x00;NW2
+FB3;FK3;262;1;0x80;Empfangs-DB oeffnen
+FB3;FK3;284;3;0x80;DW mit Bildtyp und Bild-Nr.
+FB3;FK3;314;4;0x80;zwischenspeichern
+FB3;FK3;334;5;0x80;DW mit Eint.-Nr. u. Eint.-F.-Nr.
+FB3;FK3;369;6;0x80;zwischenspeichern
+FB3;FK3;389;8;0x80;Handbetriebsnummer auf
+FB3;FK3;414;9;0x80;ungueltig vorbelegen
+FB3;FK3;437;11;0x80;Fehlerstatus vom FB51
+FB3;FK3;461;12;0x80;Watchdog-Fehler
+FB3;FK3;479;13;0x80;angesprochen
+FB3;FK3;494;14;0x80;Sprung zum Netzwerk-ENDE
+FB3;FK3;521;15;0x80;Fehlerstatus vom FB51
+FB3;FK3;545;16;0x80;Break-Fehler (Kabelbruch)
+FB3;FK3;573;17;0x80;angesprochen
+FB3;FK3;588;18;0x80;Sprung zum Netzwerk-ENDE
+FB3;FK3;615;21;0x80;akt. Bildtyp
+FB3;FK3;630;22;0x80;1 = Prozessbild
+FB3;FK3;648;24;0x80;nein Sprung zum Netzwerk-ENDE
+FB3;FK3;680;26;0x80;akt. Bildnummer
+FB3;FK3;698;27;0x80;10 = Handbetrieb
+FB3;FK3;717;29;0x80;ja Sprung zur Auswertung
+FB3;FK3;744;32;0x80;Eintragsnummer
+FB3;FK3;761;33;0x80;eintragen
+FB3;FK3;773;36;0x80;akt. Bildnummer
+FB3;FK3;791;37;0x80;12 = Fahrwagen rechts
+FB3;FK3;815;39;0x80;ja Sprung zur Auswertung
+FB3;FK3;842;41;0x80;akt. Bildnummer
+FB3;FK3;860;42;0x80;13 = Fahrwagen links
+FB3;FK3;883;44;0x80;ja Sprung zur Auswertung
+FB3;FK3;910;46;0x80;akt. Bildnummer
+FB3;FK3;928;47;0x80;14 = Verfahren
+FB3;FK3;945;49;0x80;ja Sprung zur Auswertung
+FB3;FK3;972;50;0x80;nein Sprung zum Netwerk-ENDE
+FB3;FK3;1003;52;0x80;akt. Eintragsnummer = HB-Nr.
+FB3;FK3;1034;53;0x80;auf MB fuer Auswertung HB
+FB3;FK3;1062;3;0x00;NW3
+FB3;FK3;1068;1;0x80;Systemtastatur
+FB3;FK3;1085;2;0x80;1. Teil
+FB3;FK3;1095;3;0x80;Systemtastatur
+FB3;FK3;1112;4;0x80;2. Teil mit Sammelbit
+FB3;FK3;1136;6;0x80;Funktionstastatur einlesen
+FB3;FK3;1165;7;0x80;zwischenspeichern
+FB3;FK3;1185;8;0x80;Wort mit Tastatursammelbit
+FB3;FK3;1214;9;0x80;zwischenspeichern
+FB3;FK3;1234;11;0x80;Fehlerstatus von FB51
+FB3;FK3;1258;12;0x80;Watchdog-Fehler
+FB3;FK3;1276;14;0x80;Fehler => Sprung zur F-Bearb.
+FB3;FK3;1308;16;0x80;Fehlerstatus von FB51
+FB3;FK3;1332;17;0x80;Braek-Fehler
+FB3;FK3;1347;19;0x80;Fehler => Sprung zur F-Bearb.
+FB3;FK3;1379;21;0x80;kein Fehler => Auswertung Tasten
+FB3;FK3;1414;23;0x80;Tastaturbits
+FB3;FK3;1429;24;0x80;ruecksetzen bei Erkennung
+FB3;FK3;1457;25;0x80;Fehler AG <-> OP
+FB3;FK3;1476;29;0x80;Taste F16 betaetigt
+FB3;FK3;1498;30;0x80;Merker fuer Fkt. Arbeitsstellung
+FB3;FK3;1533;32;0x80;Taste F13 betaetigt
+FB3;FK3;1555;33;0x80;Merker fuer Fkt. Grundstellung
+FB3;FK3;1588;35;0x80;Tastatursammelbit
+FB3;FK3;1608;36;0x80;Flanke Taste betaetigt
+FB3;FK3;1633;37;0x80;Sammelbit
+FB3;FK3;1645;38;0x80;ruecksetzen
+FB3;FK3;1659;40;0x80;Taste Grundstellung betaetigt
+FB3;FK3;1691;41;0x80;Taste Arb.-Stell. betaetigt
+FB3;FK3;1721;42;0x80;Flk-HM
+FB3;FK3;1730;43;0x80;Flanke Grd.- o.Arb.-Taste bet.
+FB3;FK3;1763;44;0x80;Flk.-HM
+FB3;FK3;1773;46;0x80;keine Taste betaetigt
+FB3;FK3;1797;48;0x80;Ruecksetzen FLH.-M.
+FB3;FK3;1819;50;0x80;Taste F1 betaetigt
+FB3;FK3;1840;53;0x80;Taste F2 betaetigt
+FB3;FK3;1861;56;0x80;Taste F3 betaetigt
+FB3;FK3;1882;59;0x80;Taste F4 betaetigt
+FB3;FK3;1903;62;0x80;Taste F5 betaetigt
+FB3;FK3;1924;65;0x80;Taste F6 betaetigt
+FB3;FK3;1945;66;0x80;Funktion:
+FB3;FK3;1957;68;0x80;Taste F7 betaetigt
+FB3;FK3;1978;69;0x80;Funktion:
+FB3;FK3;1990;71;0x80;Taste F8 betaetigt
+FB3;FK3;2011;72;0x80;Funktion:
+FB3;FK3;2023;74;0x80;Taste F9 betaetigt
+FB3;FK3;2044;75;0x80;Funktion:
+FB3;FK3;2056;77;0x80;Taste F10 betaetigt
+FB3;FK3;2078;78;0x80;Funktion:
+FB3;FK3;2090;80;0x80;Taste F11 betaetigt
+FB3;FK3;2112;81;0x80;Funktion:
+FB3;FK3;2124;83;0x80;Taste F12 betaetigt
+FB3;FK3;2146;84;0x80;Funktion:
+FB3;FK3;2158;86;0x80;Taste F13 betaetigt
+FB3;FK3;2180;87;0x80;Funktion: Taste GRD s.o.
+FB3;FK3;2207;89;0x80;Taste F14 betaetigt
+FB3;FK3;2229;90;0x80;Fnktion:
+FB3;FK3;2240;92;0x80;Taste F15 betaetigt
+FB3;FK3;2262;93;0x80;Funktion:
+FB3;FK3;2274;95;0x80;Taste F16 betaetigt
+FB3;FK3;2296;96;0x80;Funktion:
+FB3;FK3;2308;98;0x80;DW mit Sammelbit = 0
+FB3;FK3;2331;99;0x80;rueckspeichern
+FB3;FK3;2348;101;0x80;Uebernahmetaste
+FB3;FK3;2366;102;0x80;Merker fuer Uebernahmetaste
+FB3;FK3;2396;104;0x80;Systemtastatur  Sammelbit
+FB3;FK3;2424;105;0x80;Sammelbit loeschen
+FB3;FK3;2445;106;0x80;MW mit Sammelbit
+FB3;FK3;2464;107;0x80;an OP ubergeben
+FB3;FK3;2482;4;0x00;NW4
+FB3;FK3;2488;1;0x80;Handbetriebsnummer laden
+FB3;FK3;2515;2;0x80;Kennung kein Handbetrieb
+FB3;FK3;2542;5;0x80;Schmiermerker ruecksetzen
+FB3;FK3;2570;10;0x80;Grund- u.Arbeitsstellung lesen
+FB3;FK3;2603;11;0x80;------------------------------
+FB3;FK3;2636;13;0x80;Handbetriebsmeldungen mit 0
+FB3;FK3;2666;14;0x80;vorbelegen
+FB3;FK3;2679;16;0x80;ausgeben
+FB3;FK3;2690;17;0x80;LED-Status laden
+FB3;FK3;2709;18;0x80;ablegen
+FB3;FK3;2719;19;0x80;Einzelgrundstellung
+FB3;FK3;2741;20;0x80;Bit fuer LED 13
+FB3;FK3;2759;21;0x80;Bit fuer LED 13
+FB3;FK3;2777;22;0x80;Einzelarbeitsstellung
+FB3;FK3;2801;23;0x80;Bit fuer LED 16
+FB3;FK3;2819;24;0x80;Bit fuer LED 16
+FB3;FK3;2837;25;0x80;Status fuer LED laden
+FB3;FK3;2861;26;0x80;an OP15 uebergeben
+FB3;FK3;2882;5;0x00;Zeiten an OP
+FB3;FK3;2897;6;0x00;Stoerungen und Schritte
+FB60;FK60;26;1;0x00;
+FB60;FK60;29;3;0x80;Ueberwachungszeiten fuer:
+FB60;FK60;57;4;0x80;--------------------------------
+FB60;FK60;92;5;0x80;   - Angewaehltes Prg ni.vorh.
+FB60;FK60;125;6;0x80;      Status 12 (Auftr.wurde
+FB60;FK60;156;7;0x80;      gesendet) aber keine
+FB60;FK60;185;8;0x80;      Rueckmeldung (gut = 192.0
+FB60;FK60;219;9;0x80;      FE = 192.1) dann Zeit
+FB60;FK60;249;10;0x80;      starten
+FB60;FK60;265;14;0x80;   PRG-MERKER LADEN
+FB60;FK60;287;17;0x80;BETRIEBSART ERKENNEN
+FB60;FK60;310;19;0x80;  hier nicht vorh. Btr.arten aus
+FB60;FK60;345;20;0x80;     Sonderbetr. 1
+FB60;FK60;366;21;0x80;     Sonderbetr. 2
+FB60;FK60;387;23;0x80;   NORMALBETRIEB
+FB60;FK60;406;25;0x80;BTR-ARTAENDERUNG ERKENNEN
+FB60;FK60;434;2;0x00;BETRIEBSART
+FB60;FK60;448;1;0x80;PROGR.LADEN ?
+FB60;FK60;464;2;0x80;  NEIN ==> ENDE
+FB60;FK60;482;3;0x80;PROGR.WURDE SCHON GELADEN ?
+FB60;FK60;512;4;0x80;  JA ==> ENDE
+FB60;FK60;528;5;0x80;  NEIN
+FB60;FK60;537;8;0x80;ENDE
+FB60;FK60;544;9;0x80;PGR.ENDE MIT INI.NEUST.
+FB60;FK60;570;10;0x80;   OUTP.PRG.GELADEN
+FB60;FK60;592;11;0x80;"   M ""STAT.21 LAEUFT""AUSSCH."
+FB60;FK60;623;12;0x80;   SPERRMERKER
+FB60;FK60;640;13;0x80;"   Status auf ""Neustart"""
+FB60;FK60;667;14;0x80;      einstellen
+FB60;FK60;686;15;0x80;   PrgMerker retten
+FB60;FK60;708;17;0x80;   ==> Ende
+FB60;FK60;722;20;0x80;WEITER
+FB60;FK60;731;21;0x80;   Prg-Merker retten
+FB60;FK60;754;3;0x00;
+FB60;FK60;757;1;0x80;LEERZYKLUS AUSFUEHREN ?
+FB60;FK60;783;2;0x80;   NEIN ==> STATUS BEARBEITEN
+FB60;FK60;815;3;0x80;   LEERTAKTMERKER
+FB60;FK60;835;4;0x80;      ZURUECKSETZEN
+FB60;FK60;857;5;0x80;   PRG-MERKER-RETTEN
+FB60;FK60;880;7;0x80;      ==> WEITER
+FB60;FK60;899;9;0x80;STATUS 9  BEARBEITEN
+FB60;FK60;922;10;0x80;VOREINST.: KEINE BETR-ART-
+FB60;FK60;951;11;0x80;           AENDERUNG
+FB60;FK60;974;12;0x80;NORMALBETRIEB
+FB60;FK60;990;13;0x80;   NEIN ==>
+FB60;FK60;1004;14;0x80;   ja
+FB60;FK60;1012;16;0x80;   Status im Normalbetrieb ist
+FB60;FK60;1045;17;0x80;   10,11,12,13. Bei anderer Nr.
+FB60;FK60;1079;18;0x80;   wird neu gestartet (=Nr.10)
+FB60;FK60;1112;22;0x80;    ==> WEITER
+FB60;FK60;1129;25;0x80;KEINE BETR-ART
+FB60;FK60;1146;26;0x80;   HINWEIS
+FB60;FK60;1159;27;0x80;   M-BTR-ART ZURUECKSETZEN:NB
+FB60;FK60;1191;28;0x80;                           SB1
+FB60;FK60;1224;29;0x80;                           SB2
+FB60;FK60;1257;30;0x80;   ==> ENDE
+FB60;FK60;1271;34;0x80;STATUS 10 EINST.: NORMALBETR.
+FB60;FK60;1303;40;0x80;"   M ""STAT.21 LAEUFT"" AUSSCH."
+FB60;FK60;1335;45;0x80;WEITER
+FB60;FK60;1344;47;0x80;   LEERTAKT EINSCHALTEN
+FB60;FK60;1370;48;0x80;   PRG-MERKER RETTEN
+FB60;FK60;1393;4;0x00;STATUS 10: BCD-SCH. PRUEFEN
+FB60;FK60;1423;4;0x80;STATUS 10 ?
+FB60;FK60;1437;5;0x80;   NEIN ==> WEITER
+FB60;FK60;1458;7;0x80;LEERZYKLUS AUSFUEHREN ?
+FB60;FK60;1484;8;0x80;   NEIN ==> STATUS BEARBEITEN
+FB60;FK60;1516;9;0x80;   LEERTAKTMERKER
+FB60;FK60;1536;10;0x80;      ZURUECKSETZEN
+FB60;FK60;1558;11;0x80;      ==> WEITER
+FB60;FK60;1577;13;0x80;STATUS 10 BEARBEITEN
+FB60;FK60;1600;14;0x80;BCD-SCH-AEND.BESTAET.?
+FB60;FK60;1625;16;0x80;   JA ==>
+FB60;FK60;1637;17;0x80;   NEIN
+FB60;FK60;1647;20;0x80;Programmnummer lesen
+FB60;FK60;1670;24;0x80;Programmnummer kleiner 1
+FB60;FK60;1697;26;0x80;ja -> Fehler
+FB60;FK60;1712;28;0x80;oder groesser 99
+FB60;FK60;1731;30;0x80;ja -> Fehler
+FB60;FK60;1746;31;0x80;   NEIN
+FB60;FK60;1756;33;0x80;Programm NEU SPEICHERN
+FB60;FK60;1781;34;0x80;Programm ALT LADEN
+FB60;FK60;1802;35;0x80;ALT=NEU ?
+FB60;FK60;1814;36;0x80;ausgeblendet
+FB60;FK60;1829;37;0x80;JA ==>
+FB60;FK60;1838;38;0x80;NEIN
+FB60;FK60;1845;39;0x80;HINWEIS
+FB60;FK60;1855;40;0x80;BESTAETIGUNG M.FL.ARBST.?
+FB60;FK60;1883;41;0x80;NEIN ==> WARTEN
+FB60;FK60;1901;42;0x80;JA ==> PRG NEU=ALT
+FB60;FK60;1922;44;0x80;FEHLER
+FB60;FK60;1931;45;0x80;HINWEIS GEBEN
+FB60;FK60;1947;46;0x80;"M ""AUF BEST.WARTEN"" SETZEN"
+FB60;FK60;1976;47;0x80;==> WEITER
+FB60;FK60;1989;51;0x80;BCD NEU = BCD ALT SETZEN
+FB60;FK60;2016;52;0x80;LEERTAKT EINSCHALTEN
+FB60;FK60;2039;54;0x80;STATUS 11 EINSTELLEN
+FB60;FK60;2062;56;0x80;==> WEITER
+FB60;FK60;2075;58;0x80;BCD-SCH.AEND.BESTAETIGEN
+FB60;FK60;2102;59;0x80;   MIT FLANKE T-ARBST.?
+FB60;FK60;2128;60;0x80;   NEIN ==> FE-HINW.
+FB60;FK60;2151;61;0x80;   JA
+FB60;FK60;2159;62;0x80;"   MERKER ""AUF BEST.WARTEN"""
+FB60;FK60;2189;63;0x80;      ZURUECKSETZEN
+FB60;FK60;2211;64;0x80;   ==> WEITER
+FB60;FK60;2227;66;0x80;PGR-MERKER RETTEN
+FB60;FK60;2247;5;0x00;STATUS 11: PROG.AUF ZUL.PB-NR PR
+FB60;FK60;2282;5;0x80;STATUS 11 ?
+FB60;FK60;2296;6;0x80;   NEIN ==> WEITER
+FB60;FK60;2317;8;0x80;LEERZYKLUS AUSFUEHREN ?
+FB60;FK60;2343;9;0x80;   NEIN ==> STATUS BEARBEITEN
+FB60;FK60;2375;10;0x80;   LEERTAKTMERKER
+FB60;FK60;2395;11;0x80;      ZURUECKSETZEN
+FB60;FK60;2417;13;0x80;STATUS 11 BEARBEITEN
+FB60;FK60;2440;14;0x80;--------------------------------
+FB60;FK60;2475;17;0x80;ist Auftragsfach 8 leer ?
+FB60;FK60;2503;19;0x80;   nein --> warten
+FB60;FK60;2524;20;0x80;   ja
+FB60;FK60;2532;22;0x80;Auftragscode abspeichern
+FB60;FK60;2559;23;0x80;--------------------------------
+FB60;FK60;2594;24;0x80;   DB fuer autom. Auftr.uebertr.
+FB60;FK60;2629;26;0x80;   0 = xxxxxxxx
+FB60;FK60;2647;27;0x80;   70= Rezept uebertragen
+FB60;FK60;2675;29;0x80;   1 = Rez-Nr.= Programme
+FB60;FK60;2703;33;0x80;   DW  11 = Angewaehltes Progr.
+FB60;FK60;2737;37;0x80;Auftragsfach 8 Werte eintragen
+FB60;FK60;2770;38;0x80;--------------------------------
+FB60;FK60;2805;39;0x80;   0   = Datenbaustein
+FB60;FK60;2830;40;0x80;   213 = DB-Nr.
+FB60;FK60;2848;42;0x80;   0 = Vorgabe Siemens
+FB60;FK60;2873;43;0x80;   1 = DW-Adr.
+FB60;FK60;2890;45;0x80;Voreinst.:
+FB60;FK60;2903;46;0x80;"   ""Prg uebertr.u.ok"": nein"
+FB60;FK60;2933;47;0x80;"   ""Fehlerkennung""   : nein"
+FB60;FK60;2963;49;0x80;DB rueckschalten
+FB60;FK60;2982;51;0x80;Auf naechsten Status (12)
+FB60;FK60;3010;52;0x80;   weiterschalten
+FB60;FK60;3030;6;0x00;STATUS 12: PRG.AUS ZW-SP.LADEN
+FB60;FK60;3063;3;0x80;STATUS 12 ?
+FB60;FK60;3077;4;0x80;   NEIN ==> WEITER
+FB60;FK60;3098;6;0x80;LEERZYKLUS AUSFUEHREN ?
+FB60;FK60;3124;7;0x80;   NEIN ==> STATUS BEARBEITEN
+FB60;FK60;3156;8;0x80;   LEERTAKTMERKER
+FB60;FK60;3176;9;0x80;      ZURUECKSETZEN
+FB60;FK60;3198;12;0x80;Status 12 bearbeiten
+FB60;FK60;3221;13;0x80;--------------------------------
+FB60;FK60;3256;14;0x80;Prg. uebertr. und ok ?
+FB60;FK60;3281;15;0x80;   ja -->
+FB60;FK60;3293;16;0x80;   nein
+FB60;FK60;3303;17;0x80;Prg. uebertr. und fehlerhaft ?
+FB60;FK60;3336;18;0x80;   nein --> (warten)
+FB60;FK60;3359;19;0x80;   ja
+FB60;FK60;3367;21;0x80;   Fehler: warten b. anderes Prg
+FB60;FK60;3402;22;0x80;      eingestellt wird oder
+FB60;FK60;3432;23;0x80;      Quittung
+FB60;FK60;3449;25;0x80;      anderes Prg.angewaehlt ?
+FB60;FK60;3482;26;0x80;      oder Quittung ?
+FB60;FK60;3506;28;0x80;         ja -->   (Neustart)
+FB60;FK60;3537;29;0x80;         nein --> (warten)
+FB60;FK60;3566;31;0x80;Ueberwach.-Zeit abgelaufen ?
+FB60;FK60;3597;32;0x80;   nein --> warten
+FB60;FK60;3618;33;0x80;   ja
+FB60;FK60;3626;34;0x80;"   Fehler: ""angew.Prg. ist nicht"
+FB60;FK60;3661;35;0x80;      vorhanden (bzw. wird nicht
+FB60;FK60;3696;36;0x80;"      uebertr.)"" setzen"
+FB60;FK60;3722;39;0x80;Fehler quittieren
+FB60;FK60;3742;40;0x80;--------------------------------
+FB60;FK60;3777;41;0x80;auf Status 10 rueckschalten
+FB60;FK60;3807;43;0x80;Fehler ruecksetzen
+FB60;FK60;3828;46;0x80;Prg.Nr veraend., damit neu
+FB60;FK60;3857;47;0x80;   uebertragen wird.
+FB60;FK60;3880;49;0x80;--> Ende
+FB60;FK60;3891;53;0x80;Prg. ok --> in Arbeitssp.eintr.
+FB60;FK60;3925;54;0x80;--------------------------------
+FB60;FK60;3960;56;0x80;   auf Arbeits-DB rueckschalten
+FB60;FK60;3994;57;0x80;   LEERTAKT EINSCHALTEN
+FB60;FK60;4020;59;0x80;   NAECHSTER STATUS 13 EINST.
+FB60;FK60;4052;62;0x80;   PRG-MERKER RETTEN
+FB60;FK60;4075;7;0x00;STATUS 13: ENDE
+FB60;FK60;4093;3;0x80;STATUS 13 ?
+FB60;FK60;4107;4;0x80;   NEIN ==> WEITER
+FB60;FK60;4128;6;0x80;LEERZYKLUS AUSFUEHREN ?
+FB60;FK60;4154;7;0x80;   NEIN ==> STATUS BEARBEITEN
+FB60;FK60;4186;8;0x80;   LEERTAKTMERKER
+FB60;FK60;4206;9;0x80;      ZURUECKSETZEN
+FB60;FK60;4228;10;0x80;   ==> WEITER
+FB60;FK60;4244;12;0x80;STATUS 13 BEARBEITEN
+FB60;FK60;4267;13;0x80;   SPERRMERKER SETZEN
+FB60;FK60;4291;14;0x80;"   OUTP.:""PRG GELADEN"""
+FB60;FK60;4316;16;0x80;WAR NORMALBETR.?
+FB60;FK60;4335;17;0x80;   JA ==> STAT.EINST.
+FB60;FK60;4359;18;0x80;   nein
+FB60;FK60;4369;19;0x80;F A T A L  E R R O R
+FB60;FK60;4392;20;0x80;********************
+FB60;FK60;4415;21;0x80; ==> ENDE
+FB60;FK60;4427;23;0x80;STAT.ANF.NORMALBTR.
+FB60;FK60;4449;24;0x80;   EINSTALLEN
+FB60;FK60;4465;25;0x80;   ==> ENDE
+FB60;FK60;4479;29;0x80;==> ENDE
+FB61;FK61;26;1;0x00;OB 13 alle 0,25 s aufrufen
+FB61;FK61;55;2;0x00;Alle Merker remanent !!
+FB61;FK61;81;3;0x00;Anlaufverzoegerung 1 Sekunde
+FB69;FK69;26;1;0x00;
+FB69;FK69;29;4;0x80;Abtropfzeit laeuft
+FB69;FK69;50;6;0x80;Betriebsart Schwenken
+FB69;FK69;74;7;0x80;lange Pause
+FB69;FK69;88;9;0x80;--> kurze Pause
+FB69;FK69;106;13;0x80;Fahrwagen ist unten -->
+FB69;FK69;132;14;0x80;lange Pause
+FB89;FK89;26;2;0x00;
+FB89;FK89;29;3;0x80;TD/OP-DB oeffnen
+FB89;FK89;48;5;0x80;Steuer- und Rueckmeldebits
+FB89;FK89;77;6;0x80;zwischenspeichern
+FB89;FK89;97;8;0x80;Ueberw.-Zeit fuer Rezept-
+FB89;FK89;125;9;0x80;   uebertragung starten
+FB89;FK89;151;15;0x80;"Kennung: ""Rez.-Uebertr.laeuft"""
+FB89;FK89;184;17;0x80;"Kennung: ""Rez.-Uebertr.Ende"""
+FB89;FK89;215;20;0x80;Uebertr. laeuft ?
+FB89;FK89;235;21;0x80;   nein --> Ende
+FB89;FK89;254;22;0x80;   ja
+FB89;FK89;262;23;0x80;Uebertr. beendet und Rez.fach
+FB89;FK89;294;24;0x80;   gesperrt ?
+FB89;FK89;310;25;0x80;   oder schon quittiert
+FB89;FK89;336;26;0x80;   ja --> auswerten
+FB89;FK89;358;27;0x80;   nein
+FB89;FK89;368;28;0x80;   Uebertragungszeit abgelaufen
+FB89;FK89;402;29;0x80;      nein --> warten
+FB89;FK89;426;30;0x80;      ja
+FB89;FK89;437;31;0x80;"   Fehler ""Rez.Uebertr.dauer"""
+FB89;FK89;469;32;0x80;   -----------------------------
+FB89;FK89;504;34;0x80;      Fehler setzen
+FB89;FK89;526;35;0x80;"      ""Fehlerkennung"" setzen"
+FB89;FK89;557;36;0x80;      Quittung mit FE geben
+FB89;FK89;587;40;0x80;      --> Quittung
+FB89;FK89;608;41;0x80;      alle Steuerbits fuer
+FB89;FK89;637;42;0x80;      Rezeptuebertr. rueck-
+FB89;FK89;667;43;0x80;      setzen
+FB89;FK89;682;45;0x80;      Merker ruecksetzen
+FB89;FK89;709;46;0x80;         Uebertr. laeuft
+FB89;FK89;736;47;0x80;         Quittiert
+FB89;FK89;757;49;0x80;"         ""OK-Kennung"" setzen"
+FB89;FK89;788;51;0x80;    --> Ende
+FB89;FK89;803;53;0x80;Rezeptfach auswerten
+FB89;FK89;826;54;0x80;--------------------------------
+FB89;FK89;861;55;0x80;wurde schon quittiert ?
+FB89;FK89;887;56;0x80;   ja --> Fach freig.u.Bits
+FB89;FK89;917;57;0x80;   nein
+FB89;FK89;927;59;0x80;"   Fehler: ""Rez. Uebertr.zeit"
+FB89;FK89;959;60;0x80;"      ueberschritten"" loeschen"
+FB89;FK89;992;62;0x80;Rezeptfach oeffnen
+FB89;FK89;1013;63;0x80;Rezept-Nr. / DS-Nr.
+FB89;FK89;1035;64;0x80;ablegen
+FB89;FK89;1045;66;0x80;Pruefen ob R-Nr. = 1
+FB89;FK89;1068;67;0x80;1 = Fahrprogramme
+FB89;FK89;1088;70;0x80;Pruefen ob DS-Nr. >= 1
+FB89;FK89;1113;71;0x80;1-99 = Fahrprogramme
+FB89;FK89;1136;74;0x80;Pruefen ob DS-Nr. <= 10
+FB89;FK89;1162;75;0x80;1-99 = Fahrprogramme
+FB89;FK89;1185;81;0x80;aufbereitetes Programm i.O.?
+FB89;FK89;1216;82;0x80;wird keine Station angefahren
+FB89;FK89;1248;83;0x80;"wird die Stoerung ""Prog.N.I.O"""
+FB89;FK89;1281;84;0x80;gesetzt
+FB89;FK89;1291;85;0x80;Station 1
+FB89;FK89;1303;89;0x80;Station 2
+FB89;FK89;1315;93;0x80;Station 3
+FB89;FK89;1327;97;0x80;Station 4
+FB89;FK89;1339;102;0x80;--> Programm nicht in Ordnung
+FB89;FK89;1371;104;0x80;--> Stoerung setzen
+FB89;FK89;1393;105;0x80;Quittung: Rez. ok setzen
+FB89;FK89;1420;110;0x80;"Steuermerker: ""Quittung"" setzen"
+FB89;FK89;1454;113;0x80;TD/OP wieder oeffnen
+FB89;FK89;1477;115;0x80;Zwischenspeicher Rueckm. Prg.bea
+FB89;FK89;1512;116;0x80;an DW64 ausgeben
+FB90;FK90;26;1;0x00;Beschreibung
+FB90;FK90;41;2;0x00;Station 1
+FB90;FK90;53;1;0x80;Rezeptfach oeffnen
+FB90;FK90;74;3;0x80;Tauchzeit laden
+FB90;FK90;92;4;0x80;Basis ausblenden
+FB90;FK90;111;6;0x80;mit 0 vergleichen
+FB90;FK90;131;7;0x80;ungleich ?
+FB90;FK90;144;8;0x80;ja -> Station anfahren
+FB90;FK90;169;3;0x00;Station 2
+FB90;FK90;181;2;0x80;Tauchzeit laden
+FB90;FK90;199;3;0x80;Basis ausblenden
+FB90;FK90;218;5;0x80;mit 0 vergleichen
+FB90;FK90;238;6;0x80;ungleich ?
+FB90;FK90;251;7;0x80;ja -> Station anfahren
+FB90;FK90;276;4;0x00;Station 3
+FB90;FK90;288;2;0x80;Tauchzeit laden
+FB90;FK90;306;3;0x80;Basis ausblenden
+FB90;FK90;325;5;0x80;mit 0 vergleichen
+FB90;FK90;345;6;0x80;ungleich ?
+FB90;FK90;358;7;0x80;ja -> Station anfahren
+FB90;FK90;383;5;0x00;Station 4
+FB90;FK90;395;2;0x80;Tauchzeit laden
+FB90;FK90;413;3;0x80;Basis ausblenden
+FB90;FK90;432;5;0x80;mit 0 vergleichen
+FB90;FK90;452;6;0x80;ungleich ?
+FB90;FK90;465;7;0x80;ja -> Station anfahren
+FB90;FK90;490;6;0x00;Drehbewegung
+FB90;FK90;505;2;0x80;Drehbewegungsanwahl laden
+FB90;FK90;533;3;0x80;mit 1 vergleichen
+FB90;FK90;553;4;0x80;gleich ?
+FB90;FK90;564;5;0x80;ja -> drehen
+FB90;FK90;579;10;0x80;ja -> schwenken
+FB90;FK90;597;15;0x80;ja -> intervalldrehen
+FB90;FK90;621;20;0x80;ja -> drehen/schwenken
+FB90;FK90;646;7;0x00;Hubbewegung
+FB90;FK90;660;3;0x80;Hubewegungsanwahl laden
+FB90;FK90;686;4;0x80;mit 1 vergleichen
+FB90;FK90;706;5;0x80;gleich ?
+FB90;FK90;717;6;0x80;ja -> drehen
+FB90;FK90;732;8;0x00;Ultraschall Station 3
+FB90;FK90;756;3;0x80;Ultraschall Station 1 laden
+FB90;FK90;786;4;0x80;mit 1 vergleichen
+FB90;FK90;806;5;0x80;gleich ?
+FB90;FK90;817;6;0x80;ja -> Ultraschall Station 1
+FB90;FK90;847;9;0x00;gueltig-Kennung setzen
+FB90;FK90;872;2;0x80;Kennung Progr.-umsp. aktiv
+FB90;FK90;901;3;0x80;ruecksetzen
+FB91;FK91;26;1;0x00;Stoerungen Teil 1
+FB91;FK91;46;2;0x00;Stoerungen Teil 2
+FB92;FK92;26;1;0x00;Stoeranzeige ein
+FB92;FK92;45;8;0x80;Stoeranzeige aktivieren
+FB92;FK92;71;19;0x80;Stoeranzeige aus mit:
+FB92;FK92;95;20;0x80;   Handbetrieb anwaehlen
+FB92;FK92;122;21;0x80;oder Programmaenderung
+FB92;FK92;147;22;0x80;oder Schrittanzeige
+FB92;FK92;169;23;0x80;oder Hauptmenue
+FB92;FK92;187;24;0x80;oder Datenanzeige
+FB92;FK92;207;25;0x80;oder Programmeingabe
+FB92;FK92;230;26;0x80;oder Zeiten/Zaehler
+FB92;FK92;252;27;0x80;oder Uebernahmetaste
+FB92;FK92;275;2;0x00;Programmaenderung
+FB92;FK92;295;4;0x80;Schrittanzeige aktivieren
+FB92;FK92;323;18;0x80;Schrittanzeige N2 deaktivieren
+FB92;FK92;356;26;0x80;ausgeblendet ! Sc
+FB92;FK92;376;3;0x00;Datenanzeige ein
+FB92;FK92;395;2;0x80;Datenanzeige
+FB92;FK92;410;18;0x80;Datenanzeige aus mit:
+FB92;FK92;434;19;0x80;Handbetrieb anzeigen
+FB92;FK92;457;20;0x80;oder Stoeranzeige
+FB92;FK92;477;21;0x80;oder Schrittanzeige
+FB92;FK92;499;22;0x80;oder ??
+FB92;FK92;509;23;0x80;oder Hauptmenue
+FB92;FK92;527;24;0x80;oder ??
+FB92;FK92;537;4;0x00;Programmavorwahl
+FB92;FK92;556;2;0x80;Programmanwahl
+FB92;FK92;573;5;0x00;Handbetrieb anzeigen
+FB92;FK92;596;2;0x80;Handbetrieb anzeigen
+FB92;FK92;619;6;0x00;Hautpmenue
+FB92;FK92;632;1;0x80;Taste F4 betaetigt
+FB92;FK92;653;3;0x80;Flanke F4
+FB92;FK92;665;4;0x80;Anzeige N12 aktivieren
+FB92;FK92;690;7;0x00;Schrittanzeige angezeigt ?
+FB92;FK92;719;5;0x80;DL:Bildtyp, DR:Bildnummer
+FB92;FK92;747;6;0x80;Prozessbild, Bild 20
+FB92;FK92;770;11;0x80;Schrittanzeige ist ein
+FB92;FK92;795;12;0x80;----------------------
+FB92;FK92;820;14;0x80;PRUEFE welcher Eintrag
+FB92;FK92;845;15;0x80;----------------------
+FB92;FK92;870;16;0x80;Eintragsnummer laden
+FB92;FK92;893;20;0x80;N1 soll angezeit werden
+FB92;FK92;919;37;0x80;nun Meldeebene aktivieren
+FB92;FK92;947;40;0x80;zum Ende !
+FB92;FK92;960;44;0x80;Tastaturabbild laden
+FB92;FK92;983;46;0x80;-> Aenderung an den Tasten
+FB92;FK92;1012;50;0x80;Tastenaenderung
+FB92;FK92;1030;8;0x00;Schritte N1 uebertragen
+FB92;FK92;1056;4;0x80;N1-Anzeige aktiv ?
+FB92;FK92;1077;5;0x80;ja -> eintragen
+FB92;FK92;1095;7;0x80;nein -> loeschen
+FB92;FK92;1114;17;0x80;und weiter
+FB92;FK92;1127;77;0x80;kein Schritt gesetzt
+FB92;FK92;1150;9;0x00;Schritte N2 (Reserve)
+FB92;FK92;1174;10;0x00;Schritte N3 (Reserve)
+FB92;FK92;1198;5;0x80;N7-Anzeige aktiv ?
+FB92;FK92;1219;6;0x80;ja -> eintragen
+FB92;FK92;1237;8;0x80;nein -> loeschen
+FB92;FK92;1256;10;0x80;und weiter
+FB92;FK92;1269;19;0x80;kein Schritt gesetzt
+FB92;FK92;1292;11;0x00;Schritte N11 uebertragen
+FB92;FK92;1319;2;0x80;ausgeblendet
+FB92;FK92;1334;12;0x00;LED's ansteuern
+FB92;FK92;1352;2;0x80;LED-Status F1...F8
+FB92;FK92;1373;3;0x80;zwischenspeichern
+FB92;FK92;1393;15;0x80;ALLE Menue-LED's loeschen
+FB92;FK92;1421;31;0x80;LED3
+FB92;FK92;1428;34;0x80;LED4
+FB92;FK92;1435;37;0x80;Programmwahl aktiv
+FB92;FK92;1456;38;0x80;LED 6 statisch
+FB92;FK92;1473;39;0x80;ein
+FB92;FK92;1479;43;0x80;LED 8 statisch
+FB92;FK92;1496;44;0x80;ein
+FB92;FK92;1502;50;0x80;Zeiten/Zaehler
+FB95;FK95;26;1;0x00;
+FB95;FK95;29;5;0x80;zur Meldeebene
+FB95;FK95;46;6;0x80;--------------
+FB95;FK95;63;7;0x80;Schrittanzeigemerker
+FB95;FK95;86;8;0x80;gesetzt ?
+FB95;FK95;98;9;0x80;ja !
+FB95;FK95;105;11;0x80;Stoeranzeige
+FB95;FK95;120;13;0x80;--> Meldeebene aufschalten
+FB95;FK95;149;16;0x80;DB 206
+FB95;FK95;158;17;0x80;1.Applikationsfach
+FB95;FK95;179;18;0x80;ab Wort 0
+FB95;FK95;191;23;0x80;Handbetriebsanzeige
+FB95;FK95;213;28;0x80;DB 206
+FB95;FK95;222;29;0x80;2.Applikationsfach
+FB95;FK95;243;30;0x80;ab Wort 8
+FB96;FK96;26;1;0x00;SWAP innerhalb eines Wortes
+FB101;FK101;26;1;0x00;
+FB101;FK101;29;3;0x80;DB mit variablen Zeiten oeffnen
+FB101;FK101;63;5;0x80;Zeiger auf die Zeit
+FB101;FK101;85;6;0x80;zwischenspeichern
+FB101;FK101;105;7;0x80;1. unzulaessige Zeitnummer
+FB101;FK101;134;8;0x80;wenn kleiner dann
+FB101;FK101;154;9;0x80;Sprung zu weiterer Bearbeitung
+FB101;FK101;187;10;0x80;Zeiger auf T0
+FB101;FK101;203;11;0x80;zwischenspeichern
+FB101;FK101;223;13;0x80;Zeiger auf DW mit Zeitwert
+FB101;FK101;252;14;0x80;Zeitwert laden
+FB101;FK101;269;15;0x80;Kennung keine variable Zeit
+FB101;FK101;299;16;0x80;Ungleich d.h. ist var. Zeit
+FB101;FK101;329;17;0x80;Sprung zur weiteren Bearbeitung
+FB101;FK101;363;18;0x80;keine variable Zeit
+FB101;FK101;385;19;0x80;Zeitzeiger um 1 erhoehen
+FB101;FK101;412;20;0x80;im DW ablegen
+FB101;FK101;428;21;0x80;Sprung zum Netzwerkende
+FB101;FK101;454;23;0x80;akt. Zeiger auf die Zeit
+FB101;FK101;481;24;0x80;alter Zeiger auf die Zeit
+FB101;FK101;509;25;0x80;wenn neu = alt
+FB101;FK101;526;26;0x80;Sprung zur Uebergabe Zeitwert
+FB101;FK101;558;27;0x80;Zeiger auf DW mit Zeitwert
+FB101;FK101;587;28;0x80;Zeitwert laden
+FB101;FK101;604;29;0x80;auf DW das vom OP bearb. wird
+FB101;FK101;636;31;0x80;Zeiger neu
+FB101;FK101;649;32;0x80;= Zeiger alt
+FB101;FK101;664;33;0x80;Bearbeitung Ende
+FB101;FK101;683;35;0x80;geaenderter Zeitwert laden
+FB101;FK101;712;36;0x80;Zeiger auf Datenwort
+FB101;FK101;735;37;0x80;Zeitwert ablegen
+FB101;FK101;754;2;0x00;
+FB101;FK101;757;1;0x80;DB mit variablen Zaehlern oeff.
+FB101;FK101;791;3;0x80;Zeiger auf die Zaehler
+FB101;FK101;816;4;0x80;zwischenspeichern
+FB101;FK101;836;5;0x80;1. unzulaessige Zaehlernummer
+FB101;FK101;868;6;0x80;wenn kleiner dann
+FB101;FK101;888;7;0x80;Sprung zu weiterer Bearbeitung
+FB101;FK101;921;8;0x80;Zeiger auf Z0
+FB101;FK101;937;9;0x80;zwischenspeichern
+FB101;FK101;957;11;0x80;Zeiger auf DW mit Zaehlerwert
+FB101;FK101;989;12;0x80;Zaehlwert laden
+FB101;FK101;1007;13;0x80;Kennung kein variabler Zaehler
+FB101;FK101;1040;14;0x80;Ungleich d.h. ist var. Zaehler
+FB101;FK101;1073;15;0x80;Sprung zur weiteren Bearbeitung
+FB101;FK101;1107;16;0x80;kein variabler Zaehler
+FB101;FK101;1132;17;0x80;Zaehlzeiger um 1 erhoehen
+FB101;FK101;1160;18;0x80;im DW ablegen
+FB101;FK101;1176;19;0x80;Sprung zum Netzwerkende
+FB101;FK101;1202;21;0x80;akt. Zeiger auf den Zaehler
+FB101;FK101;1232;22;0x80;alter Zeiger auf den Zaehler
+FB101;FK101;1263;23;0x80;wenn neu = alt
+FB101;FK101;1280;24;0x80;Sprung zu Uebergabe Zeitwert
+FB101;FK101;1311;25;0x80;Zeiger auf DW mit Zaehlwert
+FB101;FK101;1341;26;0x80;Zaehlwert laden
+FB101;FK101;1359;27;0x80;auf DW das vom OP bearb. wird
+FB101;FK101;1391;29;0x80;Zeiger neu
+FB101;FK101;1404;30;0x80;= Zeiger alt
+FB101;FK101;1419;31;0x80;Bearbeitung Ende
+FB101;FK101;1438;33;0x80;geaenderter Zaehlwert laden
+FB101;FK101;1468;34;0x80;Zeiger auf Datenwort
+FB101;FK101;1491;35;0x80;Zaehlwert ablegen
+FB105;FK105;26;2;0x00;DB FUER VARIABLE ZEITWERTE ERZEU
+FB105;FK105;61;4;0x80;Laege des DB's
+FB105;FK105;78;7;0x80;Anzahl der Datenumtraege
+FB105;FK105;105;3;0x00;WERTE VARIABLER ZEITEN EINTRAGEN
+FB105;FK105;140;4;0x00;DB FUER VARIABLE ZAEHLER ERZEUG
+FB105;FK105;174;4;0x80;Laege des DB's
+FB105;FK105;191;7;0x80;Anzahl der Datenumtraege
+FB105;FK105;218;5;0x00;WERTE VAR.ZAEHLER EINTRAGEN
+FB105;FK105;248;6;0x00;DB's fuer OP15
+FB105;FK105;265;7;0x80;OP15
+FB105;FK105;272;10;0x80;Rezepte
+FB105;FK105;282;14;0x80;Rezepte
+FB105;FK105;292;19;0x80;AG -> OP
+FB105;FK105;303;22;0x80;OP -> AG
+FB105;FK105;314;30;0x80;Auftragsverwaltung OP 15
+FB105;FK105;341;7;0x00;sonstige DB's
+FB105;FK105;357;8;0x00;Endekennung
+FB105;FK105;371;9;0x00;ARBEITSDB KANAL 1 ERZEUGEN
+FB105;FK105;400;10;0x00;ARBEITSDB KANAL 2 ERZEUGEN
+FB105;FK105;429;11;0x00;MERKER EINSTELLEN
+FB111;FK111;26;1;0x00;
+FB111;FK111;29;8;0x80;Tauchzeit Station 1
+FB111;FK111;51;14;0x80;Tauchzeit Station 2
+FB111;FK111;73;20;0x80;Tauchzeit Station 3
+FB111;FK111;95;26;0x80;Tauchzeit Station 4
+FB111;FK111;117;43;0x80;Tauchzeit laden
+FB111;FK111;135;2;0x00;
+FB111;FK111;138;3;0x80;Zeitwert Tauchzeit
+FB111;FK111;159;4;0x80;Faktor ausblenden
+FB111;FK111;179;14;0x80;Anford.Trommel geradestellen
+FB111;FK111;210;16;0x80;Trommel gerade
+FB111;FK111;227;18;0x80;Anforderung zuruecksetzen
+FB111;FK111;255;3;0x00;
+FB111;FK111;258;6;0x80;Abtropfzeit Station 1
+FB111;FK111;282;12;0x80;Abtropfzeit Station 2
+FB111;FK111;306;18;0x80;Abtropfzeit Station 3
+FB111;FK111;330;30;0x80;Abtropfzeit laden
+OB1;OK1;26;6;0x00;Bausteine fuer OP 15
+OB21;OK21;26;1;0x00;
+OB21;OK21;29;2;0x80;Einstellung Zeitintervall fuer
+OB21;OK21;62;3;0x80;OB 13
+OB22;OK22;26;1;0x00;
+OB22;OK22;29;2;0x80;Einstellung Zeitintervall fuer
+OB22;OK22;62;3;0x80;OB 13
+PB2;PK2;26;32;0x00;Option fuer ABE
+PB2;PK2;44;33;0x00;Option fuer ABE
+PB2;PK2;62;34;0x00;Option fuer ABE
+PB2;PK2;80;70;0x00;aus FB60
+PB2;PK2;91;71;0x00;aus FB90
+PB2;PK2;102;72;0x00;aus FB91
+PB2;PK2;113;74;0x00;option fuer ABE
+PB7;PK7;26;1;0x00;GS
+PB9;PK9;26;8;0x00;WT da, Programm lesen
+PB9;PK9;50;10;0x00;Blockiert, da ohne ABE
+PB9;PK9;75;17;0x00;Quereinstieg ohne ABE
+PB10;PK10;26;54;0x00;Blockiert, da keine ABE
+PB13;PK13;26;38;0x00;Ueberbrueckung Widerstand
+PB13;PK13;54;39;0x00;NW Fuer Bremsansteuerung
+PB13;PK13;81;40;0x00;NW fuer Bremse loesen
+PB13;PK13;105;44;0x00;Luefter fuer Trommelmotor
+PB14;PK14;26;2;0x00;Bahn 1 ein im AB
+PB14;PK14;45;3;0x00;Bahn 2 ein im AB
+PB14;PK14;64;4;0x00;Sperre 2 schliessen im AB
+PB14;PK14;92;5;0x00;Sperre 3 oeffnen im AB
+PB14;PK14;117;6;0x00;HZT vor im AB
+PB14;PK14;133;7;0x00;HZT zurueck im AB
+PB14;PK14;153;8;0x00;HZT schnell im AB
+PB14;PK14;173;9;0x00;VT heben im AB
+PB14;PK14;190;10;0x00;VT heben im AB
+PB14;PK14;207;11;0x00;senken im AB
+PB14;PK14;222;12;0x00;senken im AB
+PB14;PK14;237;13;0x00;senken im AB
+PB14;PK14;252;14;0x00;WT-Transport einfahren im AB
+PB14;PK14;283;15;0x00;ausfahren im AB
+PB14;PK14;301;16;0x00;WT-Transport heben
+PB14;PK14;322;17;0x00;WT-Transport senken
+PB16;PK16;26;2;0x00;Bahn 1 ein im HB
+PB16;PK16;45;3;0x00;Bahn 1 ein im HB
+PB16;PK16;64;4;0x00;Bahn 2 ein im HB
+PB16;PK16;83;5;0x00;Bahn 2 ein im HB
+PB16;PK16;102;6;0x00;HZT vortakten im HB
+PB16;PK16;124;8;0x00;HZT vor im HB
+PB16;PK16;140;9;0x00;HZT zurueck im HB
+PB16;PK16;160;10;0x00;HZT schnell im HB
+PB16;PK16;180;11;0x00;VT heben im HB
+PB16;PK16;197;12;0x00;VT heben im HB
+PB16;PK16;214;13;0x00;VT heben im HB
+PB16;PK16;231;16;0x00;VT senken im HB
+PB16;PK16;249;17;0x00;HM senken
+PB16;PK16;261;18;0x00;VT senken im HB
+PB16;PK16;279;19;0x00;Angepasst: keine ABE
+PB16;PK16;302;20;0x00;VT senken im HB
+PB16;PK16;320;21;0x00;VT schnell
+PB16;PK16;333;22;0x00;VT schnell
+PB16;PK16;346;23;0x00;VT schnell
+PB16;PK16;359;24;0x00;VT schnell
+PB16;PK16;372;25;0x00;HM WT-Transport ein-/ausfahren
+PB16;PK16;405;26;0x00;WT-Transport ausfahren
+PB16;PK16;430;27;0x00;WT-Transport einfahren
+PB16;PK16;455;28;0x00;WT-Transport heben
+PB16;PK16;476;29;0x00;WT-Transport senken
+PB16;PK16;498;30;0x00;Sp.2 schliessen
+PB16;PK16;516;31;0x00;Sp.3 oeffnen
+PB16;PK16;531;32;0x00;Sp.3 oeffnen
+PB16;PK16;546;33;0x00;Sp.3 schliessen
+PB17;PK17;26;3;0x00;Bahn 1 ein
+PB17;PK17;39;4;0x00;Bahn 2 ein
+PB17;PK17;52;5;0x00;Sp.2 schliessen
+PB17;PK17;70;6;0x00;Sp.4 heben/3senken
+PB17;PK17;91;7;0x00;Sp4 heben /3 senken
+PB17;PK17;113;8;0x00;Sp.4 senken / 3 heben
+PB17;PK17;137;9;0x00;Sp. 3 schliessen / 4 oeffnen
+PB17;PK17;168;10;0x00;HZT vorfahren
+PB17;PK17;184;11;0x00;HZT vor: immer anpassen !
+PB17;PK17;212;12;0x00;HZT zurueck
+PB17;PK17;226;13;0x00;HZT zurueck
+PB17;PK17;240;14;0x00;HZT schnell
+PB17;PK17;254;15;0x00;HZT langsam
+PB17;PK17;268;16;0x00;VT heben
+PB17;PK17;279;17;0x00;HZT heben: angepasst ohne ABE
+PB17;PK17;311;18;0x00;VT senken
+PB17;PK17;323;19;0x00;schnell senken
+PB17;PK17;340;20;0x00;VT unten
+PB17;PK17;351;21;0x00;VT oben
+PB17;PK17;361;22;0x00;senken:angepasst ohne ABE
+PB17;PK17;389;23;0x00;VT schnell
+PB17;PK17;402;24;0x00;VT langsam
+PB17;PK17;415;25;0x00;WT-Transport einfahren
+PB17;PK17;440;26;0x00;WT-Transport einfahren
+PB17;PK17;465;27;0x00;WT-Transport ausfahren
+PB17;PK17;490;28;0x00;WT-Transport ausfahren
+PB17;PK17;515;29;0x00;WT-Transport heben
+PB17;PK17;536;30;0x00;WT-Transport senken
+PB19;PK19;26;1;0x00;Freigabe Beckenheizungen
+PB19;PK19;53;2;0x00;Freigabe Heizung Stat.4
+PB19;PK19;79;3;0x00;Grundlast
+PB19;PK19;91;4;0x00;HM
+PB19;PK19;96;5;0x00;HM
+PB19;PK19;101;6;0x00;HM
+PB19;PK19;106;7;0x00;Vollast Warmluft
+PB19;PK19;125;8;0x00;Geblaese langsam
+PB19;PK19;144;9;0x00;schnell
+PB19;PK19;154;10;0x00;Nachlauf Geblaese Warmluft
+PB19;PK19;183;11;0x00;langsam -> schnell
+PB19;PK19;204;12;0x00;schnell -> langsam
+PB19;PK19;225;13;0x00;Hzg. Stufe 1
+PB19;PK19;240;14;0x00;Hzg. Stufe 2
+PB19;PK19;255;15;0x00;Hzg. Stufe 3
+PB19;PK19;270;16;0x00;Hzg. Stufe 4
+PB20;PK20;26;1;0x00;Aufruf DB 15
+PB20;PK20;41;2;0x00;RAV Schmutztank voll
+PB20;PK20;64;3;0x00;Niveaumangel Schmutztank
+PB20;PK20;91;4;0x00;Verz.Nivaumangel SMT
+PB20;PK20;114;5;0x00;Verdampfer voll
+PB20;PK20;132;7;0x00;Verdampfer leer
+PB20;PK20;150;8;0x00;Verz.Stoer Verdampfer min.
+PB20;PK20;179;9;0x00;Verz.Reintank max
+PB20;PK20;199;10;0x00;Stoer Reintank voll
+PB20;PK20;221;11;0x00;Niveaumangel Reintank
+PB20;PK20;245;12;0x00;Temp-Begrenzer 1 ausgel.
+PB20;PK20;272;13;0x00;Temp-Begrenzer 2 ausgel.
+PB20;PK20;299;14;0x00;Uebertemp im Sud
+PB20;PK20;318;15;0x00;Kontrolle Kuehlung
+PB20;PK20;339;16;0x00;Nachfuellzeit SMT
+PB20;PK20;359;17;0x00;Verz.Verdampfer MIN
+PB20;PK20;381;18;0x00;Verz. Heizung aus bei MIN
+PB20;PK20;409;19;0x00;Nachfuellzeit Verdampfer
+PB20;PK20;436;20;0x00;Verz. Destillatbeh.MIN
+PB20;PK20;461;21;0x00;Verz. MIN Destillatbeh. belegt
+PB20;PK20;494;22;0x00;HM Einschaltverz.Hzg
+PB20;PK20;517;23;0x00;Verz.Heizungszuschaltung
+PB20;PK20;544;24;0x00;Einschaltverz.Hzg
+PB20;PK20;564;25;0x00;Waermetransport nach St.1
+PB20;PK20;592;26;0x00;Verz.Heizungsventil St.1 zu
+PB20;PK20;622;27;0x00;Waermetransport nach St.2
+PB20;PK20;650;28;0x00;Waermetransport nach St.3
+PB20;PK20;678;29;0x00;Verz.Heizungsventil St.3 zu
+PB20;PK20;708;30;0x00;25 %
+PB20;PK20;715;31;0x00;50 %
+PB20;PK20;722;32;0x00;75 %
+PB20;PK20;729;33;0x00;100 %
+PB20;PK20;737;34;0x00;Hzg. allg. ein
+PB20;PK20;754;35;0x00;Heizung 1
+PB20;PK20;766;36;0x00;Heizung 2
+PB20;PK20;778;37;0x00;Heizung 3
+PB20;PK20;790;38;0x00;Heizung 4
+PB20;PK20;802;39;0x00;Station 1: stromlos offen !
+PB20;PK20;832;40;0x00;Station 3: stromlos offen !
+PB20;PK20;862;41;0x00;Verd. fuellen im Hb
+PB20;PK20;884;42;0x00;Verz. SMT min
+PB20;PK20;900;43;0x00;Verd. nachfuellen im AB
+PB20;PK20;926;44;0x00;Zulauf Verdampfer
+PB20;PK20;946;45;0x00;SMT nachfuellen im AB
+PB20;PK20;970;46;0x00;SMT fuellen aus OEAS
+PB20;PK20;993;47;0x00;Zeitfenster
+PB20;PK20;1007;48;0x00;Fuellen laeuft
+PB20;PK20;1024;49;0x00;min 1x geholt
+PB20;PK20;1040;50;0x00;Station 2 ist dran
+PB20;PK20;1061;51;0x00;Zeitfenster Station 2
+PB20;PK20;1085;52;0x00;fuellen aus 2 laeuft
+PB20;PK20;1108;53;0x00;hat min 1x nachgefuellt
+PB20;PK20;1134;54;0x00;Station 3 ist dran
+PB20;PK20;1155;55;0x00;Zeitfenster Station 3
+PB20;PK20;1179;56;0x00;fuellen aus 3 laeuft
+PB20;PK20;1202;57;0x00;hat min 1x aus 3 geholt
+PB20;PK20;1228;58;0x00;Station 4 ist dran
+PB20;PK20;1249;59;0x00;Zeitfenster Station 4
+PB20;PK20;1273;60;0x00;fuellen aus 4 laeuft
+PB20;PK20;1296;61;0x00;hat min 1x aus 4 nachgefuellt
+PB20;PK20;1328;62;0x00;Einschaltdauer nachfuellen
+PB20;PK20;1357;63;0x00;Zulauf SMT aus OEAS
+PB20;PK20;1379;64;0x00;Auslauf Station 2 nach P0
+PB20;PK20;1407;65;0x00;Auslauf Station 3 zu P0
+PB20;PK20;1433;66;0x00;Auslauf Station 4 zu P0
+PB20;PK20;1459;67;0x00;Nachlauf Zudosieren Schaumbremse
+PB20;PK20;1494;68;0x00;Dosierpumpe RAV-Verdampfer
+PB21;PK21;26;2;0x00;P0 moeglich
+PB21;PK21;40;3;0x00;fuellen prinz.moeglich
+PB21;PK21;65;4;0x00;Stat.1 mit VE-Wasser
+PB21;PK21;88;5;0x00;Stat.1 Erstbefuellung
+PB21;PK21;112;6;0x00;Stat.1 aus RAV
+PB21;PK21;129;7;0x00;in Stat.1 umpumpen
+PB21;PK21;150;8;0x00;Anforderung Stat.1 im AB
+PB21;PK21;177;9;0x00;St.1 nachfuellen aus RAV
+PB21;PK21;204;10;0x00;St.1 fuellen Ve-Wasser
+PB21;PK21;229;11;0x00;St.2 fuellen mit VE-Wasser
+PB21;PK21;258;12;0x00;St.2 Erstebefuellung VE-Wasser
+PB21;PK21;291;13;0x00;St.2 fuellen aus RAV
+PB21;PK21;314;14;0x00;Umpumpen in Station 2
+PB21;PK21;338;15;0x00;Verz. Niveau St.2 i.O.
+PB21;PK21;363;16;0x00;Anf.nachfuellen im AB
+PB21;PK21;387;17;0x00;St.2 aus RAV nachfuellen
+PB21;PK21;414;18;0x00;St.2 mit VE-Wasser nachfuellen
+PB21;PK21;447;19;0x00;St.3 fuellen mit VE-Wasser
+PB21;PK21;476;20;0x00;Erstbefuellung St.3
+PB21;PK21;498;21;0x00;St.3 aus RAV
+PB21;PK21;513;22;0x00;Umpumpen in Stat.3
+PB21;PK21;534;23;0x00;St.3 Anforderung nachfuellen
+PB21;PK21;565;24;0x00;St.3 nachfuellen aus RAV
+PB21;PK21;592;25;0x00;St.3 nachfuellen mit VE-Wasser
+PB21;PK21;625;26;0x00;St.4 fuellen mit VE-Wasser
+PB21;PK21;654;27;0x00;St.4 mit VE-Wasser
+PB21;PK21;675;28;0x00;St.4 aus RAV
+PB21;PK21;690;29;0x00;Umpumpen in Stat.4
+PB21;PK21;711;30;0x00;Verz. Niveau St4 i.O.
+PB21;PK21;735;31;0x00;Anforderung St.4 nachfuellen
+PB21;PK21;766;32;0x00;Stat.4 aus RAV
+PB21;PK21;783;33;0x00;Stat.4 mit VE-Wasser
+PB21;PK21;806;34;0x00;Anf.OEAS ueber 2-1
+PB21;PK21;827;35;0x00;Anf. St. 1-2 nachfuellen
+PB21;PK21;854;36;0x00;aus RAV
+PB21;PK21;864;37;0x00;Anf. Station 3 fuellen VE-Wasser
+PB21;PK21;899;38;0x00;Nachlauf Fuellen VE-Wasser
+PB21;PK21;928;39;0x00;Fuellen Stat.3 mit VE-Wasser
+PB21;PK21;959;40;0x00;Umpumpen zu RAV-Schmutztank
+PB21;PK21;989;41;0x00;Umpumpen in bel.Station
+PB21;PK21;1015;42;0x00;Umpumpen in Endsorgung
+PB21;PK21;1040;43;0x00;Anlage fuellen mit VE-Wasser
+PB21;PK21;1071;44;0x00;Anlage fuellen aus Reintank
+PB21;PK21;1101;45;0x00;Anlagenabsaugung
+PB21;PK21;1120;46;0x00;Freigabe Osmose
+PB23;PK23;26;2;0x00;US ein
+PB23;PK23;35;3;0x00;Netzschuetz US
+PB23;PK23;52;4;0x00;Fernsteurung US
+PB23;PK23;70;5;0x00;Abfluten Stat.1 im AB
+PB23;PK23;94;6;0x00;Abfluten Stat.1 beim aufheizen
+PB23;PK23;127;7;0x00;Badabfluten Station 1
+PB23;PK23;151;8;0x00;Filterpumpe Station 1
+PB23;PK23;175;9;0x00;P6 RAV-Reintank -> Anlage
+PB23;PK23;203;10;0x00;P0,Umpumpen/Entleeren
+PB23;PK23;227;11;0x00;HM Anford. VE-Wasser
+PB23;PK23;250;12;0x00;P01, VE-Wasser -> Anlage
+PB23;PK23;277;14;0x00;MV Station 3 Zulauf
+PB23;PK23;299;15;0x00;Umschaltung Badabfluten
+PB23;PK23;325;16;0x00;Verz. Zulauf Schmutztank zu
+PB23;PK23;355;17;0x00;P0 -> RAV-Schmutztank
+PB51;PK51;26;2;0x00;Verz. Niveaumangel
+PB51;PK51;47;3;0x00;Verz. Schrittkette
+PB51;PK51;68;4;0x00;Kontr. WT-Transport
+PB51;PK51;90;5;0x00;Verz. Schrittkette
+PB51;PK51;111;6;0x00;Einschaltzeit Bahn 1
+PB52;PK52;26;2;0x00;Verz. Niveaumangel OEAS
+PB52;PK52;52;3;0x00;Niveaumangel Stat.1
+PB52;PK52;74;4;0x00;Niveaumangel Stat.2
+PB52;PK52;96;5;0x00;Niveaumangel Stat.3
+PB52;PK52;118;6;0x00;Niveaumangel Stat.4
+PB52;PK52;140;7;0x00;Niveaumangel Stat.5
+PB52;PK52;162;8;0x00;Niveaumangel Stat.6
+PB52;PK52;184;9;0x00;Niveaumangel Stat.7
+PB52;PK52;206;10;0x00;Verz. Sperre 1 ueberfahren
+PB52;PK52;235;11;0x00;Nachlauf Absaugung
+PB52;PK52;256;12;0x00;Takt fuer Nachfuellen
+PB52;PK52;280;13;0x00;Verz. Heizung Stat.1
+PB52;PK52;303;14;0x00;Verz. Heizung Stat.3
+PB52;PK52;326;15;0x00;Verz. Umschaltung Badabfluten

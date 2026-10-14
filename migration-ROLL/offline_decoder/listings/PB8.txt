@@ -1,0 +1,108 @@
+PB8: PB 8 — UEBERWACHUNG SCHRITTKETTEN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xC680; block bytes: 218; SHA256: fc4de7100593286190054ea3dc2751aa3299d9c40059dbbcbfb100c97fa601ab
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 08 80 00 00 00 00 6D
+Code starts at block offset 0x000A.
+000A [00C68A]  8F25                       O      M 37.7 ; N_1.7 — WT FAEHRT ZU SPERRE 4               OPT.
+000C [00C68C]  8826                       O      M 38.0 ; N_1.8 — WT AN SPERRE 4                      OPT.
+000E [00C68E]  8F27                       O      M 39.7 ; N_1.23 — WT-TRANSPORT EINGEFAHREN            OPT.
+0010 [00C690]  8828                       O      M 40.0 ; N_1.24 — BELADESTATION, VERT.-TRANSPORT HEBEN
+0012 [00C692]  8928                       O      M 40.1 ; N_1.25 — VERT.-TRANSPORT OBEN, BELADESTATION
+0014 [00C694]  8C28                       O      M 40.4 ; N_1.28 — VERT.-TRANSPORT SENKEN STATION 1
+0016 [00C696]  8829                       O      M 41.0 ; N_1.32 — VERT.-TRANSP.HEBEN BIS OBEN ST.1
+0018 [00C698]  8E29                       O      M 41.6 ; N_1.38 — HORIZ.-TRANSPORT VOR BIS STATION 2
+001A [00C69A]  8F29                       O      M 41.7 ; N_1.39 — HORIZ.-TRANSPORT IN STATION 2
+001C [00C69C]  8A2A                       O      M 42.2 ; N_1.42 — ENDE TAUCHZEIT STATION 2
+001E [00C69E]  8B2A                       O      M 42.3 ; N_1.43 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 2(RES.)
+0020 [00C6A0]  9821                       =      M 33.0 ; M33.0 — HM 1 SCHRITTKETTENUEBERWACHUNG N1
+0022 [00C6A2]  10FF                       BLD    255
+0024 [00C6A4]  8225                       U      M 37.2 ; N_1.2 — WARENTRAEGER VORHANDEN, PROGRAMM LESEN
+0026 [00C6A6]  A010                       UN     M 16.0 ; STOER_89 — ANGEWAEHLTES PROGR.IM OP NICHT VORHANDEN
+0028 [00C6A8]  A110                       UN     M 16.1 ; STOER_90 — ANGEWAEHLTES PROGR.IM OP FEHLERHAFT
+002A [00C6AA]  A410                       UN     M 16.4 ; STOER_93 — PROGRAMMNR.0 AUF PLATZ 4             OPT
+002C [00C6AC]  8B25                       O      M 37.3 ; N_1.3 — PROGRAMM GELESEN, PROGRAMM IST I.ORDNUNG
+002E [00C6AE]  8D25                       O      M 37.5 ; N_1.5 — SPERRE 3 OEFFNEN                    OPT.
+0030 [00C6B0]  8E25                       O      M 37.6 ; N_1.6 — SPERRE 3 GEOEFFNET                  OPT.
+0032 [00C6B2]  8C27                       O      M 39.4 ; N_1.20 — WT-TRANSPORT HEBEN                  OPT.
+0034 [00C6B4]  8D27                       O      M 39.5 ; N_1.21 — WT-TRANSPORT OBEN                   OPT.
+0036 [00C6B6]  8A28                       O      M 40.2 ; N_1.26 — HORIZ.-TRANSP.VOR BIS STATION 1
+0038 [00C6B8]  8B28                       O      M 40.3 ; N_1.27 — HORIZ.-TRANSP.IN STATION 1
+003A [00C6BA]  8E28                       O      M 40.6 ; N_1.30 — ENDE TAUCHZEIT STATION 1
+003C [00C6BC]  8F28                       O      M 40.7 ; N_1.31 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 1(RES.)
+003E [00C6BE]  8A29                       O      M 41.2 ; N_1.34 — ENDE ABTROPFZEIT STATION 1
+0040 [00C6C0]  882A                       O      M 42.0 ; N_1.40 — VERT.-TRANSPORT SENKEN STATION 2
+0042 [00C6C2]  8C2A                       O      M 42.4 ; N_1.44 — VERT.-TRANSPORT HEBEN BIS OBEN ST.2
+0044 [00C6C4]  9921                       =      M 33.1 ; M33.1 — HM 2 SCHRITTKETTENUEBERWACHUNG N1
+0046 [00C6C6]  10FF                       BLD    255
+0048 [00C6C8]  BA00                       U(     
+004A [00C6CA]  8821                       O      M 33.0 ; M33.0 — HM 1 SCHRITTKETTENUEBERWACHUNG N1
+004C [00C6CC]  8E2A                       O      M 42.6 ; N_1.46 — ENDE ABTROPFZEIT STATION 2
+004E [00C6CE]  8C2B                       O      M 43.4 ; N_1.52 — VERT.-TRANSPORT SENKEN STATION 3
+0050 [00C6D0]  8E2B                       O      M 43.6 ; N_1.54 — ENDE TAUCHZEIT STATION 3
+0052 [00C6D2]  8F2B                       O      M 43.7 ; N_1.55 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 3(RES.)
+0054 [00C6D4]  8A2C                       O      M 44.2 ; N_1.58 — ENDE ABTROPFZEIT STATION 3
+0056 [00C6D6]  882D                       O      M 45.0 ; N_1.64 — HORIZ.-TRANSPORT IN STATION 4
+0058 [00C6D8]  892D                       O      M 45.1 ; N_1.65 — VERT.-TRANSPORT SENKEN STATION 4
+005A [00C6DA]  8D2D                       O      M 45.5 ; N_1.69 — VERT.-TR.HEBEN BIS OBEN STATION 4
+005C [00C6DC]  8F2D                       O      M 45.7 ; N_1.71 — ENDE ABTROPFZEIT STATION 4
+005E [00C6DE]  892E                       O      M 46.1 ; N_1.73 — TROMMEL IST GERADE STATION 4
+0060 [00C6E0]  8C2E                       O      M 46.4 ; N_1.76 — VERT.-TRANSPORT SENKEN STATION 5
+0062 [00C6E2]  8E2E                       O      M 46.6 ; N_1.78 — ENDE TAUCHZEIT STATION 5
+0064 [00C6E4]  8934                       O      M 52.1 ; N_1.121 — HORIZ.-TRANSPORT IN BELADESTATION
+0066 [00C6E6]  8A34                       O      M 52.2 ; N_1.122 — VERT.-TRANSPORT SENKEN IN BELADESTATION
+0068 [00C6E8]  8B35                       O      M 53.3 ; N_1.131 — WT-TRANSPORT UNTEN
+006A [00C6EA]  BF00                       )      
+006C [00C6EC]  A103                       UN     M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+006E [00C6EE]  801D                       U      M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+0070 [00C6F0]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0072 [00C6F2]  30022030                   L      KT 030.2
+0076 [00C6F6]  2428                       SE     T 40 ; T40_* — UEBERWACHUNGSZEIT 1 N1
+0078 [00C6F8]  0000                       NOP0   
+007A [00C6FA]  0000                       NOP0   
+007C [00C6FC]  0000                       NOP0   
+007E [00C6FE]  0000                       NOP0   
+0080 [00C700]  10FF                       BLD    255
+0082 [00C702]  BA00                       U(     
+0084 [00C704]  8921                       O      M 33.1 ; M33.1 — HM 2 SCHRITTKETTENUEBERWACHUNG N1
+0086 [00C706]  882B                       O      M 43.0 ; N_1.48 — TROMMEL IST GERADE STATION 2
+0088 [00C708]  8A2B                       O      M 43.2 ; N_1.50 — HORIZ.-TRANSPORT VOR BIS STATION 3
+008A [00C70A]  8B2B                       O      M 43.3 ; N_1.51 — HORIZ.-TRANSPORT IN STATION 3
+008C [00C70C]  882C                       O      M 44.0 ; N_1.56 — VERT.-TR.HEBEN BIS OBEN STATION 3
+008E [00C70E]  8F2C                       O      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+0090 [00C710]  8B2D                       O      M 45.3 ; N_1.67 — ENDE TAUCHZEIT STATION 4
+0092 [00C712]  8C2D                       O      M 45.4 ; N_1.68 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 4(RES.)
+0094 [00C714]  8A2E                       O      M 46.2 ; N_1.74 — HORIZ.-TRANSPORT VOR BIS STATION 5
+0096 [00C716]  8B2E                       O      M 46.3 ; N_1.75 — HORIZ.-TRANSPORT IN STATION 5
+0098 [00C718]  8F2E                       O      M 46.7 ; N_1.79 — VERT.-TRANSP.HEBEN BIS ABTROPFEN 5(RES.)
+009A [00C71A]  8B2F                       O      M 47.3 ; N_1.83 — TROMMEL GERADESTELLEN STATION 5
+009C [00C71C]  FB00                       O      
+009E [00C71E]  8034                       U      M 52.0 ; N_1.120 — HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+00A0 [00C720]  E20B                       UN     E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+00A2 [00C722]  8B34                       O      M 52.3 ; N_1.123 — VERT.-TRANSPORT IN BELADEHOEHE
+00A4 [00C724]  FB00                       O      
+00A6 [00C726]  8135                       U      M 53.1 ; N_1.129 — WT-TRANSPORT AUSGEFAHREN
+00A8 [00C728]  A10F                       UN     M 15.1 ; STOER_82 — 
+00AA [00C72A]  8A35                       O      M 53.2 ; N_1.130 — WT-TRANSPORT SENKEN
+00AC [00C72C]  8D35                       O      M 53.5 ; N_1.133 — AUSGANG FREI
+00AE [00C72E]  8E35                       O      M 53.6 ; N_1.134 — SPRUNG ZU N 1.0
+00B0 [00C730]  BF00                       )      
+00B2 [00C732]  A103                       UN     M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00B4 [00C734]  801D                       U      M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+00B6 [00C736]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+00B8 [00C738]  30022030                   L      KT 030.2
+00BC [00C73C]  2429                       SE     T 41 ; T41_* — UEBERWACHUNGSZEIT 2 N1
+00BE [00C73E]  0000                       NOP0   
+00C0 [00C740]  0000                       NOP0   
+00C2 [00C742]  0000                       NOP0   
+00C4 [00C744]  0000                       NOP0   
+00C6 [00C746]  10FF                       BLD    255
+00C8 [00C748]  F928                       O      T 40 ; T40_* — UEBERWACHUNGSZEIT 1 N1
+00CA [00C74A]  F929                       O      T 41 ; T41_* — UEBERWACHUNGSZEIT 2 N1
+00CC [00C74C]  9122                       S      M 34.1 ; M34.1 — ZEITUEBERSCHREITUNG N1 .........(ANLAGE)
+00CE [00C74E]  EA00                       ON     E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+00D0 [00C750]  8903                       O      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00D2 [00C752]  B122                       R      M 34.1 ; M34.1 — ZEITUEBERSCHREITUNG N1 .........(ANLAGE)
+00D4 [00C754]  0000                       NOP0   
+00D6 [00C756]  10FF                       BLD    255
+00D8 [00C758]  6500                       BE     

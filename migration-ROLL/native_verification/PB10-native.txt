@@ -1,0 +1,1447 @@
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page   1
+Segment  1
+             +---+
+ -N_1.25  ---! & !
+ -STAT1   --O!   !
+ -STAT2   --O!   !
+ -STAT3   --O!   !     +---+
+ -STAT4   --O!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -N_1.34  ---! & !     !   !
+ -STAT2   --O!   !     !   !
+ -STAT3   --O!   !     !   !
+ -STAT4   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.46  ---! & !     !   !
+ -STAT3   --O!   !     !   !
+ -STAT4   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.58  ---! & !     !   !
+ -STAT4   --O!   !-----!   !
+             +---+     !   !    +------+
+           -N_1.71  ---!   !--+-! =    ! -M240.0
+                       +---+    +------+
+
+F   40.1 = N_1.25                    VERT.-TRANSPORT OBEN, BELADESTATION
+F  110.0 = STAT1                     STATION 1 ANFAHREN
+F  110.1 = STAT2                     STATION 2 ANFAHREN
+F  110.2 = STAT3                     STATION 3 ANFAHREN
+F  110.3 = STAT4                     STATION 4 ANFAHREN
+F   41.2 = N_1.34                    ENDE ABTROPFZEIT STATION 1
+F   42.6 = N_1.46                    ENDE ABTROPFZEIT STATION 2
+F   44.2 = N_1.58                    ENDE ABTROPFZEIT STATION 3
+F   45.7 = N_1.71                    ENDE ABTROPFZEIT STATION 4
+F  240.0 = M240.0                    SCHMIERMERKER
+
+
+Segment  2
+             +---+
+ -M35.2   ---! & !
+ -B119.6  --O!   !
+ -B12.5   ---!   !
+ -B12.7   ---!   !   -N_1.74
+ -STAT5   ---!   !    +-----+
+ -M240.0  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.75  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+I  119.6 = B119.6                    HORIZ.-TRANSPORT STATION 5
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F  110.4 = STAT5                     STATION 5 ANFAHREN
+F  240.0 = M240.0                    SCHMIERMERKER
+F   46.2 = N_1.74                    HORIZ.-TRANSPORT VOR BIS STATION 5
+F   46.3 = N_1.75                    HORIZ.-TRANSPORT IN STATION 5
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page   2
+Segment  3
+             +---+
+ -M35.2   ---! & !
+ -N_1.74  ---!   !   -N_1.75
+ -B119.6  ---!   !    +-----+
+ -B11.6   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.76  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   46.2 = N_1.74                    HORIZ.-TRANSPORT VOR BIS STATION 5
+I  119.6 = B119.6                    HORIZ.-TRANSPORT STATION 5
+I   11.6 = B11.6                     HORIZ.-TRANSPORT IN POSITION
+F   46.3 = N_1.75                    HORIZ.-TRANSPORT IN STATION 5
+F   46.4 = N_1.76                    VERT.-TRANSPORT SENKEN STATION 5
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  4
+             +---+
+ -M35.2   ---! & !
+ -N_1.75  ---!   !   -N_1.76
+ -B12.1   --O!   !    +-----+
+ -B12.5   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.77  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   46.3 = N_1.75                    HORIZ.-TRANSPORT IN STATION 5
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+F   46.4 = N_1.76                    VERT.-TRANSPORT SENKEN STATION 5
+F   46.5 = N_1.77                    VERT.-TRANSPORT UNTEN STATION 5
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  5
+             +---+
+ -M35.2   ---! & !
+ -N_1.76  ---!   !   -N_1.77
+ -B12.1   ---!   !    +-----+
+ -B12.7   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.78  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   46.4 = N_1.76                    VERT.-TRANSPORT SENKEN STATION 5
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   46.5 = N_1.77                    VERT.-TRANSPORT UNTEN STATION 5
+F   46.6 = N_1.78                    ENDE TAUCHZEIT STATION 5
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page   3
+Segment  6
+             +---+
+ -M35.2   ---! & !   -N_1.78
+ -T1_*    ---!   !    +-----+
+ -N_1.77  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.79  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+T    1   = T1_*                      TAUCHZEIT IN ALLEN STATIONEN
+F   46.5 = N_1.77                    VERT.-TRANSPORT UNTEN STATION 5
+F   46.6 = N_1.78                    ENDE TAUCHZEIT STATION 5
+F   46.7 = N_1.79                    VERT.-TRANSP.HEBEN BIS ABTROPFEN 5(RES.)
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  7
+             +---+   -N_1.79
+ -M35.2   ---! & !    +-----+
+ -N_1.78  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.80  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   46.6 = N_1.78                    ENDE TAUCHZEIT STATION 5
+F   46.7 = N_1.79                    VERT.-TRANSP.HEBEN BIS ABTROPFEN 5(RES.)
+F   47.0 = N_1.80                    VERT.-TRANSPORT HEBEN BIS OBEN ST.5
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  8
+             +---+
+ -M35.2   ---! & !   -N_1.80
+ -N_1.79  ---!   !    +-----+
+ -B12.5   --O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.81  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   46.7 = N_1.79                    VERT.-TRANSP.HEBEN BIS ABTROPFEN 5(RES.)
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+F   47.0 = N_1.80                    VERT.-TRANSPORT HEBEN BIS OBEN ST.5
+F   47.1 = N_1.81                    VERT.-TRANSPORT OBEN STATION 5
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  9
+             +---+
+ -M35.2   ---! & !
+ -N_1.80  ---!   !   -N_1.81
+ -B12.5   ---!   !    +-----+
+ -B12.7   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.82  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page   4
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   47.0 = N_1.80                    VERT.-TRANSPORT HEBEN BIS OBEN ST.5
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   47.1 = N_1.81                    VERT.-TRANSPORT OBEN STATION 5
+F   47.2 = N_1.82                    ENDE ABTROPFZEIT STATION 5
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  10
+             +---+
+ -M35.2   ---! & !   -N_1.82
+ -T2_*    ---!   !    +-----+
+ -N_1.81  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.83  ---!>=1!    !     !
+ -N_1.86  ---!   !    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+T    2   = T2_*                      ABTROPFZEIT IN ALLEN STATIONEN
+F   47.1 = N_1.81                    VERT.-TRANSPORT OBEN STATION 5
+F   47.2 = N_1.82                    ENDE ABTROPFZEIT STATION 5
+F   47.3 = N_1.83                    TROMMEL GERADESTELLEN STATION 5
+F   47.6 = N_1.86                    HORIZ.-TRANSPORT VOR BIS STATION 6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  11
+             +---+
+ -M35.2   ---! & !
+ -N_1.82  ---!   !   -N_1.83
+ -STAT6   --O!   !    +-----+
+ -STAT7   --O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.84  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   47.2 = N_1.82                    ENDE ABTROPFZEIT STATION 5
+F  110.5 = STAT6                     STATION 6 ANFAHREN
+F  110.6 = STAT7                     STATION 7 ANFAHREN
+F   47.3 = N_1.83                    TROMMEL GERADESTELLEN STATION 5
+F   47.4 = N_1.84                    TROMMEL IST GERADE STATION 5
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  12
+             +---+
+ -M35.2   ---! & !
+ -N_1.83  ---!   !   -N_1.84
+ -M_GERADE---!   !    +-----+
+ -B13.3   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.110 ---!>=1!    !     !
+ -N_1.120 ---!   !    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   47.3 = N_1.83                    TROMMEL GERADESTELLEN STATION 5
+F   63.1 = M_GERADE                  TROMMEL GERADE
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page   5
+I   13.3 = B13.3                     TROMMEL GERADE
+F   47.4 = N_1.84                    TROMMEL IST GERADE STATION 5
+F   50.6 = N_1.110                   HORIZ.-TRANSPORT VOR BIS STATION 8
+F   52.0 = N_1.120                   HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  13
+             +---+
+ -N_1.25  ---! & !
+ -STAT1   --O!   !
+ -STAT2   --O!   !
+ -STAT3   --O!   !
+ -STAT4   --O!   !     +---+
+ -STAT5   --O!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -N_1.34  ---! & !     !   !
+ -STAT2   --O!   !     !   !
+ -STAT3   --O!   !     !   !
+ -STAT4   --O!   !     !   !
+ -STAT5   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.46  ---! & !     !   !
+ -STAT3   --O!   !     !   !
+ -STAT4   --O!   !     !   !
+ -STAT5   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.58  ---! & !     !   !
+ -STAT4   --O!   !     !   !
+ -STAT5   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.71  ---! & !     !   !
+ -STAT5   --O!   !-----!   !
+             +---+     !   !    +------+
+           -N_1.82  ---!   !--+-! =    ! -M240.0
+                       +---+    +------+
+
+F   40.1 = N_1.25                    VERT.-TRANSPORT OBEN, BELADESTATION
+F  110.0 = STAT1                     STATION 1 ANFAHREN
+F  110.1 = STAT2                     STATION 2 ANFAHREN
+F  110.2 = STAT3                     STATION 3 ANFAHREN
+F  110.3 = STAT4                     STATION 4 ANFAHREN
+F  110.4 = STAT5                     STATION 5 ANFAHREN
+F   41.2 = N_1.34                    ENDE ABTROPFZEIT STATION 1
+F   42.6 = N_1.46                    ENDE ABTROPFZEIT STATION 2
+F   44.2 = N_1.58                    ENDE ABTROPFZEIT STATION 3
+F   45.7 = N_1.71                    ENDE ABTROPFZEIT STATION 4
+F   47.2 = N_1.82                    ENDE ABTROPFZEIT STATION 5
+F  240.0 = M240.0                    SCHMIERMERKER
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page   6
+Segment  14
+             +---+
+ -M35.2   ---! & !
+ -B119.7  --O!   !
+ -B12.5   ---!   !
+ -B12.7   ---!   !   -N_1.86
+ -STAT6   ---!   !    +-----+
+ -M240.0  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.87  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+I  119.7 = B119.7                    HORIZ.-TRANSPORT STATION 6
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F  110.5 = STAT6                     STATION 6 ANFAHREN
+F  240.0 = M240.0                    SCHMIERMERKER
+F   47.6 = N_1.86                    HORIZ.-TRANSPORT VOR BIS STATION 6
+F   47.7 = N_1.87                    HORIZ.-TRANSPORT IN STATION 6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  15
+             +---+
+ -M35.2   ---! & !
+ -N_1.86  ---!   !   -N_1.87
+ -B119.7  ---!   !    +-----+
+ -B11.6   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.88  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   47.6 = N_1.86                    HORIZ.-TRANSPORT VOR BIS STATION 6
+I  119.7 = B119.7                    HORIZ.-TRANSPORT STATION 6
+I   11.6 = B11.6                     HORIZ.-TRANSPORT IN POSITION
+F   47.7 = N_1.87                    HORIZ.-TRANSPORT IN STATION 6
+F   48.0 = N_1.88                    VERT.-TRANSPORT SENKEN STATION 6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  16
+             +---+
+ -M35.2   ---! & !
+ -N_1.87  ---!   !   -N_1.88
+ -B12.1   --O!   !    +-----+
+ -B12.5   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.89  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   47.7 = N_1.87                    HORIZ.-TRANSPORT IN STATION 6
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+F   48.0 = N_1.88                    VERT.-TRANSPORT SENKEN STATION 6
+F   48.1 = N_1.89                    VERT.-TRANSPORT UNTEN STATION 6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page   7
+Segment  17
+             +---+
+ -M35.2   ---! & !
+ -N_1.88  ---!   !   -N_1.89
+ -B12.1   ---!   !    +-----+
+ -B12.7   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.90  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   48.0 = N_1.88                    VERT.-TRANSPORT SENKEN STATION 6
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   48.1 = N_1.89                    VERT.-TRANSPORT UNTEN STATION 6
+F   48.2 = N_1.90                    ENDE TAUCHZEIT STATION 6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  18
+             +---+
+ -M35.2   ---! & !   -N_1.90
+ -T1_*    ---!   !    +-----+
+ -N_1.89  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.91  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+T    1   = T1_*                      TAUCHZEIT IN ALLEN STATIONEN
+F   48.1 = N_1.89                    VERT.-TRANSPORT UNTEN STATION 6
+F   48.2 = N_1.90                    ENDE TAUCHZEIT STATION 6
+F   48.3 = N_1.91                    VERT.-TRANSP.HEBEN BIS ABTROPFEN 6(RES.)
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  19
+             +---+   -N_1.91
+ -M35.2   ---! & !    +-----+
+ -N_1.90  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.92  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   48.2 = N_1.90                    ENDE TAUCHZEIT STATION 6
+F   48.3 = N_1.91                    VERT.-TRANSP.HEBEN BIS ABTROPFEN 6(RES.)
+F   48.4 = N_1.92                    VERT.-TRANSPORT HEBEN BIS OBEN ST.6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  20
+             +---+
+ -M35.2   ---! & !   -N_1.92
+ -N_1.91  ---!   !    +-----+
+ -B12.5   --O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.93  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page   8
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   48.3 = N_1.91                    VERT.-TRANSP.HEBEN BIS ABTROPFEN 6(RES.)
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+F   48.4 = N_1.92                    VERT.-TRANSPORT HEBEN BIS OBEN ST.6
+F   48.5 = N_1.93                    VERT.-TRANSPORT OBEN STATION 6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  21
+             +---+
+ -M35.2   ---! & !
+ -N_1.92  ---!   !   -N_1.93
+ -B12.5   ---!   !    +-----+
+ -B12.7   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.94  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   48.4 = N_1.92                    VERT.-TRANSPORT HEBEN BIS OBEN ST.6
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   48.5 = N_1.93                    VERT.-TRANSPORT OBEN STATION 6
+F   48.6 = N_1.94                    ENDE ABTROPFZEIT STATION 6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  22
+             +---+
+ -M35.2   ---! & !   -N_1.94
+ -T2_*    ---!   !    +-----+
+ -N_1.93  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.95  ---!   !    !     !
+ -N_1.98  ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+T    2   = T2_*                      ABTROPFZEIT IN ALLEN STATIONEN
+F   48.5 = N_1.93                    VERT.-TRANSPORT OBEN STATION 6
+F   48.6 = N_1.94                    ENDE ABTROPFZEIT STATION 6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   48.7 = N_1.95                    TROMMEL GERADESTELLEN STATION 6
+F   49.2 = N_1.98                    HORIZ.-TRANSPORT VOR BIS STATION 7
+
+Segment  23
+             +---+
+ -M35.2   ---! & !   -N_1.95
+ -N_1.94  ---!   !    +-----+
+ -STAT7   --O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.96  ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   48.6 = N_1.94                    ENDE ABTROPFZEIT STATION 6
+F  110.6 = STAT7                     STATION 7 ANFAHREN
+F   48.7 = N_1.95                    TROMMEL GERADESTELLEN STATION 6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   49.0 = N_1.96                    TROMMEL IST GERADE STATION 6
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page   9
+Segment  24
+             +---+
+ -M35.2   ---! & !
+ -N_1.95  ---!   !   -N_1.96
+ -M_GERADE---!   !    +-----+
+ -B13.3   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.110 ---!   !    !     !
+ -N_1.120 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   48.7 = N_1.95                    TROMMEL GERADESTELLEN STATION 6
+F   63.1 = M_GERADE                  TROMMEL GERADE
+I   13.3 = B13.3                     TROMMEL GERADE
+F   49.0 = N_1.96                    TROMMEL IST GERADE STATION 6
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   50.6 = N_1.110                   HORIZ.-TRANSPORT VOR BIS STATION 8
+F   52.0 = N_1.120                   HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+
+Segment  25
+             +---+
+ -N_1.25  ---! & !
+ -STAT1   --O!   !
+ -STAT2   --O!   !
+ -STAT3   --O!   !
+ -STAT4   --O!   !
+ -STAT5   --O!   !     +---+
+ -STAT6   --O!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -N_1.34  ---! & !     !   !
+ -STAT2   --O!   !     !   !
+ -STAT3   --O!   !     !   !
+ -STAT4   --O!   !     !   !
+ -STAT5   --O!   !     !   !
+ -STAT6   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.46  ---! & !     !   !
+ -STAT3   --O!   !     !   !
+ -STAT4   --O!   !     !   !
+ -STAT5   --O!   !     !   !
+ -STAT6   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.58  ---! & !     !   !
+ -STAT4   --O!   !     !   !
+ -STAT5   --O!   !     !   !
+ -STAT6   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.71  ---! & !     !   !
+ -STAT5   --O!   !     !   !
+ -STAT6   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.82  ---! & !     !   !
+ -STAT6   --O!   !-----!   !
+             +---+     !   !    +------+
+           -N_1.94  ---!   !--+-! =    ! -M240.0
+                       +---+    +------+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  10
+F   40.1 = N_1.25                    VERT.-TRANSPORT OBEN, BELADESTATION
+F  110.0 = STAT1                     STATION 1 ANFAHREN
+F  110.1 = STAT2                     STATION 2 ANFAHREN
+F  110.2 = STAT3                     STATION 3 ANFAHREN
+F  110.3 = STAT4                     STATION 4 ANFAHREN
+F  110.4 = STAT5                     STATION 5 ANFAHREN
+F  110.5 = STAT6                     STATION 6 ANFAHREN
+F   41.2 = N_1.34                    ENDE ABTROPFZEIT STATION 1
+F   42.6 = N_1.46                    ENDE ABTROPFZEIT STATION 2
+F   44.2 = N_1.58                    ENDE ABTROPFZEIT STATION 3
+F   45.7 = N_1.71                    ENDE ABTROPFZEIT STATION 4
+F   47.2 = N_1.82                    ENDE ABTROPFZEIT STATION 5
+F   48.6 = N_1.94                    ENDE ABTROPFZEIT STATION 6
+F  240.0 = M240.0                    SCHMIERMERKER
+
+Segment  26
+             +---+
+ -M35.2   ---! & !
+ -B120.0  --O!   !
+ -B12.5   ---!   !
+ -B12.7   ---!   !   -N_1.98
+ -STAT7   ---!   !    +-----+
+ -M240.0  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.99  ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+I  120.0 = B120.0                    HORIZ.-TRANSPORT STATION 7
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F  110.6 = STAT7                     STATION 7 ANFAHREN
+F  240.0 = M240.0                    SCHMIERMERKER
+F   49.2 = N_1.98                    HORIZ.-TRANSPORT VOR BIS STATION 7
+F   49.3 = N_1.99                    HORIZ.-TRANSPORT IN STATION 7
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  27
+             +---+
+ -M35.2   ---! & !
+ -N_1.98  ---!   !   -N_1.99
+ -B120.0  ---!   !    +-----+
+ -B11.6   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.100 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   49.2 = N_1.98                    HORIZ.-TRANSPORT VOR BIS STATION 7
+I  120.0 = B120.0                    HORIZ.-TRANSPORT STATION 7
+I   11.6 = B11.6                     HORIZ.-TRANSPORT IN POSITION
+F   49.3 = N_1.99                    HORIZ.-TRANSPORT IN STATION 7
+F   49.4 = N_1.100                   VERT.-TRANSPORT SENKEN STATION 7
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  11
+Segment  28
+             +---+
+ -M35.2   ---! & !
+ -N_1.99  ---!   !   -N_1.100
+ -B12.1   --O!   !    +-----+
+ -B12.5   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.101 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   49.3 = N_1.99                    HORIZ.-TRANSPORT IN STATION 7
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+F   49.4 = N_1.100                   VERT.-TRANSPORT SENKEN STATION 7
+F   49.5 = N_1.101                   VERT.-TRANSPORT UNTEN STATION 7
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  29
+             +---+
+ -M35.2   ---! & !
+ -N_1.100 ---!   !   -N_1.101
+ -B12.1   ---!   !    +-----+
+ -B12.7   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.102 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   49.4 = N_1.100                   VERT.-TRANSPORT SENKEN STATION 7
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   49.5 = N_1.101                   VERT.-TRANSPORT UNTEN STATION 7
+F   49.6 = N_1.102                   ENDE TAUCHZEIT STATION 7
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  30
+             +---+
+ -M35.2   ---! & !   -N_1.102
+ -T1_*    ---!   !    +-----+
+ -N_1.101 ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.103 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+T    1   = T1_*                      TAUCHZEIT IN ALLEN STATIONEN
+F   49.5 = N_1.101                   VERT.-TRANSPORT UNTEN STATION 7
+F   49.6 = N_1.102                   ENDE TAUCHZEIT STATION 7
+F   49.7 = N_1.103                   VERT.-TRANSP.HEBEN BIS ABTROPFEN 7(RES.)
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  12
+Segment  31
+             +---+   -N_1.103
+ -M35.2   ---! & !    +-----+
+ -N_1.102 ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.104 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   49.6 = N_1.102                   ENDE TAUCHZEIT STATION 7
+F   49.7 = N_1.103                   VERT.-TRANSP.HEBEN BIS ABTROPFEN 7(RES.)
+F   50.0 = N_1.104                   VERT.-TRANSPORT HEBEN BIS OBEN ST.7
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  32
+             +---+
+ -M35.2   ---! & !   -N_1.104
+ -N_1.103 ---!   !    +-----+
+ -B12.5   --O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.105 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   49.7 = N_1.103                   VERT.-TRANSP.HEBEN BIS ABTROPFEN 7(RES.)
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+F   50.0 = N_1.104                   VERT.-TRANSPORT HEBEN BIS OBEN ST.7
+F   50.1 = N_1.105                   VERT.-TRANSPORT OBEN STATION 7
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  33
+             +---+
+ -M35.2   ---! & !
+ -N_1.104 ---!   !   -N_1.105
+ -B12.5   ---!   !    +-----+
+ -B12.7   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.106 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   50.0 = N_1.104                   VERT.-TRANSPORT HEBEN BIS OBEN ST.7
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   50.1 = N_1.105                   VERT.-TRANSPORT OBEN STATION 7
+F   50.2 = N_1.106                   ENDE ABTROPFZEIT STATION 7
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  34
+             +---+
+ -M35.2   ---! & !   -N_1.106
+ -T2_*    ---!   !    +-----+
+ -N_1.105 ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.107 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  13
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+T    2   = T2_*                      ABTROPFZEIT IN ALLEN STATIONEN
+F   50.1 = N_1.105                   VERT.-TRANSPORT OBEN STATION 7
+F   50.2 = N_1.106                   ENDE ABTROPFZEIT STATION 7
+F   50.3 = N_1.107                   TROMMEL GERADESTELLEN STATION 7
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  35
+             +---+   -N_1.107
+ -M35.2   ---! & !    +-----+
+ -N_1.106 ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.108 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   50.2 = N_1.106                   ENDE ABTROPFZEIT STATION 7
+F   50.3 = N_1.107                   TROMMEL GERADESTELLEN STATION 7
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   50.4 = N_1.108                   TROMMEL IST GERADE STATION 7
+
+Segment  36
+             +---+
+ -M35.2   ---! & !
+ -N_1.107 ---!   !   -N_1.108
+ -M_GERADE---!   !    +-----+
+ -B13.3   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.110 ---!   !    !     !
+ -N_1.120 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   50.3 = N_1.107                   TROMMEL GERADESTELLEN STATION 7
+F   63.1 = M_GERADE                  TROMMEL GERADE
+I   13.3 = B13.3                     TROMMEL GERADE
+F   50.4 = N_1.108                   TROMMEL IST GERADE STATION 7
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   50.6 = N_1.110                   HORIZ.-TRANSPORT VOR BIS STATION 8
+F   52.0 = N_1.120                   HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  14
+Segment  37
+             +---+
+ -N_1.25  ---! & !
+ -STAT1   --O!   !
+ -STAT2   --O!   !
+ -STAT3   --O!   !
+ -STAT4   --O!   !
+ -STAT5   --O!   !
+ -STAT6   --O!   !     +---+
+ -STAT7   --O!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -N_1.36  ---! & !     !   !
+ -STAT2   --O!   !     !   !
+ -STAT3   --O!   !     !   !
+ -STAT4   --O!   !     !   !
+ -STAT5   --O!   !     !   !
+ -STAT6   --O!   !     !   !
+ -STAT7   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.48  ---! & !     !   !
+ -STAT3   --O!   !     !   !
+ -STAT4   --O!   !     !   !
+ -STAT5   --O!   !     !   !
+ -STAT6   --O!   !     !   !    +------+
+ -STAT7   --O!   !-----!   !--+-! =    ! -M240.0
+             +---+     +---+    +------+
+
+F   40.1 = N_1.25                    VERT.-TRANSPORT OBEN, BELADESTATION
+F  110.0 = STAT1                     STATION 1 ANFAHREN
+F  110.1 = STAT2                     STATION 2 ANFAHREN
+F  110.2 = STAT3                     STATION 3 ANFAHREN
+F  110.3 = STAT4                     STATION 4 ANFAHREN
+F  110.4 = STAT5                     STATION 5 ANFAHREN
+F  110.5 = STAT6                     STATION 6 ANFAHREN
+F  110.6 = STAT7                     STATION 7 ANFAHREN
+F   41.4 = N_1.36                    TROMMEL IST GERADE STATION 1
+F   43.0 = N_1.48                    TROMMEL IST GERADE STATION 2
+F  240.0 = M240.0                    SCHMIERMERKER
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  15
+Segment  38
+             +---+
+ -N_1.60  ---! & !
+ -STAT4   --O!   !
+ -STAT5   --O!   !
+ -STAT6   --O!   !     +---+
+ -STAT7   --O!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -N_1.73  ---! & !     !   !
+ -STAT5   --O!   !     !   !
+ -STAT6   --O!   !     !   !
+ -STAT7   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.84  ---! & !     !   !
+ -STAT6   --O!   !     !   !
+ -STAT7   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.96  ---! & !     !   !
+ -STAT7   --O!   !-----!   !
+             +---+     !   !    +------+
+           -N_1.108 ---!   !--+-! =    ! -M240.1
+                       +---+    +------+
+
+F   44.4 = N_1.60                    TROMMEL IST GERADE STATION 3
+F  110.3 = STAT4                     STATION 4 ANFAHREN
+F  110.4 = STAT5                     STATION 5 ANFAHREN
+F  110.5 = STAT6                     STATION 6 ANFAHREN
+F  110.6 = STAT7                     STATION 7 ANFAHREN
+F   46.1 = N_1.73                    TROMMEL IST GERADE STATION 4
+F   47.4 = N_1.84                    TROMMEL IST GERADE STATION 5
+F   49.0 = N_1.96                    TROMMEL IST GERADE STATION 6
+F   50.4 = N_1.108                   TROMMEL IST GERADE STATION 7
+F  240.1 = M240.1                    SCHMIERMERKER
+
+Segment  39
+                       +---+
+           -M35.2   ---! & !
+           -B120.1  --O!   !
+           -B12.5   ---!   !
+           -B12.7   ---!   !
+           -M_GERADE---!   !
+           -STAT8   ---!   !
+             +---+     !   !   -N_1.110
+ -M240.0  ---!>=1!     !   !    +-----+
+ -M240.1  ---!   !-----!   !----!S    !
+             +---+     +---+    !     !
+                       +---+    !     !
+           -STSCHRKR---!>=1!    !     !
+           -N_1.111 ---!   !----!R   Q!-
+                       +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+I  120.1 = B120.1                    HORIZ.-TRANSPORT STATION 8
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   63.1 = M_GERADE                  TROMMEL GERADE
+F  110.7 = STAT8                     STATION 8 ANFAHREN
+F  240.0 = M240.0                    SCHMIERMERKER
+F  240.1 = M240.1                    SCHMIERMERKER
+F   50.6 = N_1.110                   HORIZ.-TRANSPORT VOR BIS STATION 8
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  16
+F   50.7 = N_1.111                   HORIZ.-TRANSPORT IN STATION 8
+
+Segment  40
+             +---+
+ -M35.2   ---! & !
+ -N_1.110 ---!   !   -N_1.111
+ -B120.1  ---!   !    +-----+
+ -B11.6   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.112 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   50.6 = N_1.110                   HORIZ.-TRANSPORT VOR BIS STATION 8
+I  120.1 = B120.1                    HORIZ.-TRANSPORT STATION 8
+I   11.6 = B11.6                     HORIZ.-TRANSPORT IN POSITION
+F   50.7 = N_1.111                   HORIZ.-TRANSPORT IN STATION 8
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   51.0 = N_1.112                   VERT.-TRANSPORT SENKEN STATION 8
+
+Segment  41
+             +---+
+ -M35.2   ---! & !
+ -N_1.111 ---!   !   -N_1.112
+ -B12.1   --O!   !    +-----+
+ -B12.5   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.113 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   50.7 = N_1.111                   HORIZ.-TRANSPORT IN STATION 8
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+F   51.0 = N_1.112                   VERT.-TRANSPORT SENKEN STATION 8
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   51.1 = N_1.113                   VERT.-TRANSPORT UNTEN STATION 8
+
+Segment  42
+             +---+
+ -M35.2   ---! & !   -N_1.113
+ -VT_UNTEN---!   !    +-----+
+ -N_1.112 ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.114 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   80.6 = VT_UNTEN                  HM VERT.-TRANSP.POSITION UNTEN
+F   51.0 = N_1.112                   VERT.-TRANSPORT SENKEN STATION 8
+F   51.1 = N_1.113                   VERT.-TRANSPORT UNTEN STATION 8
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   51.2 = N_1.114                   ENDE TROCKENZEIT STATION 8
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  17
+Segment  43
+             +---+
+ -M35.2   ---! & !   -N_1.114
+ -T1_*    ---!   !    +-----+
+ -N_1.113 ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.115 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+T    1   = T1_*                      TAUCHZEIT IN ALLEN STATIONEN
+F   51.1 = N_1.113                   VERT.-TRANSPORT UNTEN STATION 8
+F   51.2 = N_1.114                   ENDE TROCKENZEIT STATION 8
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   51.3 = N_1.115                   VERT.-TRANSPORT HEBEN BIS OBEN ST.8
+
+Segment  44
+             +---+
+ -M35.2   ---! & !   -N_1.115
+ -N_1.114 ---!   !    +-----+
+ -B12.5   --O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.116 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   51.2 = N_1.114                   ENDE TROCKENZEIT STATION 8
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+F   51.3 = N_1.115                   VERT.-TRANSPORT HEBEN BIS OBEN ST.8
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   51.4 = N_1.116                   VERT.-TRANSPORT OBEN STATION 8
+
+Segment  45
+             +---+
+ -M35.2   ---! & !
+ -N_1.115 ---!   !   -N_1.116
+ -B12.5   ---!   !    +-----+
+ -B12.7   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.117 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   51.3 = N_1.115                   VERT.-TRANSPORT HEBEN BIS OBEN ST.8
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   51.4 = N_1.116                   VERT.-TRANSPORT OBEN STATION 8
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   51.5 = N_1.117                   TROMMEL GERADESTELLEN STATION 8
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  18
+Segment  46
+             +---+   -N_1.117
+ -M35.2   ---! & !    +-----+
+ -N_1.116 ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.118 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   51.4 = N_1.116                   VERT.-TRANSPORT OBEN STATION 8
+F   51.5 = N_1.117                   TROMMEL GERADESTELLEN STATION 8
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   51.6 = N_1.118                   TROMMEL IST GERADE STATION 8
+
+Segment  47
+             +---+
+ -M35.2   ---! & !
+ -N_1.117 ---!   !   -N_1.118
+ -M_GERADE---!   !    +-----+
+ -B13.3   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STSCHRKR---!>=1!    !     !
+ -N_1.120 ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   51.5 = N_1.117                   TROMMEL GERADESTELLEN STATION 8
+F   63.1 = M_GERADE                  TROMMEL GERADE
+I   13.3 = B13.3                     TROMMEL GERADE
+F   51.6 = N_1.118                   TROMMEL IST GERADE STATION 8
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+F   52.0 = N_1.120                   HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+
+Segment  48
+             +---+
+ -N_1.36  ---! & !
+ -STAT2   --O!   !
+ -STAT3   --O!   !
+ -STAT4   --O!   !
+ -STAT5   --O!   !
+ -STAT6   --O!   !
+ -STAT7   --O!   !     +---+
+ -STAT8   --O!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -N_1.48  ---! & !     !   !
+ -STAT3   --O!   !     !   !
+ -STAT4   --O!   !     !   !
+ -STAT5   --O!   !     !   !
+ -STAT6   --O!   !     !   !
+ -STAT7   --O!   !     !   !    +------+
+ -STAT8   --O!   !-----!   !--+-! =    ! -M240.0
+             +---+     +---+    +------+
+
+F   41.4 = N_1.36                    TROMMEL IST GERADE STATION 1
+F  110.1 = STAT2                     STATION 2 ANFAHREN
+F  110.2 = STAT3                     STATION 3 ANFAHREN
+F  110.3 = STAT4                     STATION 4 ANFAHREN
+F  110.4 = STAT5                     STATION 5 ANFAHREN
+F  110.5 = STAT6                     STATION 6 ANFAHREN
+F  110.6 = STAT7                     STATION 7 ANFAHREN
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  19
+F  110.7 = STAT8                     STATION 8 ANFAHREN
+F   43.0 = N_1.48                    TROMMEL IST GERADE STATION 2
+F  240.0 = M240.0                    SCHMIERMERKER
+
+Segment  49
+             +---+
+ -N_1.60  ---! & !
+ -STAT4   --O!   !
+ -STAT5   --O!   !
+ -STAT6   --O!   !
+ -STAT7   --O!   !     +---+
+ -STAT8   --O!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -N_1.73  ---! & !     !   !
+ -STAT5   --O!   !     !   !
+ -STAT6   --O!   !     !   !
+ -STAT7   --O!   !     !   !
+ -STAT8   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.84  ---! & !     !   !
+ -STAT6   --O!   !     !   !
+ -STAT7   --O!   !     !   !
+ -STAT8   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.96  ---! & !     !   !
+ -STAT7   --O!   !     !   !
+ -STAT8   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.108 ---! & !     !   !
+ -STAT8   --O!   !-----!   !
+             +---+     !   !    +------+
+           -N_1.118 ---!   !--+-! =    ! -M240.1
+                       +---+    +------+
+
+F   44.4 = N_1.60                    TROMMEL IST GERADE STATION 3
+F  110.3 = STAT4                     STATION 4 ANFAHREN
+F  110.4 = STAT5                     STATION 5 ANFAHREN
+F  110.5 = STAT6                     STATION 6 ANFAHREN
+F  110.6 = STAT7                     STATION 7 ANFAHREN
+F  110.7 = STAT8                     STATION 8 ANFAHREN
+F   46.1 = N_1.73                    TROMMEL IST GERADE STATION 4
+F   47.4 = N_1.84                    TROMMEL IST GERADE STATION 5
+F   49.0 = N_1.96                    TROMMEL IST GERADE STATION 6
+F   50.4 = N_1.108                   TROMMEL IST GERADE STATION 7
+F   51.6 = N_1.118                   TROMMEL IST GERADE STATION 8
+F  240.1 = M240.1                    SCHMIERMERKER
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  20
+Segment  50
+                       +---+
+           -M35.2   ---! & !
+           -B13.3   ---!   !
+           -B11.0   --O!   !
+           -B12.5   ---!   !
+           -B12.7   ---!   !
+           -M_GERADE---!   !
+             +---+     !   !   -N_1.120
+ -M240.0  ---!>=1!     !   !    +-----+
+ -M240.1  ---!   !-----!   !----!S    !
+             +---+     +---+    !     !
+                       +---+    !     !
+           -N_1.121 ---!>=1!    !     !
+           -STSCHRKR---!   !----!R   Q!-
+                       +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+I   13.3 = B13.3                     TROMMEL GERADE
+I   11.0 = B11.0                     HORIZ.-TRANSPORT BELADESTATION
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   63.1 = M_GERADE                  TROMMEL GERADE
+F  240.0 = M240.0                    SCHMIERMERKER
+F  240.1 = M240.1                    SCHMIERMERKER
+F   52.0 = N_1.120                   HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+F   52.1 = N_1.121                   HORIZ.-TRANSPORT IN BELADESTATION
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  51
+             +---+
+ -M35.2   ---! & !
+ -N_1.120 ---!   !   -N_1.121
+ -B11.0   ---!   !    +-----+
+ -B11.6   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.122 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   52.0 = N_1.120                   HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+I   11.0 = B11.0                     HORIZ.-TRANSPORT BELADESTATION
+I   11.6 = B11.6                     HORIZ.-TRANSPORT IN POSITION
+F   52.1 = N_1.121                   HORIZ.-TRANSPORT IN BELADESTATION
+F   52.2 = N_1.122                   VERT.-TRANSPORT SENKEN IN BELADESTATION
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  21
+Segment  52
+                                 +---+
+                     -M35.2   ---! & !
+                     -N_1.121 ---!   !
+                     -B12.1   --O!   !
+                     -B12.5   ---!   !
+             +---+               !   !
+ -B124.2  ---! & !     +---+     !   !
+ -S124.5  ---!   !-----!>=1!     !   !   -N_1.122
+             +---+     !   !     !   !    +-----+
+           -M0.4    ---!   !-----!   !----!S    !
+                       +---+     +---+    !     !
+                                 +---+    !     !
+                     -N_1.123 ---!>=1!    !     !
+                     -STSCHRKR---!   !----!R   Q!-
+                                 +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   52.1 = N_1.121                   HORIZ.-TRANSPORT IN BELADESTATION
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I  124.2 = B124.2                    WT-TRANSPORT EINGEFAHREN
+I  124.5 = S124.5                    WT-TRANSPORT OBEN
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F   52.2 = N_1.122                   VERT.-TRANSPORT SENKEN IN BELADESTATION
+F   52.3 = N_1.123                   VERT.-TRANSPORT IN BELADEHOEHE
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  53
+             +---+
+ -M35.2   ---! & !
+ -N_1.122 ---!   !   -N_1.123
+ -B12.1   ---!   !    +-----+
+ -B12.7   ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.128 ---!>=1!    !     !
+ -N_1.134 ---!   !    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   52.2 = N_1.122                   VERT.-TRANSPORT SENKEN IN BELADESTATION
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   52.3 = N_1.123                   VERT.-TRANSPORT IN BELADEHOEHE
+F   53.0 = N_1.128                   WT-TRANSPORT AUSFAHREN
+F   53.6 = N_1.134                   SPRUNG ZU N 1.0
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  22
+Segment  54                  Blockiert, da keine ABE
+             +---+
+ -M35.2   ---! & !
+ -N_1.123 ---!   !
+ -M70.3   --O!   !
+ -B123.5  --O!   !
+ -B123.6  --O!   !
+ -B124.1  --O!   !
+ -B124.2  ---!   !
+ -Y113.2  ---!   !   -N_1.128
+ -Y113.3  --O!   !    +-----+
+ -M0.3    ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.129 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   52.3 = N_1.123                   VERT.-TRANSPORT IN BELADEHOEHE
+F   70.3 = M70.3                     SM WT'S UEBERFAHREN SPERRE 4
+I  123.5 = B123.5                    WT VOR SPERRE 4
+I  123.6 = B123.6                    SPERRE 4 FREIFAHREN
+I  124.1 = B124.1                    WT-TRANSPORT AUSGEFAHREN
+I  124.2 = B124.2                    WT-TRANSPORT EINGEFAHREN
+Q  113.2 = Y113.2                    SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+Q  113.3 = Y113.3                    SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   53.0 = N_1.128                   WT-TRANSPORT AUSFAHREN
+F   53.1 = N_1.129                   WT-TRANSPORT AUSGEFAHREN
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  55
+             +---+
+ -M35.2   ---! & !
+ -N_1.128 ---!   !   -N_1.129
+ -B124.1  ---!   !    +-----+
+ -B124.2  --O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.130 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   53.0 = N_1.128                   WT-TRANSPORT AUSFAHREN
+I  124.1 = B124.1                    WT-TRANSPORT AUSGEFAHREN
+I  124.2 = B124.2                    WT-TRANSPORT EINGEFAHREN
+F   53.1 = N_1.129                   WT-TRANSPORT AUSGEFAHREN
+F   53.2 = N_1.130                   WT-TRANSPORT SENKEN
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  56
+             +---+
+ -M35.2   ---! & !
+ -N_1.129 ---!   !   -N_1.130
+ -S124.4  --O!   !    +-----+
+ -S124.5  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.131 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  23
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   53.1 = N_1.129                   WT-TRANSPORT AUSGEFAHREN
+I  124.4 = S124.4                    WT-TRANSPORT UNTEN
+I  124.5 = S124.5                    WT-TRANSPORT OBEN
+F   53.2 = N_1.130                   WT-TRANSPORT SENKEN
+F   53.3 = N_1.131                   WT-TRANSPORT UNTEN
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  57
+             +---+
+ -M35.2   ---! & !
+ -N_1.130 ---!   !   -N_1.131
+ -S124.4  ---!   !    +-----+
+ -S124.5  --O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.132 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   53.2 = N_1.130                   WT-TRANSPORT SENKEN
+I  124.4 = S124.4                    WT-TRANSPORT UNTEN
+I  124.5 = S124.5                    WT-TRANSPORT OBEN
+F   53.3 = N_1.131                   WT-TRANSPORT UNTEN
+F   53.4 = N_1.132                   AUSGANG FREIFAHREN
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  58
+             +---+
+ -M35.2   ---! & !   -N_1.132
+ -N_1.130 --O!   !    +-----+
+ -N_1.131 ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.133 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   53.2 = N_1.130                   WT-TRANSPORT SENKEN
+F   53.3 = N_1.131                   WT-TRANSPORT UNTEN
+F   53.4 = N_1.132                   AUSGANG FREIFAHREN
+F   53.5 = N_1.133                   AUSGANG FREI
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  59
+             +---+
+ -M35.2   ---! & !
+ -N_1.132 ---!   !
+ -M70.3   --O!   !   -N_1.133
+ -B123.5  --O!   !    +-----+
+ -B123.6  --O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -N_1.134 ---!>=1!    !     !
+ -STSCHRKR---!   !----!R   Q!-
+             +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   53.4 = N_1.132                   AUSGANG FREIFAHREN
+F   70.3 = M70.3                     SM WT'S UEBERFAHREN SPERRE 4
+I  123.5 = B123.5                    WT VOR SPERRE 4
+I  123.6 = B123.6                    SPERRE 4 FREIFAHREN
+
+PB 10     -PB 10                     C:04201@ST.S5D                    LEN=721  
+                                                                        Page  24
+F   53.5 = N_1.133                   AUSGANG FREI
+F   53.6 = N_1.134                   SPRUNG ZU N 1.0
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  60
+                       +---+
+           -M35.2   ---! & !
+             +---+     !   !   -N_1.134
+ -N_1.123 ---!>=1!     !   !    +-----+
+ -N_1.133 ---!   !-----!   !----!S    !
+             +---+     +---+    !     !
+                       +---+    !     !
+           -N_1.0   ---!>=1!    !     !
+           -STSCHRKR---!   !----!R   Q!-
+                       +---+    +-----+
+
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F   52.3 = N_1.123                   VERT.-TRANSPORT IN BELADEHOEHE
+F   53.5 = N_1.133                   AUSGANG FREI
+F   53.6 = N_1.134                   SPRUNG ZU N 1.0
+F   37.0 = N_1.0                     SCHRITTKETTE VORBEREITEN
+F   32.2 = STSCHRKR                  STEUERUNGSSCHRITTKETTEN RUECKSETZEN
+
+Segment  61
+ 
+                    :BE
+
+

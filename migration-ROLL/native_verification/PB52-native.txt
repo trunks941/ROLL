@@ -1,0 +1,267 @@
+
+PB 52     -PB 52                     C:04201@ST.S5D                    LEN=173  
+                                                                        Page   1
+Segment  1
+0000      :STL
+0001      :C   DB  15    -DBVZEIT
+0002      :***
+
+DB  15   = DBVZEIT                   VARIABLE ZEITEN .....................RAM
+
+Segment  2                   Verz. Niveaumangel OEAS
+             +---+
+ -B5.5    --O! & !
+ -STOER_12--O!   !
+ -N_1.29  ---!   !   -T17_V
+ -M4.1    ---!   !    +-----+
+ -P3.1    ---!   !----!T!-!0!
+             +---+    !     !
+           DW 17    --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+I    5.5 = B5.5                      NIVEAU OELABSCHEIDER STAT.1 MIN
+F    6.3 = STOER_12                  NIVEAUMANGEL IM OELABSCHEIDER MIN ..B5.5
+F   40.5 = N_1.29                    VERT.-TRANSPORT UNTEN STATION 1
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+T   17   = T17_V                     VERZ.STOERANZEIGE NIVEAUKONTR.OELABSCH.
+
+Segment  3                   Niveaumangel Stat.1
+             +---+
+ -B5.3    --O! & !
+ -STOER_10--O!   !   -T31_V
+ -M4.1    ---!   !    +-----+
+ -P3.1    ---!   !----!T!-!0!
+             +---+    !     !
+           DW 31    --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+I    5.3 = B5.3                      NIVEAU STATION 1 MIN
+F    6.1 = STOER_10                  NIVEAUMANGEL STATION 1 MIN .........B5.3
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+T   31   = T31_V                     VERZ.NIVEAUKONTROLLE STATION 1
+
+Segment  4                   Niveaumangel Stat.2
+             +---+
+ -B6.0    --O! & !
+ -STOER_13--O!   !   -T32_V
+ -M4.1    ---!   !    +-----+
+ -P3.1    ---!   !----!T!-!0!
+             +---+    !     !
+           DW 32    --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+I    6.0 = B6.0                      NIVEAU STATION 2 MIN
+F    6.4 = STOER_13                  NIVEAUMANGEL STATION 2 .............B6.0
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+T   32   = T32_V                     VERZ.NIVEAUKONTROLLE STATION 2
+
+
+PB 52     -PB 52                     C:04201@ST.S5D                    LEN=173  
+                                                                        Page   2
+Segment  5                   Niveaumangel Stat.3
+             +---+
+ -B6.2    --O! & !
+ -STOER_14--O!   !   -T33_V
+ -M4.1    ---!   !    +-----+
+ -P3.1    ---!   !----!T!-!0!
+             +---+    !     !
+           DW 33    --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+I    6.2 = B6.2                      NIVEAU STATION 3 MIN
+F    6.5 = STOER_14                  NIVEAUMANGEL STATION 3 .............B6.2
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+T   33   = T33_V                     VERZ.NIVEAUKONTROLLE STATION 3
+
+Segment  6                   Niveaumangel Stat.4
+             +---+
+ -M0.4    --O! & !
+ -STOER_16--O!   !   -T35
+ -M4.1    ---!   !    +-----+
+ -P3.1    ---!   !----!T!-!0!
+             +---+    !     !
+           KT 030.3 --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F    6.7 = STOER_16                  NIVEAUMANGEL STATION 4 ...........(OPT.)
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+T   35   = T35                       VERZ.NIVEAUKONTROLLE STATION 4   (OPT.)
+
+Segment  7                   Niveaumangel Stat.5
+             +---+
+ -M0.4    --O! & !
+ -STOER_17--O!   !   -T36
+ -M4.1    ---!   !    +-----+
+ -P3.1    ---!   !----!T!-!0!
+             +---+    !     !
+           KT 030.3 --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F    7.0 = STOER_17                  NIVEAUMANGEL STATION 5 ...........(OPT.)
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+T   36   = T36                       VERZ.NIVEAUKONTROLLE STATION 5   (OPT.)
+
+
+PB 52     -PB 52                     C:04201@ST.S5D                    LEN=173  
+                                                                        Page   3
+Segment  8                   Niveaumangel Stat.6
+             +---+
+ -M0.4    --O! & !
+ -STOER_18--O!   !   -T37
+ -M4.1    ---!   !    +-----+
+ -P3.1    ---!   !----!T!-!0!
+             +---+    !     !
+           KT 030.3 --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F    7.1 = STOER_18                  NIVEAUMANGEL STATION 6 ...........(OPT.)
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+T   37   = T37                       VERZ.NIVEAUKONTROLLE STATION 6   (OPT.)
+
+Segment  9                   Niveaumangel Stat.7
+             +---+
+ -M0.4    --O! & !
+ -STOER_19--O!   !   -T38
+ -M4.1    ---!   !    +-----+
+ -P3.1    ---!   !----!T!-!0!
+             +---+    !     !
+           KT 030.3 --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F    7.2 = STOER_19                  NIVEAUMANGEL STATION 7 ...........(OPT.)
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+T   38   = T38                       VERZ.NIVEAUKONTROLLE STATION 7   (OPT.)
+
+Segment  10                  Verz. Sperre 1 ueberfahren
+           -T45
+            +-----+
+ -B123.1  --!T!-!0!
+ KT 005.1 --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+I  123.1 = B123.1                    WT AN SPERRE 1 UND SPERRE 1 FREI
+T   45   = T45                       VERZ.UEBERFAHREN SPERRE 1
+
+Segment  11                  Nachlauf Absaugung
+             +---+   -T58_V
+ -P3.1    ---! & !    +-----+
+ -TAKT_1  ---!   !----!0!-!T!
+             +---+    !     !
+           DW 58    --!TV BI!-
+                      !   DE!-
+                      !     !    +---+
+                    --!R   Q!----! & !   -T59_V
+                      +-----+    !   !    +-----+
+                     -TAKT_1  ---!   !----!0!-!T!
+                                 +---+    !     !
+                               DW 59    --!TV BI!-
+                                          !   DE!-
+                                        --!R   Q!-
+                                          +-----+
+
+PB 52     -PB 52                     C:04201@ST.S5D                    LEN=173  
+                                                                        Page   4
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+F    3.6 = TAKT_1                    TAKT 1 SEK.
+T   58   = T58_V                     NACHLAUFZEIT 1 WOCHENSCHALTUHR
+T   59   = T59_V                     NACHLAUFZEIT 2 WOCHENSCHALTUHR
+
+Segment  12                  Takt fuer Nachfuellen
+           -T63_V
+            +-----+
+ -T62_V   -O!T!-!0!
+ DW 63    --!TV BI!-
+            !   DE!-
+            !     !  -T62_V
+            !     !   +-----+
+          --!R   Q!---!0!-!T!
+            +-----+   !     !
+           DW 62    --!TV BI!-
+             +---+    !   DE!-
+ -M103.0  --O! & !    !     !
+ -M103.3  --O!   !    !     !
+ -M103.4  --O!   !    !     !
+ -T119_*  --O!   !----!R   Q!-
+             +---+    +-----+
+
+T   62   = T62_V                     AUTOM.NACHFUELLEN STAT.1-3 EINZEIT
+T   63   = T63_V                     AUTOM.NACHFUELLEN STAT.1-3 AUSZEIT
+F  103.0 = M103.0                    ANF.OEAS AUTOM.NACHF.UEB.ST.2-1-OEAS
+F  103.3 = M103.3                    ANF.STAT.1,2 AUTOM.NACHFUELLEN
+F  103.4 = M103.4                    ANF.STAT.3 AUTOM. NACHFUELLEN
+T  119   = T119_*                    NACHLAUF FUELLEN STATION 3
+
+Segment  13                  Verz. Heizung Stat.1
+           -T70
+            +-----+
+ -B5.3    --!0!-!T!
+ KT 010.2 --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+I    5.3 = B5.3                      NIVEAU STATION 1 MIN
+T   70   = T70                       VERZ.HEIZUNG AUS STATION 1
+
+Segment  14                  Verz. Heizung Stat.3
+           -T72
+            +-----+
+ -B6.2    --!0!-!T!
+ KT 010.2 --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+I    6.2 = B6.2                      NIVEAU STATION 3 MIN
+T   72   = T72                       VERZ.HEIZUNG AUS STATION 3
+
+Segment  15                  Verz. Umschaltung Badabfluten
+           -T85_V
+            +-----+
+ -N_1.32  --!0!-!T!
+ DW 85    --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+F   41.0 = N_1.32                    VERT.-TRANSP.HEBEN BIS OBEN ST.1
+
+PB 52     -PB 52                     C:04201@ST.S5D                    LEN=173  
+                                                                        Page   5
+T   85   = T85_V                     UMSCHALTZEIT BADABFLUTEN STATION 1
+
+Segment  16
+ 
+                    :BE
+
+

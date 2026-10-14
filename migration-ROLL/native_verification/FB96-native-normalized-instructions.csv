@@ -1,0 +1,19 @@
+﻿native_word_address;block_byte_offset;network;native_content;command;operand;raw_hex;size_bytes;jump_target_block_byte_offset;position_note
+000B;32;1;L   KH 0000;L;KH 0000;30400000;4;;
+000D;36;1;T   FW 240    -MW240;T;MW 240;13F0;2;;
+000E;38;1;T   FW 242    -MW242;T;MW 242;13F2;2;;
+000F;40;1;;BLD;130;1082;2;;
+0010;42;1;L   =INPU;L;=INPU;4601;2;;
+0011;44;1;SLW      8;SLW;8;6108;2;;
+0012;46;1;T   FW 240    -MW240;T;MW 240;13F0;2;;
+0013;48;1;;BLD;130;1082;2;;
+0014;50;1;L   =INPU;L;=INPU;4601;2;;
+0015;52;1;SRW      8;SRW;8;6908;2;;
+0016;54;1;T   FW 242    -MW242;T;MW 242;13F2;2;;
+0017;56;1;;BLD;130;1082;2;;
+0018;58;1;L   FW 240    -MW240;L;MW 240;12F0;2;;
+0019;60;1;L   FW 242    -MW242;L;MW 242;12F2;2;;
+001A;62;1;OW;OW;;4900;2;;
+001B;64;1;T   =OUTP;T;=OUTP;6602;2;;
+001C;66;1;;BLD;130;1082;2;;
+001D;68;1;BE;BE;;6500;2;;

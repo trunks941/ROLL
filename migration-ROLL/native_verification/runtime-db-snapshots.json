@@ -1,0 +1,1109 @@
+{
+  "received_date": "2026-10-12",
+  "acquisition_context": "Supplied after user confirmed ability to read DB15/DB19 online and received CPU to PC instructions",
+  "acquisition_timestamp": null,
+  "machine_mode_at_acquisition": null,
+  "independent_online_verification": false,
+  "sources": [
+    {
+      "block": "DB15",
+      "source_file": "DB15ROLS.INI",
+      "size_bytes": 3676,
+      "sha256": "d35f756f123dc2829d191b37d228f273a447e4dedd4dedd28ea6ec36950c50ff",
+      "header_source_literal": "C:ROLLPRST.S5D",
+      "header_LEN_words": 137,
+      "data_words": 132,
+      "block_bytes": 274,
+      "printed_pages": 3,
+      "empty_end_marker": 132,
+      "words": [
+        {
+          "dw": 0,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 1,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 2,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 3,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 4,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 5,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 6,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 7,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 8,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 9,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 10,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 11,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 12,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 13,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 14,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 15,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 16,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 17,
+          "raw_hex": "3360"
+        },
+        {
+          "dw": 18,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 19,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 20,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 21,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 22,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 23,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 24,
+          "raw_hex": "1010"
+        },
+        {
+          "dw": 25,
+          "raw_hex": "1020"
+        },
+        {
+          "dw": 26,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 27,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 28,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 29,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 30,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 31,
+          "raw_hex": "3120"
+        },
+        {
+          "dw": 32,
+          "raw_hex": "3120"
+        },
+        {
+          "dw": 33,
+          "raw_hex": "2900"
+        },
+        {
+          "dw": 34,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 35,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 36,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 37,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 38,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 39,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 40,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 41,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 42,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 43,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 44,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 45,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 46,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 47,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 48,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 49,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 50,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 51,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 52,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 53,
+          "raw_hex": "2120"
+        },
+        {
+          "dw": 54,
+          "raw_hex": "2120"
+        },
+        {
+          "dw": 55,
+          "raw_hex": "1010"
+        },
+        {
+          "dw": 56,
+          "raw_hex": "2060"
+        },
+        {
+          "dw": 57,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 58,
+          "raw_hex": "3180"
+        },
+        {
+          "dw": 59,
+          "raw_hex": "3180"
+        },
+        {
+          "dw": 60,
+          "raw_hex": "2060"
+        },
+        {
+          "dw": 61,
+          "raw_hex": "2600"
+        },
+        {
+          "dw": 62,
+          "raw_hex": "2600"
+        },
+        {
+          "dw": 63,
+          "raw_hex": "2010"
+        },
+        {
+          "dw": 64,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 65,
+          "raw_hex": "2015"
+        },
+        {
+          "dw": 66,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 67,
+          "raw_hex": "1050"
+        },
+        {
+          "dw": 68,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 69,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 70,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 71,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 72,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 73,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 74,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 75,
+          "raw_hex": "2600"
+        },
+        {
+          "dw": 76,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 77,
+          "raw_hex": "2300"
+        },
+        {
+          "dw": 78,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 79,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 80,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 81,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 82,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 83,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 84,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 85,
+          "raw_hex": "2120"
+        },
+        {
+          "dw": 86,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 87,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 88,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 89,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 90,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 91,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 92,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 93,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 94,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 95,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 96,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 97,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 98,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 99,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 100,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 101,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 102,
+          "raw_hex": "2300"
+        },
+        {
+          "dw": 103,
+          "raw_hex": "2300"
+        },
+        {
+          "dw": 104,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 105,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 106,
+          "raw_hex": "2010"
+        },
+        {
+          "dw": 107,
+          "raw_hex": "2015"
+        },
+        {
+          "dw": 108,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 109,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 110,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 111,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 112,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 113,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 114,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 115,
+          "raw_hex": "1050"
+        },
+        {
+          "dw": 116,
+          "raw_hex": "1050"
+        },
+        {
+          "dw": 117,
+          "raw_hex": "1050"
+        },
+        {
+          "dw": 118,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 119,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 120,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 121,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 122,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 123,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 124,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 125,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 126,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 127,
+          "raw_hex": "0038"
+        },
+        {
+          "dw": 128,
+          "raw_hex": "0011"
+        },
+        {
+          "dw": 129,
+          "raw_hex": "0011"
+        },
+        {
+          "dw": 130,
+          "raw_hex": "3360"
+        },
+        {
+          "dw": 131,
+          "raw_hex": "0000"
+        }
+      ]
+    },
+    {
+      "block": "DB19",
+      "source_file": "DB19ROLS.INI",
+      "size_bytes": 3676,
+      "sha256": "51a353f5157a7284ec129d0dfedfd60fbe6387adc7938357c364d3040c7a6def",
+      "header_source_literal": "C:ROLLPRST.S5D",
+      "header_LEN_words": 137,
+      "data_words": 132,
+      "block_bytes": 274,
+      "printed_pages": 3,
+      "empty_end_marker": 132,
+      "words": [
+        {
+          "dw": 0,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 1,
+          "raw_hex": "0020"
+        },
+        {
+          "dw": 2,
+          "raw_hex": "0014"
+        },
+        {
+          "dw": 3,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 4,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 5,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 6,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 7,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 8,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 9,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 10,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 11,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 12,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 13,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 14,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 15,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 16,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 17,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 18,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 19,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 20,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 21,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 22,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 23,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 24,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 25,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 26,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 27,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 28,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 29,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 30,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 31,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 32,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 33,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 34,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 35,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 36,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 37,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 38,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 39,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 40,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 41,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 42,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 43,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 44,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 45,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 46,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 47,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 48,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 49,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 50,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 51,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 52,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 53,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 54,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 55,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 56,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 57,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 58,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 59,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 60,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 61,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 62,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 63,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 64,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 65,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 66,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 67,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 68,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 69,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 70,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 71,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 72,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 73,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 74,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 75,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 76,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 77,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 78,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 79,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 80,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 81,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 82,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 83,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 84,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 85,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 86,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 87,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 88,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 89,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 90,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 91,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 92,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 93,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 94,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 95,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 96,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 97,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 98,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 99,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 100,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 101,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 102,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 103,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 104,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 105,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 106,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 107,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 108,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 109,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 110,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 111,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 112,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 113,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 114,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 115,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 116,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 117,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 118,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 119,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 120,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 121,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 122,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 123,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 124,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 125,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 126,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 127,
+          "raw_hex": "FFFF"
+        },
+        {
+          "dw": 128,
+          "raw_hex": "0001"
+        },
+        {
+          "dw": 129,
+          "raw_hex": "0001"
+        },
+        {
+          "dw": 130,
+          "raw_hex": "0020"
+        },
+        {
+          "dw": 131,
+          "raw_hex": "0000"
+        }
+      ]
+    }
+  ],
+  "compared_factory_blocks": [
+    "DB12",
+    "DB16"
+  ],
+  "parameter_word_changes": {
+    "DB15": 0,
+    "DB19": 2
+  },
+  "editor_control_word_changes": {
+    "DB15": 3,
+    "DB19": 3
+  },
+  "decoded_timer_presets": 26,
+  "decoded_counter_presets": 2,
+  "runtime_test": false,
+  "TIA_compilation": false
+}

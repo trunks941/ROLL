@@ -1,0 +1,33 @@
+FB 61     -TAKTEIN                   C:04201@ST.S5D                    LEN=32   
+                                                                        Page   1
+Segment  1                   OB 13 alle 0,25 s aufrufen
+Name :EINST
+ 
+0005      :L   KF +25
+0007      :T   RS  97
+0008      :
+0009      :***
+
+
+Segment  2                   Alle Merker remanent !!
+000A      :
+000B      :STL
+000C      :L   RS 120
+000D      :L   KH 0008
+000F      :OW
+0010      :T   RS 120
+0011      :
+0012      :***
+
+
+Segment  3                   Anlaufverzoegerung 1 Sekunde
+0013      :
+0014      :STL
+0015      :
+0016      :L   KF +1000
+0018      :T   RS 126
+0019      :
+001A      :BE
+
+
+

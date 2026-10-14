@@ -1,0 +1,491 @@
+{
+  "verified_native_files": [
+    {
+      "block": "OB1",
+      "source_file": "OB1ROLLS.INI",
+      "size_bytes": 4566,
+      "sha256": "a582ff2216b18114ddeebf290979cf3695750436ce112af7e427656e787c8506",
+      "method": "Native STL plus manual FBD comparison",
+      "evidence": "OB1-comparison.json"
+    },
+    {
+      "block": "FB105",
+      "source_file": "FB105RLS.INI",
+      "size_bytes": 10915,
+      "sha256": "947e446a3f2937a85925e4a39cff7caf6256722626bc8b90989aec81008eb81c",
+      "method": "All addressed native positions compared",
+      "evidence": "FB105-comparison.json"
+    },
+    {
+      "block": "FB61",
+      "source_file": "FB61ROLS.INI",
+      "size_bytes": 703,
+      "sha256": "434aee1cf255e1f5411772656954e442b7aeb1596cb37176b11039f7ea93aeb2",
+      "method": "All addressed native positions compared",
+      "evidence": "FB61-comparison.json"
+    },
+    {
+      "block": "OB13",
+      "source_file": "OB13ROLS.INI",
+      "size_bytes": 801,
+      "sha256": "a28a28db25a791f42cba75cf655cc924ef5a21d95b544a9537a2e225599a43fa",
+      "method": "All addressed native positions compared",
+      "evidence": "OB13-comparison.json"
+    },
+    {
+      "block": "OB21",
+      "source_file": "OB21ROLS.INI",
+      "size_bytes": 1026,
+      "sha256": "25d3d0c7962406a4a20e776acd5b38a65b6ce38f7d179f8f27cc180d29eeecee",
+      "method": "All addressed native positions compared",
+      "evidence": "OB21-comparison.json"
+    },
+    {
+      "block": "OB22",
+      "source_file": "OB22ROLS.INI",
+      "size_bytes": 1026,
+      "sha256": "2c8a76d773bde230906dc47b401b3bd1a607f2d67bade52c7119876c834ae725",
+      "method": "All addressed native positions compared",
+      "evidence": "OB22-comparison.json"
+    },
+    {
+      "block": "FB101",
+      "source_file": "FB101RLS.INI",
+      "size_bytes": 5135,
+      "sha256": "9f3e70e8e9d7849a1e0f90d15ab9ed9f00f272a04d68a6b165b01e84349c3d3b",
+      "method": "All addressed native positions compared",
+      "evidence": "FB101-comparison.json"
+    },
+    {
+      "block": "FB3",
+      "source_file": "FB3ROLLS.INI",
+      "size_bytes": 15868,
+      "sha256": "be07d1cfbaca4326f4ad3453b361b6fc07c4960dbd446ba3e19d57774fb33983",
+      "method": "All addressed native positions compared",
+      "evidence": "FB3-comparison.json"
+    },
+    {
+      "block": "FB60",
+      "source_file": "FB60ROLS.INI",
+      "size_bytes": 20996,
+      "sha256": "45f1766604e46eaf8f4b2cdae47c048941450cca44a10361777ff95fba8bb61d",
+      "method": "All addressed native positions compared",
+      "evidence": "FB60-comparison.json"
+    },
+    {
+      "block": "FB62",
+      "source_file": "FB62ROLS.INI",
+      "size_bytes": 2843,
+      "sha256": "a2abcaf65cf6c17a4a5bba133d30ac7211ccb6c9c7e5b6ee939c93af34d9db35",
+      "method": "All addressed native positions compared",
+      "evidence": "FB62-comparison.json"
+    },
+    {
+      "block": "FB63",
+      "source_file": "FB63ROLS.INI",
+      "size_bytes": 2842,
+      "sha256": "42ee2a4e31a6f24faac478a268ecc028490e5bc9bbed1838b8671109be5aa0aa",
+      "method": "All addressed native positions compared",
+      "evidence": "FB63-comparison.json"
+    },
+    {
+      "block": "FB69",
+      "source_file": "FB69ROLS.INI",
+      "size_bytes": 869,
+      "sha256": "e086853d49098420e0ff653b025b48f418a97a6a6b16b52d520750976e9cbc8b",
+      "method": "All addressed native positions compared",
+      "evidence": "FB69-comparison.json"
+    },
+    {
+      "block": "OB34",
+      "source_file": "OB34ROLS.INI",
+      "size_bytes": 404,
+      "sha256": "d4d0e4917ec45b876e65b972ec51daa4982b0f6e2699b469a078e61db171d202",
+      "method": "All addressed native positions compared",
+      "evidence": "OB34-comparison.json"
+    },
+    {
+      "block": "FB89",
+      "source_file": "FB89ROLS.INI",
+      "size_bytes": 7525,
+      "sha256": "3c1d220fa6922a8e8528697176bc36315964d11650b39d10423cb5579e278af4",
+      "method": "Native STL: 118 addressed positions and final unaddressed BE compared",
+      "evidence": "FB89-comparison.json"
+    },
+    {
+      "block": "FB90",
+      "source_file": "FB90ROLS.INI",
+      "size_bytes": 4920,
+      "sha256": "eb4dd5a76324735f90ea0eaeb522790d2943f80911c553a86e09629fc17a21b2",
+      "method": "All addressed native positions compared",
+      "evidence": "FB90-comparison.json"
+    },
+    {
+      "block": "FB91",
+      "source_file": "FB91ROLS.INI",
+      "size_bytes": 5996,
+      "sha256": "a6978602c717b3cdd75bed940e90987197d54579c21d8f98da48710e2ba25a46",
+      "method": "All addressed native positions compared",
+      "evidence": "FB91-comparison.json"
+    },
+    {
+      "block": "FB92",
+      "source_file": "FB92ROLS.INI",
+      "size_bytes": 20698,
+      "sha256": "70881915aa2b926a8b6baea2e9566a31cccd7c49f1252f5bca7b62dc664c3cc9",
+      "method": "All addressed native positions compared",
+      "evidence": "FB92-comparison.json"
+    },
+    {
+      "block": "FB95",
+      "source_file": "FB95ROLS.INI",
+      "size_bytes": 1888,
+      "sha256": "5efc9281d70720e2a7d7ba81936f368fd24fa592ff017cd79c5390b41a6b918a",
+      "method": "All addressed native positions compared",
+      "evidence": "FB95-comparison.json"
+    },
+    {
+      "block": "FB96",
+      "source_file": "FB96ROLS.INI",
+      "size_bytes": 858,
+      "sha256": "b4167ceda586269bdf7633f9271f4e8d80597df8addb701d6c180aca7ab98946",
+      "method": "All addressed native positions compared",
+      "evidence": "FB96-comparison.json"
+    },
+    {
+      "block": "FB111",
+      "source_file": "FB111RLS.INI",
+      "size_bytes": 5331,
+      "sha256": "602a4a87f4682f137e2a7624bf45b69225937c2a40258651166835c10965168e",
+      "method": "All addressed native positions compared",
+      "evidence": "FB111-comparison.json"
+    },
+    {
+      "block": "PB16",
+      "source_file": "PB16ROLS.INI",
+      "size_bytes": 37526,
+      "sha256": "0863b18063b58d0da3fcda158360ea38055ddeb51e8b9aaf5745ab85a1ed2f03",
+      "method": "All 34 native FBD networks manually compared; operand sets checked",
+      "evidence": "PB16-comparison.json"
+    },
+    {
+      "block": "PB2",
+      "source_file": "PB2ROLLS.INI",
+      "size_bytes": 50618,
+      "sha256": "aeac11de5e45e71e03298edfdf9726cd989975268aea533f57ff7cda9158091b",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 50618,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB2-comparison.json"
+    },
+    {
+      "block": "PB3",
+      "source_file": "PB3ROLLS.INI",
+      "size_bytes": 5421,
+      "sha256": "77131e3e007eb1d2ff4fb3b51d4013648f65cedb8ef4c65a3e5b71b360a7b55c",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 5421,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB3-comparison.json"
+    },
+    {
+      "block": "PB4",
+      "source_file": "PB4ROLLS.INI",
+      "size_bytes": 7527,
+      "sha256": "b871271505422d07efcb0418c136c80d41dfa7480a1d8e69d6e959ce3dcb1993",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 7527,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB4-comparison.json"
+    },
+    {
+      "block": "PB13",
+      "source_file": "PB13ROLS.INI",
+      "size_bytes": 58376,
+      "sha256": "b9e756ef4e754b11fb83d76583f3a27289bc22076907c8526f3f3c97122cde34",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 58376,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB13-comparison.json"
+    },
+    {
+      "block": "PB17",
+      "source_file": "PB17ROLS.INI",
+      "size_bytes": 30797,
+      "sha256": "8c31cadfd992c62ab28ad646abf9c03be125f413547ff82fa37ef05476fcdab6",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 30797,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB17-comparison.json"
+    },
+    {
+      "block": "PB18",
+      "source_file": "PB18ROLS.INI",
+      "size_bytes": 20806,
+      "sha256": "c220245ce221869c3a14225e2e11d06d95a512fa9915419f5d4caf24595b9cd0",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 20806,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB18-comparison.json"
+    },
+    {
+      "block": "PB7",
+      "source_file": "PB7RROLS.INI",
+      "size_bytes": 17356,
+      "sha256": "e82e8e5fc742fc3430ad0b3975d2872d3fd68ef9bdfc03ae0d2bf666f258b86e",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 17356,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB7-comparison.json"
+    },
+    {
+      "block": "PB8",
+      "source_file": "PB8ROLLS.INI",
+      "size_bytes": 9227,
+      "sha256": "cf3ad9dfa4ab17a36adfb3321e1a99240675a30d3300414645a009d45cd1092d",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 9227,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB8-comparison.json"
+    },
+    {
+      "block": "PB9",
+      "source_file": "PB9ROLLS.INI",
+      "size_bytes": 63574,
+      "sha256": "1365f6f39e38f7aa66d9bd128ce7aff8b441fc917b678b7d6865462c91356896",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 63574,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB9-comparison.json"
+    },
+    {
+      "block": "PB10",
+      "source_file": "PB10ROLS.INI",
+      "size_bytes": 57645,
+      "sha256": "a0db7ca39b976423309a10675bfbdbfba31b58606d4406670f7e89705fc89872",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 57645,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB10-comparison.json"
+    },
+    {
+      "block": "PB14",
+      "source_file": "PB14ROLS.INI",
+      "size_bytes": 22738,
+      "sha256": "fe48fe3a7fb4a4e704e5a26d6f4a93f1c0daf5c79860a80182b8b8568632863d",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 22738,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB14-comparison.json"
+    },
+    {
+      "block": "PB15",
+      "source_file": "PB15ROLS.INI",
+      "size_bytes": 7191,
+      "sha256": "9a2a616e964961d3612225c96128201c64de38b702e9678e216c0a41dcfcf761",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 7191,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB15-comparison.json"
+    },
+    {
+      "block": "PB50",
+      "source_file": "PB50ROLS.INI",
+      "size_bytes": 1384,
+      "sha256": "51570e7c1f0b167f17eb3020d05b24ed098215787f6cca41390090c7acc5b468",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 1384,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB50-comparison.json"
+    },
+    {
+      "block": "PB51",
+      "source_file": "PB51ROLS.INI",
+      "size_bytes": 13537,
+      "sha256": "7ddde3e9f33929cad646802123732923a100d13ebe839718bad900a2bcc95555",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 3738,
+        "other_blocks_in_source": [
+          "PB52"
+        ]
+      },
+      "evidence": "PB51-comparison.json"
+    },
+    {
+      "block": "PB52",
+      "source_file": "PB51ROLS.INI",
+      "size_bytes": 13537,
+      "sha256": "7ddde3e9f33929cad646802123732923a100d13ebe839718bad900a2bcc95555",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 3738,
+        "source_byte_end": 13537,
+        "other_blocks_in_source": [
+          "PB51"
+        ]
+      },
+      "evidence": "PB52-comparison.json"
+    },
+    {
+      "block": "PB19",
+      "source_file": "PB19ROLS.INI",
+      "size_bytes": 11678,
+      "sha256": "2bb773c23a0d23f4a169ae5a8e24ca20da97caf1ad1e8ce78e7f07ab39445ea0",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 11678,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB19-comparison.json"
+    },
+    {
+      "block": "PB20",
+      "source_file": "PB20ROLS.INI",
+      "size_bytes": 42911,
+      "sha256": "d3c8e389bd9d4d0a2fddbe03b50cb9764fbd4f8d7f5427c08a334e34ef35c8cf",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 42911,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB20-comparison.json"
+    },
+    {
+      "block": "PB21",
+      "source_file": "PB21ROLS.INI",
+      "size_bytes": 49534,
+      "sha256": "7eb2e3556bb64b51be71d86ab45eec99577541b950499c71a8d9509447ab2423",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 49534,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB21-comparison.json"
+    },
+    {
+      "block": "PB23",
+      "source_file": "PB23ROLS.INI",
+      "size_bytes": 13854,
+      "sha256": "ddb7d6733371e4d03746632f52a26a8d9c1dbda073ac0a31e2a65168d383542d",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 13854,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB23-comparison.json"
+    },
+    {
+      "block": "PB24",
+      "source_file": "PB24ROLS.INI",
+      "size_bytes": 1665,
+      "sha256": "716b5401893a2848c2ae514ec0829917bbbf777e58b3fbfcc050f499b55402d7",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 1665,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB24-comparison.json"
+    },
+    {
+      "block": "PB25",
+      "source_file": "PB25ROLS.INI",
+      "size_bytes": 11277,
+      "sha256": "2eaff3a5d78e5222735886b2894c3d526b5af9a1eec0141863d8009f3fe19f43",
+      "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+      "source_scope": {
+        "source_byte_start": 0,
+        "source_byte_end": 11277,
+        "other_blocks_in_source": []
+      },
+      "evidence": "PB25-comparison.json"
+    }
+  ],
+  "partial_native_files": [
+    {
+      "block": "FB51",
+      "source_file": "FB51ROLS.INI",
+      "size_bytes": 478,
+      "sha256": "405d21b840863cc311d3a968a5d15ab8fa7a6591850776a50e4c5fa836604ddb",
+      "fully_verified": false,
+      "method": "Only two unique prefix positions; jump target and body not verified",
+      "evidence": "FB51-partial-comparison.json"
+    }
+  ],
+  "counts": {
+    "full_code_blocks": 42,
+    "partial_code_blocks": 1,
+    "ordinary_code_blocks_without_full_listing": 2,
+    "ordinary_code_blocks_without_any_native_listing": 1,
+    "assembler_code_blocks": 5,
+    "unique_full_native_source_files": 41,
+    "unique_all_native_source_files": 42,
+    "runtime_DBs_received": 2,
+    "unique_native_source_files_including_runtime_DBs": 44
+  },
+  "runtime_data_files": [
+    {
+      "block": "DB15",
+      "source_file": "DB15ROLS.INI",
+      "size_bytes": 3676,
+      "sha256": "d35f756f123dc2829d191b37d228f273a447e4dedd4dedd28ea6ec36950c50ff",
+      "data_words": 132,
+      "method": "Complete native KH printout parsed; parameter KT/BCD decoding checked separately",
+      "evidence": "runtime-db-snapshots.json"
+    },
+    {
+      "block": "DB19",
+      "source_file": "DB19ROLS.INI",
+      "size_bytes": 3676,
+      "sha256": "51a353f5157a7284ec129d0dfedfd60fbe6387adc7938357c364d3040c7a6def",
+      "data_words": 132,
+      "method": "Complete native KH printout parsed; parameter KT/BCD decoding checked separately",
+      "evidence": "runtime-db-snapshots.json"
+    }
+  ]
+}

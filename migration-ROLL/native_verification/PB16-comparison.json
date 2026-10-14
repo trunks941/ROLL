@@ -1,0 +1,23 @@
+{
+  "block": "PB16",
+  "source_file": "PB16ROLS.INI",
+  "size_bytes": 37526,
+  "sha256": "0863b18063b58d0da3fcda158360ea38055ddeb51e8b9aaf5745ab85a1ed2f03",
+  "method": "All 34 native FBD networks manually compared; operand sets checked",
+  "pages": 13,
+  "networks": 34,
+  "block_bytes": 838,
+  "native_addressed_positions": 0,
+  "offline_positions_in_comparison_context": 414,
+  "offline_executing_instructions": 381,
+  "networks_manually_compared": 34,
+  "result": "All FBD network logic and operands match.",
+  "condition_definitions": {
+    "Z": "NOT E11.0 AND NOT E11.1 AND NOT E11.2 AND NOT E11.3 AND NOT E11.4 AND NOT E119.6 AND NOT E119.7 AND NOT E120.0 AND NOT E120.1",
+    "G": "M63.1 OR (E13.3 AND Z)",
+    "C8": "E11.1 OR E11.2 OR E11.3 OR E11.4 OR E119.6 OR E119.7 OR E120.0 OR E120.1",
+    "C7": "E11.1 OR E11.2 OR E11.3 OR E11.4 OR E119.6 OR E119.7 OR E120.0"
+  },
+  "review_table": "PB16-FBD-network-review.csv",
+  "limitations": "Manual comparison of native FBD logic, not instruction-by-instruction native STL confirmation or PLC execution."
+}

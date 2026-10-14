@@ -1,0 +1,7 @@
+﻿network;method;result;action_order;conditions;presets
+1;Static native FBD action-expression comparison;Match;= M 33.0;= M 33.0: (M37.7 OR M38.0 OR M39.7 OR M40.0 OR M40.1 OR M40.4 OR M41.0 OR M41.6 OR M41.7 OR M42.2 OR M42.3);
+2;Static native FBD action-expression comparison;Match;= M 33.1;= M 33.1: ((NOT M16.0 AND NOT M16.1 AND NOT M16.4 AND M37.2) OR M37.3 OR M37.5 OR M37.6 OR M39.4 OR M39.5 OR M40.2 OR M40.3 OR M40.6 OR M40.7 OR M41.2 OR M42.0 OR M42.4);
+3;Static native FBD action-expression comparison;Match;SE T 40;SE T 40: (NOT M3.1 AND (M33.0 OR M42.6 OR M43.4 OR M43.6 OR M43.7 OR M44.2 OR M45.0 OR M45.1 OR M45.5 OR M45.7 OR M46.1 OR M46.4 OR M46.6 OR M52.1 OR M52.2 OR M53.3) AND E0.2 AND M29.0);T 40: KT030.2
+4;Static native FBD action-expression comparison;Match;SE T 41;SE T 41: (NOT M3.1 AND ((NOT E11.2 AND M52.0) OR (NOT M15.1 AND M53.1) OR M33.1 OR M43.0 OR M43.2 OR M43.3 OR M44.0 OR M44.7 OR M45.3 OR M45.4 OR M46.2 OR M46.3 OR M46.7 OR M47.3 OR M52.3 OR M53.2 OR M53.5 OR M53.6) AND E0.2 AND M29.0);T 41: KT030.2
+5;Static native FBD action-expression comparison;Match;S M 34.1 | R M 34.1;S M 34.1: (T40 OR T41) | R M 34.1: (NOT E0.2 OR M3.1);
+6;Static native FBD action-expression comparison;Match;BE ;BE : ;

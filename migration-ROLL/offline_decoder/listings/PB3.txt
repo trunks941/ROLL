@@ -1,0 +1,87 @@
+PB3: PB 3 — MERKER FUER HANDBETRIEB
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xC380; block bytes: 172; SHA256: 298be95116009dd1983959c9477d6d1ca6920152dcdcfe3f51e032b58248b5ba
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 03 80 00 00 00 00 56
+Code starts at block offset 0x000A.
+000A [00C38A]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+000C [00C38C]  2801                       L      KB 1
+000E [00C38E]  2180                       !=F    
+0010 [00C390]  9914                       =      M 20.1 ; HB_01 — FAHREN IN GRUNDSTELLUNG
+0012 [00C392]  10FF                       BLD    255
+0014 [00C394]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0016 [00C396]  2802                       L      KB 2
+0018 [00C398]  2180                       !=F    
+001A [00C39A]  9A14                       =      M 20.2 ; HB_02 — FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+001C [00C39C]  10FF                       BLD    255
+001E [00C39E]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0020 [00C3A0]  2803                       L      KB 3
+0022 [00C3A2]  2180                       !=F    
+0024 [00C3A4]  9B14                       =      M 20.3 ; HB_03 — BAHN 1 EIN (VOR)                    OPT.
+0026 [00C3A6]  10FF                       BLD    255
+0028 [00C3A8]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+002A [00C3AA]  2804                       L      KB 4
+002C [00C3AC]  2180                       !=F    
+002E [00C3AE]  9C14                       =      M 20.4 ; HB_04 — BAHN 2 EIN                          OPT.
+0030 [00C3B0]  10FF                       BLD    255
+0032 [00C3B2]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0034 [00C3B4]  2805                       L      KB 5
+0036 [00C3B6]  2180                       !=F    
+0038 [00C3B8]  9D14                       =      M 20.5 ; HB_05 — BAHN 1+2 EIN                        OPT.
+003A [00C3BA]  10FF                       BLD    255
+003C [00C3BC]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+003E [00C3BE]  2807                       L      KB 7
+0040 [00C3C0]  2180                       !=F    
+0042 [00C3C2]  9F14                       =      M 20.7 ; HB_07 — TUER REINIGUNGSNLAGE OEFFNEN
+0044 [00C3C4]  10FF                       BLD    255
+0046 [00C3C6]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0048 [00C3C8]  280A                       L      KB 10
+004A [00C3CA]  2180                       !=F    
+004C [00C3CC]  9816                       =      M 22.0 ; HB_10 — WT-TRANSPORT AUS-/EINFAHREN         OPT.
+004E [00C3CE]  10FF                       BLD    255
+0050 [00C3D0]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0052 [00C3D2]  280B                       L      KB 11
+0054 [00C3D4]  2180                       !=F    
+0056 [00C3D6]  9916                       =      M 22.1 ; HB_11 — WT-TRANSPORT SENKEN/HEBEN           OPT.
+0058 [00C3D8]  10FF                       BLD    255
+005A [00C3DA]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+005C [00C3DC]  280C                       L      KB 12
+005E [00C3DE]  2180                       !=F    
+0060 [00C3E0]  9A16                       =      M 22.2 ; HB_12 — SPERRE 1 SCHLIESSEN/OEFFNEN         OPT.
+0062 [00C3E2]  10FF                       BLD    255
+0064 [00C3E4]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0066 [00C3E6]  280D                       L      KB 13
+0068 [00C3E8]  2180                       !=F    
+006A [00C3EA]  9B16                       =      M 22.3 ; HB_13 — SPERRE 2 SCHLIESSEN/OEFFNEN         OPT.
+006C [00C3EC]  10FF                       BLD    255
+006E [00C3EE]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0070 [00C3F0]  280E                       L      KB 14
+0072 [00C3F2]  2180                       !=F    
+0074 [00C3F4]  9C16                       =      M 22.4 ; HB_14 — SPERRE 3/4 OEFFNEN/SCHLIESSEN       OPT.
+0076 [00C3F6]  10FF                       BLD    255
+0078 [00C3F8]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+007A [00C3FA]  280F                       L      KB 15
+007C [00C3FC]  2180                       !=F    
+007E [00C3FE]  9D16                       =      M 22.5 ; HB_15 — SPERRE 5/6 OEFFNEN/SCHLIESSEN       OPT.
+0080 [00C400]  10FF                       BLD    255
+0082 [00C402]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0084 [00C404]  2814                       L      KB 20
+0086 [00C406]  2180                       !=F    
+0088 [00C408]  9817                       =      M 23.0 ; HB_20 — VERT.-TRANSPORT SENKEN/HEBEN
+008A [00C40A]  10FF                       BLD    255
+008C [00C40C]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+008E [00C40E]  2815                       L      KB 21
+0090 [00C410]  2180                       !=F    
+0092 [00C412]  9917                       =      M 23.1 ; HB_21 — HORIZ.-TRANSPORT ZURUECK/VOR
+0094 [00C414]  10FF                       BLD    255
+0096 [00C416]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+0098 [00C418]  2816                       L      KB 22
+009A [00C41A]  2180                       !=F    
+009C [00C41C]  9A17                       =      M 23.2 ; HB_22 — TROMMEL GERADESTELLEN/DREHEN
+009E [00C41E]  10FF                       BLD    255
+00A0 [00C420]  0AEF                       L      MB 239 ; HANDFUNK — HANDBETRIEB: AKTUELLE FUNKTION
+00A2 [00C422]  2817                       L      KB 23
+00A4 [00C424]  2180                       !=F    
+00A6 [00C426]  9B17                       =      M 23.3 ; HB_23 — TROMMEL GERADESTELLEN/SCHWENKEN
+00A8 [00C428]  10FF                       BLD    255
+00AA [00C42A]  6500                       BE     

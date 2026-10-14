@@ -1,0 +1,19 @@
+{
+  "block": "FB63",
+  "source_file": "FB63ROLS.INI",
+  "sha256": "42ee2a4e31a6f24faac478a268ecc028490e5bc9bbed1838b8671109be5aa0aa",
+  "size_bytes": 2842,
+  "pages": 2,
+  "networks": 5,
+  "block_bytes": 118,
+  "positions_compared": 49,
+  "executing_instructions": 42,
+  "BLD_display_rows": 7,
+  "jumps_compared": 0,
+  "addressed_positions": 49,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

@@ -1,0 +1,12 @@
+test_KT_bases_cover_short_and_long_intervals (__main__.RuntimeDBTests.test_KT_bases_cover_short_and_long_intervals) ... ok
+test_counter_values_are_BCD_instead_of_binary_hex (__main__.RuntimeDBTests.test_counter_values_are_BCD_instead_of_binary_hex) ... ok
+test_duplicate_word_is_rejected (__main__.RuntimeDBTests.test_duplicate_word_is_rejected) ... ok
+test_empty_132_marker_is_not_a_data_word (__main__.RuntimeDBTests.test_empty_132_marker_is_not_a_data_word) ... ok
+test_missing_word_is_rejected (__main__.RuntimeDBTests.test_missing_word_is_rejected) ... ok
+test_unused_or_bad_BCD_is_rejected (__main__.RuntimeDBTests.test_unused_or_bad_BCD_is_rejected) ... ok
+test_wrong_block_identity_is_rejected (__main__.RuntimeDBTests.test_wrong_block_identity_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.004s
+
+OK

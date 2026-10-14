@@ -1,0 +1,19 @@
+{
+  "block": "FB62",
+  "source_file": "FB62ROLS.INI",
+  "sha256": "a2abcaf65cf6c17a4a5bba133d30ac7211ccb6c9c7e5b6ee939c93af34d9db35",
+  "size_bytes": 2843,
+  "pages": 2,
+  "networks": 5,
+  "block_bytes": 118,
+  "positions_compared": 49,
+  "executing_instructions": 42,
+  "BLD_display_rows": 7,
+  "jumps_compared": 0,
+  "addressed_positions": 49,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

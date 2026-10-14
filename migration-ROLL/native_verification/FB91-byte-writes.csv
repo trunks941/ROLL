@@ -1,0 +1,32 @@
+﻿source_MB;source_expression;target_DB;target_DW;target_half;target_bits;inverted;role;native_load_address;native_store_address
+5;MB5;210;0;DR;0..7;False;Alarm;0017;0018
+6;MB6;210;0;DL;8..15;False;Alarm;0019;001A
+7;MB7;210;1;DR;0..7;False;Alarm;001B;001C
+8;MB8;210;1;DL;8..15;False;Alarm;001D;001E
+9;MB9;210;2;DR;0..7;False;Alarm;001F;0020
+10;MB10;210;2;DL;8..15;False;Alarm;0021;0022
+5;NOT MB5;210;17;DR;0..7;True;PLC acknowledgement;0024;0025
+6;NOT MB6;210;17;DL;8..15;True;PLC acknowledgement;0026;0027
+7;NOT MB7;210;18;DR;0..7;True;PLC acknowledgement;0028;0029
+8;NOT MB8;210;18;DL;8..15;True;PLC acknowledgement;002A;002B
+9;NOT MB9;210;19;DR;0..7;True;PLC acknowledgement;002C;002D
+10;NOT MB10;210;19;DL;8..15;True;PLC acknowledgement;002E;002F
+11;MB11;210;3;DR;0..7;False;Alarm;004B;004C
+12;MB12;210;3;DL;8..15;False;Alarm;004D;004E
+13;MB13;210;4;DR;0..7;False;Alarm;004F;0050
+14;MB14;210;4;DL;8..15;False;Alarm;0051;0052
+15;MB15;210;5;DR;0..7;False;Alarm;0053;0054
+16;MB16;210;5;DL;8..15;False;Alarm;0055;0056
+17;MB17;210;6;DR;0..7;False;Alarm;0057;0058
+18;MB18;210;6;DL;8..15;False;Alarm;0059;005A
+19;MB19;210;7;DR;0..7;False;Alarm;005B;005C
+11;NOT MB11;210;20;DR;0..7;True;PLC acknowledgement;005E;005F
+12;NOT MB12;210;20;DL;8..15;True;PLC acknowledgement;0060;0061
+13;NOT MB13;210;21;DR;0..7;True;PLC acknowledgement;0062;0063
+14;NOT MB14;210;21;DL;8..15;True;PLC acknowledgement;0064;0065
+15;NOT MB15;210;22;DR;0..7;True;PLC acknowledgement;0066;0067
+16;NOT MB16;210;22;DL;8..15;True;PLC acknowledgement;0068;0069
+17;NOT MB17;210;23;DR;0..7;True;PLC acknowledgement;006A;006B
+18;NOT MB18;210;23;DL;8..15;True;PLC acknowledgement;006C;006D
+19;NOT MB19;210;24;DR;0..7;True;PLC acknowledgement;006E;006F
+20;NOT MB20;210;24;DL;8..15;True;PLC acknowledgement;0070;0071

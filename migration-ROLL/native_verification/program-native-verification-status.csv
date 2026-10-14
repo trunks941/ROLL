@@ -1,0 +1,50 @@
+﻿block;block_bytes;assembler_flag;native_status;native_source
+FB0;22;False;"Decoded offline; native listing required";
+FB3;494;False;All addressed native positions confirmed;FB3ROLLS.INI
+FB51;1052;False;"Partial prefix only; editor also exposes two lines; body and jump targets unverified";FB51ROLS.INI
+FB60;702;False;All addressed native positions confirmed;FB60ROLS.INI
+FB61;64;False;All addressed native positions confirmed;FB61ROLS.INI
+FB62;118;False;All addressed native positions confirmed;FB62ROLS.INI
+FB63;118;False;All addressed native positions confirmed;FB63ROLS.INI
+FB69;50;False;All addressed native positions confirmed;FB69ROLS.INI
+FB89;282;False;"Native STL confirmed; 118 addressed positions plus final unaddressed BE";FB89ROLS.INI
+FB90;214;False;All addressed native positions confirmed;FB90ROLS.INI
+FB91;240;False;All addressed native positions confirmed;FB91ROLS.INI
+FB92;828;False;All addressed native positions confirmed;FB92ROLS.INI
+FB95;102;False;All addressed native positions confirmed;FB95ROLS.INI
+FB96;70;False;All addressed native positions confirmed;FB96ROLS.INI
+FB101;182;False;All addressed native positions confirmed;FB101RLS.INI
+FB105;332;False;All addressed native positions confirmed;FB105RLS.INI
+FB111;218;False;All addressed native positions confirmed;FB111RLS.INI
+FB240;44;True;"Assembler body retained raw; native documentation/function verification required";
+FB241;50;True;"Assembler body retained raw; native documentation/function verification required";
+FB242;56;True;"Assembler body retained raw; native documentation/function verification required";
+FB243;74;True;"Assembler body retained raw; native documentation/function verification required";
+OB1;150;False;"Native STL confirmed; networks 3 and 4 FBD manually compared";OB1ROLLS.INI
+OB13;44;False;All addressed native positions confirmed;OB13ROLS.INI
+OB21;42;False;All addressed native positions confirmed;OB21ROLS.INI
+OB22;42;False;All addressed native positions confirmed;OB22ROLS.INI
+OB31;16;True;"Assembler body retained raw; native documentation/function verification required";
+OB34;18;False;All addressed native positions confirmed;OB34ROLS.INI
+PB2;1540;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB2ROLLS.INI
+PB3;172;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB3ROLLS.INI
+PB4;262;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB4ROLLS.INI
+PB7;398;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB7RROLS.INI
+PB8;218;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB8ROLLS.INI
+PB9;1456;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB9ROLLS.INI
+PB10;1442;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB10ROLS.INI
+PB13;1464;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB13ROLS.INI
+PB14;530;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB14ROLS.INI
+PB15;182;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB15ROLS.INI
+PB16;838;False;"Native FBD confirmed; all 34 networks manually compared";PB16ROLS.INI
+PB17;686;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB17ROLS.INI
+PB18;466;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB18ROLS.INI
+PB19;302;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB19ROLS.INI
+PB20;1164;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB20ROLS.INI
+PB21;1056;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB21ROLS.INI
+PB23;344;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB23ROLS.INI
+PB24;66;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB24ROLS.INI
+PB25;336;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB25ROLS.INI
+PB50;64;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB50ROLS.INI
+PB51;158;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB51ROLS.INI
+PB52;346;False;"Native FBD/mixed networks confirmed; complete static action-expression comparison";PB51ROLS.INI

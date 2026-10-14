@@ -1,0 +1,31 @@
+PB50: PB 50 — BAUSTEIN FUER ZAEHLER UND ZEITEN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xF480; block bytes: 64; SHA256: f03772188b65aee410904e5758f8fe6b2b284c0e3179e25c69faaf8d69f0234e
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 32 80 00 00 00 00 20
+Code starts at block offset 0x000A.
+000A [00F48A]  1083                       BLD    131
+000C [00F48C]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+000E [00F48E]  10FF                       BLD    255
+0010 [00F490]  1083                       BLD    131
+0012 [00F492]  8100                       U      M 0.1 ; RI/NEUST — RICHTIMPULSMERKER FUER NEUSTART
+0014 [00F494]  B200                       R      M 0.2 ; HM/RINEU — HM F.RICHTIMPULSMERKER F.NEUSTART
+0016 [00F496]  10FF                       BLD    255
+0018 [00F498]  C003                       U      E 3.0 ; STEUSP — STEUERSPANNUNG VORHANDEN
+001A [00F49A]  A100                       UN     M 0.1 ; RI/NEUST — RICHTIMPULSMERKER FUER NEUSTART
+001C [00F49C]  30022008                   L      KT 008.2
+0020 [00F4A0]  240B                       SE     T 11 ; T11 — VERZ.STOERUNGSANZ.ALLGEMEIN
+0022 [00F4A2]  0000                       NOP0   
+0024 [00F4A4]  0000                       NOP0   
+0026 [00F4A6]  0000                       NOP0   
+0028 [00F4A8]  0000                       NOP0   
+002A [00F4AA]  10FF                       BLD    255
+002C [00F4AC]  801D                       U      M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+002E [00F4AE]  30021020                   L      KT 020.1
+0032 [00F4B2]  240D                       SE     T 13 ; T13 — VERZ.FREIGABE BAHNEN
+0034 [00F4B4]  0000                       NOP0   
+0036 [00F4B6]  0000                       NOP0   
+0038 [00F4B8]  0000                       NOP0   
+003A [00F4BA]  0000                       NOP0   
+003C [00F4BC]  10FF                       BLD    255
+003E [00F4BE]  6500                       BE     

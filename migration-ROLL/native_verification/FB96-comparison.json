@@ -1,0 +1,19 @@
+{
+  "block": "FB96",
+  "source_file": "FB96ROLS.INI",
+  "sha256": "b4167ceda586269bdf7633f9271f4e8d80597df8addb701d6c180aca7ab98946",
+  "size_bytes": 858,
+  "pages": 1,
+  "networks": 1,
+  "block_bytes": 70,
+  "positions_compared": 18,
+  "executing_instructions": 14,
+  "BLD_display_rows": 4,
+  "jumps_compared": 0,
+  "addressed_positions": 18,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 2,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

@@ -1,0 +1,765 @@
+{
+  "block": "PB25",
+  "source_file": "PB25ROLS.INI",
+  "size_bytes": 11277,
+  "sha256": "2eaff3a5d78e5222735886b2894c3d526b5af9a1eec0141863d8009f3fe19f43",
+  "source_scope": {
+    "source_byte_start": 0,
+    "source_byte_end": 11277,
+    "other_blocks_in_source": []
+  },
+  "pages": 5,
+  "block_bytes": 336,
+  "networks": 25,
+  "matched": 25,
+  "reviews": [
+    {
+      "network": 1,
+      "result": "Match",
+      "method": "All native STL positions in this network compared",
+      "actions": [
+        {
+          "command": "OPEN_DB",
+          "target": "DB 15",
+          "condition": "",
+          "condition_ast": null,
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 2,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 87.0",
+          "condition": "(MB5 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 5"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 3,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 87.1",
+          "condition": "(MB6 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 6"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 4,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 87.2",
+          "condition": "(MB7 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 7"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 5,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 87.3",
+          "condition": "(MB8 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 8"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 6,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 87.4",
+          "condition": "(MB9 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 9"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 7,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 87.5",
+          "condition": "(MB10 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 10"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 8,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 87.6",
+          "condition": "(MB11 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 11"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 9,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 87.7",
+          "condition": "(MB12 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 12"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 10,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 88.0",
+          "condition": "(MB13 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 13"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 11,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 88.1",
+          "condition": "(MB14 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 14"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 12,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 88.2",
+          "condition": "(MB15 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 15"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 13,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 88.3",
+          "condition": "(MB16 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 16"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 14,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 88.4",
+          "condition": "(MB17 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 17"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 15,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 88.5",
+          "condition": "(MB18 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 18"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 16,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 88.6",
+          "condition": "(MB19 NE 0)",
+          "condition_ast": [
+            "NE",
+            [
+              "READ",
+              "MB 19"
+            ],
+            [
+              "NUMBER",
+              0
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 17,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "M 88.7",
+          "condition": "(M87.0 OR M87.1 OR M87.2 OR M87.3 OR M87.4 OR M87.5 OR M87.6 OR M87.7 OR M88.0 OR M88.1 OR M88.2 OR M88.3 OR M88.4 OR M88.5 OR M88.6)",
+          "condition_ast": [
+            "OR",
+            [
+              "READ",
+              "M 87.0"
+            ],
+            [
+              "READ",
+              "M 87.1"
+            ],
+            [
+              "READ",
+              "M 87.2"
+            ],
+            [
+              "READ",
+              "M 87.3"
+            ],
+            [
+              "READ",
+              "M 87.4"
+            ],
+            [
+              "READ",
+              "M 87.5"
+            ],
+            [
+              "READ",
+              "M 87.6"
+            ],
+            [
+              "READ",
+              "M 87.7"
+            ],
+            [
+              "READ",
+              "M 88.0"
+            ],
+            [
+              "READ",
+              "M 88.1"
+            ],
+            [
+              "READ",
+              "M 88.2"
+            ],
+            [
+              "READ",
+              "M 88.3"
+            ],
+            [
+              "READ",
+              "M 88.4"
+            ],
+            [
+              "READ",
+              "M 88.5"
+            ],
+            [
+              "READ",
+              "M 88.6"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 18,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 16.4",
+          "condition": "(E1.2 OR M88.7)",
+          "condition_ast": [
+            "OR",
+            [
+              "READ",
+              "E 1.2"
+            ],
+            [
+              "READ",
+              "M 88.7"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 19,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 16.5",
+          "condition": "((M3.6 AND M31.6) OR E1.2)",
+          "condition_ast": [
+            "OR",
+            [
+              "AND",
+              [
+                "READ",
+                "M 3.6"
+              ],
+              [
+                "READ",
+                "M 31.6"
+              ]
+            ],
+            [
+              "READ",
+              "E 1.2"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 20,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 16.0",
+          "condition": "(E1.2 OR E3.4)",
+          "condition_ast": [
+            "OR",
+            [
+              "READ",
+              "E 1.2"
+            ],
+            [
+              "READ",
+              "E 3.4"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 21,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 16.2",
+          "condition": "((NOT M31.5 AND M28.4) OR (M3.6 AND M74.0) OR E1.2)",
+          "condition_ast": [
+            "OR",
+            [
+              "AND",
+              [
+                "NOT",
+                [
+                  "READ",
+                  "M 31.5"
+                ]
+              ],
+              [
+                "READ",
+                "M 28.4"
+              ]
+            ],
+            [
+              "AND",
+              [
+                "READ",
+                "M 3.6"
+              ],
+              [
+                "READ",
+                "M 74.0"
+              ]
+            ],
+            [
+              "READ",
+              "E 1.2"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 22,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 16.3",
+          "condition": "((M3.6 AND M31.5) OR E1.2 OR M31.4)",
+          "condition_ast": [
+            "OR",
+            [
+              "AND",
+              [
+                "READ",
+                "M 3.6"
+              ],
+              [
+                "READ",
+                "M 31.5"
+              ]
+            ],
+            [
+              "READ",
+              "E 1.2"
+            ],
+            [
+              "READ",
+              "M 31.4"
+            ]
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 23,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "=",
+          "target": "A 19.3",
+          "condition": "E2.0",
+          "condition_ast": [
+            "READ",
+            "E 2.0"
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 24,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "S",
+          "target": "M 71.5",
+          "condition": "((((E14.0 AND M37.1) OR M53.6) AND E0.2) OR (E0.1 AND M190.6 AND M20.7))",
+          "condition_ast": [
+            "OR",
+            [
+              "AND",
+              [
+                "OR",
+                [
+                  "AND",
+                  [
+                    "READ",
+                    "E 14.0"
+                  ],
+                  [
+                    "READ",
+                    "M 37.1"
+                  ]
+                ],
+                [
+                  "READ",
+                  "M 53.6"
+                ]
+              ],
+              [
+                "READ",
+                "E 0.2"
+              ]
+            ],
+            [
+              "AND",
+              [
+                "READ",
+                "E 0.1"
+              ],
+              [
+                "READ",
+                "M 190.6"
+              ],
+              [
+                "READ",
+                "M 20.7"
+              ]
+            ]
+          ],
+          "preset": ""
+        },
+        {
+          "command": "R",
+          "target": "M 71.5",
+          "condition": "((E0.1 AND M190.5 AND M20.7) OR (E0.2 AND M37.2))",
+          "condition_ast": [
+            "OR",
+            [
+              "AND",
+              [
+                "READ",
+                "E 0.1"
+              ],
+              [
+                "READ",
+                "M 190.5"
+              ],
+              [
+                "READ",
+                "M 20.7"
+              ]
+            ],
+            [
+              "AND",
+              [
+                "READ",
+                "E 0.2"
+              ],
+              [
+                "READ",
+                "M 37.2"
+              ]
+            ]
+          ],
+          "preset": ""
+        },
+        {
+          "command": "=",
+          "target": "A 17.7",
+          "condition": "M71.5",
+          "condition_ast": [
+            "READ",
+            "M 71.5"
+          ],
+          "preset": ""
+        }
+      ]
+    },
+    {
+      "network": 25,
+      "result": "Match",
+      "method": "Static native FBD action-expression comparison",
+      "actions": [
+        {
+          "command": "BE",
+          "target": "",
+          "condition": "",
+          "condition_ast": null,
+          "preset": ""
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "native_addressed_STL_positions": 3,
+  "offline_positions_in_context": 148,
+  "offline_executing_instructions": 123,
+  "method": "Static native FBD action-expression comparison; addressed STL fragments compared separately",
+  "limitations": "Boolean logic, read operands, timer/counter operation types and presets are compared statically. No timer/counter execution, PLC scan simulation, TIA compilation or hardware test.",
+  "result": "All native network action expressions and operands match."
+}

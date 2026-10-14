@@ -1,0 +1,234 @@
+PB18: PB 18 — EINZELGRUND- UND EINZELARBEITSSTELLUNG
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xF280; block bytes: 466; SHA256: 4bad271b6a07e1ec2d08c921e7e9a125c986ff934f3234c1186ca6584e00eaf7
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 12 80 00 00 00 00 E9
+Code starts at block offset 0x000A.
+000A [00F28A]  8A46                       O      M 70.2 ; M70.2 — SM WT'S UEBERFAHREN SPERRE 3
+000C [00F28C]  8B46                       O      M 70.3 ; M70.3 — SM WT'S UEBERFAHREN SPERRE 4
+000E [00F28E]  8C46                       O      M 70.4 ; M70.4 — SM WT'S UEBERFAHREN SPERRE 1
+0010 [00F290]  8E46                       O      M 70.6 ; M70.6 — SM WT'S UEBERFAHREN SPERRE 6
+0012 [00F292]  8847                       O      M 71.0 ; M71.0 — SM WT AN SPERRE 4 AUS REINIGUNG
+0014 [00F294]  9D50                       =      M 80.5 ; M80.5 — HM FUER FUNKTION "99"
+0016 [00F296]  10FF                       BLD    255
+0018 [00F298]  BA00                       U(     
+001A [00F29A]  8914                       O      M 20.1 ; HB_01 — FAHREN IN GRUNDSTELLUNG
+001C [00F29C]  8A14                       O      M 20.2 ; HB_02 — FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+001E [00F29E]  BF00                       )      
+0020 [00F2A0]  841C                       U      M 28.4 ; M28.4 — ZUSAMMENFASSUNG GRUNDSTELLUNG
+0022 [00F2A2]  FB00                       O      
+0024 [00F2A4]  8314                       U      M 20.3 ; HB_03 — BAHN 1 EIN (VOR)                    OPT.
+0026 [00F2A6]  E0F0                       UN     A 112.0 ; K112.0M — ROLLENBAHN 1 BELADEN
+0028 [00F2A8]  FB00                       O      
+002A [00F2AA]  8414                       U      M 20.4 ; HB_04 — BAHN 2 EIN                          OPT.
+002C [00F2AC]  E5F0                       UN     A 112.5 ; K112.5 — ROLLENBAHN 2 ENTLADEN
+002E [00F2AE]  FB00                       O      
+0030 [00F2B0]  8514                       U      M 20.5 ; HB_05 — BAHN 1+2 EIN                        OPT.
+0032 [00F2B2]  E0F0                       UN     A 112.0 ; K112.0M — ROLLENBAHN 1 BELADEN
+0034 [00F2B4]  E5F0                       UN     A 112.5 ; K112.5 — ROLLENBAHN 2 ENTLADEN
+0036 [00F2B6]  FB00                       O      
+0038 [00F2B8]  8714                       U      M 20.7 ; HB_07 — TUER REINIGUNGSNLAGE OEFFNEN
+003A [00F2BA]  E791                       UN     A 17.7 ; K17.7A — POT.FREI.MELD.: REINIGUNG BEENDET
+003C [00F2BC]  98FA                       =      M 250.0 ; M250.0 — SCHMIERMERKER
+003E [00F2BE]  10FF                       BLD    255
+0040 [00F2C0]  8016                       U      M 22.0 ; HB_10 — WT-TRANSPORT AUS-/EINFAHREN         OPT.
+0042 [00F2C2]  C17C                       U      E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+0044 [00F2C4]  FB00                       O      
+0046 [00F2C6]  8116                       U      M 22.1 ; HB_11 — WT-TRANSPORT SENKEN/HEBEN           OPT.
+0048 [00F2C8]  C47C                       U      E 124.4 ; S124.4 — WT-TRANSPORT UNTEN
+004A [00F2CA]  FB00                       O      
+004C [00F2CC]  8216                       U      M 22.2 ; HB_12 — SPERRE 1 SCHLIESSEN/OEFFNEN         OPT.
+004E [00F2CE]  E0F1                       UN     A 113.0 ; Y113.0 — SPERRE 1 OEFFNEN
+0050 [00F2D0]  FB00                       O      
+0052 [00F2D2]  8316                       U      M 22.3 ; HB_13 — SPERRE 2 SCHLIESSEN/OEFFNEN         OPT.
+0054 [00F2D4]  E1F1                       UN     A 113.1 ; Y113.1 — SPERRE 2 SCHLIESSEN
+0056 [00F2D6]  FB00                       O      
+0058 [00F2D8]  8416                       U      M 22.4 ; HB_14 — SPERRE 3/4 OEFFNEN/SCHLIESSEN       OPT.
+005A [00F2DA]  E3F1                       UN     A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+005C [00F2DC]  C2F1                       U      A 113.2 ; Y113.2 — SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+005E [00F2DE]  FB00                       O      
+0060 [00F2E0]  8516                       U      M 22.5 ; HB_15 — SPERRE 5/6 OEFFNEN/SCHLIESSEN       OPT.
+0062 [00F2E2]  C4F1                       U      A 113.4 ; Y113.4 — SPERRE 5 OEFFNEN, SPERRE 6 SCHLIESSEN
+0064 [00F2E4]  E5F1                       UN     A 113.5 ; Y113.5 — SPERRE 5 SCHLIESSEN, SPERRE 6 OEFFNEN
+0066 [00F2E6]  88FA                       O      M 250.0 ; M250.0 — SCHMIERMERKER
+0068 [00F2E8]  98FA                       =      M 250.0 ; M250.0 — SCHMIERMERKER
+006A [00F2EA]  10FF                       BLD    255
+006C [00F2EC]  8017                       U      M 23.0 ; HB_20 — VERT.-TRANSPORT SENKEN/HEBEN
+006E [00F2EE]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+0070 [00F2F0]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0072 [00F2F2]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+0074 [00F2F4]  FB00                       O      
+0076 [00F2F6]  8017                       U      M 23.0 ; HB_20 — VERT.-TRANSPORT SENKEN/HEBEN
+0078 [00F2F8]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+007A [00F2FA]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+007C [00F2FC]  BA00                       U(     
+007E [00F2FE]  C90B                       O      E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+0080 [00F300]  CA0B                       O      E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+0082 [00F302]  CB0B                       O      E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+0084 [00F304]  CC0B                       O      E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+0086 [00F306]  CE77                       O      E 119.6 ; B119.6 — HORIZ.-TRANSPORT STATION 5
+0088 [00F308]  CF77                       O      E 119.7 ; B119.7 — HORIZ.-TRANSPORT STATION 6
+008A [00F30A]  C878                       O      E 120.0 ; B120.0 — HORIZ.-TRANSPORT STATION 7
+008C [00F30C]  C978                       O      E 120.1 ; B120.1 — HORIZ.-TRANSPORT STATION 8
+008E [00F30E]  BF00                       )      
+0090 [00F310]  FB00                       O      
+0092 [00F312]  8117                       U      M 23.1 ; HB_21 — HORIZ.-TRANSPORT ZURUECK/VOR
+0094 [00F314]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+0096 [00F316]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+0098 [00F318]  FB00                       O      
+009A [00F31A]  BA00                       U(     
+009C [00F31C]  8A17                       O      M 23.2 ; HB_22 — TROMMEL GERADESTELLEN/DREHEN
+009E [00F31E]  8B17                       O      M 23.3 ; HB_23 — TROMMEL GERADESTELLEN/SCHWENKEN
+00A0 [00F320]  BF00                       )      
+00A2 [00F322]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+00A4 [00F324]  88FA                       O      M 250.0 ; M250.0 — SCHMIERMERKER
+00A6 [00F326]  98FA                       =      M 250.0 ; M250.0 — SCHMIERMERKER
+00A8 [00F328]  10FF                       BLD    255
+00AA [00F32A]  8118                       U      M 24.1 ; HB_36 — FUELLEN VE-WASSER IN STAT.1-3,OEAS
+00AC [00F32C]  E194                       UN     A 20.1 ; K20.1M — PUMPE P01 ANLAGE FUELLEN MIT VE-WASSER
+00AE [00F32E]  88FA                       O      M 250.0 ; M250.0 — SCHMIERMERKER
+00B0 [00F330]  98FA                       =      M 250.0 ; M250.0 — SCHMIERMERKER
+00B2 [00F332]  10FF                       BLD    255
+00B4 [00F334]  8019                       U      M 25.0 ; HB_50 — FUELLEN AUS RAV IN STATION 1-3,OEAS
+00B6 [00F336]  BA00                       U(     
+00B8 [00F338]  EC94                       ON     A 20.4 ; K20.4M — PUMPE P6 RAV-REINTANK -> ANLAGE
+00BA [00F33A]  EE96                       ON     A 22.6 ; Y22.6 — MV FUELLEN STAT.1-3 AUS KONDENSAT RAV
+00BC [00F33C]  BF00                       )      
+00BE [00F33E]  88FA                       O      M 250.0 ; M250.0 — SCHMIERMERKER
+00C0 [00F340]  98FA                       =      M 250.0 ; M250.0 — SCHMIERMERKER
+00C2 [00F342]  10FF                       BLD    255
+00C4 [00F344]  801A                       U      M 26.0 ; HB_60 — UMPUMPEN IN STATION 1-3,ABSETZBEHAELTER
+00C6 [00F346]  E694                       UN     A 20.6 ; K20.6M — PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+00C8 [00F348]  FB00                       O      
+00CA [00F34A]  851A                       U      M 26.5 ; HB_65 — UMPUMPEN IN SCHMUTZTANK RAV
+00CC [00F34C]  E495                       UN     A 21.4 ; Y21.4 — MV ZULAUF SCHMUTZTANK RAV
+00CE [00F34E]  FB00                       O      
+00D0 [00F350]  861A                       U      M 26.6 ; HB_66 — SCHAUMBREMSE IN RAV-VERDAMPFER DOSIEREN
+00D2 [00F352]  E594                       UN     A 20.5 ; K20.5M — DOSIERPUMPE P7 SCHAUMBREMSE RAV-VERD.
+00D4 [00F354]  88FA                       O      M 250.0 ; M250.0 — SCHMIERMERKER
+00D6 [00F356]  98FA                       =      M 250.0 ; M250.0 — SCHMIERMERKER
+00D8 [00F358]  10FF                       BLD    255
+00DA [00F35A]  841B                       U      M 27.4 ; HB_72 — UMPUMPEN IN ENTSORGUNG BAUSEITS
+00DC [00F35C]  E694                       UN     A 20.6 ; K20.6M — PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+00DE [00F35E]  FB00                       O      
+00E0 [00F360]  851B                       U      M 27.5 ; HB_73 — VERDAMPFER RAV FUELL.AUS SCHMUTZT.
+00E2 [00F362]  E695                       UN     A 21.6 ; Y21.6 — MV ZULAUF VERDAMPFER RAV
+00E4 [00F364]  FB00                       O      
+00E6 [00F366]  871B                       U      M 27.7 ; HB_99 — KORREKTUR SETZM. WT-VERFOLGUNG
+00E8 [00F368]  A550                       UN     M 80.5 ; M80.5 — HM FUER FUNKTION "99"
+00EA [00F36A]  88FA                       O      M 250.0 ; M250.0 — SCHMIERMERKER
+00EC [00F36C]  98FA                       =      M 250.0 ; M250.0 — SCHMIERMERKER
+00EE [00F36E]  10FF                       BLD    255
+00F0 [00F370]  8314                       U      M 20.3 ; HB_03 — BAHN 1 EIN (VOR)                    OPT.
+00F2 [00F372]  C0F0                       U      A 112.0 ; K112.0M — ROLLENBAHN 1 BELADEN
+00F4 [00F374]  FB00                       O      
+00F6 [00F376]  8414                       U      M 20.4 ; HB_04 — BAHN 2 EIN                          OPT.
+00F8 [00F378]  C5F0                       U      A 112.5 ; K112.5 — ROLLENBAHN 2 ENTLADEN
+00FA [00F37A]  FB00                       O      
+00FC [00F37C]  8514                       U      M 20.5 ; HB_05 — BAHN 1+2 EIN                        OPT.
+00FE [00F37E]  BA00                       U(     
+0100 [00F380]  C8F0                       O      A 112.0 ; K112.0M — ROLLENBAHN 1 BELADEN
+0102 [00F382]  CDF0                       O      A 112.5 ; K112.5 — ROLLENBAHN 2 ENTLADEN
+0104 [00F384]  BF00                       )      
+0106 [00F386]  FB00                       O      
+0108 [00F388]  8714                       U      M 20.7 ; HB_07 — TUER REINIGUNGSNLAGE OEFFNEN
+010A [00F38A]  C791                       U      A 17.7 ; K17.7A — POT.FREI.MELD.: REINIGUNG BEENDET
+010C [00F38C]  98FC                       =      M 252.0 ; M252.0 — SCHMIERMERKER
+010E [00F38E]  10FF                       BLD    255
+0110 [00F390]  8016                       U      M 22.0 ; HB_10 — WT-TRANSPORT AUS-/EINFAHREN         OPT.
+0112 [00F392]  C27C                       U      E 124.2 ; B124.2 — WT-TRANSPORT EINGEFAHREN
+0114 [00F394]  FB00                       O      
+0116 [00F396]  8116                       U      M 22.1 ; HB_11 — WT-TRANSPORT SENKEN/HEBEN           OPT.
+0118 [00F398]  C57C                       U      E 124.5 ; S124.5 — WT-TRANSPORT OBEN
+011A [00F39A]  FB00                       O      
+011C [00F39C]  8216                       U      M 22.2 ; HB_12 — SPERRE 1 SCHLIESSEN/OEFFNEN         OPT.
+011E [00F39E]  C0F1                       U      A 113.0 ; Y113.0 — SPERRE 1 OEFFNEN
+0120 [00F3A0]  FB00                       O      
+0122 [00F3A2]  8316                       U      M 22.3 ; HB_13 — SPERRE 2 SCHLIESSEN/OEFFNEN         OPT.
+0124 [00F3A4]  C1F1                       U      A 113.1 ; Y113.1 — SPERRE 2 SCHLIESSEN
+0126 [00F3A6]  FB00                       O      
+0128 [00F3A8]  8416                       U      M 22.4 ; HB_14 — SPERRE 3/4 OEFFNEN/SCHLIESSEN       OPT.
+012A [00F3AA]  C3F1                       U      A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+012C [00F3AC]  E2F1                       UN     A 113.2 ; Y113.2 — SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+012E [00F3AE]  FB00                       O      
+0130 [00F3B0]  8516                       U      M 22.5 ; HB_15 — SPERRE 5/6 OEFFNEN/SCHLIESSEN       OPT.
+0132 [00F3B2]  E4F1                       UN     A 113.4 ; Y113.4 — SPERRE 5 OEFFNEN, SPERRE 6 SCHLIESSEN
+0134 [00F3B4]  C5F1                       U      A 113.5 ; Y113.5 — SPERRE 5 SCHLIESSEN, SPERRE 6 OEFFNEN
+0136 [00F3B6]  88FC                       O      M 252.0 ; M252.0 — SCHMIERMERKER
+0138 [00F3B8]  98FC                       =      M 252.0 ; M252.0 — SCHMIERMERKER
+013A [00F3BA]  10FF                       BLD    255
+013C [00F3BC]  8017                       U      M 23.0 ; HB_20 — VERT.-TRANSPORT SENKEN/HEBEN
+013E [00F3BE]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+0140 [00F3C0]  BA00                       U(     
+0142 [00F3C2]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+0144 [00F3C4]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+0146 [00F3C6]  FB00                       O      
+0148 [00F3C8]  BA00                       U(     
+014A [00F3CA]  C90B                       O      E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+014C [00F3CC]  CA0B                       O      E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+014E [00F3CE]  CB0B                       O      E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+0150 [00F3D0]  CC0B                       O      E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+0152 [00F3D2]  CE77                       O      E 119.6 ; B119.6 — HORIZ.-TRANSPORT STATION 5
+0154 [00F3D4]  CF77                       O      E 119.7 ; B119.7 — HORIZ.-TRANSPORT STATION 6
+0156 [00F3D6]  C878                       O      E 120.0 ; B120.0 — HORIZ.-TRANSPORT STATION 7
+0158 [00F3D8]  C978                       O      E 120.1 ; B120.1 — HORIZ.-TRANSPORT STATION 8
+015A [00F3DA]  BF00                       )      
+015C [00F3DC]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+015E [00F3DE]  BF00                       )      
+0160 [00F3E0]  FB00                       O      
+0162 [00F3E2]  8117                       U      M 23.1 ; HB_21 — HORIZ.-TRANSPORT ZURUECK/VOR
+0164 [00F3E4]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+0166 [00F3E6]  E197                       UN     A 23.1 ; K23.1M — ANTRIEB IN DER ANLAGE HORIZ.-TR.VOR
+0168 [00F3E8]  BA00                       U(     
+016A [00F3EA]  C90B                       O      E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+016C [00F3EC]  CA0B                       O      E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+016E [00F3EE]  CB0B                       O      E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+0170 [00F3F0]  CC0B                       O      E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+0172 [00F3F2]  CE77                       O      E 119.6 ; B119.6 — HORIZ.-TRANSPORT STATION 5
+0174 [00F3F4]  CF77                       O      E 119.7 ; B119.7 — HORIZ.-TRANSPORT STATION 6
+0176 [00F3F6]  C878                       O      E 120.0 ; B120.0 — HORIZ.-TRANSPORT STATION 7
+0178 [00F3F8]  C978                       O      E 120.1 ; B120.1 — HORIZ.-TRANSPORT STATION 8
+017A [00F3FA]  BF00                       )      
+017C [00F3FC]  FB00                       O      
+017E [00F3FE]  BA00                       U(     
+0180 [00F400]  8A17                       O      M 23.2 ; HB_22 — TROMMEL GERADESTELLEN/DREHEN
+0182 [00F402]  8B17                       O      M 23.3 ; HB_23 — TROMMEL GERADESTELLEN/SCHWENKEN
+0184 [00F404]  BF00                       )      
+0186 [00F406]  A13F                       UN     M 63.1 ; M_GERADE — TROMMEL GERADE
+0188 [00F408]  88FC                       O      M 252.0 ; M252.0 — SCHMIERMERKER
+018A [00F40A]  98FC                       =      M 252.0 ; M252.0 — SCHMIERMERKER
+018C [00F40C]  10FF                       BLD    255
+018E [00F40E]  8118                       U      M 24.1 ; HB_36 — FUELLEN VE-WASSER IN STAT.1-3,OEAS
+0190 [00F410]  C194                       U      A 20.1 ; K20.1M — PUMPE P01 ANLAGE FUELLEN MIT VE-WASSER
+0192 [00F412]  88FC                       O      M 252.0 ; M252.0 — SCHMIERMERKER
+0194 [00F414]  98FC                       =      M 252.0 ; M252.0 — SCHMIERMERKER
+0196 [00F416]  10FF                       BLD    255
+0198 [00F418]  8019                       U      M 25.0 ; HB_50 — FUELLEN AUS RAV IN STATION 1-3,OEAS
+019A [00F41A]  C494                       U      A 20.4 ; K20.4M — PUMPE P6 RAV-REINTANK -> ANLAGE
+019C [00F41C]  C696                       U      A 22.6 ; Y22.6 — MV FUELLEN STAT.1-3 AUS KONDENSAT RAV
+019E [00F41E]  88FC                       O      M 252.0 ; M252.0 — SCHMIERMERKER
+01A0 [00F420]  98FC                       =      M 252.0 ; M252.0 — SCHMIERMERKER
+01A2 [00F422]  10FF                       BLD    255
+01A4 [00F424]  801A                       U      M 26.0 ; HB_60 — UMPUMPEN IN STATION 1-3,ABSETZBEHAELTER
+01A6 [00F426]  C694                       U      A 20.6 ; K20.6M — PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+01A8 [00F428]  88FC                       O      M 252.0 ; M252.0 — SCHMIERMERKER
+01AA [00F42A]  98FC                       =      M 252.0 ; M252.0 — SCHMIERMERKER
+01AC [00F42C]  10FF                       BLD    255
+01AE [00F42E]  851A                       U      M 26.5 ; HB_65 — UMPUMPEN IN SCHMUTZTANK RAV
+01B0 [00F430]  C495                       U      A 21.4 ; Y21.4 — MV ZULAUF SCHMUTZTANK RAV
+01B2 [00F432]  FB00                       O      
+01B4 [00F434]  861A                       U      M 26.6 ; HB_66 — SCHAUMBREMSE IN RAV-VERDAMPFER DOSIEREN
+01B6 [00F436]  C594                       U      A 20.5 ; K20.5M — DOSIERPUMPE P7 SCHAUMBREMSE RAV-VERD.
+01B8 [00F438]  FB00                       O      
+01BA [00F43A]  841B                       U      M 27.4 ; HB_72 — UMPUMPEN IN ENTSORGUNG BAUSEITS
+01BC [00F43C]  C694                       U      A 20.6 ; K20.6M — PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+01BE [00F43E]  FB00                       O      
+01C0 [00F440]  851B                       U      M 27.5 ; HB_73 — VERDAMPFER RAV FUELL.AUS SCHMUTZT.
+01C2 [00F442]  C695                       U      A 21.6 ; Y21.6 — MV ZULAUF VERDAMPFER RAV
+01C4 [00F444]  FB00                       O      
+01C6 [00F446]  871B                       U      M 27.7 ; HB_99 — KORREKTUR SETZM. WT-VERFOLGUNG
+01C8 [00F448]  8550                       U      M 80.5 ; M80.5 — HM FUER FUNKTION "99"
+01CA [00F44A]  88FC                       O      M 252.0 ; M252.0 — SCHMIERMERKER
+01CC [00F44C]  98FC                       =      M 252.0 ; M252.0 — SCHMIERMERKER
+01CE [00F44E]  10FF                       BLD    255
+01D0 [00F450]  6500                       BE     

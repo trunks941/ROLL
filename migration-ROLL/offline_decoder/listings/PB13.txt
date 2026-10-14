@@ -1,0 +1,726 @@
+PB13: PB 13 — TROMMELEINRICHTUNG
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xFC80; block bytes: 1464; SHA256: 7ba99ad047799e43048c6da72b7a9efbcab872109cc7e2e019b525c25ac94fdf
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 0D 80 00 00 00 02 DC
+Code starts at block offset 0x000A.
+000A [00FC8A]  A63A                       UN     M 58.6 ; POS_ALT — POSITION HZT ALT
+000C [00FC8C]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+000E [00FC8E]  BA00                       U(     
+0010 [00FC90]  C90B                       O      E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+0012 [00FC92]  CA0B                       O      E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+0014 [00FC94]  CB0B                       O      E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+0016 [00FC96]  CC0B                       O      E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+0018 [00FC98]  CE77                       O      E 119.6 ; B119.6 — HORIZ.-TRANSPORT STATION 5
+001A [00FC9A]  CF77                       O      E 119.7 ; B119.7 — HORIZ.-TRANSPORT STATION 6
+001C [00FC9C]  C878                       O      E 120.0 ; B120.0 — HORIZ.-TRANSPORT STATION 7
+001E [00FC9E]  BF00                       )      
+0020 [00FCA0]  973A                       S      M 58.7 ; TERL-HM1 — HM TROMMEL ERLAUBT
+0022 [00FCA2]  C80B                       O      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+0024 [00FCA4]  FB00                       O      
+0026 [00FCA6]  C097                       U      A 23.0 ; K23.0M — ANTRIEB IN DER ANLAGE HORIZ.-TR.ZURUECK
+0028 [00FCA8]  E60B                       UN     E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+002A [00FCAA]  863A                       U      M 58.6 ; POS_ALT — POSITION HZT ALT
+002C [00FCAC]  BA00                       U(     
+002E [00FCAE]  C90B                       O      E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+0030 [00FCB0]  CA0B                       O      E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+0032 [00FCB2]  CB0B                       O      E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+0034 [00FCB4]  CC0B                       O      E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+0036 [00FCB6]  CE77                       O      E 119.6 ; B119.6 — HORIZ.-TRANSPORT STATION 5
+0038 [00FCB8]  CF77                       O      E 119.7 ; B119.7 — HORIZ.-TRANSPORT STATION 6
+003A [00FCBA]  C878                       O      E 120.0 ; B120.0 — HORIZ.-TRANSPORT STATION 7
+003C [00FCBC]  BF00                       )      
+003E [00FCBE]  B73A                       R      M 58.7 ; TERL-HM1 — HM TROMMEL ERLAUBT
+0040 [00FCC0]  0000                       NOP0   
+0042 [00FCC2]  10FF                       BLD    255
+0044 [00FCC4]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+0046 [00FCC6]  9E3A                       =      M 58.6 ; POS_ALT — POSITION HZT ALT
+0048 [00FCC8]  10FF                       BLD    255
+004A [00FCCA]  BA00                       U(     
+004C [00FCCC]  8F3A                       O      M 58.7 ; TERL-HM1 — HM TROMMEL ERLAUBT
+004E [00FCCE]  FB00                       O      
+0050 [00FCD0]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+0052 [00FCD2]  BA00                       U(     
+0054 [00FCD4]  8F50                       O      M 80.7 ; VT_OBEN — HM VERT.-TRANSP.POSITION OBEN
+0056 [00FCD6]  E80B                       ON     E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+0058 [00FCD8]  BF00                       )      
+005A [00FCDA]  BF00                       )      
+005C [00FCDC]  C00E                       U      E 14.0 ; A14.0 — BESCHICKUNGSTUERE ANLAGE GESCHLOSSEN
+005E [00FCDE]  983C                       =      M 60.0 ; TR1-ERL — ALLG. TROMMELBEWEG.PRINZ.MOEGLICH
+0060 [00FCE0]  10FF                       BLD    255
+0062 [00FCE2]  E30D                       UN     E 13.3 ; B13.3 — TROMMEL GERADE
+0064 [00FCE4]  C098                       U      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+0066 [00FCE6]  30022030                   L      KT 030.2
+006A [00FCEA]  246E                       SE     T 110 ; T110_* — UEBERWACH.:TROMMEL STELLT ZU LANG GERADE
+006C [00FCEC]  0000                       NOP0   
+006E [00FCEE]  0000                       NOP0   
+0070 [00FCF0]  0000                       NOP0   
+0072 [00FCF2]  0000                       NOP0   
+0074 [00FCF4]  10FF                       BLD    255
+0076 [00FCF6]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0078 [00FCF8]  806F                       U      M 111.0 ; M111.0 — WT IN DER ANLAGE: DREHEN
+007A [00FCFA]  A16F                       UN     M 111.1 ; M111.1 — WT IN DER ANLAGE: SCHWENKEN
+007C [00FCFC]  A26F                       UN     M 111.2 ; M111.2 — WT IN DER ANLAGE: INTERVALLDREHEN
+007E [00FCFE]  A56F                       UN     M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+0080 [00FD00]  FB00                       O      
+0082 [00FD02]  856F                       U      M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+0084 [00FD04]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0086 [00FD06]  FB00                       O      
+0088 [00FD08]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+008A [00FD0A]  A53D                       UN     M 61.5 ; BTA-SW — GESPEICH.BTR.-ART IM AB: SCHWENKEN
+008C [00FD0C]  8217                       U      M 23.2 ; HB_22 — TROMMEL GERADESTELLEN/DREHEN
+008E [00FD0E]  993C                       =      M 60.1 ; VW-DR — VORWAHL TROMMEL DREHEN
+0090 [00FD10]  10FF                       BLD    255
+0092 [00FD12]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0094 [00FD14]  A06F                       UN     M 111.0 ; M111.0 — WT IN DER ANLAGE: DREHEN
+0096 [00FD16]  816F                       U      M 111.1 ; M111.1 — WT IN DER ANLAGE: SCHWENKEN
+0098 [00FD18]  A26F                       UN     M 111.2 ; M111.2 — WT IN DER ANLAGE: INTERVALLDREHEN
+009A [00FD1A]  A56F                       UN     M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+009C [00FD1C]  FB00                       O      
+009E [00FD1E]  856F                       U      M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+00A0 [00FD20]  E10C                       UN     E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+00A2 [00FD22]  FB00                       O      
+00A4 [00FD24]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+00A6 [00FD26]  8317                       U      M 23.3 ; HB_23 — TROMMEL GERADESTELLEN/SCHWENKEN
+00A8 [00FD28]  9B3C                       =      M 60.3 ; VW-SW — VORWAHL TROMMEL SCHWENKEN
+00AA [00FD2A]  10FF                       BLD    255
+00AC [00FD2C]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+00AE [00FD2E]  A06F                       UN     M 111.0 ; M111.0 — WT IN DER ANLAGE: DREHEN
+00B0 [00FD30]  A16F                       UN     M 111.1 ; M111.1 — WT IN DER ANLAGE: SCHWENKEN
+00B2 [00FD32]  826F                       U      M 111.2 ; M111.2 — WT IN DER ANLAGE: INTERVALLDREHEN
+00B4 [00FD34]  A56F                       UN     M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+00B6 [00FD36]  FB00                       O      
+00B8 [00FD38]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+00BA [00FD3A]  A53D                       UN     M 61.5 ; BTA-SW — GESPEICH.BTR.-ART IM AB: SCHWENKEN
+00BC [00FD3C]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00BE [00FD3E]  9A3C                       =      M 60.2 ; VW-ID — VORWAHL INTERVALL-DREHEN
+00C0 [00FD40]  10FF                       BLD    255
+00C2 [00FD42]  FC72                       UN     T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+00C4 [00FD44]  30020005                   L      KT 005.0
+00C8 [00FD48]  2471                       SE     T 113 ; T113_* — ZAEHLTAKT TR.SCHWENKW.AUSZEIT
+00CA [00FD4A]  0000                       NOP0   
+00CC [00FD4C]  0000                       NOP0   
+00CE [00FD4E]  0000                       NOP0   
+00D0 [00FD50]  F871                       U      T 113 ; T113_* — ZAEHLTAKT TR.SCHWENKW.AUSZEIT
+00D2 [00FD52]  30020005                   L      KT 005.0
+00D6 [00FD56]  1472                       SA     T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+00D8 [00FD58]  0000                       NOP0   
+00DA [00FD5A]  0000                       NOP0   
+00DC [00FD5C]  0000                       NOP0   
+00DE [00FD5E]  0000                       NOP0   
+00E0 [00FD60]  10FF                       BLD    255
+00E2 [00FD62]  1083                       BLD    131
+00E4 [00FD64]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+00E6 [00FD66]  10FF                       BLD    255
+00E8 [00FD68]  843E                       U      M 62.4 ; BTR-ID — TAT.AUSGEF.BTR-ART: INTERVALL-TROMMELN
+00EA [00FD6A]  FC75                       UN     T 117 ; T117_V_* — INTERVALL-DREHEN EINZEIT
+00EC [00FD6C]  3274                       L      DW 116
+00EE [00FD6E]  2474                       SE     T 116 ; T116_V_* — INTERVALL-DREHEN AUSZEIT
+00F0 [00FD70]  0000                       NOP0   
+00F2 [00FD72]  0000                       NOP0   
+00F4 [00FD74]  0000                       NOP0   
+00F6 [00FD76]  F874                       U      T 116 ; T116_V_* — INTERVALL-DREHEN AUSZEIT
+00F8 [00FD78]  3275                       L      DW 117
+00FA [00FD7A]  1475                       SA     T 117 ; T117_V_* — INTERVALL-DREHEN EINZEIT
+00FC [00FD7C]  0000                       NOP0   
+00FE [00FD7E]  0000                       NOP0   
+0100 [00FD80]  0000                       NOP0   
+0102 [00FD82]  0000                       NOP0   
+0104 [00FD84]  10FF                       BLD    255
+0106 [00FD86]  1083                       BLD    131
+0108 [00FD88]  2013                       A      DB 19 ; DBVZAEHL — VARIABLE ZAEHLER ....................RAM
+010A [00FD8A]  10FF                       BLD    255
+010C [00FD8C]  F872                       U      T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+010E [00FD8E]  843C                       U      M 60.4 ; RI-VDA — RICHTUNG: VOR DEM ANSCHLAG
+0110 [00FD90]  C298                       U      A 24.2 ; K24.2M — TROMMEL DREHEN
+0112 [00FD92]  5401                       ZR     Z 1 ; Z_VDA *V — ZAEHLER TROMMELBEREICH VOR DEM ANSCHLAG
+0114 [00FD94]  0000                       NOP0   
+0116 [00FD96]  BA00                       U(     
+0118 [00FD98]  8D3C                       O      M 60.5 ; RI-HDA — RICHTUNG: HINTER DEM ANSCHLAG
+011A [00FD9A]  CB0D                       O      E 13.3 ; B13.3 — TROMMEL GERADE
+011C [00FD9C]  FB00                       O      
+011E [00FD9E]  BC02                       UN     Z 2 ; Z_HDA *V — ZAEHLER TROMMELBER. HINTER DEM ANSCHLAG
+0120 [00FDA0]  BC01                       UN     Z 1 ; Z_VDA *V — ZAEHLER TROMMELBEREICH VOR DEM ANSCHLAG
+0122 [00FDA2]  E30D                       UN     E 13.3 ; B13.3 — TROMMEL GERADE
+0124 [00FDA4]  BF00                       )      
+0126 [00FDA6]  F872                       U      T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+0128 [00FDA8]  3201                       L      DW 1
+012A [00FDAA]  5C01                       S      Z 1 ; Z_VDA *V — ZAEHLER TROMMELBEREICH VOR DEM ANSCHLAG
+012C [00FDAC]  0000                       NOP0   
+012E [00FDAE]  0000                       NOP0   
+0130 [00FDB0]  0000                       NOP0   
+0132 [00FDB2]  0000                       NOP0   
+0134 [00FDB4]  10FF                       BLD    255
+0136 [00FDB6]  F872                       U      T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+0138 [00FDB8]  853C                       U      M 60.5 ; RI-HDA — RICHTUNG: HINTER DEM ANSCHLAG
+013A [00FDBA]  C098                       U      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+013C [00FDBC]  5402                       ZR     Z 2 ; Z_HDA *V — ZAEHLER TROMMELBER. HINTER DEM ANSCHLAG
+013E [00FDBE]  0000                       NOP0   
+0140 [00FDC0]  BA00                       U(     
+0142 [00FDC2]  8C3C                       O      M 60.4 ; RI-VDA — RICHTUNG: VOR DEM ANSCHLAG
+0144 [00FDC4]  CB0D                       O      E 13.3 ; B13.3 — TROMMEL GERADE
+0146 [00FDC6]  BF00                       )      
+0148 [00FDC8]  F872                       U      T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+014A [00FDCA]  3202                       L      DW 2
+014C [00FDCC]  5C02                       S      Z 2 ; Z_HDA *V — ZAEHLER TROMMELBER. HINTER DEM ANSCHLAG
+014E [00FDCE]  0000                       NOP0   
+0150 [00FDD0]  0000                       NOP0   
+0152 [00FDD2]  0000                       NOP0   
+0154 [00FDD4]  0000                       NOP0   
+0156 [00FDD6]  10FF                       BLD    255
+0158 [00FDD8]  E30D                       UN     E 13.3 ; B13.3 — TROMMEL GERADE
+015A [00FDDA]  863C                       U      M 60.6 ; RI-HM1 — RICHTUNG: FLHM TROMMEL GERADE
+015C [00FDDC]  C298                       U      A 24.2 ; K24.2M — TROMMEL DREHEN
+015E [00FDDE]  943C                       S      M 60.4 ; RI-VDA — RICHTUNG: VOR DEM ANSCHLAG
+0160 [00FDE0]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+0162 [00FDE2]  B43C                       R      M 60.4 ; RI-VDA — RICHTUNG: VOR DEM ANSCHLAG
+0164 [00FDE4]  0000                       NOP0   
+0166 [00FDE6]  10FF                       BLD    255
+0168 [00FDE8]  E30D                       UN     E 13.3 ; B13.3 — TROMMEL GERADE
+016A [00FDEA]  863C                       U      M 60.6 ; RI-HM1 — RICHTUNG: FLHM TROMMEL GERADE
+016C [00FDEC]  C098                       U      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+016E [00FDEE]  953C                       S      M 60.5 ; RI-HDA — RICHTUNG: HINTER DEM ANSCHLAG
+0170 [00FDF0]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+0172 [00FDF2]  B53C                       R      M 60.5 ; RI-HDA — RICHTUNG: HINTER DEM ANSCHLAG
+0174 [00FDF4]  0000                       NOP0   
+0176 [00FDF6]  10FF                       BLD    255
+0178 [00FDF8]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+017A [00FDFA]  963C                       S      M 60.6 ; RI-HM1 — RICHTUNG: FLHM TROMMEL GERADE
+017C [00FDFC]  8C3C                       O      M 60.4 ; RI-VDA — RICHTUNG: VOR DEM ANSCHLAG
+017E [00FDFE]  8D3C                       O      M 60.5 ; RI-HDA — RICHTUNG: HINTER DEM ANSCHLAG
+0180 [00FE00]  B63C                       R      M 60.6 ; RI-HM1 — RICHTUNG: FLHM TROMMEL GERADE
+0182 [00FE02]  0000                       NOP0   
+0184 [00FE04]  10FF                       BLD    255
+0186 [00FE06]  863E                       U      M 62.6 ; GNDST — STB GRUNDSTELLUNG
+0188 [00FE08]  BC02                       UN     Z 2 ; Z_HDA *V — ZAEHLER TROMMELBER. HINTER DEM ANSCHLAG
+018A [00FE0A]  973C                       S      M 60.7 ; GNDZ-1 — GRUNDST.-ZYKL.: TR.WAR HI.DEM ANSCHLAG
+018C [00FE0C]  A63E                       UN     M 62.6 ; GNDST — STB GRUNDSTELLUNG
+018E [00FE0E]  B73C                       R      M 60.7 ; GNDZ-1 — GRUNDST.-ZYKL.: TR.WAR HI.DEM ANSCHLAG
+0190 [00FE10]  0000                       NOP0   
+0192 [00FE12]  10FF                       BLD    255
+0194 [00FE14]  813D                       U      M 61.1 ; GNDZ-3 — GRUNDST.-ZYKL.: FLHM
+0196 [00FE16]  BC01                       UN     Z 1 ; Z_VDA *V — ZAEHLER TROMMELBEREICH VOR DEM ANSCHLAG
+0198 [00FE18]  E30D                       UN     E 13.3 ; B13.3 — TROMMEL GERADE
+019A [00FE1A]  903D                       S      M 61.0 ; GNDZ-2 — GRUNDST.-ZYKL.: TR.WAR VOR DEM ANSCHLAG
+019C [00FE1C]  A63E                       UN     M 62.6 ; GNDST — STB GRUNDSTELLUNG
+019E [00FE1E]  B03D                       R      M 61.0 ; GNDZ-2 — GRUNDST.-ZYKL.: TR.WAR VOR DEM ANSCHLAG
+01A0 [00FE20]  0000                       NOP0   
+01A2 [00FE22]  10FF                       BLD    255
+01A4 [00FE24]  B801                       U      Z 1 ; Z_VDA *V — ZAEHLER TROMMELBEREICH VOR DEM ANSCHLAG
+01A6 [00FE26]  993D                       =      M 61.1 ; GNDZ-3 — GRUNDST.-ZYKL.: FLHM
+01A8 [00FE28]  10FF                       BLD    255
+01AA [00FE2A]  BA00                       U(     
+01AC [00FE2C]  8F3C                       O      M 60.7 ; GNDZ-1 — GRUNDST.-ZYKL.: TR.WAR HI.DEM ANSCHLAG
+01AE [00FE2E]  8E3E                       O      M 62.6 ; GNDST — STB GRUNDSTELLUNG
+01B0 [00FE30]  BF00                       )      
+01B2 [00FE32]  803D                       U      M 61.0 ; GNDZ-2 — GRUNDST.-ZYKL.: TR.WAR VOR DEM ANSCHLAG
+01B4 [00FE34]  9A3D                       =      M 61.2 ; GNDZ-4 — GRUNDST.-ZYKL.: BEENDET
+01B6 [00FE36]  10FF                       BLD    255
+01B8 [00FE38]  873D                       U      M 61.7 ; BTA-H2 — GESPEICH.BTR.-ART IM AB: SP.DAUER
+01BA [00FE3A]  A63D                       UN     M 61.6 ; BTA-H1 — GESPEICH.BTR.-ART IM AB: FLHM
+01BC [00FE3C]  813C                       U      M 60.1 ; VW-DR — VORWAHL TROMMEL DREHEN
+01BE [00FE3E]  933D                       S      M 61.3 ; BTA-DR — GESPEICH.BTR.-ART IM AB: DREHEN
+01C0 [00FE40]  A73D                       UN     M 61.7 ; BTA-H2 — GESPEICH.BTR.-ART IM AB: SP.DAUER
+01C2 [00FE42]  B33D                       R      M 61.3 ; BTA-DR — GESPEICH.BTR.-ART IM AB: DREHEN
+01C4 [00FE44]  0000                       NOP0   
+01C6 [00FE46]  10FF                       BLD    255
+01C8 [00FE48]  873D                       U      M 61.7 ; BTA-H2 — GESPEICH.BTR.-ART IM AB: SP.DAUER
+01CA [00FE4A]  A63D                       UN     M 61.6 ; BTA-H1 — GESPEICH.BTR.-ART IM AB: FLHM
+01CC [00FE4C]  823C                       U      M 60.2 ; VW-ID — VORWAHL INTERVALL-DREHEN
+01CE [00FE4E]  943D                       S      M 61.4 ; BTA-ID — GESPEICH.BTR.-ART IM AB: INT.DREHEN
+01D0 [00FE50]  A73D                       UN     M 61.7 ; BTA-H2 — GESPEICH.BTR.-ART IM AB: SP.DAUER
+01D2 [00FE52]  B43D                       R      M 61.4 ; BTA-ID — GESPEICH.BTR.-ART IM AB: INT.DREHEN
+01D4 [00FE54]  0000                       NOP0   
+01D6 [00FE56]  10FF                       BLD    255
+01D8 [00FE58]  873D                       U      M 61.7 ; BTA-H2 — GESPEICH.BTR.-ART IM AB: SP.DAUER
+01DA [00FE5A]  A63D                       UN     M 61.6 ; BTA-H1 — GESPEICH.BTR.-ART IM AB: FLHM
+01DC [00FE5C]  833C                       U      M 60.3 ; VW-SW — VORWAHL TROMMEL SCHWENKEN
+01DE [00FE5E]  953D                       S      M 61.5 ; BTA-SW — GESPEICH.BTR.-ART IM AB: SCHWENKEN
+01E0 [00FE60]  A73D                       UN     M 61.7 ; BTA-H2 — GESPEICH.BTR.-ART IM AB: SP.DAUER
+01E2 [00FE62]  B53D                       R      M 61.5 ; BTA-SW — GESPEICH.BTR.-ART IM AB: SCHWENKEN
+01E4 [00FE64]  0000                       NOP0   
+01E6 [00FE66]  10FF                       BLD    255
+01E8 [00FE68]  873D                       U      M 61.7 ; BTA-H2 — GESPEICH.BTR.-ART IM AB: SP.DAUER
+01EA [00FE6A]  9E3D                       =      M 61.6 ; BTA-H1 — GESPEICH.BTR.-ART IM AB: FLHM
+01EC [00FE6C]  10FF                       BLD    255
+01EE [00FE6E]  8325                       U      M 37.3 ; N_1.3 — PROGRAMM GELESEN, PROGRAMM IST I.ORDNUNG
+01F0 [00FE70]  A56F                       UN     M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+01F2 [00FE72]  FB00                       O      
+01F4 [00FE74]  BA00                       U(     
+01F6 [00FE76]  BA00                       U(     
+01F8 [00FE78]  8D28                       O      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+01FA [00FE7A]  892A                       O      M 42.1 ; N_1.41 — VERT.-TRANSPORT UNTEN STATION 2
+01FC [00FE7C]  8D2B                       O      M 43.5 ; N_1.53 — VERT.-TRANSPORT UNTEN STATION 3
+01FE [00FE7E]  BF00                       )      
+0200 [00FE80]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0202 [00FE82]  FB00                       O      
+0204 [00FE84]  BA00                       U(     
+0206 [00FE86]  8829                       O      M 41.0 ; N_1.32 — VERT.-TRANSP.HEBEN BIS OBEN ST.1
+0208 [00FE88]  8C2A                       O      M 42.4 ; N_1.44 — VERT.-TRANSPORT HEBEN BIS OBEN ST.2
+020A [00FE8A]  882C                       O      M 44.0 ; N_1.56 — VERT.-TR.HEBEN BIS OBEN STATION 3
+020C [00FE8C]  BF00                       )      
+020E [00FE8E]  E10C                       UN     E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0210 [00FE90]  BF00                       )      
+0212 [00FE92]  856F                       U      M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+0214 [00FE94]  973D                       S      M 61.7 ; BTA-H2 — GESPEICH.BTR.-ART IM AB: SP.DAUER
+0216 [00FE96]  BA00                       U(     
+0218 [00FE98]  882A                       O      M 42.0 ; N_1.40 — VERT.-TRANSPORT SENKEN STATION 2
+021A [00FE9A]  8C2B                       O      M 43.4 ; N_1.52 — VERT.-TRANSPORT SENKEN STATION 3
+021C [00FE9C]  8D3A                       O      M 58.5 ; TRANFGER — ANFORDERUNG AN TROMMEL: GERADESTELLEN
+021E [00FE9E]  BF00                       )      
+0220 [00FEA0]  856F                       U      M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+0222 [00FEA2]  8E35                       O      M 53.6 ; N_1.134 — SPRUNG ZU N 1.0
+0224 [00FEA4]  FB00                       O      
+0226 [00FEA6]  8114                       U      M 20.1 ; HB_01 — FAHREN IN GRUNDSTELLUNG
+0228 [00FEA8]  85BE                       U      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+022A [00FEAA]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+022C [00FEAC]  E50C                       UN     E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+022E [00FEAE]  B73D                       R      M 61.7 ; BTA-H2 — GESPEICH.BTR.-ART IM AB: SP.DAUER
+0230 [00FEB0]  0000                       NOP0   
+0232 [00FEB2]  10FF                       BLD    255
+0234 [00FEB4]  BA00                       U(     
+0236 [00FEB6]  8B3D                       O      M 61.3 ; BTA-DR — GESPEICH.BTR.-ART IM AB: DREHEN
+0238 [00FEB8]  8C3D                       O      M 61.4 ; BTA-ID — GESPEICH.BTR.-ART IM AB: INT.DREHEN
+023A [00FEBA]  8D3D                       O      M 61.5 ; BTA-SW — GESPEICH.BTR.-ART IM AB: SCHWENKEN
+023C [00FEBC]  BF00                       )      
+023E [00FEBE]  BA00                       U(     
+0240 [00FEC0]  C497                       U      A 23.4 ; K23.4M — ANTRIEB IN DER ANLAGE VERT.-TR.SENKEN
+0242 [00FEC2]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0244 [00FEC4]  FB00                       O      
+0246 [00FEC6]  C597                       U      A 23.5 ; K23.5M — ANTRIEB IN DER ANLAGE VERT.-TR.HEBEN
+0248 [00FEC8]  E10C                       UN     E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+024A [00FECA]  BF00                       )      
+024C [00FECC]  E00B                       UN     E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+024E [00FECE]  903E                       S      M 62.0 ; ED-AB — EINSCH.DAUER TROMM./SCHWENK.IM AB
+0250 [00FED0]  BA00                       U(     
+0252 [00FED2]  8B29                       O      M 41.3 ; N_1.35 — TROMMEL GERADESTELLEN STATION 1
+0254 [00FED4]  8F2A                       O      M 42.7 ; N_1.47 — TROMMEL GERADESTELLEN STATION 2
+0256 [00FED6]  8B2C                       O      M 44.3 ; N_1.59 — TROMMEL GERADESTELLEN STATION 3
+0258 [00FED8]  882E                       O      M 46.0 ; N_1.72 — TROMMEL GERADESTELLEN STATION 4
+025A [00FEDA]  8B2F                       O      M 47.3 ; N_1.83 — TROMMEL GERADESTELLEN STATION 5
+025C [00FEDC]  8F30                       O      M 48.7 ; N_1.95 — TROMMEL GERADESTELLEN STATION 6
+025E [00FEDE]  8B32                       O      M 50.3 ; N_1.107 — TROMMEL GERADESTELLEN STATION 7
+0260 [00FEE0]  8D33                       O      M 51.5 ; N_1.117 — TROMMEL GERADESTELLEN STATION 8
+0262 [00FEE2]  BF00                       )      
+0264 [00FEE4]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+0266 [00FEE6]  F872                       U      T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+0268 [00FEE8]  AF3D                       ON     M 61.7 ; BTA-H2 — GESPEICH.BTR.-ART IM AB: SP.DAUER
+026A [00FEEA]  AD1F                       ON     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+026C [00FEEC]  B03E                       R      M 62.0 ; ED-AB — EINSCH.DAUER TROMM./SCHWENK.IM AB
+026E [00FEEE]  0000                       NOP0   
+0270 [00FEF0]  10FF                       BLD    255
+0272 [00FEF2]  BA00                       U(     
+0274 [00FEF4]  BA00                       U(     
+0276 [00FEF6]  C90B                       O      E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+0278 [00FEF8]  CA0B                       O      E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+027A [00FEFA]  CB0B                       O      E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+027C [00FEFC]  CC0B                       O      E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+027E [00FEFE]  CE77                       O      E 119.6 ; B119.6 — HORIZ.-TRANSPORT STATION 5
+0280 [00FF00]  CF77                       O      E 119.7 ; B119.7 — HORIZ.-TRANSPORT STATION 6
+0282 [00FF02]  C878                       O      E 120.0 ; B120.0 — HORIZ.-TRANSPORT STATION 7
+0284 [00FF04]  BF00                       )      
+0286 [00FF06]  BA00                       U(     
+0288 [00FF08]  8E50                       O      M 80.6 ; VT_UNTEN — HM VERT.-TRANSP.POSITION UNTEN
+028A [00FF0A]  8F50                       O      M 80.7 ; VT_OBEN — HM VERT.-TRANSP.POSITION OBEN
+028C [00FF0C]  BF00                       )      
+028E [00FF0E]  FB00                       O      
+0290 [00FF10]  803C                       U      M 60.0 ; TR1-ERL — ALLG. TROMMELBEWEG.PRINZ.MOEGLICH
+0292 [00FF12]  8750                       U      M 80.7 ; VT_OBEN — HM VERT.-TRANSP.POSITION OBEN
+0294 [00FF14]  BF00                       )      
+0296 [00FF16]  E00B                       UN     E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+0298 [00FF18]  FB00                       O      
+029A [00FF1A]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+029C [00FF1C]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+029E [00FF1E]  8750                       U      M 80.7 ; VT_OBEN — HM VERT.-TRANSP.POSITION OBEN
+02A0 [00FF20]  993E                       =      M 62.1 ; ED-HB — EINSCH.DAUER TROMM./SCHWENK.IM HB
+02A2 [00FF22]  10FF                       BLD    255
+02A4 [00FF24]  8929                       O      M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+02A6 [00FF26]  8D2A                       O      M 42.5 ; N_1.45 — VERT.-TRANSPORT OBEN STATION 2
+02A8 [00FF28]  892C                       O      M 44.1 ; N_1.57 — VERT.-TRANSPORT OBEN STATION 3
+02AA [00FF2A]  FB00                       O      
+02AC [00FF2C]  862D                       U      M 45.6 ; N_1.70 — VERT.-TRANSPORT OBEN STATION 4
+02AE [00FF2E]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+02B0 [00FF30]  892F                       O      M 47.1 ; N_1.81 — VERT.-TRANSPORT OBEN STATION 5
+02B2 [00FF32]  8D30                       O      M 48.5 ; N_1.93 — VERT.-TRANSPORT OBEN STATION 6
+02B4 [00FF34]  8932                       O      M 50.1 ; N_1.105 — VERT.-TRANSPORT OBEN STATION 7
+02B6 [00FF36]  9D3F                       =      M 63.5 ; ABTR-ID — IN ABTROPFZONE INTERVALL-DREHEN
+02B8 [00FF38]  10FF                       BLD    255
+02BA [00FF3A]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+02BC [00FF3C]  BA00                       U(     
+02BE [00FF3E]  8914                       O      M 20.1 ; HB_01 — FAHREN IN GRUNDSTELLUNG
+02C0 [00FF40]  8A14                       O      M 20.2 ; HB_02 — FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+02C2 [00FF42]  8B17                       O      M 23.3 ; HB_23 — TROMMEL GERADESTELLEN/SCHWENKEN
+02C4 [00FF44]  BF00                       )      
+02C6 [00FF46]  BA00                       U(     
+02C8 [00FF48]  833C                       U      M 60.3 ; VW-SW — VORWAHL TROMMEL SCHWENKEN
+02CA [00FF4A]  A13C                       UN     M 60.1 ; VW-DR — VORWAHL TROMMEL DREHEN
+02CC [00FF4C]  A23C                       UN     M 60.2 ; VW-ID — VORWAHL INTERVALL-DREHEN
+02CE [00FF4E]  FB00                       O      
+02D0 [00FF50]  804A                       U      M 74.0 ; M74.0 — MERKER FAHREN IN GRUNDSTELLUNG
+02D2 [00FF52]  A13C                       UN     M 60.1 ; VW-DR — VORWAHL TROMMEL DREHEN
+02D4 [00FF54]  A33C                       UN     M 60.3 ; VW-SW — VORWAHL TROMMEL SCHWENKEN
+02D6 [00FF56]  A23C                       UN     M 60.2 ; VW-ID — VORWAHL INTERVALL-DREHEN
+02D8 [00FF58]  A13F                       UN     M 63.1 ; M_GERADE — TROMMEL GERADE
+02DA [00FF5A]  BF00                       )      
+02DC [00FF5C]  FB00                       O      
+02DE [00FF5E]  BA00                       U(     
+02E0 [00FF60]  853D                       U      M 61.5 ; BTA-SW — GESPEICH.BTR.-ART IM AB: SCHWENKEN
+02E2 [00FF62]  A33D                       UN     M 61.3 ; BTA-DR — GESPEICH.BTR.-ART IM AB: DREHEN
+02E4 [00FF64]  A43D                       UN     M 61.4 ; BTA-ID — GESPEICH.BTR.-ART IM AB: INT.DREHEN
+02E6 [00FF66]  FB00                       O      
+02E8 [00FF68]  863E                       U      M 62.6 ; GNDST — STB GRUNDSTELLUNG
+02EA [00FF6A]  A53D                       UN     M 61.5 ; BTA-SW — GESPEICH.BTR.-ART IM AB: SCHWENKEN
+02EC [00FF6C]  A33D                       UN     M 61.3 ; BTA-DR — GESPEICH.BTR.-ART IM AB: DREHEN
+02EE [00FF6E]  A43D                       UN     M 61.4 ; BTA-ID — GESPEICH.BTR.-ART IM AB: INT.DREHEN
+02F0 [00FF70]  BF00                       )      
+02F2 [00FF72]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+02F4 [00FF74]  9A3E                       =      M 62.2 ; BTR-SW — TAT.AUSGEF.BTR-ART: SCHWENKEN
+02F6 [00FF76]  10FF                       BLD    255
+02F8 [00FF78]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+02FA [00FF7A]  BA00                       U(     
+02FC [00FF7C]  8914                       O      M 20.1 ; HB_01 — FAHREN IN GRUNDSTELLUNG
+02FE [00FF7E]  8A17                       O      M 23.2 ; HB_22 — TROMMEL GERADESTELLEN/DREHEN
+0300 [00FF80]  BF00                       )      
+0302 [00FF82]  813C                       U      M 60.1 ; VW-DR — VORWAHL TROMMEL DREHEN
+0304 [00FF84]  A33C                       UN     M 60.3 ; VW-SW — VORWAHL TROMMEL SCHWENKEN
+0306 [00FF86]  A23C                       UN     M 60.2 ; VW-ID — VORWAHL INTERVALL-DREHEN
+0308 [00FF88]  FB00                       O      
+030A [00FF8A]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+030C [00FF8C]  833D                       U      M 61.3 ; BTA-DR — GESPEICH.BTR.-ART IM AB: DREHEN
+030E [00FF8E]  A53D                       UN     M 61.5 ; BTA-SW — GESPEICH.BTR.-ART IM AB: SCHWENKEN
+0310 [00FF90]  A43D                       UN     M 61.4 ; BTA-ID — GESPEICH.BTR.-ART IM AB: INT.DREHEN
+0312 [00FF92]  A53F                       UN     M 63.5 ; ABTR-ID — IN ABTROPFZONE INTERVALL-DREHEN
+0314 [00FF94]  9B3E                       =      M 62.3 ; BTR-DR — TAT.AUSGEF.BTR-ART: TROMMELN
+0316 [00FF96]  10FF                       BLD    255
+0318 [00FF98]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+031A [00FF9A]  BA00                       U(     
+031C [00FF9C]  8914                       O      M 20.1 ; HB_01 — FAHREN IN GRUNDSTELLUNG
+031E [00FF9E]  8B00                       O      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0320 [00FFA0]  BF00                       )      
+0322 [00FFA2]  823C                       U      M 60.2 ; VW-ID — VORWAHL INTERVALL-DREHEN
+0324 [00FFA4]  A13C                       UN     M 60.1 ; VW-DR — VORWAHL TROMMEL DREHEN
+0326 [00FFA6]  A33C                       UN     M 60.3 ; VW-SW — VORWAHL TROMMEL SCHWENKEN
+0328 [00FFA8]  FB00                       O      
+032A [00FFAA]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+032C [00FFAC]  BA00                       U(     
+032E [00FFAE]  843D                       U      M 61.4 ; BTA-ID — GESPEICH.BTR.-ART IM AB: INT.DREHEN
+0330 [00FFB0]  A33D                       UN     M 61.3 ; BTA-DR — GESPEICH.BTR.-ART IM AB: DREHEN
+0332 [00FFB2]  A53D                       UN     M 61.5 ; BTA-SW — GESPEICH.BTR.-ART IM AB: SCHWENKEN
+0334 [00FFB4]  FB00                       O      
+0336 [00FFB6]  833D                       U      M 61.3 ; BTA-DR — GESPEICH.BTR.-ART IM AB: DREHEN
+0338 [00FFB8]  853F                       U      M 63.5 ; ABTR-ID — IN ABTROPFZONE INTERVALL-DREHEN
+033A [00FFBA]  BF00                       )      
+033C [00FFBC]  9C3E                       =      M 62.4 ; BTR-ID — TAT.AUSGEF.BTR-ART: INTERVALL-TROMMELN
+033E [00FFBE]  10FF                       BLD    255
+0340 [00FFC0]  BA00                       U(     
+0342 [00FFC2]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+0344 [00FFC4]  813E                       U      M 62.1 ; ED-HB — EINSCH.DAUER TROMM./SCHWENK.IM HB
+0346 [00FFC6]  BA00                       U(     
+0348 [00FFC8]  8A17                       O      M 23.2 ; HB_22 — TROMMEL GERADESTELLEN/DREHEN
+034A [00FFCA]  8B17                       O      M 23.3 ; HB_23 — TROMMEL GERADESTELLEN/SCHWENKEN
+034C [00FFCC]  8B00                       O      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+034E [00FFCE]  BF00                       )      
+0350 [00FFD0]  A5BE                       UN     M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0352 [00FFD2]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0354 [00FFD4]  BA00                       U(     
+0356 [00FFD6]  893C                       O      M 60.1 ; VW-DR — VORWAHL TROMMEL DREHEN
+0358 [00FFD8]  8B3C                       O      M 60.3 ; VW-SW — VORWAHL TROMMEL SCHWENKEN
+035A [00FFDA]  8A3C                       O      M 60.2 ; VW-ID — VORWAHL INTERVALL-DREHEN
+035C [00FFDC]  BF00                       )      
+035E [00FFDE]  FB00                       O      
+0360 [00FFE0]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0362 [00FFE2]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0364 [00FFE4]  803E                       U      M 62.0 ; ED-AB — EINSCH.DAUER TROMM./SCHWENK.IM AB
+0366 [00FFE6]  BF00                       )      
+0368 [00FFE8]  BA00                       U(     
+036A [00FFEA]  F972                       O      T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+036C [00FFEC]  8D3E                       O      M 62.5 ; ARBST — STB ARBEITSSTELLUNG
+036E [00FFEE]  BF00                       )      
+0370 [00FFF0]  803C                       U      M 60.0 ; TR1-ERL — ALLG. TROMMELBEWEG.PRINZ.MOEGLICH
+0372 [00FFF2]  9D3E                       =      M 62.5 ; ARBST — STB ARBEITSSTELLUNG
+0374 [00FFF4]  10FF                       BLD    255
+0376 [00FFF6]  BA00                       U(     
+0378 [00FFF8]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+037A [00FFFA]  813E                       U      M 62.1 ; ED-HB — EINSCH.DAUER TROMM./SCHWENK.IM HB
+037C [00FFFC]  BA00                       U(     
+037E [00FFFE]  BA00                       U(     
+0380 [010000]  8A14                       O      M 20.2 ; HB_02 — FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+0382 [010002]  8A17                       O      M 23.2 ; HB_22 — TROMMEL GERADESTELLEN/DREHEN
+0384 [010004]  8B17                       O      M 23.3 ; HB_23 — TROMMEL GERADESTELLEN/SCHWENKEN
+0386 [010006]  8B00                       O      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0388 [010008]  BF00                       )      
+038A [01000A]  85BE                       U      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+038C [01000C]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+038E [01000E]  884A                       O      M 74.0 ; M74.0 — MERKER FAHREN IN GRUNDSTELLUNG
+0390 [010010]  BF00                       )      
+0392 [010012]  FB00                       O      
+0394 [010014]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0396 [010016]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0398 [010018]  A03E                       UN     M 62.0 ; ED-AB — EINSCH.DAUER TROMM./SCHWENK.IM AB
+039A [01001A]  BF00                       )      
+039C [01001C]  A13F                       UN     M 63.1 ; M_GERADE — TROMMEL GERADE
+039E [01001E]  BA00                       U(     
+03A0 [010020]  F972                       O      T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+03A2 [010022]  8E3E                       O      M 62.6 ; GNDST — STB GRUNDSTELLUNG
+03A4 [010024]  BF00                       )      
+03A6 [010026]  803C                       U      M 60.0 ; TR1-ERL — ALLG. TROMMELBEWEG.PRINZ.MOEGLICH
+03A8 [010028]  9E3E                       =      M 62.6 ; GNDST — STB GRUNDSTELLUNG
+03AA [01002A]  10FF                       BLD    255
+03AC [01002C]  BA00                       U(     
+03AE [01002E]  833E                       U      M 62.3 ; BTR-DR — TAT.AUSGEF.BTR-ART: TROMMELN
+03B0 [010030]  A63E                       UN     M 62.6 ; GNDST — STB GRUNDSTELLUNG
+03B2 [010032]  A23E                       UN     M 62.2 ; BTR-SW — TAT.AUSGEF.BTR-ART: SCHWENKEN
+03B4 [010034]  A43E                       UN     M 62.4 ; BTR-ID — TAT.AUSGEF.BTR-ART: INTERVALL-TROMMELN
+03B6 [010036]  FB00                       O      
+03B8 [010038]  843E                       U      M 62.4 ; BTR-ID — TAT.AUSGEF.BTR-ART: INTERVALL-TROMMELN
+03BA [01003A]  BA00                       U(     
+03BC [01003C]  F975                       O      T 117 ; T117_V_* — INTERVALL-DREHEN EINZEIT
+03BE [01003E]  CB0D                       O      E 13.3 ; B13.3 — TROMMEL GERADE
+03C0 [010040]  BF00                       )      
+03C2 [010042]  A63E                       UN     M 62.6 ; GNDST — STB GRUNDSTELLUNG
+03C4 [010044]  FB00                       O      
+03C6 [010046]  B801                       U      Z 1 ; Z_VDA *V — ZAEHLER TROMMELBEREICH VOR DEM ANSCHLAG
+03C8 [010048]  BA00                       U(     
+03CA [01004A]  AC3E                       ON     M 62.4 ; BTR-ID — TAT.AUSGEF.BTR-ART: INTERVALL-TROMMELN
+03CC [01004C]  8E3E                       O      M 62.6 ; GNDST — STB GRUNDSTELLUNG
+03CE [01004E]  BF00                       )      
+03D0 [010050]  BF00                       )      
+03D2 [010052]  BA00                       U(     
+03D4 [010054]  8D3E                       O      M 62.5 ; ARBST — STB ARBEITSSTELLUNG
+03D6 [010056]  FB00                       O      
+03D8 [010058]  863E                       U      M 62.6 ; GNDST — STB GRUNDSTELLUNG
+03DA [01005A]  A13F                       UN     M 63.1 ; M_GERADE — TROMMEL GERADE
+03DC [01005C]  A23D                       UN     M 61.2 ; GNDZ-4 — GRUNDST.-ZYKL.: BEENDET
+03DE [01005E]  BF00                       )      
+03E0 [010060]  BA00                       U(     
+03E2 [010062]  8A3E                       O      M 62.2 ; BTR-SW — TAT.AUSGEF.BTR-ART: SCHWENKEN
+03E4 [010064]  8B3E                       O      M 62.3 ; BTR-DR — TAT.AUSGEF.BTR-ART: TROMMELN
+03E6 [010066]  8C3E                       O      M 62.4 ; BTR-ID — TAT.AUSGEF.BTR-ART: INTERVALL-TROMMELN
+03E8 [010068]  BF00                       )      
+03EA [01006A]  9F3E                       =      M 62.7 ; BERI-DR — STB: BEWEG.IN DREHRICHTUNG
+03EC [01006C]  10FF                       BLD    255
+03EE [01006E]  873E                       U      M 62.7 ; BERI-DR — STB: BEWEG.IN DREHRICHTUNG
+03F0 [010070]  801D                       U      M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+03F2 [010072]  A105                       UN     M 5.1 ; STOER_02 — TROMMELMOTOR ZU HEISS .............B13.5
+03F4 [010074]  C50D                       U      E 13.5 ; B13.5 — THERMOSTAT IM TROMMELMOTOR M24.0
+03F6 [010076]  E098                       UN     A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+03F8 [010078]  A43F                       UN     M 63.4 ; ST.SUM — SAMMELMERKER STOERUNG TROMMEL
+03FA [01007A]  BA00                       U(     
+03FC [01007C]  FD73                       ON     T 115 ; T115_* — DREHRICHT.UMSCHALTVERZOEGER.
+03FE [01007E]  CA98                       O      A 24.2 ; K24.2M — TROMMEL DREHEN
+0400 [010080]  BF00                       )      
+0402 [010082]  803C                       U      M 60.0 ; TR1-ERL — ALLG. TROMMELBEWEG.PRINZ.MOEGLICH
+0404 [010084]  DA98                       =      A 24.2 ; K24.2M — TROMMEL DREHEN
+0406 [010086]  10FF                       BLD    255
+0408 [010088]  BA00                       U(     
+040A [01008A]  A63E                       UN     M 62.6 ; GNDST — STB GRUNDSTELLUNG
+040C [01008C]  A23E                       UN     M 62.2 ; BTR-SW — TAT.AUSGEF.BTR-ART: SCHWENKEN
+040E [01008E]  B902                       O      Z 2 ; Z_HDA *V — ZAEHLER TROMMELBER. HINTER DEM ANSCHLAG
+0410 [010090]  BF00                       )      
+0412 [010092]  BA00                       U(     
+0414 [010094]  8D3E                       O      M 62.5 ; ARBST — STB ARBEITSSTELLUNG
+0416 [010096]  FB00                       O      
+0418 [010098]  863E                       U      M 62.6 ; GNDST — STB GRUNDSTELLUNG
+041A [01009A]  A13F                       UN     M 63.1 ; M_GERADE — TROMMEL GERADE
+041C [01009C]  BF00                       )      
+041E [01009E]  BA00                       U(     
+0420 [0100A0]  AC3E                       ON     M 62.4 ; BTR-ID — TAT.AUSGEF.BTR-ART: INTERVALL-TROMMELN
+0422 [0100A2]  AD3E                       ON     M 62.5 ; ARBST — STB ARBEITSSTELLUNG
+0424 [0100A4]  BF00                       )      
+0426 [0100A6]  983F                       =      M 63.0 ; BERI-GER — STB: BEWEG.ENTGEGEN D. DREHRICHTUNG
+0428 [0100A8]  10FF                       BLD    255
+042A [0100AA]  803F                       U      M 63.0 ; BERI-GER — STB: BEWEG.ENTGEGEN D. DREHRICHTUNG
+042C [0100AC]  801D                       U      M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+042E [0100AE]  A105                       UN     M 5.1 ; STOER_02 — TROMMELMOTOR ZU HEISS .............B13.5
+0430 [0100B0]  C50D                       U      E 13.5 ; B13.5 — THERMOSTAT IM TROMMELMOTOR M24.0
+0432 [0100B2]  A43F                       UN     M 63.4 ; ST.SUM — SAMMELMERKER STOERUNG TROMMEL
+0434 [0100B4]  E298                       UN     A 24.2 ; K24.2M — TROMMEL DREHEN
+0436 [0100B6]  BA00                       U(     
+0438 [0100B8]  FD73                       ON     T 115 ; T115_* — DREHRICHT.UMSCHALTVERZOEGER.
+043A [0100BA]  C898                       O      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+043C [0100BC]  BF00                       )      
+043E [0100BE]  803C                       U      M 60.0 ; TR1-ERL — ALLG. TROMMELBEWEG.PRINZ.MOEGLICH
+0440 [0100C0]  D898                       =      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+0442 [0100C2]  10FF                       BLD    255
+0444 [0100C4]  C098                       U      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+0446 [0100C6]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+0448 [0100C8]  E598                       UN     A 24.5 ; Y24.5 — TROMMELANSCHLAG
+044A [0100CA]  D998                       =      A 24.1 ; K24.1M — TROMMEL GERADESTELLEN R-UEBERBRUECKUNG
+044C [0100CC]  10FF                       BLD    255
+044E [0100CE]  C898                       O      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+0450 [0100D0]  CA98                       O      A 24.2 ; K24.2M — TROMMEL DREHEN
+0452 [0100D2]  8E3F                       O      M 63.6 ; TR-BREMS — HM BREMSE TROMMELANTRIEB LOESEN
+0454 [0100D4]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0456 [0100D6]  10FF                       BLD    255
+0458 [0100D8]  BA00                       U(     
+045A [0100DA]  8A34                       O      M 52.2 ; N_1.122 — VERT.-TRANSPORT SENKEN IN BELADESTATION
+045C [0100DC]  FB00                       O      
+045E [0100DE]  8017                       U      M 23.0 ; HB_20 — VERT.-TRANSPORT SENKEN/HEBEN
+0460 [0100E0]  85BE                       U      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0462 [0100E2]  BF00                       )      
+0464 [0100E4]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+0466 [0100E6]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+0468 [0100E8]  E50C                       UN     E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+046A [0100EA]  963F                       S      M 63.6 ; TR-BREMS — HM BREMSE TROMMELANTRIEB LOESEN
+046C [0100EC]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+046E [0100EE]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+0470 [0100F0]  BA00                       U(     
+0472 [0100F2]  C90C                       O      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0474 [0100F4]  CD0C                       O      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+0476 [0100F6]  BF00                       )      
+0478 [0100F8]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+047A [0100FA]  B63F                       R      M 63.6 ; TR-BREMS — HM BREMSE TROMMELANTRIEB LOESEN
+047C [0100FC]  0000                       NOP0   
+047E [0100FE]  10FF                       BLD    255
+0480 [010100]  BA00                       U(     
+0482 [010102]  F86F                       U      T 111 ; T111_* — TROMMEL GERADE
+0484 [010104]  C098                       U      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+0486 [010106]  A73F                       UN     M 63.7 ; TR-ANSCH — HM TROMMELANSCHLAG
+0488 [010108]  FD0B                       ON     T 11 ; T11 — VERZ.STOERUNGSANZ.ALLGEMEIN
+048A [01010A]  FB00                       O      
+048C [01010C]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+048E [01010E]  8650                       U      M 80.6 ; VT_UNTEN — HM VERT.-TRANSP.POSITION UNTEN
+0490 [010110]  BF00                       )      
+0492 [010112]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+0494 [010114]  913F                       S      M 63.1 ; M_GERADE — TROMMEL GERADE
+0496 [010116]  CA98                       O      A 24.2 ; K24.2M — TROMMEL DREHEN
+0498 [010118]  FB00                       O      
+049A [01011A]  E30D                       UN     E 13.3 ; B13.3 — TROMMEL GERADE
+049C [01011C]  F80B                       U      T 11 ; T11 — VERZ.STOERUNGSANZ.ALLGEMEIN
+049E [01011E]  C003                       U      E 3.0 ; STEUSP — STEUERSPANNUNG VORHANDEN
+04A0 [010120]  B13F                       R      M 63.1 ; M_GERADE — TROMMEL GERADE
+04A2 [010122]  0000                       NOP0   
+04A4 [010124]  10FF                       BLD    255
+04A6 [010126]  C098                       U      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+04A8 [010128]  801D                       U      M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+04AA [01012A]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+04AC [01012C]  823D                       U      M 61.2 ; GNDZ-4 — GRUNDST.-ZYKL.: BEENDET
+04AE [01012E]  30021030                   L      KT 030.1
+04B2 [010132]  246F                       SE     T 111 ; T111_* — TROMMEL GERADE
+04B4 [010134]  0000                       NOP0   
+04B6 [010136]  0000                       NOP0   
+04B8 [010138]  0000                       NOP0   
+04BA [01013A]  0000                       NOP0   
+04BC [01013C]  10FF                       BLD    255
+04BE [01013E]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+04C0 [010140]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+04C2 [010142]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+04C4 [010144]  E30D                       UN     E 13.3 ; B13.3 — TROMMEL GERADE
+04C6 [010146]  FB00                       O      
+04C8 [010148]  873F                       U      M 63.7 ; TR-ANSCH — HM TROMMELANSCHLAG
+04CA [01014A]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+04CC [01014C]  FB00                       O      
+04CE [01014E]  BA00                       U(     
+04D0 [010150]  8A3E                       O      M 62.2 ; BTR-SW — TAT.AUSGEF.BTR-ART: SCHWENKEN
+04D2 [010152]  8B3E                       O      M 62.3 ; BTR-DR — TAT.AUSGEF.BTR-ART: TROMMELN
+04D4 [010154]  8C3E                       O      M 62.4 ; BTR-ID — TAT.AUSGEF.BTR-ART: INTERVALL-TROMMELN
+04D6 [010156]  BF00                       )      
+04D8 [010158]  BA00                       U(     
+04DA [01015A]  8D3E                       O      M 62.5 ; ARBST — STB ARBEITSSTELLUNG
+04DC [01015C]  FB00                       O      
+04DE [01015E]  863E                       U      M 62.6 ; GNDST — STB GRUNDSTELLUNG
+04E0 [010160]  A23D                       UN     M 61.2 ; GNDZ-4 — GRUNDST.-ZYKL.: BEENDET
+04E2 [010162]  BF00                       )      
+04E4 [010164]  9F3F                       =      M 63.7 ; TR-ANSCH — HM TROMMELANSCHLAG
+04E6 [010166]  DD98                       =      A 24.5 ; Y24.5 — TROMMELANSCHLAG
+04E8 [010168]  10FF                       BLD    255
+04EA [01016A]  C898                       O      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+04EC [01016C]  CA98                       O      A 24.2 ; K24.2M — TROMMEL DREHEN
+04EE [01016E]  DC98                       =      A 24.4 ; K24.4M — LUEFTER FUER TROMMELMOTOR
+04F0 [010170]  10FF                       BLD    255
+04F2 [010172]  8929                       O      M 41.1 ; N_1.33 — VERT.-TRANSP.OBEN STATION 1
+04F4 [010174]  8D2A                       O      M 42.5 ; N_1.45 — VERT.-TRANSPORT OBEN STATION 2
+04F6 [010176]  892C                       O      M 44.1 ; N_1.57 — VERT.-TRANSPORT OBEN STATION 3
+04F8 [010178]  8E2D                       O      M 45.6 ; N_1.70 — VERT.-TRANSPORT OBEN STATION 4
+04FA [01017A]  892F                       O      M 47.1 ; N_1.81 — VERT.-TRANSPORT OBEN STATION 5
+04FC [01017C]  8D30                       O      M 48.5 ; N_1.93 — VERT.-TRANSPORT OBEN STATION 6
+04FE [01017E]  8932                       O      M 50.1 ; N_1.105 — VERT.-TRANSPORT OBEN STATION 7
+0500 [010180]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0502 [010182]  10FF                       BLD    255
+0504 [010184]  816F                       U      M 111.1 ; M111.1 — WT IN DER ANLAGE: SCHWENKEN
+0506 [010186]  99F0                       =      M 240.1 ; M240.1 — SCHMIERMERKER
+0508 [010188]  10FF                       BLD    255
+050A [01018A]  3D452D01                   SPA    FB 69 ; FB 69 — ERMITTLUNG PAUSENZEIT BEIM SCHWENKEN
+       Call descriptor @050C: 2D01; argument words: 0
+050E [01018E]  10FF                       BLD    255
+0510 [010190]  C898                       O      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+0512 [010192]  CA98                       O      A 24.2 ; K24.2M — TROMMEL DREHEN
+0514 [010194]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0516 [010196]  1473                       SA     T 115 ; T115_* — DREHRICHT.UMSCHALTVERZOEGER.
+0518 [010198]  0000                       NOP0   
+051A [01019A]  0000                       NOP0   
+051C [01019C]  0000                       NOP0   
+051E [01019E]  0000                       NOP0   
+0520 [0101A0]  10FF                       BLD    255
+0522 [0101A2]  F872                       U      T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+0524 [0101A4]  BA00                       U(     
+0526 [0101A6]  843C                       U      M 60.4 ; RI-VDA — RICHTUNG: VOR DEM ANSCHLAG
+0528 [0101A8]  C298                       U      A 24.2 ; K24.2M — TROMMEL DREHEN
+052A [0101AA]  FB00                       O      
+052C [0101AC]  853C                       U      M 60.5 ; RI-HDA — RICHTUNG: HINTER DEM ANSCHLAG
+052E [0101AE]  C098                       U      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+0530 [0101B0]  BF00                       )      
+0532 [0101B2]  5403                       ZR     Z 3 ; Z_KNT * — UEBERWACHUNGSZAEHLER SCHWENKEN
+0534 [0101B4]  F872                       U      T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+0536 [0101B6]  BA00                       U(     
+0538 [0101B8]  843C                       U      M 60.4 ; RI-VDA — RICHTUNG: VOR DEM ANSCHLAG
+053A [0101BA]  C098                       U      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+053C [0101BC]  FB00                       O      
+053E [0101BE]  853C                       U      M 60.5 ; RI-HDA — RICHTUNG: HINTER DEM ANSCHLAG
+0540 [0101C0]  C298                       U      A 24.2 ; K24.2M — TROMMEL DREHEN
+0542 [0101C2]  FB00                       O      
+0544 [0101C4]  A43C                       UN     M 60.4 ; RI-VDA — RICHTUNG: VOR DEM ANSCHLAG
+0546 [0101C6]  A53C                       UN     M 60.5 ; RI-HDA — RICHTUNG: HINTER DEM ANSCHLAG
+0548 [0101C8]  BA00                       U(     
+054A [0101CA]  C898                       O      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+054C [0101CC]  CA98                       O      A 24.2 ; K24.2M — TROMMEL DREHEN
+054E [0101CE]  BF00                       )      
+0550 [0101D0]  BF00                       )      
+0552 [0101D2]  6C03                       ZV     Z 3 ; Z_KNT * — UEBERWACHUNGSZAEHLER SCHWENKEN
+0554 [0101D4]  F872                       U      T 114 ; T114_* — ZAEHLTAKT TR.SCHWENKW.EINZEIT
+0556 [0101D6]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+0558 [0101D8]  FB00                       O      
+055A [0101DA]  823F                       U      M 63.2 ; ST.ZAEHL — STOERUNG UEBERWACHUNGSZAEHLER
+055C [0101DC]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+055E [0101DE]  30010500                   L      KZ 500
+0562 [0101E2]  5C03                       S      Z 3 ; Z_KNT * — UEBERWACHUNGSZAEHLER SCHWENKEN
+0564 [0101E4]  0000                       NOP0   
+0566 [0101E6]  0000                       NOP0   
+0568 [0101E8]  0000                       NOP0   
+056A [0101EA]  0000                       NOP0   
+056C [0101EC]  10FF                       BLD    255
+056E [0101EE]  4203                       L      Z 3 ; Z_KNT * — UEBERWACHUNGSZAEHLER SCHWENKEN
+0570 [0101F0]  30040208                   L      KF +520
+0574 [0101F4]  2120                       >F     
+0576 [0101F6]  9A3F                       =      M 63.2 ; ST.ZAEHL — STOERUNG UEBERWACHUNGSZAEHLER
+0578 [0101F8]  10FF                       BLD    255
+057A [0101FA]  BA00                       U(     
+057C [0101FC]  C098                       U      A 24.0 ; K24.0M — TROMMEL GERADESTELLEN
+057E [0101FE]  873F                       U      M 63.7 ; TR-ANSCH — HM TROMMELANSCHLAG
+0580 [010200]  CA98                       O      A 24.2 ; K24.2M — TROMMEL DREHEN
+0582 [010202]  BF00                       )      
+0584 [010204]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+0586 [010206]  30021060                   L      KT 060.1
+058A [01020A]  2470                       SE     T 112 ; T112_* — SCHALTERUEBERWACHUNG AUF LOG. 1
+058C [01020C]  0000                       NOP0   
+058E [01020E]  0000                       NOP0   
+0590 [010210]  0000                       NOP0   
+0592 [010212]  0000                       NOP0   
+0594 [010214]  10FF                       BLD    255
+0596 [010216]  823D                       U      M 61.2 ; GNDZ-4 — GRUNDST.-ZYKL.: BEENDET
+0598 [010218]  863E                       U      M 62.6 ; GNDST — STB GRUNDSTELLUNG
+059A [01021A]  B801                       U      Z 1 ; Z_VDA *V — ZAEHLER TROMMELBEREICH VOR DEM ANSCHLAG
+059C [01021C]  BC02                       UN     Z 2 ; Z_HDA *V — ZAEHLER TROMMELBER. HINTER DEM ANSCHLAG
+059E [01021E]  9B3F                       =      M 63.3 ; ST.ANSCH — STOERUNG ANSCHLAG UNTERFAHREN
+05A0 [010220]  10FF                       BLD    255
+05A2 [010222]  880B                       O      M 11.0 ; STOER 49 — UEBERWACHUNGSZAEHLER AUSGELOEST
+05A4 [010224]  890B                       O      M 11.1 ; STOER 50 — GERADE SCHALTER PRUEF. ( IMMER 1 ) B13.3
+05A6 [010226]  8A0B                       O      M 11.2 ; STOER 51 — TROMMEL STELLT ZU LANGE GERADE
+05A8 [010228]  8B0B                       O      M 11.3 ; STOER 52 — TROMMEL HAT ANSCHLAG UNTERFAHREN
+05AA [01022A]  FB00                       O      
+05AC [01022C]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+05AE [01022E]  843F                       U      M 63.4 ; ST.SUM — SAMMELMERKER STOERUNG TROMMEL
+05B0 [010230]  E400                       UN     E 0.4 ; AUTO_EIN — AUTOMATIK EIN
+05B2 [010232]  9C3F                       =      M 63.4 ; ST.SUM — SAMMELMERKER STOERUNG TROMMEL
+05B4 [010234]  10FF                       BLD    255
+05B6 [010236]  6500                       BE     

@@ -1,0 +1,10 @@
+OB34: OB 34 — BATTERIEAUSFALLERKENNUNG
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x600; block bytes: 18; SHA256: dfc4a47818eb258a1fd14892a8d710a81d9b8f0170cfe34e6feb26b8bd6ff22f
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 10 22 80 00 00 00 00 09
+Code starts at block offset 0x000A.
+000A [00060A]  1083                       BLD    131
+000C [00060C]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+000E [00060E]  9510                       S      M 16.5 ; STOER_94 — BATTERIEAUSFALL S5-115U
+0010 [000610]  6500                       BE     

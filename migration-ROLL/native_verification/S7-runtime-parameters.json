@@ -1,0 +1,289 @@
+{
+  "scope": "Typed parameter reference from supplied native runtime DB listings; not a compiled TIA project or automatic import",
+  "received_date": "2026-10-12",
+  "parameter_count": 28,
+  "parameters": [
+    {
+      "name": "Preset_T116",
+      "proposed_type": "TIME",
+      "value": 5000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW116",
+      "legacy_consumer": "T 116",
+      "legacy_hex": "1050",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T117",
+      "proposed_type": "TIME",
+      "value": 5000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW117",
+      "legacy_consumer": "T 117",
+      "legacy_hex": "1050",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T24",
+      "proposed_type": "TIME",
+      "value": 1000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW24",
+      "legacy_consumer": "T 24",
+      "legacy_hex": "1010",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T25",
+      "proposed_type": "TIME",
+      "value": 2000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW25",
+      "legacy_consumer": "T 25",
+      "legacy_hex": "1020",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T17",
+      "proposed_type": "TIME",
+      "value": 3600000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW17",
+      "legacy_consumer": "T 17",
+      "legacy_hex": "3360",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T31",
+      "proposed_type": "TIME",
+      "value": 1200000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW31",
+      "legacy_consumer": "T 31",
+      "legacy_hex": "3120",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T32",
+      "proposed_type": "TIME",
+      "value": 1200000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW32",
+      "legacy_consumer": "T 32",
+      "legacy_hex": "3120",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T33",
+      "proposed_type": "TIME",
+      "value": 900000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW33",
+      "legacy_consumer": "T 33",
+      "legacy_hex": "2900",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T58",
+      "proposed_type": "TIME",
+      "value": 1800000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW58",
+      "legacy_consumer": "T 58",
+      "legacy_hex": "3180",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T59",
+      "proposed_type": "TIME",
+      "value": 1800000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW59",
+      "legacy_consumer": "T 59",
+      "legacy_hex": "3180",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T63",
+      "proposed_type": "TIME",
+      "value": 10000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW63",
+      "legacy_consumer": "T 63",
+      "legacy_hex": "2010",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T62",
+      "proposed_type": "TIME",
+      "value": 600000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW62",
+      "legacy_consumer": "T 62",
+      "legacy_hex": "2600",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T85",
+      "proposed_type": "TIME",
+      "value": 120000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW85",
+      "legacy_consumer": "T 85",
+      "legacy_hex": "2120",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T61",
+      "proposed_type": "TIME",
+      "value": 600000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW61",
+      "legacy_consumer": "T 61",
+      "legacy_hex": "2600",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T55",
+      "proposed_type": "TIME",
+      "value": 1000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW55",
+      "legacy_consumer": "T 55",
+      "legacy_hex": "1010",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T60",
+      "proposed_type": "TIME",
+      "value": 60000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW60",
+      "legacy_consumer": "T 60",
+      "legacy_hex": "2060",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T56",
+      "proposed_type": "TIME",
+      "value": 60000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW56",
+      "legacy_consumer": "T 56",
+      "legacy_hex": "2060",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T65",
+      "proposed_type": "TIME",
+      "value": 15000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW65",
+      "legacy_consumer": "T 65",
+      "legacy_hex": "2015",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T67",
+      "proposed_type": "TIME",
+      "value": 5000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW67",
+      "legacy_consumer": "T 67",
+      "legacy_hex": "1050",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T75",
+      "proposed_type": "TIME",
+      "value": 600000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW75",
+      "legacy_consumer": "T 75",
+      "legacy_hex": "2600",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T77",
+      "proposed_type": "TIME",
+      "value": 300000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW77",
+      "legacy_consumer": "T 77",
+      "legacy_hex": "2300",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T102",
+      "proposed_type": "TIME",
+      "value": 300000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW102",
+      "legacy_consumer": "T 102",
+      "legacy_hex": "2300",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T103",
+      "proposed_type": "TIME",
+      "value": 300000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW103",
+      "legacy_consumer": "T 103",
+      "legacy_hex": "2300",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T107",
+      "proposed_type": "TIME",
+      "value": 15000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW107",
+      "legacy_consumer": "T 107",
+      "legacy_hex": "2015",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T54",
+      "proposed_type": "TIME",
+      "value": 120000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW54",
+      "legacy_consumer": "T 54",
+      "legacy_hex": "2120",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_T53",
+      "proposed_type": "TIME",
+      "value": 120000,
+      "unit": "ms",
+      "legacy_source": "DB15.DW53",
+      "legacy_consumer": "T 53",
+      "legacy_hex": "2120",
+      "evidence": "DB15ROLS.INI"
+    },
+    {
+      "name": "Preset_Z1",
+      "proposed_type": "Int",
+      "value": 20,
+      "unit": "count",
+      "legacy_source": "DB19.DW1",
+      "legacy_consumer": "Z 1",
+      "legacy_hex": "0020",
+      "evidence": "DB19ROLS.INI"
+    },
+    {
+      "name": "Preset_Z2",
+      "proposed_type": "Int",
+      "value": 14,
+      "unit": "count",
+      "legacy_source": "DB19.DW2",
+      "legacy_consumer": "Z 2",
+      "legacy_hex": "0014",
+      "evidence": "DB19ROLS.INI"
+    }
+  ],
+  "editor_state_migrated_as_process_presets": false,
+  "hardware_test": false
+}

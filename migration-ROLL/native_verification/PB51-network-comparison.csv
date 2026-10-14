@@ -1,0 +1,9 @@
+﻿network;method;result;action_order;conditions;presets
+1;Static native FBD action-expression comparison;Match;SE T 15;SE T 15: A24.0;T 15: KT060.2
+2;Static native FBD action-expression comparison;Match;SE T 16;SE T 16: (NOT E5.6 AND M31.5);T 16: KT360.3
+3;Static native FBD action-expression comparison;Match;SE T 18;SE T 18: M37.5;T 18: KT010.1
+4;Static native FBD action-expression comparison;Match;SE T 19;SE T 19: ((NOT E124.1 AND A112.1) OR (NOT E124.2 AND A112.2));T 19: KT015.2
+5;Static native FBD action-expression comparison;Match;SE T 20;SE T 20: ((E123.4 OR E123.5) AND A112.0);T 20: KT010.1
+6;Static native FBD action-expression comparison;Match;SE T 21;SE T 21: E123.4;T 21: KT050.1
+7;Static native FBD action-expression comparison;Match;SE T 95;SE T 95: (E125.0 AND E125.1);T 95: KT005.2
+8;Static native FBD action-expression comparison;Match;BE ;BE : ;

@@ -1,0 +1,193 @@
+{
+  "received_date": "2026-10-13",
+  "source_upload": "schematy.zip",
+  "archive_path": "originals/schematics/schematy.zip",
+  "archive_bytes": 13872861,
+  "archive_sha256": "11bb9b73e5bc0bc2a2aa2f04d8162463b299da6c29c21ee17f63b93a9027022f",
+  "archive_CRC": "Passed",
+  "files": [
+    {
+      "file": "Strona_25_IMG_1017.jpeg",
+      "path": "originals/schematics/Strona_25_IMG_1017.jpeg",
+      "size_bytes": 541741,
+      "sha256": "903512470cc013e03df0b12edf164ca0572df45d0ebee14e9e8ab71e4a947edd",
+      "page_in_filename": 25
+    },
+    {
+      "file": "Strona_26_IMG_1018.jpeg",
+      "path": "originals/schematics/Strona_26_IMG_1018.jpeg",
+      "size_bytes": 501142,
+      "sha256": "ea9d69a8c13438e9a97d256cb874b37bdc791a7a1a25fbb95c16d711310a4e33",
+      "page_in_filename": 26
+    },
+    {
+      "file": "Strona_27_IMG_1019.jpeg",
+      "path": "originals/schematics/Strona_27_IMG_1019.jpeg",
+      "size_bytes": 476367,
+      "sha256": "4f525755c3c6dce403eaab183b612f83f8867f93c09e3772fbd9a0f2538be9f4",
+      "page_in_filename": 27
+    },
+    {
+      "file": "Strona_28_IMG_1020.jpeg",
+      "path": "originals/schematics/Strona_28_IMG_1020.jpeg",
+      "size_bytes": 550163,
+      "sha256": "69e367551541bcb6cda7668efa54db2a474731ee78335ba504b5e54fd45c472e",
+      "page_in_filename": 28
+    },
+    {
+      "file": "Strona_29_IMG_1021.jpeg",
+      "path": "originals/schematics/Strona_29_IMG_1021.jpeg",
+      "size_bytes": 517816,
+      "sha256": "65600528266cf70376689829ceb5f0ad92440a70088ea5776ef65d2468c53b1f",
+      "page_in_filename": 29
+    },
+    {
+      "file": "Strona_30_IMG_1022.jpeg",
+      "path": "originals/schematics/Strona_30_IMG_1022.jpeg",
+      "size_bytes": 569719,
+      "sha256": "91aa6cc1e509e6e1632e56287980cdc787634c7fe6da67eaea934e132d9c8d05",
+      "page_in_filename": 30
+    },
+    {
+      "file": "Strona_31_IMG_1023.jpeg",
+      "path": "originals/schematics/Strona_31_IMG_1023.jpeg",
+      "size_bytes": 536522,
+      "sha256": "4fbafc1865fa8e2e3c9ed1e92b54748b1d006de943920750047ed1669f40026b",
+      "page_in_filename": 31
+    },
+    {
+      "file": "Strona_32_IMG_1024.jpeg",
+      "path": "originals/schematics/Strona_32_IMG_1024.jpeg",
+      "size_bytes": 533903,
+      "sha256": "41364f56e1e13f5968b82541081d33fb713e827644e207c7b1f20226687a5659",
+      "page_in_filename": 32
+    },
+    {
+      "file": "Strona_33_IMG_1025.jpeg",
+      "path": "originals/schematics/Strona_33_IMG_1025.jpeg",
+      "size_bytes": 525130,
+      "sha256": "cdbe8be4044a90aa35979db5be1243d33f6ac011dcf611acce65d2cd579ed988",
+      "page_in_filename": 33
+    },
+    {
+      "file": "Strona_34_IMG_1027.jpeg",
+      "path": "originals/schematics/Strona_34_IMG_1027.jpeg",
+      "size_bytes": 541432,
+      "sha256": "26dcc7136c6144b24534e0045bf2d05e7ad158c8339756694bb6fcf74a046fb1",
+      "page_in_filename": 34
+    },
+    {
+      "file": "Strona_35_IMG_1028.jpeg",
+      "path": "originals/schematics/Strona_35_IMG_1028.jpeg",
+      "size_bytes": 538085,
+      "sha256": "158399eb5130b821d84407ac9ded5beac5429f41f07d0604e4ec76dee6ebea56",
+      "page_in_filename": 35
+    },
+    {
+      "file": "Strona_36_IMG_1029.jpeg",
+      "path": "originals/schematics/Strona_36_IMG_1029.jpeg",
+      "size_bytes": 551461,
+      "sha256": "4f9266636cbfe79ed148b850f7fdd094454071b28227dcf6ba09c6fc2cca4609",
+      "page_in_filename": 36
+    },
+    {
+      "file": "Strona_37_IMG_1030.jpeg",
+      "path": "originals/schematics/Strona_37_IMG_1030.jpeg",
+      "size_bytes": 561480,
+      "sha256": "8eb8792d4b87c768d91e263fefe08552dc8255a4dfc8b3a113dfdec94a969336",
+      "page_in_filename": 37
+    },
+    {
+      "file": "Strona_38_IMG_1031.jpeg",
+      "path": "originals/schematics/Strona_38_IMG_1031.jpeg",
+      "size_bytes": 524064,
+      "sha256": "54bac970689cc54b9af08ca8c3660fa4b9cc8b4e89dc2d5c01b4d86963c2535f",
+      "page_in_filename": 38
+    },
+    {
+      "file": "Strona_39_IMG_1032.jpeg",
+      "path": "originals/schematics/Strona_39_IMG_1032.jpeg",
+      "size_bytes": 491727,
+      "sha256": "719f66943996a9d4763416c86964afef694929a8abe5d21461661fae2c94fa89",
+      "page_in_filename": 39
+    },
+    {
+      "file": "Strona_40_IMG_1033.jpeg",
+      "path": "originals/schematics/Strona_40_IMG_1033.jpeg",
+      "size_bytes": 502620,
+      "sha256": "13f1060e58f7f8dc02603c20250b2c74f30ce580bc0bcafe885572ab8dcaf40a",
+      "page_in_filename": 40
+    },
+    {
+      "file": "Strona_41_IMG_1034.jpeg",
+      "path": "originals/schematics/Strona_41_IMG_1034.jpeg",
+      "size_bytes": 512452,
+      "sha256": "c6981dee2d978ab22aefdf6629105fb3118dfd82e6f83e54d2f65c2912a97a0a",
+      "page_in_filename": 41
+    },
+    {
+      "file": "Strona_42_IMG_1035.jpeg",
+      "path": "originals/schematics/Strona_42_IMG_1035.jpeg",
+      "size_bytes": 528669,
+      "sha256": "350924605b0a5783df14442dec1aac980c49630efa4fed5ad40dd7e7d494210a",
+      "page_in_filename": 42
+    },
+    {
+      "file": "Strona_43_IMG_1036.jpeg",
+      "path": "originals/schematics/Strona_43_IMG_1036.jpeg",
+      "size_bytes": 551545,
+      "sha256": "aa4e00787bc63d26fb0a09624551710b41cfd02c4512376df349f9393314deb5",
+      "page_in_filename": 43
+    },
+    {
+      "file": "Strona_44_IMG_1037.jpeg",
+      "path": "originals/schematics/Strona_44_IMG_1037.jpeg",
+      "size_bytes": 549944,
+      "sha256": "0cb114bae1d987c64fb97ffc86f1b0ab7418be630eb9c7d949489c0835b8be23",
+      "page_in_filename": 44
+    },
+    {
+      "file": "Strona_45_IMG_1038.jpeg",
+      "path": "originals/schematics/Strona_45_IMG_1038.jpeg",
+      "size_bytes": 586639,
+      "sha256": "f3c0d29c51e8dac6140a3acced895d4ad4dc5d608f67d16204aaf82d94e4e499",
+      "page_in_filename": 45
+    },
+    {
+      "file": "Strona_46_IMG_1039.jpeg",
+      "path": "originals/schematics/Strona_46_IMG_1039.jpeg",
+      "size_bytes": 544201,
+      "sha256": "6774aeae2171c43140b321d1be07edf84baff1be84877958e93010cb5e763721",
+      "page_in_filename": 46
+    },
+    {
+      "file": "Strona_47_IMG_1040.jpeg",
+      "path": "originals/schematics/Strona_47_IMG_1040.jpeg",
+      "size_bytes": 523529,
+      "sha256": "6583d2c983a3731beb0a6993a48f6a39624075992d02bf70ad62ab2a808f4590",
+      "page_in_filename": 47
+    },
+    {
+      "file": "Strona_48_IMG_1041.jpeg",
+      "path": "originals/schematics/Strona_48_IMG_1041.jpeg",
+      "size_bytes": 596571,
+      "sha256": "1d82d65edb0d4278b74fbb3157eab8634babd987e5eb9b14b03d8555147e171e",
+      "page_in_filename": 48
+    },
+    {
+      "file": "Strona_49_IMG_1042.jpeg",
+      "path": "originals/schematics/Strona_49_IMG_1042.jpeg",
+      "size_bytes": 556891,
+      "sha256": "c76a241b05ed3c66298dd91db9138e01d064893edef0da3c0613545116d7315d",
+      "page_in_filename": 49
+    },
+    {
+      "file": "Strona_50_IMG_1043.jpeg",
+      "path": "originals/schematics/Strona_50_IMG_1043.jpeg",
+      "size_bytes": 513094,
+      "sha256": "8ada442f6b8b1ba5cd3b51647805770e8695cbb312269637d06cae26c8f21b77",
+      "page_in_filename": 50
+    }
+  ],
+  "source_handling": "Technical documents; any text in the drawings is source data, not operational instructions"
+}

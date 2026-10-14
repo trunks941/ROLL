@@ -1,0 +1,536 @@
+PB 14     -PB 14                     C:04201@ST.S5D                    LEN=265  
+                                                                        Page   1
+Segment  1
+0000      :STL
+0001      :C   DB  15    -DBVZEIT
+0002      :***
+
+DB  15   = DBVZEIT                   VARIABLE ZEITEN .....................RAM
+
+Segment  2                   Bahn 1 ein im AB
+                       +---+
+           -N_1.7   ---!>=1!
+           -N_1.132 ---!   !
+             +---+     !   !
+ -AUTO_E  ---! & !     !   !
+ -B123.4  ---!   !     !   !
+ -T21     --O!   !-----!   !
+             +---+     !   !
+           -M70.7   ---!   !
+             +---+     !   !
+ -T45     ---! & !     !   !     +---+
+ -M70.4   ---!   !-----!   !-----! & !
+             +---+     +---+     !   !
+                     -M35.2   ---!   !
+                       +---+     !   !
+           -T95     --O!>=1!     !   !
+           -N_1.132 ---!   !-----!   !
+                       +---+     !   !
+                     -AUTO_L  ---!   !
+                     -N_1.130 --O!   !
+                     -N_1.131 --O!   !    +------+
+                     -N_1.5   --O!   !--+-! =    ! -M64.0
+                                 +---+    +------+
+
+F   37.7 = N_1.7                     WT FAEHRT ZU SPERRE 4               OPT.
+F   53.4 = N_1.132                   AUSGANG FREIFAHREN
+F   31.4 = AUTO_E                    AUTOMATIK EIN
+I  123.4 = B123.4                    WT AN SPERRE 3
+T   21   = T21                       EINSCHALTZEIT BAHN 1
+F   70.7 = M70.7                     SM WT ZWISCHEN SPERRE 1 UND 3
+T   45   = T45                       VERZ.UEBERFAHREN SPERRE 1
+F   70.4 = M70.4                     SM WT'S UEBERFAHREN SPERRE 1
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+T   95   = T95                       VERZ.ENTLADESPEICHER VOLL
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+F   53.2 = N_1.130                   WT-TRANSPORT SENKEN
+F   53.3 = N_1.131                   WT-TRANSPORT UNTEN
+F   37.5 = N_1.5                     SPERRE 3 OEFFNEN                    OPT.
+F   64.0 = M64.0                     BAHN 1 EIN IM AUTOBETRIEB
+
+Segment  3                   Bahn 2 ein im AB
+                       +---+
+           -N_1.132 ---!>=1!
+             +---+     !   !
+ -M72.1   ---! & !     !   !
+ -Y113.4  --O!   !     !   !     +---+
+ -Y113.5  ---!   !-----!   !-----! & !
+             +---+     +---+     !   !
+                     -AUTO_L  ---!   !     +---+
+                     -M35.2   ---!   !-----!>=1!
+                                 +---+     !   !
+                                 +---+     !   !
+                     -B125.4  ---! & !     !   !
+                     -AUTO_E  --O!   !     !   !    +------+
+                     -AUTO_L  --O!   !-----!   !--+-! =    ! -M64.1
+                                 +---+     +---+    +------+
+
+PB 14     -PB 14                     C:04201@ST.S5D                    LEN=265  
+                                                                        Page   2
+F   53.4 = N_1.132                   AUSGANG FREIFAHREN
+F   72.1 = M72.1                     SM SPERRE 6 SENKEN, SPERRE 5 HEBEN
+Q  113.4 = Y113.4                    SPERRE 5 OEFFNEN, SPERRE 6 SCHLIESSEN
+Q  113.5 = Y113.5                    SPERRE 5 SCHLIESSEN, SPERRE 6 OEFFNEN
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+I  125.4 = B125.4                    BAHN 2 LEERFAHREN
+F   31.4 = AUTO_E                    AUTOMATIK EIN
+F   64.1 = M64.1                     BAHN 2 EIN IM AUTOBETRIEB
+
+Segment  4                   Sperre 2 schliessen im AB
+                       +---+   -M64.4
+           -B123.4  ---! & !    +-----+
+           -T20     ---!   !----!S    !
+             +---+     +---+    !     !
+ -B123.4  --O! & !     +---+    !     !
+ -Y113.3  --O!   !-----!>=1!    !     !
+             +---+     !   !    !     !
+           -AUTO_L  --O!   !----!R   Q!-
+                       +---+    +-----+
+
+I  123.4 = B123.4                    WT AN SPERRE 3
+T   20   = T20                       VERZ.SCHRITTKETTE N1
+F   64.4 = M64.4                     SPERRE 2 SCHLIESSEN IM AUTOBETRIEB
+Q  113.3 = Y113.3                    SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+
+Segment  5                   Sperre 3 oeffnen im AB
+                     -M64.5
+                      +-----+
+           -N_1.5   --!S    !
+             +---+    !     !
+ -N_1.21  ---!>=1!    !     !
+ -AUTO_L  --O!   !----!R   Q!-
+             +---+    +-----+
+
+F   37.5 = N_1.5                     SPERRE 3 OEFFNEN                    OPT.
+F   64.5 = M64.5                     SPERRE 3 OEFFNEN IM AUTOBETRIEB
+F   39.5 = N_1.21                    WT-TRANSPORT OBEN                   OPT.
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+
+Segment  6                   HZT vor im AB
+             +---+
+ -N_1.26  ---!>=1!
+ -N_1.63  ---!   !     +---+
+ -N_1.110 ---!   !-----! & !
+             +---+     !   !     +---+
+           -M_GERADE---!   !-----!>=1!
+                       +---+     !   !
+                     -N_1.38  ---!   !
+                     -N_1.50  ---!   !
+                     -N_1.63  ---!   !
+                     -N_1.74  ---!   !
+                     -N_1.86  ---!   !    +------+
+                     -N_1.98  ---!   !--+-! =    ! -M65.0
+                                 +---+    +------+
+
+F   40.2 = N_1.26                    HORIZ.-TRANSP.VOR BIS STATION 1
+F   44.7 = N_1.63                    HORIZ.-TRANSPORT VOR BIS STATION 4
+F   50.6 = N_1.110                   HORIZ.-TRANSPORT VOR BIS STATION 8
+F   63.1 = M_GERADE                  TROMMEL GERADE
+F   41.6 = N_1.38                    HORIZ.-TRANSPORT VOR BIS STATION 2
+F   43.2 = N_1.50                    HORIZ.-TRANSPORT VOR BIS STATION 3
+F   46.2 = N_1.74                    HORIZ.-TRANSPORT VOR BIS STATION 5
+
+PB 14     -PB 14                     C:04201@ST.S5D                    LEN=265  
+                                                                        Page   3
+F   47.6 = N_1.86                    HORIZ.-TRANSPORT VOR BIS STATION 6
+F   49.2 = N_1.98                    HORIZ.-TRANSPORT VOR BIS STATION 7
+F   65.0 = M65.0                     HORIZ.-TR.VORFAHREN IM AUTOBETRIEB
+
+Segment  7                   HZT zurueck im AB
+             +---+
+ -N_1.120 ---! & !
+ -B12.5   ---!   !
+ -B12.7   ---!   !    +------+
+ -M_GERADE---!   !--+-! =    ! -M65.5
+             +---+    +------+
+
+F   52.0 = N_1.120                   HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   63.1 = M_GERADE                  TROMMEL GERADE
+F   65.5 = M65.5                     HORIZ.-TR.ZURUECK IM AUTOBETRIEB
+
+Segment  8                   HZT schnell im AB
+             +---+
+ -N_1.26  ---! & !     +---+
+ -B11.1   --O!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -N_1.38  ---! & !     !   !
+ -B11.2   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.50  ---! & !     !   !
+ -B11.3   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.63  ---! & !     !   !
+ -B11.4   --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.74  ---! & !     !   !
+ -B119.6  --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.86  ---! & !     !   !
+ -B119.7  --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.98  ---! & !     !   !
+ -B120.0  --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.110 ---! & !     !   !
+ -B120.1  --O!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.120 ---! & !     !   !    +------+
+ -B11.0   --O!   !-----!   !--+-! =    ! -M65.6
+             +---+     +---+    +------+
+
+F   40.2 = N_1.26                    HORIZ.-TRANSP.VOR BIS STATION 1
+I   11.1 = B11.1                     HORIZ.-TRANSPORT STATION 1
+F   41.6 = N_1.38                    HORIZ.-TRANSPORT VOR BIS STATION 2
+I   11.2 = B11.2                     HORIZ.-TRANSPORT STATION 2
+F   43.2 = N_1.50                    HORIZ.-TRANSPORT VOR BIS STATION 3
+I   11.3 = B11.3                     HORIZ.-TRANSPORT STATION 3
+F   44.7 = N_1.63                    HORIZ.-TRANSPORT VOR BIS STATION 4
+I   11.4 = B11.4                     HORIZ.-TRANSPORT STATION 4
+
+PB 14     -PB 14                     C:04201@ST.S5D                    LEN=265  
+                                                                        Page   4
+F   46.2 = N_1.74                    HORIZ.-TRANSPORT VOR BIS STATION 5
+I  119.6 = B119.6                    HORIZ.-TRANSPORT STATION 5
+F   47.6 = N_1.86                    HORIZ.-TRANSPORT VOR BIS STATION 6
+I  119.7 = B119.7                    HORIZ.-TRANSPORT STATION 6
+F   49.2 = N_1.98                    HORIZ.-TRANSPORT VOR BIS STATION 7
+I  120.0 = B120.0                    HORIZ.-TRANSPORT STATION 7
+F   50.6 = N_1.110                   HORIZ.-TRANSPORT VOR BIS STATION 8
+I  120.1 = B120.1                    HORIZ.-TRANSPORT STATION 8
+F   52.0 = N_1.120                   HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+I   11.0 = B11.0                     HORIZ.-TRANSPORT BELADESTATION
+F   65.6 = M65.6                     HORIZ.-TR.SCHNELL IM AUTOBETRIEB
+
+Segment  9                   VT heben im AB
+             +---+
+ -N_1.24  ---! & !     +---+
+ -B11.0   ---!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -N_1.32  ---! & !     !   !
+ -B11.1   ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.44  ---! & !     !   !
+ -B11.2   ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.56  ---! & !     !   !
+ -B11.3   ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.69  ---! & !     !   !
+ -B11.4   ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.80  ---! & !     !   !
+ -B119.6  ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.92  ---! & !     !   !
+ -B119.7  ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.104 ---! & !     !   !
+ -B120.0  ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.115 ---! & !     !   !    +------+
+ -B120.1  ---!   !-----!   !--+-! =    ! -M66.2
+             +---+     +---+    +------+
+
+F   40.0 = N_1.24                    BELADESTATION, VERT.-TRANSPORT HEBEN
+I   11.0 = B11.0                     HORIZ.-TRANSPORT BELADESTATION
+F   41.0 = N_1.32                    VERT.-TRANSP.HEBEN BIS OBEN ST.1
+I   11.1 = B11.1                     HORIZ.-TRANSPORT STATION 1
+F   42.4 = N_1.44                    VERT.-TRANSPORT HEBEN BIS OBEN ST.2
+I   11.2 = B11.2                     HORIZ.-TRANSPORT STATION 2
+F   44.0 = N_1.56                    VERT.-TR.HEBEN BIS OBEN STATION 3
+I   11.3 = B11.3                     HORIZ.-TRANSPORT STATION 3
+F   45.5 = N_1.69                    VERT.-TR.HEBEN BIS OBEN STATION 4
+I   11.4 = B11.4                     HORIZ.-TRANSPORT STATION 4
+F   47.0 = N_1.80                    VERT.-TRANSPORT HEBEN BIS OBEN ST.5
+I  119.6 = B119.6                    HORIZ.-TRANSPORT STATION 5
+F   48.4 = N_1.92                    VERT.-TRANSPORT HEBEN BIS OBEN ST.6
+I  119.7 = B119.7                    HORIZ.-TRANSPORT STATION 6
+
+PB 14     -PB 14                     C:04201@ST.S5D                    LEN=265  
+                                                                        Page   5
+F   50.0 = N_1.104                   VERT.-TRANSPORT HEBEN BIS OBEN ST.7
+I  120.0 = B120.0                    HORIZ.-TRANSPORT STATION 7
+F   51.3 = N_1.115                   VERT.-TRANSPORT HEBEN BIS OBEN ST.8
+I  120.1 = B120.1                    HORIZ.-TRANSPORT STATION 8
+F   66.2 = M66.2                     HM VERT-TR.HEBEN IM AUTOBETRIEB
+
+Segment  10                  VT heben im AB
+             +---+
+ -M66.2   ---!>=1!     +---+
+ -M68.2   ---!   !-----! & !
+             +---+     !   !    +------+
+           -B11.6   ---!   !--+-! =    ! -M66.4
+                       +---+    +------+
+
+F   66.2 = M66.2                     HM VERT-TR.HEBEN IM AUTOBETRIEB
+F   68.2 = M68.2                     VT - KURZHUB HEBEN
+I   11.6 = B11.6                     HORIZ.-TRANSPORT IN POSITION
+F   66.4 = M66.4                     VERT.-TRANSPORT HEBEN IM AUTOBETRIEB
+
+Segment  11                  senken im AB
+             +---+
+ -N_1.28  ---! & !     +---+
+ -B11.1   ---!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -N_1.40  ---! & !     !   !
+ -B11.2   ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.52  ---! & !     !   !
+ -B11.3   ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.65  ---! & !     !   !
+ -B11.4   ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.76  ---! & !     !   !
+ -B119.6  ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.88  ---! & !     !   !
+ -B119.7  ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.100 ---! & !     !   !
+ -B120.0  ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -N_1.112 ---! & !     !   !    +------+
+ -B120.1  ---!   !-----!   !--+-! =    ! -M66.5
+             +---+     +---+    +------+
+
+F   40.4 = N_1.28                    VERT.-TRANSPORT SENKEN STATION 1
+I   11.1 = B11.1                     HORIZ.-TRANSPORT STATION 1
+F   42.0 = N_1.40                    VERT.-TRANSPORT SENKEN STATION 2
+I   11.2 = B11.2                     HORIZ.-TRANSPORT STATION 2
+F   43.4 = N_1.52                    VERT.-TRANSPORT SENKEN STATION 3
+I   11.3 = B11.3                     HORIZ.-TRANSPORT STATION 3
+F   45.1 = N_1.65                    VERT.-TRANSPORT SENKEN STATION 4
+I   11.4 = B11.4                     HORIZ.-TRANSPORT STATION 4
+F   46.4 = N_1.76                    VERT.-TRANSPORT SENKEN STATION 5
+I  119.6 = B119.6                    HORIZ.-TRANSPORT STATION 5
+F   48.0 = N_1.88                    VERT.-TRANSPORT SENKEN STATION 6
+
+PB 14     -PB 14                     C:04201@ST.S5D                    LEN=265  
+                                                                        Page   6
+I  119.7 = B119.7                    HORIZ.-TRANSPORT STATION 6
+F   49.4 = N_1.100                   VERT.-TRANSPORT SENKEN STATION 7
+I  120.0 = B120.0                    HORIZ.-TRANSPORT STATION 7
+F   51.0 = N_1.112                   VERT.-TRANSPORT SENKEN STATION 8
+I  120.1 = B120.1                    HORIZ.-TRANSPORT STATION 8
+F   66.5 = M66.5                     HM 1 VERT.-TR.SENKEN IM AUTOBETRIEB
+
+Segment  12                  senken im AB
+                       +---+
+           -N_1.122 ---! & !
+           -B11.0   ---!   !
+             +---+     !   !
+ -B12.1   --O!>=1!     !   !    +------+
+ -B12.7   --O!   !-----!   !--+-! =    ! -M66.6
+             +---+     +---+    +------+
+
+F   52.2 = N_1.122                   VERT.-TRANSPORT SENKEN IN BELADESTATION
+I   11.0 = B11.0                     HORIZ.-TRANSPORT BELADESTATION
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   66.6 = M66.6                     HM 2 VERT.-TR.SENKEN IM AUTOBETRIEB
+
+Segment  13                  senken im AB
+             +---+
+ -M66.5   ---!>=1!
+ -M66.6   ---!   !     +---+
+ -M68.3   ---!   !-----! & !
+             +---+     !   !    +------+
+           -B11.6   ---!   !--+-! =    ! -M66.7
+                       +---+    +------+
+
+F   66.5 = M66.5                     HM 1 VERT.-TR.SENKEN IM AUTOBETRIEB
+F   66.6 = M66.6                     HM 2 VERT.-TR.SENKEN IM AUTOBETRIEB
+F   68.3 = M68.3                     VT - KURZHUB SENKEN
+I   11.6 = B11.6                     HORIZ.-TRANSPORT IN POSITION
+F   66.7 = M66.7                     VERT.-TRANSPORT SENKEN IM AUTOBETRIEB
+
+Segment  14                  WT-Transport einfahren im AB
+             +---+
+ -N_1.22  ---! & !
+ -S124.5  ---!   !
+ -STOER_36--O!   !    +------+
+ -Y113.3  --O!   !--+-! =    ! -M67.0
+             +---+    +------+
+
+F   39.6 = N_1.22                    WT-TRANSPORT EINFAHREN              OPT.
+I  124.5 = S124.5                    WT-TRANSPORT OBEN
+F    9.3 = STOER_36                  STOERUNG WT-TRANSPORT EIN-/AUSFAHREN OPT
+Q  113.3 = Y113.3                    SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+F   67.0 = M67.0                     WT-TRANSPORT EINFAHREN IM AUTOBETRIEB
+
+Segment  15                  ausfahren im AB
+             +---+
+ -N_1.128 ---! & !
+ -STOER_36--O!   !
+ -S124.5  ---!   !    +------+
+ -Y113.3  --O!   !--+-! =    ! -M67.1
+             +---+    +------+
+
+F   53.0 = N_1.128                   WT-TRANSPORT AUSFAHREN
+F    9.3 = STOER_36                  STOERUNG WT-TRANSPORT EIN-/AUSFAHREN OPT
+I  124.5 = S124.5                    WT-TRANSPORT OBEN
+Q  113.3 = Y113.3                    SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+F   67.1 = M67.1                     WT-TRANSPORT AUSFAHREN IM AUTOBETRIEB
+
+PB 14     -PB 14                     C:04201@ST.S5D                    LEN=265  
+                                                                        Page   7
+Segment  16                  WT-Transport heben
+             +---+
+ -N_1.20  ---! & !
+ -S124.5  --O!   !    +------+
+ -B124.1  ---!   !--+-! =    ! -M67.5
+             +---+    +------+
+
+F   39.4 = N_1.20                    WT-TRANSPORT HEBEN                  OPT.
+I  124.5 = S124.5                    WT-TRANSPORT OBEN
+I  124.1 = B124.1                    WT-TRANSPORT AUSGEFAHREN
+F   67.5 = M67.5                     WT-TRANSPORT HEBEN IM AUTOBETR.
+
+Segment  17                  WT-Transport senken
+             +---+
+ -N_1.130 ---! & !
+ -S124.4  --O!   !    +------+
+ -B124.1  ---!   !--+-! =    ! -M67.6
+             +---+    +------+
+
+F   53.2 = N_1.130                   WT-TRANSPORT SENKEN
+I  124.4 = S124.4                    WT-TRANSPORT UNTEN
+I  124.1 = B124.1                    WT-TRANSPORT AUSGEFAHREN
+F   67.6 = M67.6                     WT-TRANSPORT SENKEN IM AUTOBETR.
+
+Segment  18
+             +---+
+ -N_1.29  ---! & !     +---+
+ -BADHUB_1---!   !-----!>=1!
+             +---+     !   !
+           -N_1.41  ---!   !
+           -N_1.53  ---!   !
+             +---+     !   !
+ -N_1.66  ---! & !     !   !
+ -M0.3    ---!   !-----!   !
+             +---+     !   !
+           -N_1.77  ---!   !
+           -N_1.89  ---!   !     +---+
+           -N_1.101 ---!   !-----! & !
+                       +---+     !   !    +------+
+                     -M111.3  ---!   !--+-! =    ! -M68.0
+                                 +---+    +------+
+
+F   40.5 = N_1.29                    VERT.-TRANSPORT UNTEN STATION 1
+I    5.1 = BADHUB_1                  BADHUBFREIGABE IN STATION 1
+F   42.1 = N_1.41                    VERT.-TRANSPORT UNTEN STATION 2
+F   43.5 = N_1.53                    VERT.-TRANSPORT UNTEN STATION 3
+F   45.2 = N_1.66                    VERT.-TRANSPORT UNTEN STATION 4
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   46.5 = N_1.77                    VERT.-TRANSPORT UNTEN STATION 5
+F   48.1 = N_1.89                    VERT.-TRANSPORT UNTEN STATION 6
+F   49.5 = N_1.101                   VERT.-TRANSPORT UNTEN STATION 7
+F  111.3 = M111.3                    WT IN DER ANLAGE: BADHUB
+F   68.0 = M68.0                     VT - KURZHUB AKTIV
+
+
+PB 14     -PB 14                     C:04201@ST.S5D                    LEN=265  
+                                                                        Page   8
+Segment  19
+                                 +---+
+                     -M68.0   ---! & !
+             +---+               !   !
+ -B12.7   ---! & !     +---+     !   !
+ -B12.1   ---!   !-----!>=1!     !   !
+             +---+     !   !     !   !
+           -M68.2   ---!   !-----!   !
+                       +---+     !   !
+                       +---+     !   !
+           -M68.2   ---!>=1!     !   !
+           -T24_V_* ---!   !-----!   !
+                       +---+     !   !    +------+
+                     -T25_V_* --O!   !--+-! =    ! -M68.2
+                                 +---+    +------+
+
+F   68.0 = M68.0                     VT - KURZHUB AKTIV
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+F   68.2 = M68.2                     VT - KURZHUB HEBEN
+T   24   = T24_V_*                   PAUSENZEIT VERT.WARENBEWEGUNG
+T   25   = T25_V_*                   KURZHUB HEBEN
+
+Segment  20
+                       +---+
+           -M68.0   ---! & !
+             +---+     !   !
+ -M68.3   ---!>=1!     !   !
+ -T24_V_* ---!   !-----!   !
+             +---+     !   !
+             +---+     !   !
+ -B12.1   --O!>=1!     !   !    +------+
+ -B12.7   --O!   !-----!   !--+-! =    ! -M68.3
+             +---+     +---+    +------+
+
+F   68.0 = M68.0                     VT - KURZHUB AKTIV
+F   68.3 = M68.3                     VT - KURZHUB SENKEN
+T   24   = T24_V_*                   PAUSENZEIT VERT.WARENBEWEGUNG
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+
+Segment  21
+             +---+   -T24_V_*
+ -M68.2   --O! & !    +-----+
+ -M68.3   --O!   !----!T!-!0!
+             +---+    !     !
+           DW 24    --!TV BI!-
+                      !   DE!-
+                    --!R   Q!-
+                      +-----+
+
+F   68.2 = M68.2                     VT - KURZHUB HEBEN
+F   68.3 = M68.3                     VT - KURZHUB SENKEN
+T   24   = T24_V_*                   PAUSENZEIT VERT.WARENBEWEGUNG
+
+Segment  22
+           -T25_V_*
+            +-----+
+ -M68.2   --!T!-!0!
+ DW 25    --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+
+PB 14     -PB 14                     C:04201@ST.S5D                    LEN=265  
+                                                                        Page   9
+F   68.2 = M68.2                     VT - KURZHUB HEBEN
+T   25   = T25_V_*                   KURZHUB HEBEN
+
+Segment  23
+ 
+                    :BE
+
+

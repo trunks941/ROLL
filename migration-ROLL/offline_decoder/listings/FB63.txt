@@ -1,0 +1,56 @@
+FB63: LADE200 — MERKER M200.0-M239.7 NACH FB51 LADEN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x1700; block bytes: 118; SHA256: c17a14fa54094b8ab873374d34eddb69c46c9623480ecaf9905e175ffde181f1
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 3F 84 00 00 00 00 3B
+Code starts at block offset 0x0014.
+FB name: 'LADEN   '; entry SPA bytes: 2D05
+0014 [001714]  2029                       A      DB 41 ; DB_RETT — MERKER 200-239 RETTEN ...............RAM
+0016 [001716]  10FF                       BLD    255
+0018 [001718]  3200                       L      DW 0
+001A [00171A]  13C8                       T      MW 200 ; MW200 — MERKERWORT 200
+001C [00171C]  3202                       L      DW 2
+001E [00171E]  13CA                       T      MW 202 ; MW202 — MERKERWORT 202
+0020 [001720]  3204                       L      DW 4
+0022 [001722]  13CC                       T      MW 204 ; MW204 — MERKERWORT 204
+0024 [001724]  3206                       L      DW 6
+0026 [001726]  13CE                       T      MW 206 ; MW206 — MERKERWORT 206
+0028 [001728]  3208                       L      DW 8
+002A [00172A]  13D0                       T      MW 208 ; MW208 — MERKERWORT 208
+002C [00172C]  10FF                       BLD    255
+002E [00172E]  1082                       BLD    130
+0030 [001730]  320A                       L      DW 10
+0032 [001732]  13D2                       T      MW 210 ; MW210 — MERKERWORT 210
+0034 [001734]  320C                       L      DW 12
+0036 [001736]  13D4                       T      MW 212 ; MW212 — MERKERWORT 212
+0038 [001738]  320E                       L      DW 14
+003A [00173A]  13D6                       T      MW 214 ; MW214 — MERKERWORT 214
+003C [00173C]  3210                       L      DW 16
+003E [00173E]  13D8                       T      MW 216 ; MW216 — MERKERWORT 216
+0040 [001740]  3212                       L      DW 18
+0042 [001742]  13DA                       T      MW 218 ; MW218 — MERKERWORT 218
+0044 [001744]  10FF                       BLD    255
+0046 [001746]  1082                       BLD    130
+0048 [001748]  3214                       L      DW 20
+004A [00174A]  13DC                       T      MW 220 ; MW220 — MERKERWORT 220
+004C [00174C]  3216                       L      DW 22
+004E [00174E]  13DE                       T      MW 222 ; MW222 — MERKERWORT 222
+0050 [001750]  3218                       L      DW 24
+0052 [001752]  13E0                       T      MW 224 ; MW224 — MERKERWORT 224
+0054 [001754]  321A                       L      DW 26
+0056 [001756]  13E2                       T      MW 226 ; MW226 — MERKERWORT 226
+0058 [001758]  321C                       L      DW 28
+005A [00175A]  13E4                       T      MW 228 ; MW228 — MERKERWORT 228
+005C [00175C]  10FF                       BLD    255
+005E [00175E]  1082                       BLD    130
+0060 [001760]  321E                       L      DW 30
+0062 [001762]  13E6                       T      MW 230 ; MW230 — MERKERWORT 230
+0064 [001764]  3220                       L      DW 32
+0066 [001766]  13E8                       T      MW 232 ; MW232 — MERKERWORT 232
+0068 [001768]  3222                       L      DW 34
+006A [00176A]  13EA                       T      MW 234 ; MW234 — MERKERWORT 234
+006C [00176C]  3224                       L      DW 36
+006E [00176E]  13EC                       T      MW 236 ; MW236 — MERKERWORT 236
+0070 [001770]  3226                       L      DW 38
+0072 [001772]  13EE                       T      MW 238 ; MW238 — MERKERWORT 238
+0074 [001774]  6500                       BE     

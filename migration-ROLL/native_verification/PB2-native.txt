@@ -1,0 +1,1508 @@
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page   1
+Segment  1
+             +---+
+ -T11     ---! & !    +------+
+ -RI/NEUST--O!   !--+-! =    ! -M4.1
+             +---+    +------+
+
+T   11   = T11                       VERZ.STOERUNGSANZ.ALLGEMEIN
+F    0.1 = RI/NEUST                  RICHTIMPULSMERKER FUER NEUSTART
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+
+
+Segment  2
+             +---+
+ -STOER_Q ---!>=1!    +------+
+ -M4.1    --O!   !--+-! =    ! -STQUITT
+             +---+    +------+
+
+I    1.0 = STOER_Q                   TASTER STOERUNG QUITTIEREN
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  3
+             +---+
+ -AUTO_EIN---! & !
+ -AUTO_E  --O!   !     +---+
+ -M4.1    ---!   !-----!>=1!
+             +---+     !   !     +---+
+           -AUTO_L  ---!   !-----! & !
+                       +---+     !   !    +------+
+                     -AUTO    ---!   !--+-! =    ! -M4.4
+                                 +---+    +------+
+
+I    0.4 = AUTO_EIN                  AUTOMATIK EIN
+F   31.4 = AUTO_E                    AUTOMATIK EIN
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+I    0.2 = AUTO                      BETRIEBSART AUTOMATIK
+F    4.4 = M4.4                      ABFRAGE EINSCHALTBED. F.AUTOMATIKBETRIEB
+
+Segment  4
+           -STOER_01
+            +-----+
+ -B11.7   -O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I   11.7 = B11.7                     THERMOSTAT IM HORIZ.-TRANSPORT M23.0
+F    5.0 = STOER_01                  HORIZ.TRANSPORTMOTOR ZU HEISS .....B11.7
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  5
+           -STOER_02
+            +-----+
+ -B13.5   -O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I   13.5 = B13.5                     THERMOSTAT IM TROMMELMOTOR M24.0
+F    5.1 = STOER_02                  TROMMELMOTOR ZU HEISS .............B13.5
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page   2
+Segment  6
+           -STOER_03
+            +-----+
+ -B13.0   -O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I   13.0 = B13.0                     THERMOSTAT IM VERT.-TRANSPORT M23.4
+F    5.2 = STOER_03                  VERT.-TRANSPORTMOTOR ZU HEISS .....B13.0
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  7
+           -STOER_04
+            +-----+
+ -B8.5    -O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I    8.5 = B8.5                      THERMOSTAT GEBLAESE WARMLUFT STATION 4
+F    5.3 = STOER_04                  MOTOR GEBL.WARMLUFT ST.4 ZU HEISS ..B8.5
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  8
+           -STOER_05
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    5.4 = STOER_05                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  9
+           -STOER_06
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    5.5 = STOER_06                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  10
+           -STOER_07
+            +-----+
+ -Q/PU_GE --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I    3.6 = Q/PU_GE                   MOTORSCHUTZSCHALTER PUMPEN/GEBLAESE
+F    5.6 = STOER_07                  MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page   3
+Segment  11
+           -STOER_08
+            +-----+
+ -Q/ANTR  -O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I    3.7 = Q/ANTR                    MOTORSCHUTZSCHALTER ANTRIEBE
+F    5.7 = STOER_08                  MOTORSCHUTZ ANTRIEBE ANGESPROCHEN
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  12
+                     -STOER_09
+                      +-----+
+           -B5.2    -O!S    !
+             +---+    !     !
+ -STQUITT ---! & !    !     !
+ -B5.2    ---!   !----!R   Q!-
+             +---+    +-----+
+
+I    5.2 = B5.2                      NIVEAU STATION 1 UEF
+F    6.0 = STOER_09                  STATION 1 UEBERFUELLT ..............B5.2
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  13
+             +---+   -STOER_10
+ -B5.3    --O! & !    +-----+
+ -T31_V   ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I    5.3 = B5.3                      NIVEAU STATION 1 MIN
+T   31   = T31_V                     VERZ.NIVEAUKONTROLLE STATION 1
+F    6.1 = STOER_10                  NIVEAUMANGEL STATION 1 MIN .........B5.3
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  14
+                     -STOER_11
+                      +-----+
+           -B5.4    -O!S    !
+             +---+    !     !
+ -STQUITT ---! & !    !     !
+ -B5.4    ---!   !----!R   Q!-
+             +---+    +-----+
+
+I    5.4 = B5.4                      NIVEAU OELABSCHEIDER STAT.1 UEF
+F    6.2 = STOER_11                  OELABSCHEIDER UEBERFUELLT ..........B5.4
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  15
+             +---+
+ -B5.5    --O! & !   -STOER_12
+ -N_1.29  ---!   !    +-----+
+ -T17_V   ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I    5.5 = B5.5                      NIVEAU OELABSCHEIDER STAT.1 MIN
+F   40.5 = N_1.29                    VERT.-TRANSPORT UNTEN STATION 1
+T   17   = T17_V                     VERZ.STOERANZEIGE NIVEAUKONTR.OELABSCH.
+F    6.3 = STOER_12                  NIVEAUMANGEL IM OELABSCHEIDER MIN ..B5.5
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page   4
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  16
+             +---+   -STOER_13
+ -B6.0    --O! & !    +-----+
+ -T32_V   ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I    6.0 = B6.0                      NIVEAU STATION 2 MIN
+T   32   = T32_V                     VERZ.NIVEAUKONTROLLE STATION 2
+F    6.4 = STOER_13                  NIVEAUMANGEL STATION 2 .............B6.0
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  17
+             +---+   -STOER_14
+ -B6.2    --O! & !    +-----+
+ -T33_V   ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I    6.2 = B6.2                      NIVEAU STATION 3 MIN
+T   33   = T33_V                     VERZ.NIVEAUKONTROLLE STATION 3
+F    6.5 = STOER_14                  NIVEAUMANGEL STATION 3 .............B6.2
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  18
+           -STOER_15
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    6.6 = STOER_15
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  19
+             +---+   -STOER_16
+ -M0.3    --O! & !    +-----+
+ -T35     ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+T   35   = T35                       VERZ.NIVEAUKONTROLLE STATION 4   (OPT.)
+F    6.7 = STOER_16                  NIVEAUMANGEL STATION 4 ...........(OPT.)
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  20
+             +---+   -STOER_17
+ -M0.3    --O! & !    +-----+
+ -T36     ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+T   36   = T36                       VERZ.NIVEAUKONTROLLE STATION 5   (OPT.)
+F    7.0 = STOER_17                  NIVEAUMANGEL STATION 5 ...........(OPT.)
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page   5
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  21
+             +---+
+ -M0.3    --O! & !   -STOER_18
+ -N_1.89  ---!   !    +-----+
+ -T37     ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   48.1 = N_1.89                    VERT.-TRANSPORT UNTEN STATION 6
+T   37   = T37                       VERZ.NIVEAUKONTROLLE STATION 6   (OPT.)
+F    7.1 = STOER_18                  NIVEAUMANGEL STATION 6 ...........(OPT.)
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  22
+             +---+   -STOER_19
+ -M0.3    --O! & !    +-----+
+ -T38     ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+T   38   = T38                       VERZ.NIVEAUKONTROLLE STATION 7   (OPT.)
+F    7.2 = STOER_19                  NIVEAUMANGEL STATION 7 ...........(OPT.)
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  23
+             +---+   -STOER_20
+ -B5.6    --O! & !    +-----+
+ -T16     ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STQUITT ---! & !    !     !
+ -B5.6    ---!   !----!R   Q!-
+             +---+    +-----+
+
+I    5.6 = B5.6                      NIVEAU OELABSCHEIDER STAT.1 TGS
+T   16   = T16                       VERZ.STOERANZEIGE TGS OELABSCHEIDER
+F    7.3 = STOER_20                  TGS OEAS UNTERSCHRITTEN ............B5.6
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  24
+           -STOER_21
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    7.4 = STOER_21
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  25
+           -STOER_22
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page   6
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    7.5 = STOER_22                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  26
+           -STOER_23
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    7.6 = STOER_23                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  27
+           -STOER_24
+            +-----+
+ -B6.5_3  -O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I    6.7 = B6.5_3                    NIVEAU VE-WASSER-VORRAT TGS
+F    7.7 = STOER_24                  NIVEAUMANGEL VORRATSBEH.VE-WASSER ..B6.7
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  28
+             +---+   -T30_*
+ -K20.5M  ---! & !    +-----+
+ -B7.6    --O!   !----!T!-!0!
+             +---+    !     !
+           KT 050.1 --!TV BI!-
+                      !   DE!-
+                      !     !  -STOER_31
+                      !     !   +-----+
+                    --!R   Q!---!S    !
+                      +-----+   !     !
+                     -STQUITT --!R   Q!-
+                                +-----+
+
+Q   20.5 = K20.5M                    DOSIERPUMPE P7 SCHAUMBREMSE RAV-VERD.
+I    7.6 = B7.6                      NIVEAU RAV SCHAUMBREMSE-VORRAT MIN
+T   30   = T30_*                     VERZ.NIVEAUMAGEL RAV-SCHAUMBREMSE
+F    8.6 = STOER_31                  RAV NIVEAUMANGEL SCHAUMBREMSE ......B7.6
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  29
+           -STOER_32
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    8.7 = STOER_32                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page   7
+Segment  30
+             +---+   -STOER_33
+ -S13.7   --O! & !    +-----+
+ -M4.1    ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STQUITT ---! & !    !     !
+ -S13.7   ---!   !----!R   Q!-
+             +---+    +-----+
+
+I   13.7 = S13.7                     KONTURKONTROLLE BELADUNG
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F    9.0 = STOER_33                  BELADEFEHLER ......................S13.7
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  31
+           -STOER_34
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    9.1 = STOER_34                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  32                  Option fuer ABE
+                                 +---+
+                     -M70.2   ---!>=1!
+                     -M70.3   ---!   !
+                       +---+     !   !
+           -HB_02   --O! & !     !   !
+             +---+     !   !     !   !
+ -B123.5  ---!>=1!     !   !     !   !     +---+
+ -B123.6  ---!   !-----!   !-----!   !-----! & !
+             +---+     +---+     +---+     !   !
+                               -AUTO_L  --O!   !
+                               -AUTO_EIN---!   !   -STOER_35
+                               -M4.1    ---!   !    +-----+
+                               -M28.4   --O!   !----!S    !
+                                           +---+    !     !
+                                         -STQUITT --!R   Q!-
+                                                    +-----+
+
+F   70.2 = M70.2                     SM WT'S UEBERFAHREN SPERRE 3
+F   70.3 = M70.3                     SM WT'S UEBERFAHREN SPERRE 4
+F   20.2 = HB_02                     FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+I  123.5 = B123.5                    WT VOR SPERRE 4
+I  123.6 = B123.6                    SPERRE 4 FREIFAHREN
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+I    0.4 = AUTO_EIN                  AUTOMATIK EIN
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F   28.4 = M28.4                     ZUSAMMENFASSUNG GRUNDSTELLUNG
+F    9.2 = STOER_35                  WARENTRAEGER IM BELADEBEREICH        OPT
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  33                  Option fuer ABE
+             +---+   -STOER_36
+ -T19     ---! & !    +-----+
+ -M4.1    ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page   8
+T   19   = T19                       ZEITKONTROLLE WT-TRANSPORT EIN-/AUSFAHR.
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F    9.3 = STOER_36                  STOERUNG WT-TRANSPORT EIN-/AUSFAHREN OPT
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  34                  Option fuer ABE
+                                 +---+
+                     -AUTO_L  ---!>=1!
+             +---+               !   !
+ -HB_04   ---!>=1!     +---+     !   !
+ -HB_05   ---!   !-----! & !     !   !
+             +---+     !   !     !   !
+           -HAND    ---!   !     !   !     +---+
+           -T-ARBST ---!   !-----!   !-----! & !
+                       +---+     +---+     !   !    +------+
+                               -T95     ---!   !--+-! =    ! -STOER_37
+                                           +---+    +------+
+
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+F   20.4 = HB_04                     BAHN 2 EIN                          OPT.
+F   20.5 = HB_05                     BAHN 1+2 EIN                        OPT.
+I    0.1 = HAND                      BETRIEBSART HAND
+F  190.6 = T-ARBST                   TASTE ARBEITSSTELLUNG IST BETAETIGT
+T   95   = T95                       VERZ.ENTLADESPEICHER VOLL
+F    9.4 = STOER_37                  ENTLADEBAHN VOLL                     OPT
+
+Segment  35
+           -STOER_38
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    9.5 = STOER_38                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  36
+           -STOER_39
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    9.6 = STOER_39                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  37
+           -STOER_40
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F    9.7 = STOER_40                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page   9
+Segment  38
+                                           +---+   -STOER_41
+                               -M4.1    ---! & !    +-----+
+                               -S12.0   --O!   !----!S    !
+                       +---+               +---+    !     !
+           -B12.5   ---!>=1!                        !     !
+             +---+     !   !                        !     !
+ -T11     --O! & !     !   !     +---+              !     !
+ -STEUSP  ---!   !-----!   !-----! & !              !     !
+             +---+     +---+     !   !     +---+    !     !
+                     -STQUITT ---!   !-----!>=1!    !     !
+                                 +---+     !   !    !     !
+                               -STQ_IMP ---!   !    !     !
+                               -M4.1    --O!   !----!R   Q!-
+                                           +---+    +-----+
+
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I   12.0 = S12.0                     VERT.-TRANSP.SICHERHEITSABSCHALT. UNTEN
+F   10.0 = STOER_41                  VERT.-TR.POS.UNTEN UEBERFAHREN ....S12.0
+I   12.5 = B12.5                     VERT.-TRANSPORT OBEN
+T   11   = T11                       VERZ.STOERUNGSANZ.ALLGEMEIN
+I    3.0 = STEUSP                    STEUERSPANNUNG VORHANDEN
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+F    0.7 = STQ_IMP                   QUITTUNGSIMPULS BEI SPANNUNGSWIEDERKEHR
+
+Segment  39
+                                           +---+   -STOER_42
+                               -M4.1    ---! & !    +-----+
+                               -S12.6   --O!   !----!S    !
+                       +---+               +---+    !     !
+           -B12.1   ---!>=1!                        !     !
+             +---+     !   !                        !     !
+ -T11     --O! & !     !   !     +---+              !     !
+ -STEUSP  ---!   !-----!   !-----! & !              !     !
+             +---+     +---+     !   !     +---+    !     !
+                     -STQUITT ---!   !-----!>=1!    !     !
+                                 +---+     !   !    !     !
+                               -STQ_IMP ---!   !    !     !
+                               -M4.1    --O!   !----!R   Q!-
+                                           +---+    +-----+
+
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I   12.6 = S12.6                     VERT.-TRANSP.SICHERHEITSABSCHALT. OBEN
+F   10.1 = STOER_42                  VERT.-TR.POS.OBEN UEBERFAHREN .....S12.6
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+T   11   = T11                       VERZ.STOERUNGSANZ.ALLGEMEIN
+I    3.0 = STEUSP                    STEUERSPANNUNG VORHANDEN
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+F    0.7 = STQ_IMP                   QUITTUNGSIMPULS BEI SPANNUNGSWIEDERKEHR
+
+Segment  40
+           -STOER_43
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   10.2 = STOER_43
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  10
+Segment  41
+           -STOER_44
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   10.3 = STOER_44
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  42
+           -STOER_45
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   10.4 = STOER_45
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  43
+           -STOER_46
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   10.5 = STOER_46
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  44
+           -STOER_47
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   10.6 = STOER_47                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  45
+           -STOER_48
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   10.7 = STOER_48                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  11
+Segment  46
+             +---+   -STOER 49
+ -ST.ZAEHL---! & !    +-----+
+ -M4.1    ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+F   63.2 = ST.ZAEHL                  STOERUNG UEBERWACHUNGSZAEHLER
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F   11.0 = STOER 49                  UEBERWACHUNGSZAEHLER AUSGELOEST
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  47
+             +---+
+ -B13.3   ---! & !   -STOER 50
+ -T112_*  ---!   !    +-----+
+ -M4.1    ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I   13.3 = B13.3                     TROMMEL GERADE
+T  112   = T112_*                    SCHALTERUEBERWACHUNG AUF LOG. 1
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F   11.1 = STOER 50                  GERADE SCHALTER PRUEF. ( IMMER 1 ) B13.3
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  48
+             +---+
+ -B13.3   --O! & !   -STOER 51
+ -T15     ---!   !    +-----+
+ -M4.1    ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I   13.3 = B13.3                     TROMMEL GERADE
+T   15   = T15                       ZEITKONTROLLE TROMMEL GERADESTELLEN
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F   11.2 = STOER 51                  TROMMEL STELLT ZU LANGE GERADE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  49
+             +---+   -STOER 52
+ -ST.ANSCH---! & !    +-----+
+ -M4.1    ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+F   63.3 = ST.ANSCH                  STOERUNG ANSCHLAG UNTERFAHREN
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F   11.3 = STOER 52                  TROMMEL HAT ANSCHLAG UNTERFAHREN
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  50
+             +---+
+ -VW-SW   ---! & !   -STOER_53
+ -T-ARBST ---!   !    +-----+
+ -HB_22   ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  12
+F   60.3 = VW-SW                     VORWAHL TROMMEL SCHWENKEN
+F  190.6 = T-ARBST                   TASTE ARBEITSSTELLUNG IST BETAETIGT
+F   23.2 = HB_22                     TROMMEL GERADESTELLEN/DREHEN
+F   11.4 = STOER_53                  TROMMEL SCHWENKEN VORWAHL:DREHEN NI.MOEG
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  51
+           -STOER_54
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   11.5 = STOER_54                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  52
+           -STOER_55
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   11.6 = STOER_55                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  53
+           -STOER_56
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   11.7 = STOER_56                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  54
+           -STOER_57
+            +-----+
+ -K18.3MF -O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I    8.3 = K18.3MF                   SICHERHEITSABSCH.HEIZUNG STATION 4
+F   12.0 = STOER_57                  TEMP.-BEGR.HEIZ.ST.4 AUSGELOEST
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  55
+             +---+
+ -S1.4    --O! & !   -STOER_58
+ -M4.4    ---!   !    +-----+
+ -PUHKEBFA--O!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I    1.4 = S1.4                      WARMLUFT STATION 4
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  13
+F    4.4 = M4.4                      ABFRAGE EINSCHALTBED. F.AUTOMATIKBETRIEB
+I    0.7 = PUHKEBFA                  PUMP.U.HEIZ.KEINE EINSCH.BED.F.AUTO.
+F   12.1 = STOER_58                  WARMLUFT STATION 4 EIN FEHLT
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  56
+           -STOER_59
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   12.2 = STOER_59                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  57
+           -STOER_60
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   12.3 = STOER_60                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  58
+           -STOER_65
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   13.0 = STOER_65                  RESERVE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  59
+           -STOER_66
+            +-----+
+ -A3.2    -O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I    3.2 = A3.2                      KONTR.TROCKENLAUF,UMPUMPEN ENTLEEREN P 0
+F   13.1 = STOER_66                  TROCKENLAUF PUMPE P0
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  60
+             +---+
+ -HB_72   ---! & !
+ -HAND    ---!   !   -STOER_67
+ -T-ARBST ---!   !    +-----+
+ -E4.7    --O!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+F   27.4 = HB_72                     UMPUMPEN IN ENTSORGUNG BAUSEITS
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  14
+I    0.1 = HAND                      BETRIEBSART HAND
+F  190.6 = T-ARBST                   TASTE ARBEITSSTELLUNG IST BETAETIGT
+I    4.7 = E4.7                      FREIGABE ANLAGE ENTLEEREN
+F   13.2 = STOER_67                  FREIGABE ANLAGE ENTLEEREN FEHLT ...E 4.7
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  61
+                     -STOER_68
+                      +-----+
+           -LECK    -O!S    !
+             +---+    !     !
+ -STQUITT ---! & !    !     !
+ -LECK    ---!   !----!R   Q!-
+             +---+    +-----+
+
+I    5.0 = LECK                      LECKWARNSONDE BODENWANNE I.O.
+F   13.3 = STOER_68                  LECKWARNSONDE BODENWANNE ANGESPR.  B 5.0
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  62
+                     -STOER_69
+                      +-----+
+           -B10.7   -O!S    !
+             +---+    !     !
+ -STQUITT ---! & !    !     !
+ -B10.7   ---!   !----!R   Q!-
+             +---+    +-----+
+
+I   10.7 = B10.7                     DRUCKLUFTKONTROLLE
+F   13.4 = STOER_69                  DRUCKLUFTMANGEL ...................B10.7
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  63
+           -STOER_72
+            +-----+
+ -ST_OSMOS-O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I    4.5 = ST_OSMOS                  KEINE STOERUNG AN OSMOSEANLAGE
+F   13.7 = STOER_72                  STOERUNG UMKEHROSMOSE .............E 4.5
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  64
+             +---+
+ -K10.0   --O!>=1!
+ -K10.1   --O!   !
+ -K10.2   --O!   !     +---+
+ -K10.3   --O!   !-----! & !   -T50_*
+             +---+     !   !    +-----+
+           -K19.1M  ---!   !----!T!-!0!
+                       +---+    !     !
+                     KT 020.2 --!TV BI!-
+                                !   DE!-
+                              --!R   Q!-
+                                +-----+
+
+I   10.0 = K10.0                     US-GENERATORAUSFALLKONTROLLE GEN.1
+I   10.1 = K10.1                     US-GENERATORAUSFALLKONTROLLE GEN.2
+I   10.2 = K10.2                     US-GENERATORAUSFALLKONTROLLE GEN.3
+I   10.3 = K10.3                     US-GENERATORAUSFALLKONTROLLE GEN.4
+Q   19.1 = K19.1M                    ULTRASCHALL STATION 1 FERNSTEUERUNG
+T   50   = T50_*                     VERZ-US-GENERATORAUSFALL
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  15
+Segment  65
+             +---+   -STOER_73
+ -K10.0   --O! & !    +-----+
+ -T50_*   ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I   10.0 = K10.0                     US-GENERATORAUSFALLKONTROLLE GEN.1
+T   50   = T50_*                     VERZ-US-GENERATORAUSFALL
+F   14.0 = STOER_73                  AUSFALL ULTRASCHALLGENERATOR 1 ....E10.0
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  66
+             +---+   -STOER_74
+ -K10.1   --O! & !    +-----+
+ -T50_*   ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I   10.1 = K10.1                     US-GENERATORAUSFALLKONTROLLE GEN.2
+T   50   = T50_*                     VERZ-US-GENERATORAUSFALL
+F   14.1 = STOER_74                  AUSFALL ULTRASCHALLGENERATOR 2 ....E10.1
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  67
+             +---+   -STOER_75
+ -K10.2   --O! & !    +-----+
+ -T50_*   ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I   10.2 = K10.2                     US-GENERATORAUSFALLKONTROLLE GEN.3
+T   50   = T50_*                     VERZ-US-GENERATORAUSFALL
+F   14.2 = STOER_75                  AUSFALL ULTRASCHALLGENERATOR 3 ....E10.2
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  68
+             +---+   -STOER_76
+ -K10.3   --O! & !    +-----+
+ -T50_*   ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+I   10.3 = K10.3                     US-GENERATORAUSFALLKONTROLLE GEN.4
+T   50   = T50_*                     VERZ-US-GENERATORAUSFALL
+F   14.3 = STOER_76                  AUSFALL ULTRASCHALLGENERATOR 4 ....E10.3
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  69
+           -STOER_83
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   15.2 = STOER_83
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  16
+Segment  70                  aus FB60
+           -STOER_84
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   15.3 = STOER_84
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  71                  aus FB90
+           -STOER_85
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   15.4 = STOER_85
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  72                  aus FB91
+           -STOER_86
+            +-----+
+ -KO.SICH1-O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I    4.0 = KO.SICH1                  STEUERSPANNUNG ALLGEMEIN
+F   15.5 = STOER_86                  KONTROLLE SICHERUNG STEUERSPANNUNG
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  73
+           -STOER_87
+            +-----+
+ -KO.SICH2-O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I    4.1 = KO.SICH2                  SICHERUNG EINGAENGE
+F   15.6 = STOER_87                  KONTROLLE SICHERUNG EINGAENGE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  74                  option fuer ABE
+           -STOER_88
+            +-----+
+ -KO.SICH3-O!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+I    4.2 = KO.SICH3                  SICHERUNG AUSGAENGE
+F   15.7 = STOER_88                  KONTROLLE SICHERUNG AUSGAENGE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  17
+Segment  75
+           -STOER_89
+            +-----+
+ -STOER_89--!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F   16.0 = STOER_89                  ANGEWAEHLTES PROGR.IM OP NICHT VORHANDEN
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  76
+           -STOER_90
+            +-----+
+ -STOER_90--!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F   16.1 = STOER_90                  ANGEWAEHLTES PROGR.IM OP FEHLERHAFT
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  77
+           -STOER_91
+            +-----+
+ -STOER_91--!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F   16.2 = STOER_91                  PROGRAMMUEBERTRAG.VOM OP DAUERT Z.LANGE
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  78
+             +---+   -STOER_92
+ -M34.1   ---! & !    +-----+
+ -M4.1    ---!   !----!S    !
+             +---+    !     !
+           -STQUITT --!R   Q!-
+                      +-----+
+
+F   34.1 = M34.1                     ZEITUEBERSCHREITUNG N1 .........(ANLAGE)
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F   16.3 = STOER_92                  SCHRITTKETTENUEBERWACHUNG N1 ANGESPROCH.
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  79
+                     -STOER_93
+                      +-----+
+           -STOER_93--!S    !
+             +---+    !     !
+ -STQUITT ---! & !    !     !
+ -B123.1  --O!   !    !     !
+ -B123.4  --O!   !    !     !
+ -B123.5  --O!   !    !     !
+ -B123.6  --O!   !    !     !
+ -B125.0  --O!   !    !     !
+ -B125.1  --O!   !----!R   Q!-
+             +---+    +-----+
+
+F   16.4 = STOER_93                  PROGRAMMNR.0 AUF PLATZ 4             OPT
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+I  123.1 = B123.1                    WT AN SPERRE 1 UND SPERRE 1 FREI
+I  123.4 = B123.4                    WT AN SPERRE 3
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  18
+I  123.5 = B123.5                    WT VOR SPERRE 4
+I  123.6 = B123.6                    SPERRE 4 FREIFAHREN
+I  125.0 = B125.0                    WT AN SPERRE 6
+I  125.1 = B125.1                    WT AM ENDE BAHN 2
+
+Segment  80
+           -STOER_94
+            +-----+
+ -STOER_94--!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F   16.5 = STOER_94                  BATTERIEAUSFALL S5-115U
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  81
+             +---+   -STOER_95
+ -M4.1    ---! & !    +-----+
+ -STEU_EIN--O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STQUITT ---! & !    !     !
+ -STEU_EIN---!   !----!R   Q!-
+             +---+    +-----+
+
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I    3.4 = STEU_EIN                  STEUERUNG EIN
+F   16.6 = STOER_95                  STEUERUNG EIN FEHLT
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  82
+                                 +---+
+                     -M4.4    ---!>=1!
+             +---+               !   !
+ -T-GNDST ---!>=1!     +---+     !   !
+ -T-ARBST ---!   !-----! & !     !   !
+             +---+     !   !     !   !     +---+
+           -HAND    ---!   !-----!   !-----! & !
+                       +---+     +---+     !   !   -STOER_96
+                               -M4.1    ---!   !    +-----+
+                               -P3.1    --O!   !----!S    !
+                                           +---+    !     !
+                                         -STQUITT --!R   Q!-
+                                                    +-----+
+
+F    4.4 = M4.4                      ABFRAGE EINSCHALTBED. F.AUTOMATIKBETRIEB
+F  190.5 = T-GNDST                   TASTE GRUNDSTELLUNG IST BETAETIGT
+F  190.6 = T-ARBST                   TASTE ARBEITSSTELLUNG IST BETAETIGT
+I    0.1 = HAND                      BETRIEBSART HAND
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+F   16.7 = STOER_96                  WOCHENSCHALTUHR EIN FEHLT
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  83
+             +---+   -STOER_97
+ -WART_TUE--O! & !    +-----+
+ -M4.1    ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -STQUITT ---! & !    !     !
+ -WART_TUE---!   !----!R   Q!-
+             +---+    +-----+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  19
+I    3.5 = WART_TUE                  WARTUNGSTUEREN GESCHLOSSEN
+F    4.1 = M4.1                      FREIGABE STOERANZEIGE
+F   17.0 = STOER_97                  WARTUNGSTUER NICHT GESCHLOSSEN .....E3.5
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  84
+           -STOER_98
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   17.1 = STOER_98
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  85
+           -STOER_99
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   17.2 = STOER_99
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  86
+           -STOER100
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   17.3 = STOER100
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  87
+           -STOER101
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   17.4 = STOER101
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  88
+           -STOER102
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   17.5 = STOER102
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  20
+Segment  89
+           -STOER103
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   17.6 = STOER103
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  90
+           -STOER104
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   17.7 = STOER104
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  91
+           -STOER105
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   18.0 = STOER105
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  92
+                                           +---+
+                               -A14.0   --O! & !
+                       +---+               !   !
+           -N_1.2   ---! & !               !   !
+           -STOER_92---!   !     +---+     !   !
+           -AUTO_E  ---!   !-----!>=1!     !   !
+             +---+     +---+     !   !     !   !
+ -HB_20   ---!>=1!               !   !     !   !
+ -HB_21   ---!   !               !   !     !   !
+ -HB_22   ---!   !     +---+     !   !     !   !
+ -HB_23   ---!   !-----! & !     !   !     !   !
+             +---+     !   !     !   !     !   !
+             +---+     !   !     !   !     !   !
+ -T-ARBST ---!>=1!     !   !     !   !     !   !
+ -T-GNDST ---!   !-----!   !-----!   !     !   !   -STOER106
+             +---+     +---+     !   !     !   !    +-----+
+                     -M74.0   ---!   !-----!   !----!S    !
+                                 +---+     +---+    !     !
+                                         -STQUITT --!R   Q!-
+                                                    +-----+
+
+I   14.0 = A14.0                     BESCHICKUNGSTUERE ANLAGE GESCHLOSSEN
+F   37.2 = N_1.2                     WARENTRAEGER VORHANDEN, PROGRAMM LESEN
+F   16.3 = STOER_92                  SCHRITTKETTENUEBERWACHUNG N1 ANGESPROCH.
+F   31.4 = AUTO_E                    AUTOMATIK EIN
+F   23.0 = HB_20                     VERT.-TRANSPORT SENKEN/HEBEN
+F   23.1 = HB_21                     HORIZ.-TRANSPORT ZURUECK/VOR
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  21
+F   23.2 = HB_22                     TROMMEL GERADESTELLEN/DREHEN
+F   23.3 = HB_23                     TROMMEL GERADESTELLEN/SCHWENKEN
+F  190.6 = T-ARBST                   TASTE ARBEITSSTELLUNG IST BETAETIGT
+F  190.5 = T-GNDST                   TASTE GRUNDSTELLUNG IST BETAETIGT
+F   74.0 = M74.0                     MERKER FAHREN IN GRUNDSTELLUNG
+F   18.1 = STOER106                  BESCHICKUNGSTUERE NICHT GESCHL.    E14.0
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  93
+           -STOER107
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   18.2 = STOER107
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  94
+           -STOER108
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   18.3 = STOER108
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  95
+           -STOER109
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   18.4 = STOER109
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  96
+           -STOER110
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   18.5 = STOER110
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  97
+           -STOER111
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  22
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   18.6 = STOER111
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  98
+           -STOER112
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   18.7 = STOER112
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  99
+           -STOER113
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   19.0 = STOER113
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  100
+           -STOER114
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   19.1 = STOER114
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  101
+           -STOER115
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   19.2 = STOER115
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  102
+           -STOER116
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   19.3 = STOER116
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+
+PB 2      -PB 2                      C:04201@ST.S5D                    LEN=770  
+                                                                        Page  23
+Segment  103
+           -STOER117
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   19.4 = STOER117
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  104
+           -STOER118
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   19.5 = STOER118
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  105
+           -STOER119
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   19.6 = STOER119
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  106
+           -STOER120
+            +-----+
+ -M0.3    --!S    !
+            !     !
+ -STQUITT --!R   Q!-
+            +-----+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F   19.7 = STOER120
+F    3.1 = STQUITT                   STOERUNG QUITTIEREN
+
+Segment  107
+ 
+                    :BE
+
+

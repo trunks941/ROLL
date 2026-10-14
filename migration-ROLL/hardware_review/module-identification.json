@@ -1,0 +1,24 @@
+{
+  "date":"2026-10-14",
+  "source":"User identifies installed S5 I/O module types; assignment to rack positions follows unique DI/DQ width and current classes shown in the photo",
+  "user_message_literal":"danych obciążeń cewek nie podam, są to standardowe przeważnie 9A trójfazowe styczniki mocy, oznaczenia modułów: 6ES5 451-7LA12, 6ES5 430-7LA12 oraz 6ES5 454-7LA12",
+  "module_types":{
+    "DI":{"MLFB":"6ES5 430-7LA12","channels":32,"nominal_VDC":24,"isolated_group_width":8,"manual_PDF_page":549,"manual_printed_page":"15-21","typical_input_current_mA":8.5,"limits":"Input level 0: -30..+5 V; level 1: 13..30 V; switching delay up to 5.5 ms rising / 5 ms falling"},
+    "DQ_0_5A":{"MLFB":"6ES5 451-7LA12","channels":32,"nominal_VDC":24,"current_per_channel_A":0.5,"isolated_group_width":8,"manual_PDF_page":560,"manual_printed_page":"15-32","limits":"Permissible output total current 100 percent at 25 C, 50 percent at 55 C; inductive load switching max 0.5 Hz; induced-voltage limitation -15 V"},
+    "DQ_2A":{"MLFB":"6ES5 454-7LA12","channels":16,"nominal_VDC":24,"current_per_channel_A":2,"isolated_group_width":4,"per_group_current_A":4,"manual_PDF_page":563,"manual_printed_page":"15-35","Lplus_pins":[1,13,25,37],"M_pins":[11,23,35,47],"output_pins":[3,5,7,9,15,17,19,21,27,29,31,33,39,41,43,45],"limits":"Per four-channel group: 50 percent of rated-current sum = 4 A; inductive load switching max 0.27 Hz; induced-voltage limitation -15 V"}
+  },
+  "rack_type_assignments":{"DI1":"DI","DI2":"DI","DI3":"DI","DI4":"DI","DQ1":"DQ_0_5A","DQ2":"DQ_0_5A","DQ3":"DQ_2A"},
+  "coil_data_policy":{
+    "user_will_supply_coil_ratings":false,
+    "do_not_request_again":true,
+    "description":"Mostly standard three-phase 9 A power contactors, according to user; individual coil voltage/current/power not established from the 9 A main-contact rating",
+    "selection_basis":"Preserve legacy output current classes, supply cutoff paths and permitted total-current envelopes; verify new-module inductive-load capability, thermal limits and switching behavior in official data",
+    "2A_channels_reduced_to_0_5A":false,
+    "9A_entered_as_PLC_coil_current":false,
+    "actual_coil_measurement_or_electrical_acceptance_performed":false
+  },
+  "manual":"reference_manuals/6ES5_998-0UF23.pdf",
+  "module_address_switches_verified":false,
+  "physical_wire_routes_verified":false,
+  "PLC_or_hardware_action_performed":false
+}

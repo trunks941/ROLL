@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-13",
+  "source_SHA256": "ed2e61c3be6548cf0edf2431971e1ed5ede1cb6b6963aa2d35f2a578daadecf7",
+  "manually_reviewed_new_pages": 24,
+  "combined_received_pages": 50,
+  "missing_pages": [],
+  "power_circuit_rows": 18,
+  "outputs_with_identified_power_circuit": 32,
+  "independent_hardware_function_rows": 11,
+  "power_supply_rows": 3,
+  "user_confirmed_installed_and_working_modifications": 3,
+  "regulator_contact_interfaces_retained": true,
+  "additional_analog_PLC_channels_inferred": false,
+  "additional_PLC_outputs_for_brakes_or_added_pump_inferred": false,
+  "PLC_coil_currents_established": false,
+  "installed_MLFBs_established": false,
+  "as_built_confirmation": {
+    "status": "Confirmed by user: all three circuits installed and working",
+    "date": "2026-10-13",
+    "answer_literal": "Tak, wszystkie są zamontowane i działają",
+    "question_scope": [
+      "Pump station 2 pages 5/45",
+      "Wagensicherung/Entgleisung K19.14 page 19",
+      "K-UHR pages 25/28"
+    ],
+    "basis": "User statement; installation/function confirmed, individual wire routes/catalog variants not independently audited",
+    "all_three_functions_in_migration_scope": true,
+    "fan_target_already_confirmed": "%Q24.4",
+    "current_fan_wire_independently_confirmed": false
+  },
+  "PLC_or_hardware_changes": false,
+  "consistency_result": "Passed"
+}

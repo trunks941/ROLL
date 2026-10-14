@@ -1,0 +1,9 @@
+{
+  "rotation_and_swing_mode": {
+    "display_label": "drehen/schwenken",
+    "symbolic_value_in_printout": 4,
+    "available_on_current_OP15": true,
+    "source": "User reply: Tak, ten tryb jest dostępny",
+    "migration_requirement": "Preserve the rotation/swing option on TP900; the printed numeric limit 0..3 is not sufficient to remove it"
+  }
+}

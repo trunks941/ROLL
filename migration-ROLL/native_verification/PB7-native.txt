@@ -1,0 +1,442 @@
+PB 7      -PB 7                      C:04201@ST.S5D                    LEN=199  
+                                                                        Page   1
+Segment  1                   GS
+             +---+
+ -B11.0   ---! & !
+ -B11.6   ---!   !
+ -B13.3   ---!   !
+ -M_GERADE---!   !
+ -M70.2   --O!   !
+ -M70.3   --O!   !
+ -M70.4   --O!   !    +------+
+ -M70.6   --O!   !--+-! =    ! -M28.0
+             +---+    +------+
+
+I   11.0 = B11.0                     HORIZ.-TRANSPORT BELADESTATION
+I   11.6 = B11.6                     HORIZ.-TRANSPORT IN POSITION
+I   13.3 = B13.3                     TROMMEL GERADE
+F   63.1 = M_GERADE                  TROMMEL GERADE
+F   70.2 = M70.2                     SM WT'S UEBERFAHREN SPERRE 3
+F   70.3 = M70.3                     SM WT'S UEBERFAHREN SPERRE 4
+F   70.4 = M70.4                     SM WT'S UEBERFAHREN SPERRE 1
+F   70.6 = M70.6                     SM WT'S UEBERFAHREN SPERRE 6
+F   28.0 = M28.0                     GRUNDSTELLUNGSMERKER 1
+
+
+Segment  2
+             +---+
+ -B12.1   ---! & !    +------+
+ -B12.7   ---!   !--+-! =    ! -M28.1
+             +---+    +------+
+
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+I   12.7 = B12.7                     VERT.-TRANSPORT IN POSITION
+F   28.1 = M28.1                     GRUNDSTELLUNGSMERKER 2
+
+Segment  3
+             +---+
+ -K112.0M --O!>=1!     +---+
+ -AUTO_E  --O!   !-----! & !
+             +---+     !   !    +------+
+           -K112.5  --O!   !--+-! =    ! -M28.2
+                       +---+    +------+
+
+Q  112.0 = K112.0M                   ROLLENBAHN 1 BELADEN
+F   31.4 = AUTO_E                    AUTOMATIK EIN
+Q  112.5 = K112.5                    ROLLENBAHN 2 ENTLADEN
+F   28.2 = M28.2                     GRUNDSTELLUNGSMERKER 3
+
+Segment  4
+             +---+
+ -B123.5  --O! & !
+ -B123.6  --O!   !
+ -B124.1  ---!   !
+ -S124.4  ---!   !
+ -Y113.0  --O!   !
+ -Y113.1  --O!   !
+ -Y113.3  --O!   !
+ -Y113.2  ---!   !
+ -Y113.5  --O!   !     +---+
+ -Y113.4  ---!   !-----!>=1!
+             +---+     !   !    +------+
+           -M0.4    ---!   !--+-! =    ! -M240.0
+                       +---+    +------+
+
+I  123.5 = B123.5                    WT VOR SPERRE 4
+I  123.6 = B123.6                    SPERRE 4 FREIFAHREN
+
+PB 7      -PB 7                      C:04201@ST.S5D                    LEN=199  
+                                                                        Page   2
+I  124.1 = B124.1                    WT-TRANSPORT AUSGEFAHREN
+I  124.4 = S124.4                    WT-TRANSPORT UNTEN
+Q  113.0 = Y113.0                    SPERRE 1 OEFFNEN
+Q  113.1 = Y113.1                    SPERRE 2 SCHLIESSEN
+Q  113.3 = Y113.3                    SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+Q  113.2 = Y113.2                    SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+Q  113.5 = Y113.5                    SPERRE 5 SCHLIESSEN, SPERRE 6 OEFFNEN
+Q  113.4 = Y113.4                    SPERRE 5 OEFFNEN, SPERRE 6 SCHLIESSEN
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F  240.0 = M240.0                    SCHMIERMERKER
+
+Segment  5
+             +---+
+ -S124.4  ---! & !
+ -B124.1  ---!   !
+ -B123.5  ---!   !
+ -Y113.3  ---!   !     +---+
+ -Y113.2  --O!   !-----!>=1!
+             +---+     !   !
+             +---+     !   !
+ -S124.5  ---! & !     !   !
+ -B124.1  ---!   !     !   !
+ -Y113.3  --O!   !     !   !
+ -Y113.2  ---!   !-----!   !
+             +---+     !   !     +---+
+           -M0.4    ---!   !-----! & !
+                       +---+     !   !    +------+
+                     -HB_02   ---!   !--+-! =    ! -M240.1
+                                 +---+    +------+
+
+I  124.4 = S124.4                    WT-TRANSPORT UNTEN
+I  124.1 = B124.1                    WT-TRANSPORT AUSGEFAHREN
+I  123.5 = B123.5                    WT VOR SPERRE 4
+Q  113.3 = Y113.3                    SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+Q  113.2 = Y113.2                    SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+I  124.5 = S124.5                    WT-TRANSPORT OBEN
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F   20.2 = HB_02                     FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+F  240.1 = M240.1                    SCHMIERMERKER
+
+Segment  6
+             +---+
+ -M240.0  ---!>=1!    +------+
+ -M240.1  ---!   !--+-! =    ! -M28.3
+             +---+    +------+
+
+F  240.0 = M240.0                    SCHMIERMERKER
+F  240.1 = M240.1                    SCHMIERMERKER
+F   28.3 = M28.3                     GRUNDSTELLUNGSMERKER 4
+
+Segment  7
+             +---+
+ -M28.0   ---! & !
+ -M28.1   ---!   !
+ -M28.2   ---!   !    +------+
+ -M28.3   ---!   !--+-! =    ! -M28.4
+             +---+    +------+
+
+F   28.0 = M28.0                     GRUNDSTELLUNGSMERKER 1
+F   28.1 = M28.1                     GRUNDSTELLUNGSMERKER 2
+F   28.2 = M28.2                     GRUNDSTELLUNGSMERKER 3
+F   28.3 = M28.3                     GRUNDSTELLUNGSMERKER 4
+F   28.4 = M28.4                     ZUSAMMENFASSUNG GRUNDSTELLUNG
+
+
+PB 7      -PB 7                      C:04201@ST.S5D                    LEN=199  
+                                                                        Page   3
+Segment  8
+             +---+
+ -Q/ANTR  ---! & !
+ -STEU_EIN---!   !
+ -WART_TUE---!   !    +------+
+ -B10.7   ---!   !--+-! =    ! -M28.5
+             +---+    +------+
+
+I    3.7 = Q/ANTR                    MOTORSCHUTZSCHALTER ANTRIEBE
+I    3.4 = STEU_EIN                  STEUERUNG EIN
+I    3.5 = WART_TUE                  WARTUNGSTUEREN GESCHLOSSEN
+I   10.7 = B10.7                     DRUCKLUFTKONTROLLE
+F   28.5 = M28.5                     HM FREIGABE 1 AUSGAENGE ANTRIEBE
+
+Segment  9
+             +---+
+ -M28.5   ---! & !
+ -STOER_08--O!   !
+ -STOER_69--O!   !    +------+
+ -STOER_95--O!   !--+-! =    ! -M28.6
+             +---+    +------+
+
+F   28.5 = M28.5                     HM FREIGABE 1 AUSGAENGE ANTRIEBE
+F    5.7 = STOER_08                  MOTORSCHUTZ ANTRIEBE ANGESPROCHEN
+F   13.4 = STOER_69                  DRUCKLUFTMANGEL ...................B10.7
+F   16.6 = STOER_95                  STEUERUNG EIN FEHLT
+F   28.6 = M28.6                     FREIGABE 1 AUSGAENGE ANTRIEBE
+
+Segment  10
+                       +---+
+           -HAND    ---!>=1!
+             +---+     !   !   -M29.0
+ -AUTO    ---! & !     !   !    +-----+
+ -AUTO_EIN---!   !-----!   !----!S    !
+             +---+     +---+    !     !
+                     -M28.6   -O!R   Q!-
+                                +-----+
+
+I    0.1 = HAND                      BETRIEBSART HAND
+I    0.2 = AUTO                      BETRIEBSART AUTOMATIK
+I    0.4 = AUTO_EIN                  AUTOMATIK EIN
+F   29.0 = M29.0                     FREIGABE AUSGAENGE ANTRIEBE
+F   28.6 = M28.6                     FREIGABE 1 AUSGAENGE ANTRIEBE
+
+Segment  11
+             +---+
+ -M29.0   ---! & !    +------+
+ -T13     ---!   !--+-! =    ! -M29.1
+             +---+    +------+
+
+F   29.0 = M29.0                     FREIGABE AUSGAENGE ANTRIEBE
+T   13   = T13                       VERZ.FREIGABE BAHNEN
+F   29.1 = M29.1                     FREIGABE BAHNEN
+
+Segment  12
+             +---+    +------+
+ -STOER_58--O! & !--+-! =    ! -M30.0
+             +---+    +------+
+
+F   12.1 = STOER_58                  WARMLUFT STATION 4 EIN FEHLT
+F   30.0 = M30.0                     STARTBED.1 FUER AUTOMATIKBETRIEB
+
+
+PB 7      -PB 7                      C:04201@ST.S5D                    LEN=199  
+                                                                        Page   4
+Segment  13
+             +---+    +------+
+ -M0.4    ---! & !--+-! =    ! -M30.1
+             +---+    +------+
+
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+F   30.1 = M30.1                     STARTBED.2 FUER AUTOMATIKBETRIEB
+
+Segment  14
+             +---+
+ -STOER_10--O! & !
+ -STOER_12--O!   !
+ -STOER_13--O!   !
+ -STOER_14--O!   !
+ -STOER_15--O!   !
+ -STOER_16--O!   !
+ -STOER_17--O!   !
+ -STOER_18--O!   !
+ -STOER_19--O!   !
+ -STOER_20--O!   !    +------+
+ -STOER_24--O!   !--+-! =    ! -M30.2
+             +---+    +------+
+
+F    6.1 = STOER_10                  NIVEAUMANGEL STATION 1 MIN .........B5.3
+F    6.3 = STOER_12                  NIVEAUMANGEL IM OELABSCHEIDER MIN ..B5.5
+F    6.4 = STOER_13                  NIVEAUMANGEL STATION 2 .............B6.0
+F    6.5 = STOER_14                  NIVEAUMANGEL STATION 3 .............B6.2
+F    6.6 = STOER_15
+F    6.7 = STOER_16                  NIVEAUMANGEL STATION 4 ...........(OPT.)
+F    7.0 = STOER_17                  NIVEAUMANGEL STATION 5 ...........(OPT.)
+F    7.1 = STOER_18                  NIVEAUMANGEL STATION 6 ...........(OPT.)
+F    7.2 = STOER_19                  NIVEAUMANGEL STATION 7 ...........(OPT.)
+F    7.3 = STOER_20                  TGS OEAS UNTERSCHRITTEN ............B5.6
+F    7.7 = STOER_24                  NIVEAUMANGEL VORRATSBEH.VE-WASSER ..B6.7
+F   30.2 = M30.2                     STARTBED.3 FUER AUTOMATIKBETRIEB
+
+Segment  15
+             +---+
+ -Q/PU_GE --O! & !    +------+
+ -STOER_07--O!   !--+-! =    ! -M30.3
+             +---+    +------+
+
+I    3.6 = Q/PU_GE                   MOTORSCHUTZSCHALTER PUMPEN/GEBLAESE
+F    5.6 = STOER_07                  MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+F   30.3 = M30.3                     STARTBED.4 FUER AUTOMATIKBETRIEB
+
+Segment  16
+             +---+
+ -M30.0   ---! & !
+ -M30.1   ---!   !
+ -M30.2   ---!   !     +---+
+ -M30.3   ---!   !-----!>=1!
+             +---+     !   !
+           -SERVICE ---!   !    +------+
+           -E_TROCK ---!   !--+-! =    ! -M30.5
+                       +---+    +------+
+
+F   30.0 = M30.0                     STARTBED.1 FUER AUTOMATIKBETRIEB
+F   30.1 = M30.1                     STARTBED.2 FUER AUTOMATIKBETRIEB
+F   30.2 = M30.2                     STARTBED.3 FUER AUTOMATIKBETRIEB
+F   30.3 = M30.3                     STARTBED.4 FUER AUTOMATIKBETRIEB
+I    0.0 = SERVICE                   SERVICE KLEMMEN
+I    0.6 = E_TROCK                   TROCKENBETRIEB ANWAEHLEN
+F   30.5 = M30.5                     ZUSAMMENFASS.STARTBED.1-4 F.AUTOBETRIEB
+
+PB 7      -PB 7                      C:04201@ST.S5D                    LEN=199  
+                                                                        Page   5
+Segment  17
+             +---+
+ -STOER_01--O! & !
+ -STOER_02--O!   !
+ -STOER_03--O!   !
+ -STOER 49--O!   !
+ -STOER_66--O!   !    +------+
+ -STOER_68--O!   !--+-! =    ! -M30.6
+             +---+    +------+
+
+F    5.0 = STOER_01                  HORIZ.TRANSPORTMOTOR ZU HEISS .....B11.7
+F    5.1 = STOER_02                  TROMMELMOTOR ZU HEISS .............B13.5
+F    5.2 = STOER_03                  VERT.-TRANSPORTMOTOR ZU HEISS .....B13.0
+F   11.0 = STOER 49                  UEBERWACHUNGSZAEHLER AUSGELOEST
+F   13.1 = STOER_66                  TROCKENLAUF PUMPE P0
+F   13.3 = STOER_68                  LECKWARNSONDE BODENWANNE ANGESPR.  B 5.0
+F   30.6 = M30.6                     STARTBED.4 FUER AUTOMATIKBETRIEB
+
+Segment  18
+             +---+
+ -STOER_04--O! & !
+ -STOER_34--O!   !
+ -STOER_35--O!   !
+ -STOER_36--O!   !
+ -STOER 50--O!   !
+ -B8.5    ---!   !    +------+
+ -M28.6   ---!   !--+-! =    ! -M30.7
+             +---+    +------+
+
+F    5.3 = STOER_04                  MOTOR GEBL.WARMLUFT ST.4 ZU HEISS ..B8.5
+F    9.1 = STOER_34                  RESERVE
+F    9.2 = STOER_35                  WARENTRAEGER IM BELADEBEREICH        OPT
+F    9.3 = STOER_36                  STOERUNG WT-TRANSPORT EIN-/AUSFAHREN OPT
+F   11.1 = STOER 50                  GERADE SCHALTER PRUEF. ( IMMER 1 ) B13.3
+I    8.5 = B8.5                      THERMOSTAT GEBLAESE WARMLUFT STATION 4
+F   28.6 = M28.6                     FREIGABE 1 AUSGAENGE ANTRIEBE
+F   30.7 = M30.7                     STARTBED.5 FUER AUTOMATIKBETRIEB
+
+Segment  19
+             +---+
+ -STOER_33--O! & !    +------+
+ -STOER_57--O!   !--+-! =    ! -M31.0
+             +---+    +------+
+
+F    9.0 = STOER_33                  BELADEFEHLER ......................S13.7
+F   12.0 = STOER_57                  TEMP.-BEGR.HEIZ.ST.4 AUSGELOEST
+F   31.0 = M31.0                     STARTBED.6 FUER AUTOMATIKBETRIEB
+
+Segment  20
+             +---+
+ -M87.5   --O! & !
+ -M88.1   --O!   !
+ -M88.3   --O!   !
+ -M88.4   --O!   !
+ -M88.5   --O!   !    +------+
+ -M88.6   --O!   !--+-! =    ! -M31.2
+             +---+    +------+
+
+F   87.5 = M87.5                     HM STOERUNG IN MERKERBYTE 10
+F   88.1 = M88.1                     HM STOERUNG IN MERKERBYTE 14
+F   88.3 = M88.3                     HM STOERUNG IN MERKERBYTE 16
+F   88.4 = M88.4                     HM STOERUNG IN MERKERBYTE 17
+F   88.5 = M88.5                     HM STOERUNG IN MERKERBYTE 18
+F   88.6 = M88.6                     HM STOERUNG IN MERKERBYTE 19
+
+PB 7      -PB 7                      C:04201@ST.S5D                    LEN=199  
+                                                                        Page   6
+F   31.2 = M31.2                     STARTBED.7 FUER AUTOMATIKBETRIEB
+
+Segment  21
+             +---+
+ -M30.5   ---! & !
+ -M30.6   ---!   !
+ -M30.7   ---!   !
+ -M31.0   ---!   !    +------+
+ -M31.2   ---!   !--+-! =    ! -M31.1
+             +---+    +------+
+
+F   30.5 = M30.5                     ZUSAMMENFASS.STARTBED.1-4 F.AUTOBETRIEB
+F   30.6 = M30.6                     STARTBED.4 FUER AUTOMATIKBETRIEB
+F   30.7 = M30.7                     STARTBED.5 FUER AUTOMATIKBETRIEB
+F   31.0 = M31.0                     STARTBED.6 FUER AUTOMATIKBETRIEB
+F   31.2 = M31.2                     STARTBED.7 FUER AUTOMATIKBETRIEB
+F   31.1 = M31.1                     ZUSAMMENFASS.STARTBED.1-7 F.AUTOBETRIEB
+
+Segment  22
+             +---+
+ -M28.4   ---!>=1!     +---+
+ -AUTO_L  ---!   !-----! & !
+             +---+     !   !   -AUTO_E
+           -AUTO_EIN---!   !    +-----+
+           -M4.4    ---!   !----!S    !
+                       +---+    !     !
+                       +---+    !     !
+           -AUTO    --O!>=1!    !     !
+           -AUTO_AUS--O!   !    !     !
+           -M31.1   --O!   !    !     !
+           -M29.0   --O!   !----!R   Q!-
+                       +---+    +-----+
+
+F   28.4 = M28.4                     ZUSAMMENFASSUNG GRUNDSTELLUNG
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+I    0.4 = AUTO_EIN                  AUTOMATIK EIN
+F    4.4 = M4.4                      ABFRAGE EINSCHALTBED. F.AUTOMATIKBETRIEB
+F   31.4 = AUTO_E                    AUTOMATIK EIN
+I    0.2 = AUTO                      BETRIEBSART AUTOMATIK
+I    0.3 = AUTO_AUS                  AUTOMATIK AUS
+F   31.1 = M31.1                     ZUSAMMENFASS.STARTBED.1-7 F.AUTOBETRIEB
+F   29.0 = M29.0                     FREIGABE AUSGAENGE ANTRIEBE
+
+Segment  23
+
+                                                   -AUTO_L
+                                                    +-----+
+                                         -AUTO_E  --!S    !
+                       +---+                        !     !
+           -N_1.0   ---!>=1!                        !     !
+             +---+     !   !                        !     !
+ -N_1.1   ---! & !     !   !     +---+              !     !
+ -N_1.2   --O!   !-----!   !-----! & !              !     !
+             +---+     +---+     !   !              !     !
+                     -M28.4   ---!   !     +---+    !     !
+                     -AUTO_E  --O!   !-----!>=1!    !     !
+                                 +---+     !   !    !     !
+                               -AUTO    --O!   !----!R   Q!-
+                                           +---+    +-----+
+
+F   31.4 = AUTO_E                    AUTOMATIK EIN
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+F   37.0 = N_1.0                     SCHRITTKETTE VORBEREITEN
+F   37.1 = N_1.1                     SCHRITTKETTE STARTEN
+
+PB 7      -PB 7                      C:04201@ST.S5D                    LEN=199  
+                                                                        Page   7
+F   37.2 = N_1.2                     WARENTRAEGER VORHANDEN, PROGRAMM LESEN
+F   28.4 = M28.4                     ZUSAMMENFASSUNG GRUNDSTELLUNG
+I    0.2 = AUTO                      BETRIEBSART AUTOMATIK
+
+Segment  24
+
+                     -REINIG_E
+                      +-----+
+           -N_1.123 --!S    !
+             +---+    !     !
+ -A14.0   --O! & !    !     !
+ -B12.1   ---!   !----!R   Q!-
+             +---+    +-----+
+
+F   52.3 = N_1.123                   VERT.-TRANSPORT IN BELADEHOEHE
+F   31.6 = REINIG_E                  REINIGUNG BEENDET
+I   14.0 = A14.0                     BESCHICKUNGSTUERE ANLAGE GESCHLOSSEN
+I   12.1 = B12.1                     VERT.-TRANSPORT UNTEN
+
+Segment  25
+             +---+    +------+
+ -AUTO_L  ---! & !--+-! =    ! -P_STUNDE
+             +---+    +------+
+
+F   31.5 = AUTO_L                    AUTOMATIK LAEUFT
+Q   16.6 = P_STUNDE                  BETRIEBSSTUNDENZAEHLER
+
+Segment  26
+             +---+    +------+
+ -N_1.24  ---! & !--+-! =    ! -P_CHARGE
+             +---+    +------+
+
+F   40.0 = N_1.24                    BELADESTATION, VERT.-TRANSPORT HEBEN
+Q   16.7 = P_CHARGE                  CHARGENZAEHLER
+
+Segment  27
+ 
+                    :BE
+
+

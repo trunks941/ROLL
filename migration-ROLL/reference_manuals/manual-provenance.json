@@ -1,0 +1,111 @@
+{
+  "filename": "6ES5_998-0UF23.pdf",
+  "source": "user-uploaded technical manual",
+  "sha256": "58a35a2ed6c91282569e338588ed0a7f2fd0764b49a00f22650efd1a54d0940f",
+  "pages": 674,
+  "title": "SIMATIC S5 S5-115U Programmable Controller Manual",
+  "edition": "04",
+  "document_code": "EWA4NEB8116130-02b",
+  "CPU_applicability": {
+    "CPU": "6ES5942-7UB11",
+    "cover_pdf_page": 1,
+    "specifications_pdf_page": 543,
+    "specifications_printed_page": "15-15"
+  },
+  "user_confirmed_hardware": {
+    "selector": "RE",
+    "backup_battery": "healthy",
+    "source": "user reply 2026-10-09"
+  },
+  "evidence": {
+    "OB13_interval": {
+      "system_word": "RS97/BS97",
+      "written_value": 25,
+      "unit_ms": 10,
+      "nominal_interval_ms": 250,
+      "pdf_pages": [
+        166,
+        190,
+        191
+      ],
+      "printed_pages": [
+        "6-16",
+        "7-20",
+        "7-21"
+      ]
+    },
+    "flags_retention": {
+      "system_word": "RS120/BS120",
+      "mask": "0008",
+      "bit": 3,
+      "scope": "All M flags with RE and retained system configuration; does not set timer/counter bits",
+      "pdf_pages": [
+        119,
+        120
+      ],
+      "printed_pages": [
+        "4-5",
+        "4-6"
+      ]
+    },
+    "restart_delay": {
+      "system_word": "RS126/BS126",
+      "written_value": 1000,
+      "unit_ms": 1,
+      "delay_ms": 1000,
+      "effect": "Configuration-check delay at next power cycle, not current start or every STOP to RUN",
+      "pdf_pages": [
+        46,
+        48,
+        167
+      ],
+      "printed_pages": [
+        "2-16",
+        "2-18",
+        "6-17"
+      ]
+    },
+    "generate_DB": {
+      "existing_DB": "unchanged by nonzero G DB",
+      "positive_parameter": "n creates zeroed DW0..DWn",
+      "zero_parameter": "deletes DB",
+      "pdf_pages": [
+        233,
+        234
+      ],
+      "printed_pages": [
+        "8-35",
+        "8-36"
+      ]
+    },
+    "RAM_backup": {
+      "condition": "healthy battery maintains program and data at power loss; independent from RE/NR flag selection",
+      "pdf_pages": [
+        34,
+        58,
+        119
+      ],
+      "printed_pages": [
+        "2-4",
+        "2-28",
+        "4-5"
+      ]
+    },
+    "OB31": {
+      "function": "restart scan time monitoring",
+      "pdf_page": 404,
+      "printed_page": "11-32"
+    },
+    "overall_reset": {
+      "effect": "Clears internal program memory and RAM submodule of CPU 941/942, including generated RAM DBs; also resets M/T/Z and retention bits",
+      "pdf_pages": [
+        116,
+        120
+      ],
+      "printed_pages": [
+        "4-2",
+        "4-6"
+      ]
+    }
+  }
+}

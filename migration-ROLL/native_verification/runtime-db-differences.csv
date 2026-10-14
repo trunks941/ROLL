@@ -1,0 +1,9 @@
+﻿runtime_DB;runtime_DW;supplied_hex;factory_first_preparation_hex;differs_from_first_preparation;region;source_file;source_sha256
+DB15;128;0011;0000;True;Editor/control state 128..131;DB15ROLS.INI;d35f756f123dc2829d191b37d228f273a447e4dedd4dedd28ea6ec36950c50ff
+DB15;129;0011;0000;True;Editor/control state 128..131;DB15ROLS.INI;d35f756f123dc2829d191b37d228f273a447e4dedd4dedd28ea6ec36950c50ff
+DB15;130;3360;0000;True;Editor/control state 128..131;DB15ROLS.INI;d35f756f123dc2829d191b37d228f273a447e4dedd4dedd28ea6ec36950c50ff
+DB19;1;0020;0005;True;Parameter slots 0..127;DB19ROLS.INI;51a353f5157a7284ec129d0dfedfd60fbe6387adc7938357c364d3040c7a6def
+DB19;2;0014;0005;True;Parameter slots 0..127;DB19ROLS.INI;51a353f5157a7284ec129d0dfedfd60fbe6387adc7938357c364d3040c7a6def
+DB19;128;0001;0000;True;Editor/control state 128..131;DB19ROLS.INI;51a353f5157a7284ec129d0dfedfd60fbe6387adc7938357c364d3040c7a6def
+DB19;129;0001;0000;True;Editor/control state 128..131;DB19ROLS.INI;51a353f5157a7284ec129d0dfedfd60fbe6387adc7938357c364d3040c7a6def
+DB19;130;0020;0000;True;Editor/control state 128..131;DB19ROLS.INI;51a353f5157a7284ec129d0dfedfd60fbe6387adc7938357c364d3040c7a6def

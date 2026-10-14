@@ -1,0 +1,5 @@
+﻿network;method;result;action_order;conditions;presets
+1;All native STL positions in this network compared;Match;OPEN_DB DB 15;OPEN_DB DB 15: ;
+2;Static native FBD action-expression comparison;Match;= M 240.0;= M 240.0: (E5.0 AND M13.3 AND T59);
+3;Static native FBD action-expression comparison;Match;SE T 54 | SA T 53 | R T 53 | = A 19.4;SE T 54: NOT T53 | SA T 53: T54 | R T 53: M240.0 | = A 19.4: (NOT M40.5 AND T53);T 54: DW54 | T 53: DW53
+4;Static native FBD action-expression comparison;Match;BE ;BE : ;

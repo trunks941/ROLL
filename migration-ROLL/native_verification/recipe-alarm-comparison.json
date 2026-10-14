@@ -1,0 +1,237 @@
+{
+  "blocks": [
+    {
+      "block": "FB89",
+      "source_file": "FB89ROLS.INI",
+      "sha256": "3c1d220fa6922a8e8528697176bc36315964d11650b39d10423cb5579e278af4",
+      "size_bytes": 7525,
+      "pages": 3,
+      "networks": 3,
+      "block_bytes": 282,
+      "positions_compared": 119,
+      "executing_instructions": 90,
+      "BLD_display_rows": 29,
+      "jumps_compared": 13,
+      "addressed_positions": 118,
+      "unaddressed_final_instructions": 1,
+      "call_arguments_compared": [],
+      "formal_declarations_compared": 0,
+      "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+      "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+    },
+    {
+      "block": "FB90",
+      "source_file": "FB90ROLS.INI",
+      "sha256": "eb4dd5a76324735f90ea0eaeb522790d2943f80911c553a86e09629fc17a21b2",
+      "size_bytes": 4920,
+      "pages": 2,
+      "networks": 9,
+      "block_bytes": 214,
+      "positions_compared": 82,
+      "executing_instructions": 54,
+      "BLD_display_rows": 28,
+      "jumps_compared": 0,
+      "addressed_positions": 82,
+      "unaddressed_final_instructions": 0,
+      "call_arguments_compared": [],
+      "formal_declarations_compared": 0,
+      "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+      "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+    },
+    {
+      "block": "FB91",
+      "source_file": "FB91ROLS.INI",
+      "sha256": "a6978602c717b3cdd75bed940e90987197d54579c21d8f98da48710e2ba25a46",
+      "size_bytes": 5996,
+      "pages": 3,
+      "networks": 2,
+      "block_bytes": 240,
+      "positions_compared": 102,
+      "executing_instructions": 96,
+      "BLD_display_rows": 6,
+      "jumps_compared": 0,
+      "addressed_positions": 102,
+      "unaddressed_final_instructions": 0,
+      "call_arguments_compared": [],
+      "formal_declarations_compared": 0,
+      "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+      "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+    },
+    {
+      "block": "FB92",
+      "source_file": "FB92ROLS.INI",
+      "sha256": "70881915aa2b926a8b6baea2e9566a31cccd7c49f1252f5bca7b62dc664c3cc9",
+      "size_bytes": 20698,
+      "pages": 9,
+      "networks": 12,
+      "block_bytes": 828,
+      "positions_compared": 360,
+      "executing_instructions": 266,
+      "BLD_display_rows": 94,
+      "jumps_compared": 16,
+      "addressed_positions": 360,
+      "unaddressed_final_instructions": 0,
+      "call_arguments_compared": [
+        {
+          "argument_offset": 472,
+          "name": "INPU",
+          "value": "MW 37",
+          "raw_hex": "1225"
+        },
+        {
+          "argument_offset": 474,
+          "name": "OUTP",
+          "value": "DW 50",
+          "raw_hex": "3232"
+        },
+        {
+          "argument_offset": 480,
+          "name": "INPU",
+          "value": "MW 39",
+          "raw_hex": "1227"
+        },
+        {
+          "argument_offset": 482,
+          "name": "OUTP",
+          "value": "DW 51",
+          "raw_hex": "3233"
+        },
+        {
+          "argument_offset": 488,
+          "name": "INPU",
+          "value": "MW 41",
+          "raw_hex": "1229"
+        },
+        {
+          "argument_offset": 490,
+          "name": "OUTP",
+          "value": "DW 52",
+          "raw_hex": "3234"
+        },
+        {
+          "argument_offset": 496,
+          "name": "INPU",
+          "value": "MW 43",
+          "raw_hex": "122B"
+        },
+        {
+          "argument_offset": 498,
+          "name": "OUTP",
+          "value": "DW 53",
+          "raw_hex": "3235"
+        },
+        {
+          "argument_offset": 504,
+          "name": "INPU",
+          "value": "MW 45",
+          "raw_hex": "122D"
+        },
+        {
+          "argument_offset": 506,
+          "name": "OUTP",
+          "value": "DW 54",
+          "raw_hex": "3236"
+        },
+        {
+          "argument_offset": 512,
+          "name": "INPU",
+          "value": "MW 47",
+          "raw_hex": "122F"
+        },
+        {
+          "argument_offset": 514,
+          "name": "OUTP",
+          "value": "DW 55",
+          "raw_hex": "3237"
+        },
+        {
+          "argument_offset": 520,
+          "name": "INPU",
+          "value": "MW 49",
+          "raw_hex": "1231"
+        },
+        {
+          "argument_offset": 522,
+          "name": "OUTP",
+          "value": "DW 56",
+          "raw_hex": "3238"
+        },
+        {
+          "argument_offset": 528,
+          "name": "INPU",
+          "value": "MW 51",
+          "raw_hex": "1233"
+        },
+        {
+          "argument_offset": 530,
+          "name": "OUTP",
+          "value": "DW 57",
+          "raw_hex": "3239"
+        }
+      ],
+      "formal_declarations_compared": 0,
+      "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+      "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+    },
+    {
+      "block": "FB95",
+      "source_file": "FB95ROLS.INI",
+      "sha256": "5efc9281d70720e2a7d7ba81936f368fd24fa592ff017cd79c5390b41a6b918a",
+      "size_bytes": 1888,
+      "pages": 1,
+      "networks": 1,
+      "block_bytes": 102,
+      "positions_compared": 36,
+      "executing_instructions": 24,
+      "BLD_display_rows": 12,
+      "jumps_compared": 4,
+      "addressed_positions": 36,
+      "unaddressed_final_instructions": 0,
+      "call_arguments_compared": [],
+      "formal_declarations_compared": 0,
+      "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+      "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+    },
+    {
+      "block": "FB96",
+      "source_file": "FB96ROLS.INI",
+      "sha256": "b4167ceda586269bdf7633f9271f4e8d80597df8addb701d6c180aca7ab98946",
+      "size_bytes": 858,
+      "pages": 1,
+      "networks": 1,
+      "block_bytes": 70,
+      "positions_compared": 18,
+      "executing_instructions": 14,
+      "BLD_display_rows": 4,
+      "jumps_compared": 0,
+      "addressed_positions": 18,
+      "unaddressed_final_instructions": 0,
+      "call_arguments_compared": [],
+      "formal_declarations_compared": 2,
+      "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+      "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+    },
+    {
+      "block": "FB111",
+      "source_file": "FB111RLS.INI",
+      "sha256": "602a4a87f4682f137e2a7624bf45b69225937c2a40258651166835c10965168e",
+      "size_bytes": 5331,
+      "pages": 3,
+      "networks": 4,
+      "block_bytes": 218,
+      "positions_compared": 95,
+      "executing_instructions": 67,
+      "BLD_display_rows": 28,
+      "jumps_compared": 15,
+      "addressed_positions": 95,
+      "unaddressed_final_instructions": 0,
+      "call_arguments_compared": [],
+      "formal_declarations_compared": 0,
+      "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+      "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+    }
+  ],
+  "total_positions_compared": 812,
+  "total_executing_instructions": 611,
+  "total_jumps_compared": 48
+}

@@ -1,0 +1,127 @@
+FB89: FB 89 — REZEPTUEBERTRAGUNG OP 15
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x1800; block bytes: 282; SHA256: 26a5d7721f3197b84c0061eae7bec0ec3ba31bf965928a9fa572a899f7dbdf7e
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 59 84 00 00 00 00 8D
+Code starts at block offset 0x0014.
+FB name: 'REZEPTUR'; entry SPA bytes: 2D05
+0014 [001814]  1082                       BLD    130
+0016 [001816]  10FF                       BLD    255
+0018 [001818]  1082                       BLD    130
+001A [00181A]  1082                       BLD    130
+001C [00181C]  2033                       A      DB 51 ; DB 51 — OP15-KOMMUNIKATION ..................RAM
+001E [00181E]  1082                       BLD    130
+0020 [001820]  3240                       L      DW 64
+0022 [001822]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0024 [001824]  1082                       BLD    130
+0026 [001826]  30022005                   L      KT 005.2
+002A [00182A]  85BF                       U      M 191.5 ; M191.5 — REZEPTUEBERTRAGUNG LAEUFT
+002C [00182C]  A6BF                       UN     M 191.6 ; M191.6 — ENDE REZEPTUEBERTRAGUNG
+002E [00182E]  2464                       SE     T 100 ; T100_* — KONTROLLE REZEPTUEBERTRAGUNG 1
+0030 [001830]  1082                       BLD    130
+0032 [001832]  1082                       BLD    130
+0034 [001834]  1082                       BLD    130
+0036 [001836]  87F0                       U      M 240.7 ; M240.7 — SCHMIERMERKER
+0038 [001838]  95BF                       S      M 191.5 ; M191.5 — REZEPTUEBERTRAGUNG LAEUFT
+003A [00183A]  86F0                       U      M 240.6 ; M240.6 — SCHMIERMERKER
+003C [00183C]  96BF                       S      M 191.6 ; M191.6 — ENDE REZEPTUEBERTRAGUNG
+003E [00183E]  1082                       BLD    130
+0040 [001840]  A5BF                       UN     M 191.5 ; M191.5 — REZEPTUEBERTRAGUNG LAEUFT
+0042 [001842]  FA6A                       SPB=   @0116 (relative +106 words)
+0044 [001844]  1082                       BLD    130
+0046 [001846]  86F0                       U      M 240.6 ; M240.6 — SCHMIERMERKER
+0048 [001848]  83F0                       U      M 240.3 ; M240.3 — SCHMIERMERKER
+004A [00184A]  8FBF                       O      M 191.7 ; M191.7 — REZEPTUEBERTRAGUNG QUITTIERT
+004C [00184C]  FA1E                       SPB=   @0088 (relative +30 words)
+004E [00184E]  1082                       BLD    130
+0050 [001850]  FC64                       UN     T 100 ; T100_* — KONTROLLE REZEPTUEBERTRAGUNG 1
+0052 [001852]  FA62                       SPB=   @0116 (relative +98 words)
+0054 [001854]  1082                       BLD    130
+0056 [001856]  1082                       BLD    130
+0058 [001858]  1082                       BLD    130
+005A [00185A]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+005C [00185C]  9210                       S      M 16.2 ; STOER_91 — PROGRAMMUEBERTRAG.VOM OP DAUERT Z.LANGE
+005E [00185E]  9ABE                       =      M 190.2 ; PROG_NIO — VON OP15: PROGRAMM EINGELESEN U.N.I.O.
+0060 [001860]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0062 [001862]  30801000                   L      KM 0001000000000000
+0066 [001866]  4900                       OW     
+0068 [001868]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+006A [00186A]  2D50                       SPA=   @010A (relative +80 words)
+006C [00186C]  308007FF                   L      KM 0000011111111111
+0070 [001870]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0072 [001872]  4100                       UW     
+0074 [001874]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0076 [001876]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0078 [001878]  B5BF                       R      M 191.5 ; M191.5 — REZEPTUEBERTRAGUNG LAEUFT
+007A [00187A]  B6BF                       R      M 191.6 ; M191.6 — ENDE REZEPTUEBERTRAGUNG
+007C [00187C]  B7BF                       R      M 191.7 ; M191.7 — REZEPTUEBERTRAGUNG QUITTIERT
+007E [00187E]  A2BE                       UN     M 190.2 ; PROG_NIO — VON OP15: PROGRAMM EINGELESEN U.N.I.O.
+0080 [001880]  99BE                       =      M 190.1 ; PROG_IO — VON OP15: PROGRAMM EINGELESEN U.I.O.
+0082 [001882]  1082                       BLD    130
+0084 [001884]  2D46                       SPA=   @0110 (relative +70 words)
+0086 [001886]  1082                       BLD    130
+0088 [001888]  1082                       BLD    130
+008A [00188A]  1082                       BLD    130
+008C [00188C]  87BF                       U      M 191.7 ; M191.7 — REZEPTUEBERTRAGUNG QUITTIERT
+008E [00188E]  FAEF                       SPB=   @006C (relative -17 words)
+0090 [001890]  1082                       BLD    130
+0092 [001892]  1082                       BLD    130
+0094 [001894]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0096 [001896]  B210                       R      M 16.2 ; STOER_91 — PROGRAMMUEBERTRAG.VOM OP DAUERT Z.LANGE
+0098 [001898]  20CD                       A      DB 205 ; REZEPT — OP15 REZEPTFACH .....................RAM
+009A [00189A]  1082                       BLD    130
+009C [00189C]  3200                       L      DW 0
+009E [00189E]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+00A0 [0018A0]  1082                       BLD    130
+00A2 [0018A2]  0AF2                       L      MB 242 ; MB242 — SCHMIERMERKERBYTE
+00A4 [0018A4]  30400001                   L      KH 0001
+00A8 [0018A8]  2160                       ><F    
+00AA [0018AA]  FA33                       SPB=   @0110 (relative +51 words)
+00AC [0018AC]  0AF3                       L      MB 243 ; MB243 — SCHMIERMERKERBYTE
+00AE [0018AE]  30040001                   L      KF +1
+00B2 [0018B2]  2140                       <F     
+00B4 [0018B4]  FA2E                       SPB=   @0110 (relative +46 words)
+00B6 [0018B6]  0AF3                       L      MB 243 ; MB243 — SCHMIERMERKERBYTE
+00B8 [0018B8]  30040063                   L      KF +99
+00BC [0018BC]  2120                       >F     
+00BE [0018BE]  FA29                       SPB=   @0110 (relative +41 words)
+00C0 [0018C0]  3D5A2D01                   SPA    FB 90 ; PRG-AUF — PROGRAMMAUFBEREITUNG FUER AG
+       Call descriptor @00C2: 2D01; argument words: 0
+00C4 [0018C4]  1082                       BLD    130
+00C6 [0018C6]  20CD                       A      DB 205 ; REZEPT — OP15 REZEPTFACH .....................RAM
+00C8 [0018C8]  1082                       BLD    130
+00CA [0018CA]  1082                       BLD    130
+00CC [0018CC]  3205                       L      DW 5
+00CE [0018CE]  30040000                   L      KF +0
+00D2 [0018D2]  2120                       >F     
+00D4 [0018D4]  FA14                       SPB=   @00FC (relative +20 words)
+00D6 [0018D6]  3211                       L      DW 17
+00D8 [0018D8]  30040000                   L      KF +0
+00DC [0018DC]  2120                       >F     
+00DE [0018DE]  FA0F                       SPB=   @00FC (relative +15 words)
+00E0 [0018E0]  3219                       L      DW 25
+00E2 [0018E2]  30040000                   L      KF +0
+00E6 [0018E6]  2120                       >F     
+00E8 [0018E8]  FA0A                       SPB=   @00FC (relative +10 words)
+00EA [0018EA]  3221                       L      DW 33
+00EC [0018EC]  30040000                   L      KF +0
+00F0 [0018F0]  2120                       >F     
+00F2 [0018F2]  FA05                       SPB=   @00FC (relative +5 words)
+00F4 [0018F4]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+00F6 [0018F6]  9ABE                       =      M 190.2 ; PROG_NIO — VON OP15: PROGRAMM EINGELESEN U.N.I.O.
+00F8 [0018F8]  B1BE                       R      M 190.1 ; PROG_IO — VON OP15: PROGRAMM EINGELESEN U.I.O.
+00FA [0018FA]  9110                       S      M 16.1 ; STOER_90 — ANGEWAEHLTES PROGR.IM OP FEHLERHAFT
+00FC [0018FC]  2033                       A      DB 51 ; DB 51 — OP15-KOMMUNIKATION ..................RAM
+00FE [0018FE]  3240                       L      DW 64
+0100 [001900]  30802000                   L      KM 0010000000000000
+0104 [001904]  4900                       OW     
+0106 [001906]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0108 [001908]  1082                       BLD    130
+010A [00190A]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+010C [00190C]  97BF                       S      M 191.7 ; M191.7 — REZEPTUEBERTRAGUNG QUITTIERT
+010E [00190E]  1082                       BLD    130
+0110 [001910]  2033                       A      DB 51 ; DB 51 — OP15-KOMMUNIKATION ..................RAM
+0112 [001912]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+0114 [001914]  3340                       T      DW 64
+0116 [001916]  10FF                       BLD    255
+0118 [001918]  6500                       BE     

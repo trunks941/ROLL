@@ -1,0 +1,200 @@
+PB7: PB 7 — 1.GRUNDSTELLUNG
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xC480; block bytes: 398; SHA256: 5f1f83119938a40171bac379131ae705b06de08d431d91a6b32799f2ce17bcd6
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 07 80 00 00 00 00 C7
+Code starts at block offset 0x000A.
+000A [00C48A]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+000C [00C48C]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+000E [00C48E]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+0010 [00C490]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+0012 [00C492]  A246                       UN     M 70.2 ; M70.2 — SM WT'S UEBERFAHREN SPERRE 3
+0014 [00C494]  A346                       UN     M 70.3 ; M70.3 — SM WT'S UEBERFAHREN SPERRE 4
+0016 [00C496]  A446                       UN     M 70.4 ; M70.4 — SM WT'S UEBERFAHREN SPERRE 1
+0018 [00C498]  A646                       UN     M 70.6 ; M70.6 — SM WT'S UEBERFAHREN SPERRE 6
+001A [00C49A]  981C                       =      M 28.0 ; M28.0 — GRUNDSTELLUNGSMERKER 1
+001C [00C49C]  10FF                       BLD    255
+001E [00C49E]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0020 [00C4A0]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+0022 [00C4A2]  991C                       =      M 28.1 ; M28.1 — GRUNDSTELLUNGSMERKER 2
+0024 [00C4A4]  10FF                       BLD    255
+0026 [00C4A6]  BA00                       U(     
+0028 [00C4A8]  E8F0                       ON     A 112.0 ; K112.0M — ROLLENBAHN 1 BELADEN
+002A [00C4AA]  AC1F                       ON     M 31.4 ; AUTO_E — AUTOMATIK EIN
+002C [00C4AC]  BF00                       )      
+002E [00C4AE]  E5F0                       UN     A 112.5 ; K112.5 — ROLLENBAHN 2 ENTLADEN
+0030 [00C4B0]  9A1C                       =      M 28.2 ; M28.2 — GRUNDSTELLUNGSMERKER 3
+0032 [00C4B2]  10FF                       BLD    255
+0034 [00C4B4]  E57B                       UN     E 123.5 ; B123.5 — WT VOR SPERRE 4
+0036 [00C4B6]  E67B                       UN     E 123.6 ; B123.6 — SPERRE 4 FREIFAHREN
+0038 [00C4B8]  C17C                       U      E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+003A [00C4BA]  C47C                       U      E 124.4 ; S124.4 — WT-TRANSPORT UNTEN
+003C [00C4BC]  E0F1                       UN     A 113.0 ; Y113.0 — SPERRE 1 OEFFNEN
+003E [00C4BE]  E1F1                       UN     A 113.1 ; Y113.1 — SPERRE 2 SCHLIESSEN
+0040 [00C4C0]  E3F1                       UN     A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+0042 [00C4C2]  C2F1                       U      A 113.2 ; Y113.2 — SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+0044 [00C4C4]  E5F1                       UN     A 113.5 ; Y113.5 — SPERRE 5 SCHLIESSEN, SPERRE 6 OEFFNEN
+0046 [00C4C6]  C4F1                       U      A 113.4 ; Y113.4 — SPERRE 5 OEFFNEN, SPERRE 6 SCHLIESSEN
+0048 [00C4C8]  8C00                       O      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+004A [00C4CA]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+004C [00C4CC]  10FF                       BLD    255
+004E [00C4CE]  BA00                       U(     
+0050 [00C4D0]  C47C                       U      E 124.4 ; S124.4 — WT-TRANSPORT UNTEN
+0052 [00C4D2]  C17C                       U      E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+0054 [00C4D4]  C57B                       U      E 123.5 ; B123.5 — WT VOR SPERRE 4
+0056 [00C4D6]  C3F1                       U      A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+0058 [00C4D8]  E2F1                       UN     A 113.2 ; Y113.2 — SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+005A [00C4DA]  FB00                       O      
+005C [00C4DC]  C57C                       U      E 124.5 ; S124.5 — WT-TRANSPORT OBEN
+005E [00C4DE]  C17C                       U      E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+0060 [00C4E0]  E3F1                       UN     A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+0062 [00C4E2]  C2F1                       U      A 113.2 ; Y113.2 — SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+0064 [00C4E4]  8C00                       O      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0066 [00C4E6]  BF00                       )      
+0068 [00C4E8]  8214                       U      M 20.2 ; HB_02 — FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+006A [00C4EA]  99F0                       =      M 240.1 ; M240.1 — SCHMIERMERKER
+006C [00C4EC]  10FF                       BLD    255
+006E [00C4EE]  88F0                       O      M 240.0 ; M240.0 — SCHMIERMERKER
+0070 [00C4F0]  89F0                       O      M 240.1 ; M240.1 — SCHMIERMERKER
+0072 [00C4F2]  9B1C                       =      M 28.3 ; M28.3 — GRUNDSTELLUNGSMERKER 4
+0074 [00C4F4]  10FF                       BLD    255
+0076 [00C4F6]  801C                       U      M 28.0 ; M28.0 — GRUNDSTELLUNGSMERKER 1
+0078 [00C4F8]  811C                       U      M 28.1 ; M28.1 — GRUNDSTELLUNGSMERKER 2
+007A [00C4FA]  821C                       U      M 28.2 ; M28.2 — GRUNDSTELLUNGSMERKER 3
+007C [00C4FC]  831C                       U      M 28.3 ; M28.3 — GRUNDSTELLUNGSMERKER 4
+007E [00C4FE]  9C1C                       =      M 28.4 ; M28.4 — ZUSAMMENFASSUNG GRUNDSTELLUNG
+0080 [00C500]  10FF                       BLD    255
+0082 [00C502]  C703                       U      E 3.7 ; Q/ANTR — MOTORSCHUTZSCHALTER ANTRIEBE
+0084 [00C504]  C403                       U      E 3.4 ; STEU_EIN — STEUERUNG EIN
+0086 [00C506]  C503                       U      E 3.5 ; WART_TUE — WARTUNGSTUEREN GESCHLOSSEN
+0088 [00C508]  C70A                       U      E 10.7 ; B10.7 — DRUCKLUFTKONTROLLE
+008A [00C50A]  9D1C                       =      M 28.5 ; M28.5 — HM FREIGABE 1 AUSGAENGE ANTRIEBE
+008C [00C50C]  10FF                       BLD    255
+008E [00C50E]  851C                       U      M 28.5 ; M28.5 — HM FREIGABE 1 AUSGAENGE ANTRIEBE
+0090 [00C510]  A705                       UN     M 5.7 ; STOER_08 — MOTORSCHUTZ ANTRIEBE ANGESPROCHEN
+0092 [00C512]  A40D                       UN     M 13.4 ; STOER_69 — DRUCKLUFTMANGEL ...................B10.7
+0094 [00C514]  A610                       UN     M 16.6 ; STOER_95 — STEUERUNG EIN FEHLT
+0096 [00C516]  9E1C                       =      M 28.6 ; M28.6 — FREIGABE 1 AUSGAENGE ANTRIEBE
+0098 [00C518]  10FF                       BLD    255
+009A [00C51A]  C900                       O      E 0.1 ; HAND — BETRIEBSART HAND
+009C [00C51C]  FB00                       O      
+009E [00C51E]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+00A0 [00C520]  C400                       U      E 0.4 ; AUTO_EIN — AUTOMATIK EIN
+00A2 [00C522]  901D                       S      M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+00A4 [00C524]  A61C                       UN     M 28.6 ; M28.6 — FREIGABE 1 AUSGAENGE ANTRIEBE
+00A6 [00C526]  B01D                       R      M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+00A8 [00C528]  0000                       NOP0   
+00AA [00C52A]  10FF                       BLD    255
+00AC [00C52C]  801D                       U      M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+00AE [00C52E]  F80D                       U      T 13 ; T13 — VERZ.FREIGABE BAHNEN
+00B0 [00C530]  991D                       =      M 29.1 ; M29.1 — FREIGABE BAHNEN
+00B2 [00C532]  10FF                       BLD    255
+00B4 [00C534]  A10C                       UN     M 12.1 ; STOER_58 — WARMLUFT STATION 4 EIN FEHLT
+00B6 [00C536]  981E                       =      M 30.0 ; M30.0 — STARTBED.1 FUER AUTOMATIKBETRIEB
+00B8 [00C538]  10FF                       BLD    255
+00BA [00C53A]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+00BC [00C53C]  991E                       =      M 30.1 ; M30.1 — STARTBED.2 FUER AUTOMATIKBETRIEB
+00BE [00C53E]  10FF                       BLD    255
+00C0 [00C540]  A106                       UN     M 6.1 ; STOER_10 — NIVEAUMANGEL STATION 1 MIN .........B5.3
+00C2 [00C542]  A306                       UN     M 6.3 ; STOER_12 — NIVEAUMANGEL IM OELABSCHEIDER MIN ..B5.5
+00C4 [00C544]  A406                       UN     M 6.4 ; STOER_13 — NIVEAUMANGEL STATION 2 .............B6.0
+00C6 [00C546]  A506                       UN     M 6.5 ; STOER_14 — NIVEAUMANGEL STATION 3 .............B6.2
+00C8 [00C548]  A606                       UN     M 6.6 ; STOER_15 — 
+00CA [00C54A]  A706                       UN     M 6.7 ; STOER_16 — NIVEAUMANGEL STATION 4 ...........(OPT.)
+00CC [00C54C]  A007                       UN     M 7.0 ; STOER_17 — NIVEAUMANGEL STATION 5 ...........(OPT.)
+00CE [00C54E]  A107                       UN     M 7.1 ; STOER_18 — NIVEAUMANGEL STATION 6 ...........(OPT.)
+00D0 [00C550]  A207                       UN     M 7.2 ; STOER_19 — NIVEAUMANGEL STATION 7 ...........(OPT.)
+00D2 [00C552]  A307                       UN     M 7.3 ; STOER_20 — TGS OEAS UNTERSCHRITTEN ............B5.6
+00D4 [00C554]  A707                       UN     M 7.7 ; STOER_24 — NIVEAUMANGEL VORRATSBEH.VE-WASSER ..B6.7
+00D6 [00C556]  9A1E                       =      M 30.2 ; M30.2 — STARTBED.3 FUER AUTOMATIKBETRIEB
+00D8 [00C558]  10FF                       BLD    255
+00DA [00C55A]  E603                       UN     E 3.6 ; Q/PU_GE — MOTORSCHUTZSCHALTER PUMPEN/GEBLAESE
+00DC [00C55C]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+00DE [00C55E]  9B1E                       =      M 30.3 ; M30.3 — STARTBED.4 FUER AUTOMATIKBETRIEB
+00E0 [00C560]  10FF                       BLD    255
+00E2 [00C562]  801E                       U      M 30.0 ; M30.0 — STARTBED.1 FUER AUTOMATIKBETRIEB
+00E4 [00C564]  811E                       U      M 30.1 ; M30.1 — STARTBED.2 FUER AUTOMATIKBETRIEB
+00E6 [00C566]  821E                       U      M 30.2 ; M30.2 — STARTBED.3 FUER AUTOMATIKBETRIEB
+00E8 [00C568]  831E                       U      M 30.3 ; M30.3 — STARTBED.4 FUER AUTOMATIKBETRIEB
+00EA [00C56A]  C800                       O      E 0.0 ; SERVICE — SERVICE KLEMMEN
+00EC [00C56C]  CE00                       O      E 0.6 ; E_TROCK — TROCKENBETRIEB ANWAEHLEN
+00EE [00C56E]  9D1E                       =      M 30.5 ; M30.5 — ZUSAMMENFASS.STARTBED.1-4 F.AUTOBETRIEB
+00F0 [00C570]  10FF                       BLD    255
+00F2 [00C572]  A005                       UN     M 5.0 ; STOER_01 — HORIZ.TRANSPORTMOTOR ZU HEISS .....B11.7
+00F4 [00C574]  A105                       UN     M 5.1 ; STOER_02 — TROMMELMOTOR ZU HEISS .............B13.5
+00F6 [00C576]  A205                       UN     M 5.2 ; STOER_03 — VERT.-TRANSPORTMOTOR ZU HEISS .....B13.0
+00F8 [00C578]  A00B                       UN     M 11.0 ; STOER 49 — UEBERWACHUNGSZAEHLER AUSGELOEST
+00FA [00C57A]  A10D                       UN     M 13.1 ; STOER_66 — TROCKENLAUF PUMPE P0
+00FC [00C57C]  A30D                       UN     M 13.3 ; STOER_68 — LECKWARNSONDE BODENWANNE ANGESPR.  B 5.0
+00FE [00C57E]  9E1E                       =      M 30.6 ; M30.6 — STARTBED.4 FUER AUTOMATIKBETRIEB
+0100 [00C580]  10FF                       BLD    255
+0102 [00C582]  A305                       UN     M 5.3 ; STOER_04 — MOTOR GEBL.WARMLUFT ST.4 ZU HEISS ..B8.5
+0104 [00C584]  A109                       UN     M 9.1 ; STOER_34 — RESERVE
+0106 [00C586]  A209                       UN     M 9.2 ; STOER_35 — WARENTRAEGER IM BELADEBEREICH        OPT
+0108 [00C588]  A309                       UN     M 9.3 ; STOER_36 — STOERUNG WT-TRANSPORT EIN-/AUSFAHREN OPT
+010A [00C58A]  A10B                       UN     M 11.1 ; STOER 50 — GERADE SCHALTER PRUEF. ( IMMER 1 ) B13.3
+010C [00C58C]  C508                       U      E 8.5 ; B8.5 — THERMOSTAT GEBLAESE WARMLUFT STATION 4
+010E [00C58E]  861C                       U      M 28.6 ; M28.6 — FREIGABE 1 AUSGAENGE ANTRIEBE
+0110 [00C590]  9F1E                       =      M 30.7 ; M30.7 — STARTBED.5 FUER AUTOMATIKBETRIEB
+0112 [00C592]  10FF                       BLD    255
+0114 [00C594]  A009                       UN     M 9.0 ; STOER_33 — BELADEFEHLER ......................S13.7
+0116 [00C596]  A00C                       UN     M 12.0 ; STOER_57 — TEMP.-BEGR.HEIZ.ST.4 AUSGELOEST
+0118 [00C598]  981F                       =      M 31.0 ; M31.0 — STARTBED.6 FUER AUTOMATIKBETRIEB
+011A [00C59A]  10FF                       BLD    255
+011C [00C59C]  A557                       UN     M 87.5 ; M87.5 — HM STOERUNG IN MERKERBYTE 10
+011E [00C59E]  A158                       UN     M 88.1 ; M88.1 — HM STOERUNG IN MERKERBYTE 14
+0120 [00C5A0]  A358                       UN     M 88.3 ; M88.3 — HM STOERUNG IN MERKERBYTE 16
+0122 [00C5A2]  A458                       UN     M 88.4 ; M88.4 — HM STOERUNG IN MERKERBYTE 17
+0124 [00C5A4]  A558                       UN     M 88.5 ; M88.5 — HM STOERUNG IN MERKERBYTE 18
+0126 [00C5A6]  A658                       UN     M 88.6 ; M88.6 — HM STOERUNG IN MERKERBYTE 19
+0128 [00C5A8]  9A1F                       =      M 31.2 ; M31.2 — STARTBED.7 FUER AUTOMATIKBETRIEB
+012A [00C5AA]  10FF                       BLD    255
+012C [00C5AC]  851E                       U      M 30.5 ; M30.5 — ZUSAMMENFASS.STARTBED.1-4 F.AUTOBETRIEB
+012E [00C5AE]  861E                       U      M 30.6 ; M30.6 — STARTBED.4 FUER AUTOMATIKBETRIEB
+0130 [00C5B0]  871E                       U      M 30.7 ; M30.7 — STARTBED.5 FUER AUTOMATIKBETRIEB
+0132 [00C5B2]  801F                       U      M 31.0 ; M31.0 — STARTBED.6 FUER AUTOMATIKBETRIEB
+0134 [00C5B4]  821F                       U      M 31.2 ; M31.2 — STARTBED.7 FUER AUTOMATIKBETRIEB
+0136 [00C5B6]  991F                       =      M 31.1 ; M31.1 — ZUSAMMENFASS.STARTBED.1-7 F.AUTOBETRIEB
+0138 [00C5B8]  10FF                       BLD    255
+013A [00C5BA]  BA00                       U(     
+013C [00C5BC]  8C1C                       O      M 28.4 ; M28.4 — ZUSAMMENFASSUNG GRUNDSTELLUNG
+013E [00C5BE]  8D1F                       O      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0140 [00C5C0]  BF00                       )      
+0142 [00C5C2]  C400                       U      E 0.4 ; AUTO_EIN — AUTOMATIK EIN
+0144 [00C5C4]  8404                       U      M 4.4 ; M4.4 — ABFRAGE EINSCHALTBED. F.AUTOMATIKBETRIEB
+0146 [00C5C6]  941F                       S      M 31.4 ; AUTO_E — AUTOMATIK EIN
+0148 [00C5C8]  EA00                       ON     E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+014A [00C5CA]  EB00                       ON     E 0.3 ; AUTO_AUS — AUTOMATIK AUS
+014C [00C5CC]  A91F                       ON     M 31.1 ; M31.1 — ZUSAMMENFASS.STARTBED.1-7 F.AUTOBETRIEB
+014E [00C5CE]  A81D                       ON     M 29.0 ; M29.0 — FREIGABE AUSGAENGE ANTRIEBE
+0150 [00C5D0]  B41F                       R      M 31.4 ; AUTO_E — AUTOMATIK EIN
+0152 [00C5D2]  0000                       NOP0   
+0154 [00C5D4]  10FF                       BLD    255
+0156 [00C5D6]  841F                       U      M 31.4 ; AUTO_E — AUTOMATIK EIN
+0158 [00C5D8]  951F                       S      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+015A [00C5DA]  BA00                       U(     
+015C [00C5DC]  8825                       O      M 37.0 ; N_1.0 — SCHRITTKETTE VORBEREITEN
+015E [00C5DE]  FB00                       O      
+0160 [00C5E0]  8125                       U      M 37.1 ; N_1.1 — SCHRITTKETTE STARTEN
+0162 [00C5E2]  A225                       UN     M 37.2 ; N_1.2 — WARENTRAEGER VORHANDEN, PROGRAMM LESEN
+0164 [00C5E4]  BF00                       )      
+0166 [00C5E6]  841C                       U      M 28.4 ; M28.4 — ZUSAMMENFASSUNG GRUNDSTELLUNG
+0168 [00C5E8]  A41F                       UN     M 31.4 ; AUTO_E — AUTOMATIK EIN
+016A [00C5EA]  EA00                       ON     E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+016C [00C5EC]  B51F                       R      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+016E [00C5EE]  0000                       NOP0   
+0170 [00C5F0]  10FF                       BLD    255
+0172 [00C5F2]  8334                       U      M 52.3 ; N_1.123 — VERT.-TRANSPORT IN BELADEHOEHE
+0174 [00C5F4]  961F                       S      M 31.6 ; REINIG_E — REINIGUNG BEENDET
+0176 [00C5F6]  E00E                       UN     E 14.0 ; A14.0 — BESCHICKUNGSTUERE ANLAGE GESCHLOSSEN
+0178 [00C5F8]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+017A [00C5FA]  B61F                       R      M 31.6 ; REINIG_E — REINIGUNG BEENDET
+017C [00C5FC]  0000                       NOP0   
+017E [00C5FE]  10FF                       BLD    255
+0180 [00C600]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0182 [00C602]  DE90                       =      A 16.6 ; P_STUNDE — BETRIEBSSTUNDENZAEHLER
+0184 [00C604]  10FF                       BLD    255
+0186 [00C606]  8028                       U      M 40.0 ; N_1.24 — BELADESTATION, VERT.-TRANSPORT HEBEN
+0188 [00C608]  DF90                       =      A 16.7 ; P_CHARGE — CHARGENZAEHLER
+018A [00C60A]  10FF                       BLD    255
+018C [00C60C]  6500                       BE     

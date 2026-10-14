@@ -1,0 +1,19 @@
+{
+  "block": "FB101",
+  "source_file": "FB101RLS.INI",
+  "sha256": "9f3e70e8e9d7849a1e0f90d15ab9ed9f00f272a04d68a6b165b01e84349c3d3b",
+  "size_bytes": 5135,
+  "pages": 2,
+  "networks": 2,
+  "block_bytes": 182,
+  "positions_compared": 75,
+  "executing_instructions": 62,
+  "BLD_display_rows": 13,
+  "jumps_compared": 11,
+  "addressed_positions": 75,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

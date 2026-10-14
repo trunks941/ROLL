@@ -1,0 +1,93 @@
+FB 63     -LADE200                   C:04201@ST.S5D                    LEN=59   
+                                                                        Page   1
+Segment  1
+Name :LADEN
+ 
+0005      :C   DB  41    -DB_RETT
+0006      :***
+
+DB  41   = DB_RETT                   MERKER 200-239 RETTEN ...............RAM
+
+Segment  2
+0007      :L   DW   0
+0008      :T   FW 200    -MW200
+0009      :L   DW   2
+000A      :T   FW 202    -MW202
+000B      :L   DW   4
+000C      :T   FW 204    -MW204
+000D      :L   DW   6
+000E      :T   FW 206    -MW206
+000F      :L   DW   8
+0010      :T   FW 208    -MW208
+0011      :***
+
+FW 200   = MW200                     MERKERWORT 200
+FW 202   = MW202                     MERKERWORT 202
+FW 204   = MW204                     MERKERWORT 204
+FW 206   = MW206                     MERKERWORT 206
+FW 208   = MW208                     MERKERWORT 208
+
+Segment  3
+0012      :
+0013      :L   DW  10
+0014      :T   FW 210    -MW210
+0015      :L   DW  12
+0016      :T   FW 212    -MW212
+0017      :L   DW  14
+0018      :T   FW 214    -MW214
+0019      :L   DW  16
+001A      :T   FW 216    -MW216
+001B      :L   DW  18
+001C      :T   FW 218    -MW218
+001D      :***
+
+FW 210   = MW210                     MERKERWORT 210
+FW 212   = MW212                     MERKERWORT 212
+FW 214   = MW214                     MERKERWORT 214
+FW 216   = MW216                     MERKERWORT 216
+FW 218   = MW218                     MERKERWORT 218
+
+Segment  4
+001E      :
+001F      :L   DW  20
+0020      :T   FW 220    -MW220
+0021      :L   DW  22
+0022      :T   FW 222    -MW222
+0023      :L   DW  24
+0024      :T   FW 224    -MW224
+0025      :L   DW  26
+0026      :T   FW 226    -MW226
+0027      :L   DW  28
+0028      :T   FW 228    -MW228
+0029      :***
+
+FW 220   = MW220                     MERKERWORT 220
+FW 222   = MW222                     MERKERWORT 222
+FW 224   = MW224                     MERKERWORT 224
+
+FB 63     -LADE200                   C:04201@ST.S5D                    LEN=59   
+                                                                        Page   2
+FW 226   = MW226                     MERKERWORT 226
+FW 228   = MW228                     MERKERWORT 228
+
+Segment  5
+002A      :
+002B      :L   DW  30
+002C      :T   FW 230    -MW230
+002D      :L   DW  32
+002E      :T   FW 232    -MW232
+002F      :L   DW  34
+0030      :T   FW 234    -MW234
+0031      :L   DW  36
+0032      :T   FW 236    -MW236
+0033      :L   DW  38
+0034      :T   FW 238    -MW238
+0035      :BE
+
+FW 230   = MW230                     MERKERWORT 230
+FW 232   = MW232                     MERKERWORT 232
+FW 234   = MW234                     MERKERWORT 234
+FW 236   = MW236                     MERKERWORT 236
+FW 238   = MW238                     MERKERWORT 238
+
+

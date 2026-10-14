@@ -1,0 +1,169 @@
+PB23: PB 23 — VERARBEITUNGSEBENE AUSGAENGE VERFAHREN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xEE00; block bytes: 344; SHA256: 4d79bd86478cf85e7d3cc3dc0b690db86e75214fb99b5f658b8a92cc5b6ecc11
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 17 80 00 00 00 00 AC
+Code starts at block offset 0x000A.
+000A [00EE0A]  1083                       BLD    131
+000C [00EE0C]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+000E [00EE0E]  10FF                       BLD    255
+0010 [00EE10]  BA00                       U(     
+0012 [00EE12]  8B28                       O      M 40.3 ; N_1.27 — HORIZ.-TRANSP.IN STATION 1
+0014 [00EE14]  8C28                       O      M 40.4 ; N_1.28 — VERT.-TRANSPORT SENKEN STATION 1
+0016 [00EE16]  8D28                       O      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+0018 [00EE18]  BF00                       )      
+001A [00EE1A]  846F                       U      M 111.4 ; M111.4 — ULTRASCHALL IN STATION 1
+001C [00EE1C]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+001E [00EE1E]  10FF                       BLD    255
+0020 [00EE20]  80F0                       U      M 240.0 ; M240.0 — SCHMIERMERKER
+0022 [00EE22]  30022120                   L      KT 120.2
+0026 [00EE26]  1433                       SA     T 51 ; T51_* — VERZ.NETZ AUS FUER ULTRASCHALL STAT.1
+0028 [00EE28]  0000                       NOP0   
+002A [00EE2A]  0000                       NOP0   
+002C [00EE2C]  0000                       NOP0   
+002E [00EE2E]  F833                       U      T 51 ; T51_* — VERZ.NETZ AUS FUER ULTRASCHALL STAT.1
+0030 [00EE30]  D893                       =      A 19.0 ; K19.0M — ULTRASCHALL STATION 1 NEZTSCHUETZ
+0032 [00EE32]  10FF                       BLD    255
+0034 [00EE34]  BA00                       U(     
+0036 [00EE36]  8C28                       O      M 40.4 ; N_1.28 — VERT.-TRANSPORT SENKEN STATION 1
+0038 [00EE38]  8D28                       O      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+003A [00EE3A]  BF00                       )      
+003C [00EE3C]  F846                       U      T 70 ; T70 — VERZ.HEIZUNG AUS STATION 1
+003E [00EE3E]  A106                       UN     M 6.1 ; STOER_10 — NIVEAUMANGEL STATION 1 MIN .........B5.3
+0040 [00EE40]  C093                       U      A 19.0 ; K19.0M — ULTRASCHALL STATION 1 NEZTSCHUETZ
+0042 [00EE42]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0044 [00EE44]  80F0                       U      M 240.0 ; M240.0 — SCHMIERMERKER
+0046 [00EE46]  30021050                   L      KT 050.1
+004A [00EE4A]  2434                       SE     T 52 ; T52_* — VERZ.FERNSTEUERUNG ULTRASCHALL STAT.1
+004C [00EE4C]  0000                       NOP0   
+004E [00EE4E]  0000                       NOP0   
+0050 [00EE50]  0000                       NOP0   
+0052 [00EE52]  F834                       U      T 52 ; T52_* — VERZ.FERNSTEUERUNG ULTRASCHALL STAT.1
+0054 [00EE54]  D993                       =      A 19.1 ; K19.1M — ULTRASCHALL STATION 1 FERNSTEUERUNG
+0056 [00EE56]  10FF                       BLD    255
+0058 [00EE58]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+005A [00EE5A]  C400                       U      E 0.4 ; AUTO_EIN — AUTOMATIK EIN
+005C [00EE5C]  9767                       S      M 103.7 ; M103.7 — ABFLUTEN STATION 1 IM AUTOBETRIEB
+005E [00EE5E]  FC3B                       UN     T 59 ; T59_V — NACHLAUFZEIT 2 WOCHENSCHALTUHR
+0060 [00EE60]  B767                       R      M 103.7 ; M103.7 — ABFLUTEN STATION 1 IM AUTOBETRIEB
+0062 [00EE62]  0000                       NOP0   
+0064 [00EE64]  10FF                       BLD    255
+0066 [00EE66]  F83B                       U      T 59 ; T59_V — NACHLAUFZEIT 2 WOCHENSCHALTUHR
+0068 [00EE68]  30023360                   L      KT 360.3
+006C [00EE6C]  244C                       SE     T 76 ; T76 — ABFLUTEN STATION 1 BEIM AUFHEIZEN
+006E [00EE6E]  0000                       NOP0   
+0070 [00EE70]  0000                       NOP0   
+0072 [00EE72]  0000                       NOP0   
+0074 [00EE74]  0000                       NOP0   
+0076 [00EE76]  10FF                       BLD    255
+0078 [00EE78]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+007A [00EE7A]  A206                       UN     M 6.2 ; STOER_11 — OELABSCHEIDER UEBERFUELLT ..........B5.4
+007C [00EE7C]  A306                       UN     M 6.3 ; STOER_12 — NIVEAUMANGEL IM OELABSCHEIDER MIN ..B5.5
+007E [00EE7E]  C605                       U      E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+0080 [00EE80]  A30D                       UN     M 13.3 ; STOER_68 — LECKWARNSONDE BODENWANNE ANGESPR.  B 5.0
+0082 [00EE82]  F83B                       U      T 59 ; T59_V — NACHLAUFZEIT 2 WOCHENSCHALTUHR
+0084 [00EE84]  C403                       U      E 3.4 ; STEU_EIN — STEUERUNG EIN
+0086 [00EE86]  BA00                       U(     
+0088 [00EE88]  CA02                       O      E 2.2 ; S2.2 — PUMPE BADABFLUTEN STATION 1
+008A [00EE8A]  8898                       O      M 152.0 ; M152.0 — RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+008C [00EE8C]  BF00                       )      
+008E [00EE8E]  BA00                       U(     
+0090 [00EE90]  FC4C                       UN     T 76 ; T76 — ABFLUTEN STATION 1 BEIM AUFHEIZEN
+0092 [00EE92]  C202                       U      E 2.2 ; S2.2 — PUMPE BADABFLUTEN STATION 1
+0094 [00EE94]  8898                       O      M 152.0 ; M152.0 — RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+0096 [00EE96]  8F67                       O      M 103.7 ; M103.7 — ABFLUTEN STATION 1 IM AUTOBETRIEB
+0098 [00EE98]  BF00                       )      
+009A [00EE9A]  DD93                       =      A 19.5 ; K19.5M — PUMPE P1 BADABFLUTEN STATION 1
+009C [00EE9C]  10FF                       BLD    255
+009E [00EE9E]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00A0 [00EEA0]  C403                       U      E 3.4 ; STEU_EIN — STEUERUNG EIN
+00A2 [00EEA2]  F846                       U      T 70 ; T70 — VERZ.HEIZUNG AUS STATION 1
+00A4 [00EEA4]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+00A6 [00EEA6]  A106                       UN     M 6.1 ; STOER_10 — NIVEAUMANGEL STATION 1 MIN .........B5.3
+00A8 [00EEA8]  8064                       U      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+00AA [00EEAA]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+00AC [00EEAC]  BA00                       U(     
+00AE [00EEAE]  C900                       O      E 0.1 ; HAND — BETRIEBSART HAND
+00B0 [00EEB0]  CA00                       O      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+00B2 [00EEB2]  BF00                       )      
+00B4 [00EEB4]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+00B6 [00EEB6]  10FF                       BLD    255
+00B8 [00EEB8]  BA00                       U(     
+00BA [00EEBA]  8E68                       O      M 104.6 ; M104.6 — FUELLEN ANLAGE AUS REINTANK IM HB
+00BC [00EEBC]  8E66                       O      M 102.6 ; M102.6 — STAT.3 AUTOM.NACHFUELL.AUS RAV AB  (RES)
+00BE [00EEBE]  FB00                       O      
+00C0 [00EEC0]  8167                       U      M 103.1 ; M103.1 — OEAS AUTOM.NACHF.UEB.ST.2 AUS RAV
+00C2 [00EEC2]  8064                       U      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+00C4 [00EEC4]  BF00                       )      
+00C6 [00EEC6]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+00C8 [00EEC8]  A508                       UN     M 8.5 ; STOER_30 — RAV NIVEAUMANGEL DESTILLATBEH. .....B7.5
+00CA [00EECA]  FC60                       UN     T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+00CC [00EECC]  E694                       UN     A 20.6 ; K20.6M — PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+00CE [00EECE]  DC94                       =      A 20.4 ; K20.4M — PUMPE P6 RAV-REINTANK -> ANLAGE
+00D0 [00EED0]  DE96                       =      A 22.6 ; Y22.6 — MV FUELLEN STAT.1-3 AUS KONDENSAT RAV
+00D2 [00EED2]  10FF                       BLD    255
+00D4 [00EED4]  BA00                       U(     
+00D6 [00EED6]  8868                       O      M 104.0 ; M104.0 — UMPUMPEN IN SCHMUTZTANK RAV IM HB
+00D8 [00EED8]  8968                       O      M 104.1 ; M104.1 — UMPUMPEN IN STATION 1-n IM HB
+00DA [00EEDA]  8C68                       O      M 104.4 ; M104.4 — UMPUMPEN -> ENTSORGUNG BAUSEITS IM HB
+00DC [00EEDC]  8998                       O      M 152.1 ; M152.1 — RAV NACHFUELLEN SMT AUS STATION 2 LAEUFT
+00DE [00EEDE]  BF00                       )      
+00E0 [00EEE0]  E194                       UN     A 20.1 ; K20.1M — PUMPE P01 ANLAGE FUELLEN MIT VE-WASSER
+00E2 [00EEE2]  8763                       U      M 99.7 ; M99.7 — PUMPE P0 (UMPUMPEN) PRINZ.MOEGLICH
+00E4 [00EEE4]  DE94                       =      A 20.6 ; K20.6M — PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+00E6 [00EEE6]  10FF                       BLD    255
+00E8 [00EEE8]  8D68                       O      M 104.5 ; M104.5 — FUELLEN ANLAGE MIT FRISCHWASSER IM HB
+00EA [00EEEA]  8A67                       O      M 103.2 ; M103.2 — OEAS AUTOM.NACHF.UEBER ST.3 MIT VE-WASS.
+00EC [00EEEC]  8F66                       O      M 102.7 ; M102.7 — STAT.3 AUTOM.NACHFUELL.VE-WASSER AB
+00EE [00EEEE]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+00F0 [00EEF0]  10FF                       BLD    255
+00F2 [00EEF2]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+00F4 [00EEF4]  C005                       U      E 5.0 ; LECK — LECKWARNSONDE BODENWANNE I.O.
+00F6 [00EEF6]  C205                       U      E 5.2 ; B5.2 — NIVEAU STATION 1 UEF
+00F8 [00EEF8]  C405                       U      E 5.4 ; B5.4 — NIVEAU OELABSCHEIDER STAT.1 UEF
+00FA [00EEFA]  A006                       UN     M 6.0 ; STOER_09 — STATION 1 UEBERFUELLT ..............B5.2
+00FC [00EEFC]  A206                       UN     M 6.2 ; STOER_11 — OELABSCHEIDER UEBERFUELLT ..........B5.4
+00FE [00EEFE]  A707                       UN     M 7.7 ; STOER_24 — NIVEAUMANGEL VORRATSBEH.VE-WASSER ..B6.7
+0100 [00EF00]  A40D                       UN     M 13.4 ; STOER_69 — DRUCKLUFTMANGEL ...................B10.7
+0102 [00EF02]  80F0                       U      M 240.0 ; M240.0 — SCHMIERMERKER
+0104 [00EF04]  D994                       =      A 20.1 ; K20.1M — PUMPE P01 ANLAGE FUELLEN MIT VE-WASSER
+0106 [00EF06]  10FF                       BLD    255
+0108 [00EF08]  8167                       U      M 103.1 ; M103.1 — OEAS AUTOM.NACHF.UEB.ST.2 AUS RAV
+010A [00EF0A]  DA96                       =      A 22.2 ; Y22.2 — MV NACHFUELLEN STATION 2
+010C [00EF0C]  10FF                       BLD    255
+010E [00EF0E]  8966                       O      M 102.1 ; M102.1 — STAT.3 FUELLEN VE-WASSER IM HB
+0110 [00EF10]  8A66                       O      M 102.2 ; M102.2 — STAT.3 ERSTBEFUELLUNG MIT VE-WASSER I.HB
+0112 [00EF12]  8B66                       O      M 102.3 ; M102.3 — STAT.3 FUELLEN AUS RAV IM HB ......(RES)
+0114 [00EF14]  8E66                       O      M 102.6 ; M102.6 — STAT.3 AUTOM.NACHFUELL.AUS RAV AB  (RES)
+0116 [00EF16]  8F66                       O      M 102.7 ; M102.7 — STAT.3 AUTOM.NACHFUELL.VE-WASSER AB
+0118 [00EF18]  8A67                       O      M 103.2 ; M103.2 — OEAS AUTOM.NACHF.UEBER ST.3 MIT VE-WASS.
+011A [00EF1A]  DB96                       =      A 22.3 ; Y22.3 — MV NACHFUELLEN STATION 3
+011C [00EF1C]  10FF                       BLD    255
+011E [00EF1E]  F855                       U      T 85 ; T85_V — UMSCHALTZEIT BADABFLUTEN STATION 1
+0120 [00EF20]  DB95                       =      A 21.3 ; Y21.3 — MV BADABFLUTEN STATION 1 UMSCHALTUNG
+0122 [00EF22]  10FF                       BLD    255
+0124 [00EF24]  C694                       U      A 20.6 ; K20.6M — PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+0126 [00EF26]  30021020                   L      KT 020.1
+012A [00EF2A]  142F                       SA     T 47 ; T47_* — VERZ.ZULAUF SCHMUTZTANK ZU
+012C [00EF2C]  0000                       NOP0   
+012E [00EF2E]  0000                       NOP0   
+0130 [00EF30]  0000                       NOP0   
+0132 [00EF32]  0000                       NOP0   
+0134 [00EF34]  10FF                       BLD    255
+0136 [00EF36]  BA00                       U(     
+0138 [00EF38]  8868                       O      M 104.0 ; M104.0 — UMPUMPEN IN SCHMUTZTANK RAV IM HB
+013A [00EF3A]  8998                       O      M 152.1 ; M152.1 — RAV NACHFUELLEN SMT AUS STATION 2 LAEUFT
+013C [00EF3C]  FB00                       O      
+013E [00EF3E]  F82F                       U      T 47 ; T47_* — VERZ.ZULAUF SCHMUTZTANK ZU
+0140 [00EF40]  C495                       U      A 21.4 ; Y21.4 — MV ZULAUF SCHMUTZTANK RAV
+0142 [00EF42]  BF00                       )      
+0144 [00EF44]  E595                       UN     A 21.5 ; Y21.5 — MV FUELLEN SCHMUTZTANK AUS OELABSCH.ST.1
+0146 [00EF46]  E396                       UN     A 22.3 ; Y22.3 — MV NACHFUELLEN STATION 3
+0148 [00EF48]  E696                       UN     A 22.6 ; Y22.6 — MV FUELLEN STAT.1-3 AUS KONDENSAT RAV
+014A [00EF4A]  DC95                       =      A 21.4 ; Y21.4 — MV ZULAUF SCHMUTZTANK RAV
+014C [00EF4C]  10FF                       BLD    255
+014E [00EF4E]  8098                       U      M 152.0 ; M152.0 — RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+0150 [00EF50]  E495                       UN     A 21.4 ; Y21.4 — MV ZULAUF SCHMUTZTANK RAV
+0152 [00EF52]  DD95                       =      A 21.5 ; Y21.5 — MV FUELLEN SCHMUTZTANK AUS OELABSCH.ST.1
+0154 [00EF54]  10FF                       BLD    255
+0156 [00EF56]  6500                       BE     

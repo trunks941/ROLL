@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-14",
+  "scope": "Photo, user-confirmed S5 types and static program comparison; not a verified wiring plan or purchase order",
+  "observation_file_SHA256": "671d05257444bb451acb2e4716f21366db71a7f665a2506362377f24e79497fe",
+  "physical_address_basis": "Printed front channel labels; hardware address switches were not inspected",
+  "observed_input_capacity": 128,
+  "observed_output_capacity": 80,
+  "IO_modules": 7,
+  "DI_modules": 4,
+  "DQ_modules": 3,
+  "visible_channel_rows": 208,
+  "identified_code_input_bits_in_photo_ranges": 81,
+  "identified_code_output_bits_in_photo_ranges": 51,
+  "identified_code_bits_outside_photo_ranges": {
+    "E": 16,
+    "A": 12
+  },
+  "outside_output_bits_with_identified_write": 9,
+  "outside_addresses_assigned_to_physical_S7_channels": false,
+  "installed_IO_module_types_confirmed": true,
+  "confirmed_IO_MLFBs": [
+    "6ES5 430-7LA12",
+    "6ES5 451-7LA12",
+    "6ES5 454-7LA12"
+  ],
+  "target_module_catalog_numbers_final": false,
+  "coil_ratings_will_not_be_requested_again": true,
+  "module_catalog_numbers_final": false,
+  "wiring_verified": false,
+  "additional_modules": false,
+  "user_confirmed_complete_hardware": true,
+  "memory_cartridge_visible_label": "EPROM",
+  "generated_CSV_rows": {
+    "central-rack-modules.csv": 9,
+    "visible-channel-to-S7-draft.csv": 208,
+    "addresses-outside-photo.csv": 28,
+    "S7-IO-requirements.csv": 3
+  },
+  "consistency_result": "Passed"
+}

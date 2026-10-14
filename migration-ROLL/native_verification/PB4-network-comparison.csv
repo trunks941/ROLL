@@ -1,0 +1,27 @@
+﻿network;method;result;action_order;conditions;presets
+1;Static native FBD action-expression comparison;Match;= M 23.5;= M 23.5: (30 EQ MB239);
+2;Static native FBD action-expression comparison;Match;= M 23.6;= M 23.6: (31 EQ MB239);
+3;Static native FBD action-expression comparison;Match;= M 24.0;= M 24.0: (35 EQ MB239);
+4;Static native FBD action-expression comparison;Match;= M 24.1;= M 24.1: (36 EQ MB239);
+5;Static native FBD action-expression comparison;Match;= M 24.2;= M 24.2: (37 EQ MB239);
+6;Static native FBD action-expression comparison;Match;= M 24.3;= M 24.3: (38 EQ MB239);
+7;Static native FBD action-expression comparison;Match;= M 24.4;= M 24.4: (39 EQ MB239);
+8;Static native FBD action-expression comparison;Match;= M 25.0;= M 25.0: (50 EQ MB239);
+9;Static native FBD action-expression comparison;Match;= M 25.1;= M 25.1: (51 EQ MB239);
+10;Static native FBD action-expression comparison;Match;= M 25.2;= M 25.2: (52 EQ MB239);
+11;Static native FBD action-expression comparison;Match;= M 25.3;= M 25.3: (53 EQ MB239);
+12;Static native FBD action-expression comparison;Match;= M 25.4;= M 25.4: (55 EQ MB239);
+13;Static native FBD action-expression comparison;Match;= M 25.5;= M 25.5: (56 EQ MB239);
+14;Static native FBD action-expression comparison;Match;= M 25.6;= M 25.6: (57 EQ MB239);
+15;Static native FBD action-expression comparison;Match;= M 25.7;= M 25.7: (58 EQ MB239);
+16;Static native FBD action-expression comparison;Match;= M 26.0;= M 26.0: (60 EQ MB239);
+17;Static native FBD action-expression comparison;Match;= M 26.1;= M 26.1: (61 EQ MB239);
+18;Static native FBD action-expression comparison;Match;= M 26.2;= M 26.2: (62 EQ MB239);
+19;Static native FBD action-expression comparison;Match;= M 26.3;= M 26.3: (63 EQ MB239);
+20;Static native FBD action-expression comparison;Match;= M 26.5;= M 26.5: (65 EQ MB239);
+21;Static native FBD action-expression comparison;Match;= M 26.6;= M 26.6: (66 EQ MB239);
+22;Static native FBD action-expression comparison;Match;= M 27.1;= M 27.1: (69 EQ MB239);
+23;Static native FBD action-expression comparison;Match;= M 27.4;= M 27.4: (72 EQ MB239);
+24;Static native FBD action-expression comparison;Match;= M 27.5;= M 27.5: (73 EQ MB239);
+25;Static native FBD action-expression comparison;Match;= M 27.7;= M 27.7: (99 EQ MB239);
+26;Static native FBD action-expression comparison;Match;BE ;BE : ;

@@ -1,0 +1,769 @@
+PB2: PB 2 — STOERUNGSMERKER
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xE300; block bytes: 1540; SHA256: 6946173536f1445904f34c23271cbeccbb327abf322c50bcee3fbc0c0f814452
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 02 80 00 00 00 03 02
+Code starts at block offset 0x000A.
+000A [00E30A]  F80B                       U      T 11 ; T11 — VERZ.STOERUNGSANZ.ALLGEMEIN
+000C [00E30C]  A100                       UN     M 0.1 ; RI/NEUST — RICHTIMPULSMERKER FUER NEUSTART
+000E [00E30E]  9904                       =      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0010 [00E310]  10FF                       BLD    255
+0012 [00E312]  C801                       O      E 1.0 ; STOER_Q — TASTER STOERUNG QUITTIEREN
+0014 [00E314]  A904                       ON     M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0016 [00E316]  9903                       =      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0018 [00E318]  10FF                       BLD    255
+001A [00E31A]  BA00                       U(     
+001C [00E31C]  C400                       U      E 0.4 ; AUTO_EIN — AUTOMATIK EIN
+001E [00E31E]  A41F                       UN     M 31.4 ; AUTO_E — AUTOMATIK EIN
+0020 [00E320]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0022 [00E322]  8D1F                       O      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0024 [00E324]  BF00                       )      
+0026 [00E326]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0028 [00E328]  9C04                       =      M 4.4 ; M4.4 — ABFRAGE EINSCHALTBED. F.AUTOMATIKBETRIEB
+002A [00E32A]  10FF                       BLD    255
+002C [00E32C]  E70B                       UN     E 11.7 ; B11.7 — THERMOSTAT IM HORIZ.-TRANSPORT M23.0
+002E [00E32E]  9005                       S      M 5.0 ; STOER_01 — HORIZ.TRANSPORTMOTOR ZU HEISS .....B11.7
+0030 [00E330]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0032 [00E332]  B005                       R      M 5.0 ; STOER_01 — HORIZ.TRANSPORTMOTOR ZU HEISS .....B11.7
+0034 [00E334]  0000                       NOP0   
+0036 [00E336]  10FF                       BLD    255
+0038 [00E338]  E50D                       UN     E 13.5 ; B13.5 — THERMOSTAT IM TROMMELMOTOR M24.0
+003A [00E33A]  9105                       S      M 5.1 ; STOER_02 — TROMMELMOTOR ZU HEISS .............B13.5
+003C [00E33C]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+003E [00E33E]  B105                       R      M 5.1 ; STOER_02 — TROMMELMOTOR ZU HEISS .............B13.5
+0040 [00E340]  0000                       NOP0   
+0042 [00E342]  10FF                       BLD    255
+0044 [00E344]  E00D                       UN     E 13.0 ; B13.0 — THERMOSTAT IM VERT.-TRANSPORT M23.4
+0046 [00E346]  9205                       S      M 5.2 ; STOER_03 — VERT.-TRANSPORTMOTOR ZU HEISS .....B13.0
+0048 [00E348]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+004A [00E34A]  B205                       R      M 5.2 ; STOER_03 — VERT.-TRANSPORTMOTOR ZU HEISS .....B13.0
+004C [00E34C]  0000                       NOP0   
+004E [00E34E]  10FF                       BLD    255
+0050 [00E350]  E508                       UN     E 8.5 ; B8.5 — THERMOSTAT GEBLAESE WARMLUFT STATION 4
+0052 [00E352]  9305                       S      M 5.3 ; STOER_04 — MOTOR GEBL.WARMLUFT ST.4 ZU HEISS ..B8.5
+0054 [00E354]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0056 [00E356]  B305                       R      M 5.3 ; STOER_04 — MOTOR GEBL.WARMLUFT ST.4 ZU HEISS ..B8.5
+0058 [00E358]  0000                       NOP0   
+005A [00E35A]  10FF                       BLD    255
+005C [00E35C]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+005E [00E35E]  9405                       S      M 5.4 ; STOER_05 — RESERVE
+0060 [00E360]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0062 [00E362]  B405                       R      M 5.4 ; STOER_05 — RESERVE
+0064 [00E364]  0000                       NOP0   
+0066 [00E366]  10FF                       BLD    255
+0068 [00E368]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+006A [00E36A]  9505                       S      M 5.5 ; STOER_06 — RESERVE
+006C [00E36C]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+006E [00E36E]  B505                       R      M 5.5 ; STOER_06 — RESERVE
+0070 [00E370]  0000                       NOP0   
+0072 [00E372]  10FF                       BLD    255
+0074 [00E374]  C603                       U      E 3.6 ; Q/PU_GE — MOTORSCHUTZSCHALTER PUMPEN/GEBLAESE
+0076 [00E376]  9605                       S      M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+0078 [00E378]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+007A [00E37A]  B605                       R      M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+007C [00E37C]  0000                       NOP0   
+007E [00E37E]  10FF                       BLD    255
+0080 [00E380]  E703                       UN     E 3.7 ; Q/ANTR — MOTORSCHUTZSCHALTER ANTRIEBE
+0082 [00E382]  9705                       S      M 5.7 ; STOER_08 — MOTORSCHUTZ ANTRIEBE ANGESPROCHEN
+0084 [00E384]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0086 [00E386]  B705                       R      M 5.7 ; STOER_08 — MOTORSCHUTZ ANTRIEBE ANGESPROCHEN
+0088 [00E388]  0000                       NOP0   
+008A [00E38A]  10FF                       BLD    255
+008C [00E38C]  E205                       UN     E 5.2 ; B5.2 — NIVEAU STATION 1 UEF
+008E [00E38E]  9006                       S      M 6.0 ; STOER_09 — STATION 1 UEBERFUELLT ..............B5.2
+0090 [00E390]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0092 [00E392]  C205                       U      E 5.2 ; B5.2 — NIVEAU STATION 1 UEF
+0094 [00E394]  B006                       R      M 6.0 ; STOER_09 — STATION 1 UEBERFUELLT ..............B5.2
+0096 [00E396]  0000                       NOP0   
+0098 [00E398]  10FF                       BLD    255
+009A [00E39A]  E305                       UN     E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+009C [00E39C]  F81F                       U      T 31 ; T31_V — VERZ.NIVEAUKONTROLLE STATION 1
+009E [00E39E]  9106                       S      M 6.1 ; STOER_10 — NIVEAUMANGEL STATION 1 MIN .........B5.3
+00A0 [00E3A0]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00A2 [00E3A2]  B106                       R      M 6.1 ; STOER_10 — NIVEAUMANGEL STATION 1 MIN .........B5.3
+00A4 [00E3A4]  0000                       NOP0   
+00A6 [00E3A6]  10FF                       BLD    255
+00A8 [00E3A8]  E405                       UN     E 5.4 ; B5.4 — NIVEAU OELABSCHEIDER STAT.1 UEF
+00AA [00E3AA]  9206                       S      M 6.2 ; STOER_11 — OELABSCHEIDER UEBERFUELLT ..........B5.4
+00AC [00E3AC]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00AE [00E3AE]  C405                       U      E 5.4 ; B5.4 — NIVEAU OELABSCHEIDER STAT.1 UEF
+00B0 [00E3B0]  B206                       R      M 6.2 ; STOER_11 — OELABSCHEIDER UEBERFUELLT ..........B5.4
+00B2 [00E3B2]  0000                       NOP0   
+00B4 [00E3B4]  10FF                       BLD    255
+00B6 [00E3B6]  E505                       UN     E 5.5 ; B5.5 — NIVEAU OELABSCHEIDER STAT.1 MIN
+00B8 [00E3B8]  8528                       U      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+00BA [00E3BA]  F811                       U      T 17 ; T17_V — VERZ.STOERANZEIGE NIVEAUKONTR.OELABSCH.
+00BC [00E3BC]  9306                       S      M 6.3 ; STOER_12 — NIVEAUMANGEL IM OELABSCHEIDER MIN ..B5.5
+00BE [00E3BE]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00C0 [00E3C0]  B306                       R      M 6.3 ; STOER_12 — NIVEAUMANGEL IM OELABSCHEIDER MIN ..B5.5
+00C2 [00E3C2]  0000                       NOP0   
+00C4 [00E3C4]  10FF                       BLD    255
+00C6 [00E3C6]  E006                       UN     E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+00C8 [00E3C8]  F820                       U      T 32 ; T32_V — VERZ.NIVEAUKONTROLLE STATION 2
+00CA [00E3CA]  9406                       S      M 6.4 ; STOER_13 — NIVEAUMANGEL STATION 2 .............B6.0
+00CC [00E3CC]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00CE [00E3CE]  B406                       R      M 6.4 ; STOER_13 — NIVEAUMANGEL STATION 2 .............B6.0
+00D0 [00E3D0]  0000                       NOP0   
+00D2 [00E3D2]  10FF                       BLD    255
+00D4 [00E3D4]  E206                       UN     E 6.2 ; B6.2 — NIVEAU STATION 3 MIN
+00D6 [00E3D6]  F821                       U      T 33 ; T33_V — VERZ.NIVEAUKONTROLLE STATION 3
+00D8 [00E3D8]  9506                       S      M 6.5 ; STOER_14 — NIVEAUMANGEL STATION 3 .............B6.2
+00DA [00E3DA]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00DC [00E3DC]  B506                       R      M 6.5 ; STOER_14 — NIVEAUMANGEL STATION 3 .............B6.2
+00DE [00E3DE]  0000                       NOP0   
+00E0 [00E3E0]  10FF                       BLD    255
+00E2 [00E3E2]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00E4 [00E3E4]  9606                       S      M 6.6 ; STOER_15 — 
+00E6 [00E3E6]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00E8 [00E3E8]  B606                       R      M 6.6 ; STOER_15 — 
+00EA [00E3EA]  0000                       NOP0   
+00EC [00E3EC]  10FF                       BLD    255
+00EE [00E3EE]  A300                       UN     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00F0 [00E3F0]  F823                       U      T 35 ; T35 — VERZ.NIVEAUKONTROLLE STATION 4   (OPT.)
+00F2 [00E3F2]  9706                       S      M 6.7 ; STOER_16 — NIVEAUMANGEL STATION 4 ...........(OPT.)
+00F4 [00E3F4]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+00F6 [00E3F6]  B706                       R      M 6.7 ; STOER_16 — NIVEAUMANGEL STATION 4 ...........(OPT.)
+00F8 [00E3F8]  0000                       NOP0   
+00FA [00E3FA]  10FF                       BLD    255
+00FC [00E3FC]  A300                       UN     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00FE [00E3FE]  F824                       U      T 36 ; T36 — VERZ.NIVEAUKONTROLLE STATION 5   (OPT.)
+0100 [00E400]  9007                       S      M 7.0 ; STOER_17 — NIVEAUMANGEL STATION 5 ...........(OPT.)
+0102 [00E402]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0104 [00E404]  B007                       R      M 7.0 ; STOER_17 — NIVEAUMANGEL STATION 5 ...........(OPT.)
+0106 [00E406]  0000                       NOP0   
+0108 [00E408]  10FF                       BLD    255
+010A [00E40A]  A300                       UN     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+010C [00E40C]  8130                       U      M 48.1 ; N_1.89 — VERT.-TRANSPORT UNTEN STATION 6
+010E [00E40E]  F825                       U      T 37 ; T37 — VERZ.NIVEAUKONTROLLE STATION 6   (OPT.)
+0110 [00E410]  9107                       S      M 7.1 ; STOER_18 — NIVEAUMANGEL STATION 6 ...........(OPT.)
+0112 [00E412]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0114 [00E414]  B107                       R      M 7.1 ; STOER_18 — NIVEAUMANGEL STATION 6 ...........(OPT.)
+0116 [00E416]  0000                       NOP0   
+0118 [00E418]  10FF                       BLD    255
+011A [00E41A]  A300                       UN     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+011C [00E41C]  F826                       U      T 38 ; T38 — VERZ.NIVEAUKONTROLLE STATION 7   (OPT.)
+011E [00E41E]  9207                       S      M 7.2 ; STOER_19 — NIVEAUMANGEL STATION 7 ...........(OPT.)
+0120 [00E420]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0122 [00E422]  B207                       R      M 7.2 ; STOER_19 — NIVEAUMANGEL STATION 7 ...........(OPT.)
+0124 [00E424]  0000                       NOP0   
+0126 [00E426]  10FF                       BLD    255
+0128 [00E428]  E605                       UN     E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+012A [00E42A]  F810                       U      T 16 ; T16 — VERZ.STOERANZEIGE TGS OELABSCHEIDER
+012C [00E42C]  9307                       S      M 7.3 ; STOER_20 — TGS OEAS UNTERSCHRITTEN ............B5.6
+012E [00E42E]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0130 [00E430]  C605                       U      E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+0132 [00E432]  B307                       R      M 7.3 ; STOER_20 — TGS OEAS UNTERSCHRITTEN ............B5.6
+0134 [00E434]  0000                       NOP0   
+0136 [00E436]  10FF                       BLD    255
+0138 [00E438]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+013A [00E43A]  9407                       S      M 7.4 ; STOER_21 — 
+013C [00E43C]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+013E [00E43E]  B407                       R      M 7.4 ; STOER_21 — 
+0140 [00E440]  0000                       NOP0   
+0142 [00E442]  10FF                       BLD    255
+0144 [00E444]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0146 [00E446]  9507                       S      M 7.5 ; STOER_22 — RESERVE
+0148 [00E448]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+014A [00E44A]  B507                       R      M 7.5 ; STOER_22 — RESERVE
+014C [00E44C]  0000                       NOP0   
+014E [00E44E]  10FF                       BLD    255
+0150 [00E450]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0152 [00E452]  9607                       S      M 7.6 ; STOER_23 — RESERVE
+0154 [00E454]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0156 [00E456]  B607                       R      M 7.6 ; STOER_23 — RESERVE
+0158 [00E458]  0000                       NOP0   
+015A [00E45A]  10FF                       BLD    255
+015C [00E45C]  E706                       UN     E 6.7 ; B6.5_3 — NIVEAU VE-WASSER-VORRAT TGS
+015E [00E45E]  9707                       S      M 7.7 ; STOER_24 — NIVEAUMANGEL VORRATSBEH.VE-WASSER ..B6.7
+0160 [00E460]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0162 [00E462]  B707                       R      M 7.7 ; STOER_24 — NIVEAUMANGEL VORRATSBEH.VE-WASSER ..B6.7
+0164 [00E464]  0000                       NOP0   
+0166 [00E466]  10FF                       BLD    255
+0168 [00E468]  C594                       U      A 20.5 ; K20.5M — DOSIERPUMPE P7 SCHAUMBREMSE RAV-VERD.
+016A [00E46A]  E607                       UN     E 7.6 ; B7.6 — NIVEAU RAV SCHAUMBREMSE-VORRAT MIN
+016C [00E46C]  30021050                   L      KT 050.1
+0170 [00E470]  241E                       SE     T 30 ; T30_* — VERZ.NIVEAUMAGEL RAV-SCHAUMBREMSE
+0172 [00E472]  0000                       NOP0   
+0174 [00E474]  0000                       NOP0   
+0176 [00E476]  0000                       NOP0   
+0178 [00E478]  F81E                       U      T 30 ; T30_* — VERZ.NIVEAUMAGEL RAV-SCHAUMBREMSE
+017A [00E47A]  9608                       S      M 8.6 ; STOER_31 — RAV NIVEAUMANGEL SCHAUMBREMSE ......B7.6
+017C [00E47C]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+017E [00E47E]  B608                       R      M 8.6 ; STOER_31 — RAV NIVEAUMANGEL SCHAUMBREMSE ......B7.6
+0180 [00E480]  0000                       NOP0   
+0182 [00E482]  10FF                       BLD    255
+0184 [00E484]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0186 [00E486]  9708                       S      M 8.7 ; STOER_32 — RESERVE
+0188 [00E488]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+018A [00E48A]  B708                       R      M 8.7 ; STOER_32 — RESERVE
+018C [00E48C]  0000                       NOP0   
+018E [00E48E]  10FF                       BLD    255
+0190 [00E490]  E70D                       UN     E 13.7 ; S13.7 — KONTURKONTROLLE BELADUNG
+0192 [00E492]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0194 [00E494]  9009                       S      M 9.0 ; STOER_33 — BELADEFEHLER ......................S13.7
+0196 [00E496]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0198 [00E498]  C70D                       U      E 13.7 ; S13.7 — KONTURKONTROLLE BELADUNG
+019A [00E49A]  B009                       R      M 9.0 ; STOER_33 — BELADEFEHLER ......................S13.7
+019C [00E49C]  0000                       NOP0   
+019E [00E49E]  10FF                       BLD    255
+01A0 [00E4A0]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01A2 [00E4A2]  9109                       S      M 9.1 ; STOER_34 — RESERVE
+01A4 [00E4A4]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+01A6 [00E4A6]  B109                       R      M 9.1 ; STOER_34 — RESERVE
+01A8 [00E4A8]  0000                       NOP0   
+01AA [00E4AA]  10FF                       BLD    255
+01AC [00E4AC]  BA00                       U(     
+01AE [00E4AE]  8A46                       O      M 70.2 ; M70.2 — SM WT'S UEBERFAHREN SPERRE 3
+01B0 [00E4B0]  8B46                       O      M 70.3 ; M70.3 — SM WT'S UEBERFAHREN SPERRE 4
+01B2 [00E4B2]  FB00                       O      
+01B4 [00E4B4]  A214                       UN     M 20.2 ; HB_02 — FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+01B6 [00E4B6]  BA00                       U(     
+01B8 [00E4B8]  CD7B                       O      E 123.5 ; B123.5 — WT VOR SPERRE 4
+01BA [00E4BA]  CE7B                       O      E 123.6 ; B123.6 — SPERRE 4 FREIFAHREN
+01BC [00E4BC]  BF00                       )      
+01BE [00E4BE]  BF00                       )      
+01C0 [00E4C0]  A51F                       UN     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+01C2 [00E4C2]  C400                       U      E 0.4 ; AUTO_EIN — AUTOMATIK EIN
+01C4 [00E4C4]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+01C6 [00E4C6]  A41C                       UN     M 28.4 ; M28.4 — ZUSAMMENFASSUNG GRUNDSTELLUNG
+01C8 [00E4C8]  9209                       S      M 9.2 ; STOER_35 — WARENTRAEGER IM BELADEBEREICH        OPT
+01CA [00E4CA]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+01CC [00E4CC]  B209                       R      M 9.2 ; STOER_35 — WARENTRAEGER IM BELADEBEREICH        OPT
+01CE [00E4CE]  0000                       NOP0   
+01D0 [00E4D0]  10FF                       BLD    255
+01D2 [00E4D2]  F813                       U      T 19 ; T19 — ZEITKONTROLLE WT-TRANSPORT EIN-/AUSFAHR.
+01D4 [00E4D4]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+01D6 [00E4D6]  9309                       S      M 9.3 ; STOER_36 — STOERUNG WT-TRANSPORT EIN-/AUSFAHREN OPT
+01D8 [00E4D8]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+01DA [00E4DA]  B309                       R      M 9.3 ; STOER_36 — STOERUNG WT-TRANSPORT EIN-/AUSFAHREN OPT
+01DC [00E4DC]  0000                       NOP0   
+01DE [00E4DE]  10FF                       BLD    255
+01E0 [00E4E0]  BA00                       U(     
+01E2 [00E4E2]  8D1F                       O      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+01E4 [00E4E4]  FB00                       O      
+01E6 [00E4E6]  BA00                       U(     
+01E8 [00E4E8]  8C14                       O      M 20.4 ; HB_04 — BAHN 2 EIN                          OPT.
+01EA [00E4EA]  8D14                       O      M 20.5 ; HB_05 — BAHN 1+2 EIN                        OPT.
+01EC [00E4EC]  BF00                       )      
+01EE [00E4EE]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+01F0 [00E4F0]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+01F2 [00E4F2]  BF00                       )      
+01F4 [00E4F4]  F85F                       U      T 95 ; T95 — VERZ.ENTLADESPEICHER VOLL
+01F6 [00E4F6]  9C09                       =      M 9.4 ; STOER_37 — ENTLADEBAHN VOLL                     OPT
+01F8 [00E4F8]  10FF                       BLD    255
+01FA [00E4FA]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01FC [00E4FC]  9509                       S      M 9.5 ; STOER_38 — RESERVE
+01FE [00E4FE]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0200 [00E500]  B509                       R      M 9.5 ; STOER_38 — RESERVE
+0202 [00E502]  0000                       NOP0   
+0204 [00E504]  10FF                       BLD    255
+0206 [00E506]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0208 [00E508]  9609                       S      M 9.6 ; STOER_39 — RESERVE
+020A [00E50A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+020C [00E50C]  B609                       R      M 9.6 ; STOER_39 — RESERVE
+020E [00E50E]  0000                       NOP0   
+0210 [00E510]  10FF                       BLD    255
+0212 [00E512]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0214 [00E514]  9709                       S      M 9.7 ; STOER_40 — RESERVE
+0216 [00E516]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0218 [00E518]  B709                       R      M 9.7 ; STOER_40 — RESERVE
+021A [00E51A]  0000                       NOP0   
+021C [00E51C]  10FF                       BLD    255
+021E [00E51E]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0220 [00E520]  E00C                       UN     E 12.0 ; S12.0 — VERT.-TRANSP.SICHERHEITSABSCHALT. UNTEN
+0222 [00E522]  900A                       S      M 10.0 ; STOER_41 — VERT.-TR.POS.UNTEN UEBERFAHREN ....S12.0
+0224 [00E524]  BA00                       U(     
+0226 [00E526]  CD0C                       O      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+0228 [00E528]  FB00                       O      
+022A [00E52A]  FC0B                       UN     T 11 ; T11 — VERZ.STOERUNGSANZ.ALLGEMEIN
+022C [00E52C]  C003                       U      E 3.0 ; STEUSP — STEUERSPANNUNG VORHANDEN
+022E [00E52E]  BF00                       )      
+0230 [00E530]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0232 [00E532]  8F00                       O      M 0.7 ; STQ_IMP — QUITTUNGSIMPULS BEI SPANNUNGSWIEDERKEHR
+0234 [00E534]  A904                       ON     M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0236 [00E536]  B00A                       R      M 10.0 ; STOER_41 — VERT.-TR.POS.UNTEN UEBERFAHREN ....S12.0
+0238 [00E538]  0000                       NOP0   
+023A [00E53A]  10FF                       BLD    255
+023C [00E53C]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+023E [00E53E]  E60C                       UN     E 12.6 ; S12.6 — VERT.-TRANSP.SICHERHEITSABSCHALT. OBEN
+0240 [00E540]  910A                       S      M 10.1 ; STOER_42 — VERT.-TR.POS.OBEN UEBERFAHREN .....S12.6
+0242 [00E542]  BA00                       U(     
+0244 [00E544]  C90C                       O      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+0246 [00E546]  FB00                       O      
+0248 [00E548]  FC0B                       UN     T 11 ; T11 — VERZ.STOERUNGSANZ.ALLGEMEIN
+024A [00E54A]  C003                       U      E 3.0 ; STEUSP — STEUERSPANNUNG VORHANDEN
+024C [00E54C]  BF00                       )      
+024E [00E54E]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0250 [00E550]  8F00                       O      M 0.7 ; STQ_IMP — QUITTUNGSIMPULS BEI SPANNUNGSWIEDERKEHR
+0252 [00E552]  A904                       ON     M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+0254 [00E554]  B10A                       R      M 10.1 ; STOER_42 — VERT.-TR.POS.OBEN UEBERFAHREN .....S12.6
+0256 [00E556]  0000                       NOP0   
+0258 [00E558]  10FF                       BLD    255
+025A [00E55A]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+025C [00E55C]  920A                       S      M 10.2 ; STOER_43 — 
+025E [00E55E]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0260 [00E560]  B20A                       R      M 10.2 ; STOER_43 — 
+0262 [00E562]  0000                       NOP0   
+0264 [00E564]  10FF                       BLD    255
+0266 [00E566]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0268 [00E568]  930A                       S      M 10.3 ; STOER_44 — 
+026A [00E56A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+026C [00E56C]  B30A                       R      M 10.3 ; STOER_44 — 
+026E [00E56E]  0000                       NOP0   
+0270 [00E570]  10FF                       BLD    255
+0272 [00E572]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0274 [00E574]  940A                       S      M 10.4 ; STOER_45 — 
+0276 [00E576]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0278 [00E578]  B40A                       R      M 10.4 ; STOER_45 — 
+027A [00E57A]  0000                       NOP0   
+027C [00E57C]  10FF                       BLD    255
+027E [00E57E]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0280 [00E580]  950A                       S      M 10.5 ; STOER_46 — 
+0282 [00E582]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0284 [00E584]  B50A                       R      M 10.5 ; STOER_46 — 
+0286 [00E586]  0000                       NOP0   
+0288 [00E588]  10FF                       BLD    255
+028A [00E58A]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+028C [00E58C]  960A                       S      M 10.6 ; STOER_47 — RESERVE
+028E [00E58E]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0290 [00E590]  B60A                       R      M 10.6 ; STOER_47 — RESERVE
+0292 [00E592]  0000                       NOP0   
+0294 [00E594]  10FF                       BLD    255
+0296 [00E596]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0298 [00E598]  970A                       S      M 10.7 ; STOER_48 — RESERVE
+029A [00E59A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+029C [00E59C]  B70A                       R      M 10.7 ; STOER_48 — RESERVE
+029E [00E59E]  0000                       NOP0   
+02A0 [00E5A0]  10FF                       BLD    255
+02A2 [00E5A2]  823F                       U      M 63.2 ; ST.ZAEHL — STOERUNG UEBERWACHUNGSZAEHLER
+02A4 [00E5A4]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+02A6 [00E5A6]  900B                       S      M 11.0 ; STOER 49 — UEBERWACHUNGSZAEHLER AUSGELOEST
+02A8 [00E5A8]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+02AA [00E5AA]  B00B                       R      M 11.0 ; STOER 49 — UEBERWACHUNGSZAEHLER AUSGELOEST
+02AC [00E5AC]  0000                       NOP0   
+02AE [00E5AE]  10FF                       BLD    255
+02B0 [00E5B0]  C30D                       U      E 13.3 ; B13.3 — TROMMEL GERADE
+02B2 [00E5B2]  F870                       U      T 112 ; T112_* — SCHALTERUEBERWACHUNG AUF LOG. 1
+02B4 [00E5B4]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+02B6 [00E5B6]  910B                       S      M 11.1 ; STOER 50 — GERADE SCHALTER PRUEF. ( IMMER 1 ) B13.3
+02B8 [00E5B8]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+02BA [00E5BA]  B10B                       R      M 11.1 ; STOER 50 — GERADE SCHALTER PRUEF. ( IMMER 1 ) B13.3
+02BC [00E5BC]  0000                       NOP0   
+02BE [00E5BE]  10FF                       BLD    255
+02C0 [00E5C0]  E30D                       UN     E 13.3 ; B13.3 — TROMMEL GERADE
+02C2 [00E5C2]  F80F                       U      T 15 ; T15 — ZEITKONTROLLE TROMMEL GERADESTELLEN
+02C4 [00E5C4]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+02C6 [00E5C6]  920B                       S      M 11.2 ; STOER 51 — TROMMEL STELLT ZU LANGE GERADE
+02C8 [00E5C8]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+02CA [00E5CA]  B20B                       R      M 11.2 ; STOER 51 — TROMMEL STELLT ZU LANGE GERADE
+02CC [00E5CC]  0000                       NOP0   
+02CE [00E5CE]  10FF                       BLD    255
+02D0 [00E5D0]  833F                       U      M 63.3 ; ST.ANSCH — STOERUNG ANSCHLAG UNTERFAHREN
+02D2 [00E5D2]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+02D4 [00E5D4]  930B                       S      M 11.3 ; STOER 52 — TROMMEL HAT ANSCHLAG UNTERFAHREN
+02D6 [00E5D6]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+02D8 [00E5D8]  B30B                       R      M 11.3 ; STOER 52 — TROMMEL HAT ANSCHLAG UNTERFAHREN
+02DA [00E5DA]  0000                       NOP0   
+02DC [00E5DC]  10FF                       BLD    255
+02DE [00E5DE]  833C                       U      M 60.3 ; VW-SW — VORWAHL TROMMEL SCHWENKEN
+02E0 [00E5E0]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+02E2 [00E5E2]  8217                       U      M 23.2 ; HB_22 — TROMMEL GERADESTELLEN/DREHEN
+02E4 [00E5E4]  940B                       S      M 11.4 ; STOER_53 — TROMMEL SCHWENKEN VORWAHL:DREHEN NI.MOEG
+02E6 [00E5E6]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+02E8 [00E5E8]  B40B                       R      M 11.4 ; STOER_53 — TROMMEL SCHWENKEN VORWAHL:DREHEN NI.MOEG
+02EA [00E5EA]  0000                       NOP0   
+02EC [00E5EC]  10FF                       BLD    255
+02EE [00E5EE]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+02F0 [00E5F0]  950B                       S      M 11.5 ; STOER_54 — RESERVE
+02F2 [00E5F2]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+02F4 [00E5F4]  B50B                       R      M 11.5 ; STOER_54 — RESERVE
+02F6 [00E5F6]  0000                       NOP0   
+02F8 [00E5F8]  10FF                       BLD    255
+02FA [00E5FA]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+02FC [00E5FC]  960B                       S      M 11.6 ; STOER_55 — RESERVE
+02FE [00E5FE]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0300 [00E600]  B60B                       R      M 11.6 ; STOER_55 — RESERVE
+0302 [00E602]  0000                       NOP0   
+0304 [00E604]  10FF                       BLD    255
+0306 [00E606]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0308 [00E608]  970B                       S      M 11.7 ; STOER_56 — RESERVE
+030A [00E60A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+030C [00E60C]  B70B                       R      M 11.7 ; STOER_56 — RESERVE
+030E [00E60E]  0000                       NOP0   
+0310 [00E610]  10FF                       BLD    255
+0312 [00E612]  E308                       UN     E 8.3 ; K18.3MF — SICHERHEITSABSCH.HEIZUNG STATION 4
+0314 [00E614]  900C                       S      M 12.0 ; STOER_57 — TEMP.-BEGR.HEIZ.ST.4 AUSGELOEST
+0316 [00E616]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0318 [00E618]  B00C                       R      M 12.0 ; STOER_57 — TEMP.-BEGR.HEIZ.ST.4 AUSGELOEST
+031A [00E61A]  0000                       NOP0   
+031C [00E61C]  10FF                       BLD    255
+031E [00E61E]  E401                       UN     E 1.4 ; S1.4 — WARMLUFT STATION 4
+0320 [00E620]  8404                       U      M 4.4 ; M4.4 — ABFRAGE EINSCHALTBED. F.AUTOMATIKBETRIEB
+0322 [00E622]  E700                       UN     E 0.7 ; PUHKEBFA — PUMP.U.HEIZ.KEINE EINSCH.BED.F.AUTO.
+0324 [00E624]  910C                       S      M 12.1 ; STOER_58 — WARMLUFT STATION 4 EIN FEHLT
+0326 [00E626]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0328 [00E628]  B10C                       R      M 12.1 ; STOER_58 — WARMLUFT STATION 4 EIN FEHLT
+032A [00E62A]  0000                       NOP0   
+032C [00E62C]  10FF                       BLD    255
+032E [00E62E]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0330 [00E630]  920C                       S      M 12.2 ; STOER_59 — RESERVE
+0332 [00E632]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0334 [00E634]  B20C                       R      M 12.2 ; STOER_59 — RESERVE
+0336 [00E636]  0000                       NOP0   
+0338 [00E638]  10FF                       BLD    255
+033A [00E63A]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+033C [00E63C]  930C                       S      M 12.3 ; STOER_60 — RESERVE
+033E [00E63E]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0340 [00E640]  B30C                       R      M 12.3 ; STOER_60 — RESERVE
+0342 [00E642]  0000                       NOP0   
+0344 [00E644]  10FF                       BLD    255
+0346 [00E646]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0348 [00E648]  900D                       S      M 13.0 ; STOER_65 — RESERVE
+034A [00E64A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+034C [00E64C]  B00D                       R      M 13.0 ; STOER_65 — RESERVE
+034E [00E64E]  0000                       NOP0   
+0350 [00E650]  10FF                       BLD    255
+0352 [00E652]  E203                       UN     E 3.2 ; A3.2 — KONTR.TROCKENLAUF,UMPUMPEN ENTLEEREN P 0
+0354 [00E654]  910D                       S      M 13.1 ; STOER_66 — TROCKENLAUF PUMPE P0
+0356 [00E656]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0358 [00E658]  B10D                       R      M 13.1 ; STOER_66 — TROCKENLAUF PUMPE P0
+035A [00E65A]  0000                       NOP0   
+035C [00E65C]  10FF                       BLD    255
+035E [00E65E]  841B                       U      M 27.4 ; HB_72 — UMPUMPEN IN ENTSORGUNG BAUSEITS
+0360 [00E660]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+0362 [00E662]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0364 [00E664]  E704                       UN     E 4.7 ; E4.7 — FREIGABE ANLAGE ENTLEEREN
+0366 [00E666]  920D                       S      M 13.2 ; STOER_67 — FREIGABE ANLAGE ENTLEEREN FEHLT ...E 4.7
+0368 [00E668]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+036A [00E66A]  B20D                       R      M 13.2 ; STOER_67 — FREIGABE ANLAGE ENTLEEREN FEHLT ...E 4.7
+036C [00E66C]  0000                       NOP0   
+036E [00E66E]  10FF                       BLD    255
+0370 [00E670]  E005                       UN     E 5.0 ; LECK — LECKWARNSONDE BODENWANNE I.O.
+0372 [00E672]  930D                       S      M 13.3 ; STOER_68 — LECKWARNSONDE BODENWANNE ANGESPR.  B 5.0
+0374 [00E674]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0376 [00E676]  C005                       U      E 5.0 ; LECK — LECKWARNSONDE BODENWANNE I.O.
+0378 [00E678]  B30D                       R      M 13.3 ; STOER_68 — LECKWARNSONDE BODENWANNE ANGESPR.  B 5.0
+037A [00E67A]  0000                       NOP0   
+037C [00E67C]  10FF                       BLD    255
+037E [00E67E]  E70A                       UN     E 10.7 ; B10.7 — DRUCKLUFTKONTROLLE
+0380 [00E680]  940D                       S      M 13.4 ; STOER_69 — DRUCKLUFTMANGEL ...................B10.7
+0382 [00E682]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0384 [00E684]  C70A                       U      E 10.7 ; B10.7 — DRUCKLUFTKONTROLLE
+0386 [00E686]  B40D                       R      M 13.4 ; STOER_69 — DRUCKLUFTMANGEL ...................B10.7
+0388 [00E688]  0000                       NOP0   
+038A [00E68A]  10FF                       BLD    255
+038C [00E68C]  E504                       UN     E 4.5 ; ST_OSMOS — KEINE STOERUNG AN OSMOSEANLAGE
+038E [00E68E]  970D                       S      M 13.7 ; STOER_72 — STOERUNG UMKEHROSMOSE .............E 4.5
+0390 [00E690]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0392 [00E692]  B70D                       R      M 13.7 ; STOER_72 — STOERUNG UMKEHROSMOSE .............E 4.5
+0394 [00E694]  0000                       NOP0   
+0396 [00E696]  10FF                       BLD    255
+0398 [00E698]  BA00                       U(     
+039A [00E69A]  E80A                       ON     E 10.0 ; K10.0 — US-GENERATORAUSFALLKONTROLLE GEN.1
+039C [00E69C]  E90A                       ON     E 10.1 ; K10.1 — US-GENERATORAUSFALLKONTROLLE GEN.2
+039E [00E69E]  EA0A                       ON     E 10.2 ; K10.2 — US-GENERATORAUSFALLKONTROLLE GEN.3
+03A0 [00E6A0]  EB0A                       ON     E 10.3 ; K10.3 — US-GENERATORAUSFALLKONTROLLE GEN.4
+03A2 [00E6A2]  BF00                       )      
+03A4 [00E6A4]  C193                       U      A 19.1 ; K19.1M — ULTRASCHALL STATION 1 FERNSTEUERUNG
+03A6 [00E6A6]  30022020                   L      KT 020.2
+03AA [00E6AA]  2432                       SE     T 50 ; T50_* — VERZ-US-GENERATORAUSFALL
+03AC [00E6AC]  0000                       NOP0   
+03AE [00E6AE]  0000                       NOP0   
+03B0 [00E6B0]  0000                       NOP0   
+03B2 [00E6B2]  0000                       NOP0   
+03B4 [00E6B4]  10FF                       BLD    255
+03B6 [00E6B6]  E00A                       UN     E 10.0 ; K10.0 — US-GENERATORAUSFALLKONTROLLE GEN.1
+03B8 [00E6B8]  F832                       U      T 50 ; T50_* — VERZ-US-GENERATORAUSFALL
+03BA [00E6BA]  900E                       S      M 14.0 ; STOER_73 — AUSFALL ULTRASCHALLGENERATOR 1 ....E10.0
+03BC [00E6BC]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+03BE [00E6BE]  B00E                       R      M 14.0 ; STOER_73 — AUSFALL ULTRASCHALLGENERATOR 1 ....E10.0
+03C0 [00E6C0]  0000                       NOP0   
+03C2 [00E6C2]  10FF                       BLD    255
+03C4 [00E6C4]  E10A                       UN     E 10.1 ; K10.1 — US-GENERATORAUSFALLKONTROLLE GEN.2
+03C6 [00E6C6]  F832                       U      T 50 ; T50_* — VERZ-US-GENERATORAUSFALL
+03C8 [00E6C8]  910E                       S      M 14.1 ; STOER_74 — AUSFALL ULTRASCHALLGENERATOR 2 ....E10.1
+03CA [00E6CA]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+03CC [00E6CC]  B10E                       R      M 14.1 ; STOER_74 — AUSFALL ULTRASCHALLGENERATOR 2 ....E10.1
+03CE [00E6CE]  0000                       NOP0   
+03D0 [00E6D0]  10FF                       BLD    255
+03D2 [00E6D2]  E20A                       UN     E 10.2 ; K10.2 — US-GENERATORAUSFALLKONTROLLE GEN.3
+03D4 [00E6D4]  F832                       U      T 50 ; T50_* — VERZ-US-GENERATORAUSFALL
+03D6 [00E6D6]  920E                       S      M 14.2 ; STOER_75 — AUSFALL ULTRASCHALLGENERATOR 3 ....E10.2
+03D8 [00E6D8]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+03DA [00E6DA]  B20E                       R      M 14.2 ; STOER_75 — AUSFALL ULTRASCHALLGENERATOR 3 ....E10.2
+03DC [00E6DC]  0000                       NOP0   
+03DE [00E6DE]  10FF                       BLD    255
+03E0 [00E6E0]  E30A                       UN     E 10.3 ; K10.3 — US-GENERATORAUSFALLKONTROLLE GEN.4
+03E2 [00E6E2]  F832                       U      T 50 ; T50_* — VERZ-US-GENERATORAUSFALL
+03E4 [00E6E4]  930E                       S      M 14.3 ; STOER_76 — AUSFALL ULTRASCHALLGENERATOR 4 ....E10.3
+03E6 [00E6E6]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+03E8 [00E6E8]  B30E                       R      M 14.3 ; STOER_76 — AUSFALL ULTRASCHALLGENERATOR 4 ....E10.3
+03EA [00E6EA]  0000                       NOP0   
+03EC [00E6EC]  10FF                       BLD    255
+03EE [00E6EE]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+03F0 [00E6F0]  920F                       S      M 15.2 ; STOER_83 — 
+03F2 [00E6F2]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+03F4 [00E6F4]  B20F                       R      M 15.2 ; STOER_83 — 
+03F6 [00E6F6]  0000                       NOP0   
+03F8 [00E6F8]  10FF                       BLD    255
+03FA [00E6FA]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+03FC [00E6FC]  930F                       S      M 15.3 ; STOER_84 — 
+03FE [00E6FE]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0400 [00E700]  B30F                       R      M 15.3 ; STOER_84 — 
+0402 [00E702]  0000                       NOP0   
+0404 [00E704]  10FF                       BLD    255
+0406 [00E706]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0408 [00E708]  940F                       S      M 15.4 ; STOER_85 — 
+040A [00E70A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+040C [00E70C]  B40F                       R      M 15.4 ; STOER_85 — 
+040E [00E70E]  0000                       NOP0   
+0410 [00E710]  10FF                       BLD    255
+0412 [00E712]  E004                       UN     E 4.0 ; KO.SICH1 — STEUERSPANNUNG ALLGEMEIN
+0414 [00E714]  950F                       S      M 15.5 ; STOER_86 — KONTROLLE SICHERUNG STEUERSPANNUNG
+0416 [00E716]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0418 [00E718]  B50F                       R      M 15.5 ; STOER_86 — KONTROLLE SICHERUNG STEUERSPANNUNG
+041A [00E71A]  0000                       NOP0   
+041C [00E71C]  10FF                       BLD    255
+041E [00E71E]  E104                       UN     E 4.1 ; KO.SICH2 — SICHERUNG EINGAENGE
+0420 [00E720]  960F                       S      M 15.6 ; STOER_87 — KONTROLLE SICHERUNG EINGAENGE
+0422 [00E722]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0424 [00E724]  B60F                       R      M 15.6 ; STOER_87 — KONTROLLE SICHERUNG EINGAENGE
+0426 [00E726]  0000                       NOP0   
+0428 [00E728]  10FF                       BLD    255
+042A [00E72A]  E204                       UN     E 4.2 ; KO.SICH3 — SICHERUNG AUSGAENGE
+042C [00E72C]  970F                       S      M 15.7 ; STOER_88 — KONTROLLE SICHERUNG AUSGAENGE
+042E [00E72E]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0430 [00E730]  B70F                       R      M 15.7 ; STOER_88 — KONTROLLE SICHERUNG AUSGAENGE
+0432 [00E732]  0000                       NOP0   
+0434 [00E734]  10FF                       BLD    255
+0436 [00E736]  8010                       U      M 16.0 ; STOER_89 — ANGEWAEHLTES PROGR.IM OP NICHT VORHANDEN
+0438 [00E738]  9010                       S      M 16.0 ; STOER_89 — ANGEWAEHLTES PROGR.IM OP NICHT VORHANDEN
+043A [00E73A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+043C [00E73C]  B010                       R      M 16.0 ; STOER_89 — ANGEWAEHLTES PROGR.IM OP NICHT VORHANDEN
+043E [00E73E]  0000                       NOP0   
+0440 [00E740]  10FF                       BLD    255
+0442 [00E742]  8110                       U      M 16.1 ; STOER_90 — ANGEWAEHLTES PROGR.IM OP FEHLERHAFT
+0444 [00E744]  9110                       S      M 16.1 ; STOER_90 — ANGEWAEHLTES PROGR.IM OP FEHLERHAFT
+0446 [00E746]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0448 [00E748]  B110                       R      M 16.1 ; STOER_90 — ANGEWAEHLTES PROGR.IM OP FEHLERHAFT
+044A [00E74A]  0000                       NOP0   
+044C [00E74C]  10FF                       BLD    255
+044E [00E74E]  8210                       U      M 16.2 ; STOER_91 — PROGRAMMUEBERTRAG.VOM OP DAUERT Z.LANGE
+0450 [00E750]  9210                       S      M 16.2 ; STOER_91 — PROGRAMMUEBERTRAG.VOM OP DAUERT Z.LANGE
+0452 [00E752]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0454 [00E754]  B210                       R      M 16.2 ; STOER_91 — PROGRAMMUEBERTRAG.VOM OP DAUERT Z.LANGE
+0456 [00E756]  0000                       NOP0   
+0458 [00E758]  10FF                       BLD    255
+045A [00E75A]  8122                       U      M 34.1 ; M34.1 — ZEITUEBERSCHREITUNG N1 .........(ANLAGE)
+045C [00E75C]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+045E [00E75E]  9310                       S      M 16.3 ; STOER_92 — SCHRITTKETTENUEBERWACHUNG N1 ANGESPROCH.
+0460 [00E760]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0462 [00E762]  B310                       R      M 16.3 ; STOER_92 — SCHRITTKETTENUEBERWACHUNG N1 ANGESPROCH.
+0464 [00E764]  0000                       NOP0   
+0466 [00E766]  10FF                       BLD    255
+0468 [00E768]  8410                       U      M 16.4 ; STOER_93 — PROGRAMMNR.0 AUF PLATZ 4             OPT
+046A [00E76A]  9410                       S      M 16.4 ; STOER_93 — PROGRAMMNR.0 AUF PLATZ 4             OPT
+046C [00E76C]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+046E [00E76E]  E17B                       UN     E 123.1 ; B123.1 — WT AN SPERRE 1 UND SPERRE 1 FREI
+0470 [00E770]  E47B                       UN     E 123.4 ; B123.4 — WT AN SPERRE 3
+0472 [00E772]  E57B                       UN     E 123.5 ; B123.5 — WT VOR SPERRE 4
+0474 [00E774]  E67B                       UN     E 123.6 ; B123.6 — SPERRE 4 FREIFAHREN
+0476 [00E776]  E07D                       UN     E 125.0 ; B125.0 — WT AN SPERRE 6
+0478 [00E778]  E17D                       UN     E 125.1 ; B125.1 — WT AM ENDE BAHN 2
+047A [00E77A]  B410                       R      M 16.4 ; STOER_93 — PROGRAMMNR.0 AUF PLATZ 4             OPT
+047C [00E77C]  0000                       NOP0   
+047E [00E77E]  10FF                       BLD    255
+0480 [00E780]  8510                       U      M 16.5 ; STOER_94 — BATTERIEAUSFALL S5-115U
+0482 [00E782]  9510                       S      M 16.5 ; STOER_94 — BATTERIEAUSFALL S5-115U
+0484 [00E784]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0486 [00E786]  B510                       R      M 16.5 ; STOER_94 — BATTERIEAUSFALL S5-115U
+0488 [00E788]  0000                       NOP0   
+048A [00E78A]  10FF                       BLD    255
+048C [00E78C]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+048E [00E78E]  E403                       UN     E 3.4 ; STEU_EIN — STEUERUNG EIN
+0490 [00E790]  9610                       S      M 16.6 ; STOER_95 — STEUERUNG EIN FEHLT
+0492 [00E792]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0494 [00E794]  C403                       U      E 3.4 ; STEU_EIN — STEUERUNG EIN
+0496 [00E796]  B610                       R      M 16.6 ; STOER_95 — STEUERUNG EIN FEHLT
+0498 [00E798]  0000                       NOP0   
+049A [00E79A]  10FF                       BLD    255
+049C [00E79C]  BA00                       U(     
+049E [00E79E]  8C04                       O      M 4.4 ; M4.4 — ABFRAGE EINSCHALTBED. F.AUTOMATIKBETRIEB
+04A0 [00E7A0]  FB00                       O      
+04A2 [00E7A2]  BA00                       U(     
+04A4 [00E7A4]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+04A6 [00E7A6]  8EBE                       O      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+04A8 [00E7A8]  BF00                       )      
+04AA [00E7AA]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+04AC [00E7AC]  BF00                       )      
+04AE [00E7AE]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+04B0 [00E7B0]  E103                       UN     E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+04B2 [00E7B2]  9710                       S      M 16.7 ; STOER_96 — WOCHENSCHALTUHR EIN FEHLT
+04B4 [00E7B4]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+04B6 [00E7B6]  B710                       R      M 16.7 ; STOER_96 — WOCHENSCHALTUHR EIN FEHLT
+04B8 [00E7B8]  0000                       NOP0   
+04BA [00E7BA]  10FF                       BLD    255
+04BC [00E7BC]  E503                       UN     E 3.5 ; WART_TUE — WARTUNGSTUEREN GESCHLOSSEN
+04BE [00E7BE]  8104                       U      M 4.1 ; M4.1 — FREIGABE STOERANZEIGE
+04C0 [00E7C0]  9011                       S      M 17.0 ; STOER_97 — WARTUNGSTUER NICHT GESCHLOSSEN .....E3.5
+04C2 [00E7C2]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+04C4 [00E7C4]  C503                       U      E 3.5 ; WART_TUE — WARTUNGSTUEREN GESCHLOSSEN
+04C6 [00E7C6]  B011                       R      M 17.0 ; STOER_97 — WARTUNGSTUER NICHT GESCHLOSSEN .....E3.5
+04C8 [00E7C8]  0000                       NOP0   
+04CA [00E7CA]  10FF                       BLD    255
+04CC [00E7CC]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+04CE [00E7CE]  9111                       S      M 17.1 ; STOER_98 — 
+04D0 [00E7D0]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+04D2 [00E7D2]  B111                       R      M 17.1 ; STOER_98 — 
+04D4 [00E7D4]  0000                       NOP0   
+04D6 [00E7D6]  10FF                       BLD    255
+04D8 [00E7D8]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+04DA [00E7DA]  9211                       S      M 17.2 ; STOER_99 — 
+04DC [00E7DC]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+04DE [00E7DE]  B211                       R      M 17.2 ; STOER_99 — 
+04E0 [00E7E0]  0000                       NOP0   
+04E2 [00E7E2]  10FF                       BLD    255
+04E4 [00E7E4]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+04E6 [00E7E6]  9311                       S      M 17.3 ; STOER100 — 
+04E8 [00E7E8]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+04EA [00E7EA]  B311                       R      M 17.3 ; STOER100 — 
+04EC [00E7EC]  0000                       NOP0   
+04EE [00E7EE]  10FF                       BLD    255
+04F0 [00E7F0]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+04F2 [00E7F2]  9411                       S      M 17.4 ; STOER101 — 
+04F4 [00E7F4]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+04F6 [00E7F6]  B411                       R      M 17.4 ; STOER101 — 
+04F8 [00E7F8]  0000                       NOP0   
+04FA [00E7FA]  10FF                       BLD    255
+04FC [00E7FC]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+04FE [00E7FE]  9511                       S      M 17.5 ; STOER102 — 
+0500 [00E800]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0502 [00E802]  B511                       R      M 17.5 ; STOER102 — 
+0504 [00E804]  0000                       NOP0   
+0506 [00E806]  10FF                       BLD    255
+0508 [00E808]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+050A [00E80A]  9611                       S      M 17.6 ; STOER103 — 
+050C [00E80C]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+050E [00E80E]  B611                       R      M 17.6 ; STOER103 — 
+0510 [00E810]  0000                       NOP0   
+0512 [00E812]  10FF                       BLD    255
+0514 [00E814]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0516 [00E816]  9711                       S      M 17.7 ; STOER104 — 
+0518 [00E818]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+051A [00E81A]  B711                       R      M 17.7 ; STOER104 — 
+051C [00E81C]  0000                       NOP0   
+051E [00E81E]  10FF                       BLD    255
+0520 [00E820]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0522 [00E822]  9012                       S      M 18.0 ; STOER105 — 
+0524 [00E824]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0526 [00E826]  B012                       R      M 18.0 ; STOER105 — 
+0528 [00E828]  0000                       NOP0   
+052A [00E82A]  10FF                       BLD    255
+052C [00E82C]  E00E                       UN     E 14.0 ; A14.0 — BESCHICKUNGSTUERE ANLAGE GESCHLOSSEN
+052E [00E82E]  BA00                       U(     
+0530 [00E830]  8225                       U      M 37.2 ; N_1.2 — WARENTRAEGER VORHANDEN, PROGRAMM LESEN
+0532 [00E832]  8310                       U      M 16.3 ; STOER_92 — SCHRITTKETTENUEBERWACHUNG N1 ANGESPROCH.
+0534 [00E834]  841F                       U      M 31.4 ; AUTO_E — AUTOMATIK EIN
+0536 [00E836]  FB00                       O      
+0538 [00E838]  BA00                       U(     
+053A [00E83A]  8817                       O      M 23.0 ; HB_20 — VERT.-TRANSPORT SENKEN/HEBEN
+053C [00E83C]  8917                       O      M 23.1 ; HB_21 — HORIZ.-TRANSPORT ZURUECK/VOR
+053E [00E83E]  8A17                       O      M 23.2 ; HB_22 — TROMMEL GERADESTELLEN/DREHEN
+0540 [00E840]  8B17                       O      M 23.3 ; HB_23 — TROMMEL GERADESTELLEN/SCHWENKEN
+0542 [00E842]  BF00                       )      
+0544 [00E844]  BA00                       U(     
+0546 [00E846]  8EBE                       O      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0548 [00E848]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+054A [00E84A]  BF00                       )      
+054C [00E84C]  884A                       O      M 74.0 ; M74.0 — MERKER FAHREN IN GRUNDSTELLUNG
+054E [00E84E]  BF00                       )      
+0550 [00E850]  9112                       S      M 18.1 ; STOER106 — BESCHICKUNGSTUERE NICHT GESCHL.    E14.0
+0552 [00E852]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0554 [00E854]  B112                       R      M 18.1 ; STOER106 — BESCHICKUNGSTUERE NICHT GESCHL.    E14.0
+0556 [00E856]  0000                       NOP0   
+0558 [00E858]  10FF                       BLD    255
+055A [00E85A]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+055C [00E85C]  9212                       S      M 18.2 ; STOER107 — 
+055E [00E85E]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0560 [00E860]  B212                       R      M 18.2 ; STOER107 — 
+0562 [00E862]  0000                       NOP0   
+0564 [00E864]  10FF                       BLD    255
+0566 [00E866]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0568 [00E868]  9312                       S      M 18.3 ; STOER108 — 
+056A [00E86A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+056C [00E86C]  B312                       R      M 18.3 ; STOER108 — 
+056E [00E86E]  0000                       NOP0   
+0570 [00E870]  10FF                       BLD    255
+0572 [00E872]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0574 [00E874]  9412                       S      M 18.4 ; STOER109 — 
+0576 [00E876]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0578 [00E878]  B412                       R      M 18.4 ; STOER109 — 
+057A [00E87A]  0000                       NOP0   
+057C [00E87C]  10FF                       BLD    255
+057E [00E87E]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0580 [00E880]  9512                       S      M 18.5 ; STOER110 — 
+0582 [00E882]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0584 [00E884]  B512                       R      M 18.5 ; STOER110 — 
+0586 [00E886]  0000                       NOP0   
+0588 [00E888]  10FF                       BLD    255
+058A [00E88A]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+058C [00E88C]  9612                       S      M 18.6 ; STOER111 — 
+058E [00E88E]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+0590 [00E890]  B612                       R      M 18.6 ; STOER111 — 
+0592 [00E892]  0000                       NOP0   
+0594 [00E894]  10FF                       BLD    255
+0596 [00E896]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0598 [00E898]  9712                       S      M 18.7 ; STOER112 — 
+059A [00E89A]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+059C [00E89C]  B712                       R      M 18.7 ; STOER112 — 
+059E [00E89E]  0000                       NOP0   
+05A0 [00E8A0]  10FF                       BLD    255
+05A2 [00E8A2]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+05A4 [00E8A4]  9013                       S      M 19.0 ; STOER113 — 
+05A6 [00E8A6]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+05A8 [00E8A8]  B013                       R      M 19.0 ; STOER113 — 
+05AA [00E8AA]  0000                       NOP0   
+05AC [00E8AC]  10FF                       BLD    255
+05AE [00E8AE]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+05B0 [00E8B0]  9113                       S      M 19.1 ; STOER114 — 
+05B2 [00E8B2]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+05B4 [00E8B4]  B113                       R      M 19.1 ; STOER114 — 
+05B6 [00E8B6]  0000                       NOP0   
+05B8 [00E8B8]  10FF                       BLD    255
+05BA [00E8BA]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+05BC [00E8BC]  9213                       S      M 19.2 ; STOER115 — 
+05BE [00E8BE]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+05C0 [00E8C0]  B213                       R      M 19.2 ; STOER115 — 
+05C2 [00E8C2]  0000                       NOP0   
+05C4 [00E8C4]  10FF                       BLD    255
+05C6 [00E8C6]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+05C8 [00E8C8]  9313                       S      M 19.3 ; STOER116 — 
+05CA [00E8CA]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+05CC [00E8CC]  B313                       R      M 19.3 ; STOER116 — 
+05CE [00E8CE]  0000                       NOP0   
+05D0 [00E8D0]  10FF                       BLD    255
+05D2 [00E8D2]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+05D4 [00E8D4]  9413                       S      M 19.4 ; STOER117 — 
+05D6 [00E8D6]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+05D8 [00E8D8]  B413                       R      M 19.4 ; STOER117 — 
+05DA [00E8DA]  0000                       NOP0   
+05DC [00E8DC]  10FF                       BLD    255
+05DE [00E8DE]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+05E0 [00E8E0]  9513                       S      M 19.5 ; STOER118 — 
+05E2 [00E8E2]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+05E4 [00E8E4]  B513                       R      M 19.5 ; STOER118 — 
+05E6 [00E8E6]  0000                       NOP0   
+05E8 [00E8E8]  10FF                       BLD    255
+05EA [00E8EA]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+05EC [00E8EC]  9613                       S      M 19.6 ; STOER119 — 
+05EE [00E8EE]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+05F0 [00E8F0]  B613                       R      M 19.6 ; STOER119 — 
+05F2 [00E8F2]  0000                       NOP0   
+05F4 [00E8F4]  10FF                       BLD    255
+05F6 [00E8F6]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+05F8 [00E8F8]  9713                       S      M 19.7 ; STOER120 — 
+05FA [00E8FA]  8103                       U      M 3.1 ; STQUITT — STOERUNG QUITTIEREN
+05FC [00E8FC]  B713                       R      M 19.7 ; STOER120 — 
+05FE [00E8FE]  0000                       NOP0   
+0600 [00E900]  10FF                       BLD    255
+0602 [00E902]  6500                       BE     

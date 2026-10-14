@@ -1,0 +1,19 @@
+﻿network;method;result;action_order;conditions;presets
+1;Static native FBD action-expression comparison;Match;= M 82.0;= M 82.0: (NOT E3.6 AND NOT M5.6 AND NOT M6.0 AND NOT M6.2 AND (E3.1 OR M31.5) AND E5.2 AND E5.4 AND M4.1);
+2;Static native FBD action-expression comparison;Match;= M 82.2;= M 82.2: (NOT E3.6 AND NOT M12.0 AND NOT M5.3 AND NOT M5.6 AND (E3.1 OR M31.5) AND E8.3 AND E8.5 AND M4.1);
+3;Static native FBD action-expression comparison;Match;S M 82.3 | R M 82.3;S M 82.3: (M31.5 AND M40.0) | R M 82.3: NOT M31.5;
+4;Static native FBD action-expression comparison;Match;= M 240.0;= M 240.0: (NOT M110.1 AND NOT M110.2 AND M110.0 AND M110.3 AND M40.0);
+5;Static native FBD action-expression comparison;Match;= M 240.0;= M 240.0: ((NOT M110.2 AND M110.0 AND M110.1 AND M110.3 AND M41.1) OR M240.0);
+6;Static native FBD action-expression comparison;Match;= M 240.0;= M 240.0: ((NOT M110.1 AND M110.0 AND M110.2 AND M110.3 AND M41.1) OR M240.0);
+7;Static native FBD action-expression comparison;Match;= M 240.0;= M 240.0: ((M110.0 AND M110.1 AND M110.2 AND M110.3 AND M41.1) OR M240.0);
+8;Static native FBD action-expression comparison;Match;S M 82.4 | R M 82.4;S M 82.4: (M240.0 AND M31.5) | R M 82.4: (NOT M31.5 OR M45.5);
+9;Static native FBD action-expression comparison;Match;= A 17.2;= A 17.2: (NOT A17.3 AND NOT M82.4 AND NOT T91 AND (M82.3 OR T22) AND E8.5);
+10;Static native FBD action-expression comparison;Match;= A 17.3;= A 17.3: (NOT A17.2 AND NOT T90 AND E3.0 AND E8.5 AND M82.4);
+11;Static native FBD action-expression comparison;Match;SA T 22;SA T 22: A18.0;T 22: KT060.3
+12;Static native FBD action-expression comparison;Match;SA T 90;SA T 90: A17.2;T 90: KT005.1
+13;Static native FBD action-expression comparison;Match;SA T 91;SA T 91: A17.3;T 91: KT040.1
+14;Static native FBD action-expression comparison;Match;= A 18.0;= A 18.0: (NOT M12.0 AND NOT M19.7 AND (A17.2 OR A17.3 OR T90 OR T91) AND (M82.3 OR M82.4) AND E8.3 AND E8.4 AND M82.2);
+15;Static native FBD action-expression comparison;Match;= A 18.1;= A 18.1: A18.0;
+16;Static native FBD action-expression comparison;Match;= A 18.2;= A 18.2: (A18.0 AND M82.4);
+17;Static native FBD action-expression comparison;Match;= A 18.3;= A 18.3: (A18.0 AND M82.4);
+18;All native STL positions in this network compared;Match;BE ;BE : ;

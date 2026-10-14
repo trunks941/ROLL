@@ -1,0 +1,89 @@
+FB90: PRG-AUF — PROGRAMMAUFBEREITUNG FUER AG
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x1980; block bytes: 214; SHA256: 534bbab50d3f47ac7ca0deecba09f0d631ab49f2218a8af78f2fc057680b07ed
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 5A 84 00 00 00 00 6B
+Code starts at block offset 0x0014.
+FB name: 'PRG-AUF '; entry SPA bytes: 2D05
+0014 [001994]  1082                       BLD    130
+0016 [001996]  10FF                       BLD    255
+0018 [001998]  20CD                       A      DB 205 ; REZEPT — OP15 REZEPTFACH .....................RAM
+001A [00199A]  1082                       BLD    130
+001C [00199C]  3205                       L      DW 5
+001E [00199E]  30400FFF                   L      KH 0FFF
+0022 [0019A2]  4100                       UW     
+0024 [0019A4]  30400000                   L      KH 0000
+0028 [0019A8]  2160                       ><F    
+002A [0019AA]  986E                       =      M 110.0 ; STAT1 — STATION 1 ANFAHREN
+002C [0019AC]  1082                       BLD    130
+002E [0019AE]  10FF                       BLD    255
+0030 [0019B0]  1082                       BLD    130
+0032 [0019B2]  3211                       L      DW 17
+0034 [0019B4]  30400FFF                   L      KH 0FFF
+0038 [0019B8]  4100                       UW     
+003A [0019BA]  30400000                   L      KH 0000
+003E [0019BE]  2160                       ><F    
+0040 [0019C0]  996E                       =      M 110.1 ; STAT2 — STATION 2 ANFAHREN
+0042 [0019C2]  1082                       BLD    130
+0044 [0019C4]  10FF                       BLD    255
+0046 [0019C6]  1082                       BLD    130
+0048 [0019C8]  3219                       L      DW 25
+004A [0019CA]  30400FFF                   L      KH 0FFF
+004E [0019CE]  4100                       UW     
+0050 [0019D0]  30400000                   L      KH 0000
+0054 [0019D4]  2160                       ><F    
+0056 [0019D6]  9A6E                       =      M 110.2 ; STAT3 — STATION 3 ANFAHREN
+0058 [0019D8]  1082                       BLD    130
+005A [0019DA]  10FF                       BLD    255
+005C [0019DC]  1082                       BLD    130
+005E [0019DE]  3221                       L      DW 33
+0060 [0019E0]  30400FFF                   L      KH 0FFF
+0064 [0019E4]  4100                       UW     
+0066 [0019E6]  30400000                   L      KH 0000
+006A [0019EA]  2160                       ><F    
+006C [0019EC]  9B6E                       =      M 110.3 ; STAT4 — STATION 4 ANFAHREN
+006E [0019EE]  1082                       BLD    130
+0070 [0019F0]  10FF                       BLD    255
+0072 [0019F2]  1082                       BLD    130
+0074 [0019F4]  3225                       L      DW 37
+0076 [0019F6]  30400001                   L      KH 0001
+007A [0019FA]  2180                       !=F    
+007C [0019FC]  986F                       =      M 111.0 ; M111.0 — WT IN DER ANLAGE: DREHEN
+007E [0019FE]  1082                       BLD    130
+0080 [001A00]  3225                       L      DW 37
+0082 [001A02]  30400002                   L      KH 0002
+0086 [001A06]  2180                       !=F    
+0088 [001A08]  996F                       =      M 111.1 ; M111.1 — WT IN DER ANLAGE: SCHWENKEN
+008A [001A0A]  1082                       BLD    130
+008C [001A0C]  3225                       L      DW 37
+008E [001A0E]  30400003                   L      KH 0003
+0092 [001A12]  2180                       !=F    
+0094 [001A14]  9A6F                       =      M 111.2 ; M111.2 — WT IN DER ANLAGE: INTERVALLDREHEN
+0096 [001A16]  1082                       BLD    130
+0098 [001A18]  3225                       L      DW 37
+009A [001A1A]  30400004                   L      KH 0004
+009E [001A1E]  2180                       !=F    
+00A0 [001A20]  9D6F                       =      M 111.5 ; M111.5 — WT IN DER ANLAGE: DREHEN / SCHWENKEN
+00A2 [001A22]  1082                       BLD    130
+00A4 [001A24]  10FF                       BLD    255
+00A6 [001A26]  20CD                       A      DB 205 ; REZEPT — OP15 REZEPTFACH .....................RAM
+00A8 [001A28]  1082                       BLD    130
+00AA [001A2A]  3229                       L      DW 41
+00AC [001A2C]  30400001                   L      KH 0001
+00B0 [001A30]  2180                       !=F    
+00B2 [001A32]  9B6F                       =      M 111.3 ; M111.3 — WT IN DER ANLAGE: BADHUB
+00B4 [001A34]  1082                       BLD    130
+00B6 [001A36]  10FF                       BLD    255
+00B8 [001A38]  20CD                       A      DB 205 ; REZEPT — OP15 REZEPTFACH .....................RAM
+00BA [001A3A]  1082                       BLD    130
+00BC [001A3C]  320D                       L      DW 13
+00BE [001A3E]  30400001                   L      KH 0001
+00C2 [001A42]  2180                       !=F    
+00C4 [001A44]  9C6F                       =      M 111.4 ; M111.4 — ULTRASCHALL IN STATION 1
+00C6 [001A46]  1082                       BLD    130
+00C8 [001A48]  10FF                       BLD    255
+00CA [001A4A]  1082                       BLD    130
+00CC [001A4C]  30400000                   L      KH 0000
+00D0 [001A50]  13FA                       T      MW 250 ; MW250 — SCHMIERMERKER
+00D2 [001A52]  1082                       BLD    130
+00D4 [001A54]  6500                       BE     

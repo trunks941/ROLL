@@ -1,0 +1,566 @@
+FB 92     -MENUE                     C:04201@ST.S5D                    LEN=414  
+                                                                        Page   1
+Segment  1                   Stoeranzeige ein
+Name :ANZ-SCH
+ 
+0005      :A   F  192.0  -F1-TAST
+0006      :AN  F  196.0  -FF-F1
+0007      :AN  F  194.0  -FLHM-F1
+0008      :S   F  196.0  -FF-F1
+0009      :S   F  194.0  -FLHM-F1
+000A      :JC  FB  95    -AUFTRAG              Stoeranzeige aktivieren
+000B Name :AG-AUFTR
+000C      :
+000D      :A   F  192.0  -F1-TAST
+000E      :A   F  196.0  -FF-F1
+000F      :AN  F  194.0  -FLHM-F1
+0010      :R   F  196.0  -FF-F1
+0011      :S   F  194.0  -FLHM-F1
+0012      :
+0013      :AN  F  192.0  -F1-TAST
+0014      :R   F  194.0  -FLHM-F1
+0015      :                                    Stoeranzeige aus mit:
+0016      :A   F  193.5  -F14-TAST                Handbetrieb anwaehlen
+0017      :O   F  192.1  -F2-TAST              oder Programmaenderung
+0018      :O   F  192.2  -F3-TAST              oder Schrittanzeige
+0019      :O   F  192.3  -F4-TAST              oder Hauptmenue
+001A      :O   F  192.4  -F5-TAST              oder Datenanzeige
+001B      :O   F  192.5  -F6-TAST              oder Programmeingabe
+001C      :O   F  193.6  -F15-TAST             oder Zeiten/Zaehler
+001D      :O   F  198.0  -T-UEB                oder Uebernahmetaste
+001E      :R   F  196.0  -FF-F1
+001F      :***
+
+F  192.0 = F1-TAST                   TASTE F1 BETAETIGT
+F  196.0 = FF-F1                     FLIP-FLOP TASTE F1
+F  194.0 = FLHM-F1                   FLANKENHILSMERKER TASTE F1 BETAETIGT
+F  193.5 = F14-TAST                  TASTE F14 BETAETIGT
+F  192.1 = F2-TAST                   TASTE F2 BETAETIGT
+F  192.2 = F3-TAST                   TASTE F3 BETAETIGT
+F  192.3 = F4-TAST                   TASTE F4 BETAETIGT
+F  192.4 = F5-TAST                   TASTE F5 BETAETIGT
+F  192.5 = F6-TAST                   TASTE F6 BETAETIGT
+F  193.6 = F15-TAST                  TASTE F15 BETAETIGT
+F  198.0 = T-UEB                     UEBRNAHMETASTE BETAETIGT
+
+FB  95   = AUFTRAG                   AUFTRAGSAUSGABE AN OP
+
+Segment  2                   Programmaenderung
+0020      :A   F  192.1  -F2-TAST
+0021      :AN  F  196.1  -FF-F2
+0022      :AN  F  194.1  -FLHM-F2
+0023      :S   F  196.1  -FF-F2                Schrittanzeige aktivieren
+0024      :S   F  194.1  -FLHM-F2
+0025      :
+0026      :A   F  192.1  -F2-TAST
+0027      :A   F  196.1  -FF-F2
+0028      :AN  F  194.1  -FLHM-F2
+0029      :R   F  196.1  -FF-F2
+002A      :S   F  194.1  -FLHM-F2
+002B      :
+002C      :AN  F  192.1  -F2-TAST
+002D      :R   F  194.1  -FLHM-F2
+002E      :
+002F      :
+0030      :A   F  193.5  -F14-TAST
+0031      :O   F  192.0  -F1-TAST              Schrittanzeige N2 deaktivieren
+
+FB 92     -MENUE                     C:04201@ST.S5D                    LEN=414  
+                                                                        Page   2
+0032      :O   F  192.1  -F2-TAST
+0033      :O   F  192.3  -F4-TAST
+0034      :O   F    0.3  -M0.3
+0035      :O   F  192.5  -F6-TAST
+0036      :O   F  193.6  -F15-TAST
+0037      :O
+0038      :A   F  198.0  -T-UEB
+0039      :A   F    0.3  -M0.3                 ausgeblendet ! Sc
+003A      :R   F  196.1  -FF-F2
+003B      :
+003C      :***
+
+F  192.1 = F2-TAST                   TASTE F2 BETAETIGT
+F  196.1 = FF-F2                     FLIP-FLOP TASTE F2
+F  194.1 = FLHM-F2                   FLANKENHILFSMERKER TASTE F2 BETAETIGT
+F  193.5 = F14-TAST                  TASTE F14 BETAETIGT
+F  192.0 = F1-TAST                   TASTE F1 BETAETIGT
+F  192.3 = F4-TAST                   TASTE F4 BETAETIGT
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F  192.5 = F6-TAST                   TASTE F6 BETAETIGT
+F  193.6 = F15-TAST                  TASTE F15 BETAETIGT
+F  198.0 = T-UEB                     UEBRNAHMETASTE BETAETIGT
+
+Segment  3                   Datenanzeige ein
+003D      :
+003E      :A   F  192.4  -F5-TAST              Datenanzeige
+003F      :AN  F  196.4  -FF-F5
+0040      :AN  F  194.4  -FLHM-F5
+0041      :A   F    0.3  -M0.3
+0042      :S   F  196.4  -FF-F5
+0043      :S   F  194.4  -FLHM-F5
+0044      :
+0045      :
+0046      :A   F  192.4  -F5-TAST
+0047      :A   F  196.4  -FF-F5
+0048      :AN  F  194.4  -FLHM-F5
+0049      :R   F  196.4  -FF-F5
+004A      :S   F  194.4  -FLHM-F5
+004B      :
+004C      :AN  F  192.4  -F5-TAST
+004D      :R   F  194.4  -FLHM-F5
+004E      :                                    Datenanzeige aus mit:
+004F      :A   F  193.5  -F14-TAST             Handbetrieb anzeigen
+0050      :O   F  192.0  -F1-TAST              oder Stoeranzeige
+0051      :O   F  192.1  -F2-TAST              oder Schrittanzeige
+0052      :O   F    0.3  -M0.3                 oder ??
+0053      :O   F  192.3  -F4-TAST              oder Hauptmenue
+0054      :O   F    0.3  -M0.3                 oder ??
+0055      :R   F  196.4  -FF-F5
+0056      :
+0057      :***
+
+F  192.4 = F5-TAST                   TASTE F5 BETAETIGT
+F  196.4 = FF-F5                     FLIP-FLOP TASTE F5
+F  194.4 = FLHM-F5                   FLANKENHILFSMERKER TASTE F5 BETAETIGT
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F  193.5 = F14-TAST                  TASTE F14 BETAETIGT
+F  192.0 = F1-TAST                   TASTE F1 BETAETIGT
+F  192.1 = F2-TAST                   TASTE F2 BETAETIGT
+F  192.3 = F4-TAST                   TASTE F4 BETAETIGT
+
+Segment  4                   Programmavorwahl
+0058      :
+0059      :A   F  192.5  -F6-TAST              Programmanwahl
+
+FB 92     -MENUE                     C:04201@ST.S5D                    LEN=414  
+                                                                        Page   3
+005A      :AN  F  196.5  -FF-F6
+005B      :AN  F  194.5  -FLHM-F6
+005C      :S   F  196.5  -FF-F6
+005D      :S   F  194.5  -FLHM-F6
+005E      :
+005F      :A   F  192.5  -F6-TAST
+0060      :A   F  196.5  -FF-F6
+0061      :AN  F  194.5  -FLHM-F6
+0062      :R   F  196.5  -FF-F6
+0063      :S   F  194.5  -FLHM-F6
+0064      :
+0065      :AN  F  192.5  -F6-TAST
+0066      :R   F  194.5  -FLHM-F6
+0067      :
+0068      :A   F  193.5  -F14-TAST
+0069      :O   F  192.0  -F1-TAST
+006A      :O   F  192.1  -F2-TAST
+006B      :O   F  192.2  -F3-TAST
+006C      :O   F  192.3  -F4-TAST
+006D      :O   F    0.3  -M0.3
+006E      :O   F  193.6  -F15-TAST
+006F      :R   F  196.5  -FF-F6
+0070      :***
+
+F  192.5 = F6-TAST                   TASTE F6 BETAETIGT
+F  196.5 = FF-F6                     FLIP-FLOP TASTE F6
+F  194.5 = FLHM-F6                   FLANKENHILFSMERKER TASTE F6 BETAETIGT
+F  193.5 = F14-TAST                  TASTE F14 BETAETIGT
+F  192.0 = F1-TAST                   TASTE F1 BETAETIGT
+F  192.1 = F2-TAST                   TASTE F2 BETAETIGT
+F  192.2 = F3-TAST                   TASTE F3 BETAETIGT
+F  192.3 = F4-TAST                   TASTE F4 BETAETIGT
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F  193.6 = F15-TAST                  TASTE F15 BETAETIGT
+
+Segment  5                   Handbetrieb anzeigen
+0071      :
+0072      :A   F  193.5  -F14-TAST             Handbetrieb anzeigen
+0073      :AN  F  197.5  -FF-F14
+0074      :AN  F  195.5  -FLHM-F14
+0075      :S   F  197.5  -FF-F14
+0076      :S   F  195.5  -FLHM-F14
+0077      :
+0078      :A   F  193.5  -F14-TAST
+0079      :A   F  197.5  -FF-F14
+007A      :AN  F  195.5  -FLHM-F14
+007B      :O   F  192.0  -F1-TAST
+007C      :O   F  192.1  -F2-TAST
+007D      :O   F  192.2  -F3-TAST
+007E      :O   F  192.3  -F4-TAST
+007F      :O   F    0.3  -M0.3
+0080      :O   F  192.5  -F6-TAST
+0081      :O   F  193.6  -F15-TAST
+0082      :R   F  197.5  -FF-F14
+0083      :S   F  195.5  -FLHM-F14
+0084      :
+0085      :AN  F  193.5  -F14-TAST
+0086      :R   F  195.5  -FLHM-F14
+0087      :
+0088      :***
+
+F  193.5 = F14-TAST                  TASTE F14 BETAETIGT
+F  197.5 = FF-F14                    FLIP-FLOP TASTE F14
+F  195.5 = FLHM-F14                  FLANKENHILFSMERKER TASTE F14 BETAETIGT
+
+FB 92     -MENUE                     C:04201@ST.S5D                    LEN=414  
+                                                                        Page   4
+F  192.0 = F1-TAST                   TASTE F1 BETAETIGT
+F  192.1 = F2-TAST                   TASTE F2 BETAETIGT
+F  192.2 = F3-TAST                   TASTE F3 BETAETIGT
+F  192.3 = F4-TAST                   TASTE F4 BETAETIGT
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F  192.5 = F6-TAST                   TASTE F6 BETAETIGT
+F  193.6 = F15-TAST                  TASTE F15 BETAETIGT
+
+Segment  6                   Hautpmenue
+0089      :A   F  192.3  -F4-TAST              Taste F4 betaetigt
+008A      :AN  F  194.3  -FLHM-F4
+008B      :JC  FB  95    -AUFTRAG              Flanke F4
+008C Name :AG-AUFTR                            Anzeige N12 aktivieren
+008D      :
+008E      :A   F  192.3  -F4-TAST
+008F      :=   F  194.3  -FLHM-F4
+0090      :
+0091      :***
+
+F  192.3 = F4-TAST                   TASTE F4 BETAETIGT
+F  194.3 = FLHM-F4                   FALNKENHILFSMERKER TASTE F4 BETAETIGT
+
+FB  95   = AUFTRAG                   AUFTRAGSAUSGABE AN OP
+
+Segment  7                   Schrittanzeige angezeigt ?
+0092      :STL
+0093      :
+0094      :C   DB 211    -OP->AG
+0095      :
+0096      :L   DW   5                          DL:Bildtyp, DR:Bildnummer
+0097      :L   KY 1,20                         Prozessbild, Bild 20
+0099      :><F
+009A      :JC  =M001
+009B      :
+009C      :
+009D      :                                    Schrittanzeige ist ein
+009E      :                                    ----------------------
+009F      :
+00A0      :                                    PRUEFE welcher Eintrag
+00A1      :                                    ----------------------
+00A2      :L   DL   6                          Eintragsnummer laden
+00A3      :
+00A4      :L   KF +1
+00A6      :!=F
+00A7      :S   F  189.0  -N1_ANZ               N1 soll angezeit werden
+00A8      :
+00A9      :TAK
+00AA      :L   KF +2
+00AC      :!=F
+00AD      :S   F  189.1  -N2_ANZ
+00AE      :
+00AF      :TAK
+00B0      :L   KF +3
+00B2      :!=F
+00B3      :S   F  189.2  -N3_ANZ
+00B4      :
+00B5      :TAK
+00B6      :L   KF +11
+00B8      :!=F
+00B9      :S   F  189.3  -N11_ANZ
+00BA      :
+00BB      :JU  FB  95    -AUFTRAG              nun Meldeebene aktivieren
+00BC Name :AG-AUFTR
+00BD      :
+
+FB 92     -MENUE                     C:04201@ST.S5D                    LEN=414  
+                                                                        Page   5
+00BE      :JU  =M002                           zum Ende !
+00BF      :
+00C0 M001 :
+00C1      :
+00C2      :L   FW 192    -MW192                Tastaturabbild laden
+00C3      :L   KH 0000
+00C5      :><F                                 -> Aenderung an den Tasten
+00C6      :A   F  190.7  -FLANK
+00C7      :JC  =M003
+00C8      :JU  =M002
+00C9      :                                    Tastenaenderung
+00CA M003 :A   F    0.4  -M0.4
+00CB      :R   F  189.0  -N1_ANZ
+00CC      :R   F  189.1  -N2_ANZ
+00CD      :R   F  189.2  -N3_ANZ
+00CE      :R   F  189.3  -N11_ANZ
+00CF      :
+00D0 M002 :***
+
+F  189.0 = N1_ANZ                    SCHRITTKETTE N1 WIRD ANGEZEIGT
+F  189.1 = N2_ANZ                    SCHRITTKETTE N2 WIRD ANGEZEIGT
+F  189.2 = N3_ANZ                    SCHRITTKETTE N3 WIRD ANGEZEIGT
+F  189.3 = N11_ANZ                   SCHRITTKETTE N11 WIRD ANGEZEIGT
+FW 192   = MW192                     TASTATURABBILD OP15
+F  190.7 = FLANK                     FLANKE MIND. EINE F-TASTE BETAETIGT
+F    0.4 = M0.4                      VKE = "1" LOGISCH 1
+
+DB 211   = OP->AG                    DATENAUSTAUSCH VOM OP ZUM AG ........RAM
+
+FB  95   = AUFTRAG                   AUFTRAGSAUSGABE AN OP
+
+Segment  8                   Schritte N1 uebertragen
+00D1      :
+00D2      :C   DB 210    -AG->OP
+00D3      :
+00D4      :A   F  189.0  -N1_ANZ               N1-Anzeige aktiv ?
+00D5      :JC  =M001                           ja -> eintragen
+00D6      :
+00D7      :L   KH 0000                         nein -> loeschen
+00D9      :T   DW  50
+00DA      :T   DW  51
+00DB      :T   DW  52
+00DC      :T   DW  53
+00DD      :T   DW  54
+00DE      :T   DW  55
+00DF      :T   DW  56
+00E0      :T   DW  57
+00E1      :T   DW  58
+00E2      :JU  =M002                           und weiter
+00E3      :
+00E4      :
+00E5 M001 :JU  FB  96    -SWAP
+00E6 Name :SWAP
+00E7 INPU :    FW  37    -MW37
+00E8 OUTP :    DW  50
+00E9      :JU  FB  96    -SWAP
+00EA Name :SWAP
+00EB INPU :    FW  39    -MW39
+00EC OUTP :    DW  51
+00ED      :JU  FB  96    -SWAP
+00EE Name :SWAP
+00EF INPU :    FW  41    -MW41
+00F0 OUTP :    DW  52
+00F1      :JU  FB  96    -SWAP
+
+FB 92     -MENUE                     C:04201@ST.S5D                    LEN=414  
+                                                                        Page   6
+00F2 Name :SWAP
+00F3 INPU :    FW  43    -MW43
+00F4 OUTP :    DW  53
+00F5      :JU  FB  96    -SWAP
+00F6 Name :SWAP
+00F7 INPU :    FW  45    -MW45
+00F8 OUTP :    DW  54
+00F9      :JU  FB  96    -SWAP
+00FA Name :SWAP
+00FB INPU :    FW  47    -MW47
+00FC OUTP :    DW  55
+00FD      :JU  FB  96    -SWAP
+00FE Name :SWAP
+00FF INPU :    FW  49    -MW49
+0100 OUTP :    DW  56
+0101      :JU  FB  96    -SWAP
+0102 Name :SWAP
+0103 INPU :    FW  51    -MW51
+0104 OUTP :    DW  57
+0105      :
+0106      :L   FY  53    -MB53
+0107      :T   DR  58
+0108      :
+0109      :L   DW  50
+010A      :L   DW  51
+010B      :OW
+010C      :L   DW  52
+010D      :OW
+010E      :L   DW  53
+010F      :OW
+0110      :L   DW  54
+0111      :OW
+0112      :L   DW  55
+0113      :OW
+0114      :L   DW  56
+0115      :OW
+0116      :L   DW  57
+0117      :OW
+0118      :L   DW  58
+0119      :OW
+011A      :L   KH 0000
+011C      :><F
+011D      :JC  =M002
+011E      :L   KH 8000
+0120      :T   DW  58                          kein Schritt gesetzt
+0121      :
+0122 M002 :
+0123      :***
+
+F  189.0 = N1_ANZ                    SCHRITTKETTE N1 WIRD ANGEZEIGT
+FW  37   = MW37                      SCHRITTMERKERWORT 37
+FW  39   = MW39                      SCHRITTMERKERWORT 39
+FW  41   = MW41                      SCHRITTMERKERWORT 41
+FW  43   = MW43                      SCHRITTMERKERWORT 43
+FW  45   = MW45                      SCHRITTMERKERWORT 45
+FW  47   = MW47                      SCHRITTKETTE N1
+FW  49   = MW49                      SCHRITTKETTE N1
+FW  51   = MW51                      SCHRITTKETTE N1
+FY  53   = MB53                      SCHRITTKETTE N1
+
+DB 210   = AG->OP                    DATENAUSTAUSCH VOM AG ZUM OP ........RAM
+
+FB  96   = SWAP                      LOW- UND HIGH-BYTE TAUSCHEN
+
+
+FB 92     -MENUE                     C:04201@ST.S5D                    LEN=414  
+                                                                        Page   7
+Segment  9                   Schritte N2 (Reserve)
+0124      :
+0125      :***
+
+Segment  10                  Schritte N3 (Reserve)
+0126      :
+0127      :JU  =M001
+0128      :
+0129      :
+012A      :A   F  189.2  -N3_ANZ               N7-Anzeige aktiv ?
+012B      :JC  =M002                           ja -> eintragen
+012C      :
+012D      :L   KH 0000                         nein -> loeschen
+012F      :T   DW 111
+0130      :JU  =M003                           und weiter
+0131      :
+0132 M002 :L   FY  73    -MB73
+0133      :T   DR 111
+0134      :
+0135      :L   KH 0000
+0137      :><F
+0138      :JC  =M003
+0139      :L   KH 8000
+013B      :T   DW 111                          kein Schritt gesetzt
+013C      :
+013D M003 :
+013E M001 :***
+
+F  189.2 = N3_ANZ                    SCHRITTKETTE N3 WIRD ANGEZEIGT
+FY  73   = MB73                      WT-VERFOLGUNG
+
+Segment  11                  Schritte N11 uebertragen
+013F      :
+0140      :JU  =M001                           ausgeblendet
+0141      :
+0142      :A   F  189.3  -N11_ANZ
+0143      :JC  =M002
+0144      :
+0145      :L   KH 0000
+0147      :T   DW 110
+0148      :JU  =M001
+0149      :
+014A M002 :
+014B      :L   FY  58    -MB58
+014C      :T   DR 110
+014D      :L   FY  59    -MB59
+014E      :L   KH 007F
+0150      :AW
+0151      :T   DL 110
+0152      :
+0153      :L   DW 110
+0154      :L   KH 0000
+0156      :><F
+0157      :JC  =M001
+0158      :L   KH 8000
+015A      :T   DW 110
+015B      :
+015C M001 :***
+
+F  189.3 = N11_ANZ                   SCHRITTKETTE N11 WIRD ANGEZEIGT
+FY  58   = MB58                      SCHRITTKETTE N11
+FY  59   = MB59                      SCHRITTKETTE N11
+
+Segment  12                  LED's ansteuern
+
+FB 92     -MENUE                     C:04201@ST.S5D                    LEN=414  
+                                                                        Page   8
+015D      :
+015E      :L   DW  61                          LED-Status F1...F8
+015F      :T   FW 250    -MW250                zwischenspeichern
+0160      :L   DW  62
+0161      :T   FW 252    -MW252
+0162      :
+0163      :AN  F  192.0  -F1-TAST
+0164      :AN  F  192.1  -F2-TAST
+0165      :AN  F  192.2  -F3-TAST
+0166      :AN  F  192.3  -F4-TAST
+0167      :AN  F  192.5  -F6-TAST
+0168      :AN  F  193.5  -F14-TAST
+0169      :AN  F  193.6  -F15-TAST
+016A      :JC  =M001
+016B      :                                    ALLE Menue-LED's loeschen
+016C      :L   KH 0000
+016E      :T   FY 250    -MB250
+016F      :T   FY 251    -MB251
+0170      :T   FY 252    -MB252
+0171      :
+0172 M001 :A   F  192.0  -F1-TAST
+0173      :S   F  251.0  -M251.0
+0174      :S   F  251.1  -M251.1
+0175      :
+0176      :A   F  192.1  -F2-TAST
+0177      :S   F  251.2  -M251.2
+0178      :S   F  251.3  -M251.3
+0179      :
+017A      :A   F  192.2  -F3-TAST
+017B      :S   F  251.4  -M251.4
+017C      :S   F  251.5  -M251.5               LED3
+017D      :
+017E      :A   F  192.3  -F4-TAST
+017F      :S   F  251.6  -M251.6               LED4
+0180      :S   F  251.7  -M251.7
+0181      :
+0182      :A   F  192.5  -F6-TAST              Programmwahl aktiv
+0183      :S   F  250.2  -M250.2               LED 6 statisch
+0184      :S   F  250.3  -M250.3               ein
+0185      :
+0186      :A   F  192.7  -F8-TAST
+0187      :A   F    0.3  -M0.3
+0188      :=   F  250.6  -M250.6               LED 8 statisch
+0189      :=   F  250.7  -M250.7               ein
+018A      :
+018B      :A   F  193.5  -F14-TAST
+018C      :S   F  252.2  -M252.2
+018D      :S   F  252.3  -M252.3
+018E      :
+018F      :A   F  193.6  -F15-TAST             Zeiten/Zaehler
+0190      :S   F  252.4  -M252.4
+0191      :S   F  252.5  -M252.5
+0192      :
+0193      :L   FW 250    -MW250
+0194      :T   DW  61
+0195      :L   FW 252    -MW252
+0196      :T   DW  62
+0197      :
+0198      :BE
+
+FW 250   = MW250                     SCHMIERMERKER
+FW 252   = MW252                     SCHMIERMERKER
+F  192.0 = F1-TAST                   TASTE F1 BETAETIGT
+F  192.1 = F2-TAST                   TASTE F2 BETAETIGT
+
+FB 92     -MENUE                     C:04201@ST.S5D                    LEN=414  
+                                                                        Page   9
+F  192.2 = F3-TAST                   TASTE F3 BETAETIGT
+F  192.3 = F4-TAST                   TASTE F4 BETAETIGT
+F  192.5 = F6-TAST                   TASTE F6 BETAETIGT
+F  193.5 = F14-TAST                  TASTE F14 BETAETIGT
+F  193.6 = F15-TAST                  TASTE F15 BETAETIGT
+FY 250   = MB250                     SCHMIERMERKERBYTE
+FY 251   = MB251                     SCHMIERMERKERBYTE
+FY 252   = MB252                     SCHMIERMERKERBYTE
+F  251.0 = M251.0                    SCHMIERMERKER
+F  251.1 = M251.1                    SCHMIERMERKER
+F  251.2 = M251.2                    SCHMIERMERKER
+F  251.3 = M251.3                    SCHMIERMERKER
+F  251.4 = M251.4                    SCHMIERMERKER
+F  251.5 = M251.5                    SCHMIERMERKER
+F  251.6 = M251.6                    SCHMIERMERKER
+F  251.7 = M251.7                    SCHMIERMERKER
+F  250.2 = M250.2                    SCHMIERMERKER
+F  250.3 = M250.3                    SCHMIERMERKER
+F  192.7 = F8-TAST                   TASTE F8 BETAETIGT
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+F  250.6 = M250.6                    SCHMIERMERKER
+F  250.7 = M250.7                    SCHMIERMERKER
+F  252.2 = M252.2                    SCHMIERMERKER
+F  252.3 = M252.3                    SCHMIERMERKER
+F  252.4 = M252.4                    SCHMIERMERKER
+F  252.5 = M252.5                    SCHMIERMERKER
+
+

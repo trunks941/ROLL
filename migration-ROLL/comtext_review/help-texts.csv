@@ -1,0 +1,116 @@
+﻿name;text;printed_pages
+HBINFOSETZ;"Setzmerker mit Taste K13 und Taste K16
+loeschen!";97
+HBEINAUS;"Einschalten mit Taste K16
+Ausschalten mit Taste K13";97
+HBGRDARB;"in Arbeitsstellung mit Taste K16
+in Grundstellung mit Taste K13";97
+HBGERASCHW;"Schwenken bzw. Drehen mit Taste K16
+Geradestellen mit Taste K13";97
+TAUCHSTAT.1;"Tauchzeit Station 1 = aktuelle Tauchzeit
+im Becken 1
+US = aktuelle Zeit Ultraschall (falls
+vorgewaehlt)
+HD = aktuelle Zeit Druckumfluten mit
+hohem Druck (falls vorgewaehlt)
+ND = aktuelle Zeit Druckumfluten mit
+niederem Druck (falls vorgewaehlt)";97
+STOER49;"Trommel hat beim Schwenken den
+Schalter B11.0 ""Trommel gerade""
+a) ueberlaufen ohne entsprechende Rueck-
+meldung
+b) nicht beruehrt,d.h. Trommel ist
+schwergaengig";97
+HANDBETRIEB;"Auswahl der Handbetriebsfunktion mit
+den Cursertasten oder direkt die Nummer
+eingeben.";97,98
+STOER93;"Der Deckel auf der Beladestation wurde
+geoeffnet.Die Anlage muss nun von Hand
+geleert werden,d.h. auf der Beschickung
+und in der Anlage durfen sich keine WT's
+mehr befinden.Die Daten auf dem Ausdruck
+stimmen dann nicht mehr mit der Wirk-
+lichkeit ueberein.Dann muss die Taste
+""Stoerung quittieren"" gedrueckt werden.";98
+STOER106;"Anlage komplett leerfahren !!!!
+Die Charge in der Anlage wird noch ge-
+reinigt und dokumentiert.Die Beladebahn
+muss komplett leer sein.Erst dann kann
+die Stoerung quittiert werden.";98
+ZAEHLWERT;"Wert eingeben 0 ... 999
+Die Pruefung auf obere bzw. untere Grenz
+e erfolgt automatisch.";98
+ZAEHLNUMMER;Zaehlernummer eingeben 0 ... 127;98
+ZEITWERT;"Zeit eingeben 0.0 ... 9990 Sekunden
+Die Pruefung auf obere bzw. untere Grenz
+e erfolgt automatisch.";98
+ZEITNUMMER;Zeitnummer eingeben 0 ... 127;98
+STOER50;"Wenn der Schalter B11.0 ""Trommel gerade""
+ueber eine bestimmte Zeit ""belegt""
+meldet,wird eine Stoerung ausgegeben.
+Es ist dann der Schalter B11.0 zu ueber-
+pruefen.";99
+STOER90;"Es muss mindestens eine Station mit
+einer Tauchzeit eingegeben werden.";99
+STOER91;"Bitte pruefen Sie die Verbindung vom AG
+zum OP.";99
+AZALLGEMEIN;"Abtropfzeit mit der Nummerntastatur
+eingeben.";99
+TZALLGEMEIN;"Tauchzeit mit der Nummerntastatur ein-
+geben. Der Wert 0 bedeutete, dass die be
+treffende Station nicht angefahren wird";99
+BH2N;"Auswahl (ein/aus) mit SHIFT und den
+Cursor-Tasten (OBEN/UNTEN)";99
+KB;"Hier wird die Auswahl getroffen, ob
+die Ware gedreht oder geschwenkt werden
+soll.";99
+KBN;"Auswahl mit SHIFT und den Cursor-Tasten
+(OBEN/UNTEN)";100
+FAHRPROGR.2;"Mit dem Cursor nach oben oder nach unten
+auf den gewuenschten Datensatz.Gehen Sie
+dann mit dem Cursor nach rechts auf die
+Programm-Nr. oder auf die Chargenanzahl.
+Die Zahl eingeben und mit Enter (rechts
+unten) bestaetigen.Mit der Taste Abbruch
+(rechts oben) kommt man aus dem Menu.";100
+STOER001;"NOT-AUS-Taster pruefen und entriegeln!
+NOT-AUS-Taster befinden sich am Bedien-
+pult, am Schaltschrank, an der Rollen-
+bahn und im Anbaugestell";100
+STOER034;"Motorschutzschalter befinden sich im
+Schaltschrank.";100
+STOER035;"Trommel hat beim Schwenken den
+Schalter B11.0 ""Trommel gerade""
+a) ueberlaufen ohne entsprechende Rueck-
+meldung
+b) nicht beruehrt,d.h. Trommel ist
+schwergaengig";100
+STOER057;"Fataler Fehler bei der Positionierung!
+Fa. ROLL verstaendigen.";100
+STOER92;"Fuer die Fehlerdiagnose den Schritt
+angeben,in dem die Beschickung stehenge-
+blieben ist.";100,101
+STOER079;"Sicherungen befinden sich im  Schalt-
+schrank.";101
+ULTRASCHALL;"Reinigung mit Ultraschall in der Stat.1
+Achtung: Die Zeit darf allein oder in
+Kombination mit Druckumfluten ND oder
+Druckumfluten ND die Tauchzeit in der
+Station 1 nicht ueberschreiten!!!!!!!!!!";101
+STOER116;"Geradeschalter des Gestells in Stat.5  u
+nd Kontakte pruefen.";101
+STOER117;"Geradeschalter des Gestells in Stat.5
+und Kontakte pruefen.";101
+STOER122;Motor des Vertikalantriebes pruefen.;101
+STOER129;"Trommelmotor des Gestells in der
+Station und Kontakte pruefen.";101
+STOER131;"Geradeschalter des Gestells in der
+Station und Kontakte pruefen.";101
+STOER036;"Der Frequenzumformer oder der Brems-
+chopper fuer den Horizontaltransport des
+Fahrwagens melden eine Stoerung. Zur
+Fehlerquittierung muss der Motorschutz-
+schalter Q40 von einem Elektriker aus-
+geloest und nach einiger Zeit wieder ein
+geschaltet werden.";102
+HBEIN;Ein solange K16 betaetigt ist;102

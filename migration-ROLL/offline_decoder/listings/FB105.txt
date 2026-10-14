@@ -1,0 +1,138 @@
+FB105: DBERZ — ERZEUGUNG DER INTERNEN DB'S
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x2180; block bytes: 332; SHA256: 231dec58f8fa36739f2aa7e7dfbee2d0c950a6906a4275f5d40db1174a300a99
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 69 84 00 00 00 00 A6
+Code starts at block offset 0x0014.
+FB name: 'DBERZ   '; entry SPA bytes: 2D05
+0014 [002194]  80F0                       U      M 240.0 ; M240.0 — SCHMIERMERKER
+0016 [002196]  FA0C                       SPB=   @002E (relative +12 words)
+0018 [002198]  1082                       BLD    130
+001A [00219A]  1082                       BLD    130
+001C [00219C]  1082                       BLD    130
+001E [00219E]  1082                       BLD    130
+0020 [0021A0]  1082                       BLD    130
+0022 [0021A2]  1082                       BLD    130
+0024 [0021A4]  1082                       BLD    130
+0026 [0021A6]  A0F0                       UN     M 240.0 ; M240.0 — SCHMIERMERKER
+0028 [0021A8]  90F0                       S      M 240.0 ; M240.0 — SCHMIERMERKER
+002A [0021AA]  6501                       BEA    
+002C [0021AC]  1082                       BLD    130
+002E [0021AE]  10FF                       BLD    255
+0030 [0021B0]  81F0                       U      M 240.1 ; M240.1 — SCHMIERMERKER
+0032 [0021B2]  FA0E                       SPB=   @004E (relative +14 words)
+0034 [0021B4]  1082                       BLD    130
+0036 [0021B6]  30040083                   L      KF +131
+003A [0021BA]  7805000F                   E      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+003E [0021BE]  1082                       BLD    130
+0040 [0021C0]  30040080                   L      KF +128
+0044 [0021C4]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+0046 [0021C6]  1082                       BLD    130
+0048 [0021C8]  1082                       BLD    130
+004A [0021CA]  A1F0                       UN     M 240.1 ; M240.1 — SCHMIERMERKER
+004C [0021CC]  91F0                       S      M 240.1 ; M240.1 — SCHMIERMERKER
+004E [0021CE]  10FF                       BLD    255
+0050 [0021D0]  82F0                       U      M 240.2 ; M240.2 — SCHMIERMERKER
+0052 [0021D2]  FA17                       SPB=   @0080 (relative +23 words)
+0054 [0021D4]  1082                       BLD    130
+0056 [0021D6]  12F2                       L      MW 242 ; MW242 — SCHMIERMERKER
+0058 [0021D8]  30040000                   L      KF +0
+005C [0021DC]  2180                       !=F    
+005E [0021DE]  92F0                       S      M 240.2 ; M240.2 — SCHMIERMERKER
+0060 [0021E0]  0500                       BEB    
+0062 [0021E2]  1082                       BLD    130
+0064 [0021E4]  12F2                       L      MW 242 ; MW242 — SCHMIERMERKER
+0066 [0021E6]  30040001                   L      KF +1
+006A [0021EA]  5900                       -F     
+006C [0021EC]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+006E [0021EE]  1082                       BLD    130
+0070 [0021F0]  200C                       A      DB 12 ; DBDEF_T — DEFAULTWERTE DER VARIABLEN ZEITEN
+0072 [0021F2]  4EF2                       B      MW 242 ; MW242 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+0074 [0021F4]  3200                       L      DW 0
+0076 [0021F6]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+0078 [0021F8]  4EF2                       B      MW 242 ; MW242 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+007A [0021FA]  3300                       T      DW 0
+007C [0021FC]  6501                       BEA    
+007E [0021FE]  1082                       BLD    130
+0080 [002200]  10FF                       BLD    255
+0082 [002202]  86F0                       U      M 240.6 ; M240.6 — SCHMIERMERKER
+0084 [002204]  FA0E                       SPB=   @00A0 (relative +14 words)
+0086 [002206]  1082                       BLD    130
+0088 [002208]  30040083                   L      KF +131
+008C [00220C]  78050013                   E      DB 19 ; DBVZAEHL — VARIABLE ZAEHLER ....................RAM
+0090 [002210]  1082                       BLD    130
+0092 [002212]  30040080                   L      KF +128
+0096 [002216]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+0098 [002218]  1082                       BLD    130
+009A [00221A]  1082                       BLD    130
+009C [00221C]  A6F0                       UN     M 240.6 ; M240.6 — SCHMIERMERKER
+009E [00221E]  96F0                       S      M 240.6 ; M240.6 — SCHMIERMERKER
+00A0 [002220]  10FF                       BLD    255
+00A2 [002222]  87F0                       U      M 240.7 ; M240.7 — SCHMIERMERKER
+00A4 [002224]  FA17                       SPB=   @00D2 (relative +23 words)
+00A6 [002226]  1082                       BLD    130
+00A8 [002228]  12F2                       L      MW 242 ; MW242 — SCHMIERMERKER
+00AA [00222A]  30040000                   L      KF +0
+00AE [00222E]  2180                       !=F    
+00B0 [002230]  97F0                       S      M 240.7 ; M240.7 — SCHMIERMERKER
+00B2 [002232]  0500                       BEB    
+00B4 [002234]  1082                       BLD    130
+00B6 [002236]  12F2                       L      MW 242 ; MW242 — SCHMIERMERKER
+00B8 [002238]  30040001                   L      KF +1
+00BC [00223C]  5900                       -F     
+00BE [00223E]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+00C0 [002240]  1082                       BLD    130
+00C2 [002242]  2010                       A      DB 16 ; DBDEF_Z — DEFAULTWERTE DER VARIABLEN ZAEHLER
+00C4 [002244]  4EF2                       B      MW 242 ; MW242 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+00C6 [002246]  3200                       L      DW 0
+00C8 [002248]  2013                       A      DB 19 ; DBVZAEHL — VARIABLE ZAEHLER ....................RAM
+00CA [00224A]  4EF2                       B      MW 242 ; MW242 — SCHMIERMERKER ; FLAGS: INDIRECT_MODIFICATION_NEXT_INSTRUCTION
+00CC [00224C]  3300                       T      DW 0
+00CE [00224E]  6501                       BEA    
+00D0 [002250]  1082                       BLD    130
+00D2 [002252]  10FF                       BLD    255
+00D4 [002254]  1083                       BLD    131
+00D6 [002256]  1082                       BLD    130
+00D8 [002258]  30040028                   L      KF +40
+00DC [00225C]  78050029                   E      DB 41 ; DB_RETT — MERKER 200-239 RETTEN ...............RAM
+00E0 [002260]  1082                       BLD    130
+00E2 [002262]  300400BA                   L      KF +186
+00E6 [002266]  78050033                   E      DB 51 ; DB 51 — OP15-KOMMUNIKATION ..................RAM
+00EA [00226A]  1082                       BLD    130
+00EC [00226C]  2033                       A      DB 51 ; DB 51 — OP15-KOMMUNIKATION ..................RAM
+00EE [00226E]  304000F0                   L      KH 00F0
+00F2 [002272]  3362                       T      DW 98
+00F4 [002274]  1082                       BLD    130
+00F6 [002276]  300400DC                   L      KF +220
+00FA [00227A]  780500CD                   E      DB 205 ; REZEPT — OP15 REZEPTFACH .....................RAM
+00FE [00227E]  1082                       BLD    130
+0100 [002280]  6D1F                       SPA    OB 31 ; OB 31 — ZYKLUSZEITTRIGGERUNG
+0102 [002282]  1082                       BLD    130
+0104 [002284]  30040080                   L      KF +128
+0108 [002288]  780500D2                   E      DB 210 ; AG->OP — DATENAUSTAUSCH VOM AG ZUM OP ........RAM
+010C [00228C]  1082                       BLD    130
+010E [00228E]  3004000A                   L      KF +10
+0112 [002292]  780500D3                   E      DB 211 ; OP->AG — DATENAUSTAUSCH VOM OP ZUM AG ........RAM
+0116 [002296]  1082                       BLD    130
+0118 [002298]  6D1F                       SPA    OB 31 ; OB 31 — ZYKLUSZEITTRIGGERUNG
+011A [00229A]  1082                       BLD    130
+011C [00229C]  30040032                   L      KF +50
+0120 [0022A0]  7805003C                   E      DB 60 ; DB 60 — ARBEITS-DB F.FB60 (REZEPTUEBERTR.) ..RAM
+0124 [0022A4]  1082                       BLD    130
+0126 [0022A6]  3004000A                   L      KF +10
+012A [0022AA]  780500D5                   E      DB 213 ; DBAUF — DB FUER AUFTRAEGE OP15-AG ...........RAM
+012E [0022AE]  1082                       BLD    130
+0130 [0022B0]  10FF                       BLD    255
+0132 [0022B2]  1083                       BLD    131
+0134 [0022B4]  1082                       BLD    130
+0136 [0022B6]  6D1F                       SPA    OB 31 ; OB 31 — ZYKLUSZEITTRIGGERUNG
+0138 [0022B8]  1082                       BLD    130
+013A [0022BA]  10FF                       BLD    255
+013C [0022BC]  1083                       BLD    131
+013E [0022BE]  1082                       BLD    130
+0140 [0022C0]  A400                       UN     M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0142 [0022C2]  9400                       S      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0144 [0022C4]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0146 [0022C6]  B300                       R      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0148 [0022C8]  1082                       BLD    130
+014A [0022CA]  6500                       BE     

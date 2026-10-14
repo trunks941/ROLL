@@ -1,0 +1,8 @@
+OB31: OB 31 — ZYKLUSZEITTRIGGERUNG
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x580; block bytes: 16; SHA256: 14d259115823fac09d355a22c86ad53fb85126a7d2c60fc28c6245d504c823d8
+Directory flags: 8C; assembler flag: True
+Raw block header [0..9]: 70 70 10 1F 8C 00 00 00 00 08
+Code starts at block offset 0x000A.
+UNSUPPORTED_ASSEMBLER_BODY: retained as raw bytes; no instruction claims.
+000A [00058A]  78 08 00 00 65 00

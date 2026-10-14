@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-13",
+  "source": "User photo embedded in conversation; no local image file or SHA-256 is available",
+  "source_handling": "Technical evidence; labels in the image are data, not operational instructions",
+  "user_confirmation": {
+    "question": "Czy maszyna ma dodatkową kasetę lub moduły wejść/wyjść w innej części szafy?",
+    "answer_literal": "Nie, to cały zestaw modułów",
+    "scope": "User confirms that the photo shows the entire module set. This does not independently verify address-switch settings, wiring or active software branches."
+  },
+  "address_basis": "Printed front channel labels; hardware address switches were not inspected",
+  "modules": [
+    {"id":"PS","position_from_left":1,"kind":"Power supply","description":"SIMATIC S5 PS 3A","channels":0,"area":"","start_byte":null,"end_byte":null,"nominal_signal_VDC":null,"label_current_per_channel_A":null,"catalog_number":"","catalog_status":"Full MLFB needs confirmation; 3 A is a supply label, not an established 24 V field-load budget"},
+    {"id":"CPU","position_from_left":2,"kind":"CPU","description":"S5-115U CPU 942B","channels":0,"area":"","start_byte":null,"end_byte":null,"nominal_signal_VDC":null,"label_current_per_channel_A":null,"catalog_number":"6ES5 942-7UB11","catalog_status":"Matches previous user confirmation and visible CPU label"},
+    {"id":"DI1","position_from_left":3,"kind":"DI","description":"Digital input 32 x DC 24 V","channels":32,"area":"E","start_byte":0,"end_byte":3,"nominal_signal_VDC":24,"label_current_per_channel_A":null,"catalog_number":"","catalog_status":"MLFB not legible in this photo"},
+    {"id":"DI2","position_from_left":4,"kind":"DI","description":"Digital input 32 x DC 24 V","channels":32,"area":"E","start_byte":4,"end_byte":7,"nominal_signal_VDC":24,"label_current_per_channel_A":null,"catalog_number":"","catalog_status":"MLFB not legible in this photo"},
+    {"id":"DI3","position_from_left":5,"kind":"DI","description":"Digital input 32 x DC 24 V","channels":32,"area":"E","start_byte":8,"end_byte":11,"nominal_signal_VDC":24,"label_current_per_channel_A":null,"catalog_number":"","catalog_status":"MLFB not legible in this photo"},
+    {"id":"DI4","position_from_left":6,"kind":"DI","description":"Digital input 32 x DC 24 V","channels":32,"area":"E","start_byte":12,"end_byte":15,"nominal_signal_VDC":24,"label_current_per_channel_A":null,"catalog_number":"","catalog_status":"MLFB not legible in this photo"},
+    {"id":"DQ1","position_from_left":7,"kind":"DQ","description":"Digital output 32 x 24 V DC 0.5 A","channels":32,"area":"A","start_byte":16,"end_byte":19,"nominal_signal_VDC":24,"label_current_per_channel_A":0.5,"catalog_number":"","catalog_status":"MLFB not legible in this photo"},
+    {"id":"DQ2","position_from_left":8,"kind":"DQ","description":"Digital output 32 x DC 24 V 0.5 A","channels":32,"area":"A","start_byte":20,"end_byte":23,"nominal_signal_VDC":24,"label_current_per_channel_A":0.5,"catalog_number":"","catalog_status":"MLFB not legible in this photo"},
+    {"id":"DQ3","position_from_left":9,"kind":"DQ","description":"Digital output 16 x DC 24 V 2 A","channels":16,"area":"A","start_byte":24,"end_byte":25,"nominal_signal_VDC":24,"label_current_per_channel_A":2,"catalog_number":"","catalog_status":"MLFB not legible in this photo"}
+  ],
+  "memory_cartridge": {
+    "visible_label":"EPROM",
+    "catalog_number":null,
+    "status":"EPROM is visible on the CPU cartridge; capacity and exact type are not identified"
+  },
+  "observed_DI_capacity":128,
+  "observed_DQ_capacity":80,
+  "schematic_received":false,
+  "additional_IO_modules_confirmed_by_user":false,
+  "module_catalog_selection_final":false,
+  "hardware_or_PLC_action_performed":false
+}

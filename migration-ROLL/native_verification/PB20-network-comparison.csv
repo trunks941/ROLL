@@ -1,0 +1,70 @@
+﻿network;method;result;action_order;conditions;presets
+1;All native STL positions in this network compared;Match;OPEN_DB DB 15;OPEN_DB DB 15: ;
+2;Static native FBD action-expression comparison;Match;= M 8.0;= M 8.0: (NOT E7.0 AND ((E0.1 AND M190.6 AND M26.5 AND M4.1) OR (E0.2 AND M0.3)) AND M4.1);
+3;Static native FBD action-expression comparison;Match;S M 8.1 | R M 8.1;S M 8.1: (NOT E7.1 AND E0.2 AND E1.6 AND M4.1 AND T61) | R M 8.1: M3.1;
+4;Static native FBD action-expression comparison;Match;SE T 61 | R T 61;SE T 61: (NOT E7.1 AND E0.2 AND E3.1) | R T 61: (M3.1 AND M4.1);T 61: DW61
+5;Static native FBD action-expression comparison;Match;S M 8.2 | R M 8.2;S M 8.2: (NOT E7.2 AND T55) | R M 8.2: M3.1;
+6;Static native FBD action-expression comparison;Match;SE T 55;SE T 55: (NOT E7.2 AND NOT M8.2 AND M4.1);T 55: DW55
+7;Static native FBD action-expression comparison;Match;S M 8.3 | R M 8.3;S M 8.3: (NOT E7.3 AND A21.6 AND T60) | R M 8.3: M3.1;
+8;Static native FBD action-expression comparison;Match;SE T 60;SE T 60: (NOT E7.3 AND A21.6 AND E3.1);T 60: DW60
+9;Static native FBD action-expression comparison;Match;SE T 88;SE T 88: NOT E7.4;T 88: KT010.2
+10;Static native FBD action-expression comparison;Match;= M 8.4;= M 8.4: (NOT E7.4 AND M4.1 AND T88);
+11;Static native FBD action-expression comparison;Match;S M 8.5 | R M 8.5;S M 8.5: ((M25.0 OR M25.1) AND E0.1 AND M190.6 AND M4.1 AND T96) | R M 8.5: M3.1;
+12;Static native FBD action-expression comparison;Match;S M 12.4 | R M 12.4;S M 12.4: (NOT E9.0 AND (E1.6 OR E1.7) AND E9.6) | R M 12.4: M3.1;
+13;Static native FBD action-expression comparison;Match;S M 12.5 | R M 12.5;S M 12.5: (NOT E9.3 AND (E1.6 OR E1.7) AND E9.6) | R M 12.5: M3.1;
+14;Static native FBD action-expression comparison;Match;S M 12.6 | R M 12.6;S M 12.6: (NOT E9.7 AND (E1.6 OR E1.7)) | R M 12.6: M3.1;
+15;Static native FBD action-expression comparison;Match;S M 12.7 | R M 12.7;S M 12.7: NOT E9.6 | R M 12.7: (E9.6 AND M3.1);
+16;Static native FBD action-expression comparison;Match;SA T 56;SA T 56: NOT E7.1;T 56: DW56
+17;Static native FBD action-expression comparison;Match;SE T 65;SE T 65: NOT E7.3;T 65: DW65
+18;Static native FBD action-expression comparison;Match;SA T 66;SA T 66: E7.3;T 66: KT020.2
+19;Static native FBD action-expression comparison;Match;SE T 67;SE T 67: (E7.3 AND M150.1);T 67: DW67
+20;Static native FBD action-expression comparison;Match;SE T 96;SE T 96: NOT E7.5;T 96: KT005.2
+21;Static native FBD action-expression comparison;Match;SE T 97;SE T 97: E7.5;T 97: KT030.2
+22;Static native FBD action-expression comparison;Match;= M 149.6;= M 149.6: ((NOT A18.5 AND A18.4) OR (NOT A18.7 AND A18.6));
+23;Static native FBD action-expression comparison;Match;SE T 89;SE T 89: M148.4;T 89: KT010.1
+24;Static native FBD action-expression comparison;Match;S M 148.4 | R M 148.4;S M 148.4: M149.6 | R M 148.4: T89;
+25;Static native FBD action-expression comparison;Match;= M 147.0;= M 147.0: (E8.0 AND T70);
+26;Static native FBD action-expression comparison;Match;SE T 75;SE T 75: NOT M147.0;T 75: DW75
+27;Static native FBD action-expression comparison;Match;= M 147.1;= M 147.1: M0.3;
+28;Static native FBD action-expression comparison;Match;= M 147.2;= M 147.2: (E8.2 AND T72);
+29;Static native FBD action-expression comparison;Match;SE T 77;SE T 77: NOT M147.2;T 77: DW77
+30;Static native FBD action-expression comparison;Match;= M 149.0;= M 149.0: M0.3;
+31;Static native FBD action-expression comparison;Match;= M 149.1;= M 149.1: (M147.0 OR M147.2);
+32;Static native FBD action-expression comparison;Match;= M 149.2;= M 149.2: M0.3;
+33;Static native FBD action-expression comparison;Match;= M 149.3;= M 149.3: (M147.0 AND M147.2);
+34;Static native FBD action-expression comparison;Match;= M 150.2;= M 150.2: (NOT M12.6 AND NOT M12.7 AND NOT M13.4 AND NOT M6.0 AND NOT M6.2 AND NOT M8.2 AND (E1.6 OR E1.7) AND E3.1 AND E7.4 AND E9.6 AND E9.7 AND T66);
+35;Static native FBD action-expression comparison;Match;= A 18.4;= A 18.4: (NOT E9.2 AND NOT M12.4 AND (A18.4 OR E9.1) AND (M149.0 OR M149.1 OR M149.2 OR M149.3) AND E9.0 AND M150.2);
+36;Static native FBD action-expression comparison;Match;= A 18.5;= A 18.5: (NOT E9.2 AND NOT M12.4 AND (A18.4 OR A18.5 OR E9.1) AND (M149.2 OR M149.3) AND E9.0 AND M150.2);
+37;Static native FBD action-expression comparison;Match;= A 18.6;= A 18.6: (NOT E9.5 AND NOT M12.5 AND (A18.6 OR E9.4) AND (M149.1 OR M149.2 OR M149.3) AND E9.3 AND M150.2);
+38;Static native FBD action-expression comparison;Match;= A 18.7;= A 18.7: (NOT E9.5 AND NOT M12.5 AND (A18.6 OR A18.7 OR E9.4) AND E9.3 AND M149.3 AND M150.2);
+39;Static native FBD action-expression comparison;Match;= A 21.0;= A 21.0: (NOT M147.0 AND M147.2 AND T75);
+40;Static native FBD action-expression comparison;Match;= A 21.2;= A 21.2: (NOT M147.2 AND M147.0 AND T77);
+41;Static native FBD action-expression comparison;Match;S M 150.0 | R M 150.0;S M 150.0: M190.6 | R M 150.0: (NOT E0.1 OR NOT E7.1 OR NOT E7.2 OR NOT M27.5 OR E7.3 OR M190.5);
+42;Static native FBD action-expression comparison;Match;SA T 57;SA T 57: E7.1;T 57: KT020.2
+43;Static native FBD action-expression comparison;Match;= M 150.1;= M 150.1: (NOT M13.4 AND NOT T61 AND ((NOT E7.3 AND T65) OR (NOT T67 AND M150.1)) AND E0.2 AND E3.1 AND E7.2 AND T57);
+44;Static native FBD action-expression comparison;Match;= A 21.6;= A 21.6: (M150.0 OR M150.1);
+45;Static native FBD action-expression comparison;Match;= M 148.6;= M 148.6: (((NOT E7.4 AND E7.5) OR (NOT T106 AND M148.6) OR NOT E7.1) AND E0.2 AND E1.6 AND E7.0);
+46;Static native FBD action-expression comparison;Match;S M 151.0 | R M 151.0;S M 151.0: ((NOT M151.0 AND NOT M151.1 AND NOT M151.2 AND NOT M151.3) OR (NOT M152.3 AND M151.3 AND M153.3 AND T105)) | R M 151.0: (M151.1 OR M151.2);
+47;Static native FBD action-expression comparison;Match;SE T 102;SE T 102: M151.0;T 102: DW102
+48;Static native FBD action-expression comparison;Match;S M 152.0 | R M 152.0;S M 152.0: (NOT T106 AND M151.0) | R M 152.0: (NOT M148.6 OR T106);
+49;Static native FBD action-expression comparison;Match;S M 153.0 | R M 153.0;S M 153.0: (A21.5 AND M152.0) | R M 153.0: NOT M151.0;
+50;Static native FBD action-expression comparison;Match;S M 151.1 | R M 151.1;S M 151.1: (NOT M152.0 AND M151.0 AND M153.0 AND T102) | R M 151.1: M151.2;
+51;Static native FBD action-expression comparison;Match;SE T 103;SE T 103: M151.1;T 103: DW103
+52;Static native FBD action-expression comparison;Match;S M 152.1 | R M 152.1;S M 152.1: (NOT T106 AND M151.1) | R M 152.1: (NOT M148.6 OR T106);
+53;Static native FBD action-expression comparison;Match;S M 153.1 | R M 153.1;S M 153.1: (A20.6 AND M152.1) | R M 153.1: NOT M151.1;
+54;Static native FBD action-expression comparison;Match;S M 151.2 | R M 151.2;S M 151.2: (NOT M152.1 AND M151.1 AND M153.1 AND T103) | R M 151.2: M151.3;
+55;Static native FBD action-expression comparison;Match;SE T 104;SE T 104: M151.2;T 104: KT002.0
+56;Static native FBD action-expression comparison;Match;S M 152.2 | R M 152.2;S M 152.2: (NOT T106 AND M151.2) | R M 152.2: (NOT M148.6 OR T106);
+57;Static native FBD action-expression comparison;Match;S M 153.2 | R M 153.2;S M 153.2: (M0.4 AND M152.2) | R M 153.2: NOT M151.2;
+58;Static native FBD action-expression comparison;Match;S M 151.3 | R M 151.3;S M 151.3: (NOT M152.2 AND M151.2 AND M153.2 AND T104) | R M 151.3: M151.0;
+59;Static native FBD action-expression comparison;Match;SE T 105;SE T 105: M151.3;T 105: KT002.0
+60;Static native FBD action-expression comparison;Match;S M 152.3 | R M 152.3;S M 152.3: (NOT T106 AND M151.3) | R M 152.3: (NOT M148.6 OR T106);
+61;Static native FBD action-expression comparison;Match;S M 153.3 | R M 153.3;S M 153.3: (M0.4 AND M152.3) | R M 153.3: NOT M151.3;
+62;Static native FBD action-expression comparison;Match;SE T 106;SE T 106: (M152.0 OR M152.1 OR M152.2 OR M152.3);T 106: KT010.2
+63;Static native FBD action-expression comparison;Match;= A 21.5;= A 21.5: (NOT A21.4 AND A19.5 AND M152.0);
+64;Static native FBD action-expression comparison;Match;= M 240.0;= M 240.0: M152.1;
+65;Static native FBD action-expression comparison;Match;= M 240.0;= M 240.0: (NOT A21.5 AND M152.2);
+66;Static native FBD action-expression comparison;Match;= M 240.0;= M 240.0: M152.3;
+67;Static native FBD action-expression comparison;Match;SA T 107;SA T 107: (A21.6 AND E0.2);T 107: DW107
+68;Static native FBD action-expression comparison;Match;= A 20.5;= A 20.5: (((A21.6 OR T107) AND E0.2) OR (E0.1 AND M190.6 AND M26.6));
+69;Static native FBD action-expression comparison;Match;BE ;BE : ;

@@ -1,0 +1,22 @@
+{
+  "DB15_DB19_offline_absence": {
+    "date": "2026-10-12",
+    "source": "User message in conversation",
+    "answer_literal": "plików DB15 i DB19 nie posiadam w orginalnym programie",
+    "interpretation": "Consistent with the archived directory and verified runtime creation by FB105. Actual online values are unknown; no consent to use factory defaults as current machine settings is inferred."
+  },
+  "DB15_DB19_online_access": {
+    "date": "2026-10-12",
+    "source": "User reply in conversation",
+    "answer_literal": "Tak, mogę odczytać je ze sterownika",
+    "interpretation": "User can read runtime data from the old CPU. No actual values have been supplied yet; factory-reference reconstruction remains separate."
+  },
+  "FB51_editor_view": {
+    "date": "2026-10-09",
+    "source": "User reply in conversation",
+    "question": "Czy w edytorze STEP 5 widzisz tylko JU =M001 i BE, czy cały dłuższy kod bloku?",
+    "answer_literal": "Edytor pokazuje tylko te dwie linie",
+    "visible_instructions": ["JU =M001", "BE"],
+    "interpretation": "The editor view and supplied listing expose only the prefix. No specific protection mechanism or missing tail is inferred."
+  }
+}

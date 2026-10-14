@@ -1,0 +1,5 @@
+﻿native_word_address;block_byte_offset;network;native_content;command;operand;raw_hex;size_bytes;jump_target_block_byte_offset;position_note
+0000;10;1;STL;BLD;131;1083;2;;
+0001;12;1;A   F    0.4  -M0.4;U;M 0.4;8400;2;;
+0002;14;1;S   F   16.5  -STOER_94;S;M 16.5;9510;2;;
+0003;16;1;BE;BE;;6500;2;;

@@ -1,0 +1,2 @@
+﻿block;source_offset;target_offset;target_absolute_offset;raw_hex;alternate_command;alternate_operand;status
+FB51;1046;1050;4762;6500;BE;;"Alternate instruction at branch target overlaps linear immediate; native STEP 5 comparison required"

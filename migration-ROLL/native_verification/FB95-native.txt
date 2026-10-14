@@ -1,0 +1,51 @@
+FB 95     -AUFTRAG                   C:04201@ST.S5D                    LEN=51   
+                                                                        Page   1
+Segment  1
+Name :AG-AUFTR
+ 
+0005      :C   DB  51    -DB 51
+0006      :
+0007      :                                    zur Meldeebene
+0008      :                                    --------------
+0009      :L   FY 189    -SCHRITTE             Schrittanzeigemerker
+000A      :L   KF +0                           gesetzt ?
+000C      :><F                                 ja !
+000D      :O
+000E      :A   F  196.0  -FF-F1                Stoeranzeige
+000F      :A   F  194.0  -FLHM-F1
+0010      :JC  =M001                           --> Meldeebene aufschalten
+0011      :JU  =M002
+0012      :
+0013 M001 :L   KF +206                         DB 206
+0015      :T   DW  32                          1.Applikationsfach
+0016      :L   KH 0000                         ab Wort 0
+0018      :T   DW  33
+0019      :
+001A      :BEU
+001B      :
+001C M002 :A   F  197.5  -FF-F14               Handbetriebsanzeige
+001D      :A   F  195.5  -FLHM-F14
+001E      :JC  =M003
+001F      :JU  =M004
+0020      :
+0021 M003 :L   KF +206                         DB 206
+0023      :T   DW  36                          2.Applikationsfach
+0024      :L   KF +8                           ab Wort 8
+0026      :T   DW  37
+0027      :
+0028      :BEU
+0029      :
+002A M004 :
+002B      :
+002C      :
+002D      :BE
+
+FY 189   = SCHRITTE                  SCHRITTKETTENAUSWAHL
+F  196.0 = FF-F1                     FLIP-FLOP TASTE F1
+F  194.0 = FLHM-F1                   FLANKENHILSMERKER TASTE F1 BETAETIGT
+F  197.5 = FF-F14                    FLIP-FLOP TASTE F14
+F  195.5 = FLHM-F14                  FLANKENHILFSMERKER TASTE F14 BETAETIGT
+
+DB  51   = DB 51                     OP15-KOMMUNIKATION ..................RAM
+
+

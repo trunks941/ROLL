@@ -1,0 +1,6 @@
+﻿kind;number;name;info_text;title;return_link;printed_pages
+screen;20;SCHRITTE;;Schritteanzeige waehlen;MSG. LEVEL;3
+screen;1;VARIABEL;;Zeiten/Zaehler;MSG. LEVEL;3
+screen;15;FAHRPROGR.1;;Fahrprogramm waehlen;MSG. LEVEL;3
+screen;10;HANDBETRIEB;HANDBETRIEB;Handbetrieb;MSG. LEVEL;3,4
+recipe;1;PRG;;Programmeingabe;RETURN;5

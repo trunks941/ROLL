@@ -1,0 +1,76 @@
+OB1: OB 1 — ORGANISATION DER ZYKLISCHEN PROGRAMMBE-
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x280; block bytes: 150; SHA256: 840b4435a32dd2a84d76f948358d63c1f3da38b05c8f57b22f93a5fe9d9749b3
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 10 01 80 00 00 00 00 4B
+Code starts at block offset 0x000A.
+000A [00028A]  1083                       BLD    131
+000C [00028C]  A400                       UN     M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+000E [00028E]  1D692D01                   SPB    FB 105 ; DBERZ — ERZEUGUNG DER INTERNEN DB'S
+       Call descriptor @0010: 2D01; argument words: 0
+0012 [000292]  A400                       UN     M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0014 [000294]  0500                       BEB    
+0016 [000296]  10FF                       BLD    255
+0018 [000298]  1083                       BLD    131
+001A [00029A]  A200                       UN     M 0.2 ; HM/RINEU — HM F.RICHTIMPULSMERKER F.NEUSTART
+001C [00029C]  B100                       R      M 0.1 ; RI/NEUST — RICHTIMPULSMERKER FUER NEUSTART
+001E [00029E]  8100                       U      M 0.1 ; RI/NEUST — RICHTIMPULSMERKER FUER NEUSTART
+0020 [0002A0]  9700                       S      M 0.7 ; STQ_IMP — QUITTUNGSIMPULS BEI SPANNUNGSWIEDERKEHR
+0022 [0002A2]  A500                       UN     M 0.5 ; ZYKLTAKT — ZYKLUSTAKT
+0024 [0002A4]  9D00                       =      M 0.5 ; ZYKLTAKT — ZYKLUSTAKT
+0026 [0002A6]  10FF                       BLD    255
+0028 [0002A8]  8203                       U      M 3.2 ; M3.2 — ERKENNUNG S 0.1 HANDBETRIEB
+002A [0002AA]  9303                       S      M 3.3 ; M3.3 — BEARBEITUNG DER PB'S FUER HANDBETRIEB
+002C [0002AC]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+002E [0002AE]  B303                       R      M 3.3 ; M3.3 — BEARBEITUNG DER PB'S FUER HANDBETRIEB
+0030 [0002B0]  0000                       NOP0   
+0032 [0002B2]  10FF                       BLD    255
+0034 [0002B4]  C100                       U      E 0.1 ; HAND — BETRIEBSART HAND
+0036 [0002B6]  A100                       UN     M 0.1 ; RI/NEUST — RICHTIMPULSMERKER FUER NEUSTART
+0038 [0002B8]  9A03                       =      M 3.2 ; M3.2 — ERKENNUNG S 0.1 HANDBETRIEB
+003A [0002BA]  10FF                       BLD    255
+003C [0002BC]  1083                       BLD    131
+003E [0002BE]  7502                       SPA    PB 2 ; PB 2 — STOERUNGSMERKER
+0040 [0002C0]  8700                       U      M 0.7 ; STQ_IMP — QUITTUNGSIMPULS BEI SPANNUNGSWIEDERKEHR
+0042 [0002C2]  B700                       R      M 0.7 ; STQ_IMP — QUITTUNGSIMPULS BEI SPANNUNGSWIEDERKEHR
+0044 [0002C4]  7503                       SPA    PB 3 ; PB 3 — MERKER FUER HANDBETRIEB
+0046 [0002C6]  7504                       SPA    PB 4 ; PB 4 — MERKER FUER HANDBETRIEB
+0048 [0002C8]  7513                       SPA    PB 19 ; PB 19 — VERARBEITUNGSEBENE HEIZUNGEN
+004A [0002CA]  7515                       SPA    PB 21 ; PB 21 — VERFAHRENSTECHNIK STATION 1 - 4
+004C [0002CC]  7532                       SPA    PB 50 ; PB 50 — BAUSTEIN FUER ZAEHLER UND ZEITEN
+004E [0002CE]  7533                       SPA    PB 51 ; PB 51 — BAUSTEIN FUER ZAEHLER UND ZEITEN
+0050 [0002D0]  7534                       SPA    PB 52 ; PB 52 — BAUSTEIN FUER ZAEHLER UND ZEITEN
+0052 [0002D2]  A303                       UN     M 3.3 ; M3.3 — BEARBEITUNG DER PB'S FUER HANDBETRIEB
+0054 [0002D4]  5508                       SPB    PB 8 ; PB 8 — UEBERWACHUNG SCHRITTKETTEN
+0056 [0002D6]  A303                       UN     M 3.3 ; M3.3 — BEARBEITUNG DER PB'S FUER HANDBETRIEB
+0058 [0002D8]  5509                       SPB    PB 9 ; PB 9 — 1.RICHTIMPULS F.STEUERUNGSSCHRITTKETTEN
+005A [0002DA]  A303                       UN     M 3.3 ; M3.3 — BEARBEITUNG DER PB'S FUER HANDBETRIEB
+005C [0002DC]  550A                       SPB    PB 10 ; PB 10 — SCHRITTKETTE BESCHICKUNG UND ANLAGE
+005E [0002DE]  A303                       UN     M 3.3 ; M3.3 — BEARBEITUNG DER PB'S FUER HANDBETRIEB
+0060 [0002E0]  550E                       SPB    PB 14 ; PB 14 — VERARBEITUNGSEBENE FUER AUTOMATIKBETRIEB
+0062 [0002E2]  8303                       U      M 3.3 ; M3.3 — BEARBEITUNG DER PB'S FUER HANDBETRIEB
+0064 [0002E4]  5510                       SPB    PB 16 ; PB 16 — VERARBEITUNGSEBENE IM HANDBETRIEB
+0066 [0002E6]  7507                       SPA    PB 7 ; PB 7 — 1.GRUNDSTELLUNG
+0068 [0002E8]  750D                       SPA    PB 13 ; PB 13 — TROMMELEINRICHTUNG
+006A [0002EA]  750F                       SPA    PB 15 ; PB 15 — MERKER FUER AUTOM.GRUNDSTELLUNG FAHREN
+006C [0002EC]  7511                       SPA    PB 17 ; PB 17 — VERARBEITUNGSEBENE AUSGAENGE BESCHICKUNG
+006E [0002EE]  7514                       SPA    PB 20 ; PB 20 — VERFAHRENSTECHNIK RAV
+0070 [0002F0]  7517                       SPA    PB 23 ; PB 23 — VERARBEITUNGSEBENE AUSGAENGE VERFAHREN
+0072 [0002F2]  7518                       SPA    PB 24 ; PB 24 — OELSKIMMER FUER OELABSCHEIDER STATION 1
+0074 [0002F4]  7519                       SPA    PB 25 ; PB 25 — LAMPENANSTEUERUNG
+0076 [0002F6]  1082                       BLD    130
+0078 [0002F8]  3D6F2D01                   SPA    FB 111 ; FB 111 — ZEITEN FUER N1 SETZEN
+       Call descriptor @007A: 2D01; argument words: 0
+007C [0002FC]  1082                       BLD    130
+007E [0002FE]  1082                       BLD    130
+0080 [000300]  10FF                       BLD    255
+0082 [000302]  1083                       BLD    131
+0084 [000304]  3D032D01                   SPA    FB 3 ; FB 3 — OP15:AUFBEREITUNG DER BILDNUMMERN
+       Call descriptor @0086: 2D01; argument words: 0
+0088 [000308]  3D3C2D01                   SPA    FB 60 ; FB 60 — REZEPTUEBERTRAGUNG VOM OP 15
+       Call descriptor @008A: 2D01; argument words: 0
+008C [00030C]  3D592D01                   SPA    FB 89 ; FB 89 — REZEPTUEBERTRAGUNG OP 15
+       Call descriptor @008E: 2D01; argument words: 0
+0090 [000310]  3D652D01                   SPA    FB 101 ; ZEI/ZAE — ZEITEN-/ZAEHLEREINSTELLUNG MIT OP15
+       Call descriptor @0092: 2D01; argument words: 0
+0094 [000314]  6500                       BE     

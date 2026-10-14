@@ -1,0 +1,257 @@
+﻿kind;number;name;printout;info_text;priority;polling_ms;text;printed_pages
+event;0;BM_______000;OFF;;1;1000;R O L L - Reinigungssysteme<CR>     KS04201   RET 0048-080-056-04;17
+event;1;N1.0;OFF;;1;1000;N1.0 Schrittkette N1 Beschickung <CR>      vorbereiten;17
+event;2;N1.1;OFF;;1;1000;N1.1 Schrittkette N1 Beschickung <CR>      starten;17
+event;3;N1.2;OFF;;1;1000;N1.2 Warentraeger vorhanden <CR>      Programm lesen;17
+event;4;N1.3;OFF;;1;1000;N1.3 Programm gelesen und<CR>      inhaltlich in Ordnung;17,18
+event;6;N1.5;OFF;;1;1000;N1.5 Sperre 2 oeffnen;18
+event;7;N1.6;OFF;;1;1000;N1.6 Sperre 2 geoeffnet;18
+event;8;N1.7;OFF;;1;1000;N1.7 WT faehrt zu Sperre 3;18
+event;9;N1.8;OFF;;1;1000;N1.8 WT an Sperre 3;18,19
+event;21;N1.20;OFF;;1;1000;N1.20 WT-Transport heben bis oben;19
+event;22;N1.21;OFF;;1;1000;N1.21 WT-Transport oben;19
+event;23;N1.22;OFF;;1;1000;N1.22 WT-Transport einfahren;19
+event;24;N1.23;OFF;;1;1000;N1.23 WT-Transport eingefahren;19
+event;25;N1.24;OFF;;1;1000;N1.24 Beladestation, <CR>       Vert.-Transport heben bis oben;20
+event;26;N1.25;OFF;;1;1000;N1.25 Beladestation, <CR>       Vert.-Transport ist oben;20
+event;27;N1.26;OFF;;1;1000;N1.26 Horiz.-Transport <CR>       vorfahren bis Station 1;20
+event;28;N1.27;OFF;;1;1000;N1.27 Horiz.-Transport in Station 1;20
+event;29;N1.28;OFF;;1;1000;N1.28 Vert.-Transport <CR>       senken in Station 1;21
+event;30;N1.29;OFF;TAUCHSTAT.1;1;1000;N1.29 Tauchzeit Station 1 laeuft<CR>          <TAUCHZEIT   > Sekunden;21
+event;31;N1.30;OFF;;1;1000;N1.30 Ende Tauchzeit Station 1;21
+event;32;N1.31;OFF;;1;1000;N1.31 Vert.Warenbewegung aus Station 1;21
+event;33;N1.32;OFF;;1;1000;N1.32 Vert.-Transport<CR>       heben bis oben Station 1;21,22
+event;34;N1.33;OFF;;1;1000;"N1.33 Vert.-Transport oben,<CR> Abtropfzeit Station 1 laeuft <ABTROPFZEIT
+> Sek.";22
+event;35;N1.34;OFF;;1;1000;N1.34 Ende Abtropfzeit Station 1;22
+event;36;N1.35;OFF;;1;1000;N1.35 Trommel geradestellen Station 1;22
+event;37;N1.36;OFF;;1;1000;N1.36 Trommel ist gerade Station 1;22
+event;38;N1.37;OFF;;1;1000;N1.37 Reserve;23
+event;39;N1.38;OFF;;1;1000;N1.38 Horiz.-Transport <CR>       vorfahren bis Station 2;23
+event;40;N1.39;OFF;;1;1000;N1.39 Horiz.-Transport in Station 2;23
+event;41;N1.40;OFF;;1;1000;N1.40 Vert.-Transport <CR>       senken in Station 2;23
+event;42;N1.41;OFF;;1;1000;"N1.41 Vert.-Transport unten, <CR> Tauchzeit Station 2 laeuft <TAUCHZEIT
+> Sek.";24
+event;43;N1.42;OFF;;1;1000;N1.42 Ende Tauchzeit Station 2;24
+event;44;N1.43;OFF;;1;1000;N1.43 Vert.Warenbewegung aus Station 2;24
+event;45;N1.44;OFF;;1;1000;N1.44 Vert.-Transport<CR>       heben bis oben Station 2;24
+event;46;N1.45;OFF;;1;1000;"N1.45 Vert.-Transport oben,<CR> Abtropfzeit Station 2 laeuft <ABTROPFZEIT
+> Sek.";24,25
+event;47;N1.46;OFF;;1;1000;N1.46 Ende Abtropfzeit Station 2;25
+event;48;N1.47;OFF;;1;1000;N1.47 Trommel geradestellen Station 2;25
+event;49;N1.48;OFF;;1;1000;N1.48 Trommel ist gerade Station 2;25
+event;50;N1.49;OFF;;1;1000;N1.49 Reserve;25,26
+event;51;N1.50;OFF;;1;1000;N1.50 Horiz.-Transport <CR>       vorfahren bis Station 3;26
+event;52;N1.51;OFF;;1;1000;N1.51 Horiz.-Transport in Station 3;26
+event;53;N1.52;OFF;;1;1000;N1.52 Vert.-Transport <CR>       senken in Station 3;26
+event;54;N1.53;OFF;;1;1000;"N1.53 Vert.-Transport unten, <CR> Tauchzeit Station 3 laeuft <TAUCHZEIT
+> Sek.";26
+event;55;N1.54;OFF;;1;1000;N1.54 Ende Tauchzeit Station 3;27
+event;56;N1.55;OFF;;1;1000;N1.55 Vert.Warenbewegung aus Station 3;27
+event;57;N1.56;OFF;;1;1000;N1.56 Vert.-Transport<CR>       heben bis oben Station 3;27
+event;58;N1.57;OFF;;1;1000;"N1.57 Vert.-Transport oben,<CR> Abtropfzeit Station 3 laeuft <ABTROPFZEIT
+> Sek.";27
+event;59;N1.58;OFF;;1;1000;N1.58 Ende Abtropfzeit Station 3;27,28
+event;60;N1.59;OFF;;1;1000;N1.59 Trommel geradestellen Station 3;28
+event;61;N1.60;OFF;;1;1000;N1.60 Trommel ist gerade Station 3;28
+event;62;N1.61;OFF;;1;1000;N1.61 Reserve;28
+event;63;N1.62;OFF;;1;1000;N1.62 Reserve;28,29
+event;64;N1.63;OFF;;1;1000;N1.63 Horiz.-Transport <CR>       vorfahren bis Station 4;29
+event;65;N1.64;OFF;;1;1000;N1.64 Horiz.-Transport in Station 4;29
+event;66;N1.65;OFF;;1;1000;N1.65 Vert.-Transport <CR>       senken in Station 4;29
+event;67;N1.66;OFF;;1;1000;"N1.66 Vert.-Transport unten, <CR>      Zeit Station 4 laeuft <TAUCHZEIT
+> Sek.";29
+event;68;N1.67;OFF;;1;1000;N1.67 Ende Behandlungszeit Station 4;30
+event;69;N1.68;OFF;;1;1000;N1.68 Vert.Warenbewegung aus Station 4;30
+event;70;N1.69;OFF;;1;1000;N1.69 Vert.-Transport<CR>       heben bis oben Station 4;30
+event;71;N1.70;OFF;;1;1000;"N1.70 Vert.-Transport oben,<CR> Abtropfzeit Station 4 laeuft <ABTROPFZEIT
+> Sek.";30
+event;72;N1.71;OFF;;1;1000;N1.71 Ende Abtropfzeit Station 4;31
+event;73;N1.72;OFF;;1;1000;N1.72 Trommel geradestellen Station 4;31
+event;74;N1.73;OFF;;1;1000;N1.73 Trommel ist gerade Station 4;31
+event;75;N1.74;OFF;;1;1000;N1.74 Horiz.-Transport <CR>       vorfahren bis Station 5;31
+event;76;N1.75;OFF;;1;1000;N1.75 Horiz.-Transport in Station 5;31,32
+event;77;N1.76;OFF;;1;1000;N1.76 Vert.-Transport <CR>       senken in Station 5;32
+event;78;N1.77;OFF;;1;1000;"N1.77 Vert.-Transport unten, <CR> Tauchzeit Station 5 laeuft <TAUCHZEIT
+> Sek.";32
+event;79;N1.78;OFF;;1;1000;N1.78 Ende Tauchzeit Station 5;32
+event;80;N1.79;OFF;;1;1000;N1.79 Vert.Warenbewegung aus Station 5;32
+event;81;N1.80;OFF;;1;1000;N1.80 Vert.-Transport<CR>       heben bis oben Station 5;33
+event;82;N1.81;OFF;;1;1000;"N1.81 Vert.-Transport oben,<CR> Abtropfzeit Station 5 laeuft <ABTROPFZEIT
+> Sek.";33
+event;83;N1.82;OFF;;1;1000;N1.82 Ende Abtropfzeit Station 5;33
+event;84;N1.83;OFF;;1;1000;N1.83 Trommel geradestellen Station 5;33
+event;85;N1.84;OFF;;1;1000;N1.84 Trommel ist gerade Station 5;34
+event;86;N1.85;OFF;;1;1000;N1.85 Reserve;34
+event;87;N1.86;OFF;;1;1000;N1.86 Horiz.-Transport <CR>       vorfahren bis Station 6;34
+event;88;N1.87;OFF;;1;1000;N1.87 Horiz.-Transport in Station 6;34
+event;89;N1.88;OFF;;1;1000;N1.88 Vert.-Transport <CR>       senken in Station 6;34,35
+event;90;N1.89;OFF;;1;1000;"N1.89 Vert.-Transport unten, <CR> Tauchzeit Station 6 laeuft <TAUCHZEIT
+> Sek.";35
+event;91;N1.90;OFF;;1;1000;N1.90 Ende Tauchzeit Station 6;35
+event;92;N1.91;OFF;;1;1000;N1.91 Vert.Warenbewegung aus Station 6;35
+event;93;N1.92;OFF;;1;1000;N1.92 Vert.-Transport<CR>       heben bis oben Station 6;35,36
+event;94;N1.93;OFF;;1;1000;"N1.93 Vert.-Transport oben,<CR> Abtropfzeit Station 6 laeuft <ABTROPFZEIT
+> Sek.";36
+event;95;N1.94;OFF;;1;1000;N1.94 Ende Abtropfzeit Station 6;36
+event;96;N1.95;OFF;;1;1000;N1.95 Trommel geradestellen Station 6;36
+event;97;N1.96;OFF;;1;1000;N1.96 Trommel ist gerade Station 6;36
+event;98;N1.97;OFF;;1;1000;N1.97 Reserve;37
+event;99;N1.98;OFF;;1;1000;N1.98 Horiz.-Transport <CR>       vorfahren bis Station 7;37
+event;100;N1.99;OFF;;1;1000;N1.99 Horiz.-Transport in Station 7;37
+event;101;N1.100;OFF;;1;1000;N1.100 Vert.-Transport <CR>        senken in Station 7;37
+event;102;N1.101;OFF;;1;1000;"N1.101 Vert.-Transport unten, <CR> Tauchzeit Station 7 laeuft <TAUCHZEIT
+> Sek.";37,38
+event;103;N1.102;OFF;;1;1000;N1.102 Ende Tauchzeit Station 7;38
+event;104;N1.103;OFF;;1;1000;N1.103 Vert.Warenbewegung aus Station 7;38
+event;105;N1.104;OFF;;1;1000;N1.104 Vert.-Transport<CR>        heben bis oben Station 7;38
+event;106;N1.105;OFF;;1;1000;"N1.105 Vert.-Transport oben,<CR> Abtropfzeit Station 7 laeuft <ABTROPFZEIT
+> Sek.";38,39
+event;107;N1.106;OFF;;1;1000;N1.106 Ende Abtropfzeit Station 7;39
+event;108;N1.107;OFF;;1;1000;N1.107 Trommel geradestellen Station 7;39
+event;109;N1.108;OFF;;1;1000;N1.108 Trommel ist gerade Station 7;39
+event;110;N1.109;OFF;;1;1000;N1.109 Reserve;39
+event;111;N1.110;OFF;;1;1000;N1.110 Horiz.-Transport <CR>        vorfahren bis Station 8;40
+event;112;N1.111;OFF;;1;1000;N1.111 Horiz.-Transport in Station 8;40
+event;113;N1.112;OFF;;1;1000;N1.112 Vert.-Transport <CR>        senken in Station 8;40
+event;114;N1.113;OFF;;1;1000;"N1.113 Vert.-Transport unten, <CR> Trockenzeit Station 8 laeuft <TAUCHZEIT
+> Sek.";40
+event;115;N1.114;OFF;;1;1000;N1.114 Ende Trockenzeit Station 7;41
+event;116;N1.115;OFF;;1;1000;N1.115 Vert.-Transport<CR>        heben bis oben Station 8;41
+event;117;N1.116;OFF;;1;1000;N1.116 Vert.-Transport oben Station 8;41
+event;118;N1.117;OFF;;1;1000;N1.117 Trommel geradestellen Station 8;41
+event;119;N1.118;OFF;;1;1000;N1.118 Trommel ist gerade Station 8;41,42
+event;120;N1.119;OFF;;1;1000;N1.119 Reserve;42
+event;121;N1.120;OFF;;1;1000;N1.120 Horiz.-Transport <CR>        zurueckfahren bis Beladestation;42
+event;122;N1.121;OFF;;1;1000;N1.121 Horiz.-Transport <CR>        in Beladestation;42
+event;123;N1.122;OFF;;1;1000;N1.122 Vert.-Transport <CR>        senken in Beladestation;42,43
+event;124;N1.123;OFF;;1;1000;N1.123 Vert.-Transport in Beladehoehe;43
+event;129;N1.128;OFF;;1;1000;N1.128 WT-Transport ausfahren;43
+event;130;N1.129;OFF;;1;1000;N1.129 WT-Transport ausgefahren;43
+event;131;N1.130;OFF;;1;1000;N1.130 WT-Transport senken;43
+event;132;N1.131;OFF;;1;1000;N1.131 WT-Transport unten;44
+event;133;N1.132;OFF;;1;1000;N1.132 Ausgang freifahren;44
+event;134;N1.133;OFF;;1;1000;N1.133 Ausgang frei;44
+event;135;N1.134;OFF;;1;1000;N1.134 Sprung zu N1.0;44
+event;144;RUHE_N1;OFF;;1;1000;Schrittanzeige N1 Beschickung <CR>        - kein Schritt gesetzt -;44,45
+alarm;1;STOER01;ON;;1;200;01 Horiz.-Transportmotor zu heiss <CR>    B11.7;46
+alarm;2;STOER02;ON;;1;200;02 Trommelmotor zu heiss <CR>        B13.5;46
+alarm;3;STOER03;ON;;1;200;03 Vert.-Transportmotor zu heiss  <CR>    B13.0;46
+alarm;4;STOER04;ON;;1;200;"04 Motor Gebl<142>se Warmluft Station 4<CR>    zu heiss
+B 8.5";46
+alarm;5;STOER05;ON;;1;200;05 Reserve;46,47
+alarm;6;STOER06;ON;;1;200;06 Reserve;47
+alarm;7;STOER07;ON;;1;200;07 Motorschutz Pumpen und Geblaese <CR>    angesprochen  Q17.0 - Q20.6;47
+alarm;8;STOER08;ON;;1;200;08 Motorschutz Antriebe angesprochen<CR>    Q23.0/Q23.4/Q24.0/Q24.4;47
+alarm;9;STOER09;ON;;1;200;09 Station 1 ueberfuellt<CR>    B5.2;47,48
+alarm;10;STOER10;ON;;1;200;10 Niveaumangel Station 1  MIN<CR>    B5.3;48
+alarm;11;STOER11;ON;;1;200;11 Oelabscheider ueberfuellt<CR>    B5.4;48
+alarm;12;STOER12;ON;;1;200;12 Niveaumangel Oelabscheider MIN<CR>    B5.5;48
+alarm;13;STOER13;ON;;1;200;13 Niveaumangel Station 2 <CR>    B6.0;48
+alarm;14;STOER14;ON;;1;200;14 Niveaumangel Station 3<CR>    B6.2;49
+alarm;15;STOER15;ON;;1;200;15 Reserve;49
+alarm;16;STOER16;ON;;1;200;16 Niveaumangel Station 4<CR>;49
+alarm;17;STOER17;ON;;1;200;17 Niveaumangel Station 5<CR>    B10.4;49
+alarm;18;STOER18;ON;;1;200;18 Niveaumangel Station 6<CR>    B10.5;50
+alarm;19;STOER19;ON;;1;200;19 Niveaumangel Station 7<CR>    B10.6;50
+alarm;20;STOER20;ON;;1;200;20 Niveaumangel Oelabscheider TGS  <CR>    B 5.6;50
+alarm;21;STOER21;ON;;1;200;21 Reserve;50
+alarm;22;STOER22;ON;;1;200;22 Reserve;50,51
+alarm;23;STOER23;ON;;1;200;23 Reserve;51
+alarm;24;STOER24;ON;;1;200;24 Niveaumangel Vorratsbehaelter<CR> VE-Wasser TGS          B6.5/E6.7;51
+alarm;25;STOER25;ON;;1;200;25 RAV Schmutztank voll<CR>    B 7.0;51
+alarm;26;STOER26;ON;;1;200;26 RAV Niveaumangel Schmutztank<CR>    B 7.1;51,52
+alarm;27;STOER27;ON;;1;200;27 RAV Verdampfer voll<CR>    B 7.2;52
+alarm;28;STOER28;ON;;1;200;28 RAV Niveaumangel Verdampfer<CR>    B 7.3;52
+alarm;29;STOER29;ON;;1;200;29 RAV Destillatbehaelter voll<CR>    B 7.4;52
+alarm;30;STOER30;OFF;;1;200;30 RAV Niveaumangel Destillatbehaelter<CR>    B 7.5;52
+alarm;31;STOER31;ON;;1;200;31 RAV Niveaumangel Schaumbremse<CR>        B7.6;53
+alarm;32;STOER32;ON;;1;200;32 Reserve;53
+alarm;33;STOER33;ON;;1;200;33 Beladefehler <CR>    S13.7;53
+alarm;34;STOER34;ON;;1;200;34 Kein WT auf dem Grundrahmen <CR>    Res.;53
+alarm;35;STOER35;ON;;1;200;35 Warentraeger im Beladebereich<CR>;53,54
+alarm;36;STOER36;ON;;1;200;36 Stoerung WT - Transport<CR>    aus-/einfahren;54
+alarm;37;STOER37;ON;;1;200;37 Entladebahn voll - entleeren<CR>;54
+alarm;38;STOER38;ON;;1;200;38 Reserve;54
+alarm;39;STOER39;ON;;1;200;39 Reserve;54,55
+alarm;40;STOER40;ON;;1;200;40 Reserve;55
+alarm;41;STOER41;ON;;1;200;"41 Vert.-Transport Position ""unten""<CR>    ueberfahren               S12.0";55
+alarm;42;STOER42;ON;;1;200;"42 Vert.-Transport Position ""oben""<CR>    ueberfahren               S12.6";55
+alarm;43;STOER43;ON;;1;200;43;55
+alarm;44;STOER44;ON;;1;200;44;56
+alarm;45;STOER45;ON;;1;200;45;56
+alarm;46;STOER46;ON;;1;200;46;56
+alarm;47;STOER47;ON;;1;200;47 Reserve;56
+alarm;48;STOER48;ON;;1;200;48 Reserve;56,57
+alarm;49;STOER49;ON;STOER49;1;200;49 Ueberwachungszaehler Trommel <CR>    ausgeloest, B13.3 zu lange 0;57
+alarm;50;STOER50;ON;STOER50;1;200;"50 Schalterueberwachung auf log.""1""<CR>    B13.3 immer belegt";57
+alarm;51;STOER51;ON;;1;200;51 Trommel stellt zu lange gerade<CR>    B13.3 wird nicht erreicht;57
+alarm;52;STOER52;ON;;1;200;52 Trommel hat Anschlag unterfahren<CR>    Y24.5;57,58
+alarm;53;STOER53;ON;;1;200;"53 Vorwahl ""Trommel schwenken"":<CR>    drehen nicht erlaubt";58
+alarm;54;STOER54;ON;;1;200;54 Reserve;58
+alarm;55;STOER55;ON;;1;200;55 Reserve;58
+alarm;56;STOER56;ON;;1;200;56 Reserve;58
+alarm;57;STOER57;ON;;1;200;57 Temperatur-Begrenzer Heizung<CR>    Station 4 hat ausgeloest;59
+alarm;58;STOER58;ON;;1;200;"58 ""Warmluft Station 4 ein"" fehlt<CR>     S1.4";59
+alarm;59;STOER59;ON;;1;200;59 Reserve;59
+alarm;60;STOER60;ON;;1;200;60 Reserve;59
+alarm;61;STOER61;ON;;1;200;61 Temperatur-Begrenzer RAV WE 1<CR>    hat ausgeloest           E9.0;60
+alarm;62;STOER62;ON;;1;200;62 Temperatur-Begrenzer RAV WE 2<CR>    hat ausgeloest           E9.3;60
+alarm;63;STOER63;ON;;1;200;63 RAV Uebertemperatur im Verdampfersud<CR>    A9.7;60
+alarm;64;STOER64;ON;;1;200;64 RAV Kuehlungskontrolle ausgeloest<CR>    B 9.6;60
+alarm;65;STOER65;ON;;1;200;65 Reserve;60,61
+alarm;66;STOER66;ON;;1;200;66 Trockenlauf Pumpe P0<CR>  Wirkleistungsmessgeraet A3.2;61
+alarm;67;STOER67;ON;;1;200;67 Freigabe Anlage entleeren fehlt<CR>    E4.7;61
+alarm;68;STOER68;ON;;1;200;68 Leckwarnsonde in der Bodenwanne<CR>    hat angesprochen          B 5.0;61
+alarm;69;STOER69;ON;;1;200;69 Druckluftmangel<CR>    B10.7;61,62
+alarm;70;STOER70;ON;;1;200;70;62
+alarm;71;STOER71;ON;;1;200;71;62
+alarm;72;STOER72;ON;;1;200;72 Sammelstoermeldung von der<CR>    Umkehrosmose     E4.5;62
+alarm;73;STOER73;ON;;1;200;73 Ultraschallgenerator 1 ausgefallen<CR>    E10.0;62
+alarm;74;STOER74;ON;;1;200;74 Ultraschallgenerator 2 ausgefallen<CR>    E10.1;63
+alarm;75;STOER75;ON;;1;200;75 Ultraschallgenerator 3 ausgefallen<CR>    E10.2;63
+alarm;76;STOER76;ON;;1;200;76 Ultraschallgenerator 4 ausgefallen<CR>    E10.3;63
+alarm;77;STOER77;ON;;1;200;77;63
+alarm;78;STOER78;ON;;1;200;78;63,64
+alarm;79;STOER79;ON;;1;200;79;64
+alarm;80;STOER80;ON;;1;200;80;64
+alarm;81;STOER81;ON;;1;200;81;64
+alarm;82;STOER82;ON;;1;200;82;64,65
+alarm;83;STOER83;ON;;1;200;83 Reserve;65
+alarm;84;STOER84;ON;;1;200;84 Reserve;65
+alarm;85;STOER85;ON;;1;200;85;65
+alarm;86;STOER86;ON;;1;200;86 Sicherungen Steuerspannung <CR>    F4.0 - F4.02;65
+alarm;87;STOER87;ON;;1;200;87 Sicherungen der Eingangskarten<CR>    F4.1 - F4.11;66
+alarm;88;STOER88;ON;;1;200;88 Sicherungen Ausgangskarten<CR>    F4.2 - F4.22;66
+alarm;89;STOER89;ON;;1;200;89 Angewaehltes Programm im OP nicht<CR>    vorhanden;66
+alarm;90;STOER90;ON;STOER90;1;200;90 Angewaehltes Programm im OP<CR>    fehlerhaft;66
+alarm;91;STOER91;ON;STOER91;1;200;91 Programmuebertragung vom OP<CR>    dauert zu lange;66,67
+alarm;92;STOER92;ON;STOER92;1;200;"92 Schrittkettenueberwachung <CR>    N1 ""Beschickung"" angesprochen";67
+alarm;93;STOER93;ON;STOER93;1;200;93 Programmnummer im Datensatz fuer<CR>    Platz 4 (Sperre 3) = 0;67
+alarm;94;STOER94;ON;;1;200;94 Pufferbatterieausfall! <CR>    Hauptschalter nicht ausschalten!!!;67
+alarm;95;STOER95;ON;;1;200;"95 ""Steuerung ein"" fehlt<CR>    S105/S106";67,68
+alarm;96;STOER96;ON;;1;200;"96 ""Wochenschaltuhr ein"" fehlt";68
+alarm;97;STOER97;ON;;1;200;97 Wartungstuer nicht geschlossen<CR> oder Auswertegeraet defekt    A3.5;68
+alarm;98;STOER98;ON;;1;200;98;68
+alarm;99;STOER99;ON;;1;200;99;68
+alarm;100;STOER100;ON;;1;200;100;69
+alarm;101;STOER101;ON;;1;200;101;69
+alarm;102;STOER102;ON;;1;200;102;69
+alarm;103;STOER103;ON;;1;200;103;69
+alarm;104;STOER104;ON;;1;200;104;70
+alarm;105;STOER105;ON;;1;200;105;70
+alarm;106;STOER106;ON;STOER106;1;200;106 Beschickungstuer ist nicht<CR>          geschlossen      E14.0;70
+alarm;107;STOER107;ON;;1;200;107;70
+alarm;108;STOER108;ON;;1;200;108;70,71
+alarm;109;STOER109;ON;;1;200;109;71
+alarm;110;STOER110;ON;;1;200;110;71
+alarm;111;STOER111;ON;;1;200;111 Reserve;71
+alarm;112;STOER112;ON;;1;200;112;71
+alarm;113;STOER113;ON;;1;200;113;72
+alarm;114;STOER114;ON;;1;200;114;72
+alarm;115;STOER115;ON;;1;200;115;72
+alarm;116;STOER116;ON;;1;200;116;72
+alarm;117;STOER117;ON;;1;200;117;73
+alarm;118;STOER118;ON;;1;200;118;73
+alarm;119;STOER119;ON;;1;200;119;73
+alarm;120;STOER120;ON;;1;200;120;73

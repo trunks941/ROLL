@@ -1,0 +1,27 @@
+FB96: SWAP — LOW- UND HIGH-BYTE TAUSCHEN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x2000; block bytes: 70; SHA256: b36b2b2054bc8912f424ba395b28830aee1fe6e2c330712f8e67833c4cff9e88
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 60 84 00 00 00 00 23
+Code starts at block offset 0x0020.
+FB name: 'SWAP    '; entry SPA bytes: 2D0B
+  Formal #1 @0014 0220494E5055: INPU E/W
+  Formal #2 @001A 08204F555450: OUTP A/W
+0020 [002020]  30400000                   L      KH 0000
+0024 [002024]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0026 [002026]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+0028 [002028]  1082                       BLD    130
+002A [00202A]  4601                       L      =INPU
+002C [00202C]  6108                       SLW    8
+002E [00202E]  13F0                       T      MW 240 ; MW240 — SCHMIERMERKER
+0030 [002030]  1082                       BLD    130
+0032 [002032]  4601                       L      =INPU
+0034 [002034]  6908                       SRW    8
+0036 [002036]  13F2                       T      MW 242 ; MW242 — SCHMIERMERKER
+0038 [002038]  1082                       BLD    130
+003A [00203A]  12F0                       L      MW 240 ; MW240 — SCHMIERMERKER
+003C [00203C]  12F2                       L      MW 242 ; MW242 — SCHMIERMERKER
+003E [00203E]  4900                       OW     
+0040 [002040]  6602                       T      =OUTP
+0042 [002042]  1082                       BLD    130
+0044 [002044]  6500                       BE     

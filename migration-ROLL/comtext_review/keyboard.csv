@@ -1,0 +1,17 @@
+﻿key;keyboard_image_area;keyboard_bit_offset;led_image_area;led_bit_offset;function;repeat;access_level;shift_function;shift_repeat;shift_access_level;parameter_1;plc_flag_from_comparative_FB3;motion_flag_from_comparative_FB3;FB3_evidence_status;FB3_evidence_file;printed_pages
+1;1;0;1;0;MAIN MENU;OFF;1;;OFF;1;Menu no.:  1;M192.0;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;104,107
+2;1;1;1;2;SEL SCREEN;OFF;1;;OFF;1;FAHRPROGR.1;M192.1;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;104,107
+3;1;2;1;4;MAIN MENU;OFF;1;;OFF;1;Menu no.: 31;M192.2;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;104,107
+4;1;3;1;6;MAIN MENU;OFF;1;;OFF;1;Menu no.:  2;M192.3;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;104,107
+5;1;4;1;8;;OFF;1;;OFF;1;;M192.4;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;104
+6;1;5;1;10;;OFF;1;;OFF;1;;M192.5;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;104
+7;1;6;1;12;;OFF;1;;OFF;1;;M192.6;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;104,105
+8;1;7;1;14;;OFF;1;;OFF;1;;M192.7;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;105
+9;1;8;1;16;;OFF;1;;OFF;1;;M193.0;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;105
+10;1;9;1;18;;OFF;1;;OFF;1;;M193.1;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;105
+11;1;10;1;20;;OFF;1;;OFF;1;;M193.2;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;105
+12;1;11;1;22;;OFF;1;;OFF;1;;M193.3;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;105
+13;1;12;1;24;;OFF;1;;OFF;1;;M193.4;M190.5;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;105
+14;1;13;1;26;SEL SCREEN;OFF;1;;OFF;1;HANDBETRIEB;M193.5;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;105,106,107
+15;1;14;1;28;SEL SCREEN;OFF;1;;OFF;1;VARIABEL;M193.6;;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;106,107
+16;1;15;1;30;;OFF;1;;OFF;1;;M193.7;M190.6;Full native STEP 5 comparison confirmed;native_verification/FB3-comparison.json;106

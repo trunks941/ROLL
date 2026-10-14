@@ -1,0 +1,24 @@
+FB 69     -FB 69                     C:04201@ST.S5D                    LEN=25   
+                                                                        Page   1
+Segment  1
+Name :SW PAUSE
+ 
+0005      :
+0006      :A   F  240.0  -M240.0               Abtropfzeit laeuft
+0007      :
+0008      :A   F  240.1  -M240.1               Betriebsart Schwenken
+0009      :JC  =M001                           lange Pause
+000A      :
+000B      :L   KT 005.1                        --> kurze Pause
+000D      :T   FW 240    -MW240
+000E      :BEU
+000F      :
+0010 M001 :L   KT 005.2                        Fahrwagen ist unten -->
+0012      :T   FW 240    -MW240                lange Pause
+0013      :BE
+
+F  240.0 = M240.0                    SCHMIERMERKER
+F  240.1 = M240.1                    SCHMIERMERKER
+FW 240   = MW240                     SCHMIERMERKER
+
+

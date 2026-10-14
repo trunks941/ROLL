@@ -1,0 +1,266 @@
+PB14: PB 14 — VERARBEITUNGSEBENE FUER AUTOMATIKBETRIEB
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xD900; block bytes: 530; SHA256: 7236854b1fac6dd5e979fff831570c656f71ade344268f29449996e845d4b7b7
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 0E 80 00 00 00 01 09
+Code starts at block offset 0x000A.
+000A [00D90A]  1083                       BLD    131
+000C [00D90C]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+000E [00D90E]  10FF                       BLD    255
+0010 [00D910]  BA00                       U(     
+0012 [00D912]  8F25                       O      M 37.7 ; N_1.7 — WT FAEHRT ZU SPERRE 4               OPT.
+0014 [00D914]  8C35                       O      M 53.4 ; N_1.132 — AUSGANG FREIFAHREN
+0016 [00D916]  FB00                       O      
+0018 [00D918]  841F                       U      M 31.4 ; AUTO_E — AUTOMATIK EIN
+001A [00D91A]  C47B                       U      E 123.4 ; B123.4 — WT AN SPERRE 3
+001C [00D91C]  FC15                       UN     T 21 ; T21 — EINSCHALTZEIT BAHN 1
+001E [00D91E]  8F46                       O      M 70.7 ; M70.7 — SM WT ZWISCHEN SPERRE 1 UND 3
+0020 [00D920]  FB00                       O      
+0022 [00D922]  F82D                       U      T 45 ; T45 — VERZ.UEBERFAHREN SPERRE 1
+0024 [00D924]  8446                       U      M 70.4 ; M70.4 — SM WT'S UEBERFAHREN SPERRE 1
+0026 [00D926]  BF00                       )      
+0028 [00D928]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+002A [00D92A]  BA00                       U(     
+002C [00D92C]  FD5F                       ON     T 95 ; T95 — VERZ.ENTLADESPEICHER VOLL
+002E [00D92E]  8C35                       O      M 53.4 ; N_1.132 — AUSGANG FREIFAHREN
+0030 [00D930]  BF00                       )      
+0032 [00D932]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0034 [00D934]  A235                       UN     M 53.2 ; N_1.130 — WT-TRANSPORT SENKEN
+0036 [00D936]  A335                       UN     M 53.3 ; N_1.131 — WT-TRANSPORT UNTEN
+0038 [00D938]  A525                       UN     M 37.5 ; N_1.5 — SPERRE 3 OEFFNEN                    OPT.
+003A [00D93A]  9840                       =      M 64.0 ; M64.0 — BAHN 1 EIN IM AUTOBETRIEB
+003C [00D93C]  10FF                       BLD    255
+003E [00D93E]  BA00                       U(     
+0040 [00D940]  8C35                       O      M 53.4 ; N_1.132 — AUSGANG FREIFAHREN
+0042 [00D942]  FB00                       O      
+0044 [00D944]  8148                       U      M 72.1 ; M72.1 — SM SPERRE 6 SENKEN, SPERRE 5 HEBEN
+0046 [00D946]  E4F1                       UN     A 113.4 ; Y113.4 — SPERRE 5 OEFFNEN, SPERRE 6 SCHLIESSEN
+0048 [00D948]  C5F1                       U      A 113.5 ; Y113.5 — SPERRE 5 SCHLIESSEN, SPERRE 6 OEFFNEN
+004A [00D94A]  BF00                       )      
+004C [00D94C]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+004E [00D94E]  8223                       U      M 35.2 ; M35.2 — WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+0050 [00D950]  FB00                       O      
+0052 [00D952]  C47D                       U      E 125.4 ; B125.4 — BAHN 2 LEERFAHREN
+0054 [00D954]  A41F                       UN     M 31.4 ; AUTO_E — AUTOMATIK EIN
+0056 [00D956]  A51F                       UN     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0058 [00D958]  9940                       =      M 64.1 ; M64.1 — BAHN 2 EIN IM AUTOBETRIEB
+005A [00D95A]  10FF                       BLD    255
+005C [00D95C]  C47B                       U      E 123.4 ; B123.4 — WT AN SPERRE 3
+005E [00D95E]  F814                       U      T 20 ; T20 — VERZ.SCHRITTKETTE N1
+0060 [00D960]  9440                       S      M 64.4 ; M64.4 — SPERRE 2 SCHLIESSEN IM AUTOBETRIEB
+0062 [00D962]  E47B                       UN     E 123.4 ; B123.4 — WT AN SPERRE 3
+0064 [00D964]  E3F1                       UN     A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+0066 [00D966]  AD1F                       ON     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0068 [00D968]  B440                       R      M 64.4 ; M64.4 — SPERRE 2 SCHLIESSEN IM AUTOBETRIEB
+006A [00D96A]  0000                       NOP0   
+006C [00D96C]  10FF                       BLD    255
+006E [00D96E]  8525                       U      M 37.5 ; N_1.5 — SPERRE 3 OEFFNEN                    OPT.
+0070 [00D970]  9540                       S      M 64.5 ; M64.5 — SPERRE 3 OEFFNEN IM AUTOBETRIEB
+0072 [00D972]  8D27                       O      M 39.5 ; N_1.21 — WT-TRANSPORT OBEN                   OPT.
+0074 [00D974]  AD1F                       ON     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0076 [00D976]  B540                       R      M 64.5 ; M64.5 — SPERRE 3 OEFFNEN IM AUTOBETRIEB
+0078 [00D978]  0000                       NOP0   
+007A [00D97A]  10FF                       BLD    255
+007C [00D97C]  BA00                       U(     
+007E [00D97E]  8A28                       O      M 40.2 ; N_1.26 — HORIZ.-TRANSP.VOR BIS STATION 1
+0080 [00D980]  8F2C                       O      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+0082 [00D982]  8E32                       O      M 50.6 ; N_1.110 — HORIZ.-TRANSPORT VOR BIS STATION 8
+0084 [00D984]  BF00                       )      
+0086 [00D986]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+0088 [00D988]  8E29                       O      M 41.6 ; N_1.38 — HORIZ.-TRANSPORT VOR BIS STATION 2
+008A [00D98A]  8A2B                       O      M 43.2 ; N_1.50 — HORIZ.-TRANSPORT VOR BIS STATION 3
+008C [00D98C]  8F2C                       O      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+008E [00D98E]  8A2E                       O      M 46.2 ; N_1.74 — HORIZ.-TRANSPORT VOR BIS STATION 5
+0090 [00D990]  8E2F                       O      M 47.6 ; N_1.86 — HORIZ.-TRANSPORT VOR BIS STATION 6
+0092 [00D992]  8A31                       O      M 49.2 ; N_1.98 — HORIZ.-TRANSPORT VOR BIS STATION 7
+0094 [00D994]  9841                       =      M 65.0 ; M65.0 — HORIZ.-TR.VORFAHREN IM AUTOBETRIEB
+0096 [00D996]  10FF                       BLD    255
+0098 [00D998]  8034                       U      M 52.0 ; N_1.120 — HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+009A [00D99A]  C50C                       U      E 12.5 ; B12.5 — VERT.-TRANSPORT OBEN
+009C [00D99C]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+009E [00D99E]  813F                       U      M 63.1 ; M_GERADE — TROMMEL GERADE
+00A0 [00D9A0]  9D41                       =      M 65.5 ; M65.5 — HORIZ.-TR.ZURUECK IM AUTOBETRIEB
+00A2 [00D9A2]  10FF                       BLD    255
+00A4 [00D9A4]  8228                       U      M 40.2 ; N_1.26 — HORIZ.-TRANSP.VOR BIS STATION 1
+00A6 [00D9A6]  E10B                       UN     E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+00A8 [00D9A8]  FB00                       O      
+00AA [00D9AA]  8629                       U      M 41.6 ; N_1.38 — HORIZ.-TRANSPORT VOR BIS STATION 2
+00AC [00D9AC]  E20B                       UN     E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+00AE [00D9AE]  FB00                       O      
+00B0 [00D9B0]  822B                       U      M 43.2 ; N_1.50 — HORIZ.-TRANSPORT VOR BIS STATION 3
+00B2 [00D9B2]  E30B                       UN     E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+00B4 [00D9B4]  FB00                       O      
+00B6 [00D9B6]  872C                       U      M 44.7 ; N_1.63 — HORIZ.-TRANSPORT VOR BIS STATION 4
+00B8 [00D9B8]  E40B                       UN     E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+00BA [00D9BA]  FB00                       O      
+00BC [00D9BC]  822E                       U      M 46.2 ; N_1.74 — HORIZ.-TRANSPORT VOR BIS STATION 5
+00BE [00D9BE]  E677                       UN     E 119.6 ; B119.6 — HORIZ.-TRANSPORT STATION 5
+00C0 [00D9C0]  FB00                       O      
+00C2 [00D9C2]  862F                       U      M 47.6 ; N_1.86 — HORIZ.-TRANSPORT VOR BIS STATION 6
+00C4 [00D9C4]  E777                       UN     E 119.7 ; B119.7 — HORIZ.-TRANSPORT STATION 6
+00C6 [00D9C6]  FB00                       O      
+00C8 [00D9C8]  8231                       U      M 49.2 ; N_1.98 — HORIZ.-TRANSPORT VOR BIS STATION 7
+00CA [00D9CA]  E078                       UN     E 120.0 ; B120.0 — HORIZ.-TRANSPORT STATION 7
+00CC [00D9CC]  FB00                       O      
+00CE [00D9CE]  8632                       U      M 50.6 ; N_1.110 — HORIZ.-TRANSPORT VOR BIS STATION 8
+00D0 [00D9D0]  E178                       UN     E 120.1 ; B120.1 — HORIZ.-TRANSPORT STATION 8
+00D2 [00D9D2]  FB00                       O      
+00D4 [00D9D4]  8034                       U      M 52.0 ; N_1.120 — HORIZ.-TRSP.ZURUECK BIS BELADESTATION
+00D6 [00D9D6]  E00B                       UN     E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+00D8 [00D9D8]  9E41                       =      M 65.6 ; M65.6 — HORIZ.-TR.SCHNELL IM AUTOBETRIEB
+00DA [00D9DA]  10FF                       BLD    255
+00DC [00D9DC]  8028                       U      M 40.0 ; N_1.24 — BELADESTATION, VERT.-TRANSPORT HEBEN
+00DE [00D9DE]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+00E0 [00D9E0]  FB00                       O      
+00E2 [00D9E2]  8029                       U      M 41.0 ; N_1.32 — VERT.-TRANSP.HEBEN BIS OBEN ST.1
+00E4 [00D9E4]  C10B                       U      E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+00E6 [00D9E6]  FB00                       O      
+00E8 [00D9E8]  842A                       U      M 42.4 ; N_1.44 — VERT.-TRANSPORT HEBEN BIS OBEN ST.2
+00EA [00D9EA]  C20B                       U      E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+00EC [00D9EC]  FB00                       O      
+00EE [00D9EE]  802C                       U      M 44.0 ; N_1.56 — VERT.-TR.HEBEN BIS OBEN STATION 3
+00F0 [00D9F0]  C30B                       U      E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+00F2 [00D9F2]  FB00                       O      
+00F4 [00D9F4]  852D                       U      M 45.5 ; N_1.69 — VERT.-TR.HEBEN BIS OBEN STATION 4
+00F6 [00D9F6]  C40B                       U      E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+00F8 [00D9F8]  FB00                       O      
+00FA [00D9FA]  802F                       U      M 47.0 ; N_1.80 — VERT.-TRANSPORT HEBEN BIS OBEN ST.5
+00FC [00D9FC]  C677                       U      E 119.6 ; B119.6 — HORIZ.-TRANSPORT STATION 5
+00FE [00D9FE]  FB00                       O      
+0100 [00DA00]  8430                       U      M 48.4 ; N_1.92 — VERT.-TRANSPORT HEBEN BIS OBEN ST.6
+0102 [00DA02]  C777                       U      E 119.7 ; B119.7 — HORIZ.-TRANSPORT STATION 6
+0104 [00DA04]  FB00                       O      
+0106 [00DA06]  8032                       U      M 50.0 ; N_1.104 — VERT.-TRANSPORT HEBEN BIS OBEN ST.7
+0108 [00DA08]  C078                       U      E 120.0 ; B120.0 — HORIZ.-TRANSPORT STATION 7
+010A [00DA0A]  FB00                       O      
+010C [00DA0C]  8333                       U      M 51.3 ; N_1.115 — VERT.-TRANSPORT HEBEN BIS OBEN ST.8
+010E [00DA0E]  C178                       U      E 120.1 ; B120.1 — HORIZ.-TRANSPORT STATION 8
+0110 [00DA10]  9A42                       =      M 66.2 ; M66.2 — HM VERT-TR.HEBEN IM AUTOBETRIEB
+0112 [00DA12]  10FF                       BLD    255
+0114 [00DA14]  BA00                       U(     
+0116 [00DA16]  8A42                       O      M 66.2 ; M66.2 — HM VERT-TR.HEBEN IM AUTOBETRIEB
+0118 [00DA18]  8A44                       O      M 68.2 ; M68.2 — VT - KURZHUB HEBEN
+011A [00DA1A]  BF00                       )      
+011C [00DA1C]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+011E [00DA1E]  9C42                       =      M 66.4 ; M66.4 — VERT.-TRANSPORT HEBEN IM AUTOBETRIEB
+0120 [00DA20]  10FF                       BLD    255
+0122 [00DA22]  8428                       U      M 40.4 ; N_1.28 — VERT.-TRANSPORT SENKEN STATION 1
+0124 [00DA24]  C10B                       U      E 11.1 ; B11.1 — HORIZ.-TRANSPORT STATION 1
+0126 [00DA26]  FB00                       O      
+0128 [00DA28]  802A                       U      M 42.0 ; N_1.40 — VERT.-TRANSPORT SENKEN STATION 2
+012A [00DA2A]  C20B                       U      E 11.2 ; B11.2 — HORIZ.-TRANSPORT STATION 2
+012C [00DA2C]  FB00                       O      
+012E [00DA2E]  842B                       U      M 43.4 ; N_1.52 — VERT.-TRANSPORT SENKEN STATION 3
+0130 [00DA30]  C30B                       U      E 11.3 ; B11.3 — HORIZ.-TRANSPORT STATION 3
+0132 [00DA32]  FB00                       O      
+0134 [00DA34]  812D                       U      M 45.1 ; N_1.65 — VERT.-TRANSPORT SENKEN STATION 4
+0136 [00DA36]  C40B                       U      E 11.4 ; B11.4 — HORIZ.-TRANSPORT STATION 4
+0138 [00DA38]  FB00                       O      
+013A [00DA3A]  842E                       U      M 46.4 ; N_1.76 — VERT.-TRANSPORT SENKEN STATION 5
+013C [00DA3C]  C677                       U      E 119.6 ; B119.6 — HORIZ.-TRANSPORT STATION 5
+013E [00DA3E]  FB00                       O      
+0140 [00DA40]  8030                       U      M 48.0 ; N_1.88 — VERT.-TRANSPORT SENKEN STATION 6
+0142 [00DA42]  C777                       U      E 119.7 ; B119.7 — HORIZ.-TRANSPORT STATION 6
+0144 [00DA44]  FB00                       O      
+0146 [00DA46]  8431                       U      M 49.4 ; N_1.100 — VERT.-TRANSPORT SENKEN STATION 7
+0148 [00DA48]  C078                       U      E 120.0 ; B120.0 — HORIZ.-TRANSPORT STATION 7
+014A [00DA4A]  FB00                       O      
+014C [00DA4C]  8033                       U      M 51.0 ; N_1.112 — VERT.-TRANSPORT SENKEN STATION 8
+014E [00DA4E]  C178                       U      E 120.1 ; B120.1 — HORIZ.-TRANSPORT STATION 8
+0150 [00DA50]  9D42                       =      M 66.5 ; M66.5 — HM 1 VERT.-TR.SENKEN IM AUTOBETRIEB
+0152 [00DA52]  10FF                       BLD    255
+0154 [00DA54]  8234                       U      M 52.2 ; N_1.122 — VERT.-TRANSPORT SENKEN IN BELADESTATION
+0156 [00DA56]  C00B                       U      E 11.0 ; B11.0 — HORIZ.-TRANSPORT BELADESTATION
+0158 [00DA58]  BA00                       U(     
+015A [00DA5A]  E90C                       ON     E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+015C [00DA5C]  EF0C                       ON     E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+015E [00DA5E]  BF00                       )      
+0160 [00DA60]  9E42                       =      M 66.6 ; M66.6 — HM 2 VERT.-TR.SENKEN IM AUTOBETRIEB
+0162 [00DA62]  10FF                       BLD    255
+0164 [00DA64]  BA00                       U(     
+0166 [00DA66]  8D42                       O      M 66.5 ; M66.5 — HM 1 VERT.-TR.SENKEN IM AUTOBETRIEB
+0168 [00DA68]  8E42                       O      M 66.6 ; M66.6 — HM 2 VERT.-TR.SENKEN IM AUTOBETRIEB
+016A [00DA6A]  8B44                       O      M 68.3 ; M68.3 — VT - KURZHUB SENKEN
+016C [00DA6C]  BF00                       )      
+016E [00DA6E]  C60B                       U      E 11.6 ; B11.6 — HORIZ.-TRANSPORT IN POSITION
+0170 [00DA70]  9F42                       =      M 66.7 ; M66.7 — VERT.-TRANSPORT SENKEN IM AUTOBETRIEB
+0172 [00DA72]  10FF                       BLD    255
+0174 [00DA74]  8627                       U      M 39.6 ; N_1.22 — WT-TRANSPORT EINFAHREN              OPT.
+0176 [00DA76]  C57C                       U      E 124.5 ; S124.5 — WT-TRANSPORT OBEN
+0178 [00DA78]  A309                       UN     M 9.3 ; STOER_36 — STOERUNG WT-TRANSPORT EIN-/AUSFAHREN OPT
+017A [00DA7A]  E3F1                       UN     A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+017C [00DA7C]  9843                       =      M 67.0 ; M67.0 — WT-TRANSPORT EINFAHREN IM AUTOBETRIEB
+017E [00DA7E]  10FF                       BLD    255
+0180 [00DA80]  8035                       U      M 53.0 ; N_1.128 — WT-TRANSPORT AUSFAHREN
+0182 [00DA82]  A309                       UN     M 9.3 ; STOER_36 — STOERUNG WT-TRANSPORT EIN-/AUSFAHREN OPT
+0184 [00DA84]  C57C                       U      E 124.5 ; S124.5 — WT-TRANSPORT OBEN
+0186 [00DA86]  E3F1                       UN     A 113.3 ; Y113.3 — SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+0188 [00DA88]  9943                       =      M 67.1 ; M67.1 — WT-TRANSPORT AUSFAHREN IM AUTOBETRIEB
+018A [00DA8A]  10FF                       BLD    255
+018C [00DA8C]  8427                       U      M 39.4 ; N_1.20 — WT-TRANSPORT HEBEN                  OPT.
+018E [00DA8E]  E57C                       UN     E 124.5 ; S124.5 — WT-TRANSPORT OBEN
+0190 [00DA90]  C17C                       U      E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+0192 [00DA92]  9D43                       =      M 67.5 ; M67.5 — WT-TRANSPORT HEBEN IM AUTOBETR.
+0194 [00DA94]  10FF                       BLD    255
+0196 [00DA96]  8235                       U      M 53.2 ; N_1.130 — WT-TRANSPORT SENKEN
+0198 [00DA98]  E47C                       UN     E 124.4 ; S124.4 — WT-TRANSPORT UNTEN
+019A [00DA9A]  C17C                       U      E 124.1 ; B124.1 — WT-TRANSPORT AUSGEFAHREN
+019C [00DA9C]  9E43                       =      M 67.6 ; M67.6 — WT-TRANSPORT SENKEN IM AUTOBETR.
+019E [00DA9E]  10FF                       BLD    255
+01A0 [00DAA0]  BA00                       U(     
+01A2 [00DAA2]  8528                       U      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+01A4 [00DAA4]  C105                       U      E 5.1 ; BADHUB_1 — BADHUBFREIGABE IN STATION 1
+01A6 [00DAA6]  892A                       O      M 42.1 ; N_1.41 — VERT.-TRANSPORT UNTEN STATION 2
+01A8 [00DAA8]  8D2B                       O      M 43.5 ; N_1.53 — VERT.-TRANSPORT UNTEN STATION 3
+01AA [00DAAA]  FB00                       O      
+01AC [00DAAC]  822D                       U      M 45.2 ; N_1.66 — VERT.-TRANSPORT UNTEN STATION 4
+01AE [00DAAE]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01B0 [00DAB0]  8D2E                       O      M 46.5 ; N_1.77 — VERT.-TRANSPORT UNTEN STATION 5
+01B2 [00DAB2]  8930                       O      M 48.1 ; N_1.89 — VERT.-TRANSPORT UNTEN STATION 6
+01B4 [00DAB4]  8D31                       O      M 49.5 ; N_1.101 — VERT.-TRANSPORT UNTEN STATION 7
+01B6 [00DAB6]  BF00                       )      
+01B8 [00DAB8]  836F                       U      M 111.3 ; M111.3 — WT IN DER ANLAGE: BADHUB
+01BA [00DABA]  9844                       =      M 68.0 ; M68.0 — VT - KURZHUB AKTIV
+01BC [00DABC]  10FF                       BLD    255
+01BE [00DABE]  8044                       U      M 68.0 ; M68.0 — VT - KURZHUB AKTIV
+01C0 [00DAC0]  BA00                       U(     
+01C2 [00DAC2]  C70C                       U      E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+01C4 [00DAC4]  C10C                       U      E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+01C6 [00DAC6]  8A44                       O      M 68.2 ; M68.2 — VT - KURZHUB HEBEN
+01C8 [00DAC8]  BF00                       )      
+01CA [00DACA]  BA00                       U(     
+01CC [00DACC]  8A44                       O      M 68.2 ; M68.2 — VT - KURZHUB HEBEN
+01CE [00DACE]  F918                       O      T 24 ; T24_V_* — PAUSENZEIT VERT.WARENBEWEGUNG
+01D0 [00DAD0]  BF00                       )      
+01D2 [00DAD2]  FC19                       UN     T 25 ; T25_V_* — KURZHUB HEBEN
+01D4 [00DAD4]  9A44                       =      M 68.2 ; M68.2 — VT - KURZHUB HEBEN
+01D6 [00DAD6]  10FF                       BLD    255
+01D8 [00DAD8]  8044                       U      M 68.0 ; M68.0 — VT - KURZHUB AKTIV
+01DA [00DADA]  BA00                       U(     
+01DC [00DADC]  8B44                       O      M 68.3 ; M68.3 — VT - KURZHUB SENKEN
+01DE [00DADE]  F918                       O      T 24 ; T24_V_* — PAUSENZEIT VERT.WARENBEWEGUNG
+01E0 [00DAE0]  BF00                       )      
+01E2 [00DAE2]  BA00                       U(     
+01E4 [00DAE4]  E90C                       ON     E 12.1 ; B12.1 — VERT.-TRANSPORT UNTEN
+01E6 [00DAE6]  EF0C                       ON     E 12.7 ; B12.7 — VERT.-TRANSPORT IN POSITION
+01E8 [00DAE8]  BF00                       )      
+01EA [00DAEA]  9B44                       =      M 68.3 ; M68.3 — VT - KURZHUB SENKEN
+01EC [00DAEC]  10FF                       BLD    255
+01EE [00DAEE]  A244                       UN     M 68.2 ; M68.2 — VT - KURZHUB HEBEN
+01F0 [00DAF0]  A344                       UN     M 68.3 ; M68.3 — VT - KURZHUB SENKEN
+01F2 [00DAF2]  3218                       L      DW 24
+01F4 [00DAF4]  2418                       SE     T 24 ; T24_V_* — PAUSENZEIT VERT.WARENBEWEGUNG
+01F6 [00DAF6]  0000                       NOP0   
+01F8 [00DAF8]  0000                       NOP0   
+01FA [00DAFA]  0000                       NOP0   
+01FC [00DAFC]  0000                       NOP0   
+01FE [00DAFE]  10FF                       BLD    255
+0200 [00DB00]  8244                       U      M 68.2 ; M68.2 — VT - KURZHUB HEBEN
+0202 [00DB02]  3219                       L      DW 25
+0204 [00DB04]  2419                       SE     T 25 ; T25_V_* — KURZHUB HEBEN
+0206 [00DB06]  0000                       NOP0   
+0208 [00DB08]  0000                       NOP0   
+020A [00DB0A]  0000                       NOP0   
+020C [00DB0C]  0000                       NOP0   
+020E [00DB0E]  10FF                       BLD    255
+0210 [00DB10]  6500                       BE     

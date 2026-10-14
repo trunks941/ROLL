@@ -1,0 +1,19 @@
+{
+  "block": "FB3",
+  "source_file": "FB3ROLLS.INI",
+  "sha256": "be07d1cfbaca4326f4ad3453b361b6fc07c4960dbd446ba3e19d57774fb33983",
+  "size_bytes": 15868,
+  "pages": 6,
+  "networks": 6,
+  "block_bytes": 494,
+  "positions_compared": 216,
+  "executing_instructions": 157,
+  "BLD_display_rows": 59,
+  "jumps_compared": 15,
+  "addressed_positions": 216,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}

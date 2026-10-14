@@ -1,0 +1,175 @@
+PB 15     -PB 15                     C:04201@ST.S5D                    LEN=91   
+                                                                        Page   1
+Segment  1
+                       +---+
+           -B123.4  ---! & !   -M70.2
+           -Y113.2  --O!   !    +-----+
+           -Y113.3  ---!   !----!S    !
+             +---+     +---+    !     !
+ -B123.4  --O! & !     +---+    !     !
+ -B123.5  ---!   !-----!>=1!    !     !
+             +---+     !   !    !     !
+           -M73.7   ---!   !----!R   Q!-
+                       +---+    +-----+
+
+I  123.4 = B123.4                    WT AN SPERRE 3
+Q  113.2 = Y113.2                    SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+Q  113.3 = Y113.3                    SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+F   70.2 = M70.2                     SM WT'S UEBERFAHREN SPERRE 3
+I  123.5 = B123.5                    WT VOR SPERRE 4
+F   73.7 = M73.7                     KORREKTUR SM WT-VERFOLGUNG
+
+
+Segment  2
+                       +---+
+           -M71.0   ---!>=1!
+             +---+     !   !
+ -B123.6  ---! & !     !   !
+ -M74.0   ---!   !     !   !     +---+
+ -HB_02   --O!   !-----!   !-----! & !
+             +---+     +---+     !   !
+                     -B124.1  ---!   !   -M70.3
+                     -S124.4  ---!   !    +-----+
+                     -Y113.2  ---!   !----!S    !
+                       +---+     +---+    !     !
+           -B123.5  --O! & !     +---+    !     !
+           -B123.6  --O!   !-----!>=1!    !     !
+                       +---+     !   !    !     !
+                     -M73.7   ---!   !----!R   Q!-
+                                 +---+    +-----+
+
+F   71.0 = M71.0                     SM WT AN SPERRE 4 AUS REINIGUNG
+I  123.6 = B123.6                    SPERRE 4 FREIFAHREN
+F   74.0 = M74.0                     MERKER FAHREN IN GRUNDSTELLUNG
+F   20.2 = HB_02                     FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+I  124.1 = B124.1                    WT-TRANSPORT AUSGEFAHREN
+I  124.4 = S124.4                    WT-TRANSPORT UNTEN
+Q  113.2 = Y113.2                    SPERRE 3 SCHLIESSEN, SPERRE 4 OEFFNEN
+F   70.3 = M70.3                     SM WT'S UEBERFAHREN SPERRE 4
+I  123.5 = B123.5                    WT VOR SPERRE 4
+F   73.7 = M73.7                     KORREKTUR SM WT-VERFOLGUNG
+
+Segment  3
+             +---+
+ -B123.1  ---! & !
+ -T45     ---!   !
+ -M71.1   --O!   !
+ -M191.4  ---!   !
+ -AUTO_E  ---!   !
+ -STOER_89--O!   !   -M70.4
+ -STOER_90--O!   !    +-----+
+ -STOER_93--O!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -B123.1  --O!>=1!    !     !
+ -M73.7   ---!   !----!R   Q!-
+             +---+    +-----+
+
+PB 15     -PB 15                     C:04201@ST.S5D                    LEN=91   
+                                                                        Page   2
+I  123.1 = B123.1                    WT AN SPERRE 1 UND SPERRE 1 FREI
+T   45   = T45                       VERZ.UEBERFAHREN SPERRE 1
+F   71.1 = M71.1                     DATENPLATZ 1 (NACH SPERRE 1) BELEGT
+F  191.4 = M191.4                    REINIGUNGSPROGRAMM IST I.ORDNUNG
+F   31.4 = AUTO_E                    AUTOMATIK EIN
+F   16.0 = STOER_89                  ANGEWAEHLTES PROGR.IM OP NICHT VORHANDEN
+F   16.1 = STOER_90                  ANGEWAEHLTES PROGR.IM OP FEHLERHAFT
+F   16.4 = STOER_93                  PROGRAMMNR.0 AUF PLATZ 4             OPT
+F   70.4 = M70.4                     SM WT'S UEBERFAHREN SPERRE 1
+F   73.7 = M73.7                     KORREKTUR SM WT-VERFOLGUNG
+
+Segment  4
+                     -M70.5
+                      +-----+
+           -B123.6  --!S    !
+             +---+    !     !
+ -B125.0  ---!>=1!    !     !
+ -M73.7   ---!   !----!R   Q!-
+             +---+    +-----+
+
+I  123.6 = B123.6                    SPERRE 4 FREIFAHREN
+F   70.5 = M70.5                     SM WT ZWISCHEN SPERRE 4 UND 5
+I  125.0 = B125.0                    WT AN SPERRE 6
+F   73.7 = M73.7                     KORREKTUR SM WT-VERFOLGUNG
+
+Segment  5
+                       +---+
+           -B125.0  ---! & !   -M70.6
+           -B125.1  --O!   !    +-----+
+           -Y113.4  ---!   !----!S    !
+             +---+     +---+    !     !
+ -B125.1  ---! & !     +---+    !     !
+ -Y113.5  ---!   !-----!>=1!    !     !
+             +---+     !   !    !     !
+           -M73.7   ---!   !----!R   Q!-
+                       +---+    +-----+
+
+I  125.0 = B125.0                    WT AN SPERRE 6
+I  125.1 = B125.1                    WT AM ENDE BAHN 2
+Q  113.4 = Y113.4                    SPERRE 5 OEFFNEN, SPERRE 6 SCHLIESSEN
+F   70.6 = M70.6                     SM WT'S UEBERFAHREN SPERRE 6
+Q  113.5 = Y113.5                    SPERRE 5 SCHLIESSEN, SPERRE 6 OEFFNEN
+F   73.7 = M73.7                     KORREKTUR SM WT-VERFOLGUNG
+
+Segment  6
+             +---+
+ -T45     ---! & !   -M70.7
+ -M71.1   --O!   !    +-----+
+ -B123.1  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -B123.4  ---!>=1!    !     !
+ -M73.7   ---!   !----!R   Q!-
+             +---+    +-----+
+
+T   45   = T45                       VERZ.UEBERFAHREN SPERRE 1
+F   71.1 = M71.1                     DATENPLATZ 1 (NACH SPERRE 1) BELEGT
+I  123.1 = B123.1                    WT AN SPERRE 1 UND SPERRE 1 FREI
+F   70.7 = M70.7                     SM WT ZWISCHEN SPERRE 1 UND 3
+I  123.4 = B123.4                    WT AN SPERRE 3
+F   73.7 = M73.7                     KORREKTUR SM WT-VERFOLGUNG
+
+
+PB 15     -PB 15                     C:04201@ST.S5D                    LEN=91   
+                                                                        Page   3
+Segment  7
+             +---+   -M71.0
+ -Y113.3  ---! & !    +-----+
+ -B123.5  ---!   !----!S    !
+             +---+    !     !
+             +---+    !     !
+ -M70.3   ---!>=1!    !     !
+ -M73.7   ---!   !----!R   Q!-
+             +---+    +-----+
+
+Q  113.3 = Y113.3                    SPERRE 3 OEFFNEN, SPERRE 4 SCHLIESSEN
+I  123.5 = B123.5                    WT VOR SPERRE 4
+F   71.0 = M71.0                     SM WT AN SPERRE 4 AUS REINIGUNG
+F   70.3 = M70.3                     SM WT'S UEBERFAHREN SPERRE 4
+F   73.7 = M73.7                     KORREKTUR SM WT-VERFOLGUNG
+
+Segment  8
+                       +---+
+           -HAND    ---! & !
+             +---+     !   !
+ -HB_01   ---!>=1!     !   !
+ -HB_02   ---!   !-----!   !
+             +---+     !   !
+           -T-GNDST ---!   !
+           -T-ARBST --O!   !    +------+
+           -M28.4   --O!   !--+-! =    ! -M74.0
+                       +---+    +------+
+
+I    0.1 = HAND                      BETRIEBSART HAND
+F   20.1 = HB_01                     FAHREN IN GRUNDSTELLUNG
+F   20.2 = HB_02                     FAHREN IN NAECHSTE AUTO-START-POS.  OPT.
+F  190.5 = T-GNDST                   TASTE GRUNDSTELLUNG IST BETAETIGT
+F  190.6 = T-ARBST                   TASTE ARBEITSSTELLUNG IST BETAETIGT
+F   28.4 = M28.4                     ZUSAMMENFASSUNG GRUNDSTELLUNG
+F   74.0 = M74.0                     MERKER FAHREN IN GRUNDSTELLUNG
+
+Segment  9
+ 
+                    :BE
+
+

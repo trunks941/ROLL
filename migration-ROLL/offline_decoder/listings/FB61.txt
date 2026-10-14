@@ -1,0 +1,26 @@
+FB61: TAKTEIN — EINSTELLUNG ZEITINTERVALL FUER OB 13
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x1600; block bytes: 64; SHA256: 69050aaae57096ddd03b8f04d886937e824bef57563f81a121a4294b54a06080
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 3D 84 00 00 00 00 20
+Code starts at block offset 0x0014.
+FB name: 'EINST   '; entry SPA bytes: 2D05
+0014 [001614]  30040019                   L      KF +25
+0018 [001618]  6361                       T      BS 97
+001A [00161A]  1082                       BLD    130
+001C [00161C]  10FF                       BLD    255
+001E [00161E]  1082                       BLD    130
+0020 [001620]  1083                       BLD    131
+0022 [001622]  6278                       L      BS 120
+0024 [001624]  30400008                   L      KH 0008
+0028 [001628]  4900                       OW     
+002A [00162A]  6378                       T      BS 120
+002C [00162C]  1082                       BLD    130
+002E [00162E]  10FF                       BLD    255
+0030 [001630]  1082                       BLD    130
+0032 [001632]  1083                       BLD    131
+0034 [001634]  1082                       BLD    130
+0036 [001636]  300403E8                   L      KF +1000
+003A [00163A]  637E                       T      BS 126
+003C [00163C]  1082                       BLD    130
+003E [00163E]  6500                       BE     

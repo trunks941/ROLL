@@ -1,0 +1,223 @@
+ue
+
+ee
+
+a
+
+#4
+
+AG
+
+—E
+
+i
+
+I
+
+I
+
+4
+
+T
+
+5
+
+I
+
+ama
+
+Sean [a
+
+D
+
+I
+
+10
+
+ice
+
+IPT IL
+
+13
+
+ia]
+
+15]
+
+161
+
+\
+
+Schaltplan Inhaltsverzeichnis
+
+Seite
+
+Benennung
+
+Seite
+
+Benennung
+
+‘Schaltplan Deckblatt
+
+7
+
+‘Stromversorgung 24V DC, OP 15
+
+‘Schaltplan - Inhatsverzeichnis
+
+18
+
+Not-Aus (Auswertgerat)
+
+‘Schaltplan - Inhaltsverzeichnis
+
+19
+
+Wartungstiiren (Auswertgerat)
+
+Beleuchtung und Steckdoser
+
+Schaltschrank, Leckwarnsonde
+
+20
+
+Tire
+
+Entladestation
+
+(Auswertgeral)
+
+Geblise Absaugung und Geblase Warmluft Trockentunnel
+
+a
+
+Sichetheitsabschaltung Heizung Station 4
+
+Heizung Warmluf Station 4
+
+22
+
+Sicherheitsabschaltung Heizung RAV
+
+Heizung Verdampter RAV
+
+23
+
+Temperaturregelung Heizung Station 1,3
+
+U-Schall Generator Station 1
+
+24
+
+Temperaturregelung Heizung Station 4
+
+U-Schall Generator Station 1
+
+25
+
+10
+
+Eingang E0.0-€0,7 (Bedienelemente am Schallschr,Trockenbetr.
+
+Beleuchtung in der Anlage
+
+Service-Klemmen)
+
+1"
+
+lskimmer und Pumpen
+
+26
+
+Eingang E1.0-E1.7 (Bedienelemente Strung quittieren,
+
+Lampentest,Heizung Stat.4 und Dest. RAV)
+
+12
+
+Pumpen
+
+27
+
+13
+
+Horizontal-Transport
+
+Eingang E2.0-E2.7 (Bedienelemente am Schalltschrank)
+
+28
+
+Eingang E3.0-€3.7 (Steuerung Ein, Themnmostat
+
+14
+
+Vertikal-Transport
+
+lund Motorschutzschalter)
+
+15
+
+Trommel
+
+29
+
+Eingang E4.0-E4.7 (Pot freie Meldungen,Kontr. Sicherungen)
+
+16
+
+Stromversorgung, Steckdose
+
+—
+
+—_—
+
+ry
+
+Karl Roll
+
+a
+
+Fuses
+
+Schaliplan Nr
+
+Benennung
+
+Inventar-Ne.
+
+Rei
+
+ingssysteme
+
+Davee
+
+Mibhineker-Enzberg
+
+KS04201
+
+dowd
+
+om.
+
+Now
+
+RET0120-080-056-04
+
+Geb,
+
+Gruppe
+
+Mone
+
+Cpa
+
+Be
+
+Blatt:
+
+2/50
+
+a
+
+—SSTST==__S

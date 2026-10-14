@@ -1,0 +1,526 @@
+PB21: PB 21 — VERFAHRENSTECHNIK STATION 1 - 4
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xE980; block bytes: 1056; SHA256: d09b762fb3a4ade02069b47263d081761e79a0fb47625196b8e7c092b4e69b0b
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 15 80 00 00 00 02 10
+Code starts at block offset 0x000A.
+000A [00E98A]  1083                       BLD    131
+000C [00E98C]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+000E [00E98E]  10FF                       BLD    255
+0010 [00E990]  E603                       UN     E 3.6 ; Q/PU_GE — MOTORSCHUTZSCHALTER PUMPEN/GEBLAESE
+0012 [00E992]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+0014 [00E994]  A10D                       UN     M 13.1 ; STOER_66 — TROCKENLAUF PUMPE P0
+0016 [00E996]  9F63                       =      M 99.7 ; M99.7 — PUMPE P0 (UMPUMPEN) PRINZ.MOEGLICH
+0018 [00E998]  10FF                       BLD    255
+001A [00E99A]  A610                       UN     M 16.6 ; STOER_95 — STEUERUNG EIN FEHLT
+001C [00E99C]  A206                       UN     M 6.2 ; STOER_11 — OELABSCHEIDER UEBERFUELLT ..........B5.4
+001E [00E99E]  A006                       UN     M 6.0 ; STOER_09 — STATION 1 UEBERFUELLT ..............B5.2
+0020 [00E9A0]  A30D                       UN     M 13.3 ; STOER_68 — LECKWARNSONDE BODENWANNE ANGESPR.  B 5.0
+0022 [00E9A2]  C003                       U      E 3.0 ; STEUSP — STEUERSPANNUNG VORHANDEN
+0024 [00E9A4]  C005                       U      E 5.0 ; LECK — LECKWARNSONDE BODENWANNE I.O.
+0026 [00E9A6]  C205                       U      E 5.2 ; B5.2 — NIVEAU STATION 1 UEF
+0028 [00E9A8]  C405                       U      E 5.4 ; B5.4 — NIVEAU OELABSCHEIDER STAT.1 UEF
+002A [00E9AA]  9864                       =      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+002C [00E9AC]  10FF                       BLD    255
+002E [00E9AE]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0030 [00E9B0]  9164                       S      M 100.1 ; M100.1 — STAT.1 FUELLEN VE-WASSER IM HB ....(RES)
+0032 [00E9B2]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+0034 [00E9B4]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0036 [00E9B6]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0038 [00E9B8]  FB00                       O      
+003A [00E9BA]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+003C [00E9BC]  C305                       U      E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+003E [00E9BE]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+0040 [00E9C0]  B164                       R      M 100.1 ; M100.1 — STAT.1 FUELLEN VE-WASSER IM HB ....(RES)
+0042 [00E9C2]  0000                       NOP0   
+0044 [00E9C4]  10FF                       BLD    255
+0046 [00E9C6]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0048 [00E9C8]  9264                       S      M 100.2 ; M100.2 — STAT.1 ERSTBEFUELLUNG MIT VE-WASSER I.HB
+004A [00E9CA]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+004C [00E9CC]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+004E [00E9CE]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0050 [00E9D0]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+0052 [00E9D2]  FB00                       O      
+0054 [00E9D4]  C305                       U      E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+0056 [00E9D6]  C605                       U      E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+0058 [00E9D8]  B264                       R      M 100.2 ; M100.2 — STAT.1 ERSTBEFUELLUNG MIT VE-WASSER I.HB
+005A [00E9DA]  0000                       NOP0   
+005C [00E9DC]  10FF                       BLD    255
+005E [00E9DE]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0060 [00E9E0]  9364                       S      M 100.3 ; M100.3 — STAT.1 FUELLEN AUS RAV IM HB ......(RES)
+0062 [00E9E2]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+0064 [00E9E4]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0066 [00E9E6]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0068 [00E9E8]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+006A [00E9EA]  FB00                       O      
+006C [00E9EC]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+006E [00E9EE]  E507                       UN     E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+0070 [00E9F0]  8E05                       O      M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+0072 [00E9F2]  8D08                       O      M 8.5 ; STOER_30 — RAV NIVEAUMANGEL DESTILLATBEH. .....B7.5
+0074 [00E9F4]  B364                       R      M 100.3 ; M100.3 — STAT.1 FUELLEN AUS RAV IM HB ......(RES)
+0076 [00E9F6]  0000                       NOP0   
+0078 [00E9F8]  10FF                       BLD    255
+007A [00E9FA]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+007C [00E9FC]  9464                       S      M 100.4 ; M100.4 — STAT.1 <- UMPUMPEN IM HB ..........(RES)
+007E [00E9FE]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+0080 [00EA00]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0082 [00EA02]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0084 [00EA04]  AF63                       ON     M 99.7 ; M99.7 — PUMPE P0 (UMPUMPEN) PRINZ.MOEGLICH
+0086 [00EA06]  FB00                       O      
+0088 [00EA08]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+008A [00EA0A]  A064                       UN     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+008C [00EA0C]  B464                       R      M 100.4 ; M100.4 — STAT.1 <- UMPUMPEN IM HB ..........(RES)
+008E [00EA0E]  0000                       NOP0   
+0090 [00EA10]  10FF                       BLD    255
+0092 [00EA12]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0094 [00EA14]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+0096 [00EA16]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+0098 [00EA18]  A51F                       UN     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+009A [00EA1A]  8064                       U      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+009C [00EA1C]  BA00                       U(     
+009E [00EA1E]  FD46                       ON     T 70 ; T70 — VERZ.HEIZUNG AUS STATION 1
+00A0 [00EA20]  EE05                       ON     E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+00A2 [00EA22]  BF00                       )      
+00A4 [00EA24]  9D64                       =      M 100.5 ; M100.5 — STAT.1 ANF.AUTOM.NACHFUELLEN IM AB (RES)
+00A6 [00EA26]  10FF                       BLD    255
+00A8 [00EA28]  8564                       U      M 100.5 ; M100.5 — STAT.1 ANF.AUTOM.NACHFUELLEN IM AB (RES)
+00AA [00EA2A]  BA00                       U(     
+00AC [00EA2C]  C507                       U      E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+00AE [00EA2E]  F861                       U      T 97 ; T97_* — VERZ.MELDUNG DESTILLATBEH.NICHT LEER
+00B0 [00EA30]  FD60                       ON     T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+00B2 [00EA32]  BF00                       )      
+00B4 [00EA34]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00B6 [00EA36]  9E64                       =      M 100.6 ; M100.6 — STAT.1 AUTOM.NACHFUELL.AUS RAV AB  (RES)
+00B8 [00EA38]  10FF                       BLD    255
+00BA [00EA3A]  8564                       U      M 100.5 ; M100.5 — STAT.1 ANF.AUTOM.NACHFUELLEN IM AB (RES)
+00BC [00EA3C]  BA00                       U(     
+00BE [00EA3E]  E507                       UN     E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+00C0 [00EA40]  F860                       U      T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+00C2 [00EA42]  FD61                       ON     T 97 ; T97_* — VERZ.MELDUNG DESTILLATBEH.NICHT LEER
+00C4 [00EA44]  BF00                       )      
+00C6 [00EA46]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00C8 [00EA48]  9F64                       =      M 100.7 ; M100.7 — STAT.1 AUTOM.NACHFUELL.VE-WASSER AB(RES)
+00CA [00EA4A]  10FF                       BLD    255
+00CC [00EA4C]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+00CE [00EA4E]  9165                       S      M 101.1 ; M101.1 — STAT.2 FUELLEN VE-WASSER IM HB ....(RES)
+00D0 [00EA50]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+00D2 [00EA52]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+00D4 [00EA54]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00D6 [00EA56]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+00D8 [00EA58]  FB00                       O      
+00DA [00EA5A]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+00DC [00EA5C]  C305                       U      E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+00DE [00EA5E]  C605                       U      E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+00E0 [00EA60]  C006                       U      E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+00E2 [00EA62]  B165                       R      M 101.1 ; M101.1 — STAT.2 FUELLEN VE-WASSER IM HB ....(RES)
+00E4 [00EA64]  0000                       NOP0   
+00E6 [00EA66]  10FF                       BLD    255
+00E8 [00EA68]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+00EA [00EA6A]  9265                       S      M 101.2 ; M101.2 — STAT.2 ERSTBEFUELLUNG MIT VE-WASSER I.HB
+00EC [00EA6C]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+00EE [00EA6E]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+00F0 [00EA70]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+00F2 [00EA72]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+00F4 [00EA74]  FB00                       O      
+00F6 [00EA76]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+00F8 [00EA78]  C305                       U      E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+00FA [00EA7A]  C605                       U      E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+00FC [00EA7C]  C006                       U      E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+00FE [00EA7E]  B265                       R      M 101.2 ; M101.2 — STAT.2 ERSTBEFUELLUNG MIT VE-WASSER I.HB
+0100 [00EA80]  0000                       NOP0   
+0102 [00EA82]  10FF                       BLD    255
+0104 [00EA84]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0106 [00EA86]  9365                       S      M 101.3 ; M101.3 — STAT.2 FUELLEN AUS RAV IM HB ......(RES)
+0108 [00EA88]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+010A [00EA8A]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+010C [00EA8C]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+010E [00EA8E]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+0110 [00EA90]  FB00                       O      
+0112 [00EA92]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0114 [00EA94]  BA00                       U(     
+0116 [00EA96]  C806                       O      E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+0118 [00EA98]  ED07                       ON     E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+011A [00EA9A]  BF00                       )      
+011C [00EA9C]  8E05                       O      M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+011E [00EA9E]  8D08                       O      M 8.5 ; STOER_30 — RAV NIVEAUMANGEL DESTILLATBEH. .....B7.5
+0120 [00EAA0]  B365                       R      M 101.3 ; M101.3 — STAT.2 FUELLEN AUS RAV IM HB ......(RES)
+0122 [00EAA2]  0000                       NOP0   
+0124 [00EAA4]  10FF                       BLD    255
+0126 [00EAA6]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0128 [00EAA8]  9465                       S      M 101.4 ; M101.4 — STAT.2 <- UMPUMPEN IM HB ..........(RES)
+012A [00EAAA]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+012C [00EAAC]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+012E [00EAAE]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0130 [00EAB0]  AF63                       ON     M 99.7 ; M99.7 — PUMPE P0 (UMPUMPEN) PRINZ.MOEGLICH
+0132 [00EAB2]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+0134 [00EAB4]  FB00                       O      
+0136 [00EAB6]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0138 [00EAB8]  C006                       U      E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+013A [00EABA]  B465                       R      M 101.4 ; M101.4 — STAT.2 <- UMPUMPEN IM HB ..........(RES)
+013C [00EABC]  0000                       NOP0   
+013E [00EABE]  10FF                       BLD    255
+0140 [00EAC0]  C006                       U      E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+0142 [00EAC2]  30022005                   L      KT 005.2
+0146 [00EAC6]  2479                       SE     T 121 ; T121_* — VERZOEGERUNG NIVEAU STATION 2 I.O.
+0148 [00EAC8]  0000                       NOP0   
+014A [00EACA]  0000                       NOP0   
+014C [00EACC]  0000                       NOP0   
+014E [00EACE]  0000                       NOP0   
+0150 [00EAD0]  10FF                       BLD    255
+0152 [00EAD2]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0154 [00EAD4]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+0156 [00EAD6]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+0158 [00EAD8]  A51F                       UN     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+015A [00EADA]  8064                       U      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+015C [00EADC]  BA00                       U(     
+015E [00EADE]  E806                       ON     E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+0160 [00EAE0]  FB00                       O      
+0162 [00EAE2]  8565                       U      M 101.5 ; M101.5 — STAT.2 ANF.AUTOM.NACHFUELLEN IM AB
+0164 [00EAE4]  FC79                       UN     T 121 ; T121_* — VERZOEGERUNG NIVEAU STATION 2 I.O.
+0166 [00EAE6]  BF00                       )      
+0168 [00EAE8]  9D65                       =      M 101.5 ; M101.5 — STAT.2 ANF.AUTOM.NACHFUELLEN IM AB
+016A [00EAEA]  10FF                       BLD    255
+016C [00EAEC]  8565                       U      M 101.5 ; M101.5 — STAT.2 ANF.AUTOM.NACHFUELLEN IM AB
+016E [00EAEE]  BA00                       U(     
+0170 [00EAF0]  C507                       U      E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+0172 [00EAF2]  F861                       U      T 97 ; T97_* — VERZ.MELDUNG DESTILLATBEH.NICHT LEER
+0174 [00EAF4]  FD60                       ON     T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+0176 [00EAF6]  BF00                       )      
+0178 [00EAF8]  9E65                       =      M 101.6 ; M101.6 — STAT.2 AUTOM.NACHFUELL.AUS RAV AB
+017A [00EAFA]  10FF                       BLD    255
+017C [00EAFC]  8565                       U      M 101.5 ; M101.5 — STAT.2 ANF.AUTOM.NACHFUELLEN IM AB
+017E [00EAFE]  BA00                       U(     
+0180 [00EB00]  E507                       UN     E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+0182 [00EB02]  F860                       U      T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+0184 [00EB04]  FD61                       ON     T 97 ; T97_* — VERZ.MELDUNG DESTILLATBEH.NICHT LEER
+0186 [00EB06]  BF00                       )      
+0188 [00EB08]  9F65                       =      M 101.7 ; M101.7 — STAT.2 AUTOM.NACHFUELL.VE-WASSER AB
+018A [00EB0A]  10FF                       BLD    255
+018C [00EB0C]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+018E [00EB0E]  9166                       S      M 102.1 ; M102.1 — STAT.3 FUELLEN VE-WASSER IM HB
+0190 [00EB10]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+0192 [00EB12]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0194 [00EB14]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0196 [00EB16]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+0198 [00EB18]  FB00                       O      
+019A [00EB1A]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+019C [00EB1C]  C206                       U      E 6.2 ; B6.2 — NIVEAU STATION 3 MIN
+019E [00EB1E]  C006                       U      E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+01A0 [00EB20]  C305                       U      E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+01A2 [00EB22]  C605                       U      E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+01A4 [00EB24]  B166                       R      M 102.1 ; M102.1 — STAT.3 FUELLEN VE-WASSER IM HB
+01A6 [00EB26]  0000                       NOP0   
+01A8 [00EB28]  10FF                       BLD    255
+01AA [00EB2A]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+01AC [00EB2C]  9266                       S      M 102.2 ; M102.2 — STAT.3 ERSTBEFUELLUNG MIT VE-WASSER I.HB
+01AE [00EB2E]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+01B0 [00EB30]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+01B2 [00EB32]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01B4 [00EB34]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+01B6 [00EB36]  FB00                       O      
+01B8 [00EB38]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+01BA [00EB3A]  C206                       U      E 6.2 ; B6.2 — NIVEAU STATION 3 MIN
+01BC [00EB3C]  B266                       R      M 102.2 ; M102.2 — STAT.3 ERSTBEFUELLUNG MIT VE-WASSER I.HB
+01BE [00EB3E]  0000                       NOP0   
+01C0 [00EB40]  10FF                       BLD    255
+01C2 [00EB42]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+01C4 [00EB44]  9366                       S      M 102.3 ; M102.3 — STAT.3 FUELLEN AUS RAV IM HB ......(RES)
+01C6 [00EB46]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+01C8 [00EB48]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+01CA [00EB4A]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+01CC [00EB4C]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01CE [00EB4E]  FB00                       O      
+01D0 [00EB50]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+01D2 [00EB52]  BA00                       U(     
+01D4 [00EB54]  CA06                       O      E 6.2 ; B6.2 — NIVEAU STATION 3 MIN
+01D6 [00EB56]  ED07                       ON     E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+01D8 [00EB58]  BF00                       )      
+01DA [00EB5A]  8E05                       O      M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+01DC [00EB5C]  8D08                       O      M 8.5 ; STOER_30 — RAV NIVEAUMANGEL DESTILLATBEH. .....B7.5
+01DE [00EB5E]  B366                       R      M 102.3 ; M102.3 — STAT.3 FUELLEN AUS RAV IM HB ......(RES)
+01E0 [00EB60]  0000                       NOP0   
+01E2 [00EB62]  10FF                       BLD    255
+01E4 [00EB64]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+01E6 [00EB66]  9466                       S      M 102.4 ; M102.4 — STAT.3 <- UMPUMPEN IM HB ..........(RES)
+01E8 [00EB68]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+01EA [00EB6A]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+01EC [00EB6C]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+01EE [00EB6E]  AF63                       ON     M 99.7 ; M99.7 — PUMPE P0 (UMPUMPEN) PRINZ.MOEGLICH
+01F0 [00EB70]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+01F2 [00EB72]  FB00                       O      
+01F4 [00EB74]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+01F6 [00EB76]  C206                       U      E 6.2 ; B6.2 — NIVEAU STATION 3 MIN
+01F8 [00EB78]  B466                       R      M 102.4 ; M102.4 — STAT.3 <- UMPUMPEN IM HB ..........(RES)
+01FA [00EB7A]  0000                       NOP0   
+01FC [00EB7C]  10FF                       BLD    255
+01FE [00EB7E]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0200 [00EB80]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+0202 [00EB82]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+0204 [00EB84]  A51F                       UN     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0206 [00EB86]  8064                       U      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+0208 [00EB88]  FC48                       UN     T 72 ; T72 — VERZ.HEIZUNG AUS STATION 3
+020A [00EB8A]  9D66                       =      M 102.5 ; M102.5 — STAT.3 ANF.AUTOM.NACHFUELLEN IM AB
+020C [00EB8C]  10FF                       BLD    255
+020E [00EB8E]  8566                       U      M 102.5 ; M102.5 — STAT.3 ANF.AUTOM.NACHFUELLEN IM AB
+0210 [00EB90]  8300                       U      M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0212 [00EB92]  BA00                       U(     
+0214 [00EB94]  C507                       U      E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+0216 [00EB96]  F861                       U      T 97 ; T97_* — VERZ.MELDUNG DESTILLATBEH.NICHT LEER
+0218 [00EB98]  FD60                       ON     T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+021A [00EB9A]  BF00                       )      
+021C [00EB9C]  9E66                       =      M 102.6 ; M102.6 — STAT.3 AUTOM.NACHFUELL.AUS RAV AB  (RES)
+021E [00EB9E]  10FF                       BLD    255
+0220 [00EBA0]  8566                       U      M 102.5 ; M102.5 — STAT.3 ANF.AUTOM.NACHFUELLEN IM AB
+0222 [00EBA2]  BA00                       U(     
+0224 [00EBA4]  E507                       UN     E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+0226 [00EBA6]  F860                       U      T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+0228 [00EBA8]  8C00                       O      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+022A [00EBAA]  FD61                       ON     T 97 ; T97_* — VERZ.MELDUNG DESTILLATBEH.NICHT LEER
+022C [00EBAC]  BF00                       )      
+022E [00EBAE]  9F66                       =      M 102.7 ; M102.7 — STAT.3 AUTOM.NACHFUELL.VE-WASSER AB
+0230 [00EBB0]  10FF                       BLD    255
+0232 [00EBB2]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0234 [00EBB4]  9169                       S      M 105.1 ; M105.1 — STAT.4 FUELLEN VE-WASSER IM HB
+0236 [00EBB6]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+0238 [00EBB8]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+023A [00EBBA]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+023C [00EBBC]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+023E [00EBBE]  FB00                       O      
+0240 [00EBC0]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0242 [00EBC2]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0244 [00EBC4]  B169                       R      M 105.1 ; M105.1 — STAT.4 FUELLEN VE-WASSER IM HB
+0246 [00EBC6]  0000                       NOP0   
+0248 [00EBC8]  10FF                       BLD    255
+024A [00EBCA]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+024C [00EBCC]  9269                       S      M 105.2 ; M105.2 — STAT.4 ERSTBEFUELLUNG MIT VE-WASSER I.HB
+024E [00EBCE]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+0250 [00EBD0]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0252 [00EBD2]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+0254 [00EBD4]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+0256 [00EBD6]  CA06                       O      E 6.2 ; B6.2 — NIVEAU STATION 3 MIN
+0258 [00EBD8]  B269                       R      M 105.2 ; M105.2 — STAT.4 ERSTBEFUELLUNG MIT VE-WASSER I.HB
+025A [00EBDA]  0000                       NOP0   
+025C [00EBDC]  10FF                       BLD    255
+025E [00EBDE]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0260 [00EBE0]  9369                       S      M 105.3 ; M105.3 — STAT.4 FUELLEN AUS RAV IM HB
+0262 [00EBE2]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+0264 [00EBE4]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0266 [00EBE6]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+0268 [00EBE8]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+026A [00EBEA]  FB00                       O      
+026C [00EBEC]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+026E [00EBEE]  BA00                       U(     
+0270 [00EBF0]  8C00                       O      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0272 [00EBF2]  ED07                       ON     E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+0274 [00EBF4]  BF00                       )      
+0276 [00EBF6]  8E05                       O      M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+0278 [00EBF8]  8D08                       O      M 8.5 ; STOER_30 — RAV NIVEAUMANGEL DESTILLATBEH. .....B7.5
+027A [00EBFA]  B369                       R      M 105.3 ; M105.3 — STAT.4 FUELLEN AUS RAV IM HB
+027C [00EBFC]  0000                       NOP0   
+027E [00EBFE]  10FF                       BLD    255
+0280 [00EC00]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0282 [00EC02]  9469                       S      M 105.4 ; M105.4 — STAT.4 <- UMPUMPEN IM HB
+0284 [00EC04]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+0286 [00EC06]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0288 [00EC08]  AB00                       ON     M 0.3 ; M0.3 — VKE = "0" LOGISCH 0
+028A [00EC0A]  AF63                       ON     M 99.7 ; M99.7 — PUMPE P0 (UMPUMPEN) PRINZ.MOEGLICH
+028C [00EC0C]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+028E [00EC0E]  FB00                       O      
+0290 [00EC10]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0292 [00EC12]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+0294 [00EC14]  B469                       R      M 105.4 ; M105.4 — STAT.4 <- UMPUMPEN IM HB
+0296 [00EC16]  0000                       NOP0   
+0298 [00EC18]  10FF                       BLD    255
+029A [00EC1A]  8400                       U      M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+029C [00EC1C]  30022005                   L      KT 005.2
+02A0 [00EC20]  2478                       SE     T 120 ; T120_* — VERZOEGERUNG NIVEAU STATION 4 I.O.
+02A2 [00EC22]  0000                       NOP0   
+02A4 [00EC24]  0000                       NOP0   
+02A6 [00EC26]  0000                       NOP0   
+02A8 [00EC28]  0000                       NOP0   
+02AA [00EC2A]  10FF                       BLD    255
+02AC [00EC2C]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+02AE [00EC2E]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+02B0 [00EC30]  A605                       UN     M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+02B2 [00EC32]  A51F                       UN     M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+02B4 [00EC34]  8064                       U      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+02B6 [00EC36]  BA00                       U(     
+02B8 [00EC38]  AC00                       ON     M 0.4 ; M0.4 — VKE = "1" LOGISCH 1
+02BA [00EC3A]  FB00                       O      
+02BC [00EC3C]  8569                       U      M 105.5 ; M105.5 — STAT.4 ANF.AUTOM.NACHFUELLEN IM AB
+02BE [00EC3E]  FC78                       UN     T 120 ; T120_* — VERZOEGERUNG NIVEAU STATION 4 I.O.
+02C0 [00EC40]  BF00                       )      
+02C2 [00EC42]  9D69                       =      M 105.5 ; M105.5 — STAT.4 ANF.AUTOM.NACHFUELLEN IM AB
+02C4 [00EC44]  10FF                       BLD    255
+02C6 [00EC46]  8569                       U      M 105.5 ; M105.5 — STAT.4 ANF.AUTOM.NACHFUELLEN IM AB
+02C8 [00EC48]  BA00                       U(     
+02CA [00EC4A]  C507                       U      E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+02CC [00EC4C]  F861                       U      T 97 ; T97_* — VERZ.MELDUNG DESTILLATBEH.NICHT LEER
+02CE [00EC4E]  FD60                       ON     T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+02D0 [00EC50]  BF00                       )      
+02D2 [00EC52]  9E69                       =      M 105.6 ; M105.6 — STAT.4 AUTOM.NACHFUELL.AUS RAV AB
+02D4 [00EC54]  10FF                       BLD    255
+02D6 [00EC56]  8569                       U      M 105.5 ; M105.5 — STAT.4 ANF.AUTOM.NACHFUELLEN IM AB
+02D8 [00EC58]  BA00                       U(     
+02DA [00EC5A]  E507                       UN     E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+02DC [00EC5C]  F860                       U      T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+02DE [00EC5E]  FD61                       ON     T 97 ; T97_* — VERZ.MELDUNG DESTILLATBEH.NICHT LEER
+02E0 [00EC60]  BF00                       )      
+02E2 [00EC62]  9F69                       =      M 105.7 ; M105.7 — STAT.4 AUTOM.NACHFUELL.VE-WASSER AB
+02E4 [00EC64]  10FF                       BLD    255
+02E6 [00EC66]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+02E8 [00EC68]  8064                       U      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+02EA [00EC6A]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+02EC [00EC6C]  BA00                       U(     
+02EE [00EC6E]  E505                       UN     E 5.5 ; B5.5 — NIVEAU OELABSCHEIDER STAT.1 MIN
+02F0 [00EC70]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+02F2 [00EC72]  BA00                       U(     
+02F4 [00EC74]  8D28                       O      M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+02F6 [00EC76]  892A                       O      M 42.1 ; N_1.41 — VERT.-TRANSPORT UNTEN STATION 2
+02F8 [00EC78]  BF00                       )      
+02FA [00EC7A]  EE05                       ON     E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+02FC [00EC7C]  BF00                       )      
+02FE [00EC7E]  9867                       =      M 103.0 ; M103.0 — ANF.OEAS AUTOM.NACHF.UEB.ST.2-1-OEAS
+0300 [00EC80]  10FF                       BLD    255
+0302 [00EC82]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+0304 [00EC84]  8064                       U      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+0306 [00EC86]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0308 [00EC88]  BA00                       U(     
+030A [00EC8A]  EB05                       ON     E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+030C [00EC8C]  E806                       ON     E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+030E [00EC8E]  FD79                       ON     T 121 ; T121_* — VERZOEGERUNG NIVEAU STATION 2 I.O.
+0310 [00EC90]  BF00                       )      
+0312 [00EC92]  9B67                       =      M 103.3 ; M103.3 — ANF.STAT.1,2 AUTOM.NACHFUELLEN
+0314 [00EC94]  10FF                       BLD    255
+0316 [00EC96]  BA00                       U(     
+0318 [00EC98]  8867                       O      M 103.0 ; M103.0 — ANF.OEAS AUTOM.NACHF.UEB.ST.2-1-OEAS
+031A [00EC9A]  8B67                       O      M 103.3 ; M103.3 — ANF.STAT.1,2 AUTOM.NACHFUELLEN
+031C [00EC9C]  BF00                       )      
+031E [00EC9E]  F861                       U      T 97 ; T97_* — VERZ.MELDUNG DESTILLATBEH.NICHT LEER
+0320 [00ECA0]  F83E                       U      T 62 ; T62_V — AUTOM.NACHFUELLEN STAT.1-3 EINZEIT
+0322 [00ECA2]  FB00                       O      
+0324 [00ECA4]  E605                       UN     E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+0326 [00ECA6]  C200                       U      E 0.2 ; AUTO — BETRIEBSART AUTOMATIK
+0328 [00ECA8]  9967                       =      M 103.1 ; M103.1 — OEAS AUTOM.NACHF.UEB.ST.2 AUS RAV
+032A [00ECAA]  10FF                       BLD    255
+032C [00ECAC]  C103                       U      E 3.1 ; P3.1 — WOCHENSCHALTUHR HEIZUNG EIN
+032E [00ECAE]  8064                       U      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+0330 [00ECB0]  851F                       U      M 31.5 ; AUTO_L — AUTOMATIK LAEUFT
+0332 [00ECB2]  E206                       UN     E 6.2 ; B6.2 — NIVEAU STATION 3 MIN
+0334 [00ECB4]  9C67                       =      M 103.4 ; M103.4 — ANF.STAT.3 AUTOM. NACHFUELLEN
+0336 [00ECB6]  10FF                       BLD    255
+0338 [00ECB8]  8467                       U      M 103.4 ; M103.4 — ANF.STAT.3 AUTOM. NACHFUELLEN
+033A [00ECBA]  C396                       U      A 22.3 ; Y22.3 — MV NACHFUELLEN STATION 3
+033C [00ECBC]  30021050                   L      KT 050.1
+0340 [00ECC0]  1477                       SA     T 119 ; T119_* — NACHLAUF FUELLEN STATION 3
+0342 [00ECC2]  0000                       NOP0   
+0344 [00ECC4]  0000                       NOP0   
+0346 [00ECC6]  0000                       NOP0   
+0348 [00ECC8]  0000                       NOP0   
+034A [00ECCA]  10FF                       BLD    255
+034C [00ECCC]  BA00                       U(     
+034E [00ECCE]  BA00                       U(     
+0350 [00ECD0]  8867                       O      M 103.0 ; M103.0 — ANF.OEAS AUTOM.NACHF.UEB.ST.2-1-OEAS
+0352 [00ECD2]  8B67                       O      M 103.3 ; M103.3 — ANF.STAT.1,2 AUTOM.NACHFUELLEN
+0354 [00ECD4]  BF00                       )      
+0356 [00ECD6]  F860                       U      T 96 ; T96_* — VERZ.MELDUNG DESTILLATBEH.LEER
+0358 [00ECD8]  F977                       O      T 119 ; T119_* — NACHLAUF FUELLEN STATION 3
+035A [00ECDA]  8C67                       O      M 103.4 ; M103.4 — ANF.STAT.3 AUTOM. NACHFUELLEN
+035C [00ECDC]  BF00                       )      
+035E [00ECDE]  F83E                       U      T 62 ; T62_V — AUTOM.NACHFUELLEN STAT.1-3 EINZEIT
+0360 [00ECE0]  9A67                       =      M 103.2 ; M103.2 — OEAS AUTOM.NACHF.UEBER ST.3 MIT VE-WASS.
+0362 [00ECE2]  10FF                       BLD    255
+0364 [00ECE4]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0366 [00ECE6]  9068                       S      M 104.0 ; M104.0 — UMPUMPEN IN SCHMUTZTANK RAV IM HB
+0368 [00ECE8]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+036A [00ECEA]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+036C [00ECEC]  AD1A                       ON     M 26.5 ; HB_65 — UMPUMPEN IN SCHMUTZTANK RAV
+036E [00ECEE]  AF63                       ON     M 99.7 ; M99.7 — PUMPE P0 (UMPUMPEN) PRINZ.MOEGLICH
+0370 [00ECF0]  E807                       ON     E 7.0 ; B7.0 — NIVEAU RAV SCHMUTZTANK MAX
+0372 [00ECF2]  8E10                       O      M 16.6 ; STOER_95 — STEUERUNG EIN FEHLT
+0374 [00ECF4]  FB00                       O      
+0376 [00ECF6]  BA00                       U(     
+0378 [00ECF8]  E805                       ON     E 5.0 ; LECK — LECKWARNSONDE BODENWANNE I.O.
+037A [00ECFA]  EA05                       ON     E 5.2 ; B5.2 — NIVEAU STATION 1 UEF
+037C [00ECFC]  EC05                       ON     E 5.4 ; B5.4 — NIVEAU OELABSCHEIDER STAT.1 UEF
+037E [00ECFE]  BF00                       )      
+0380 [00ED00]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+0382 [00ED02]  B068                       R      M 104.0 ; M104.0 — UMPUMPEN IN SCHMUTZTANK RAV IM HB
+0384 [00ED04]  0000                       NOP0   
+0386 [00ED06]  10FF                       BLD    255
+0388 [00ED08]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+038A [00ED0A]  9168                       S      M 104.1 ; M104.1 — UMPUMPEN IN STATION 1-n IM HB
+038C [00ED0C]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+038E [00ED0E]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+0390 [00ED10]  A81A                       ON     M 26.0 ; HB_60 — UMPUMPEN IN STATION 1-3,ABSETZBEHAELTER
+0392 [00ED12]  AF63                       ON     M 99.7 ; M99.7 — PUMPE P0 (UMPUMPEN) PRINZ.MOEGLICH
+0394 [00ED14]  8E10                       O      M 16.6 ; STOER_95 — STEUERUNG EIN FEHLT
+0396 [00ED16]  FB00                       O      
+0398 [00ED18]  BA00                       U(     
+039A [00ED1A]  EC05                       ON     E 5.4 ; B5.4 — NIVEAU OELABSCHEIDER STAT.1 UEF
+039C [00ED1C]  EA05                       ON     E 5.2 ; B5.2 — NIVEAU STATION 1 UEF
+039E [00ED1E]  E805                       ON     E 5.0 ; LECK — LECKWARNSONDE BODENWANNE I.O.
+03A0 [00ED20]  BF00                       )      
+03A2 [00ED22]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+03A4 [00ED24]  B168                       R      M 104.1 ; M104.1 — UMPUMPEN IN STATION 1-n IM HB
+03A6 [00ED26]  0000                       NOP0   
+03A8 [00ED28]  10FF                       BLD    255
+03AA [00ED2A]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+03AC [00ED2C]  9468                       S      M 104.4 ; M104.4 — UMPUMPEN -> ENTSORGUNG BAUSEITS IM HB
+03AE [00ED2E]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+03B0 [00ED30]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+03B2 [00ED32]  AC1B                       ON     M 27.4 ; HB_72 — UMPUMPEN IN ENTSORGUNG BAUSEITS
+03B4 [00ED34]  AF63                       ON     M 99.7 ; M99.7 — PUMPE P0 (UMPUMPEN) PRINZ.MOEGLICH
+03B6 [00ED36]  EF04                       ON     E 4.7 ; E4.7 — FREIGABE ANLAGE ENTLEEREN
+03B8 [00ED38]  8E10                       O      M 16.6 ; STOER_95 — STEUERUNG EIN FEHLT
+03BA [00ED3A]  FB00                       O      
+03BC [00ED3C]  BA00                       U(     
+03BE [00ED3E]  E805                       ON     E 5.0 ; LECK — LECKWARNSONDE BODENWANNE I.O.
+03C0 [00ED40]  EA05                       ON     E 5.2 ; B5.2 — NIVEAU STATION 1 UEF
+03C2 [00ED42]  EC05                       ON     E 5.4 ; B5.4 — NIVEAU OELABSCHEIDER STAT.1 UEF
+03C4 [00ED44]  BF00                       )      
+03C6 [00ED46]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+03C8 [00ED48]  B468                       R      M 104.4 ; M104.4 — UMPUMPEN -> ENTSORGUNG BAUSEITS IM HB
+03CA [00ED4A]  0000                       NOP0   
+03CC [00ED4C]  10FF                       BLD    255
+03CE [00ED4E]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+03D0 [00ED50]  9568                       S      M 104.5 ; M104.5 — FUELLEN ANLAGE MIT FRISCHWASSER IM HB
+03D2 [00ED52]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+03D4 [00ED54]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+03D6 [00ED56]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+03D8 [00ED58]  A918                       ON     M 24.1 ; HB_36 — FUELLEN VE-WASSER IN STAT.1-3,OEAS
+03DA [00ED5A]  FB00                       O      
+03DC [00ED5C]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+03DE [00ED5E]  C206                       U      E 6.2 ; B6.2 — NIVEAU STATION 3 MIN
+03E0 [00ED60]  C006                       U      E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+03E2 [00ED62]  C305                       U      E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+03E4 [00ED64]  C605                       U      E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+03E6 [00ED66]  B568                       R      M 104.5 ; M104.5 — FUELLEN ANLAGE MIT FRISCHWASSER IM HB
+03E8 [00ED68]  0000                       NOP0   
+03EA [00ED6A]  10FF                       BLD    255
+03EC [00ED6C]  86BE                       U      M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+03EE [00ED6E]  9668                       S      M 104.6 ; M104.6 — FUELLEN ANLAGE AUS REINTANK IM HB
+03F0 [00ED70]  E900                       ON     E 0.1 ; HAND — BETRIEBSART HAND
+03F2 [00ED72]  8DBE                       O      M 190.5 ; T-GNDST — TASTE GRUNDSTELLUNG IST BETAETIGT
+03F4 [00ED74]  A864                       ON     M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+03F6 [00ED76]  A819                       ON     M 25.0 ; HB_50 — FUELLEN AUS RAV IN STATION 1-3,OEAS
+03F8 [00ED78]  FB00                       O      
+03FA [00ED7A]  A6BE                       UN     M 190.6 ; T-ARBST — TASTE ARBEITSSTELLUNG IST BETAETIGT
+03FC [00ED7C]  BA00                       U(     
+03FE [00ED7E]  C006                       U      E 6.0 ; B6.0 — NIVEAU STATION 2 MIN
+0400 [00ED80]  C305                       U      E 5.3 ; B5.3 — NIVEAU STATION 1 MIN
+0402 [00ED82]  C605                       U      E 5.6 ; B5.6 — NIVEAU OELABSCHEIDER STAT.1 TGS
+0404 [00ED84]  ED07                       ON     E 7.5 ; B7.5 — NIVEAU RAV DESTILLATBEH.MIN
+0406 [00ED86]  BF00                       )      
+0408 [00ED88]  8E05                       O      M 5.6 ; STOER_07 — MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+040A [00ED8A]  8D08                       O      M 8.5 ; STOER_30 — RAV NIVEAUMANGEL DESTILLATBEH. .....B7.5
+040C [00ED8C]  B668                       R      M 104.6 ; M104.6 — FUELLEN ANLAGE AUS REINTANK IM HB
+040E [00ED8E]  0000                       NOP0   
+0410 [00ED90]  10FF                       BLD    255
+0412 [00ED92]  F83B                       U      T 59 ; T59_V — NACHLAUFZEIT 2 WOCHENSCHALTUHR
+0414 [00ED94]  D891                       =      A 17.0 ; K17.0M — GEBLAESE ABSAUGUNG
+0416 [00ED96]  10FF                       BLD    255
+0418 [00ED98]  8064                       U      M 100.0 ; M100.0 — NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+041A [00ED9A]  C506                       U      E 6.5 ; B6.5_1 — NIVEAU VE-WASSER-VORRAT MAX
+041C [00ED9C]  DD91                       =      A 17.5 ; K17.5A — FREIGABE UMKEHROSMOSE
+041E [00ED9E]  6500                       BE     

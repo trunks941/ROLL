@@ -1,0 +1,30 @@
+FB 96     -SWAP                      C:04201@ST.S5D                    LEN=35   
+                                                                        Page   1
+Segment  1                   SWAP innerhalb eines Wortes
+Name :SWAP
+Decl :INPU      I/Q/D/B/T/C: I  BI/BY/W/D: W
+Decl :OUTP      I/Q/D/B/T/C: Q  BI/BY/W/D: W
+ 
+000B      :L   KH 0000
+000D      :T   FW 240    -MW240
+000E      :T   FW 242    -MW242
+000F      :
+0010      :L   =INPU
+0011      :SLW      8
+0012      :T   FW 240    -MW240
+0013      :
+0014      :L   =INPU
+0015      :SRW      8
+0016      :T   FW 242    -MW242
+0017      :
+0018      :L   FW 240    -MW240
+0019      :L   FW 242    -MW242
+001A      :OW
+001B      :T   =OUTP
+001C      :
+001D      :BE
+
+FW 240   = MW240                     SCHMIERMERKER
+FW 242   = MW242                     SCHMIERMERKER
+
+

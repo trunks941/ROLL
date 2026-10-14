@@ -1,0 +1,325 @@
+PB 23     -PB 23                     C:04201@ST.S5D                    LEN=172  
+                                                                        Page   1
+Segment  1
+0000      :STL
+0001      :C   DB  15    -DBVZEIT
+0002      :***
+
+DB  15   = DBVZEIT                   VARIABLE ZEITEN .....................RAM
+
+Segment  2                   US ein
+             +---+
+ -N_1.27  ---!>=1!
+ -N_1.28  ---!   !     +---+
+ -N_1.29  ---!   !-----! & !
+             +---+     !   !    +------+
+           -M111.4  ---!   !--+-! =    ! -M240.0
+                       +---+    +------+
+
+F   40.3 = N_1.27                    HORIZ.-TRANSP.IN STATION 1
+F   40.4 = N_1.28                    VERT.-TRANSPORT SENKEN STATION 1
+F   40.5 = N_1.29                    VERT.-TRANSPORT UNTEN STATION 1
+F  111.4 = M111.4                    ULTRASCHALL IN STATION 1
+F  240.0 = M240.0                    SCHMIERMERKER
+
+Segment  3                   Netzschuetz US
+           -T51_*
+            +-----+
+ -M240.0  --!0!-!T!
+ KT 120.2 --!TV BI!-
+            !   DE!-
+            !     !   +------+
+          --!R   Q!-+-! =    ! -K19.0M
+            +-----+   +------+
+
+F  240.0 = M240.0                    SCHMIERMERKER
+T   51   = T51_*                     VERZ.NETZ AUS FUER ULTRASCHALL STAT.1
+Q   19.0 = K19.0M                    ULTRASCHALL STATION 1 NEZTSCHUETZ
+
+Segment  4                   Fernsteurung US
+             +---+
+ -N_1.28  ---!>=1!     +---+
+ -N_1.29  ---!   !-----! & !
+             +---+     !   !
+           -T70     ---!   !
+           -STOER_10--O!   !
+           -K19.0M  ---!   !   -T52_*
+           -M35.2   ---!   !    +-----+
+           -M240.0  ---!   !----!T!-!0!
+                       +---+    !     !
+                     KT 050.1 --!TV BI!-
+                                !   DE!-
+                                !     !   +------+
+                              --!R   Q!-+-! =    ! -K19.1M
+                                +-----+   +------+
+
+F   40.4 = N_1.28                    VERT.-TRANSPORT SENKEN STATION 1
+F   40.5 = N_1.29                    VERT.-TRANSPORT UNTEN STATION 1
+T   70   = T70                       VERZ.HEIZUNG AUS STATION 1
+F    6.1 = STOER_10                  NIVEAUMANGEL STATION 1 MIN .........B5.3
+Q   19.0 = K19.0M                    ULTRASCHALL STATION 1 NEZTSCHUETZ
+F   35.2 = M35.2                     WEITERSCHALTBEDINGUNG SCHRITTKETTE N1
+F  240.0 = M240.0                    SCHMIERMERKER
+T   52   = T52_*                     VERZ.FERNSTEUERUNG ULTRASCHALL STAT.1
+Q   19.1 = K19.1M                    ULTRASCHALL STATION 1 FERNSTEUERUNG
+
+
+PB 23     -PB 23                     C:04201@ST.S5D                    LEN=172  
+                                                                        Page   2
+Segment  5                   Abfluten Stat.1 im AB
+             +---+   -M103.7
+ -AUTO    ---! & !    +-----+
+ -AUTO_EIN---!   !----!S    !
+             +---+    !     !
+           -T59_V   -O!R   Q!-
+                      +-----+
+
+I    0.2 = AUTO                      BETRIEBSART AUTOMATIK
+I    0.4 = AUTO_EIN                  AUTOMATIK EIN
+F  103.7 = M103.7                    ABFLUTEN STATION 1 IM AUTOBETRIEB
+T   59   = T59_V                     NACHLAUFZEIT 2 WOCHENSCHALTUHR
+
+Segment  6                   Abfluten Stat.1 beim aufheizen
+           -T76
+            +-----+
+ -T59_V   --!T!-!0!
+ KT 360.3 --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+T   59   = T59_V                     NACHLAUFZEIT 2 WOCHENSCHALTUHR
+T   76   = T76                       ABFLUTEN STATION 1 BEIM AUFHEIZEN
+
+Segment  7                   Badabfluten Station 1
+                                 +---+
+                     -STOER_07--O! & !
+                     -STOER_11--O!   !
+                     -STOER_12--O!   !
+                     -B5.6    ---!   !
+                     -STOER_68--O!   !
+                     -T59_V   ---!   !
+                     -STEU_EIN---!   !
+                       +---+     !   !
+           -S2.2    ---!>=1!     !   !
+           -M152.0  ---!   !-----!   !
+             +---+     +---+     !   !
+ -T76     --O! & !     +---+     !   !
+ -S2.2    ---!   !-----!>=1!     !   !
+             +---+     !   !     !   !
+           -M152.0  ---!   !     !   !    +------+
+           -M103.7  ---!   !-----!   !--+-! =    ! -K19.5M
+                       +---+     +---+    +------+
+
+F    5.6 = STOER_07                  MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+F    6.2 = STOER_11                  OELABSCHEIDER UEBERFUELLT ..........B5.4
+F    6.3 = STOER_12                  NIVEAUMANGEL IM OELABSCHEIDER MIN ..B5.5
+I    5.6 = B5.6                      NIVEAU OELABSCHEIDER STAT.1 TGS
+F   13.3 = STOER_68                  LECKWARNSONDE BODENWANNE ANGESPR.  B 5.0
+T   59   = T59_V                     NACHLAUFZEIT 2 WOCHENSCHALTUHR
+I    3.4 = STEU_EIN                  STEUERUNG EIN
+I    2.2 = S2.2                      PUMPE BADABFLUTEN STATION 1
+F  152.0 = M152.0                    RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+T   76   = T76                       ABFLUTEN STATION 1 BEIM AUFHEIZEN
+F  103.7 = M103.7                    ABFLUTEN STATION 1 IM AUTOBETRIEB
+Q   19.5 = K19.5M                    PUMPE P1 BADABFLUTEN STATION 1
+
+
+PB 23     -PB 23                     C:04201@ST.S5D                    LEN=172  
+                                                                        Page   3
+Segment  8                   Filterpumpe Station 1
+                       +---+
+           -M0.3    ---! & !
+           -STEU_EIN---!   !
+           -T70     ---!   !
+           -STOER_07--O!   !
+           -STOER_10--O!   !
+           -M100.0  ---!   !
+           -P3.1    ---!   !
+             +---+     !   !
+ -HAND    ---!>=1!     !   !    +------+
+ -AUTO    ---!   !-----!   !--+-! =    ! -M240.0
+             +---+     +---+    +------+
+
+F    0.3 = M0.3                      VKE = "0" LOGISCH 0
+I    3.4 = STEU_EIN                  STEUERUNG EIN
+T   70   = T70                       VERZ.HEIZUNG AUS STATION 1
+F    5.6 = STOER_07                  MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+F    6.1 = STOER_10                  NIVEAUMANGEL STATION 1 MIN .........B5.3
+F  100.0 = M100.0                    NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+I    0.1 = HAND                      BETRIEBSART HAND
+I    0.2 = AUTO                      BETRIEBSART AUTOMATIK
+F  240.0 = M240.0                    SCHMIERMERKER
+
+Segment  9                   P6 RAV-Reintank -> Anlage
+                       +---+
+           -M104.6  ---!>=1!
+           -M102.6  ---!   !
+             +---+     !   !
+ -M103.1  ---! & !     !   !     +---+
+ -M100.0  ---!   !-----!   !-----! & !
+             +---+     +---+     !   !
+                     -STOER_07--O!   !
+                     -STOER_30--O!   !
+                     -T96_*   --O!   !    +------+
+                     -K20.6M  --O!   !--+-! =    ! -K20.4M
+                                 +---+  ! +------+
+                                        ! +------+
+                                        +-! =    ! -Y22.6
+                                          +------+
+
+F  104.6 = M104.6                    FUELLEN ANLAGE AUS REINTANK IM HB
+F  102.6 = M102.6                    STAT.3 AUTOM.NACHFUELL.AUS RAV AB  (RES)
+F  103.1 = M103.1                    OEAS AUTOM.NACHF.UEB.ST.2 AUS RAV
+F  100.0 = M100.0                    NACHFUELLEN/FUELLEN/UMPUMPEN PRINZ.MOEGL
+F    5.6 = STOER_07                  MOTORSCHUTZ PUMPEN U.GEBLAESE ANGESPR.
+F    8.5 = STOER_30                  RAV NIVEAUMANGEL DESTILLATBEH. .....B7.5
+T   96   = T96_*                     VERZ.MELDUNG DESTILLATBEH.LEER
+Q   20.6 = K20.6M                    PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+Q   20.4 = K20.4M                    PUMPE P6 RAV-REINTANK -> ANLAGE
+Q   22.6 = Y22.6                     MV FUELLEN STAT.1-3 AUS KONDENSAT RAV
+
+Segment  10                  P0,Umpumpen/Entleeren
+             +---+
+ -M104.0  ---!>=1!
+ -M104.1  ---!   !
+ -M104.4  ---!   !     +---+
+ -M152.1  ---!   !-----! & !
+             +---+     !   !
+           -K20.1M  --O!   !    +------+
+           -M99.7   ---!   !--+-! =    ! -K20.6M
+                       +---+    +------+
+
+
+PB 23     -PB 23                     C:04201@ST.S5D                    LEN=172  
+                                                                        Page   4
+F  104.0 = M104.0                    UMPUMPEN IN SCHMUTZTANK RAV IM HB
+F  104.1 = M104.1                    UMPUMPEN IN STATION 1-n IM HB
+F  104.4 = M104.4                    UMPUMPEN -> ENTSORGUNG BAUSEITS IM HB
+F  152.1 = M152.1                    RAV NACHFUELLEN SMT AUS STATION 2 LAEUFT
+Q   20.1 = K20.1M                    PUMPE P01 ANLAGE FUELLEN MIT VE-WASSER
+F   99.7 = M99.7                     PUMPE P0 (UMPUMPEN) PRINZ.MOEGLICH
+Q   20.6 = K20.6M                    PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+
+Segment  11                  HM Anford. VE-Wasser
+             +---+
+ -M104.5  ---!>=1!
+ -M103.2  ---!   !    +------+
+ -M102.7  ---!   !--+-! =    ! -M240.0
+             +---+    +------+
+
+F  104.5 = M104.5                    FUELLEN ANLAGE MIT FRISCHWASSER IM HB
+F  103.2 = M103.2                    OEAS AUTOM.NACHF.UEBER ST.3 MIT VE-WASS.
+F  102.7 = M102.7                    STAT.3 AUTOM.NACHFUELL.VE-WASSER AB
+F  240.0 = M240.0                    SCHMIERMERKER
+
+Segment  12                  P01, VE-Wasser -> Anlage
+             +---+
+ -P3.1    ---! & !
+ -LECK    ---!   !
+ -B5.2    ---!   !
+ -B5.4    ---!   !
+ -STOER_09--O!   !
+ -STOER_11--O!   !
+ -STOER_24--O!   !
+ -STOER_69--O!   !    +------+
+ -M240.0  ---!   !--+-! =    ! -K20.1M
+             +---+    +------+
+
+I    3.1 = P3.1                      WOCHENSCHALTUHR HEIZUNG EIN
+I    5.0 = LECK                      LECKWARNSONDE BODENWANNE I.O.
+I    5.2 = B5.2                      NIVEAU STATION 1 UEF
+I    5.4 = B5.4                      NIVEAU OELABSCHEIDER STAT.1 UEF
+F    6.0 = STOER_09                  STATION 1 UEBERFUELLT ..............B5.2
+F    6.2 = STOER_11                  OELABSCHEIDER UEBERFUELLT ..........B5.4
+F    7.7 = STOER_24                  NIVEAUMANGEL VORRATSBEH.VE-WASSER ..B6.7
+F   13.4 = STOER_69                  DRUCKLUFTMANGEL ...................B10.7
+F  240.0 = M240.0                    SCHMIERMERKER
+Q   20.1 = K20.1M                    PUMPE P01 ANLAGE FUELLEN MIT VE-WASSER
+
+Segment  13
+             +---+    +------+
+ -M103.1  ---! & !--+-! =    ! -Y22.2
+             +---+    +------+
+
+F  103.1 = M103.1                    OEAS AUTOM.NACHF.UEB.ST.2 AUS RAV
+Q   22.2 = Y22.2                     MV NACHFUELLEN STATION 2
+
+Segment  14                  MV Station 3 Zulauf
+             +---+
+ -M102.1  ---!>=1!
+ -M102.2  ---!   !
+ -M102.3  ---!   !
+ -M102.6  ---!   !
+ -M102.7  ---!   !    +------+
+ -M103.2  ---!   !--+-! =    ! -Y22.3
+             +---+    +------+
+
+F  102.1 = M102.1                    STAT.3 FUELLEN VE-WASSER IM HB
+F  102.2 = M102.2                    STAT.3 ERSTBEFUELLUNG MIT VE-WASSER I.HB
+
+PB 23     -PB 23                     C:04201@ST.S5D                    LEN=172  
+                                                                        Page   5
+F  102.3 = M102.3                    STAT.3 FUELLEN AUS RAV IM HB ......(RES)
+F  102.6 = M102.6                    STAT.3 AUTOM.NACHFUELL.AUS RAV AB  (RES)
+F  102.7 = M102.7                    STAT.3 AUTOM.NACHFUELL.VE-WASSER AB
+F  103.2 = M103.2                    OEAS AUTOM.NACHF.UEBER ST.3 MIT VE-WASS.
+Q   22.3 = Y22.3                     MV NACHFUELLEN STATION 3
+
+Segment  15                  Umschaltung Badabfluten
+             +---+    +------+
+ -T85_V   ---! & !--+-! =    ! -Y21.3
+             +---+    +------+
+
+T   85   = T85_V                     UMSCHALTZEIT BADABFLUTEN STATION 1
+Q   21.3 = Y21.3                     MV BADABFLUTEN STATION 1 UMSCHALTUNG
+
+Segment  16                  Verz. Zulauf Schmutztank zu
+           -T47_*
+            +-----+
+ -K20.6M  --!0!-!T!
+ KT 020.1 --!TV BI!-
+            !   DE!-
+          --!R   Q!-
+            +-----+
+
+Q   20.6 = K20.6M                    PUMPE P0 ENTLEEREN,UMPUMPEN STAT.1-5
+T   47   = T47_*                     VERZ.ZULAUF SCHMUTZTANK ZU
+
+Segment  17                  P0 -> RAV-Schmutztank
+                       +---+
+           -M104.0  ---!>=1!
+           -M152.1  ---!   !
+             +---+     !   !
+ -T47_*   ---! & !     !   !     +---+
+ -Y21.4   ---!   !-----!   !-----! & !
+             +---+     +---+     !   !
+                     -Y21.5   --O!   !
+                     -Y22.3   --O!   !    +------+
+                     -Y22.6   --O!   !--+-! =    ! -Y21.4
+                                 +---+    +------+
+
+F  104.0 = M104.0                    UMPUMPEN IN SCHMUTZTANK RAV IM HB
+F  152.1 = M152.1                    RAV NACHFUELLEN SMT AUS STATION 2 LAEUFT
+T   47   = T47_*                     VERZ.ZULAUF SCHMUTZTANK ZU
+Q   21.4 = Y21.4                     MV ZULAUF SCHMUTZTANK RAV
+Q   21.5 = Y21.5                     MV FUELLEN SCHMUTZTANK AUS OELABSCH.ST.1
+Q   22.3 = Y22.3                     MV NACHFUELLEN STATION 3
+Q   22.6 = Y22.6                     MV FUELLEN STAT.1-3 AUS KONDENSAT RAV
+
+Segment  18
+             +---+
+ -M152.0  ---! & !    +------+
+ -Y21.4   --O!   !--+-! =    ! -Y21.5
+             +---+    +------+
+
+F  152.0 = M152.0                    RAV NACHFUELLEN SMT AUS OEAS LAEUFT
+Q   21.4 = Y21.4                     MV ZULAUF SCHMUTZTANK RAV
+Q   21.5 = Y21.5                     MV FUELLEN SCHMUTZTANK AUS OELABSCH.ST.1
+
+Segment  19
+ 
+                    :BE
+
+

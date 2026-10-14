@@ -1,0 +1,34 @@
+PB24: PB 24 — OELSKIMMER FUER OELABSCHEIDER STATION 1
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0xC300; block bytes: 66; SHA256: a45d33151722355af6263dca64815c1b899d55459a8e74688ddcf621152a215b
+Directory flags: 80; assembler flag: False
+Raw block header [0..9]: 70 70 04 18 80 00 00 00 00 21
+Code starts at block offset 0x000A.
+000A [00C30A]  1083                       BLD    131
+000C [00C30C]  200F                       A      DB 15 ; DBVZEIT — VARIABLE ZEITEN .....................RAM
+000E [00C30E]  10FF                       BLD    255
+0010 [00C310]  C005                       U      E 5.0 ; LECK — LECKWARNSONDE BODENWANNE I.O.
+0012 [00C312]  830D                       U      M 13.3 ; STOER_68 — LECKWARNSONDE BODENWANNE ANGESPR.  B 5.0
+0014 [00C314]  F83B                       U      T 59 ; T59_V — NACHLAUFZEIT 2 WOCHENSCHALTUHR
+0016 [00C316]  98F0                       =      M 240.0 ; M240.0 — SCHMIERMERKER
+0018 [00C318]  10FF                       BLD    255
+001A [00C31A]  BA00                       U(     
+001C [00C31C]  FC35                       UN     T 53 ; T53_V_* — OELSKIMMER EINZEIT
+001E [00C31E]  3236                       L      DW 54
+0020 [00C320]  2436                       SE     T 54 ; T54_V_* — OELSKIMMER AUSZEIT
+0022 [00C322]  0000                       NOP0   
+0024 [00C324]  0000                       NOP0   
+0026 [00C326]  0000                       NOP0   
+0028 [00C328]  F836                       U      T 54 ; T54_V_* — OELSKIMMER AUSZEIT
+002A [00C32A]  3235                       L      DW 53
+002C [00C32C]  1435                       SA     T 53 ; T53_V_* — OELSKIMMER EINZEIT
+002E [00C32E]  80F0                       U      M 240.0 ; M240.0 — SCHMIERMERKER
+0030 [00C330]  3C35                       R      T 53 ; T53_V_* — OELSKIMMER EINZEIT
+0032 [00C332]  0000                       NOP0   
+0034 [00C334]  0000                       NOP0   
+0036 [00C336]  F835                       U      T 53 ; T53_V_* — OELSKIMMER EINZEIT
+0038 [00C338]  BF00                       )      
+003A [00C33A]  A528                       UN     M 40.5 ; N_1.29 — VERT.-TRANSPORT UNTEN STATION 1
+003C [00C33C]  DC93                       =      A 19.4 ; K19.4M — OELSKIMMER OELABSCHEIDER STATION 1
+003E [00C33E]  10FF                       BLD    255
+0040 [00C340]  6500                       BE     

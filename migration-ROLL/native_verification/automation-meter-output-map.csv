@@ -1,0 +1,3 @@
+﻿source_block;source_network;action_order;operation;target;symbol;comment_de;condition;hardware_limit
+PB7;25;1;=;A 16.6;P_STUNDE;BETRIEBSSTUNDENZAEHLER;M31.5;"Software command address; physical channel and meter wiring pending schematic"
+PB7;26;1;=;A 16.7;P_CHARGE;CHARGENZAEHLER;M40.0;"Software command address; physical channel and meter wiring pending schematic"

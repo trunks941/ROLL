@@ -1,0 +1,8 @@
+FB0:  — 
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x1A80; block bytes: 22; SHA256: 73b2ec83aa38afb5d9919f77bede701af081e397bdcfce85b9bcbdb1343df93e
+Directory flags: 84; assembler flag: False
+Raw block header [0..9]: 70 70 08 00 84 00 00 00 00 0B
+Code starts at block offset 0x0014.
+FB name: 'INDIREKT'; entry SPA bytes: 2D05
+0014 [001A94]  6500                       BE     

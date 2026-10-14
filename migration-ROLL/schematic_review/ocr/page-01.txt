@@ -1,0 +1,381 @@
+ah
+
+\
+
+1
+
+2
+
+5
+
+6
+
+i
+
+[
+
+I
+
+8
+
+I
+
+9
+
+I
+
+10
+
+11
+
+12
+
+l
+
+13m]
+
+14
+
+16
+
+I
+
+16
+
+I
+
+Schaltplan = Deckblatt
+
+5
+
+———
+
+Hersteller
+
+Verdrahtungsfarben,
+
+SaaS
+
+oe eeseGeoe oes
+
+ae
+
+Sicherheilsregeln
+
+SSS
+
+Roll Reinigungssysteme
+
+Hauptstromkreis
+
+schwarz
+
+Vor Begin der Arbeiten an
+
+KanalstraGe 30
+
+N -Leiter
+
+heliblau
+
+75417 Mihlacker 4
+
+der elektrischen Anlage
+
+Schutzleiter
+
+griin/gelb
+
+besonders VDE 0105 Pgh 7c beachten.
+
+Tel: 07041 / 802-0
+
+Steuerspannung/AC
+
+rot
+
+Steuerspa
+
+1
+
+Ing vor,
+
+1. Freischalten
+
+Hauptschalier
+
+‘gel ummantelt
+
+sicher
+
+Diese Plane sind aut
+
+einem CAD - System]
+
+Gel
+
+2, Gegen Wiedereinschaltung
+
+erstellt worden,
+
+ispann.ing
+
+dunkelbiau
+
+3. Spannungsfreiheit
+
+feststellen
+
+MeBspannung
+
+rau
+
+4. Erden und KurzschlieBen
+
+Anderungen diirfen nur von uns
+
+Fremdspanaung
+
+orange
+
+vorgenommen werdon
+
+5. Gegen benachbarte unter
+
+Spannung
+
+Zentr.Leittachnik
+
+wold,
+
+stehende Teile schiitzen.
+
+Spannunesngaben
+
+eyes
+
+Achtung
+
+ae
+
+ee sara) La
+
+Anlagentyp
+
+Soee
+
+RET0120-080-056-04
+
+AnschluB
+
+ung
+
+112 kW/220 A
+
+Die Reinigungsanlage dart nur
+
+Max.Vor
+
+250A
+
+1996
+
+erung
+
+mit geschlossenen Schaltschranktiren
+
+Baujahr
+
+Netzspaniing
+
+400V/50 Hz
+
+I
+
+betrieben werden!
+
+Netzform
+
+TN-Netz
+
+Auftrags-Nr
+
+Netzzuleit.1.jsquer-
+
+Die angegebenen Kabelquerschnitte
+
+schnitt mir
+
+150 qmm Cu
+
+sind Mindestquerschnitte for
+
+Kupfer
+
+Netzzuleit waslinge max
+
+50m.
+
+Kunde
+
+‘ohne Beriicksichtiqung der
+
+Fa. Rohrbogen AG
+
+Umgebunastemperatur max
+
+45 Grad C
+
+a) Kabellangen und der dadurch,
+
+Steuerspa rang
+
+290V/50H12/24V/DC
+
+bedingten Spannungsabiaille
+
+CH 4133 Pratteln 1
+
+Lampensrannung
+
+2aVviDC
+
+b) Verlegungsant und der
+
+zuldssigen
+
+Ventilspanaung
+
+2AV/DC
+
+Umgebungstemperatur
+
+Projekt Nr.
+
+(2uil Spannungsfall
+
+Schaltschrank
+
+isfohrung
+
+Netzzuleitung 1% Uy
+
+{EVU Empfehtung)
+
+eoanie
+
+Sas
+
+Motoren 5% Un,
+
+(VDE 0113)
+
+sonstige Gerate 4% Up, (VDE 0100,Teil 520))
+
+Zeichnungs-Nr
+
+KS04201
+
+von
+
+2000x2000x500
+
+Falls die Betriebsbedingungen
+
+Gesamtabmessung bxhxt (mm)
+
+‘obigen Annahmen abweichen, miissen
+
+Schulzart Normal IP
+
+54
+
+die Querschnitte entsprechend
+
+Steuerung
+
+Siemens S5-115U
+
+Netz Kabeleinfihrung
+
+unten
+
+ease pray aen
+
+gewahlt werden |
+
+Farbe Mortageplalte RAL
+
+2000
+
+Auslegung der Kabel insbesondere der
+
+Netzleitung in Eigenverantwortung der aust. Person!
+
+Schalischrankinnenverdrahtung
+
+nach
+
+VDE 0660 IV,Pqh 31 Abs.(a) 2 Talel: 11
+
+Mindestquerschnitt Haupistrom
+
+4,5 qmm
+
+Mindestquerschnitt Sleuerung
+
+1,0 qm
+
+re
+
+wai
+
+Ki
+
+1 Roll
+
+Schaliplan Nr.
+
+Benennung.
+
+Tnventar-Ne
+
+i
+
+Thee
+
+Reinigungssysteme
+
++
+
+Time
+
+11
+
+Miblacker
+
+KS04201
+
+berg
+
+Ge,
+
+Fein |
+
+ome
+
+a
+
+erat
+
+i
+
+RETO120-080-056-04
+
+Gruppe
+
+Blatt:
+
+1/50
+
+0

@@ -1,0 +1,4 @@
+﻿id;page;device;input;output;catalog_number;S7_requirement
+S5_RACK;16;A90 PS951/3A;230 V AC, F90 2 A;"S5 rack supply; front label 3 A";;"S7 CPU/I/O supply to be selected for actual configuration; do not treat old rack supply as a direct S7 backplane replacement"
+FIELD_24V;17;G1;3AC400 V, Q100 2.4..4 A (2.4 A note);DC24 V30 A, M/PE bond shown;;"Candidate existing 24 V source; verify installed model, condition and load budget before reuse"
+HMI_BRANCH;17;H2 OP15;"G1 24 V via F4.0 6 A; X40:2 (+24V), X40:1 (M)";OP15 terminals 1/2, PE terminal 3;;"TP900 has its own power connector, current/protection and PE requirements; old pin numbers do not transfer"

@@ -1,0 +1,12 @@
+FB240: COD:B4 — BCD NACH FESTPUNKTZAHL WANDELN
+EXPLORATORY MC5 LISTING — not S7 source; native STEP 5 comparison required.
+Source file offset: 0x2600; block bytes: 44; SHA256: 845764a1220b40ad2f5d878a87fe4d1b1d1572b28bc93036b44838f3af51301c
+Directory flags: 8D; assembler flag: True
+Raw block header [0..9]: 70 70 08 F0 8D 81 0B CC 00 16
+Code starts at block offset 0x0026.
+FB name: 'COD:B4  '; entry SPA bytes: 2D0E
+  Formal #1 @0014 022042434420: BCD E/W
+  Formal #2 @001A 028053424344: SBCD E/BI
+  Formal #3 @0020 08204455414C: DUAL A/W
+UNSUPPORTED_ASSEMBLER_BODY: retained as raw bytes; no instruction claims.
+0026 [002626]  78 08 00 00 65 00

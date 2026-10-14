@@ -1,0 +1,56 @@
+﻿kind;container;container_number;entry_number;entry_name;text;info_text;printed_pages
+screen;SCHRITTE;20;1;N1;Schrittanzeige N1 wird aufbereitet;;3
+screen;VARIABEL;1;1;ZEITEN;"Zeit T<ZEITZEIGER  >: <ZEITWERT    >
+Sekunden";;3
+screen;VARIABEL;1;2;ZAEHLER;"Zaehler Z<ZAEHLZEIGER >: <ZAEHLWERT
+>";;3
+screen;FAHRPROGR.1;15;1;FAHRPROGRAMM;"gewaehltes Fahrprogramm :  <FAHRPROGR
+AMM>";FAHRPROGR.2;3
+screen;HANDBETRIEB;10;1;HBGRUND;"Fahren in Grundstellung<CR>in <GRUNDA
+RBEIT >";HBGRDARB;3
+screen;HANDBETRIEB;10;7;HBTUER;"Tuer Beschickung schliessen/oeffnen <
+CR>Tuer ist in <GRUNDARBEIT >";HBGRDARB;3
+screen;HANDBETRIEB;10;20;HBFWSENKHEB;"Fahrwagen senken/heben<CR>Fahrwagen i
+st in <GRUNDARBEIT >";HBGRDARB;3
+screen;HANDBETRIEB;10;21;HBFWVORZURUE;"Fahrwagen vor/zurueck<CR>Fahrwagen is
+t in <GRUNDARBEIT >";HBGRDARB;3
+screen;HANDBETRIEB;10;22;HBFWRTSDREH;"Fahrwagen Trommel geradest./drehen<CR
+>Trommel ist in <GRUNDARBEIT >";HBGERASCHW;3
+screen;HANDBETRIEB;10;23;HBFWRTSSCHW;"Fahrwagen Trommel geradest./schwenken
+<CR>Trommel ist in <GRUNDARBEIT >";HBGERASCHW;3
+screen;HANDBETRIEB;10;36;HBFUEST1-3VE;"Fuellen Station 1-3 mit VE-Wasser<CR>
+ist <AUSEIN-HB   > (in <GRUNDARBEIT >";HBEINAUS;4
+screen;HANDBETRIEB;10;50;HBFUEST1-3_R;"Fuellen Station 1-3 aus RAV-Reintank
+<CR>ist <AUSEIN-HB   > (in <GRUNDARBE";HBEINAUS;4
+screen;HANDBETRIEB;10;60;HBUMPST1-N;"Umpumpen in Station 1,2,3, Absetzbeh.
+<CR>ist <AUSEIN-HB   > in <GRUNDARBEI";HBEINAUS;4
+screen;HANDBETRIEB;10;65;HBSCHMTKUMP;"Umpumpen nach Schmutztank RAV<CR>ist
+<AUSEIN-HB   > in <GRUNDARBEIT >";HBEINAUS;4
+screen;HANDBETRIEB;10;66;HBDOSIERRAV;"Dosierpumpe fuer Schaumbremse RAV<CR>
+ist <AUSEIN-HB   > (= <GRUNDARBEIT >)";HBEIN;4
+screen;HANDBETRIEB;10;72;HBENTSORGUMP;"Umpumpen nach Entsorgung bauseits<CR>
+ist <AUSEIN-HB   > in <GRUNDARBEIT >";HBEINAUS;4
+screen;HANDBETRIEB;10;73;HBFUEVDSCHTK;"Fuellen RAV Verdampf.aus Schmutztank<
+CR>ist <AUSEIN-HB   > in <GRUNDARBEIT";HBEINAUS;4
+screen;HANDBETRIEB;10;99;HBSETZMERKWT;"Setzmerker loeschen<CR>in <GRUNDARBEI
+T >";HBINFOSETZ;4
+recipe;PRG;1;11;TZ1;"Tauchzeit Station 1: (<REZ_ZEIT_ALT>)
+<REZ_ZEIT_NEU> Sek.";TZALLGEMEIN;5
+recipe;PRG;1;12;AZ1;"Abtropfzeit Stat. 1: (<REZ_ZEIT_ALT>)
+<REZ_ZEIT_NEU> Sek.";AZALLGEMEIN;5
+recipe;PRG;1;13;US.STATION1;"Ultraschall Stat.1:   (<AUS/EIN_A   >
+)   <AUS/EIN_N   >";ULTRASCHALL;5
+recipe;PRG;1;21;TZ2;"Tauchzeit Station 2: (<REZ_ZEIT_ALT>)
+<REZ_ZEIT_NEU> Sek.";TZALLGEMEIN;5
+recipe;PRG;1;22;AZ2;"Abtropfzeit Stat. 2: (<REZ_ZEIT_ALT>)
+<REZ_ZEIT_NEU> Sek.";AZALLGEMEIN;5
+recipe;PRG;1;31;TZ3;"Tauchzeit Station 3: (<REZ_ZEIT_ALT>)
+<REZ_ZEIT_NEU> Sek.";TZALLGEMEIN;5
+recipe;PRG;1;32;AZ3;"Abtropfzeit Stat. 3: (<REZ_ZEIT_ALT>)
+<REZ_ZEIT_NEU> Sek.";AZALLGEMEIN;5
+recipe;PRG;1;41;TZ4;"Trockenzeit Station 4: (<REZ_ZEIT_ALT
+>)<CR>           <REZ_ZEIT_NEU> Sekun";TZALLGEMEIN;5
+recipe;PRG;1;91;KBALLG;"Korbbewegung (<KBA         >)<CR>
+<KBN         >";KB;5
+recipe;PRG;1;93;BADHUB;"Badhub ueber Fahrwagen (<AUS/EIN_A
+>) <AUS/EIN_N   >";;5

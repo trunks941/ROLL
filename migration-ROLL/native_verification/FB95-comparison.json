@@ -1,0 +1,19 @@
+{
+  "block": "FB95",
+  "source_file": "FB95ROLS.INI",
+  "sha256": "5efc9281d70720e2a7d7ba81936f368fd24fa592ff017cd79c5390b41a6b918a",
+  "size_bytes": 1888,
+  "pages": 1,
+  "networks": 1,
+  "block_bytes": 102,
+  "positions_compared": 36,
+  "executing_instructions": 24,
+  "BLD_display_rows": 12,
+  "jumps_compared": 4,
+  "addressed_positions": 36,
+  "unaddressed_final_instructions": 0,
+  "call_arguments_compared": [],
+  "formal_declarations_compared": 0,
+  "result": "All positions, commands, operands, networks, lengths and jump targets match.",
+  "limitations": "Native documentation comparison, not PLC execution or whole-program validation. System effects and HMI behavior are documented separately."
+}
