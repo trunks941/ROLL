@@ -1,0 +1,42 @@
+{
+  "source_report_archive": "ROLL_20261015_111515_f5689d_raport.zip",
+  "source_report_sha256": "8a36c1cf692c5e166c47577f8310de745c37f25a13313852b6c08779e8f73046",
+  "reported_phase": "source_import",
+  "project_created": true,
+  "cpu_catalog_identifier": "OrderNumber:6ES7 513-1AM03-0AB0/V3.1",
+  "delivered_cpu_firmware_verified": false,
+  "source_generation_succeeded": false,
+  "plc_compile_service_executed": false,
+  "syntax_messages": [
+    {
+      "reported_row": 29,
+      "reported_token": "Timer"
+    },
+    {
+      "reported_row": 29,
+      "reported_token": ";"
+    },
+    {
+      "reported_row": 30,
+      "reported_token": "Counter"
+    },
+    {
+      "reported_row": 31,
+      "reported_token": "Int"
+    },
+    {
+      "reported_row": 32,
+      "reported_token": "END_VAR"
+    },
+    {
+      "reported_row": 798,
+      "reported_token": "db"
+    },
+    {
+      "reported_row": 799,
+      "reported_token": "compare"
+    }
+  ],
+  "full_native_build_success": false,
+  "raw_windows_account_details_published": false
+}

@@ -7,8 +7,17 @@ import re
 import generate as gen
 
 
+def conflicting_identifiers(source):
+    # Narrow regression gate for the supplied native V19 syntax failures.
+    # This does not replace the Siemens SCL parser or assert a complete keyword list.
+    unsafe = {'timer', 'counter', 'db', 'compare'}
+    return sorted({name for name in re.findall(r'^\s*([A-Za-z_]\w*)\s*:\s*(?!=)', source, re.M) if name.lower() in unsafe})
+
+
 def main():
     bundle = (gen.OUT / 'ROLL_ALL.scl').read_text()
+    conflicts = conflicting_identifiers(bundle)
+    assert not conflicts, ('Identifiers rejected or implicated by native TIA import', conflicts)
     hashes = json.loads((gen.OUT / 'reports/source-hashes.json').read_text())
     for name, wanted in hashes.items():
         assert hashlib.sha256((gen.OUT / name).read_bytes()).hexdigest() == wanted, name
@@ -50,6 +59,7 @@ def main():
         'function_definitions': len(functions), 'unique_named_definitions': len(definitions),
         'unresolved_function_calls': [], 'hmi_scalars': len(interface), 'manual_functions': len(manual),
         'source_bundle_sha256': hashes['ROLL_ALL.scl'],
+        'known_native_identifier_conflicts': conflicts,
         'tia_compiled': False, 'hmi_native_binding_verified': False, 'hardware_io_verified': False,
     }
     (gen.OUT / 'reports/source-contracts.json').write_text(json.dumps(result, indent=2) + '\n')

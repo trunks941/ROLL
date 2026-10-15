@@ -164,8 +164,8 @@ def eval_scl(model, expression, env):
     # Only the controlled output of generate.py is accepted here.
     expression = re.sub(r'"ROLL_State"\.M\[(\d+), (\d+)\]', lambda m: f'bits["M"][({m[1]}, {m[2]})]', expression)
     expression = re.sub(r'"ROLL_IO"\.(Input|Output)\[(\d+), (\d+)\]', lambda m: f'bits["{"E" if m[1] == "Input" else "A"}"][({m[2]}, {m[3]})]', expression)
-    expression = re.sub(r'"ROLL_State"\.Timer\[(\d+)\]\.Q', lambda m: f'timer[{m[1]}]["q"]', expression)
-    expression = re.sub(r'"ROLL_State"\.Counter\[(\d+)\]\.Value', lambda m: f'counter[{m[1]}]["value"]', expression)
+    expression = re.sub(r'"ROLL_State"\.S5Timers\[(\d+)\]\.Q', lambda m: f'timer[{m[1]}]["q"]', expression)
+    expression = re.sub(r'"ROLL_State"\.S5Counters\[(\d+)\]\.Value', lambda m: f'counter[{m[1]}]["value"]', expression)
     expression = expression.replace('"ROLL_GetM"', 'getm').replace('"ROLL_GetDW"', 'getdw').replace('"ROLL_TimerValue"', 'gett')
     expression = expression.replace('WORD_TO_INT', 'signed').replace('INT_TO_WORD', 'int')
     expression = re.sub(r'W#16#([0-9A-F]+)', r'0x\1', expression)
@@ -181,7 +181,7 @@ def eval_scl(model, expression, env):
 
 def execute_scl(model, source):
     body = source.split('\nBEGIN\n', 1)[1].split('\nEND_FUNCTION', 1)[0]
-    env = {'r': False, 'a1': 0, 'a2': 0, 'db': 0, 'compare': [False] * 256}
+    env = {'r': False, 'a1': 0, 'a2': 0, 'activeDataBlock': 0, 'comparisonResults': [False] * 256}
     for raw in body.splitlines():
         line = raw.strip()
         if not line or line.startswith('//'):
@@ -203,8 +203,8 @@ def execute_scl(model, source):
             line = conditional[1]
         lhs, rhs = line.rstrip(';').split(' := ', 1)
         value = eval_scl(model, rhs, env)
-        if lhs.startswith('#compare['):
-            env['compare'][int(lhs[9:-1])] = value
+        if lhs.startswith('#comparisonResults['):
+            env['comparisonResults'][int(lhs[len('#comparisonResults['):-1])] = value
         elif lhs.startswith('#'):
             env[lhs[1:]] = value
         else:

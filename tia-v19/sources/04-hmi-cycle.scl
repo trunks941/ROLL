@@ -226,15 +226,15 @@ END_VAR
 BEGIN
     // RE plus RS120 bit 3: all M retained. Default T/Z 0..63 retained.
     FOR #n := 64 TO 127 DO
-        "ROLL_State".Timer[#n].RemainingMs := 0.0;
-        "ROLL_State".Timer[#n].BaseMs := 0;
-        "ROLL_State".Timer[#n].Mode := 0;
-        "ROLL_State".Timer[#n].Q := FALSE;
-        "ROLL_State".Timer[#n].Previous := FALSE;
-        "ROLL_State".Counter[#n].Value := 0;
-        "ROLL_State".Counter[#n].SetPrevious := FALSE;
-        "ROLL_State".Counter[#n].UpPrevious := FALSE;
-        "ROLL_State".Counter[#n].DownPrevious := FALSE;
+        "ROLL_State".S5Timers[#n].RemainingMs := 0.0;
+        "ROLL_State".S5Timers[#n].BaseMs := 0;
+        "ROLL_State".S5Timers[#n].Mode := 0;
+        "ROLL_State".S5Timers[#n].Q := FALSE;
+        "ROLL_State".S5Timers[#n].Previous := FALSE;
+        "ROLL_State".S5Counters[#n].Value := 0;
+        "ROLL_State".S5Counters[#n].SetPrevious := FALSE;
+        "ROLL_State".S5Counters[#n].UpPrevious := FALSE;
+        "ROLL_State".S5Counters[#n].DownPrevious := FALSE;
     END_FOR;
     "ROLL_IO".FirstCycle := TRUE;
     "ROLL_IO".ClockMs := 0.0;

@@ -32,7 +32,7 @@ def kt_word(text):
     return (base << 12) | ((value // 100) << 8) | (((value // 10) % 10) << 4) | (value % 10)
 
 
-def operand(text, db='#db', boolean=False):
+def operand(text, db='#activeDataBlock', boolean=False):
     area, index = text.split()
     if area in ('M', 'E', 'A'):
         byte, bit = index.split('.')
@@ -41,8 +41,8 @@ def operand(text, db='#db', boolean=False):
     if area in ('T', 'Z'):
         n = int(index)
         if boolean:
-            return f'"ROLL_State".Timer[{n}].Q' if area == 'T' else f'("ROLL_State".Counter[{n}].Value <> 0)'
-        return f'"ROLL_TimerValue"(Number := {n})' if area == 'T' else f'INT_TO_WORD("ROLL_State".Counter[{n}].Value)'
+            return f'"ROLL_State".S5Timers[{n}].Q' if area == 'T' else f'("ROLL_State".S5Counters[{n}].Value <> 0)'
+        return f'"ROLL_TimerValue"(Number := {n})' if area == 'T' else f'INT_TO_WORD("ROLL_State".S5Counters[{n}].Value)'
     if area in ('MB', 'MW'):
         return f'"ROLL_GetM"(FirstByte := {int(index)}, Width := {8 if area == "MB" else 16})'
     if area == 'DW':
@@ -88,7 +88,7 @@ END_FUNCTION
 def compile_pb(block, rows):
     logic = reader.Logic()
     stack = []
-    lines = ['    #db := 0;']
+    lines = ['    #activeDataBlock := 0;']
     last_network = None
     meaningful = 0
     comparison_count = 0
@@ -116,8 +116,8 @@ def compile_pb(block, rows):
             lines += ['    #a2 := #a1;', f'    #a1 := {operand(o)};']
         elif c in ('!=F', '><F', '>F', '<F', '<=F', '>=F'):
             op = {'!=F': 'EQ', '><F': 'NE', '>F': 'GT', '<F': 'LT', '<=F': 'LE', '>=F': 'GE'}[c]
-            lines.append(f'    #compare[{comparison_count}] := {expression((op, ("LOCAL", "a2"), ("LOCAL", "a1")))};')
-            logic.apply('U', ('LOCAL', f'compare[{comparison_count}]'))
+            lines.append(f'    #comparisonResults[{comparison_count}] := {expression((op, ("LOCAL", "a2"), ("LOCAL", "a1")))};')
+            logic.apply('U', ('LOCAL', f'comparisonResults[{comparison_count}]'))
             comparison_count += 1
         elif c in ('=', 'S', 'R', 'SE', 'SA', 'ZR', 'ZV'):
             condition = logic.action()
@@ -139,7 +139,7 @@ def compile_pb(block, rows):
             else:
                 raise ValueError((block, c, o))
         elif c == 'A' and o.startswith('DB '):
-            lines.append(f'    #db := {int(o.split()[1])};')
+            lines.append(f'    #activeDataBlock := {int(o.split()[1])};')
         elif c == 'SPA' and o == 'FB 69':
             lines.append('    "ROLL_FB69"();')
         elif c == 'BE':
@@ -147,7 +147,7 @@ def compile_pb(block, rows):
         else:
             raise ValueError(('Unhandled instruction', block, row))
     assert not stack
-    temp = f'VAR_TEMP\n    r : Bool;\n    a1 : Word;\n    a2 : Word;\n    db : Int;\n    compare : Array[0..{max(0,comparison_count - 1)}] of Bool;\nEND_VAR'
+    temp = f'VAR_TEMP\n    r : Bool;\n    a1 : Word;\n    a2 : Word;\n    activeDataBlock : Int;\n    comparisonResults : Array[0..{max(0,comparison_count - 1)}] of Bool;\nEND_VAR'
     # Unused accumulators are initialized for deterministic, diagnosable code.
     lines[0:0] = ['    #r := FALSE;', '    #a1 := W#16#0000;', '    #a2 := W#16#0000;']
     return fc('ROLL_' + block, '\n'.join(lines), temp), meaningful

@@ -13,6 +13,7 @@
   ],
   "screenNames": ["Przeglad", "Receptury", "Reczny", "Alarmy", "Nastawy"],
   "catalogIdentifiersVerifiedLocally": false,
+  "cpuIdentifierObservedInUserTia": "OrderNumber:6ES7 513-1AM03-0AB0/V3.1",
   "deliveredCpuFirmwareKnown": false,
   "physicalIoConfigured": false,
   "hmiScreenControlsConfigured": false

@@ -24,9 +24,11 @@ $report = [ordered]@{
     machineTested = $false; downloadsPerformed = $false
     reportArchive = $null
     diagnosisCode = $null; requiredWindowsGroup = $null; nextAction = $null
+    sourceGenerationSucceeded = $false; sourceGenerationError = $null; sourceSHA256 = $null
 }
 $tia = $null
 $project = $null
+$compiled = $null
 $exitCode = 1
 
 function Save-Report {
@@ -43,6 +45,20 @@ function Get-OpennessDiagnostic([string]$ErrorText) {
         }
     }
     return $null
+}
+
+function Invoke-RollSourceGeneration($Source) {
+    try {
+        $Source.GenerateBlocksFromSource() | Out-Null
+        $report.sourceGenerationSucceeded = $true
+        return $true
+    } catch {
+        $report.sourceGenerationSucceeded = $false
+        $report.sourceGenerationError = $_.Exception.ToString()
+        $report.errors += $report.sourceGenerationError
+        Write-Host 'Import SCL zglosil bledy. Raport zachowa blad i dostepne eksporty; zbieranie danych TP900 bedzie kontynuowane.' -ForegroundColor Yellow
+        return $false
+    }
 }
 
 function Read-BlockNumber($Block) {
@@ -194,8 +210,9 @@ try {
         }
     }
     $sourceFile = New-Object IO.FileInfo((Join-Path $Root 'ROLL_ALL.scl'))
+    $report.sourceSHA256 = (Get-FileHash -LiteralPath $sourceFile.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
     $source = $plc.ExternalSourceGroup.ExternalSources.CreateFromFile('ROLL_ALL', $sourceFile)
-    $source.GenerateBlocksFromSource() | Out-Null
+    $generated = Invoke-RollSourceGeneration $source
     $expected = [regex]::Matches([IO.File]::ReadAllText($sourceFile.FullName), '(?m)^(?:FUNCTION|DATA_BLOCK) "([^"]+)"') | ForEach-Object { $_.Groups[1].Value }
     $present = @($plc.BlockGroup.Blocks | ForEach-Object { $_.Name })
     $report.sourceInventoryMissing = @($expected | Where-Object { $_ -notin $present })
@@ -208,22 +225,24 @@ try {
     if (1 -notin $obNumbers) { $report.sourceInventoryMissing += 'OB1 (ProgramCycle)' }
     if (100 -notin $obNumbers) { $report.sourceInventoryMissing += 'OB100 (Startup)' }
     $report.sourceInventoryComplete = $report.sourceInventoryMissing.Count -eq 0
-    $report.phase = 'plc_compile'
-    $compiler = Get-Service $plc 'Siemens.Engineering.Compiler.ICompilable'
-    if ($null -eq $compiler) { throw 'STEP 7 Professional compiler service is unavailable.' }
-    $compiled = $compiler.Compile()
-    $report.initialPlcCompilation = [ordered]@{ state = [string]$compiled.State; errorCount = $compiled.ErrorCount; warningCount = $compiled.WarningCount; messages = @(Compiler-Messages $compiled) }
-    if ($report.sourceInventoryComplete -and $compiled.ErrorCount -eq 0) {
-        $report.phase = 'retention_configuration'
-        $retentionDirectory = Join-Path $runDirectory 'native-retention'
-        [IO.Directory]::CreateDirectory($retentionDirectory) | Out-Null
-        $report.retentionConfigured = Configure-Retention $plc $retentionDirectory
-        $report.phase = 'plc_compile_after_retention'
+    if ($generated) {
+        $report.phase = 'plc_compile'
+        $compiler = Get-Service $plc 'Siemens.Engineering.Compiler.ICompilable'
+        if ($null -eq $compiler) { throw 'STEP 7 Professional compiler service is unavailable.' }
         $compiled = $compiler.Compile()
-    }
-    $report.plcCompilation = [ordered]@{
-        state = [string]$compiled.State; errorCount = $compiled.ErrorCount
-        warningCount = $compiled.WarningCount; messages = @(Compiler-Messages $compiled)
+        $report.initialPlcCompilation = [ordered]@{ state = [string]$compiled.State; errorCount = $compiled.ErrorCount; warningCount = $compiled.WarningCount; messages = @(Compiler-Messages $compiled) }
+        if ($report.sourceInventoryComplete -and $compiled.ErrorCount -eq 0) {
+            $report.phase = 'retention_configuration'
+            $retentionDirectory = Join-Path $runDirectory 'native-retention'
+            [IO.Directory]::CreateDirectory($retentionDirectory) | Out-Null
+            $report.retentionConfigured = Configure-Retention $plc $retentionDirectory
+            $report.phase = 'plc_compile_after_retention'
+            $compiled = $compiler.Compile()
+        }
+        $report.plcCompilation = [ordered]@{
+            state = [string]$compiled.State; errorCount = $compiled.ErrorCount
+            warningCount = $compiled.WarningCount; messages = @(Compiler-Messages $compiled)
+        }
     }
     $nativeDirectory = Join-Path $runDirectory 'native-blocks'
     [IO.Directory]::CreateDirectory($nativeDirectory) | Out-Null
@@ -278,7 +297,9 @@ try {
         $report.warnings += 'Installed HMI API exposes a different screen interface; see hmi-api.json.'
     }
     $project.Save()
-    if ($report.sourceInventoryComplete -and $compiled.ErrorCount -eq 0 -and [string]$compiled.State -eq 'Success') {
+    if (-not $generated) {
+        $report.status = 'source_generation_failed'
+    } elseif ($report.sourceInventoryComplete -and $compiled.ErrorCount -eq 0 -and [string]$compiled.State -eq 'Success') {
         $report.status = 'plc_compiled_hmi_io_pending'
         if (-not $report.retentionConfigured) { $report.status = 'plc_compiled_retention_hmi_io_pending' }
         $exitCode = 0

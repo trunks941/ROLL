@@ -9,8 +9,8 @@
   "physical_machine_tested": false,
   "scope": "direct MC5 PB registers vs generated PB SCL subset in Python; shared timer/counter model",
   "source_sha256": {
-    "sources/02-process.scl": "25881e0efab2690e7b5418a864a61e7245c3aa102c70c953fd142c0853d9d076",
-    "sources/04-hmi-cycle.scl": "bf0c050339bf3210f7a47f6f33d3619345ca5ce065778219c98df82fe3a0dec7",
-    "ROLL_ALL.scl": "32cb74928aa9cfd842e4769692f586f4df515b3012a964faa0920eea02f5e192"
+    "sources/02-process.scl": "50adfba1054daa92bed10a452546719b31ebbb78235a1826832056b595c45b6b",
+    "sources/04-hmi-cycle.scl": "e454129d52b17e6320b38ce20293181d8db866d3475fc661d63ee2fe3e366c39",
+    "ROLL_ALL.scl": "be2f69d2ceb7c5b6ef90ed4b3bda1799f2ea1eb8381c1d44e12231fbf376d707"
   }
 }

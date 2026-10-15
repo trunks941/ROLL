@@ -27,8 +27,8 @@ VERSION : 0.1
 NON_RETAIN
 VAR
     M : Array[0..255, 0..7] of Bool;
-    Timer : Array[0..127] of "ROLL_TimerState";
-    Counter : Array[0..127] of "ROLL_CounterState";
+    S5Timers : Array[0..127] of "ROLL_TimerState";
+    S5Counters : Array[0..127] of "ROLL_CounterState";
     CurrentProgram : Int := 1;
 END_VAR
 BEGIN
@@ -230,13 +230,13 @@ BEGIN
     END_IF;
     IF #Operation = 2 THEN
         IF #Signal THEN
-            "ROLL_State".Timer[#Number].RemainingMs := 0.0;
-            "ROLL_State".Timer[#Number].Q := FALSE;
+            "ROLL_State".S5Timers[#Number].RemainingMs := 0.0;
+            "ROLL_State".S5Timers[#Number].Q := FALSE;
         END_IF;
         RETURN;
     END_IF;
-    #trigger := ((#Operation = 0) AND #Signal AND NOT "ROLL_State".Timer[#Number].Previous)
-        OR ((#Operation = 1) AND NOT #Signal AND "ROLL_State".Timer[#Number].Previous);
+    #trigger := ((#Operation = 0) AND #Signal AND NOT "ROLL_State".S5Timers[#Number].Previous)
+        OR ((#Operation = 1) AND NOT #Signal AND "ROLL_State".S5Timers[#Number].Previous);
     IF #trigger THEN
         #count := "ROLL_DecodeBCD"(Value := #Preset);
         #base := WORD_TO_INT(SHR(IN := #Preset AND W#16#F000, N := 12));
@@ -249,24 +249,24 @@ BEGIN
         END_CASE;
         IF (#base = 0) OR (#count < 0) THEN
             "ROLL_IO".ConversionFault := TRUE;
-            "ROLL_State".Timer[#Number].RemainingMs := 0.0;
-            "ROLL_State".Timer[#Number].Q := FALSE;
+            "ROLL_State".S5Timers[#Number].RemainingMs := 0.0;
+            "ROLL_State".S5Timers[#Number].Q := FALSE;
             RETURN;
         END_IF;
-        "ROLL_State".Timer[#Number].BaseMs := #base;
-        "ROLL_State".Timer[#Number].RemainingMs := INT_TO_LREAL(#count) * INT_TO_LREAL(#base);
+        "ROLL_State".S5Timers[#Number].BaseMs := #base;
+        "ROLL_State".S5Timers[#Number].RemainingMs := INT_TO_LREAL(#count) * INT_TO_LREAL(#base);
     END_IF;
-    "ROLL_State".Timer[#Number].Mode := #Operation;
+    "ROLL_State".S5Timers[#Number].Mode := #Operation;
     IF #Operation = 0 THEN
-        IF NOT #Signal THEN "ROLL_State".Timer[#Number].RemainingMs := 0.0; END_IF;
-        "ROLL_State".Timer[#Number].Q := #Signal AND ("ROLL_State".Timer[#Number].RemainingMs <= 0.0);
+        IF NOT #Signal THEN "ROLL_State".S5Timers[#Number].RemainingMs := 0.0; END_IF;
+        "ROLL_State".S5Timers[#Number].Q := #Signal AND ("ROLL_State".S5Timers[#Number].RemainingMs <= 0.0);
     ELSIF #Operation = 1 THEN
-        IF #Signal THEN "ROLL_State".Timer[#Number].RemainingMs := 0.0; END_IF;
-        "ROLL_State".Timer[#Number].Q := #Signal OR ("ROLL_State".Timer[#Number].RemainingMs > 0.0);
+        IF #Signal THEN "ROLL_State".S5Timers[#Number].RemainingMs := 0.0; END_IF;
+        "ROLL_State".S5Timers[#Number].Q := #Signal OR ("ROLL_State".S5Timers[#Number].RemainingMs > 0.0);
     ELSE
         "ROLL_IO".ConversionFault := TRUE;
     END_IF;
-    "ROLL_State".Timer[#Number].Previous := #Signal;
+    "ROLL_State".S5Timers[#Number].Previous := #Signal;
 END_FUNCTION
 
 FUNCTION "ROLL_TimerValue" : Word
@@ -284,8 +284,8 @@ BEGIN
         "ROLL_IO".ConversionFault := TRUE;
         RETURN;
     END_IF;
-    IF "ROLL_State".Timer[#Number].BaseMs > 0 THEN
-        #count := CEIL("ROLL_State".Timer[#Number].RemainingMs / INT_TO_LREAL("ROLL_State".Timer[#Number].BaseMs));
+    IF "ROLL_State".S5Timers[#Number].BaseMs > 0 THEN
+        #count := CEIL("ROLL_State".S5Timers[#Number].RemainingMs / INT_TO_LREAL("ROLL_State".S5Timers[#Number].BaseMs));
         #ROLL_TimerValue := DINT_TO_WORD(#count);
     END_IF;
 END_FUNCTION
@@ -309,23 +309,23 @@ BEGIN
     END_IF;
     CASE #Operation OF
         0:
-            IF #Signal AND NOT "ROLL_State".Counter[#Number].SetPrevious THEN
+            IF #Signal AND NOT "ROLL_State".S5Counters[#Number].SetPrevious THEN
                 #count := "ROLL_DecodeBCD"(Value := #Preset);
-                IF #count >= 0 THEN "ROLL_State".Counter[#Number].Value := #count; END_IF;
+                IF #count >= 0 THEN "ROLL_State".S5Counters[#Number].Value := #count; END_IF;
             END_IF;
-            "ROLL_State".Counter[#Number].SetPrevious := #Signal;
+            "ROLL_State".S5Counters[#Number].SetPrevious := #Signal;
         1:
-            IF #Signal THEN "ROLL_State".Counter[#Number].Value := 0; END_IF;
+            IF #Signal THEN "ROLL_State".S5Counters[#Number].Value := 0; END_IF;
         2:
-            IF #Signal AND NOT "ROLL_State".Counter[#Number].UpPrevious AND ("ROLL_State".Counter[#Number].Value < 999) THEN
-                "ROLL_State".Counter[#Number].Value := "ROLL_State".Counter[#Number].Value + 1;
+            IF #Signal AND NOT "ROLL_State".S5Counters[#Number].UpPrevious AND ("ROLL_State".S5Counters[#Number].Value < 999) THEN
+                "ROLL_State".S5Counters[#Number].Value := "ROLL_State".S5Counters[#Number].Value + 1;
             END_IF;
-            "ROLL_State".Counter[#Number].UpPrevious := #Signal;
+            "ROLL_State".S5Counters[#Number].UpPrevious := #Signal;
         3:
-            IF #Signal AND NOT "ROLL_State".Counter[#Number].DownPrevious AND ("ROLL_State".Counter[#Number].Value > 0) THEN
-                "ROLL_State".Counter[#Number].Value := "ROLL_State".Counter[#Number].Value - 1;
+            IF #Signal AND NOT "ROLL_State".S5Counters[#Number].DownPrevious AND ("ROLL_State".S5Counters[#Number].Value > 0) THEN
+                "ROLL_State".S5Counters[#Number].Value := "ROLL_State".S5Counters[#Number].Value - 1;
             END_IF;
-            "ROLL_State".Counter[#Number].DownPrevious := #Signal;
+            "ROLL_State".S5Counters[#Number].DownPrevious := #Signal;
         ELSE "ROLL_IO".ConversionFault := TRUE;
     END_CASE;
 END_FUNCTION
@@ -342,11 +342,11 @@ END_VAR
 BEGIN
     IF #DeltaMs < 0.0 THEN "ROLL_IO".ConversionFault := TRUE; RETURN; END_IF;
     FOR #n := 0 TO 127 DO
-        IF "ROLL_State".Timer[#n].RemainingMs > 0.0 THEN
-            "ROLL_State".Timer[#n].RemainingMs := "ROLL_State".Timer[#n].RemainingMs - #DeltaMs;
-            IF "ROLL_State".Timer[#n].RemainingMs <= 0.0 THEN
-                "ROLL_State".Timer[#n].RemainingMs := 0.0;
-                "ROLL_State".Timer[#n].Q := "ROLL_State".Timer[#n].Mode = 0;
+        IF "ROLL_State".S5Timers[#n].RemainingMs > 0.0 THEN
+            "ROLL_State".S5Timers[#n].RemainingMs := "ROLL_State".S5Timers[#n].RemainingMs - #DeltaMs;
+            IF "ROLL_State".S5Timers[#n].RemainingMs <= 0.0 THEN
+                "ROLL_State".S5Timers[#n].RemainingMs := 0.0;
+                "ROLL_State".S5Timers[#n].Q := "ROLL_State".S5Timers[#n].Mode = 0;
             END_IF;
         END_IF;
     END_FOR;

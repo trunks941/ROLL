@@ -27,8 +27,8 @@ VERSION : 0.1
 NON_RETAIN
 VAR
     M : Array[0..255, 0..7] of Bool;
-    Timer : Array[0..127] of "ROLL_TimerState";
-    Counter : Array[0..127] of "ROLL_CounterState";
+    S5Timers : Array[0..127] of "ROLL_TimerState";
+    S5Counters : Array[0..127] of "ROLL_CounterState";
     CurrentProgram : Int := 1;
 END_VAR
 BEGIN
@@ -575,13 +575,13 @@ BEGIN
     END_IF;
     IF #Operation = 2 THEN
         IF #Signal THEN
-            "ROLL_State".Timer[#Number].RemainingMs := 0.0;
-            "ROLL_State".Timer[#Number].Q := FALSE;
+            "ROLL_State".S5Timers[#Number].RemainingMs := 0.0;
+            "ROLL_State".S5Timers[#Number].Q := FALSE;
         END_IF;
         RETURN;
     END_IF;
-    #trigger := ((#Operation = 0) AND #Signal AND NOT "ROLL_State".Timer[#Number].Previous)
-        OR ((#Operation = 1) AND NOT #Signal AND "ROLL_State".Timer[#Number].Previous);
+    #trigger := ((#Operation = 0) AND #Signal AND NOT "ROLL_State".S5Timers[#Number].Previous)
+        OR ((#Operation = 1) AND NOT #Signal AND "ROLL_State".S5Timers[#Number].Previous);
     IF #trigger THEN
         #count := "ROLL_DecodeBCD"(Value := #Preset);
         #base := WORD_TO_INT(SHR(IN := #Preset AND W#16#F000, N := 12));
@@ -594,24 +594,24 @@ BEGIN
         END_CASE;
         IF (#base = 0) OR (#count < 0) THEN
             "ROLL_IO".ConversionFault := TRUE;
-            "ROLL_State".Timer[#Number].RemainingMs := 0.0;
-            "ROLL_State".Timer[#Number].Q := FALSE;
+            "ROLL_State".S5Timers[#Number].RemainingMs := 0.0;
+            "ROLL_State".S5Timers[#Number].Q := FALSE;
             RETURN;
         END_IF;
-        "ROLL_State".Timer[#Number].BaseMs := #base;
-        "ROLL_State".Timer[#Number].RemainingMs := INT_TO_LREAL(#count) * INT_TO_LREAL(#base);
+        "ROLL_State".S5Timers[#Number].BaseMs := #base;
+        "ROLL_State".S5Timers[#Number].RemainingMs := INT_TO_LREAL(#count) * INT_TO_LREAL(#base);
     END_IF;
-    "ROLL_State".Timer[#Number].Mode := #Operation;
+    "ROLL_State".S5Timers[#Number].Mode := #Operation;
     IF #Operation = 0 THEN
-        IF NOT #Signal THEN "ROLL_State".Timer[#Number].RemainingMs := 0.0; END_IF;
-        "ROLL_State".Timer[#Number].Q := #Signal AND ("ROLL_State".Timer[#Number].RemainingMs <= 0.0);
+        IF NOT #Signal THEN "ROLL_State".S5Timers[#Number].RemainingMs := 0.0; END_IF;
+        "ROLL_State".S5Timers[#Number].Q := #Signal AND ("ROLL_State".S5Timers[#Number].RemainingMs <= 0.0);
     ELSIF #Operation = 1 THEN
-        IF #Signal THEN "ROLL_State".Timer[#Number].RemainingMs := 0.0; END_IF;
-        "ROLL_State".Timer[#Number].Q := #Signal OR ("ROLL_State".Timer[#Number].RemainingMs > 0.0);
+        IF #Signal THEN "ROLL_State".S5Timers[#Number].RemainingMs := 0.0; END_IF;
+        "ROLL_State".S5Timers[#Number].Q := #Signal OR ("ROLL_State".S5Timers[#Number].RemainingMs > 0.0);
     ELSE
         "ROLL_IO".ConversionFault := TRUE;
     END_IF;
-    "ROLL_State".Timer[#Number].Previous := #Signal;
+    "ROLL_State".S5Timers[#Number].Previous := #Signal;
 END_FUNCTION
 
 FUNCTION "ROLL_TimerValue" : Word
@@ -629,8 +629,8 @@ BEGIN
         "ROLL_IO".ConversionFault := TRUE;
         RETURN;
     END_IF;
-    IF "ROLL_State".Timer[#Number].BaseMs > 0 THEN
-        #count := CEIL("ROLL_State".Timer[#Number].RemainingMs / INT_TO_LREAL("ROLL_State".Timer[#Number].BaseMs));
+    IF "ROLL_State".S5Timers[#Number].BaseMs > 0 THEN
+        #count := CEIL("ROLL_State".S5Timers[#Number].RemainingMs / INT_TO_LREAL("ROLL_State".S5Timers[#Number].BaseMs));
         #ROLL_TimerValue := DINT_TO_WORD(#count);
     END_IF;
 END_FUNCTION
@@ -654,23 +654,23 @@ BEGIN
     END_IF;
     CASE #Operation OF
         0:
-            IF #Signal AND NOT "ROLL_State".Counter[#Number].SetPrevious THEN
+            IF #Signal AND NOT "ROLL_State".S5Counters[#Number].SetPrevious THEN
                 #count := "ROLL_DecodeBCD"(Value := #Preset);
-                IF #count >= 0 THEN "ROLL_State".Counter[#Number].Value := #count; END_IF;
+                IF #count >= 0 THEN "ROLL_State".S5Counters[#Number].Value := #count; END_IF;
             END_IF;
-            "ROLL_State".Counter[#Number].SetPrevious := #Signal;
+            "ROLL_State".S5Counters[#Number].SetPrevious := #Signal;
         1:
-            IF #Signal THEN "ROLL_State".Counter[#Number].Value := 0; END_IF;
+            IF #Signal THEN "ROLL_State".S5Counters[#Number].Value := 0; END_IF;
         2:
-            IF #Signal AND NOT "ROLL_State".Counter[#Number].UpPrevious AND ("ROLL_State".Counter[#Number].Value < 999) THEN
-                "ROLL_State".Counter[#Number].Value := "ROLL_State".Counter[#Number].Value + 1;
+            IF #Signal AND NOT "ROLL_State".S5Counters[#Number].UpPrevious AND ("ROLL_State".S5Counters[#Number].Value < 999) THEN
+                "ROLL_State".S5Counters[#Number].Value := "ROLL_State".S5Counters[#Number].Value + 1;
             END_IF;
-            "ROLL_State".Counter[#Number].UpPrevious := #Signal;
+            "ROLL_State".S5Counters[#Number].UpPrevious := #Signal;
         3:
-            IF #Signal AND NOT "ROLL_State".Counter[#Number].DownPrevious AND ("ROLL_State".Counter[#Number].Value > 0) THEN
-                "ROLL_State".Counter[#Number].Value := "ROLL_State".Counter[#Number].Value - 1;
+            IF #Signal AND NOT "ROLL_State".S5Counters[#Number].DownPrevious AND ("ROLL_State".S5Counters[#Number].Value > 0) THEN
+                "ROLL_State".S5Counters[#Number].Value := "ROLL_State".S5Counters[#Number].Value - 1;
             END_IF;
-            "ROLL_State".Counter[#Number].DownPrevious := #Signal;
+            "ROLL_State".S5Counters[#Number].DownPrevious := #Signal;
         ELSE "ROLL_IO".ConversionFault := TRUE;
     END_CASE;
 END_FUNCTION
@@ -687,11 +687,11 @@ END_VAR
 BEGIN
     IF #DeltaMs < 0.0 THEN "ROLL_IO".ConversionFault := TRUE; RETURN; END_IF;
     FOR #n := 0 TO 127 DO
-        IF "ROLL_State".Timer[#n].RemainingMs > 0.0 THEN
-            "ROLL_State".Timer[#n].RemainingMs := "ROLL_State".Timer[#n].RemainingMs - #DeltaMs;
-            IF "ROLL_State".Timer[#n].RemainingMs <= 0.0 THEN
-                "ROLL_State".Timer[#n].RemainingMs := 0.0;
-                "ROLL_State".Timer[#n].Q := "ROLL_State".Timer[#n].Mode = 0;
+        IF "ROLL_State".S5Timers[#n].RemainingMs > 0.0 THEN
+            "ROLL_State".S5Timers[#n].RemainingMs := "ROLL_State".S5Timers[#n].RemainingMs - #DeltaMs;
+            IF "ROLL_State".S5Timers[#n].RemainingMs <= 0.0 THEN
+                "ROLL_State".S5Timers[#n].RemainingMs := 0.0;
+                "ROLL_State".S5Timers[#n].Q := "ROLL_State".S5Timers[#n].Mode = 0;
             END_IF;
         END_IF;
     END_FOR;
@@ -796,16 +796,16 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB2, STEP 5 network 1
-    #r := ((NOT "ROLL_State".M[0, 1]) AND "ROLL_State".Timer[11].Q);
+    #r := ((NOT "ROLL_State".M[0, 1]) AND "ROLL_State".S5Timers[11].Q);
     "ROLL_State".M[4, 1] := #r;
     // PB2, STEP 5 network 2
     #r := ((NOT "ROLL_State".M[4, 1]) OR "ROLL_IO".Input[1, 0]);
@@ -859,7 +859,7 @@ BEGIN
     #r := ("ROLL_IO".Input[5, 2] AND "ROLL_State".M[3, 1]);
     IF #r THEN "ROLL_State".M[6, 0] := FALSE; END_IF;
     // PB2, STEP 5 network 13
-    #r := ((NOT "ROLL_IO".Input[5, 3]) AND "ROLL_State".Timer[31].Q);
+    #r := ((NOT "ROLL_IO".Input[5, 3]) AND "ROLL_State".S5Timers[31].Q);
     IF #r THEN "ROLL_State".M[6, 1] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[6, 1] := FALSE; END_IF;
@@ -869,17 +869,17 @@ BEGIN
     #r := ("ROLL_IO".Input[5, 4] AND "ROLL_State".M[3, 1]);
     IF #r THEN "ROLL_State".M[6, 2] := FALSE; END_IF;
     // PB2, STEP 5 network 15
-    #r := ((NOT "ROLL_IO".Input[5, 5]) AND "ROLL_State".M[40, 5] AND "ROLL_State".Timer[17].Q);
+    #r := ((NOT "ROLL_IO".Input[5, 5]) AND "ROLL_State".M[40, 5] AND "ROLL_State".S5Timers[17].Q);
     IF #r THEN "ROLL_State".M[6, 3] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[6, 3] := FALSE; END_IF;
     // PB2, STEP 5 network 16
-    #r := ((NOT "ROLL_IO".Input[6, 0]) AND "ROLL_State".Timer[32].Q);
+    #r := ((NOT "ROLL_IO".Input[6, 0]) AND "ROLL_State".S5Timers[32].Q);
     IF #r THEN "ROLL_State".M[6, 4] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[6, 4] := FALSE; END_IF;
     // PB2, STEP 5 network 17
-    #r := ((NOT "ROLL_IO".Input[6, 2]) AND "ROLL_State".Timer[33].Q);
+    #r := ((NOT "ROLL_IO".Input[6, 2]) AND "ROLL_State".S5Timers[33].Q);
     IF #r THEN "ROLL_State".M[6, 5] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[6, 5] := FALSE; END_IF;
@@ -889,27 +889,27 @@ BEGIN
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[6, 6] := FALSE; END_IF;
     // PB2, STEP 5 network 19
-    #r := ((NOT "ROLL_State".M[0, 3]) AND "ROLL_State".Timer[35].Q);
+    #r := ((NOT "ROLL_State".M[0, 3]) AND "ROLL_State".S5Timers[35].Q);
     IF #r THEN "ROLL_State".M[6, 7] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[6, 7] := FALSE; END_IF;
     // PB2, STEP 5 network 20
-    #r := ((NOT "ROLL_State".M[0, 3]) AND "ROLL_State".Timer[36].Q);
+    #r := ((NOT "ROLL_State".M[0, 3]) AND "ROLL_State".S5Timers[36].Q);
     IF #r THEN "ROLL_State".M[7, 0] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[7, 0] := FALSE; END_IF;
     // PB2, STEP 5 network 21
-    #r := ((NOT "ROLL_State".M[0, 3]) AND "ROLL_State".M[48, 1] AND "ROLL_State".Timer[37].Q);
+    #r := ((NOT "ROLL_State".M[0, 3]) AND "ROLL_State".M[48, 1] AND "ROLL_State".S5Timers[37].Q);
     IF #r THEN "ROLL_State".M[7, 1] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[7, 1] := FALSE; END_IF;
     // PB2, STEP 5 network 22
-    #r := ((NOT "ROLL_State".M[0, 3]) AND "ROLL_State".Timer[38].Q);
+    #r := ((NOT "ROLL_State".M[0, 3]) AND "ROLL_State".S5Timers[38].Q);
     IF #r THEN "ROLL_State".M[7, 2] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[7, 2] := FALSE; END_IF;
     // PB2, STEP 5 network 23
-    #r := ((NOT "ROLL_IO".Input[5, 6]) AND "ROLL_State".Timer[16].Q);
+    #r := ((NOT "ROLL_IO".Input[5, 6]) AND "ROLL_State".S5Timers[16].Q);
     IF #r THEN "ROLL_State".M[7, 3] := TRUE; END_IF;
     #r := ("ROLL_IO".Input[5, 6] AND "ROLL_State".M[3, 1]);
     IF #r THEN "ROLL_State".M[7, 3] := FALSE; END_IF;
@@ -938,7 +938,7 @@ BEGIN
     #a1 := W#16#1050;
     #r := ((NOT "ROLL_IO".Input[7, 6]) AND "ROLL_IO".Output[20, 5]);
     "ROLL_TimerOp"(Number := 30, Operation := 0, Signal := #r, Preset := #a1);
-    #r := "ROLL_State".Timer[30].Q;
+    #r := "ROLL_State".S5Timers[30].Q;
     IF #r THEN "ROLL_State".M[8, 6] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[8, 6] := FALSE; END_IF;
@@ -963,12 +963,12 @@ BEGIN
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[9, 2] := FALSE; END_IF;
     // PB2, STEP 5 network 33
-    #r := ("ROLL_State".M[4, 1] AND "ROLL_State".Timer[19].Q);
+    #r := ("ROLL_State".M[4, 1] AND "ROLL_State".S5Timers[19].Q);
     IF #r THEN "ROLL_State".M[9, 3] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[9, 3] := FALSE; END_IF;
     // PB2, STEP 5 network 34
-    #r := (((("ROLL_State".M[20, 4] OR "ROLL_State".M[20, 5]) AND "ROLL_IO".Input[0, 1] AND "ROLL_State".M[190, 6]) OR "ROLL_State".M[31, 5]) AND "ROLL_State".Timer[95].Q);
+    #r := (((("ROLL_State".M[20, 4] OR "ROLL_State".M[20, 5]) AND "ROLL_IO".Input[0, 1] AND "ROLL_State".M[190, 6]) OR "ROLL_State".M[31, 5]) AND "ROLL_State".S5Timers[95].Q);
     "ROLL_State".M[9, 4] := #r;
     // PB2, STEP 5 network 35
     #r := "ROLL_State".M[0, 3];
@@ -988,12 +988,12 @@ BEGIN
     // PB2, STEP 5 network 38
     #r := ((NOT "ROLL_IO".Input[12, 0]) AND "ROLL_State".M[4, 1]);
     IF #r THEN "ROLL_State".M[10, 0] := TRUE; END_IF;
-    #r := (((((NOT "ROLL_State".Timer[11].Q) AND "ROLL_IO".Input[3, 0]) OR "ROLL_IO".Input[12, 5]) AND "ROLL_State".M[3, 1]) OR (NOT "ROLL_State".M[4, 1]) OR "ROLL_State".M[0, 7]);
+    #r := (((((NOT "ROLL_State".S5Timers[11].Q) AND "ROLL_IO".Input[3, 0]) OR "ROLL_IO".Input[12, 5]) AND "ROLL_State".M[3, 1]) OR (NOT "ROLL_State".M[4, 1]) OR "ROLL_State".M[0, 7]);
     IF #r THEN "ROLL_State".M[10, 0] := FALSE; END_IF;
     // PB2, STEP 5 network 39
     #r := ((NOT "ROLL_IO".Input[12, 6]) AND "ROLL_State".M[4, 1]);
     IF #r THEN "ROLL_State".M[10, 1] := TRUE; END_IF;
-    #r := (((((NOT "ROLL_State".Timer[11].Q) AND "ROLL_IO".Input[3, 0]) OR "ROLL_IO".Input[12, 1]) AND "ROLL_State".M[3, 1]) OR (NOT "ROLL_State".M[4, 1]) OR "ROLL_State".M[0, 7]);
+    #r := (((((NOT "ROLL_State".S5Timers[11].Q) AND "ROLL_IO".Input[3, 0]) OR "ROLL_IO".Input[12, 1]) AND "ROLL_State".M[3, 1]) OR (NOT "ROLL_State".M[4, 1]) OR "ROLL_State".M[0, 7]);
     IF #r THEN "ROLL_State".M[10, 1] := FALSE; END_IF;
     // PB2, STEP 5 network 40
     #r := "ROLL_State".M[0, 3];
@@ -1031,12 +1031,12 @@ BEGIN
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[11, 0] := FALSE; END_IF;
     // PB2, STEP 5 network 47
-    #r := ("ROLL_IO".Input[13, 3] AND "ROLL_State".M[4, 1] AND "ROLL_State".Timer[112].Q);
+    #r := ("ROLL_IO".Input[13, 3] AND "ROLL_State".M[4, 1] AND "ROLL_State".S5Timers[112].Q);
     IF #r THEN "ROLL_State".M[11, 1] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[11, 1] := FALSE; END_IF;
     // PB2, STEP 5 network 48
-    #r := ((NOT "ROLL_IO".Input[13, 3]) AND "ROLL_State".M[4, 1] AND "ROLL_State".Timer[15].Q);
+    #r := ((NOT "ROLL_IO".Input[13, 3]) AND "ROLL_State".M[4, 1] AND "ROLL_State".S5Timers[15].Q);
     IF #r THEN "ROLL_State".M[11, 2] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[11, 2] := FALSE; END_IF;
@@ -1121,22 +1121,22 @@ BEGIN
     #r := (((NOT "ROLL_IO".Input[10, 0]) OR (NOT "ROLL_IO".Input[10, 1]) OR (NOT "ROLL_IO".Input[10, 2]) OR (NOT "ROLL_IO".Input[10, 3])) AND "ROLL_IO".Output[19, 1]);
     "ROLL_TimerOp"(Number := 50, Operation := 0, Signal := #r, Preset := #a1);
     // PB2, STEP 5 network 65
-    #r := ((NOT "ROLL_IO".Input[10, 0]) AND "ROLL_State".Timer[50].Q);
+    #r := ((NOT "ROLL_IO".Input[10, 0]) AND "ROLL_State".S5Timers[50].Q);
     IF #r THEN "ROLL_State".M[14, 0] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[14, 0] := FALSE; END_IF;
     // PB2, STEP 5 network 66
-    #r := ((NOT "ROLL_IO".Input[10, 1]) AND "ROLL_State".Timer[50].Q);
+    #r := ((NOT "ROLL_IO".Input[10, 1]) AND "ROLL_State".S5Timers[50].Q);
     IF #r THEN "ROLL_State".M[14, 1] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[14, 1] := FALSE; END_IF;
     // PB2, STEP 5 network 67
-    #r := ((NOT "ROLL_IO".Input[10, 2]) AND "ROLL_State".Timer[50].Q);
+    #r := ((NOT "ROLL_IO".Input[10, 2]) AND "ROLL_State".S5Timers[50].Q);
     IF #r THEN "ROLL_State".M[14, 2] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[14, 2] := FALSE; END_IF;
     // PB2, STEP 5 network 68
-    #r := ((NOT "ROLL_IO".Input[10, 3]) AND "ROLL_State".Timer[50].Q);
+    #r := ((NOT "ROLL_IO".Input[10, 3]) AND "ROLL_State".S5Timers[50].Q);
     IF #r THEN "ROLL_State".M[14, 3] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[14, 3] := FALSE; END_IF;
@@ -1341,141 +1341,141 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..15] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..15] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB3, STEP 5 network 1
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0001;
-    #compare[0] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[0];
+    #comparisonResults[0] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[0];
     "ROLL_State".M[20, 1] := #r;
     // PB3, STEP 5 network 2
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0002;
-    #compare[1] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[1];
+    #comparisonResults[1] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[1];
     "ROLL_State".M[20, 2] := #r;
     // PB3, STEP 5 network 3
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0003;
-    #compare[2] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[2];
+    #comparisonResults[2] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[2];
     "ROLL_State".M[20, 3] := #r;
     // PB3, STEP 5 network 4
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0004;
-    #compare[3] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[3];
+    #comparisonResults[3] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[3];
     "ROLL_State".M[20, 4] := #r;
     // PB3, STEP 5 network 5
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0005;
-    #compare[4] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[4];
+    #comparisonResults[4] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[4];
     "ROLL_State".M[20, 5] := #r;
     // PB3, STEP 5 network 6
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0007;
-    #compare[5] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[5];
+    #comparisonResults[5] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[5];
     "ROLL_State".M[20, 7] := #r;
     // PB3, STEP 5 network 7
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#000A;
-    #compare[6] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[6];
+    #comparisonResults[6] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[6];
     "ROLL_State".M[22, 0] := #r;
     // PB3, STEP 5 network 8
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#000B;
-    #compare[7] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[7];
+    #comparisonResults[7] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[7];
     "ROLL_State".M[22, 1] := #r;
     // PB3, STEP 5 network 9
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#000C;
-    #compare[8] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[8];
+    #comparisonResults[8] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[8];
     "ROLL_State".M[22, 2] := #r;
     // PB3, STEP 5 network 10
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#000D;
-    #compare[9] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[9];
+    #comparisonResults[9] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[9];
     "ROLL_State".M[22, 3] := #r;
     // PB3, STEP 5 network 11
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#000E;
-    #compare[10] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[10];
+    #comparisonResults[10] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[10];
     "ROLL_State".M[22, 4] := #r;
     // PB3, STEP 5 network 12
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#000F;
-    #compare[11] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[11];
+    #comparisonResults[11] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[11];
     "ROLL_State".M[22, 5] := #r;
     // PB3, STEP 5 network 13
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0014;
-    #compare[12] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[12];
+    #comparisonResults[12] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[12];
     "ROLL_State".M[23, 0] := #r;
     // PB3, STEP 5 network 14
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0015;
-    #compare[13] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[13];
+    #comparisonResults[13] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[13];
     "ROLL_State".M[23, 1] := #r;
     // PB3, STEP 5 network 15
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0016;
-    #compare[14] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[14];
+    #comparisonResults[14] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[14];
     "ROLL_State".M[23, 2] := #r;
     // PB3, STEP 5 network 16
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0017;
-    #compare[15] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[15];
+    #comparisonResults[15] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[15];
     "ROLL_State".M[23, 3] := #r;
     // PB3, STEP 5 network 17
     RETURN;
@@ -1488,213 +1488,213 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..24] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..24] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB4, STEP 5 network 1
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#001E;
-    #compare[0] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[0];
+    #comparisonResults[0] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[0];
     "ROLL_State".M[23, 5] := #r;
     // PB4, STEP 5 network 2
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#001F;
-    #compare[1] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[1];
+    #comparisonResults[1] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[1];
     "ROLL_State".M[23, 6] := #r;
     // PB4, STEP 5 network 3
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0023;
-    #compare[2] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[2];
+    #comparisonResults[2] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[2];
     "ROLL_State".M[24, 0] := #r;
     // PB4, STEP 5 network 4
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0024;
-    #compare[3] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[3];
+    #comparisonResults[3] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[3];
     "ROLL_State".M[24, 1] := #r;
     // PB4, STEP 5 network 5
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0025;
-    #compare[4] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[4];
+    #comparisonResults[4] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[4];
     "ROLL_State".M[24, 2] := #r;
     // PB4, STEP 5 network 6
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0026;
-    #compare[5] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[5];
+    #comparisonResults[5] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[5];
     "ROLL_State".M[24, 3] := #r;
     // PB4, STEP 5 network 7
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0027;
-    #compare[6] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[6];
+    #comparisonResults[6] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[6];
     "ROLL_State".M[24, 4] := #r;
     // PB4, STEP 5 network 8
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0032;
-    #compare[7] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[7];
+    #comparisonResults[7] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[7];
     "ROLL_State".M[25, 0] := #r;
     // PB4, STEP 5 network 9
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0033;
-    #compare[8] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[8];
+    #comparisonResults[8] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[8];
     "ROLL_State".M[25, 1] := #r;
     // PB4, STEP 5 network 10
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0034;
-    #compare[9] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[9];
+    #comparisonResults[9] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[9];
     "ROLL_State".M[25, 2] := #r;
     // PB4, STEP 5 network 11
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0035;
-    #compare[10] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[10];
+    #comparisonResults[10] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[10];
     "ROLL_State".M[25, 3] := #r;
     // PB4, STEP 5 network 12
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0037;
-    #compare[11] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[11];
+    #comparisonResults[11] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[11];
     "ROLL_State".M[25, 4] := #r;
     // PB4, STEP 5 network 13
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0038;
-    #compare[12] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[12];
+    #comparisonResults[12] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[12];
     "ROLL_State".M[25, 5] := #r;
     // PB4, STEP 5 network 14
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0039;
-    #compare[13] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[13];
+    #comparisonResults[13] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[13];
     "ROLL_State".M[25, 6] := #r;
     // PB4, STEP 5 network 15
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#003A;
-    #compare[14] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[14];
+    #comparisonResults[14] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[14];
     "ROLL_State".M[25, 7] := #r;
     // PB4, STEP 5 network 16
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#003C;
-    #compare[15] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[15];
+    #comparisonResults[15] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[15];
     "ROLL_State".M[26, 0] := #r;
     // PB4, STEP 5 network 17
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#003D;
-    #compare[16] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[16];
+    #comparisonResults[16] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[16];
     "ROLL_State".M[26, 1] := #r;
     // PB4, STEP 5 network 18
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#003E;
-    #compare[17] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[17];
+    #comparisonResults[17] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[17];
     "ROLL_State".M[26, 2] := #r;
     // PB4, STEP 5 network 19
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#003F;
-    #compare[18] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[18];
+    #comparisonResults[18] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[18];
     "ROLL_State".M[26, 3] := #r;
     // PB4, STEP 5 network 20
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0041;
-    #compare[19] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[19];
+    #comparisonResults[19] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[19];
     "ROLL_State".M[26, 5] := #r;
     // PB4, STEP 5 network 21
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0042;
-    #compare[20] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[20];
+    #comparisonResults[20] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[20];
     "ROLL_State".M[26, 6] := #r;
     // PB4, STEP 5 network 22
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0045;
-    #compare[21] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[21];
+    #comparisonResults[21] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[21];
     "ROLL_State".M[27, 1] := #r;
     // PB4, STEP 5 network 23
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0048;
-    #compare[22] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[22];
+    #comparisonResults[22] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[22];
     "ROLL_State".M[27, 4] := #r;
     // PB4, STEP 5 network 24
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0049;
-    #compare[23] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[23];
+    #comparisonResults[23] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[23];
     "ROLL_State".M[27, 5] := #r;
     // PB4, STEP 5 network 25
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 239, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0063;
-    #compare[24] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
-    #r := #compare[24];
+    #comparisonResults[24] := (WORD_TO_INT(#a2) = WORD_TO_INT(#a1));
+    #r := #comparisonResults[24];
     "ROLL_State".M[27, 7] := #r;
     // PB4, STEP 5 network 26
     RETURN;
@@ -1707,14 +1707,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB7, STEP 5 network 1
     #r := ((NOT "ROLL_State".M[70, 2]) AND (NOT "ROLL_State".M[70, 3]) AND (NOT "ROLL_State".M[70, 4]) AND (NOT "ROLL_State".M[70, 6]) AND "ROLL_IO".Input[11, 0] AND "ROLL_IO".Input[11, 6] AND "ROLL_IO".Input[13, 3] AND "ROLL_State".M[63, 1]);
     "ROLL_State".M[28, 0] := #r;
@@ -1748,7 +1748,7 @@ BEGIN
     #r := (NOT "ROLL_State".M[28, 6]);
     IF #r THEN "ROLL_State".M[29, 0] := FALSE; END_IF;
     // PB7, STEP 5 network 11
-    #r := ("ROLL_State".M[29, 0] AND "ROLL_State".Timer[13].Q);
+    #r := ("ROLL_State".M[29, 0] AND "ROLL_State".S5Timers[13].Q);
     "ROLL_State".M[29, 1] := #r;
     // PB7, STEP 5 network 12
     #r := (NOT "ROLL_State".M[12, 1]);
@@ -1812,14 +1812,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB8, STEP 5 network 1
     #r := ("ROLL_State".M[37, 7] OR "ROLL_State".M[38, 0] OR "ROLL_State".M[39, 7] OR "ROLL_State".M[40, 0] OR "ROLL_State".M[40, 1] OR "ROLL_State".M[40, 4] OR "ROLL_State".M[41, 0] OR "ROLL_State".M[41, 6] OR "ROLL_State".M[41, 7] OR "ROLL_State".M[42, 2] OR "ROLL_State".M[42, 3]);
     "ROLL_State".M[33, 0] := #r;
@@ -1837,7 +1837,7 @@ BEGIN
     #r := ((NOT "ROLL_State".M[3, 1]) AND (((NOT "ROLL_IO".Input[11, 2]) AND "ROLL_State".M[52, 0]) OR ((NOT "ROLL_State".M[15, 1]) AND "ROLL_State".M[53, 1]) OR "ROLL_State".M[33, 1] OR "ROLL_State".M[43, 0] OR "ROLL_State".M[43, 2] OR "ROLL_State".M[43, 3] OR "ROLL_State".M[44, 0] OR "ROLL_State".M[44, 7] OR "ROLL_State".M[45, 3] OR "ROLL_State".M[45, 4] OR "ROLL_State".M[46, 2] OR "ROLL_State".M[46, 3] OR "ROLL_State".M[46, 7] OR "ROLL_State".M[47, 3] OR "ROLL_State".M[52, 3] OR "ROLL_State".M[53, 2] OR "ROLL_State".M[53, 5] OR "ROLL_State".M[53, 6]) AND "ROLL_IO".Input[0, 2] AND "ROLL_State".M[29, 0]);
     "ROLL_TimerOp"(Number := 41, Operation := 0, Signal := #r, Preset := #a1);
     // PB8, STEP 5 network 5
-    #r := ("ROLL_State".Timer[40].Q OR "ROLL_State".Timer[41].Q);
+    #r := ("ROLL_State".S5Timers[40].Q OR "ROLL_State".S5Timers[41].Q);
     IF #r THEN "ROLL_State".M[34, 1] := TRUE; END_IF;
     #r := ((NOT "ROLL_IO".Input[0, 2]) OR "ROLL_State".M[3, 1]);
     IF #r THEN "ROLL_State".M[34, 1] := FALSE; END_IF;
@@ -1852,14 +1852,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB9, STEP 5 network 1
     #r := ((NOT "ROLL_State".M[32, 1]) AND (NOT "ROLL_State".M[32, 2]) AND "ROLL_IO".Input[0, 2]);
     "ROLL_State".M[32, 0] := #r;
@@ -1905,7 +1905,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[37, 6]);
     IF #r THEN "ROLL_State".M[37, 5] := FALSE; END_IF;
     // PB9, STEP 5 network 11
-    #r := ((NOT "ROLL_IO".Output[113, 2]) AND "ROLL_IO".Output[113, 3] AND "ROLL_State".M[35, 2] AND "ROLL_State".M[37, 5] AND "ROLL_State".Timer[18].Q);
+    #r := ((NOT "ROLL_IO".Output[113, 2]) AND "ROLL_IO".Output[113, 3] AND "ROLL_State".M[35, 2] AND "ROLL_State".M[37, 5] AND "ROLL_State".S5Timers[18].Q);
     IF #r THEN "ROLL_State".M[37, 6] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[37, 7]);
     IF #r THEN "ROLL_State".M[37, 6] := FALSE; END_IF;
@@ -1915,7 +1915,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[38, 0]);
     IF #r THEN "ROLL_State".M[37, 7] := FALSE; END_IF;
     // PB9, STEP 5 network 13
-    #r := ((NOT "ROLL_State".M[70, 2]) AND (((NOT "ROLL_IO".Output[113, 2]) AND "ROLL_IO".Output[113, 3] AND "ROLL_IO".Input[124, 4] AND "ROLL_State".M[28, 4] AND "ROLL_State".M[37, 0]) OR ("ROLL_State".M[37, 7] AND "ROLL_State".Timer[20].Q)) AND "ROLL_IO".Input[123, 5] AND "ROLL_State".M[35, 2]);
+    #r := ((NOT "ROLL_State".M[70, 2]) AND (((NOT "ROLL_IO".Output[113, 2]) AND "ROLL_IO".Output[113, 3] AND "ROLL_IO".Input[124, 4] AND "ROLL_State".M[28, 4] AND "ROLL_State".M[37, 0]) OR ("ROLL_State".M[37, 7] AND "ROLL_State".S5Timers[20].Q)) AND "ROLL_IO".Input[123, 5] AND "ROLL_State".M[35, 2]);
     IF #r THEN "ROLL_State".M[38, 0] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[39, 4]);
     IF #r THEN "ROLL_State".M[38, 0] := FALSE; END_IF;
@@ -1970,7 +1970,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[40, 6]);
     IF #r THEN "ROLL_State".M[40, 5] := FALSE; END_IF;
     // PB9, STEP 5 network 24
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[40, 5] AND "ROLL_State".Timer[1].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[40, 5] AND "ROLL_State".S5Timers[1].Q);
     IF #r THEN "ROLL_State".M[40, 6] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[40, 7]);
     IF #r THEN "ROLL_State".M[40, 6] := FALSE; END_IF;
@@ -1990,7 +1990,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[41, 2]);
     IF #r THEN "ROLL_State".M[41, 1] := FALSE; END_IF;
     // PB9, STEP 5 network 28
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[41, 1] AND "ROLL_State".Timer[2].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[41, 1] AND "ROLL_State".S5Timers[2].Q);
     IF #r THEN "ROLL_State".M[41, 2] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[41, 3] OR "ROLL_State".M[41, 6] OR "ROLL_State".M[43, 2] OR "ROLL_State".M[44, 7] OR "ROLL_State".M[46, 2] OR "ROLL_State".M[47, 6] OR "ROLL_State".M[49, 2]);
     IF #r THEN "ROLL_State".M[41, 2] := FALSE; END_IF;
@@ -2025,7 +2025,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[42, 2]);
     IF #r THEN "ROLL_State".M[42, 1] := FALSE; END_IF;
     // PB9, STEP 5 network 35
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[42, 1] AND "ROLL_State".Timer[1].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[42, 1] AND "ROLL_State".S5Timers[1].Q);
     IF #r THEN "ROLL_State".M[42, 2] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[42, 3]);
     IF #r THEN "ROLL_State".M[42, 2] := FALSE; END_IF;
@@ -2045,7 +2045,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[42, 6]);
     IF #r THEN "ROLL_State".M[42, 5] := FALSE; END_IF;
     // PB9, STEP 5 network 39
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[42, 5] AND "ROLL_State".Timer[2].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[42, 5] AND "ROLL_State".S5Timers[2].Q);
     IF #r THEN "ROLL_State".M[42, 6] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[42, 7] OR "ROLL_State".M[43, 2] OR "ROLL_State".M[44, 7] OR "ROLL_State".M[46, 2] OR "ROLL_State".M[47, 6] OR "ROLL_State".M[49, 2]);
     IF #r THEN "ROLL_State".M[42, 6] := FALSE; END_IF;
@@ -2080,7 +2080,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[43, 6]);
     IF #r THEN "ROLL_State".M[43, 5] := FALSE; END_IF;
     // PB9, STEP 5 network 46
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[43, 5] AND "ROLL_State".Timer[1].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[43, 5] AND "ROLL_State".S5Timers[1].Q);
     IF #r THEN "ROLL_State".M[43, 6] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[43, 7]);
     IF #r THEN "ROLL_State".M[43, 6] := FALSE; END_IF;
@@ -2100,7 +2100,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[44, 2]);
     IF #r THEN "ROLL_State".M[44, 1] := FALSE; END_IF;
     // PB9, STEP 5 network 50
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[44, 1] AND "ROLL_State".Timer[2].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[44, 1] AND "ROLL_State".S5Timers[2].Q);
     IF #r THEN "ROLL_State".M[44, 2] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[44, 3] OR "ROLL_State".M[44, 7] OR "ROLL_State".M[46, 2] OR "ROLL_State".M[47, 6] OR "ROLL_State".M[49, 2]);
     IF #r THEN "ROLL_State".M[44, 2] := FALSE; END_IF;
@@ -2138,7 +2138,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[45, 3]);
     IF #r THEN "ROLL_State".M[45, 2] := FALSE; END_IF;
     // PB9, STEP 5 network 58
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[45, 2] AND "ROLL_State".Timer[1].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[45, 2] AND "ROLL_State".S5Timers[1].Q);
     IF #r THEN "ROLL_State".M[45, 3] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[45, 4]);
     IF #r THEN "ROLL_State".M[45, 3] := FALSE; END_IF;
@@ -2158,7 +2158,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[45, 7]);
     IF #r THEN "ROLL_State".M[45, 6] := FALSE; END_IF;
     // PB9, STEP 5 network 62
-    #r := (("ROLL_State".M[0, 4] OR "ROLL_State".Timer[2].Q) AND "ROLL_State".M[35, 2] AND "ROLL_State".M[45, 6]);
+    #r := (("ROLL_State".M[0, 4] OR "ROLL_State".S5Timers[2].Q) AND "ROLL_State".M[35, 2] AND "ROLL_State".M[45, 6]);
     IF #r THEN "ROLL_State".M[45, 7] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[46, 0] OR "ROLL_State".M[46, 2] OR "ROLL_State".M[47, 6] OR "ROLL_State".M[49, 2]);
     IF #r THEN "ROLL_State".M[45, 7] := FALSE; END_IF;
@@ -2183,14 +2183,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB10, STEP 5 network 1
     #r := (((NOT "ROLL_State".M[110, 0]) AND (NOT "ROLL_State".M[110, 1]) AND (NOT "ROLL_State".M[110, 2]) AND (NOT "ROLL_State".M[110, 3]) AND "ROLL_State".M[40, 1]) OR ((NOT "ROLL_State".M[110, 1]) AND (NOT "ROLL_State".M[110, 2]) AND (NOT "ROLL_State".M[110, 3]) AND "ROLL_State".M[41, 2]) OR ((NOT "ROLL_State".M[110, 2]) AND (NOT "ROLL_State".M[110, 3]) AND "ROLL_State".M[42, 6]) OR ((NOT "ROLL_State".M[110, 3]) AND "ROLL_State".M[44, 2]) OR "ROLL_State".M[45, 7]);
     "ROLL_State".M[240, 0] := #r;
@@ -2215,7 +2215,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[46, 6]);
     IF #r THEN "ROLL_State".M[46, 5] := FALSE; END_IF;
     // PB10, STEP 5 network 6
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[46, 5] AND "ROLL_State".Timer[1].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[46, 5] AND "ROLL_State".S5Timers[1].Q);
     IF #r THEN "ROLL_State".M[46, 6] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[46, 7]);
     IF #r THEN "ROLL_State".M[46, 6] := FALSE; END_IF;
@@ -2235,7 +2235,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[47, 2]);
     IF #r THEN "ROLL_State".M[47, 1] := FALSE; END_IF;
     // PB10, STEP 5 network 10
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[47, 1] AND "ROLL_State".Timer[2].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[47, 1] AND "ROLL_State".S5Timers[2].Q);
     IF #r THEN "ROLL_State".M[47, 2] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[47, 3] OR "ROLL_State".M[47, 6]);
     IF #r THEN "ROLL_State".M[47, 2] := FALSE; END_IF;
@@ -2273,7 +2273,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[48, 2]);
     IF #r THEN "ROLL_State".M[48, 1] := FALSE; END_IF;
     // PB10, STEP 5 network 18
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[48, 1] AND "ROLL_State".Timer[1].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[48, 1] AND "ROLL_State".S5Timers[1].Q);
     IF #r THEN "ROLL_State".M[48, 2] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[48, 3]);
     IF #r THEN "ROLL_State".M[48, 2] := FALSE; END_IF;
@@ -2293,7 +2293,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[48, 6]);
     IF #r THEN "ROLL_State".M[48, 5] := FALSE; END_IF;
     // PB10, STEP 5 network 22
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[48, 5] AND "ROLL_State".Timer[2].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[48, 5] AND "ROLL_State".S5Timers[2].Q);
     IF #r THEN "ROLL_State".M[48, 6] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[48, 7] OR "ROLL_State".M[49, 2]);
     IF #r THEN "ROLL_State".M[48, 6] := FALSE; END_IF;
@@ -2331,7 +2331,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[49, 6]);
     IF #r THEN "ROLL_State".M[49, 5] := FALSE; END_IF;
     // PB10, STEP 5 network 30
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[49, 5] AND "ROLL_State".Timer[1].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[49, 5] AND "ROLL_State".S5Timers[1].Q);
     IF #r THEN "ROLL_State".M[49, 6] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[49, 7]);
     IF #r THEN "ROLL_State".M[49, 6] := FALSE; END_IF;
@@ -2351,7 +2351,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[50, 2]);
     IF #r THEN "ROLL_State".M[50, 1] := FALSE; END_IF;
     // PB10, STEP 5 network 34
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[50, 1] AND "ROLL_State".Timer[2].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[50, 1] AND "ROLL_State".S5Timers[2].Q);
     IF #r THEN "ROLL_State".M[50, 2] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[50, 3]);
     IF #r THEN "ROLL_State".M[50, 2] := FALSE; END_IF;
@@ -2392,7 +2392,7 @@ BEGIN
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[51, 2]);
     IF #r THEN "ROLL_State".M[51, 1] := FALSE; END_IF;
     // PB10, STEP 5 network 43
-    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[51, 1] AND "ROLL_State".Timer[1].Q);
+    #r := ("ROLL_State".M[35, 2] AND "ROLL_State".M[51, 1] AND "ROLL_State".S5Timers[1].Q);
     IF #r THEN "ROLL_State".M[51, 2] := TRUE; END_IF;
     #r := ("ROLL_State".M[32, 2] OR "ROLL_State".M[51, 3]);
     IF #r THEN "ROLL_State".M[51, 2] := FALSE; END_IF;
@@ -2488,14 +2488,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB13, STEP 5 network 1
     #r := ((NOT "ROLL_State".M[58, 6]) AND ("ROLL_IO".Input[11, 1] OR "ROLL_IO".Input[11, 2] OR "ROLL_IO".Input[11, 3] OR "ROLL_IO".Input[11, 4] OR "ROLL_IO".Input[119, 6] OR "ROLL_IO".Input[119, 7] OR "ROLL_IO".Input[120, 0]) AND "ROLL_IO".Input[11, 6]);
     IF #r THEN "ROLL_State".M[58, 7] := TRUE; END_IF;
@@ -2524,38 +2524,38 @@ BEGIN
     // PB13, STEP 5 network 8
     #a2 := #a1;
     #a1 := W#16#0005;
-    #r := (NOT "ROLL_State".Timer[114].Q);
+    #r := (NOT "ROLL_State".S5Timers[114].Q);
     "ROLL_TimerOp"(Number := 113, Operation := 0, Signal := #r, Preset := #a1);
     #a2 := #a1;
     #a1 := W#16#0005;
-    #r := "ROLL_State".Timer[113].Q;
+    #r := "ROLL_State".S5Timers[113].Q;
     "ROLL_TimerOp"(Number := 114, Operation := 1, Signal := #r, Preset := #a1);
     // PB13, STEP 5 network 9
-    #db := 15;
+    #activeDataBlock := 15;
     // PB13, STEP 5 network 10
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 116);
-    #r := ((NOT "ROLL_State".Timer[117].Q) AND "ROLL_State".M[62, 4]);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 116);
+    #r := ((NOT "ROLL_State".S5Timers[117].Q) AND "ROLL_State".M[62, 4]);
     "ROLL_TimerOp"(Number := 116, Operation := 0, Signal := #r, Preset := #a1);
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 117);
-    #r := "ROLL_State".Timer[116].Q;
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 117);
+    #r := "ROLL_State".S5Timers[116].Q;
     "ROLL_TimerOp"(Number := 117, Operation := 1, Signal := #r, Preset := #a1);
     // PB13, STEP 5 network 11
-    #db := 19;
+    #activeDataBlock := 19;
     // PB13, STEP 5 network 12
-    #r := ("ROLL_IO".Output[24, 2] AND "ROLL_State".M[60, 4] AND "ROLL_State".Timer[114].Q);
+    #r := ("ROLL_IO".Output[24, 2] AND "ROLL_State".M[60, 4] AND "ROLL_State".S5Timers[114].Q);
     "ROLL_CounterOp"(Number := 1, Operation := 3, Signal := #r, Preset := #a1);
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 1);
-    #r := ((((NOT "ROLL_IO".Input[13, 3]) AND (NOT ("ROLL_State".Counter[1].Value <> 0)) AND (NOT ("ROLL_State".Counter[2].Value <> 0))) OR "ROLL_IO".Input[13, 3] OR "ROLL_State".M[60, 5]) AND "ROLL_State".Timer[114].Q);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 1);
+    #r := ((((NOT "ROLL_IO".Input[13, 3]) AND (NOT ("ROLL_State".S5Counters[1].Value <> 0)) AND (NOT ("ROLL_State".S5Counters[2].Value <> 0))) OR "ROLL_IO".Input[13, 3] OR "ROLL_State".M[60, 5]) AND "ROLL_State".S5Timers[114].Q);
     "ROLL_CounterOp"(Number := 1, Operation := 0, Signal := #r, Preset := #a1);
     // PB13, STEP 5 network 13
-    #r := ("ROLL_IO".Output[24, 0] AND "ROLL_State".M[60, 5] AND "ROLL_State".Timer[114].Q);
+    #r := ("ROLL_IO".Output[24, 0] AND "ROLL_State".M[60, 5] AND "ROLL_State".S5Timers[114].Q);
     "ROLL_CounterOp"(Number := 2, Operation := 3, Signal := #r, Preset := #a1);
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 2);
-    #r := (("ROLL_IO".Input[13, 3] OR "ROLL_State".M[60, 4]) AND "ROLL_State".Timer[114].Q);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 2);
+    #r := (("ROLL_IO".Input[13, 3] OR "ROLL_State".M[60, 4]) AND "ROLL_State".S5Timers[114].Q);
     "ROLL_CounterOp"(Number := 2, Operation := 0, Signal := #r, Preset := #a1);
     // PB13, STEP 5 network 14
     #r := ((NOT "ROLL_IO".Input[13, 3]) AND "ROLL_IO".Output[24, 2] AND "ROLL_State".M[60, 6]);
@@ -2573,17 +2573,17 @@ BEGIN
     #r := ("ROLL_State".M[60, 4] OR "ROLL_State".M[60, 5]);
     IF #r THEN "ROLL_State".M[60, 6] := FALSE; END_IF;
     // PB13, STEP 5 network 17
-    #r := ((NOT ("ROLL_State".Counter[2].Value <> 0)) AND "ROLL_State".M[62, 6]);
+    #r := ((NOT ("ROLL_State".S5Counters[2].Value <> 0)) AND "ROLL_State".M[62, 6]);
     IF #r THEN "ROLL_State".M[60, 7] := TRUE; END_IF;
     #r := (NOT "ROLL_State".M[62, 6]);
     IF #r THEN "ROLL_State".M[60, 7] := FALSE; END_IF;
     // PB13, STEP 5 network 18
-    #r := ((NOT "ROLL_IO".Input[13, 3]) AND (NOT ("ROLL_State".Counter[1].Value <> 0)) AND "ROLL_State".M[61, 1]);
+    #r := ((NOT "ROLL_IO".Input[13, 3]) AND (NOT ("ROLL_State".S5Counters[1].Value <> 0)) AND "ROLL_State".M[61, 1]);
     IF #r THEN "ROLL_State".M[61, 0] := TRUE; END_IF;
     #r := (NOT "ROLL_State".M[62, 6]);
     IF #r THEN "ROLL_State".M[61, 0] := FALSE; END_IF;
     // PB13, STEP 5 network 19
-    #r := ("ROLL_State".Counter[1].Value <> 0);
+    #r := ("ROLL_State".S5Counters[1].Value <> 0);
     "ROLL_State".M[61, 1] := #r;
     // PB13, STEP 5 network 20
     #r := (("ROLL_State".M[60, 7] OR "ROLL_State".M[62, 6]) AND "ROLL_State".M[61, 0]);
@@ -2614,7 +2614,7 @@ BEGIN
     // PB13, STEP 5 network 26
     #r := ((NOT "ROLL_IO".Input[11, 0]) AND (((NOT "ROLL_IO".Input[12, 1]) AND "ROLL_IO".Output[23, 5]) OR ("ROLL_IO".Output[23, 4] AND "ROLL_IO".Input[12, 1])) AND ("ROLL_State".M[61, 3] OR "ROLL_State".M[61, 4] OR "ROLL_State".M[61, 5]));
     IF #r THEN "ROLL_State".M[62, 0] := TRUE; END_IF;
-    #r := ((("ROLL_State".M[41, 3] OR "ROLL_State".M[42, 7] OR "ROLL_State".M[44, 3] OR "ROLL_State".M[46, 0] OR "ROLL_State".M[47, 3] OR "ROLL_State".M[48, 7] OR "ROLL_State".M[50, 3] OR "ROLL_State".M[51, 5]) AND "ROLL_IO".Input[13, 3] AND "ROLL_State".Timer[114].Q) OR (NOT "ROLL_State".M[31, 5]) OR (NOT "ROLL_State".M[61, 7]));
+    #r := ((("ROLL_State".M[41, 3] OR "ROLL_State".M[42, 7] OR "ROLL_State".M[44, 3] OR "ROLL_State".M[46, 0] OR "ROLL_State".M[47, 3] OR "ROLL_State".M[48, 7] OR "ROLL_State".M[50, 3] OR "ROLL_State".M[51, 5]) AND "ROLL_IO".Input[13, 3] AND "ROLL_State".S5Timers[114].Q) OR (NOT "ROLL_State".M[31, 5]) OR (NOT "ROLL_State".M[61, 7]));
     IF #r THEN "ROLL_State".M[62, 0] := FALSE; END_IF;
     // PB13, STEP 5 network 27
     #r := (((NOT "ROLL_IO".Input[11, 0]) AND ((("ROLL_IO".Input[11, 1] OR "ROLL_IO".Input[11, 2] OR "ROLL_IO".Input[11, 3] OR "ROLL_IO".Input[11, 4] OR "ROLL_IO".Input[119, 6] OR "ROLL_IO".Input[119, 7] OR "ROLL_IO".Input[120, 0]) AND ("ROLL_State".M[80, 6] OR "ROLL_State".M[80, 7])) OR ("ROLL_State".M[60, 0] AND "ROLL_State".M[80, 7]))) OR ("ROLL_IO".Input[11, 0] AND "ROLL_IO".Input[11, 6] AND "ROLL_State".M[80, 7]));
@@ -2632,22 +2632,22 @@ BEGIN
     #r := (((NOT "ROLL_State".M[60, 1]) AND (NOT "ROLL_State".M[60, 3]) AND ("ROLL_State".M[0, 3] OR "ROLL_State".M[20, 1]) AND "ROLL_IO".Input[0, 1] AND "ROLL_State".M[60, 2]) OR ((((NOT "ROLL_State".M[61, 3]) AND (NOT "ROLL_State".M[61, 5]) AND "ROLL_State".M[61, 4]) OR ("ROLL_State".M[61, 3] AND "ROLL_State".M[63, 5])) AND "ROLL_IO".Input[0, 2]));
     "ROLL_State".M[62, 4] := #r;
     // PB13, STEP 5 network 32
-    #r := ((((NOT "ROLL_State".M[190, 5]) AND ("ROLL_State".M[0, 3] OR "ROLL_State".M[23, 2] OR "ROLL_State".M[23, 3]) AND ("ROLL_State".M[60, 1] OR "ROLL_State".M[60, 2] OR "ROLL_State".M[60, 3]) AND "ROLL_IO".Input[0, 1] AND "ROLL_State".M[190, 6] AND "ROLL_State".M[62, 1]) OR ("ROLL_IO".Input[0, 2] AND "ROLL_State".M[31, 5] AND "ROLL_State".M[62, 0])) AND ("ROLL_State".M[62, 5] OR "ROLL_State".Timer[114].Q) AND "ROLL_State".M[60, 0]);
+    #r := ((((NOT "ROLL_State".M[190, 5]) AND ("ROLL_State".M[0, 3] OR "ROLL_State".M[23, 2] OR "ROLL_State".M[23, 3]) AND ("ROLL_State".M[60, 1] OR "ROLL_State".M[60, 2] OR "ROLL_State".M[60, 3]) AND "ROLL_IO".Input[0, 1] AND "ROLL_State".M[190, 6] AND "ROLL_State".M[62, 1]) OR ("ROLL_IO".Input[0, 2] AND "ROLL_State".M[31, 5] AND "ROLL_State".M[62, 0])) AND ("ROLL_State".M[62, 5] OR "ROLL_State".S5Timers[114].Q) AND "ROLL_State".M[60, 0]);
     "ROLL_State".M[62, 5] := #r;
     // PB13, STEP 5 network 33
-    #r := ((NOT "ROLL_State".M[63, 1]) AND (((NOT "ROLL_State".M[62, 0]) AND "ROLL_IO".Input[0, 2] AND "ROLL_State".M[31, 5]) OR ((((NOT "ROLL_State".M[190, 6]) AND ("ROLL_State".M[0, 3] OR "ROLL_State".M[20, 2] OR "ROLL_State".M[23, 2] OR "ROLL_State".M[23, 3]) AND "ROLL_State".M[190, 5]) OR "ROLL_State".M[74, 0]) AND "ROLL_IO".Input[0, 1] AND "ROLL_State".M[62, 1])) AND ("ROLL_State".M[62, 6] OR "ROLL_State".Timer[114].Q) AND "ROLL_State".M[60, 0]);
+    #r := ((NOT "ROLL_State".M[63, 1]) AND (((NOT "ROLL_State".M[62, 0]) AND "ROLL_IO".Input[0, 2] AND "ROLL_State".M[31, 5]) OR ((((NOT "ROLL_State".M[190, 6]) AND ("ROLL_State".M[0, 3] OR "ROLL_State".M[20, 2] OR "ROLL_State".M[23, 2] OR "ROLL_State".M[23, 3]) AND "ROLL_State".M[190, 5]) OR "ROLL_State".M[74, 0]) AND "ROLL_IO".Input[0, 1] AND "ROLL_State".M[62, 1])) AND ("ROLL_State".M[62, 6] OR "ROLL_State".S5Timers[114].Q) AND "ROLL_State".M[60, 0]);
     "ROLL_State".M[62, 6] := #r;
     // PB13, STEP 5 network 34
-    #r := ((((NOT "ROLL_State".M[61, 2]) AND (NOT "ROLL_State".M[63, 1]) AND "ROLL_State".M[62, 6]) OR "ROLL_State".M[62, 5]) AND (((NOT "ROLL_State".M[62, 2]) AND (NOT "ROLL_State".M[62, 4]) AND (NOT "ROLL_State".M[62, 6]) AND "ROLL_State".M[62, 3]) OR ((NOT "ROLL_State".M[62, 6]) AND ("ROLL_IO".Input[13, 3] OR "ROLL_State".Timer[117].Q) AND "ROLL_State".M[62, 4]) OR (((NOT "ROLL_State".M[62, 4]) OR "ROLL_State".M[62, 6]) AND ("ROLL_State".Counter[1].Value <> 0))) AND ("ROLL_State".M[62, 2] OR "ROLL_State".M[62, 3] OR "ROLL_State".M[62, 4]));
+    #r := ((((NOT "ROLL_State".M[61, 2]) AND (NOT "ROLL_State".M[63, 1]) AND "ROLL_State".M[62, 6]) OR "ROLL_State".M[62, 5]) AND (((NOT "ROLL_State".M[62, 2]) AND (NOT "ROLL_State".M[62, 4]) AND (NOT "ROLL_State".M[62, 6]) AND "ROLL_State".M[62, 3]) OR ((NOT "ROLL_State".M[62, 6]) AND ("ROLL_IO".Input[13, 3] OR "ROLL_State".S5Timers[117].Q) AND "ROLL_State".M[62, 4]) OR (((NOT "ROLL_State".M[62, 4]) OR "ROLL_State".M[62, 6]) AND ("ROLL_State".S5Counters[1].Value <> 0))) AND ("ROLL_State".M[62, 2] OR "ROLL_State".M[62, 3] OR "ROLL_State".M[62, 4]));
     "ROLL_State".M[62, 7] := #r;
     // PB13, STEP 5 network 35
-    #r := ((NOT "ROLL_IO".Output[24, 0]) AND (NOT "ROLL_State".M[5, 1]) AND (NOT "ROLL_State".M[63, 4]) AND ((NOT "ROLL_State".Timer[115].Q) OR "ROLL_IO".Output[24, 2]) AND "ROLL_IO".Input[13, 5] AND "ROLL_State".M[29, 0] AND "ROLL_State".M[60, 0] AND "ROLL_State".M[62, 7]);
+    #r := ((NOT "ROLL_IO".Output[24, 0]) AND (NOT "ROLL_State".M[5, 1]) AND (NOT "ROLL_State".M[63, 4]) AND ((NOT "ROLL_State".S5Timers[115].Q) OR "ROLL_IO".Output[24, 2]) AND "ROLL_IO".Input[13, 5] AND "ROLL_State".M[29, 0] AND "ROLL_State".M[60, 0] AND "ROLL_State".M[62, 7]);
     "ROLL_IO".Output[24, 2] := #r;
     // PB13, STEP 5 network 36
-    #r := ((((NOT "ROLL_State".M[62, 2]) AND (NOT "ROLL_State".M[62, 6])) OR ("ROLL_State".Counter[2].Value <> 0)) AND (((NOT "ROLL_State".M[63, 1]) AND "ROLL_State".M[62, 6]) OR "ROLL_State".M[62, 5]) AND ((NOT "ROLL_State".M[62, 4]) OR (NOT "ROLL_State".M[62, 5])));
+    #r := ((((NOT "ROLL_State".M[62, 2]) AND (NOT "ROLL_State".M[62, 6])) OR ("ROLL_State".S5Counters[2].Value <> 0)) AND (((NOT "ROLL_State".M[63, 1]) AND "ROLL_State".M[62, 6]) OR "ROLL_State".M[62, 5]) AND ((NOT "ROLL_State".M[62, 4]) OR (NOT "ROLL_State".M[62, 5])));
     "ROLL_State".M[63, 0] := #r;
     // PB13, STEP 5 network 37
-    #r := ((NOT "ROLL_IO".Output[24, 2]) AND (NOT "ROLL_State".M[5, 1]) AND (NOT "ROLL_State".M[63, 4]) AND ((NOT "ROLL_State".Timer[115].Q) OR "ROLL_IO".Output[24, 0]) AND "ROLL_IO".Input[13, 5] AND "ROLL_State".M[29, 0] AND "ROLL_State".M[60, 0] AND "ROLL_State".M[63, 0]);
+    #r := ((NOT "ROLL_IO".Output[24, 2]) AND (NOT "ROLL_State".M[5, 1]) AND (NOT "ROLL_State".M[63, 4]) AND ((NOT "ROLL_State".S5Timers[115].Q) OR "ROLL_IO".Output[24, 0]) AND "ROLL_IO".Input[13, 5] AND "ROLL_State".M[29, 0] AND "ROLL_State".M[60, 0] AND "ROLL_State".M[63, 0]);
     "ROLL_IO".Output[24, 0] := #r;
     // PB13, STEP 5 network 38
     #r := ((NOT "ROLL_IO".Output[24, 5]) AND "ROLL_IO".Output[24, 0] AND "ROLL_IO".Input[13, 3]);
@@ -2661,9 +2661,9 @@ BEGIN
     #r := (("ROLL_IO".Input[12, 1] OR "ROLL_IO".Input[12, 5]) AND "ROLL_IO".Input[11, 0] AND "ROLL_IO".Input[11, 6] AND "ROLL_IO".Input[12, 7]);
     IF #r THEN "ROLL_State".M[63, 6] := FALSE; END_IF;
     // PB13, STEP 5 network 41
-    #r := ((((NOT "ROLL_State".M[63, 7]) AND "ROLL_IO".Output[24, 0] AND "ROLL_State".Timer[111].Q) OR ("ROLL_IO".Input[11, 0] AND "ROLL_State".M[80, 6]) OR (NOT "ROLL_State".Timer[11].Q)) AND "ROLL_IO".Input[13, 3]);
+    #r := ((((NOT "ROLL_State".M[63, 7]) AND "ROLL_IO".Output[24, 0] AND "ROLL_State".S5Timers[111].Q) OR ("ROLL_IO".Input[11, 0] AND "ROLL_State".M[80, 6]) OR (NOT "ROLL_State".S5Timers[11].Q)) AND "ROLL_IO".Input[13, 3]);
     IF #r THEN "ROLL_State".M[63, 1] := TRUE; END_IF;
-    #r := (((NOT "ROLL_IO".Input[13, 3]) AND "ROLL_IO".Input[3, 0] AND "ROLL_State".Timer[11].Q) OR "ROLL_IO".Output[24, 2]);
+    #r := (((NOT "ROLL_IO".Input[13, 3]) AND "ROLL_IO".Input[3, 0] AND "ROLL_State".S5Timers[11].Q) OR "ROLL_IO".Output[24, 2]);
     IF #r THEN "ROLL_State".M[63, 1] := FALSE; END_IF;
     // PB13, STEP 5 network 42
     #a2 := #a1;
@@ -2691,21 +2691,21 @@ BEGIN
     #r := ("ROLL_IO".Output[24, 0] OR "ROLL_IO".Output[24, 2]);
     "ROLL_TimerOp"(Number := 115, Operation := 1, Signal := #r, Preset := #a1);
     // PB13, STEP 5 network 49
-    #r := ((("ROLL_IO".Output[24, 0] AND "ROLL_State".M[60, 5]) OR ("ROLL_IO".Output[24, 2] AND "ROLL_State".M[60, 4])) AND "ROLL_State".Timer[114].Q);
+    #r := ((("ROLL_IO".Output[24, 0] AND "ROLL_State".M[60, 5]) OR ("ROLL_IO".Output[24, 2] AND "ROLL_State".M[60, 4])) AND "ROLL_State".S5Timers[114].Q);
     "ROLL_CounterOp"(Number := 3, Operation := 3, Signal := #r, Preset := #a1);
-    #r := ((((NOT "ROLL_State".M[60, 4]) AND (NOT "ROLL_State".M[60, 5]) AND ("ROLL_IO".Output[24, 0] OR "ROLL_IO".Output[24, 2])) OR ("ROLL_IO".Output[24, 0] AND "ROLL_State".M[60, 4]) OR ("ROLL_IO".Output[24, 2] AND "ROLL_State".M[60, 5])) AND "ROLL_State".Timer[114].Q);
+    #r := ((((NOT "ROLL_State".M[60, 4]) AND (NOT "ROLL_State".M[60, 5]) AND ("ROLL_IO".Output[24, 0] OR "ROLL_IO".Output[24, 2])) OR ("ROLL_IO".Output[24, 0] AND "ROLL_State".M[60, 4]) OR ("ROLL_IO".Output[24, 2] AND "ROLL_State".M[60, 5])) AND "ROLL_State".S5Timers[114].Q);
     "ROLL_CounterOp"(Number := 3, Operation := 2, Signal := #r, Preset := #a1);
     #a2 := #a1;
     #a1 := W#16#0500;
-    #r := (("ROLL_IO".Input[13, 3] AND "ROLL_State".Timer[114].Q) OR ("ROLL_State".M[3, 1] AND "ROLL_State".M[63, 2]));
+    #r := (("ROLL_IO".Input[13, 3] AND "ROLL_State".S5Timers[114].Q) OR ("ROLL_State".M[3, 1] AND "ROLL_State".M[63, 2]));
     "ROLL_CounterOp"(Number := 3, Operation := 0, Signal := #r, Preset := #a1);
     // PB13, STEP 5 network 50
     #a2 := #a1;
-    #a1 := INT_TO_WORD("ROLL_State".Counter[3].Value);
+    #a1 := INT_TO_WORD("ROLL_State".S5Counters[3].Value);
     #a2 := #a1;
     #a1 := W#16#0208;
-    #compare[0] := (WORD_TO_INT(#a2) > WORD_TO_INT(#a1));
-    #r := #compare[0];
+    #comparisonResults[0] := (WORD_TO_INT(#a2) > WORD_TO_INT(#a1));
+    #r := #comparisonResults[0];
     "ROLL_State".M[63, 2] := #r;
     // PB13, STEP 5 network 51
     #a2 := #a1;
@@ -2713,7 +2713,7 @@ BEGIN
     #r := ((("ROLL_IO".Output[24, 0] AND "ROLL_State".M[63, 7]) OR "ROLL_IO".Output[24, 2]) AND "ROLL_IO".Input[13, 3]);
     "ROLL_TimerOp"(Number := 112, Operation := 0, Signal := #r, Preset := #a1);
     // PB13, STEP 5 network 52
-    #r := ((NOT ("ROLL_State".Counter[2].Value <> 0)) AND "ROLL_State".M[61, 2] AND "ROLL_State".M[62, 6] AND ("ROLL_State".Counter[1].Value <> 0));
+    #r := ((NOT ("ROLL_State".S5Counters[2].Value <> 0)) AND "ROLL_State".M[61, 2] AND "ROLL_State".M[62, 6] AND ("ROLL_State".S5Counters[1].Value <> 0));
     "ROLL_State".M[63, 3] := #r;
     // PB13, STEP 5 network 53
     #r := (((NOT "ROLL_IO".Input[0, 4]) AND "ROLL_IO".Input[0, 2] AND "ROLL_State".M[63, 4]) OR "ROLL_State".M[11, 0] OR "ROLL_State".M[11, 1] OR "ROLL_State".M[11, 2] OR "ROLL_State".M[11, 3]);
@@ -2729,24 +2729,24 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB14, STEP 5 network 1
-    #db := 15;
+    #activeDataBlock := 15;
     // PB14, STEP 5 network 2
-    #r := ((NOT "ROLL_State".M[37, 5]) AND (NOT "ROLL_State".M[53, 2]) AND (NOT "ROLL_State".M[53, 3]) AND (((NOT "ROLL_State".Timer[21].Q) AND "ROLL_IO".Input[123, 4] AND "ROLL_State".M[31, 4]) OR ("ROLL_State".M[70, 4] AND "ROLL_State".Timer[45].Q) OR "ROLL_State".M[37, 7] OR "ROLL_State".M[53, 4] OR "ROLL_State".M[70, 7]) AND ((NOT "ROLL_State".Timer[95].Q) OR "ROLL_State".M[53, 4]) AND "ROLL_State".M[31, 5] AND "ROLL_State".M[35, 2]);
+    #r := ((NOT "ROLL_State".M[37, 5]) AND (NOT "ROLL_State".M[53, 2]) AND (NOT "ROLL_State".M[53, 3]) AND (((NOT "ROLL_State".S5Timers[21].Q) AND "ROLL_IO".Input[123, 4] AND "ROLL_State".M[31, 4]) OR ("ROLL_State".M[70, 4] AND "ROLL_State".S5Timers[45].Q) OR "ROLL_State".M[37, 7] OR "ROLL_State".M[53, 4] OR "ROLL_State".M[70, 7]) AND ((NOT "ROLL_State".S5Timers[95].Q) OR "ROLL_State".M[53, 4]) AND "ROLL_State".M[31, 5] AND "ROLL_State".M[35, 2]);
     "ROLL_State".M[64, 0] := #r;
     // PB14, STEP 5 network 3
     #r := (((NOT "ROLL_State".M[31, 4]) AND (NOT "ROLL_State".M[31, 5]) AND "ROLL_IO".Input[125, 4]) OR ((((NOT "ROLL_IO".Output[113, 4]) AND "ROLL_IO".Output[113, 5] AND "ROLL_State".M[72, 1]) OR "ROLL_State".M[53, 4]) AND "ROLL_State".M[31, 5] AND "ROLL_State".M[35, 2]));
     "ROLL_State".M[64, 1] := #r;
     // PB14, STEP 5 network 4
-    #r := ("ROLL_IO".Input[123, 4] AND "ROLL_State".Timer[20].Q);
+    #r := ("ROLL_IO".Input[123, 4] AND "ROLL_State".S5Timers[20].Q);
     IF #r THEN "ROLL_State".M[64, 4] := TRUE; END_IF;
     #r := (((NOT "ROLL_IO".Output[113, 3]) AND (NOT "ROLL_IO".Input[123, 4])) OR (NOT "ROLL_State".M[31, 5]));
     IF #r THEN "ROLL_State".M[64, 4] := FALSE; END_IF;
@@ -2795,19 +2795,19 @@ BEGIN
     #r := ((("ROLL_IO".Input[5, 1] AND "ROLL_State".M[40, 5]) OR ("ROLL_State".M[0, 3] AND "ROLL_State".M[45, 2]) OR "ROLL_State".M[42, 1] OR "ROLL_State".M[43, 5] OR "ROLL_State".M[46, 5] OR "ROLL_State".M[48, 1] OR "ROLL_State".M[49, 5]) AND "ROLL_State".M[111, 3]);
     "ROLL_State".M[68, 0] := #r;
     // PB14, STEP 5 network 19
-    #r := ((NOT "ROLL_State".Timer[25].Q) AND (("ROLL_IO".Input[12, 1] AND "ROLL_IO".Input[12, 7]) OR "ROLL_State".M[68, 2]) AND ("ROLL_State".M[68, 2] OR "ROLL_State".Timer[24].Q) AND "ROLL_State".M[68, 0]);
+    #r := ((NOT "ROLL_State".S5Timers[25].Q) AND (("ROLL_IO".Input[12, 1] AND "ROLL_IO".Input[12, 7]) OR "ROLL_State".M[68, 2]) AND ("ROLL_State".M[68, 2] OR "ROLL_State".S5Timers[24].Q) AND "ROLL_State".M[68, 0]);
     "ROLL_State".M[68, 2] := #r;
     // PB14, STEP 5 network 20
-    #r := (((NOT "ROLL_IO".Input[12, 1]) OR (NOT "ROLL_IO".Input[12, 7])) AND ("ROLL_State".M[68, 3] OR "ROLL_State".Timer[24].Q) AND "ROLL_State".M[68, 0]);
+    #r := (((NOT "ROLL_IO".Input[12, 1]) OR (NOT "ROLL_IO".Input[12, 7])) AND ("ROLL_State".M[68, 3] OR "ROLL_State".S5Timers[24].Q) AND "ROLL_State".M[68, 0]);
     "ROLL_State".M[68, 3] := #r;
     // PB14, STEP 5 network 21
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 24);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 24);
     #r := ((NOT "ROLL_State".M[68, 2]) AND (NOT "ROLL_State".M[68, 3]));
     "ROLL_TimerOp"(Number := 24, Operation := 0, Signal := #r, Preset := #a1);
     // PB14, STEP 5 network 22
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 25);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 25);
     #r := "ROLL_State".M[68, 2];
     "ROLL_TimerOp"(Number := 25, Operation := 0, Signal := #r, Preset := #a1);
     // PB14, STEP 5 network 23
@@ -2821,14 +2821,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB15, STEP 5 network 1
     #r := ((NOT "ROLL_IO".Output[113, 2]) AND "ROLL_IO".Output[113, 3] AND "ROLL_IO".Input[123, 4]);
     IF #r THEN "ROLL_State".M[70, 2] := TRUE; END_IF;
@@ -2840,7 +2840,7 @@ BEGIN
     #r := (((NOT "ROLL_IO".Input[123, 5]) AND (NOT "ROLL_IO".Input[123, 6])) OR "ROLL_State".M[73, 7]);
     IF #r THEN "ROLL_State".M[70, 3] := FALSE; END_IF;
     // PB15, STEP 5 network 3
-    #r := ((NOT "ROLL_State".M[16, 0]) AND (NOT "ROLL_State".M[16, 1]) AND (NOT "ROLL_State".M[16, 4]) AND (NOT "ROLL_State".M[71, 1]) AND "ROLL_IO".Input[123, 1] AND "ROLL_State".M[191, 4] AND "ROLL_State".M[31, 4] AND "ROLL_State".Timer[45].Q);
+    #r := ((NOT "ROLL_State".M[16, 0]) AND (NOT "ROLL_State".M[16, 1]) AND (NOT "ROLL_State".M[16, 4]) AND (NOT "ROLL_State".M[71, 1]) AND "ROLL_IO".Input[123, 1] AND "ROLL_State".M[191, 4] AND "ROLL_State".M[31, 4] AND "ROLL_State".S5Timers[45].Q);
     IF #r THEN "ROLL_State".M[70, 4] := TRUE; END_IF;
     #r := ((NOT "ROLL_IO".Input[123, 1]) OR "ROLL_State".M[73, 7]);
     IF #r THEN "ROLL_State".M[70, 4] := FALSE; END_IF;
@@ -2855,7 +2855,7 @@ BEGIN
     #r := (("ROLL_IO".Output[113, 5] AND "ROLL_IO".Input[125, 1]) OR "ROLL_State".M[73, 7]);
     IF #r THEN "ROLL_State".M[70, 6] := FALSE; END_IF;
     // PB15, STEP 5 network 6
-    #r := ((NOT "ROLL_State".M[71, 1]) AND "ROLL_IO".Input[123, 1] AND "ROLL_State".Timer[45].Q);
+    #r := ((NOT "ROLL_State".M[71, 1]) AND "ROLL_IO".Input[123, 1] AND "ROLL_State".S5Timers[45].Q);
     IF #r THEN "ROLL_State".M[70, 7] := TRUE; END_IF;
     #r := ("ROLL_IO".Input[123, 4] OR "ROLL_State".M[73, 7]);
     IF #r THEN "ROLL_State".M[70, 7] := FALSE; END_IF;
@@ -2878,14 +2878,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB16, STEP 5 network 1
     #r := ("ROLL_IO".Input[0, 1] AND "ROLL_State".M[190, 5] AND "ROLL_State".M[190, 6] AND "ROLL_State".M[27, 7]);
     "ROLL_State".M[73, 7] := #r;
@@ -3002,14 +3002,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB17, STEP 5 network 1
     #r := ((NOT "ROLL_State".M[70, 1]) AND "ROLL_State".M[3, 3]);
     "ROLL_State".M[70, 0] := #r;
@@ -3118,14 +3118,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB18, STEP 5 network 1
     #r := ("ROLL_State".M[70, 2] OR "ROLL_State".M[70, 3] OR "ROLL_State".M[70, 4] OR "ROLL_State".M[70, 6] OR "ROLL_State".M[71, 0]);
     "ROLL_State".M[80, 5] := #r;
@@ -3182,14 +3182,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB19, STEP 5 network 1
     #r := ((NOT "ROLL_IO".Input[3, 6]) AND (NOT "ROLL_State".M[5, 6]) AND (NOT "ROLL_State".M[6, 0]) AND (NOT "ROLL_State".M[6, 2]) AND ("ROLL_IO".Input[3, 1] OR "ROLL_State".M[31, 5]) AND "ROLL_IO".Input[5, 2] AND "ROLL_IO".Input[5, 4] AND "ROLL_State".M[4, 1]);
     "ROLL_State".M[82, 0] := #r;
@@ -3219,10 +3219,10 @@ BEGIN
     #r := ((NOT "ROLL_State".M[31, 5]) OR "ROLL_State".M[45, 5]);
     IF #r THEN "ROLL_State".M[82, 4] := FALSE; END_IF;
     // PB19, STEP 5 network 9
-    #r := ((NOT "ROLL_IO".Output[17, 3]) AND (NOT "ROLL_State".M[82, 4]) AND (NOT "ROLL_State".Timer[91].Q) AND ("ROLL_State".M[82, 3] OR "ROLL_State".Timer[22].Q) AND "ROLL_IO".Input[8, 5]);
+    #r := ((NOT "ROLL_IO".Output[17, 3]) AND (NOT "ROLL_State".M[82, 4]) AND (NOT "ROLL_State".S5Timers[91].Q) AND ("ROLL_State".M[82, 3] OR "ROLL_State".S5Timers[22].Q) AND "ROLL_IO".Input[8, 5]);
     "ROLL_IO".Output[17, 2] := #r;
     // PB19, STEP 5 network 10
-    #r := ((NOT "ROLL_IO".Output[17, 2]) AND (NOT "ROLL_State".Timer[90].Q) AND "ROLL_IO".Input[3, 0] AND "ROLL_IO".Input[8, 5] AND "ROLL_State".M[82, 4]);
+    #r := ((NOT "ROLL_IO".Output[17, 2]) AND (NOT "ROLL_State".S5Timers[90].Q) AND "ROLL_IO".Input[3, 0] AND "ROLL_IO".Input[8, 5] AND "ROLL_State".M[82, 4]);
     "ROLL_IO".Output[17, 3] := #r;
     // PB19, STEP 5 network 11
     #a2 := #a1;
@@ -3240,7 +3240,7 @@ BEGIN
     #r := "ROLL_IO".Output[17, 3];
     "ROLL_TimerOp"(Number := 91, Operation := 1, Signal := #r, Preset := #a1);
     // PB19, STEP 5 network 14
-    #r := ((NOT "ROLL_State".M[12, 0]) AND (NOT "ROLL_State".M[19, 7]) AND ("ROLL_IO".Output[17, 2] OR "ROLL_IO".Output[17, 3] OR "ROLL_State".Timer[90].Q OR "ROLL_State".Timer[91].Q) AND ("ROLL_State".M[82, 3] OR "ROLL_State".M[82, 4]) AND "ROLL_IO".Input[8, 3] AND "ROLL_IO".Input[8, 4] AND "ROLL_State".M[82, 2]);
+    #r := ((NOT "ROLL_State".M[12, 0]) AND (NOT "ROLL_State".M[19, 7]) AND ("ROLL_IO".Output[17, 2] OR "ROLL_IO".Output[17, 3] OR "ROLL_State".S5Timers[90].Q OR "ROLL_State".S5Timers[91].Q) AND ("ROLL_State".M[82, 3] OR "ROLL_State".M[82, 4]) AND "ROLL_IO".Input[8, 3] AND "ROLL_IO".Input[8, 4] AND "ROLL_State".M[82, 2]);
     "ROLL_IO".Output[18, 0] := #r;
     // PB19, STEP 5 network 15
     #r := "ROLL_IO".Output[18, 0];
@@ -3262,49 +3262,49 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB20, STEP 5 network 1
-    #db := 15;
+    #activeDataBlock := 15;
     // PB20, STEP 5 network 2
     #r := ((NOT "ROLL_IO".Input[7, 0]) AND (("ROLL_IO".Input[0, 1] AND "ROLL_State".M[190, 6] AND "ROLL_State".M[26, 5] AND "ROLL_State".M[4, 1]) OR ("ROLL_IO".Input[0, 2] AND "ROLL_State".M[0, 3])) AND "ROLL_State".M[4, 1]);
     "ROLL_State".M[8, 0] := #r;
     // PB20, STEP 5 network 3
-    #r := ((NOT "ROLL_IO".Input[7, 1]) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[1, 6] AND "ROLL_State".M[4, 1] AND "ROLL_State".Timer[61].Q);
+    #r := ((NOT "ROLL_IO".Input[7, 1]) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[1, 6] AND "ROLL_State".M[4, 1] AND "ROLL_State".S5Timers[61].Q);
     IF #r THEN "ROLL_State".M[8, 1] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[8, 1] := FALSE; END_IF;
     // PB20, STEP 5 network 4
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 61);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 61);
     #r := ((NOT "ROLL_IO".Input[7, 1]) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1]);
     "ROLL_TimerOp"(Number := 61, Operation := 0, Signal := #r, Preset := #a1);
     #r := ("ROLL_State".M[3, 1] AND "ROLL_State".M[4, 1]);
     "ROLL_TimerOp"(Number := 61, Operation := 2, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 5
-    #r := ((NOT "ROLL_IO".Input[7, 2]) AND "ROLL_State".Timer[55].Q);
+    #r := ((NOT "ROLL_IO".Input[7, 2]) AND "ROLL_State".S5Timers[55].Q);
     IF #r THEN "ROLL_State".M[8, 2] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[8, 2] := FALSE; END_IF;
     // PB20, STEP 5 network 6
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 55);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 55);
     #r := ((NOT "ROLL_IO".Input[7, 2]) AND (NOT "ROLL_State".M[8, 2]) AND "ROLL_State".M[4, 1]);
     "ROLL_TimerOp"(Number := 55, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 7
-    #r := ((NOT "ROLL_IO".Input[7, 3]) AND "ROLL_IO".Output[21, 6] AND "ROLL_State".Timer[60].Q);
+    #r := ((NOT "ROLL_IO".Input[7, 3]) AND "ROLL_IO".Output[21, 6] AND "ROLL_State".S5Timers[60].Q);
     IF #r THEN "ROLL_State".M[8, 3] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[8, 3] := FALSE; END_IF;
     // PB20, STEP 5 network 8
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 60);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 60);
     #r := ((NOT "ROLL_IO".Input[7, 3]) AND "ROLL_IO".Output[21, 6] AND "ROLL_IO".Input[3, 1]);
     "ROLL_TimerOp"(Number := 60, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 9
@@ -3313,10 +3313,10 @@ BEGIN
     #r := (NOT "ROLL_IO".Input[7, 4]);
     "ROLL_TimerOp"(Number := 88, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 10
-    #r := ((NOT "ROLL_IO".Input[7, 4]) AND "ROLL_State".M[4, 1] AND "ROLL_State".Timer[88].Q);
+    #r := ((NOT "ROLL_IO".Input[7, 4]) AND "ROLL_State".M[4, 1] AND "ROLL_State".S5Timers[88].Q);
     "ROLL_State".M[8, 4] := #r;
     // PB20, STEP 5 network 11
-    #r := (("ROLL_State".M[25, 0] OR "ROLL_State".M[25, 1]) AND "ROLL_IO".Input[0, 1] AND "ROLL_State".M[190, 6] AND "ROLL_State".M[4, 1] AND "ROLL_State".Timer[96].Q);
+    #r := (("ROLL_State".M[25, 0] OR "ROLL_State".M[25, 1]) AND "ROLL_IO".Input[0, 1] AND "ROLL_State".M[190, 6] AND "ROLL_State".M[4, 1] AND "ROLL_State".S5Timers[96].Q);
     IF #r THEN "ROLL_State".M[8, 5] := TRUE; END_IF;
     #r := "ROLL_State".M[3, 1];
     IF #r THEN "ROLL_State".M[8, 5] := FALSE; END_IF;
@@ -3342,12 +3342,12 @@ BEGIN
     IF #r THEN "ROLL_State".M[12, 7] := FALSE; END_IF;
     // PB20, STEP 5 network 16
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 56);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 56);
     #r := (NOT "ROLL_IO".Input[7, 1]);
     "ROLL_TimerOp"(Number := 56, Operation := 1, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 17
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 65);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 65);
     #r := (NOT "ROLL_IO".Input[7, 3]);
     "ROLL_TimerOp"(Number := 65, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 18
@@ -3357,7 +3357,7 @@ BEGIN
     "ROLL_TimerOp"(Number := 66, Operation := 1, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 19
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 67);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 67);
     #r := ("ROLL_IO".Input[7, 3] AND "ROLL_State".M[150, 1]);
     "ROLL_TimerOp"(Number := 67, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 20
@@ -3381,25 +3381,25 @@ BEGIN
     // PB20, STEP 5 network 24
     #r := "ROLL_State".M[149, 6];
     IF #r THEN "ROLL_State".M[148, 4] := TRUE; END_IF;
-    #r := "ROLL_State".Timer[89].Q;
+    #r := "ROLL_State".S5Timers[89].Q;
     IF #r THEN "ROLL_State".M[148, 4] := FALSE; END_IF;
     // PB20, STEP 5 network 25
-    #r := ("ROLL_IO".Input[8, 0] AND "ROLL_State".Timer[70].Q);
+    #r := ("ROLL_IO".Input[8, 0] AND "ROLL_State".S5Timers[70].Q);
     "ROLL_State".M[147, 0] := #r;
     // PB20, STEP 5 network 26
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 75);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 75);
     #r := (NOT "ROLL_State".M[147, 0]);
     "ROLL_TimerOp"(Number := 75, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 27
     #r := "ROLL_State".M[0, 3];
     "ROLL_State".M[147, 1] := #r;
     // PB20, STEP 5 network 28
-    #r := ("ROLL_IO".Input[8, 2] AND "ROLL_State".Timer[72].Q);
+    #r := ("ROLL_IO".Input[8, 2] AND "ROLL_State".S5Timers[72].Q);
     "ROLL_State".M[147, 2] := #r;
     // PB20, STEP 5 network 29
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 77);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 77);
     #r := (NOT "ROLL_State".M[147, 2]);
     "ROLL_TimerOp"(Number := 77, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 30
@@ -3415,7 +3415,7 @@ BEGIN
     #r := ("ROLL_State".M[147, 0] AND "ROLL_State".M[147, 2]);
     "ROLL_State".M[149, 3] := #r;
     // PB20, STEP 5 network 34
-    #r := ((NOT "ROLL_State".M[12, 6]) AND (NOT "ROLL_State".M[12, 7]) AND (NOT "ROLL_State".M[13, 4]) AND (NOT "ROLL_State".M[6, 0]) AND (NOT "ROLL_State".M[6, 2]) AND (NOT "ROLL_State".M[8, 2]) AND ("ROLL_IO".Input[1, 6] OR "ROLL_IO".Input[1, 7]) AND "ROLL_IO".Input[3, 1] AND "ROLL_IO".Input[7, 4] AND "ROLL_IO".Input[9, 6] AND "ROLL_IO".Input[9, 7] AND "ROLL_State".Timer[66].Q);
+    #r := ((NOT "ROLL_State".M[12, 6]) AND (NOT "ROLL_State".M[12, 7]) AND (NOT "ROLL_State".M[13, 4]) AND (NOT "ROLL_State".M[6, 0]) AND (NOT "ROLL_State".M[6, 2]) AND (NOT "ROLL_State".M[8, 2]) AND ("ROLL_IO".Input[1, 6] OR "ROLL_IO".Input[1, 7]) AND "ROLL_IO".Input[3, 1] AND "ROLL_IO".Input[7, 4] AND "ROLL_IO".Input[9, 6] AND "ROLL_IO".Input[9, 7] AND "ROLL_State".S5Timers[66].Q);
     "ROLL_State".M[150, 2] := #r;
     // PB20, STEP 5 network 35
     #r := ((NOT "ROLL_IO".Input[9, 2]) AND (NOT "ROLL_State".M[12, 4]) AND ("ROLL_IO".Output[18, 4] OR "ROLL_IO".Input[9, 1]) AND ("ROLL_State".M[149, 0] OR "ROLL_State".M[149, 1] OR "ROLL_State".M[149, 2] OR "ROLL_State".M[149, 3]) AND "ROLL_IO".Input[9, 0] AND "ROLL_State".M[150, 2]);
@@ -3430,10 +3430,10 @@ BEGIN
     #r := ((NOT "ROLL_IO".Input[9, 5]) AND (NOT "ROLL_State".M[12, 5]) AND ("ROLL_IO".Output[18, 6] OR "ROLL_IO".Output[18, 7] OR "ROLL_IO".Input[9, 4]) AND "ROLL_IO".Input[9, 3] AND "ROLL_State".M[149, 3] AND "ROLL_State".M[150, 2]);
     "ROLL_IO".Output[18, 7] := #r;
     // PB20, STEP 5 network 39
-    #r := ((NOT "ROLL_State".M[147, 0]) AND "ROLL_State".M[147, 2] AND "ROLL_State".Timer[75].Q);
+    #r := ((NOT "ROLL_State".M[147, 0]) AND "ROLL_State".M[147, 2] AND "ROLL_State".S5Timers[75].Q);
     "ROLL_IO".Output[21, 0] := #r;
     // PB20, STEP 5 network 40
-    #r := ((NOT "ROLL_State".M[147, 2]) AND "ROLL_State".M[147, 0] AND "ROLL_State".Timer[77].Q);
+    #r := ((NOT "ROLL_State".M[147, 2]) AND "ROLL_State".M[147, 0] AND "ROLL_State".S5Timers[77].Q);
     "ROLL_IO".Output[21, 2] := #r;
     // PB20, STEP 5 network 41
     #r := "ROLL_State".M[190, 6];
@@ -3446,28 +3446,28 @@ BEGIN
     #r := "ROLL_IO".Input[7, 1];
     "ROLL_TimerOp"(Number := 57, Operation := 1, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 43
-    #r := ((NOT "ROLL_State".M[13, 4]) AND (NOT "ROLL_State".Timer[61].Q) AND (((NOT "ROLL_IO".Input[7, 3]) AND "ROLL_State".Timer[65].Q) OR ((NOT "ROLL_State".Timer[67].Q) AND "ROLL_State".M[150, 1])) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_IO".Input[7, 2] AND "ROLL_State".Timer[57].Q);
+    #r := ((NOT "ROLL_State".M[13, 4]) AND (NOT "ROLL_State".S5Timers[61].Q) AND (((NOT "ROLL_IO".Input[7, 3]) AND "ROLL_State".S5Timers[65].Q) OR ((NOT "ROLL_State".S5Timers[67].Q) AND "ROLL_State".M[150, 1])) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_IO".Input[7, 2] AND "ROLL_State".S5Timers[57].Q);
     "ROLL_State".M[150, 1] := #r;
     // PB20, STEP 5 network 44
     #r := ("ROLL_State".M[150, 0] OR "ROLL_State".M[150, 1]);
     "ROLL_IO".Output[21, 6] := #r;
     // PB20, STEP 5 network 45
-    #r := ((((NOT "ROLL_IO".Input[7, 4]) AND "ROLL_IO".Input[7, 5]) OR ((NOT "ROLL_State".Timer[106].Q) AND "ROLL_State".M[148, 6]) OR (NOT "ROLL_IO".Input[7, 1])) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[1, 6] AND "ROLL_IO".Input[7, 0]);
+    #r := ((((NOT "ROLL_IO".Input[7, 4]) AND "ROLL_IO".Input[7, 5]) OR ((NOT "ROLL_State".S5Timers[106].Q) AND "ROLL_State".M[148, 6]) OR (NOT "ROLL_IO".Input[7, 1])) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[1, 6] AND "ROLL_IO".Input[7, 0]);
     "ROLL_State".M[148, 6] := #r;
     // PB20, STEP 5 network 46
-    #r := (((NOT "ROLL_State".M[151, 0]) AND (NOT "ROLL_State".M[151, 1]) AND (NOT "ROLL_State".M[151, 2]) AND (NOT "ROLL_State".M[151, 3])) OR ((NOT "ROLL_State".M[152, 3]) AND "ROLL_State".M[151, 3] AND "ROLL_State".M[153, 3] AND "ROLL_State".Timer[105].Q));
+    #r := (((NOT "ROLL_State".M[151, 0]) AND (NOT "ROLL_State".M[151, 1]) AND (NOT "ROLL_State".M[151, 2]) AND (NOT "ROLL_State".M[151, 3])) OR ((NOT "ROLL_State".M[152, 3]) AND "ROLL_State".M[151, 3] AND "ROLL_State".M[153, 3] AND "ROLL_State".S5Timers[105].Q));
     IF #r THEN "ROLL_State".M[151, 0] := TRUE; END_IF;
     #r := ("ROLL_State".M[151, 1] OR "ROLL_State".M[151, 2]);
     IF #r THEN "ROLL_State".M[151, 0] := FALSE; END_IF;
     // PB20, STEP 5 network 47
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 102);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 102);
     #r := "ROLL_State".M[151, 0];
     "ROLL_TimerOp"(Number := 102, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 48
-    #r := ((NOT "ROLL_State".Timer[106].Q) AND "ROLL_State".M[151, 0]);
+    #r := ((NOT "ROLL_State".S5Timers[106].Q) AND "ROLL_State".M[151, 0]);
     IF #r THEN "ROLL_State".M[152, 0] := TRUE; END_IF;
-    #r := ((NOT "ROLL_State".M[148, 6]) OR "ROLL_State".Timer[106].Q);
+    #r := ((NOT "ROLL_State".M[148, 6]) OR "ROLL_State".S5Timers[106].Q);
     IF #r THEN "ROLL_State".M[152, 0] := FALSE; END_IF;
     // PB20, STEP 5 network 49
     #r := ("ROLL_IO".Output[21, 5] AND "ROLL_State".M[152, 0]);
@@ -3475,19 +3475,19 @@ BEGIN
     #r := (NOT "ROLL_State".M[151, 0]);
     IF #r THEN "ROLL_State".M[153, 0] := FALSE; END_IF;
     // PB20, STEP 5 network 50
-    #r := ((NOT "ROLL_State".M[152, 0]) AND "ROLL_State".M[151, 0] AND "ROLL_State".M[153, 0] AND "ROLL_State".Timer[102].Q);
+    #r := ((NOT "ROLL_State".M[152, 0]) AND "ROLL_State".M[151, 0] AND "ROLL_State".M[153, 0] AND "ROLL_State".S5Timers[102].Q);
     IF #r THEN "ROLL_State".M[151, 1] := TRUE; END_IF;
     #r := "ROLL_State".M[151, 2];
     IF #r THEN "ROLL_State".M[151, 1] := FALSE; END_IF;
     // PB20, STEP 5 network 51
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 103);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 103);
     #r := "ROLL_State".M[151, 1];
     "ROLL_TimerOp"(Number := 103, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 52
-    #r := ((NOT "ROLL_State".Timer[106].Q) AND "ROLL_State".M[151, 1]);
+    #r := ((NOT "ROLL_State".S5Timers[106].Q) AND "ROLL_State".M[151, 1]);
     IF #r THEN "ROLL_State".M[152, 1] := TRUE; END_IF;
-    #r := ((NOT "ROLL_State".M[148, 6]) OR "ROLL_State".Timer[106].Q);
+    #r := ((NOT "ROLL_State".M[148, 6]) OR "ROLL_State".S5Timers[106].Q);
     IF #r THEN "ROLL_State".M[152, 1] := FALSE; END_IF;
     // PB20, STEP 5 network 53
     #r := ("ROLL_IO".Output[20, 6] AND "ROLL_State".M[152, 1]);
@@ -3495,7 +3495,7 @@ BEGIN
     #r := (NOT "ROLL_State".M[151, 1]);
     IF #r THEN "ROLL_State".M[153, 1] := FALSE; END_IF;
     // PB20, STEP 5 network 54
-    #r := ((NOT "ROLL_State".M[152, 1]) AND "ROLL_State".M[151, 1] AND "ROLL_State".M[153, 1] AND "ROLL_State".Timer[103].Q);
+    #r := ((NOT "ROLL_State".M[152, 1]) AND "ROLL_State".M[151, 1] AND "ROLL_State".M[153, 1] AND "ROLL_State".S5Timers[103].Q);
     IF #r THEN "ROLL_State".M[151, 2] := TRUE; END_IF;
     #r := "ROLL_State".M[151, 3];
     IF #r THEN "ROLL_State".M[151, 2] := FALSE; END_IF;
@@ -3505,9 +3505,9 @@ BEGIN
     #r := "ROLL_State".M[151, 2];
     "ROLL_TimerOp"(Number := 104, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 56
-    #r := ((NOT "ROLL_State".Timer[106].Q) AND "ROLL_State".M[151, 2]);
+    #r := ((NOT "ROLL_State".S5Timers[106].Q) AND "ROLL_State".M[151, 2]);
     IF #r THEN "ROLL_State".M[152, 2] := TRUE; END_IF;
-    #r := ((NOT "ROLL_State".M[148, 6]) OR "ROLL_State".Timer[106].Q);
+    #r := ((NOT "ROLL_State".M[148, 6]) OR "ROLL_State".S5Timers[106].Q);
     IF #r THEN "ROLL_State".M[152, 2] := FALSE; END_IF;
     // PB20, STEP 5 network 57
     #r := ("ROLL_State".M[0, 4] AND "ROLL_State".M[152, 2]);
@@ -3515,7 +3515,7 @@ BEGIN
     #r := (NOT "ROLL_State".M[151, 2]);
     IF #r THEN "ROLL_State".M[153, 2] := FALSE; END_IF;
     // PB20, STEP 5 network 58
-    #r := ((NOT "ROLL_State".M[152, 2]) AND "ROLL_State".M[151, 2] AND "ROLL_State".M[153, 2] AND "ROLL_State".Timer[104].Q);
+    #r := ((NOT "ROLL_State".M[152, 2]) AND "ROLL_State".M[151, 2] AND "ROLL_State".M[153, 2] AND "ROLL_State".S5Timers[104].Q);
     IF #r THEN "ROLL_State".M[151, 3] := TRUE; END_IF;
     #r := "ROLL_State".M[151, 0];
     IF #r THEN "ROLL_State".M[151, 3] := FALSE; END_IF;
@@ -3525,9 +3525,9 @@ BEGIN
     #r := "ROLL_State".M[151, 3];
     "ROLL_TimerOp"(Number := 105, Operation := 0, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 60
-    #r := ((NOT "ROLL_State".Timer[106].Q) AND "ROLL_State".M[151, 3]);
+    #r := ((NOT "ROLL_State".S5Timers[106].Q) AND "ROLL_State".M[151, 3]);
     IF #r THEN "ROLL_State".M[152, 3] := TRUE; END_IF;
-    #r := ((NOT "ROLL_State".M[148, 6]) OR "ROLL_State".Timer[106].Q);
+    #r := ((NOT "ROLL_State".M[148, 6]) OR "ROLL_State".S5Timers[106].Q);
     IF #r THEN "ROLL_State".M[152, 3] := FALSE; END_IF;
     // PB20, STEP 5 network 61
     #r := ("ROLL_State".M[0, 4] AND "ROLL_State".M[152, 3]);
@@ -3553,11 +3553,11 @@ BEGIN
     "ROLL_State".M[240, 0] := #r;
     // PB20, STEP 5 network 67
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 107);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 107);
     #r := ("ROLL_IO".Output[21, 6] AND "ROLL_IO".Input[0, 2]);
     "ROLL_TimerOp"(Number := 107, Operation := 1, Signal := #r, Preset := #a1);
     // PB20, STEP 5 network 68
-    #r := ((("ROLL_IO".Output[21, 6] OR "ROLL_State".Timer[107].Q) AND "ROLL_IO".Input[0, 2]) OR ("ROLL_IO".Input[0, 1] AND "ROLL_State".M[190, 6] AND "ROLL_State".M[26, 6]));
+    #r := ((("ROLL_IO".Output[21, 6] OR "ROLL_State".S5Timers[107].Q) AND "ROLL_IO".Input[0, 2]) OR ("ROLL_IO".Input[0, 1] AND "ROLL_State".M[190, 6] AND "ROLL_State".M[26, 6]));
     "ROLL_IO".Output[20, 5] := #r;
     // PB20, STEP 5 network 69
     RETURN;
@@ -3570,16 +3570,16 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB21, STEP 5 network 1
-    #db := 15;
+    #activeDataBlock := 15;
     // PB21, STEP 5 network 2
     #r := ((NOT "ROLL_IO".Input[3, 6]) AND (NOT "ROLL_State".M[13, 1]) AND (NOT "ROLL_State".M[5, 6]));
     "ROLL_State".M[99, 7] := #r;
@@ -3607,13 +3607,13 @@ BEGIN
     #r := (((NOT "ROLL_State".M[100, 0]) AND (NOT "ROLL_State".M[190, 6])) OR (NOT "ROLL_IO".Input[0, 1]) OR (NOT "ROLL_State".M[0, 3]) OR (NOT "ROLL_State".M[99, 7]) OR "ROLL_State".M[190, 5]);
     IF #r THEN "ROLL_State".M[100, 4] := FALSE; END_IF;
     // PB21, STEP 5 network 8
-    #r := ((NOT "ROLL_State".M[31, 5]) AND (NOT "ROLL_State".M[5, 6]) AND ((NOT "ROLL_IO".Input[5, 6]) OR (NOT "ROLL_State".Timer[70].Q)) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0]);
+    #r := ((NOT "ROLL_State".M[31, 5]) AND (NOT "ROLL_State".M[5, 6]) AND ((NOT "ROLL_IO".Input[5, 6]) OR (NOT "ROLL_State".S5Timers[70].Q)) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0]);
     "ROLL_State".M[100, 5] := #r;
     // PB21, STEP 5 network 9
-    #r := ((("ROLL_IO".Input[7, 5] AND "ROLL_State".Timer[97].Q) OR (NOT "ROLL_State".Timer[96].Q)) AND "ROLL_State".M[0, 3] AND "ROLL_State".M[100, 5]);
+    #r := ((("ROLL_IO".Input[7, 5] AND "ROLL_State".S5Timers[97].Q) OR (NOT "ROLL_State".S5Timers[96].Q)) AND "ROLL_State".M[0, 3] AND "ROLL_State".M[100, 5]);
     "ROLL_State".M[100, 6] := #r;
     // PB21, STEP 5 network 10
-    #r := ((((NOT "ROLL_IO".Input[7, 5]) AND "ROLL_State".Timer[96].Q) OR (NOT "ROLL_State".Timer[97].Q)) AND "ROLL_State".M[0, 3] AND "ROLL_State".M[100, 5]);
+    #r := ((((NOT "ROLL_IO".Input[7, 5]) AND "ROLL_State".S5Timers[96].Q) OR (NOT "ROLL_State".S5Timers[97].Q)) AND "ROLL_State".M[0, 3] AND "ROLL_State".M[100, 5]);
     "ROLL_State".M[100, 7] := #r;
     // PB21, STEP 5 network 11
     #r := "ROLL_State".M[190, 6];
@@ -3641,13 +3641,13 @@ BEGIN
     #r := "ROLL_IO".Input[6, 0];
     "ROLL_TimerOp"(Number := 121, Operation := 0, Signal := #r, Preset := #a1);
     // PB21, STEP 5 network 16
-    #r := ((NOT "ROLL_State".M[31, 5]) AND (NOT "ROLL_State".M[5, 6]) AND (((NOT "ROLL_State".Timer[121].Q) AND "ROLL_State".M[101, 5]) OR (NOT "ROLL_IO".Input[6, 0])) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0]);
+    #r := ((NOT "ROLL_State".M[31, 5]) AND (NOT "ROLL_State".M[5, 6]) AND (((NOT "ROLL_State".S5Timers[121].Q) AND "ROLL_State".M[101, 5]) OR (NOT "ROLL_IO".Input[6, 0])) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0]);
     "ROLL_State".M[101, 5] := #r;
     // PB21, STEP 5 network 17
-    #r := ((("ROLL_IO".Input[7, 5] AND "ROLL_State".Timer[97].Q) OR (NOT "ROLL_State".Timer[96].Q)) AND "ROLL_State".M[101, 5]);
+    #r := ((("ROLL_IO".Input[7, 5] AND "ROLL_State".S5Timers[97].Q) OR (NOT "ROLL_State".S5Timers[96].Q)) AND "ROLL_State".M[101, 5]);
     "ROLL_State".M[101, 6] := #r;
     // PB21, STEP 5 network 18
-    #r := ((((NOT "ROLL_IO".Input[7, 5]) AND "ROLL_State".Timer[96].Q) OR (NOT "ROLL_State".Timer[97].Q)) AND "ROLL_State".M[101, 5]);
+    #r := ((((NOT "ROLL_IO".Input[7, 5]) AND "ROLL_State".S5Timers[96].Q) OR (NOT "ROLL_State".S5Timers[97].Q)) AND "ROLL_State".M[101, 5]);
     "ROLL_State".M[101, 7] := #r;
     // PB21, STEP 5 network 19
     #r := "ROLL_State".M[190, 6];
@@ -3670,13 +3670,13 @@ BEGIN
     #r := (((NOT "ROLL_State".M[190, 6]) AND "ROLL_IO".Input[6, 2]) OR (NOT "ROLL_IO".Input[0, 1]) OR (NOT "ROLL_State".M[0, 3]) OR (NOT "ROLL_State".M[100, 0]) OR (NOT "ROLL_State".M[99, 7]) OR "ROLL_State".M[190, 5]);
     IF #r THEN "ROLL_State".M[102, 4] := FALSE; END_IF;
     // PB21, STEP 5 network 23
-    #r := ((NOT "ROLL_State".M[31, 5]) AND (NOT "ROLL_State".M[5, 6]) AND (NOT "ROLL_State".Timer[72].Q) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0]);
+    #r := ((NOT "ROLL_State".M[31, 5]) AND (NOT "ROLL_State".M[5, 6]) AND (NOT "ROLL_State".S5Timers[72].Q) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0]);
     "ROLL_State".M[102, 5] := #r;
     // PB21, STEP 5 network 24
-    #r := ((("ROLL_IO".Input[7, 5] AND "ROLL_State".Timer[97].Q) OR (NOT "ROLL_State".Timer[96].Q)) AND "ROLL_State".M[0, 3] AND "ROLL_State".M[102, 5]);
+    #r := ((("ROLL_IO".Input[7, 5] AND "ROLL_State".S5Timers[97].Q) OR (NOT "ROLL_State".S5Timers[96].Q)) AND "ROLL_State".M[0, 3] AND "ROLL_State".M[102, 5]);
     "ROLL_State".M[102, 6] := #r;
     // PB21, STEP 5 network 25
-    #r := ((((NOT "ROLL_IO".Input[7, 5]) AND "ROLL_State".Timer[96].Q) OR (NOT "ROLL_State".Timer[97].Q) OR "ROLL_State".M[0, 4]) AND "ROLL_State".M[102, 5]);
+    #r := ((((NOT "ROLL_IO".Input[7, 5]) AND "ROLL_State".S5Timers[96].Q) OR (NOT "ROLL_State".S5Timers[97].Q) OR "ROLL_State".M[0, 4]) AND "ROLL_State".M[102, 5]);
     "ROLL_State".M[102, 7] := #r;
     // PB21, STEP 5 network 26
     #r := "ROLL_State".M[190, 6];
@@ -3704,22 +3704,22 @@ BEGIN
     #r := "ROLL_State".M[0, 4];
     "ROLL_TimerOp"(Number := 120, Operation := 0, Signal := #r, Preset := #a1);
     // PB21, STEP 5 network 31
-    #r := ((NOT "ROLL_State".M[31, 5]) AND (NOT "ROLL_State".M[5, 6]) AND (((NOT "ROLL_State".Timer[120].Q) AND "ROLL_State".M[105, 5]) OR (NOT "ROLL_State".M[0, 4])) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0]);
+    #r := ((NOT "ROLL_State".M[31, 5]) AND (NOT "ROLL_State".M[5, 6]) AND (((NOT "ROLL_State".S5Timers[120].Q) AND "ROLL_State".M[105, 5]) OR (NOT "ROLL_State".M[0, 4])) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0]);
     "ROLL_State".M[105, 5] := #r;
     // PB21, STEP 5 network 32
-    #r := ((("ROLL_IO".Input[7, 5] AND "ROLL_State".Timer[97].Q) OR (NOT "ROLL_State".Timer[96].Q)) AND "ROLL_State".M[105, 5]);
+    #r := ((("ROLL_IO".Input[7, 5] AND "ROLL_State".S5Timers[97].Q) OR (NOT "ROLL_State".S5Timers[96].Q)) AND "ROLL_State".M[105, 5]);
     "ROLL_State".M[105, 6] := #r;
     // PB21, STEP 5 network 33
-    #r := ((((NOT "ROLL_IO".Input[7, 5]) AND "ROLL_State".Timer[96].Q) OR (NOT "ROLL_State".Timer[97].Q)) AND "ROLL_State".M[105, 5]);
+    #r := ((((NOT "ROLL_IO".Input[7, 5]) AND "ROLL_State".S5Timers[96].Q) OR (NOT "ROLL_State".S5Timers[97].Q)) AND "ROLL_State".M[105, 5]);
     "ROLL_State".M[105, 7] := #r;
     // PB21, STEP 5 network 34
     #r := ((((NOT "ROLL_IO".Input[5, 5]) AND ("ROLL_State".M[40, 5] OR "ROLL_State".M[42, 1]) AND "ROLL_State".M[31, 5]) OR (NOT "ROLL_IO".Input[5, 6])) AND "ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0]);
     "ROLL_State".M[103, 0] := #r;
     // PB21, STEP 5 network 35
-    #r := (((NOT "ROLL_IO".Input[5, 3]) OR (NOT "ROLL_IO".Input[6, 0]) OR (NOT "ROLL_State".Timer[121].Q)) AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0] AND "ROLL_State".M[31, 5]);
+    #r := (((NOT "ROLL_IO".Input[5, 3]) OR (NOT "ROLL_IO".Input[6, 0]) OR (NOT "ROLL_State".S5Timers[121].Q)) AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0] AND "ROLL_State".M[31, 5]);
     "ROLL_State".M[103, 3] := #r;
     // PB21, STEP 5 network 36
-    #r := (((NOT "ROLL_IO".Input[5, 6]) AND "ROLL_IO".Input[0, 2]) OR (("ROLL_State".M[103, 0] OR "ROLL_State".M[103, 3]) AND "ROLL_State".Timer[62].Q AND "ROLL_State".Timer[97].Q));
+    #r := (((NOT "ROLL_IO".Input[5, 6]) AND "ROLL_IO".Input[0, 2]) OR (("ROLL_State".M[103, 0] OR "ROLL_State".M[103, 3]) AND "ROLL_State".S5Timers[62].Q AND "ROLL_State".S5Timers[97].Q));
     "ROLL_State".M[103, 1] := #r;
     // PB21, STEP 5 network 37
     #r := ((NOT "ROLL_IO".Input[6, 2]) AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[100, 0] AND "ROLL_State".M[31, 5]);
@@ -3730,7 +3730,7 @@ BEGIN
     #r := ("ROLL_IO".Output[22, 3] AND "ROLL_State".M[103, 4]);
     "ROLL_TimerOp"(Number := 119, Operation := 1, Signal := #r, Preset := #a1);
     // PB21, STEP 5 network 39
-    #r := (((("ROLL_State".M[103, 0] OR "ROLL_State".M[103, 3]) AND "ROLL_State".Timer[96].Q) OR "ROLL_State".M[103, 4] OR "ROLL_State".Timer[119].Q) AND "ROLL_State".Timer[62].Q);
+    #r := (((("ROLL_State".M[103, 0] OR "ROLL_State".M[103, 3]) AND "ROLL_State".S5Timers[96].Q) OR "ROLL_State".M[103, 4] OR "ROLL_State".S5Timers[119].Q) AND "ROLL_State".S5Timers[62].Q);
     "ROLL_State".M[103, 2] := #r;
     // PB21, STEP 5 network 40
     #r := "ROLL_State".M[190, 6];
@@ -3758,7 +3758,7 @@ BEGIN
     #r := (((NOT "ROLL_State".M[190, 6]) AND (("ROLL_IO".Input[5, 3] AND "ROLL_IO".Input[5, 6] AND "ROLL_IO".Input[6, 0]) OR (NOT "ROLL_IO".Input[7, 5]))) OR (NOT "ROLL_IO".Input[0, 1]) OR (NOT "ROLL_State".M[100, 0]) OR (NOT "ROLL_State".M[25, 0]) OR "ROLL_State".M[190, 5] OR "ROLL_State".M[5, 6] OR "ROLL_State".M[8, 5]);
     IF #r THEN "ROLL_State".M[104, 6] := FALSE; END_IF;
     // PB21, STEP 5 network 45
-    #r := "ROLL_State".Timer[59].Q;
+    #r := "ROLL_State".S5Timers[59].Q;
     "ROLL_IO".Output[17, 0] := #r;
     // PB21, STEP 5 network 46
     #r := ("ROLL_IO".Input[6, 5] AND "ROLL_State".M[100, 0]);
@@ -3773,16 +3773,16 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB23, STEP 5 network 1
-    #db := 15;
+    #activeDataBlock := 15;
     // PB23, STEP 5 network 2
     #r := (("ROLL_State".M[40, 3] OR "ROLL_State".M[40, 4] OR "ROLL_State".M[40, 5]) AND "ROLL_State".M[111, 4]);
     "ROLL_State".M[240, 0] := #r;
@@ -3791,33 +3791,33 @@ BEGIN
     #a1 := W#16#2120;
     #r := "ROLL_State".M[240, 0];
     "ROLL_TimerOp"(Number := 51, Operation := 1, Signal := #r, Preset := #a1);
-    #r := "ROLL_State".Timer[51].Q;
+    #r := "ROLL_State".S5Timers[51].Q;
     "ROLL_IO".Output[19, 0] := #r;
     // PB23, STEP 5 network 4
     #a2 := #a1;
     #a1 := W#16#1050;
-    #r := ((NOT "ROLL_State".M[6, 1]) AND ("ROLL_State".M[40, 4] OR "ROLL_State".M[40, 5]) AND "ROLL_IO".Output[19, 0] AND "ROLL_State".M[240, 0] AND "ROLL_State".M[35, 2] AND "ROLL_State".Timer[70].Q);
+    #r := ((NOT "ROLL_State".M[6, 1]) AND ("ROLL_State".M[40, 4] OR "ROLL_State".M[40, 5]) AND "ROLL_IO".Output[19, 0] AND "ROLL_State".M[240, 0] AND "ROLL_State".M[35, 2] AND "ROLL_State".S5Timers[70].Q);
     "ROLL_TimerOp"(Number := 52, Operation := 0, Signal := #r, Preset := #a1);
-    #r := "ROLL_State".Timer[52].Q;
+    #r := "ROLL_State".S5Timers[52].Q;
     "ROLL_IO".Output[19, 1] := #r;
     // PB23, STEP 5 network 5
     #r := ("ROLL_IO".Input[0, 2] AND "ROLL_IO".Input[0, 4]);
     IF #r THEN "ROLL_State".M[103, 7] := TRUE; END_IF;
-    #r := (NOT "ROLL_State".Timer[59].Q);
+    #r := (NOT "ROLL_State".S5Timers[59].Q);
     IF #r THEN "ROLL_State".M[103, 7] := FALSE; END_IF;
     // PB23, STEP 5 network 6
     #a2 := #a1;
     #a1 := W#16#3360;
-    #r := "ROLL_State".Timer[59].Q;
+    #r := "ROLL_State".S5Timers[59].Q;
     "ROLL_TimerOp"(Number := 76, Operation := 0, Signal := #r, Preset := #a1);
     // PB23, STEP 5 network 7
-    #r := ((NOT "ROLL_State".M[13, 3]) AND (NOT "ROLL_State".M[5, 6]) AND (NOT "ROLL_State".M[6, 2]) AND (NOT "ROLL_State".M[6, 3]) AND (((NOT "ROLL_State".Timer[76].Q) AND "ROLL_IO".Input[2, 2]) OR "ROLL_State".M[103, 7] OR "ROLL_State".M[152, 0]) AND ("ROLL_IO".Input[2, 2] OR "ROLL_State".M[152, 0]) AND "ROLL_IO".Input[3, 4] AND "ROLL_IO".Input[5, 6] AND "ROLL_State".Timer[59].Q);
+    #r := ((NOT "ROLL_State".M[13, 3]) AND (NOT "ROLL_State".M[5, 6]) AND (NOT "ROLL_State".M[6, 2]) AND (NOT "ROLL_State".M[6, 3]) AND (((NOT "ROLL_State".S5Timers[76].Q) AND "ROLL_IO".Input[2, 2]) OR "ROLL_State".M[103, 7] OR "ROLL_State".M[152, 0]) AND ("ROLL_IO".Input[2, 2] OR "ROLL_State".M[152, 0]) AND "ROLL_IO".Input[3, 4] AND "ROLL_IO".Input[5, 6] AND "ROLL_State".S5Timers[59].Q);
     "ROLL_IO".Output[19, 5] := #r;
     // PB23, STEP 5 network 8
-    #r := ((NOT "ROLL_State".M[5, 6]) AND (NOT "ROLL_State".M[6, 1]) AND ("ROLL_IO".Input[0, 1] OR "ROLL_IO".Input[0, 2]) AND "ROLL_IO".Input[3, 1] AND "ROLL_IO".Input[3, 4] AND "ROLL_State".M[0, 3] AND "ROLL_State".M[100, 0] AND "ROLL_State".Timer[70].Q);
+    #r := ((NOT "ROLL_State".M[5, 6]) AND (NOT "ROLL_State".M[6, 1]) AND ("ROLL_IO".Input[0, 1] OR "ROLL_IO".Input[0, 2]) AND "ROLL_IO".Input[3, 1] AND "ROLL_IO".Input[3, 4] AND "ROLL_State".M[0, 3] AND "ROLL_State".M[100, 0] AND "ROLL_State".S5Timers[70].Q);
     "ROLL_State".M[240, 0] := #r;
     // PB23, STEP 5 network 9
-    #r := ((NOT "ROLL_IO".Output[20, 6]) AND (NOT "ROLL_State".M[5, 6]) AND (NOT "ROLL_State".M[8, 5]) AND (NOT "ROLL_State".Timer[96].Q) AND (("ROLL_State".M[100, 0] AND "ROLL_State".M[103, 1]) OR "ROLL_State".M[102, 6] OR "ROLL_State".M[104, 6]));
+    #r := ((NOT "ROLL_IO".Output[20, 6]) AND (NOT "ROLL_State".M[5, 6]) AND (NOT "ROLL_State".M[8, 5]) AND (NOT "ROLL_State".S5Timers[96].Q) AND (("ROLL_State".M[100, 0] AND "ROLL_State".M[103, 1]) OR "ROLL_State".M[102, 6] OR "ROLL_State".M[104, 6]));
     "ROLL_IO".Output[20, 4] := #r;
     "ROLL_IO".Output[22, 6] := #r;
     // PB23, STEP 5 network 10
@@ -3836,7 +3836,7 @@ BEGIN
     #r := ("ROLL_State".M[102, 1] OR "ROLL_State".M[102, 2] OR "ROLL_State".M[102, 3] OR "ROLL_State".M[102, 6] OR "ROLL_State".M[102, 7] OR "ROLL_State".M[103, 2]);
     "ROLL_IO".Output[22, 3] := #r;
     // PB23, STEP 5 network 15
-    #r := "ROLL_State".Timer[85].Q;
+    #r := "ROLL_State".S5Timers[85].Q;
     "ROLL_IO".Output[21, 3] := #r;
     // PB23, STEP 5 network 16
     #a2 := #a1;
@@ -3844,7 +3844,7 @@ BEGIN
     #r := "ROLL_IO".Output[20, 6];
     "ROLL_TimerOp"(Number := 47, Operation := 1, Signal := #r, Preset := #a1);
     // PB23, STEP 5 network 17
-    #r := ((NOT "ROLL_IO".Output[21, 5]) AND (NOT "ROLL_IO".Output[22, 3]) AND (NOT "ROLL_IO".Output[22, 6]) AND (("ROLL_IO".Output[21, 4] AND "ROLL_State".Timer[47].Q) OR "ROLL_State".M[104, 0] OR "ROLL_State".M[152, 1]));
+    #r := ((NOT "ROLL_IO".Output[21, 5]) AND (NOT "ROLL_IO".Output[22, 3]) AND (NOT "ROLL_IO".Output[22, 6]) AND (("ROLL_IO".Output[21, 4] AND "ROLL_State".S5Timers[47].Q) OR "ROLL_State".M[104, 0] OR "ROLL_State".M[152, 1]));
     "ROLL_IO".Output[21, 4] := #r;
     // PB23, STEP 5 network 18
     #r := ((NOT "ROLL_IO".Output[21, 4]) AND "ROLL_State".M[152, 0]);
@@ -3860,31 +3860,31 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB24, STEP 5 network 1
-    #db := 15;
+    #activeDataBlock := 15;
     // PB24, STEP 5 network 2
-    #r := ("ROLL_IO".Input[5, 0] AND "ROLL_State".M[13, 3] AND "ROLL_State".Timer[59].Q);
+    #r := ("ROLL_IO".Input[5, 0] AND "ROLL_State".M[13, 3] AND "ROLL_State".S5Timers[59].Q);
     "ROLL_State".M[240, 0] := #r;
     // PB24, STEP 5 network 3
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 54);
-    #r := (NOT "ROLL_State".Timer[53].Q);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 54);
+    #r := (NOT "ROLL_State".S5Timers[53].Q);
     "ROLL_TimerOp"(Number := 54, Operation := 0, Signal := #r, Preset := #a1);
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 53);
-    #r := "ROLL_State".Timer[54].Q;
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 53);
+    #r := "ROLL_State".S5Timers[54].Q;
     "ROLL_TimerOp"(Number := 53, Operation := 1, Signal := #r, Preset := #a1);
     #r := "ROLL_State".M[240, 0];
     "ROLL_TimerOp"(Number := 53, Operation := 2, Signal := #r, Preset := #a1);
-    #r := ((NOT "ROLL_State".M[40, 5]) AND "ROLL_State".Timer[53].Q);
+    #r := ((NOT "ROLL_State".M[40, 5]) AND "ROLL_State".S5Timers[53].Q);
     "ROLL_IO".Output[19, 4] := #r;
     // PB24, STEP 5 network 4
     RETURN;
@@ -3897,135 +3897,135 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..14] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..14] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB25, STEP 5 network 1
-    #db := 15;
+    #activeDataBlock := 15;
     // PB25, STEP 5 network 2
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 5, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[0] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[0];
+    #comparisonResults[0] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[0];
     "ROLL_State".M[87, 0] := #r;
     // PB25, STEP 5 network 3
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 6, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[1] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[1];
+    #comparisonResults[1] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[1];
     "ROLL_State".M[87, 1] := #r;
     // PB25, STEP 5 network 4
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 7, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[2] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[2];
+    #comparisonResults[2] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[2];
     "ROLL_State".M[87, 2] := #r;
     // PB25, STEP 5 network 5
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 8, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[3] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[3];
+    #comparisonResults[3] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[3];
     "ROLL_State".M[87, 3] := #r;
     // PB25, STEP 5 network 6
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 9, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[4] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[4];
+    #comparisonResults[4] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[4];
     "ROLL_State".M[87, 4] := #r;
     // PB25, STEP 5 network 7
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 10, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[5] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[5];
+    #comparisonResults[5] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[5];
     "ROLL_State".M[87, 5] := #r;
     // PB25, STEP 5 network 8
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 11, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[6] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[6];
+    #comparisonResults[6] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[6];
     "ROLL_State".M[87, 6] := #r;
     // PB25, STEP 5 network 9
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 12, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[7] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[7];
+    #comparisonResults[7] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[7];
     "ROLL_State".M[87, 7] := #r;
     // PB25, STEP 5 network 10
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 13, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[8] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[8];
+    #comparisonResults[8] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[8];
     "ROLL_State".M[88, 0] := #r;
     // PB25, STEP 5 network 11
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 14, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[9] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[9];
+    #comparisonResults[9] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[9];
     "ROLL_State".M[88, 1] := #r;
     // PB25, STEP 5 network 12
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 15, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[10] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[10];
+    #comparisonResults[10] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[10];
     "ROLL_State".M[88, 2] := #r;
     // PB25, STEP 5 network 13
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 16, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[11] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[11];
+    #comparisonResults[11] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[11];
     "ROLL_State".M[88, 3] := #r;
     // PB25, STEP 5 network 14
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 17, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[12] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[12];
+    #comparisonResults[12] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[12];
     "ROLL_State".M[88, 4] := #r;
     // PB25, STEP 5 network 15
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 18, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[13] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[13];
+    #comparisonResults[13] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[13];
     "ROLL_State".M[88, 5] := #r;
     // PB25, STEP 5 network 16
     #a2 := #a1;
     #a1 := "ROLL_GetM"(FirstByte := 19, Width := 8);
     #a2 := #a1;
     #a1 := W#16#0000;
-    #compare[14] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
-    #r := #compare[14];
+    #comparisonResults[14] := (WORD_TO_INT(#a2) <> WORD_TO_INT(#a1));
+    #r := #comparisonResults[14];
     "ROLL_State".M[88, 6] := #r;
     // PB25, STEP 5 network 17
     #r := ("ROLL_State".M[87, 0] OR "ROLL_State".M[87, 1] OR "ROLL_State".M[87, 2] OR "ROLL_State".M[87, 3] OR "ROLL_State".M[87, 4] OR "ROLL_State".M[87, 5] OR "ROLL_State".M[87, 6] OR "ROLL_State".M[87, 7] OR "ROLL_State".M[88, 0] OR "ROLL_State".M[88, 1] OR "ROLL_State".M[88, 2] OR "ROLL_State".M[88, 3] OR "ROLL_State".M[88, 4] OR "ROLL_State".M[88, 5] OR "ROLL_State".M[88, 6]);
@@ -4066,16 +4066,16 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB50, STEP 5 network 1
-    #db := 15;
+    #activeDataBlock := 15;
     // PB50, STEP 5 network 2
     #r := "ROLL_State".M[0, 1];
     IF #r THEN "ROLL_State".M[0, 2] := FALSE; END_IF;
@@ -4100,14 +4100,14 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB51, STEP 5 network 1
     #a2 := #a1;
     #a1 := W#16#2060;
@@ -4154,34 +4154,34 @@ VAR_TEMP
     r : Bool;
     a1 : Word;
     a2 : Word;
-    db : Int;
-    compare : Array[0..0] of Bool;
+    activeDataBlock : Int;
+    comparisonResults : Array[0..0] of Bool;
 END_VAR
 BEGIN
     #r := FALSE;
     #a1 := W#16#0000;
     #a2 := W#16#0000;
-    #db := 0;
+    #activeDataBlock := 0;
     // PB52, STEP 5 network 1
-    #db := 15;
+    #activeDataBlock := 15;
     // PB52, STEP 5 network 2
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 17);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 17);
     #r := ((NOT "ROLL_IO".Input[5, 5]) AND (NOT "ROLL_State".M[6, 3]) AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[4, 1] AND "ROLL_State".M[40, 5]);
     "ROLL_TimerOp"(Number := 17, Operation := 0, Signal := #r, Preset := #a1);
     // PB52, STEP 5 network 3
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 31);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 31);
     #r := ((NOT "ROLL_IO".Input[5, 3]) AND (NOT "ROLL_State".M[6, 1]) AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[4, 1]);
     "ROLL_TimerOp"(Number := 31, Operation := 0, Signal := #r, Preset := #a1);
     // PB52, STEP 5 network 4
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 32);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 32);
     #r := ((NOT "ROLL_IO".Input[6, 0]) AND (NOT "ROLL_State".M[6, 4]) AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[4, 1]);
     "ROLL_TimerOp"(Number := 32, Operation := 0, Signal := #r, Preset := #a1);
     // PB52, STEP 5 network 5
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 33);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 33);
     #r := ((NOT "ROLL_IO".Input[6, 2]) AND (NOT "ROLL_State".M[6, 5]) AND "ROLL_IO".Input[3, 1] AND "ROLL_State".M[4, 1]);
     "ROLL_TimerOp"(Number := 33, Operation := 0, Signal := #r, Preset := #a1);
     // PB52, STEP 5 network 6
@@ -4211,23 +4211,23 @@ BEGIN
     "ROLL_TimerOp"(Number := 45, Operation := 0, Signal := #r, Preset := #a1);
     // PB52, STEP 5 network 11
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 58);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 58);
     #r := ("ROLL_IO".Input[3, 1] AND "ROLL_State".M[3, 6]);
     "ROLL_TimerOp"(Number := 58, Operation := 1, Signal := #r, Preset := #a1);
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 59);
-    #r := ("ROLL_State".M[3, 6] AND "ROLL_State".Timer[58].Q);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 59);
+    #r := ("ROLL_State".M[3, 6] AND "ROLL_State".S5Timers[58].Q);
     "ROLL_TimerOp"(Number := 59, Operation := 1, Signal := #r, Preset := #a1);
     // PB52, STEP 5 network 12
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 63);
-    #r := (NOT "ROLL_State".Timer[62].Q);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 63);
+    #r := (NOT "ROLL_State".S5Timers[62].Q);
     "ROLL_TimerOp"(Number := 63, Operation := 0, Signal := #r, Preset := #a1);
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 62);
-    #r := "ROLL_State".Timer[63].Q;
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 62);
+    #r := "ROLL_State".S5Timers[63].Q;
     "ROLL_TimerOp"(Number := 62, Operation := 1, Signal := #r, Preset := #a1);
-    #r := ((NOT "ROLL_State".M[103, 0]) AND (NOT "ROLL_State".M[103, 3]) AND (NOT "ROLL_State".M[103, 4]) AND (NOT "ROLL_State".Timer[119].Q));
+    #r := ((NOT "ROLL_State".M[103, 0]) AND (NOT "ROLL_State".M[103, 3]) AND (NOT "ROLL_State".M[103, 4]) AND (NOT "ROLL_State".S5Timers[119].Q));
     "ROLL_TimerOp"(Number := 62, Operation := 2, Signal := #r, Preset := #a1);
     // PB52, STEP 5 network 13
     #a2 := #a1;
@@ -4241,7 +4241,7 @@ BEGIN
     "ROLL_TimerOp"(Number := 72, Operation := 1, Signal := #r, Preset := #a1);
     // PB52, STEP 5 network 15
     #a2 := #a1;
-    #a1 := "ROLL_GetDW"(DbNumber := #db, Index := 85);
+    #a1 := "ROLL_GetDW"(DbNumber := #activeDataBlock, Index := 85);
     #r := "ROLL_State".M[41, 0];
     "ROLL_TimerOp"(Number := 85, Operation := 1, Signal := #r, Preset := #a1);
     // PB52, STEP 5 network 16
@@ -4712,15 +4712,15 @@ END_VAR
 BEGIN
     // RE plus RS120 bit 3: all M retained. Default T/Z 0..63 retained.
     FOR #n := 64 TO 127 DO
-        "ROLL_State".Timer[#n].RemainingMs := 0.0;
-        "ROLL_State".Timer[#n].BaseMs := 0;
-        "ROLL_State".Timer[#n].Mode := 0;
-        "ROLL_State".Timer[#n].Q := FALSE;
-        "ROLL_State".Timer[#n].Previous := FALSE;
-        "ROLL_State".Counter[#n].Value := 0;
-        "ROLL_State".Counter[#n].SetPrevious := FALSE;
-        "ROLL_State".Counter[#n].UpPrevious := FALSE;
-        "ROLL_State".Counter[#n].DownPrevious := FALSE;
+        "ROLL_State".S5Timers[#n].RemainingMs := 0.0;
+        "ROLL_State".S5Timers[#n].BaseMs := 0;
+        "ROLL_State".S5Timers[#n].Mode := 0;
+        "ROLL_State".S5Timers[#n].Q := FALSE;
+        "ROLL_State".S5Timers[#n].Previous := FALSE;
+        "ROLL_State".S5Counters[#n].Value := 0;
+        "ROLL_State".S5Counters[#n].SetPrevious := FALSE;
+        "ROLL_State".S5Counters[#n].UpPrevious := FALSE;
+        "ROLL_State".S5Counters[#n].DownPrevious := FALSE;
     END_FOR;
     "ROLL_IO".FirstCycle := TRUE;
     "ROLL_IO".ClockMs := 0.0;

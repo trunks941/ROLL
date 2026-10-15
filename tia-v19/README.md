@@ -16,6 +16,10 @@ Skrypt uruchamia 64-bitowy PowerShell, tworzy osobny projekt z unikalną nazwą,
 
 Raport z 15 października 2026 zatrzymał się podczas uruchamiania Openness: konto procesu nie należało do `Siemens TIA Openness`. Projekt i kompilacja nie zostały rozpoczęte; nie jest to komunikat błędu kodu PLC. Administrator powinien dodać **konto, które ma uruchamiać skrypt**; samo uruchomienie skryptu jako inny administrator nie zastępuje tej konfiguracji. Po ponownym zalogowaniu można uruchomić także poprzednią wersję paczki. Zaktualizowana wersja dodatkowo zapisuje w raporcie kod diagnozy i instrukcję dalszego działania.
 
+**Kolejny raport z 15 października, z godziny 11:15, potwierdził usunięcie problemu uprawnień.** TIA utworzyło projekt `.ap19` i CPU `OrderNumber:6ES7 513-1AM03-0AB0/V3.1`. Generowanie źródła zatrzymało się na deklaracjach `Timer`, `Counter`, `db` oraz następujących po nich błędach parsera. Poprawka zastępuje nazwy wewnętrzne przez `S5Timers`, `S5Counters`, `activeDataBlock` i `comparisonResults`. Zmiany SCL obejmują wyłącznie nazwy; logika, nastawy i adresy I/O pozostały takie same. Do ponownej próby **pobierz aktualną paczkę, rozpakuj ją do nowego katalogu i uruchom z niej `UTWORZ_PROJEKT.cmd`**. Nie trzeba ponownie konfigurować grup Windows. Stary raport nie potwierdza kompilacji poprawionego źródła.
+
+Builder zapisuje teraz wynik generowania i SHA-256 faktycznie importowanego źródła. Jeżeli generowanie SCL zgłosi błąd, zachowuje go, pomija kompilację niepełnego programu oraz próbuje zebrać dostępne eksporty PLC i dane TP900. Błąd generowania nadal oznacza nieudaną budowę i kod zakończenia 1; powstanie obiektów HMI nie zmienia tego wyniku.
+
 ## Co jest przygotowane
 
 - Wszystkie **22 PB**, z zachowaniem kolejności instrukcji i kolejnych zapisów do tego samego wyjścia. Wygenerowane źródła zachowują również wartość VKE pomiędzy kolejnymi cewkami i nakładanie się znaczników M/MB/MW.
@@ -29,7 +33,7 @@ W źródłach `Simulation=TRUE`, `PhysicalIoConfigured=FALSE`, `PhysicalOutputsE
 
 ## Co pozostaje do dokończenia po lokalnej budowie
 
-Skrypt próbuje utworzyć dokładną CPU **6ES7513-1AM03-0AB0** oraz **TP900 Comfort 6AV2124-0JC01-0AX0** z wersji dostępnych w lokalnym katalogu. Podane identyfikatory są kandydatami, nie wynikiem sprawdzenia katalogu Siemens. Udane utworzenie urządzenia ustala wersję projektu; **nie ustala firmware dopiero zamówionej CPU**.
+Skrypt próbuje utworzyć dokładną CPU **6ES7513-1AM03-0AB0** oraz **TP900 Comfort 6AV2124-0JC01-0AX0** z wersji dostępnych w lokalnym katalogu. Utworzenie CPU w wersji projektowej **V3.1** potwierdził raport użytkownika. Pozostałe identyfikatory, w tym panelu, pozostają kandydatami. Udane utworzenie urządzenia ustala wersję projektu; **nie ustala firmware dopiero zamówionej CPU**.
 
 Skrypt tworzy dostępne natywne obiekty pustych ekranów i eksportuje ich rzeczywistą strukturę. **Przyciski, pola, zmienne, połączenie PLC, alarmy i zdarzenie heartbeat nie są jeszcze skonfigurowane w WinCC.** Bez tych elementów panel nie obsługuje maszyny. Eksport z lokalnego V19 pozwoli przygotować właściwy import ekranów i powiązań. `hmi/interface.csv` i `hmi/screens.json` są specyfikacją, nie formatem gotowym do importu WinCC.
 
@@ -49,7 +53,7 @@ Dobór i wstawienie modułów S7, przypisanie zacisków i niezależnych torów z
 
 **7 kontroli przeszło**, w tym **880 porównań stanów 22 PB**: bezpośrednie wykonanie rejestrów instrukcji MC5 przeciw wykonaniu wygenerowanego podzbioru SCL w Pythonie. Dodatkowo sprawdzono wielokrotne cewki, zapis VKE, migawki porównań, liczby ze znakiem, nakładanie M/MB/MW, receptury i adresy I/O. Obie strony porównania używają wspólnego modelu timerów/liczników; nie stanowi to niezależnego testu ich odpowiedników SCL.
 
-Sprawdzono parser PowerShell oraz reakcję skryptu na brak API TIA: jawny błąd i raport. Po otrzymaniu raportu Windows z 15 października sprawdzono również rozpoznanie rzeczywistego błędu grupy Openness oraz pięć przypadków rozróżniających ten błąd od innych awarii. Kontrole w chmurze nie uruchamiają natywnego TIA ani WinCC; próba użytkownika na Windows zakończyła się przed utworzeniem projektu. [Pokrycie i ograniczenia](reports/coverage.json), [wynik kontroli](reports/conversion-tests.json) i [sumy źródeł](reports/source-hashes.json) są zapisane przy kodzie.
+Sprawdzono parser PowerShell oraz reakcję skryptu na brak API TIA: jawny błąd i raport. Po otrzymaniu raportów Windows z 15 października sprawdzono również rozpoznanie błędu grupy Openness (pięć przypadków), obsługę powodzenia i błędu generowania źródła (dwa przypadki z atrapą API) oraz wykrywanie dawnych nazw powodujących błąd. Po zmianie nazw ponownie przeszło 880 porównań PB. Porównanie całego starego i nowego SCL potwierdza, że zmieniły się tylko identyfikatory. Kontrole w chmurze nie uruchamiają natywnego TIA ani WinCC. Ostatnia próba użytkownika na Windows utworzyła projekt i CPU, a zatrzymała się przy imporcie starej wersji źródła. [Pokrycie i ograniczenia](reports/coverage.json), [wynik kontroli](reports/conversion-tests.json), [regresja nazw](reports/native-identifier-regression.json) i [sumy źródeł](reports/source-hashes.json) są zapisane przy kodzie.
 
 Odtwarzanie źródeł i kontroli w Linux/Python 3:
 
