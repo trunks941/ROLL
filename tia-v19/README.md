@@ -6,13 +6,15 @@ Ten pakiet zawiera źródła PLC i skrypt tworzący **nowy projekt offline na ko
 
 1. Pobierz [paczkę TIA_ROLL_V19.zip](../TIA_ROLL_V19.zip) lub repozytorium i rozpakuj do zwykłego katalogu na komputerze z **STEP 7 Professional V19 i WinCC Advanced V19**. Zachowaj cały katalog `tia-v19` wraz z podkatalogami. Sama paczka wystarcza do budowy w TIA; ponowna generacja źródeł Python wymaga pełnego repozytorium z materiałami migracji.
 2. Sprawdź, czy istnieje plik `C:\Program Files\Siemens\Automation\Portal V19\PublicAPI\V19\Siemens.Engineering.dll`. Jeżeli go nie ma, doinstaluj komponent **TIA Portal Openness V19** z instalatora Siemens. Openness pozwala skryptowi utworzyć urządzenia i zaimportować kod w TIA.
-3. Konto Windows uruchamiające skrypt musi należeć do lokalnej grupy **TIA Openness**. Jeżeli trzeba je dopisać: Zarządzanie komputerem → Użytkownicy i grupy lokalne → Grupy → TIA Openness. Wymaga to administratora Windows; po zmianie wyloguj się i zaloguj ponownie. Skrypt sam nie zmienia grup ani uprawnień.
+3. Konto Windows uruchamiające skrypt musi należeć do lokalnej grupy **Siemens TIA Openness** — to pełna nazwa grupy potwierdzona komunikatem Siemens. Jeżeli trzeba je dopisać: Zarządzanie komputerem → Użytkownicy i grupy lokalne → Grupy → Siemens TIA Openness → Dodaj. Wymaga to administratora Windows; po zmianie **wyloguj się z Windows i zaloguj ponownie**. Samo zamknięcie TIA lub PowerShell nie odświeży grup w bieżącej sesji. Skrypt sam nie zmienia grup ani uprawnień.
 4. Uruchom [UTWORZ_PROJEKT.cmd](UTWORZ_PROJEKT.cmd). Gdy TIA wyświetli pytanie o dostęp aplikacji Openness, zezwól na dostęp temu lokalnemu skryptowi. Nie trzeba podłączać sterownika ani panelu.
 5. Wyniki trafią do `Dokumenty\ROLL_TIA_V19`. Skrypt poda ścieżkę projektu i paczki `ROLL_…_raport.zip`. **Przekaż tę paczkę do dalszej pracy nad projektem.** Zawiera wynik kompilacji, eksport bloków i opis rzeczywistego API WinCC V19, bez wysyłania ich gdziekolwiek przez skrypt.
 
 Jeżeli Windows blokuje pobrany plik PS1, sprawdź jego zawartość i odblokuj **ten plik** we Właściwościach → Odblokuj. CMD ustawia `RemoteSigned` wyłącznie dla uruchomionego procesu PowerShell; nie zmienia polityki systemowej. Przy polityce narzuconej przez administratora użyj zatwierdzonego sposobu uruchamiania skryptów.
 
 Skrypt uruchamia 64-bitowy PowerShell, tworzy osobny projekt z unikalną nazwą, importuje [ROLL_ALL.scl](ROLL_ALL.scl), generuje bloki, uruchamia kompilator STEP 7 i zapisuje raport. Nie otwiera istniejącego projektu ani nie wykonuje wgrywania do urządzeń. Nawet przy błędzie zapisuje dostępny raport i utworzoną część projektu.
+
+Raport z 15 października 2026 zatrzymał się podczas uruchamiania Openness: konto procesu nie należało do `Siemens TIA Openness`. Projekt i kompilacja nie zostały rozpoczęte; nie jest to komunikat błędu kodu PLC. Administrator powinien dodać **konto, które ma uruchamiać skrypt**; samo uruchomienie skryptu jako inny administrator nie zastępuje tej konfiguracji. Po ponownym zalogowaniu można uruchomić także poprzednią wersję paczki. Zaktualizowana wersja dodatkowo zapisuje w raporcie kod diagnozy i instrukcję dalszego działania.
 
 ## Co jest przygotowane
 
@@ -47,7 +49,7 @@ Dobór i wstawienie modułów S7, przypisanie zacisków i niezależnych torów z
 
 **7 kontroli przeszło**, w tym **880 porównań stanów 22 PB**: bezpośrednie wykonanie rejestrów instrukcji MC5 przeciw wykonaniu wygenerowanego podzbioru SCL w Pythonie. Dodatkowo sprawdzono wielokrotne cewki, zapis VKE, migawki porównań, liczby ze znakiem, nakładanie M/MB/MW, receptury i adresy I/O. Obie strony porównania używają wspólnego modelu timerów/liczników; nie stanowi to niezależnego testu ich odpowiedników SCL.
 
-Sprawdzono parser PowerShell oraz reakcję skryptu na brak API TIA: jawny błąd i raport. TIA, Openness i WinCC na Windows nie były uruchomione. [Pokrycie i ograniczenia](reports/coverage.json), [wynik kontroli](reports/conversion-tests.json) i [sumy źródeł](reports/source-hashes.json) są zapisane przy kodzie.
+Sprawdzono parser PowerShell oraz reakcję skryptu na brak API TIA: jawny błąd i raport. Po otrzymaniu raportu Windows z 15 października sprawdzono również rozpoznanie rzeczywistego błędu grupy Openness oraz pięć przypadków rozróżniających ten błąd od innych awarii. Kontrole w chmurze nie uruchamiają natywnego TIA ani WinCC; próba użytkownika na Windows zakończyła się przed utworzeniem projektu. [Pokrycie i ograniczenia](reports/coverage.json), [wynik kontroli](reports/conversion-tests.json) i [sumy źródeł](reports/source-hashes.json) są zapisane przy kodzie.
 
 Odtwarzanie źródeł i kontroli w Linux/Python 3:
 
@@ -58,5 +60,7 @@ python3 tia-v19/tools/prepare_hmi.py
 python3 tia-v19/tools/test_conversion.py
 python3 tia-v19/tools/verify_sources.py
 ```
+
+Kontrole PowerShell: `tools/check_powershell.ps1` sprawdza składnię buildera, a `tools/test_builder_diagnostics.ps1` rozpoznawanie komunikatów o uprawnieniach. Nie uruchamiają TIA i nie zmieniają członkostwa w grupach Windows.
 
 Ręczny import awaryjny: w nowym projekcie TIA dodaj odpowiednią CPU, w jej „External source files / Zewnętrzne pliki źródłowe” dodaj `ROLL_ALL.scl`, wybierz „Generate blocks from source / Generuj bloki ze źródła”, następnie kompilację całego programu. Zastąpienie domyślnego OB1 wykonuj tylko w tym nowym projekcie. Przekaż pełne komunikaty błędów wraz z numerami linii. Ta ścieżka nie tworzy ekranów HMI ani raportu API potrzebnego do ich automatyzacji.

@@ -1,0 +1,13 @@
+{
+  "source_report_archive": "ROLL_20261015_105914_d69afa_raport.zip",
+  "source_report_sha256": "5802e65a36e10b3cd2200f38617e1522fa98a44bf334ad0a3ccecd61a4b05c35",
+  "reported_phase": "create_project",
+  "failure_location": "TiaPortal constructor, before Projects.Create",
+  "diagnosis_code": "windows_openness_group_membership",
+  "required_group": "Siemens TIA Openness",
+  "project_created": false,
+  "cpu_catalog_checked": false,
+  "plc_compilation_executed": false,
+  "changes_to_plc_sources": false,
+  "raw_windows_account_details_published": false
+}

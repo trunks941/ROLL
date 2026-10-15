@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "cases": 5,
+  "parserVersion": "7.4.6",
+  "scope": "diagnostic classification of Siemens group error and unrelated failures",
+  "nativeWindowsGroupMembershipTested": false,
+  "nativeTiaExecuted": false,
+  "builderSHA256": "78378b93879afc3693f97cc343b21de2fafff29b4a1f6cdf571b5da5195a5738"
+}

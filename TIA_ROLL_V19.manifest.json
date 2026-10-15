@@ -1,16 +1,16 @@
 {
   "package": "TIA_ROLL_V19.zip",
   "status": "local TIA build package; native compilation and HMI completion pending",
-  "sha256": "f09393fd6790f44490208958b20d5ed8539af5346e38504aedf1e70d86b6cf6d",
-  "bytes": 78361,
-  "file_count": 25,
+  "sha256": "9b4fe7ff2aad1e2f83c12f2ca17e0f3b6fdfb760873ba42001bcf85109499160",
+  "bytes": 81472,
+  "file_count": 28,
   "tia_compiled": false,
   "hmi_screen_controls_configured": false,
   "files": [
     {
       "path": "tia-v19/README.md",
-      "bytes": 9625,
-      "sha256": "8936abfefb8f7247ce41f39b88b4245c058763f44fe854550c6f3db3d096f143"
+      "bytes": 10860,
+      "sha256": "533fa2e64f8248f457ace97b03a5edd15260d7cdd573090c78065bc2735b69c3"
     },
     {
       "path": "tia-v19/ROLL_ALL.scl",
@@ -39,13 +39,18 @@
     },
     {
       "path": "tia-v19/openness/Build-Roll.ps1",
-      "bytes": 18246,
-      "sha256": "5d83a4fdb855f6fefdc2b3ffc8e5ed86bb40ecb6f08a9a2bc93ba187c74dc940"
+      "bytes": 19612,
+      "sha256": "78378b93879afc3693f97cc343b21de2fafff29b4a1f6cdf571b5da5195a5738"
     },
     {
       "path": "tia-v19/openness/target.json",
       "bytes": 651,
       "sha256": "b83362a606de339f70db754f5be13cd5b43d2006916e5e46c413884dfda1416c"
+    },
+    {
+      "path": "tia-v19/reports/builder-diagnostics-tests.json",
+      "bytes": 314,
+      "sha256": "e10bb5c3b1634e9dd9ba5a4c91991fbbbd13f0e7085dd36727d7d8c2a13a04df"
     },
     {
       "path": "tia-v19/reports/builder-prerequisite-check.json",
@@ -65,7 +70,7 @@
     {
       "path": "tia-v19/reports/powershell-checks.json",
       "bytes": 213,
-      "sha256": "c3c76f1008ba16540fb74b2b94871e97836799bc9f64deb29312fdd71df848dc"
+      "sha256": "10e995aa66186a838390a7b9755fc7e101db6656c061ebfb2a86ec66a5343eb9"
     },
     {
       "path": "tia-v19/reports/source-contracts.json",
@@ -76,6 +81,11 @@
       "path": "tia-v19/reports/source-hashes.json",
       "bytes": 669,
       "sha256": "e1759c3307c0812e212e8dc5e518fbf33bd48a64197432a67638816fdb94e574"
+    },
+    {
+      "path": "tia-v19/reports/windows-feedback-2026-10-15.json",
+      "bytes": 558,
+      "sha256": "1f1786914a39d3b5fc34b02e077a574bca0f857c68b2f1373d93406f92724657"
     },
     {
       "path": "tia-v19/sources/00-runtime.scl",
@@ -121,6 +131,11 @@
       "path": "tia-v19/tools/prepare_hmi.py",
       "bytes": 5880,
       "sha256": "d277beac741dec161850006647ba34820f3902ed5535f72fe61b965effb3eb9a"
+    },
+    {
+      "path": "tia-v19/tools/test_builder_diagnostics.ps1",
+      "bytes": 2452,
+      "sha256": "825d1b7eab55a02165ee2209e3fc24f8e38eb852352b7bf042a1cd47efb39fc7"
     },
     {
       "path": "tia-v19/tools/test_conversion.py",

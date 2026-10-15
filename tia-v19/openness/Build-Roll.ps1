@@ -23,6 +23,7 @@ $report = [ordered]@{
     retentionConfigured = $false; retentionChecks = @(); initialPlcCompilation = $null
     machineTested = $false; downloadsPerformed = $false
     reportArchive = $null
+    diagnosisCode = $null; requiredWindowsGroup = $null; nextAction = $null
 }
 $tia = $null
 $project = $null
@@ -30,6 +31,18 @@ $exitCode = 1
 
 function Save-Report {
     $report | ConvertTo-Json -Depth 20 | Set-Content -LiteralPath (Join-Path $runDirectory 'build-report.json') -Encoding UTF8
+}
+
+function Get-OpennessDiagnostic([string]$ErrorText) {
+    # Recognize the actual Siemens security message without changing permissions.
+    if ($ErrorText -match 'not (?:a )?member of the windows group .Siemens TIA Openness.') {
+        return [ordered]@{
+            Code = 'windows_openness_group_membership'
+            RequiredGroup = 'Siemens TIA Openness'
+            NextAction = 'Ask a Windows administrator to add the account running this script to the local Siemens TIA Openness group. Sign out of Windows and sign in again, then rerun UTWORZ_PROJEKT.cmd under that account.'
+        }
+    }
+    return $null
 }
 
 function Read-BlockNumber($Block) {
@@ -161,9 +174,10 @@ try {
         $extra = Join-Path (Split-Path -Parent $ApiPath) $name
         if (Test-Path -LiteralPath $extra) { [Reflection.Assembly]::LoadFrom($extra) | Out-Null }
     }
-    $report.phase = 'create_project'
+    $report.phase = 'start_tia'
     Write-Host 'Starting TIA V19. Accept the TIA Openness access prompt for this local builder if shown.'
     $tia = New-Object Siemens.Engineering.TiaPortal -ArgumentList ([Siemens.Engineering.TiaPortalMode]::WithUserInterface)
+    $report.phase = 'create_project'
     $project = $tia.Projects.Create((New-Object IO.DirectoryInfo($runDirectory)), $projectName)
     $report.phase = 'cpu_catalog'
     $created = Create-Device $project $config.cpuIdentifiers 'ROLL_CPU1513'
@@ -279,7 +293,18 @@ try {
 } catch {
     $report.status = 'blocked'
     $report.errors += $_.Exception.ToString()
-    Write-Host $_.Exception.Message -ForegroundColor Red
+    $diagnostic = Get-OpennessDiagnostic -ErrorText ($_.Exception.ToString())
+    if ($null -ne $diagnostic) {
+        $report.diagnosisCode = $diagnostic.Code
+        $report.requiredWindowsGroup = $diagnostic.RequiredGroup
+        $report.nextAction = $diagnostic.NextAction
+        Write-Host 'Brak uprawnien do TIA Openness.' -ForegroundColor Red
+        Write-Host 'Wymagana lokalna grupa Windows: Siemens TIA Openness.'
+        Write-Host 'Administrator musi dodac do niej konto uruchamiajace ten skrypt.'
+        Write-Host 'Nastepnie wyloguj sie z Windows, zaloguj ponownie i uruchom UTWORZ_PROJEKT.cmd.'
+    } else {
+        Write-Host $_.Exception.Message -ForegroundColor Red
+    }
 } finally {
     if ($null -ne $project) {
         try { $project.Save() } catch { $report.errors += 'Project save: ' + $_.Exception.Message }
