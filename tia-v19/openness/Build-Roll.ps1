@@ -16,11 +16,11 @@ $report = [ordered]@{
     started = (Get-Date).ToString('o'); project = $projectName
     status = 'starting'; phase = 'prerequisites'; projectFile = $null
     cpuCatalogIdentifier = $null; deliveredFirmwareVerified = $false
-    hmiCatalogIdentifier = $null; nativeScreens = @(); hmiFullyConfigured = $false
+    hmiCatalogIdentifier = $null; nativeScreens = @(); hmiFullyConfigured = $false; hmiCompilation = $null
     physicalIoConfigured = $false; hardwareIoValidated = $false
     plcCompilation = $null; errors = @(); warnings = @(); catalogAttempts = @()
     sourceInventoryComplete = $false; sourceInventoryMissing = @()
-    retentionConfigured = $false; retentionChecks = @(); initialPlcCompilation = $null
+    retentionConfigured = $false; retentionChecks = @(); initialPlcCompilation = $null; retentionPlcCompilation = $null
     machineTested = $false; downloadsPerformed = $false
     reportArchive = $null
     diagnosisCode = $null; requiredWindowsGroup = $null; nextAction = $null
@@ -127,13 +127,72 @@ function Export-ApiDescription($Object, [string]$FileName) {
         type = $type.FullName
         properties = @($type.GetProperties() | ForEach-Object { $_.Name + ' : ' + $_.PropertyType.FullName })
         methods = @($type.GetMethods() | Where-Object { $_.Name -in @('Create', 'Import', 'Export', 'GetAttribute', 'SetAttribute', 'GetAttributeInfos') } | ForEach-Object { $_.ToString() })
+        interfaces = @($type.GetInterfaces() | Where-Object { $_.FullName -like 'Siemens.Engineering.*' } | ForEach-Object {
+            @{ type = $_.FullName; methods = @($_.GetMethods() | ForEach-Object { $_.ToString() }) }
+        })
     }
+    if ($null -ne $Object.PSObject.Properties['Count']) { $description.count = [int]$Object.Count }
     try { $description.attributes = @($Object.GetAttributeInfos() | ForEach-Object { @{ name = $_.Name; access = [string]$_.AccessMode } }) } catch { $description.attributeReadError = $_.Exception.Message }
+    try { $description.compositions = @($Object.GetCompositionInfos() | ForEach-Object { @{ name = [string]$_.Name; description = [string]$_ } }) } catch { $description.compositionReadError = $_.Exception.Message }
+    try {
+        $description.creationInfos = @(Get-EngineeringCreationInfos $Object | ForEach-Object {
+            $info = $_
+            $attributes = @()
+            foreach ($property in @('AttributeInfos', 'Attributes')) {
+                if ($null -ne $info.PSObject.Properties[$property]) {
+                    $attributes += @($info.$property | ForEach-Object { @{ name = [string]$_.Name; type = $_.GetType().FullName; description = [string]$_ } })
+                }
+            }
+            @{ type = $info.Type.FullName; properties = @($info.GetType().GetProperties() | ForEach-Object { $_.Name + ' : ' + $_.PropertyType.FullName }); attributes = $attributes }
+        })
+    } catch { $description.creationReadError = $_.Exception.Message }
     $description | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath (Join-Path $runDirectory $FileName) -Encoding UTF8
 }
 
-function Configure-Retention($Plc, [string]$Directory) {
+function Get-EngineeringCompositionMethod($Composition, [string]$Name) {
+    # HMI compositions expose creation through the explicit generic interface,
+    # rather than the one-argument typed Create used by some PLC compositions.
+    foreach ($interface in $Composition.GetType().GetInterfaces()) {
+        if ($interface.FullName -eq 'Siemens.Engineering.IEngineeringComposition') {
+            $method = $interface.GetMethods() | Where-Object { $_.Name -eq $Name } | Select-Object -First 1
+            if ($null -ne $method) { return $method }
+        }
+    }
+    throw "Composition does not expose IEngineeringComposition.$Name. See the API report."
+}
+
+function Get-EngineeringCreationInfos($Composition) {
+    $method = Get-EngineeringCompositionMethod $Composition 'GetCreationInfos'
+    return $method.Invoke($Composition, [object[]]@())
+}
+
+function New-EngineeringItem($Composition, [string]$TypeName, [hashtable]$Attributes) {
+    $choices = @(Get-EngineeringCreationInfos $Composition | Where-Object { $_.Type.Name -eq $TypeName })
+    if ($choices.Count -ne 1) { throw "Expected one installed creation type '$TypeName', found $($choices.Count). No guessed API type is used." }
+    $method = Get-EngineeringCompositionMethod $Composition 'Create'
+    if ($method.GetParameters().Count -ne 2 -or $method.GetParameters()[0].ParameterType -ne [Type]) {
+        throw 'Unexpected generic Create signature; see composition API metadata.'
+    }
+    $values = New-Object 'System.Collections.Generic.Dictionary[string,object]'
+    foreach ($key in $Attributes.Keys) { $values.Add([string]$key, $Attributes[$key]) }
+    $arguments = New-Object object[] 2
+    $arguments[0] = $choices[0].Type
+    # Reflection does not unwrap a PSObject inside object[] arguments.
+    $arguments[1] = $values.PSObject.BaseObject
+    return $method.Invoke($Composition, $arguments)
+}
+
+function Export-HmiObject($Object, [string]$BaseName) {
+    Export-ApiDescription $Object ($BaseName + '-api.json')
+    try {
+        $Object.Export((New-Object IO.FileInfo((Join-Path $runDirectory ($BaseName + '.xml')))), [Siemens.Engineering.ExportOptions]::WithDefaults)
+    } catch { $report.warnings += "HMI export $BaseName : $($_.Exception.Message)" }
+}
+
+function Configure-Retention($Plc, $Compiler, [string]$Directory) {
     $complete = $true
+    $pendingChecks = @()
+    $retentionCompile = $null
     foreach ($name in @('ROLL_State', 'ROLL_DB15', 'ROLL_DB19', 'ROLL_DB205', 'ROLL_Recipe1', 'ROLL_Recipe2')) {
         $check = [ordered]@{ block = $name; verified = $false; message = $null }
         try {
@@ -156,13 +215,34 @@ function Configure-Retention($Plc, [string]$Directory) {
             $edited = Join-Path $Directory ($name + '-retain-import.xml')
             $xml.Save($edited)
             $Plc.BlockGroup.Blocks.Import((New-Object IO.FileInfo($edited)), [Siemens.Engineering.ImportOptions]::Override) | Out-Null
+            # A reimport invalidates this DB and dependent blocks. Export is only
+            # allowed after compilation; collect verification requests first.
+            $pendingChecks += @{ Name = $name; MemberCount = $members.Count; Check = $check }
+        } catch {
+            $complete = $false
+            $check.message = $_.Exception.Message
+        }
+        $report.retentionChecks += $check
+    }
+    if ($pendingChecks.Count -gt 0) {
+        $retentionCompile = $Compiler.Compile()
+        $report.retentionPlcCompilation = [ordered]@{ state = [string]$retentionCompile.State; errorCount = $retentionCompile.ErrorCount; warningCount = $retentionCompile.WarningCount; messages = @(Compiler-Messages $retentionCompile) }
+        if ($retentionCompile.ErrorCount -gt 0) {
+            foreach ($pending in $pendingChecks) { $pending.Check.message = 'PLC compilation failed after retention imports.' }
+            return [pscustomobject]@{ Configured = $false; Compilation = $retentionCompile }
+        }
+    }
+    foreach ($pending in $pendingChecks) {
+        $name = $pending.Name
+        $check = $pending.Check
+        try {
             $after = Join-Path $Directory ($name + '-retention-check.xml')
             $block = $Plc.BlockGroup.Blocks.Find($name)
             $block.Export((New-Object IO.FileInfo($after)), [Siemens.Engineering.ExportOptions]::WithDefaults)
             $confirmed = New-Object Xml.XmlDocument
             $confirmed.Load($after)
             $confirmedMembers = @($confirmed.SelectNodes($query))
-            if ($confirmedMembers.Count -ne $members.Count -or @($confirmedMembers | Where-Object { $_.GetAttribute('Remanence') -ne 'Retain' }).Count -gt 0) {
+            if ($confirmedMembers.Count -ne $pending.MemberCount -or @($confirmedMembers | Where-Object { $_.GetAttribute('Remanence') -ne 'Retain' }).Count -gt 0) {
                 throw 'Native export did not confirm retention for every requested member.'
             }
             $check.verified = $true
@@ -170,9 +250,8 @@ function Configure-Retention($Plc, [string]$Directory) {
             $complete = $false
             $check.message = $_.Exception.Message
         }
-        $report.retentionChecks += $check
     }
-    return $complete
+    return [pscustomobject]@{ Configured = $complete; Compilation = $retentionCompile }
 }
 
 try {
@@ -235,9 +314,9 @@ try {
             $report.phase = 'retention_configuration'
             $retentionDirectory = Join-Path $runDirectory 'native-retention'
             [IO.Directory]::CreateDirectory($retentionDirectory) | Out-Null
-            $report.retentionConfigured = Configure-Retention $plc $retentionDirectory
-            $report.phase = 'plc_compile_after_retention'
-            $compiled = $compiler.Compile()
+            $retention = Configure-Retention $plc $compiler $retentionDirectory
+            $report.retentionConfigured = $retention.Configured
+            if ($null -ne $retention.Compilation) { $compiled = $retention.Compilation }
         }
         $report.plcCompilation = [ordered]@{
             state = [string]$compiled.State; errorCount = $compiled.ErrorCount
@@ -264,37 +343,60 @@ try {
     if ($null -ne $hmi.PSObject.Properties['TagFolder'] -and $null -ne $hmi.TagFolder.PSObject.Properties['TagTables']) {
         Export-ApiDescription $hmi.TagFolder.TagTables 'hmi-tag-tables-composition-api.json'
         try {
-            $tagTable = $hmi.TagFolder.TagTables.Create('ROLL')
+            # Export the default table as well: it provides a native schema even
+            # when creation is unavailable in this installed HMI API.
+            $tagTable = $hmi.TagFolder.DefaultTagTable
+            if ($null -eq $tagTable) { $tagTable = New-EngineeringItem $hmi.TagFolder.TagTables 'TagTable' @{ Name = 'ROLL' } }
             Export-ApiDescription $tagTable 'hmi-tag-table-api.json'
             Export-ApiDescription $tagTable.Tags 'hmi-tags-composition-api.json'
-            # Native internal probe tag supplies the real V19 export structure.
-            $probeTag = $tagTable.Tags.Create('BuilderProbe')
-            Export-ApiDescription $probeTag 'hmi-tag-api.json'
             try {
-                $probeFile = New-Object IO.FileInfo((Join-Path $runDirectory 'hmi-probe-tags.xml'))
-                $tagTable.Export($probeFile, [Siemens.Engineering.ExportOptions]::WithDefaults)
-            }
-            catch { $report.warnings += 'Probe tag export: ' + $_.Exception.Message }
-        } catch { $report.warnings += 'Probe tag creation: ' + $_.Exception.Message }
+                $probeTag = New-EngineeringItem $tagTable.Tags 'Tag' @{ Name = 'BuilderProbe' }
+                Export-ApiDescription $probeTag 'hmi-tag-api.json'
+            } catch { $report.warnings += 'Probe tag creation: ' + $_.Exception.Message }
+            Export-HmiObject $tagTable 'hmi-probe-tags'
+        } catch { $report.warnings += 'HMI tag table: ' + $_.Exception.Message }
     }
     # Create native screen objects through the installed API. Controls, tags,
     # connection and alarms require actual WinCC V19 export schema from this run.
     # Never import invented XML or present blank screens as an operational HMI.
     if ($null -ne $hmi.PSObject.Properties['ScreenFolder'] -and $null -ne $hmi.ScreenFolder.PSObject.Properties['Screens']) {
         Export-ApiDescription $hmi.ScreenFolder.Screens 'hmi-screens-composition-api.json'
-        foreach ($screenName in $config.screenNames) {
+        $screens = $hmi.ScreenFolder.Screens
+        foreach ($screenName in @($config.screenNames) + @('ROLL_ApiProbe')) {
             try {
-                $screen = $hmi.ScreenFolder.Screens.Create([string]$screenName)
+                $screen = New-EngineeringItem $screens 'Screen' @{ Name = [string]$screenName }
                 $report.nativeScreens += [string]$screenName
-                Export-ApiDescription $screen ('screen-' + $screenName + '-api.json')
                 if ($null -ne $screen.PSObject.Properties['ScreenItems']) { Export-ApiDescription $screen.ScreenItems ('screen-' + $screenName + '-items-api.json') }
-                try {
-                    $screen.Export((New-Object IO.FileInfo((Join-Path $runDirectory ('screen-' + $screenName + '.xml')))), [Siemens.Engineering.ExportOptions]::WithDefaults)
-                } catch { $report.warnings += "Screen export $screenName : $($_.Exception.Message)" }
+                if ($screenName -eq 'ROLL_ApiProbe' -and $null -ne $screen.PSObject.Properties['ScreenItems']) {
+                    foreach ($itemType in @('Button', 'TextField', 'IOField', 'AlarmView')) {
+                        try {
+                            $item = New-EngineeringItem $screen.ScreenItems $itemType @{ Name = 'Probe_' + $itemType }
+                            Export-ApiDescription $item ('hmi-item-' + $itemType + '-api.json')
+                            foreach ($property in $item.GetType().GetProperties()) {
+                                if ($property.PropertyType.FullName -like 'Siemens.Engineering.Hmi.*' -and $property.Name -ne 'Parent') {
+                                    try { Export-ApiDescription $item.($property.Name) ('hmi-item-' + $itemType + '-' + $property.Name + '-api.json') } catch { $report.warnings += "Probe item metadata $itemType/$($property.Name): $($_.Exception.Message)" }
+                                }
+                            }
+                        } catch { $report.warnings += "Probe item $itemType : $($_.Exception.Message)" }
+                    }
+                }
+                Export-ApiDescription $screen ('screen-' + $screenName + '-api.json')
             } catch { $report.warnings += "Screen creation $screenName : $($_.Exception.Message)" }
         }
     } else {
         $report.warnings += 'Installed HMI API exposes a different screen interface; see hmi-api.json.'
+    }
+    try {
+        $hmiCompiler = Get-Service $hmi 'Siemens.Engineering.Compiler.ICompilable'
+        if ($null -ne $hmiCompiler) {
+            $hmiResult = $hmiCompiler.Compile()
+            $report.hmiCompilation = [ordered]@{ state = [string]$hmiResult.State; errorCount = $hmiResult.ErrorCount; warningCount = $hmiResult.WarningCount; messages = @(Compiler-Messages $hmiResult) }
+        }
+    } catch { $report.warnings += 'HMI diagnostic compilation: ' + $_.Exception.Message }
+    # Export after HMI compilation if the installed API needs consistency.
+    # Successful compilation of blank/probe screens is not a functional HMI test.
+    if ($null -ne $hmi.PSObject.Properties['ScreenFolder']) {
+        foreach ($screen in @($hmi.ScreenFolder.Screens)) { Export-HmiObject $screen ('screen-' + $screen.Name) }
     }
     $project.Save()
     if (-not $generated) {

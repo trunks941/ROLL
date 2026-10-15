@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "retentionScenarios": 4,
+  "genericCreationScenarios": 2,
+  "interfaceMetadataScenarios": 1,
+  "parserVersion": "7.4.6",
+  "scope": "retention import/compile/export ordering with native XML fixtures and API doubles; explicit generic HMI creation and discovery with an API double",
+  "nativeTiaExecuted": false,
+  "nativeHmiCreationVerified": false,
+  "builderSHA256": "82d4807a17e3ee28ee5e05ac671a87667f9196286ed0440dad00f1b1715f5df1"
+}

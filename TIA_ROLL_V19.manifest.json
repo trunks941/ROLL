@@ -1,21 +1,27 @@
 {
   "package": "TIA_ROLL_V19.zip",
-  "status": "corrected SCL identifiers; native TIA recompilation and HMI completion pending",
-  "sha256": "845f99229c9cc88c7cc2e2916851095b77903b46201ec01cdab0d0bb84b814df",
-  "bytes": 84290,
-  "file_count": 30,
+  "status": "native previous PLC source compiled with 0 errors and 4 warnings; updated SHL casts, retention verification and generic HMI creation require another local V19 run",
+  "sha256": "f0077299fddd03ddfa7b28882026d34e2d727af39d8a2f5dd6cf3799cc4c9194",
+  "bytes": 95285,
+  "file_count": 34,
+  "current_source_sha256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1",
   "tia_compiled": false,
+  "previous_native_source_sha256": "be2f69d2ceb7c5b6ef90ed4b3bda1799f2ea1eb8381c1d44e12231fbf376d707",
+  "previous_native_plc_errors": 0,
+  "previous_native_plc_warnings": 4,
   "hmi_screen_controls_configured": false,
+  "physical_io_configured": false,
+  "native_feedback_excluded": "Historical native XML and API evidence is kept in the repository; not needed for local TIA project creation.",
   "files": [
     {
       "path": "tia-v19/README.md",
-      "bytes": 12354,
-      "sha256": "16eb3a50c66258b82d0f2fe77b01182869ec4f9cbe9376033ab34bd4503be322"
+      "bytes": 12869,
+      "sha256": "b22b3296ec5bd9167dfae4bd56d63d186938551973c7cf09b9262f7b27547290"
     },
     {
       "path": "tia-v19/ROLL_ALL.scl",
-      "bytes": 242696,
-      "sha256": "be2f69d2ceb7c5b6ef90ed4b3bda1799f2ea1eb8381c1d44e12231fbf376d707"
+      "bytes": 242738,
+      "sha256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1"
     },
     {
       "path": "tia-v19/UTWORZ_PROJEKT.cmd",
@@ -39,18 +45,23 @@
     },
     {
       "path": "tia-v19/openness/Build-Roll.ps1",
-      "bytes": 20579,
-      "sha256": "8dc75ec42be8119b442c26029f8d287d1aa2261b801a2545a93e6729915957ab"
+      "bytes": 27275,
+      "sha256": "82d4807a17e3ee28ee5e05ac671a87667f9196286ed0440dad00f1b1715f5df1"
     },
     {
       "path": "tia-v19/openness/target.json",
-      "bytes": 727,
-      "sha256": "aae07a9909b33ca5c75eda7b0676dfe38a3927c0dee6554da58f636d4508302e"
+      "bytes": 807,
+      "sha256": "12102f7345ec4b2fccba0d17ef5e1cb0c993c3bc64604a6e946ce0dfb700e2e4"
     },
     {
       "path": "tia-v19/reports/builder-diagnostics-tests.json",
       "bytes": 367,
-      "sha256": "4f26eb15ee17b8403ae0831c9c6b9f0735c29df044b3ea687f36d5cfd39387e1"
+      "sha256": "45b0339732052787df80d8981b02e6acf2c125388752198acdd28324be8a8ada"
+    },
+    {
+      "path": "tia-v19/reports/builder-native-feedback-tests.json",
+      "bytes": 460,
+      "sha256": "36702087fbf2e3250d239a3fb0efbcc765b1e9f9ad736f079c52cf5ce9ba20fd"
     },
     {
       "path": "tia-v19/reports/builder-prerequisite-check.json",
@@ -60,7 +71,7 @@
     {
       "path": "tia-v19/reports/conversion-tests.json",
       "bytes": 612,
-      "sha256": "2f05a584f8bfec1ca1b12808184f448edb08bd8fe157316f92e1176b948e8309"
+      "sha256": "9f5d6d175d3f1304acd106b44b4daeff3ba8ad836027faf1c54beacdf9ec85af"
     },
     {
       "path": "tia-v19/reports/coverage.json",
@@ -75,17 +86,27 @@
     {
       "path": "tia-v19/reports/powershell-checks.json",
       "bytes": 213,
-      "sha256": "846e5f2f3926da6bffd8fbd2bc231ca17f88e39908fc39647e87c0892b867fad"
+      "sha256": "9a2b8ad94b92acede7c985f9e1823246a7234241c099aa3156285c13ca8b3263"
+    },
+    {
+      "path": "tia-v19/reports/shift-count-regression.json",
+      "bytes": 781,
+      "sha256": "2740af04f12650b6060c69af553ea4457a0c0cdfb8c8f0ccfcf6ec1179b92a3a"
     },
     {
       "path": "tia-v19/reports/source-contracts.json",
       "bytes": 425,
-      "sha256": "b36bac9899f3bc0224ae5835f3fa869af149965845685fa3295e0a4019c6d6ee"
+      "sha256": "7f22c0b492a1aecd3a891e438ae02de727a3949fd3a229c667c235ddc71c0496"
     },
     {
       "path": "tia-v19/reports/source-hashes.json",
       "bytes": 669,
-      "sha256": "b2c5979e66d5e2b4a85bee510101b4b4ead4393e7e04263b088cfc6adfc831d1"
+      "sha256": "d30f86103322781c38d4d94a879a97e218a27845489da4aae79f46bd0b9192b6"
+    },
+    {
+      "path": "tia-v19/reports/windows-feedback-2026-10-15-compiled.json",
+      "bytes": 20625,
+      "sha256": "570ccc836749bc24425155fa19f565a7e5b5d37116f530ac65d484b215e6fc2f"
     },
     {
       "path": "tia-v19/reports/windows-feedback-2026-10-15-source-import.json",
@@ -99,8 +120,8 @@
     },
     {
       "path": "tia-v19/sources/00-runtime.scl",
-      "bytes": 11024,
-      "sha256": "3c0d3f60471e7450d0293cb6a70b3e82e972155e9c8d0ad6f12e5710d9f178dd"
+      "bytes": 11066,
+      "sha256": "b735aeeeaca41b68a73b3ba6a5872b8964724b8d1fc5226fd3bb843de3701897"
     },
     {
       "path": "tia-v19/sources/01-data.scl",
@@ -146,6 +167,11 @@
       "path": "tia-v19/tools/test_builder_diagnostics.ps1",
       "bytes": 3915,
       "sha256": "a0f65905360d7d6a863caf86c56b00c7961a07933bd80cf07667976eaa19f7e7"
+    },
+    {
+      "path": "tia-v19/tools/test_builder_native_feedback.ps1",
+      "bytes": 8642,
+      "sha256": "921f15fe78b7cb6c8ed9682ea1a7ecf437a8793f8ab4507a7cd37999442d8cfd"
     },
     {
       "path": "tia-v19/tools/test_conversion.py",

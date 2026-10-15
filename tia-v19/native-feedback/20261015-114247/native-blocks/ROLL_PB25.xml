@@ -1,0 +1,4875 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <DocumentInfo>
+    <Created>2026-10-15T09:44:24.9257696Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="r" Datatype="Bool" />
+    <Member Name="a1" Datatype="Word" />
+    <Member Name="a2" Datatype="Word" />
+    <Member Name="activeDataBlock" Datatype="Int" />
+    <Member Name="comparisonResults" Datatype="Array[0..14] of Bool" />
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>ROLL_PB25</Name>
+      <Namespace />
+      <Number>32</Number>
+      <ProgrammingLanguage>SCL</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <NewLine Num="1" UId="21" />
+  <Access Scope="LocalVariable" UId="22">
+    <Symbol UId="23">
+      <Component Name="r" UId="24" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="25" />
+  <Token Text=":=" UId="26" />
+  <Blank Num="1" UId="27" />
+  <Access Scope="LiteralConstant" UId="28">
+    <Constant UId="29">
+      <ConstantValue UId="31">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="32" />
+  <NewLine Num="1" UId="33" />
+  <Access Scope="LocalVariable" UId="34">
+    <Symbol UId="35">
+      <Component Name="a1" UId="36" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="37" />
+  <Token Text=":=" UId="38" />
+  <Blank Num="1" UId="39" />
+  <Access Scope="TypedConstant" UId="40">
+    <Constant UId="41">
+      <ConstantValue UId="42">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="43" />
+  <NewLine Num="1" UId="44" />
+  <Access Scope="LocalVariable" UId="45">
+    <Symbol UId="46">
+      <Component Name="a2" UId="47" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="48" />
+  <Token Text=":=" UId="49" />
+  <Blank Num="1" UId="50" />
+  <Access Scope="TypedConstant" UId="51">
+    <Constant UId="52">
+      <ConstantValue UId="53">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="54" />
+  <NewLine Num="1" UId="55" />
+  <Access Scope="LocalVariable" UId="56">
+    <Symbol UId="57">
+      <Component Name="activeDataBlock" UId="58" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="59" />
+  <Token Text=":=" UId="60" />
+  <Blank Num="1" UId="61" />
+  <Access Scope="LiteralConstant" UId="62">
+    <Constant UId="63">
+      <ConstantValue UId="65">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="66" />
+  <NewLine Num="1" UId="67" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="68">
+    <Text UId="69"> PB25, STEP 5 network 1</Text>
+  </LineComment>
+  <NewLine Num="1" UId="70" />
+  <Access Scope="LocalVariable" UId="71">
+    <Symbol UId="72">
+      <Component Name="activeDataBlock" UId="73" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="74" />
+  <Token Text=":=" UId="75" />
+  <Blank Num="1" UId="76" />
+  <Access Scope="LiteralConstant" UId="77">
+    <Constant UId="78">
+      <ConstantValue UId="80">15</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="81" />
+  <NewLine Num="1" UId="82" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="83">
+    <Text UId="84"> PB25, STEP 5 network 2</Text>
+  </LineComment>
+  <NewLine Num="1" UId="85" />
+  <Access Scope="LocalVariable" UId="86">
+    <Symbol UId="87">
+      <Component Name="a2" UId="88" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="89" />
+  <Token Text=":=" UId="90" />
+  <Blank Num="1" UId="91" />
+  <Access Scope="LocalVariable" UId="92">
+    <Symbol UId="93">
+      <Component Name="a1" UId="94" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="95" />
+  <NewLine Num="1" UId="96" />
+  <Access Scope="LocalVariable" UId="97">
+    <Symbol UId="98">
+      <Component Name="a1" UId="99" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="100" />
+  <Token Text=":=" UId="101" />
+  <Blank Num="1" UId="102" />
+  <Access Scope="Call" UId="103">
+    <CallInfo UId="104" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="106">
+        <Component Name="ROLL_GetM" UId="105" />
+      </Instance>
+      <Token Text="(" UId="107" />
+      <Parameter Name="FirstByte" UId="108">
+        <Blank Num="1" UId="109" />
+        <Token Text=":=" UId="110" />
+        <Blank Num="1" UId="111" />
+        <Access Scope="LiteralConstant" UId="112">
+          <Constant UId="113">
+            <ConstantValue UId="115">5</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="116" />
+      <Blank Num="1" UId="117" />
+      <Parameter Name="Width" UId="118">
+        <Blank Num="1" UId="119" />
+        <Token Text=":=" UId="120" />
+        <Blank Num="1" UId="121" />
+        <Access Scope="LiteralConstant" UId="122">
+          <Constant UId="123">
+            <ConstantValue UId="125">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="127" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="128" />
+  <NewLine Num="1" UId="129" />
+  <Access Scope="LocalVariable" UId="130">
+    <Symbol UId="131">
+      <Component Name="a2" UId="132" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="133" />
+  <Token Text=":=" UId="134" />
+  <Blank Num="1" UId="135" />
+  <Access Scope="LocalVariable" UId="136">
+    <Symbol UId="137">
+      <Component Name="a1" UId="138" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="139" />
+  <NewLine Num="1" UId="140" />
+  <Access Scope="LocalVariable" UId="141">
+    <Symbol UId="142">
+      <Component Name="a1" UId="143" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="144" />
+  <Token Text=":=" UId="145" />
+  <Blank Num="1" UId="146" />
+  <Access Scope="TypedConstant" UId="147">
+    <Constant UId="148">
+      <ConstantValue UId="149">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="150" />
+  <NewLine Num="1" UId="151" />
+  <Access Scope="LocalVariable" UId="152">
+    <Symbol UId="153">
+      <Component Name="comparisonResults" UId="154">
+        <Token Text="[" UId="155" />
+        <Access Scope="LiteralConstant" UId="156">
+          <Constant UId="157">
+            <ConstantValue UId="159">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="160" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="161" />
+  <Token Text=":=" UId="162" />
+  <Blank Num="1" UId="163" />
+  <Token Text="(" UId="164" />
+  <Access Scope="Call" UId="165">
+    <Instruction Name="WORD_TO_INT" UId="166">
+      <Token Text="(" UId="167" />
+      <NamelessParameter UId="168">
+        <Access Scope="LocalVariable" UId="169">
+          <Symbol UId="170">
+            <Component Name="a2" UId="171" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="173" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="174" />
+  <Token Text="&lt;&gt;" UId="175" />
+  <Blank Num="1" UId="176" />
+  <Access Scope="Call" UId="177">
+    <Instruction Name="WORD_TO_INT" UId="178">
+      <Token Text="(" UId="179" />
+      <NamelessParameter UId="180">
+        <Access Scope="LocalVariable" UId="181">
+          <Symbol UId="182">
+            <Component Name="a1" UId="183" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="185" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="186" />
+  <Token Text=";" UId="187" />
+  <NewLine Num="1" UId="188" />
+  <Access Scope="LocalVariable" UId="189">
+    <Symbol UId="190">
+      <Component Name="r" UId="191" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="192" />
+  <Token Text=":=" UId="193" />
+  <Blank Num="1" UId="194" />
+  <Access Scope="LocalVariable" UId="195">
+    <Symbol UId="196">
+      <Component Name="comparisonResults" UId="197">
+        <Token Text="[" UId="198" />
+        <Access Scope="LiteralConstant" UId="199">
+          <Constant UId="200">
+            <ConstantValue UId="202">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="203" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="204" />
+  <NewLine Num="1" UId="205" />
+  <Access Scope="GlobalVariable" UId="206">
+    <Symbol UId="207">
+      <Component Name="ROLL_State" UId="208">
+        <BooleanAttribute Name="HasQuotes" UId="209">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="210" />
+      <Component Name="M" UId="211">
+        <Token Text="[" UId="212" />
+        <Access Scope="LiteralConstant" UId="213">
+          <Constant UId="214">
+            <ConstantValue UId="216">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="217" />
+        <Blank Num="1" UId="218" />
+        <Access Scope="LiteralConstant" UId="219">
+          <Constant UId="220">
+            <ConstantValue UId="222">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="223" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="224" />
+  <Token Text=":=" UId="225" />
+  <Blank Num="1" UId="226" />
+  <Access Scope="LocalVariable" UId="227">
+    <Symbol UId="228">
+      <Component Name="r" UId="229" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="230" />
+  <NewLine Num="1" UId="231" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="232">
+    <Text UId="233"> PB25, STEP 5 network 3</Text>
+  </LineComment>
+  <NewLine Num="1" UId="234" />
+  <Access Scope="LocalVariable" UId="235">
+    <Symbol UId="236">
+      <Component Name="a2" UId="237" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="238" />
+  <Token Text=":=" UId="239" />
+  <Blank Num="1" UId="240" />
+  <Access Scope="LocalVariable" UId="241">
+    <Symbol UId="242">
+      <Component Name="a1" UId="243" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="244" />
+  <NewLine Num="1" UId="245" />
+  <Access Scope="LocalVariable" UId="246">
+    <Symbol UId="247">
+      <Component Name="a1" UId="248" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="249" />
+  <Token Text=":=" UId="250" />
+  <Blank Num="1" UId="251" />
+  <Access Scope="Call" UId="252">
+    <CallInfo UId="253" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="255">
+        <Component Name="ROLL_GetM" UId="254" />
+      </Instance>
+      <Token Text="(" UId="256" />
+      <Parameter Name="FirstByte" UId="257">
+        <Blank Num="1" UId="258" />
+        <Token Text=":=" UId="259" />
+        <Blank Num="1" UId="260" />
+        <Access Scope="LiteralConstant" UId="261">
+          <Constant UId="262">
+            <ConstantValue UId="264">6</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="265" />
+      <Blank Num="1" UId="266" />
+      <Parameter Name="Width" UId="267">
+        <Blank Num="1" UId="268" />
+        <Token Text=":=" UId="269" />
+        <Blank Num="1" UId="270" />
+        <Access Scope="LiteralConstant" UId="271">
+          <Constant UId="272">
+            <ConstantValue UId="274">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="276" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="277" />
+  <NewLine Num="1" UId="278" />
+  <Access Scope="LocalVariable" UId="279">
+    <Symbol UId="280">
+      <Component Name="a2" UId="281" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="282" />
+  <Token Text=":=" UId="283" />
+  <Blank Num="1" UId="284" />
+  <Access Scope="LocalVariable" UId="285">
+    <Symbol UId="286">
+      <Component Name="a1" UId="287" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="288" />
+  <NewLine Num="1" UId="289" />
+  <Access Scope="LocalVariable" UId="290">
+    <Symbol UId="291">
+      <Component Name="a1" UId="292" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="293" />
+  <Token Text=":=" UId="294" />
+  <Blank Num="1" UId="295" />
+  <Access Scope="TypedConstant" UId="296">
+    <Constant UId="297">
+      <ConstantValue UId="298">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="299" />
+  <NewLine Num="1" UId="300" />
+  <Access Scope="LocalVariable" UId="301">
+    <Symbol UId="302">
+      <Component Name="comparisonResults" UId="303">
+        <Token Text="[" UId="304" />
+        <Access Scope="LiteralConstant" UId="305">
+          <Constant UId="306">
+            <ConstantValue UId="308">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="309" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="310" />
+  <Token Text=":=" UId="311" />
+  <Blank Num="1" UId="312" />
+  <Token Text="(" UId="313" />
+  <Access Scope="Call" UId="314">
+    <Instruction Name="WORD_TO_INT" UId="315">
+      <Token Text="(" UId="316" />
+      <NamelessParameter UId="317">
+        <Access Scope="LocalVariable" UId="318">
+          <Symbol UId="319">
+            <Component Name="a2" UId="320" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="322" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="323" />
+  <Token Text="&lt;&gt;" UId="324" />
+  <Blank Num="1" UId="325" />
+  <Access Scope="Call" UId="326">
+    <Instruction Name="WORD_TO_INT" UId="327">
+      <Token Text="(" UId="328" />
+      <NamelessParameter UId="329">
+        <Access Scope="LocalVariable" UId="330">
+          <Symbol UId="331">
+            <Component Name="a1" UId="332" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="334" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="335" />
+  <Token Text=";" UId="336" />
+  <NewLine Num="1" UId="337" />
+  <Access Scope="LocalVariable" UId="338">
+    <Symbol UId="339">
+      <Component Name="r" UId="340" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="341" />
+  <Token Text=":=" UId="342" />
+  <Blank Num="1" UId="343" />
+  <Access Scope="LocalVariable" UId="344">
+    <Symbol UId="345">
+      <Component Name="comparisonResults" UId="346">
+        <Token Text="[" UId="347" />
+        <Access Scope="LiteralConstant" UId="348">
+          <Constant UId="349">
+            <ConstantValue UId="351">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="352" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="353" />
+  <NewLine Num="1" UId="354" />
+  <Access Scope="GlobalVariable" UId="355">
+    <Symbol UId="356">
+      <Component Name="ROLL_State" UId="357">
+        <BooleanAttribute Name="HasQuotes" UId="358">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="359" />
+      <Component Name="M" UId="360">
+        <Token Text="[" UId="361" />
+        <Access Scope="LiteralConstant" UId="362">
+          <Constant UId="363">
+            <ConstantValue UId="365">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="366" />
+        <Blank Num="1" UId="367" />
+        <Access Scope="LiteralConstant" UId="368">
+          <Constant UId="369">
+            <ConstantValue UId="371">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="372" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="373" />
+  <Token Text=":=" UId="374" />
+  <Blank Num="1" UId="375" />
+  <Access Scope="LocalVariable" UId="376">
+    <Symbol UId="377">
+      <Component Name="r" UId="378" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="379" />
+  <NewLine Num="1" UId="380" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="381">
+    <Text UId="382"> PB25, STEP 5 network 4</Text>
+  </LineComment>
+  <NewLine Num="1" UId="383" />
+  <Access Scope="LocalVariable" UId="384">
+    <Symbol UId="385">
+      <Component Name="a2" UId="386" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="387" />
+  <Token Text=":=" UId="388" />
+  <Blank Num="1" UId="389" />
+  <Access Scope="LocalVariable" UId="390">
+    <Symbol UId="391">
+      <Component Name="a1" UId="392" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="393" />
+  <NewLine Num="1" UId="394" />
+  <Access Scope="LocalVariable" UId="395">
+    <Symbol UId="396">
+      <Component Name="a1" UId="397" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="398" />
+  <Token Text=":=" UId="399" />
+  <Blank Num="1" UId="400" />
+  <Access Scope="Call" UId="401">
+    <CallInfo UId="402" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="404">
+        <Component Name="ROLL_GetM" UId="403" />
+      </Instance>
+      <Token Text="(" UId="405" />
+      <Parameter Name="FirstByte" UId="406">
+        <Blank Num="1" UId="407" />
+        <Token Text=":=" UId="408" />
+        <Blank Num="1" UId="409" />
+        <Access Scope="LiteralConstant" UId="410">
+          <Constant UId="411">
+            <ConstantValue UId="413">7</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="414" />
+      <Blank Num="1" UId="415" />
+      <Parameter Name="Width" UId="416">
+        <Blank Num="1" UId="417" />
+        <Token Text=":=" UId="418" />
+        <Blank Num="1" UId="419" />
+        <Access Scope="LiteralConstant" UId="420">
+          <Constant UId="421">
+            <ConstantValue UId="423">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="425" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="426" />
+  <NewLine Num="1" UId="427" />
+  <Access Scope="LocalVariable" UId="428">
+    <Symbol UId="429">
+      <Component Name="a2" UId="430" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="431" />
+  <Token Text=":=" UId="432" />
+  <Blank Num="1" UId="433" />
+  <Access Scope="LocalVariable" UId="434">
+    <Symbol UId="435">
+      <Component Name="a1" UId="436" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="437" />
+  <NewLine Num="1" UId="438" />
+  <Access Scope="LocalVariable" UId="439">
+    <Symbol UId="440">
+      <Component Name="a1" UId="441" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="442" />
+  <Token Text=":=" UId="443" />
+  <Blank Num="1" UId="444" />
+  <Access Scope="TypedConstant" UId="445">
+    <Constant UId="446">
+      <ConstantValue UId="447">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="448" />
+  <NewLine Num="1" UId="449" />
+  <Access Scope="LocalVariable" UId="450">
+    <Symbol UId="451">
+      <Component Name="comparisonResults" UId="452">
+        <Token Text="[" UId="453" />
+        <Access Scope="LiteralConstant" UId="454">
+          <Constant UId="455">
+            <ConstantValue UId="457">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="458" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="459" />
+  <Token Text=":=" UId="460" />
+  <Blank Num="1" UId="461" />
+  <Token Text="(" UId="462" />
+  <Access Scope="Call" UId="463">
+    <Instruction Name="WORD_TO_INT" UId="464">
+      <Token Text="(" UId="465" />
+      <NamelessParameter UId="466">
+        <Access Scope="LocalVariable" UId="467">
+          <Symbol UId="468">
+            <Component Name="a2" UId="469" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="471" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="472" />
+  <Token Text="&lt;&gt;" UId="473" />
+  <Blank Num="1" UId="474" />
+  <Access Scope="Call" UId="475">
+    <Instruction Name="WORD_TO_INT" UId="476">
+      <Token Text="(" UId="477" />
+      <NamelessParameter UId="478">
+        <Access Scope="LocalVariable" UId="479">
+          <Symbol UId="480">
+            <Component Name="a1" UId="481" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="483" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="484" />
+  <Token Text=";" UId="485" />
+  <NewLine Num="1" UId="486" />
+  <Access Scope="LocalVariable" UId="487">
+    <Symbol UId="488">
+      <Component Name="r" UId="489" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="490" />
+  <Token Text=":=" UId="491" />
+  <Blank Num="1" UId="492" />
+  <Access Scope="LocalVariable" UId="493">
+    <Symbol UId="494">
+      <Component Name="comparisonResults" UId="495">
+        <Token Text="[" UId="496" />
+        <Access Scope="LiteralConstant" UId="497">
+          <Constant UId="498">
+            <ConstantValue UId="500">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="501" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="502" />
+  <NewLine Num="1" UId="503" />
+  <Access Scope="GlobalVariable" UId="504">
+    <Symbol UId="505">
+      <Component Name="ROLL_State" UId="506">
+        <BooleanAttribute Name="HasQuotes" UId="507">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="508" />
+      <Component Name="M" UId="509">
+        <Token Text="[" UId="510" />
+        <Access Scope="LiteralConstant" UId="511">
+          <Constant UId="512">
+            <ConstantValue UId="514">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="515" />
+        <Blank Num="1" UId="516" />
+        <Access Scope="LiteralConstant" UId="517">
+          <Constant UId="518">
+            <ConstantValue UId="520">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="521" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="522" />
+  <Token Text=":=" UId="523" />
+  <Blank Num="1" UId="524" />
+  <Access Scope="LocalVariable" UId="525">
+    <Symbol UId="526">
+      <Component Name="r" UId="527" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="528" />
+  <NewLine Num="1" UId="529" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="530">
+    <Text UId="531"> PB25, STEP 5 network 5</Text>
+  </LineComment>
+  <NewLine Num="1" UId="532" />
+  <Access Scope="LocalVariable" UId="533">
+    <Symbol UId="534">
+      <Component Name="a2" UId="535" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="536" />
+  <Token Text=":=" UId="537" />
+  <Blank Num="1" UId="538" />
+  <Access Scope="LocalVariable" UId="539">
+    <Symbol UId="540">
+      <Component Name="a1" UId="541" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="542" />
+  <NewLine Num="1" UId="543" />
+  <Access Scope="LocalVariable" UId="544">
+    <Symbol UId="545">
+      <Component Name="a1" UId="546" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="547" />
+  <Token Text=":=" UId="548" />
+  <Blank Num="1" UId="549" />
+  <Access Scope="Call" UId="550">
+    <CallInfo UId="551" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="553">
+        <Component Name="ROLL_GetM" UId="552" />
+      </Instance>
+      <Token Text="(" UId="554" />
+      <Parameter Name="FirstByte" UId="555">
+        <Blank Num="1" UId="556" />
+        <Token Text=":=" UId="557" />
+        <Blank Num="1" UId="558" />
+        <Access Scope="LiteralConstant" UId="559">
+          <Constant UId="560">
+            <ConstantValue UId="562">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="563" />
+      <Blank Num="1" UId="564" />
+      <Parameter Name="Width" UId="565">
+        <Blank Num="1" UId="566" />
+        <Token Text=":=" UId="567" />
+        <Blank Num="1" UId="568" />
+        <Access Scope="LiteralConstant" UId="569">
+          <Constant UId="570">
+            <ConstantValue UId="572">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="574" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="575" />
+  <NewLine Num="1" UId="576" />
+  <Access Scope="LocalVariable" UId="577">
+    <Symbol UId="578">
+      <Component Name="a2" UId="579" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="580" />
+  <Token Text=":=" UId="581" />
+  <Blank Num="1" UId="582" />
+  <Access Scope="LocalVariable" UId="583">
+    <Symbol UId="584">
+      <Component Name="a1" UId="585" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="586" />
+  <NewLine Num="1" UId="587" />
+  <Access Scope="LocalVariable" UId="588">
+    <Symbol UId="589">
+      <Component Name="a1" UId="590" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="591" />
+  <Token Text=":=" UId="592" />
+  <Blank Num="1" UId="593" />
+  <Access Scope="TypedConstant" UId="594">
+    <Constant UId="595">
+      <ConstantValue UId="596">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="597" />
+  <NewLine Num="1" UId="598" />
+  <Access Scope="LocalVariable" UId="599">
+    <Symbol UId="600">
+      <Component Name="comparisonResults" UId="601">
+        <Token Text="[" UId="602" />
+        <Access Scope="LiteralConstant" UId="603">
+          <Constant UId="604">
+            <ConstantValue UId="606">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="607" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="608" />
+  <Token Text=":=" UId="609" />
+  <Blank Num="1" UId="610" />
+  <Token Text="(" UId="611" />
+  <Access Scope="Call" UId="612">
+    <Instruction Name="WORD_TO_INT" UId="613">
+      <Token Text="(" UId="614" />
+      <NamelessParameter UId="615">
+        <Access Scope="LocalVariable" UId="616">
+          <Symbol UId="617">
+            <Component Name="a2" UId="618" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="620" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="621" />
+  <Token Text="&lt;&gt;" UId="622" />
+  <Blank Num="1" UId="623" />
+  <Access Scope="Call" UId="624">
+    <Instruction Name="WORD_TO_INT" UId="625">
+      <Token Text="(" UId="626" />
+      <NamelessParameter UId="627">
+        <Access Scope="LocalVariable" UId="628">
+          <Symbol UId="629">
+            <Component Name="a1" UId="630" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="632" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="633" />
+  <Token Text=";" UId="634" />
+  <NewLine Num="1" UId="635" />
+  <Access Scope="LocalVariable" UId="636">
+    <Symbol UId="637">
+      <Component Name="r" UId="638" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="639" />
+  <Token Text=":=" UId="640" />
+  <Blank Num="1" UId="641" />
+  <Access Scope="LocalVariable" UId="642">
+    <Symbol UId="643">
+      <Component Name="comparisonResults" UId="644">
+        <Token Text="[" UId="645" />
+        <Access Scope="LiteralConstant" UId="646">
+          <Constant UId="647">
+            <ConstantValue UId="649">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="650" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="651" />
+  <NewLine Num="1" UId="652" />
+  <Access Scope="GlobalVariable" UId="653">
+    <Symbol UId="654">
+      <Component Name="ROLL_State" UId="655">
+        <BooleanAttribute Name="HasQuotes" UId="656">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="657" />
+      <Component Name="M" UId="658">
+        <Token Text="[" UId="659" />
+        <Access Scope="LiteralConstant" UId="660">
+          <Constant UId="661">
+            <ConstantValue UId="663">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="664" />
+        <Blank Num="1" UId="665" />
+        <Access Scope="LiteralConstant" UId="666">
+          <Constant UId="667">
+            <ConstantValue UId="669">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="670" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="671" />
+  <Token Text=":=" UId="672" />
+  <Blank Num="1" UId="673" />
+  <Access Scope="LocalVariable" UId="674">
+    <Symbol UId="675">
+      <Component Name="r" UId="676" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="677" />
+  <NewLine Num="1" UId="678" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="679">
+    <Text UId="680"> PB25, STEP 5 network 6</Text>
+  </LineComment>
+  <NewLine Num="1" UId="681" />
+  <Access Scope="LocalVariable" UId="682">
+    <Symbol UId="683">
+      <Component Name="a2" UId="684" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="685" />
+  <Token Text=":=" UId="686" />
+  <Blank Num="1" UId="687" />
+  <Access Scope="LocalVariable" UId="688">
+    <Symbol UId="689">
+      <Component Name="a1" UId="690" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="691" />
+  <NewLine Num="1" UId="692" />
+  <Access Scope="LocalVariable" UId="693">
+    <Symbol UId="694">
+      <Component Name="a1" UId="695" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="696" />
+  <Token Text=":=" UId="697" />
+  <Blank Num="1" UId="698" />
+  <Access Scope="Call" UId="699">
+    <CallInfo UId="700" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="702">
+        <Component Name="ROLL_GetM" UId="701" />
+      </Instance>
+      <Token Text="(" UId="703" />
+      <Parameter Name="FirstByte" UId="704">
+        <Blank Num="1" UId="705" />
+        <Token Text=":=" UId="706" />
+        <Blank Num="1" UId="707" />
+        <Access Scope="LiteralConstant" UId="708">
+          <Constant UId="709">
+            <ConstantValue UId="711">9</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="712" />
+      <Blank Num="1" UId="713" />
+      <Parameter Name="Width" UId="714">
+        <Blank Num="1" UId="715" />
+        <Token Text=":=" UId="716" />
+        <Blank Num="1" UId="717" />
+        <Access Scope="LiteralConstant" UId="718">
+          <Constant UId="719">
+            <ConstantValue UId="721">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="723" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="724" />
+  <NewLine Num="1" UId="725" />
+  <Access Scope="LocalVariable" UId="726">
+    <Symbol UId="727">
+      <Component Name="a2" UId="728" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="729" />
+  <Token Text=":=" UId="730" />
+  <Blank Num="1" UId="731" />
+  <Access Scope="LocalVariable" UId="732">
+    <Symbol UId="733">
+      <Component Name="a1" UId="734" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="735" />
+  <NewLine Num="1" UId="736" />
+  <Access Scope="LocalVariable" UId="737">
+    <Symbol UId="738">
+      <Component Name="a1" UId="739" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="740" />
+  <Token Text=":=" UId="741" />
+  <Blank Num="1" UId="742" />
+  <Access Scope="TypedConstant" UId="743">
+    <Constant UId="744">
+      <ConstantValue UId="745">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="746" />
+  <NewLine Num="1" UId="747" />
+  <Access Scope="LocalVariable" UId="748">
+    <Symbol UId="749">
+      <Component Name="comparisonResults" UId="750">
+        <Token Text="[" UId="751" />
+        <Access Scope="LiteralConstant" UId="752">
+          <Constant UId="753">
+            <ConstantValue UId="755">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="756" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="757" />
+  <Token Text=":=" UId="758" />
+  <Blank Num="1" UId="759" />
+  <Token Text="(" UId="760" />
+  <Access Scope="Call" UId="761">
+    <Instruction Name="WORD_TO_INT" UId="762">
+      <Token Text="(" UId="763" />
+      <NamelessParameter UId="764">
+        <Access Scope="LocalVariable" UId="765">
+          <Symbol UId="766">
+            <Component Name="a2" UId="767" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="769" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="770" />
+  <Token Text="&lt;&gt;" UId="771" />
+  <Blank Num="1" UId="772" />
+  <Access Scope="Call" UId="773">
+    <Instruction Name="WORD_TO_INT" UId="774">
+      <Token Text="(" UId="775" />
+      <NamelessParameter UId="776">
+        <Access Scope="LocalVariable" UId="777">
+          <Symbol UId="778">
+            <Component Name="a1" UId="779" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="781" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="782" />
+  <Token Text=";" UId="783" />
+  <NewLine Num="1" UId="784" />
+  <Access Scope="LocalVariable" UId="785">
+    <Symbol UId="786">
+      <Component Name="r" UId="787" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="788" />
+  <Token Text=":=" UId="789" />
+  <Blank Num="1" UId="790" />
+  <Access Scope="LocalVariable" UId="791">
+    <Symbol UId="792">
+      <Component Name="comparisonResults" UId="793">
+        <Token Text="[" UId="794" />
+        <Access Scope="LiteralConstant" UId="795">
+          <Constant UId="796">
+            <ConstantValue UId="798">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="799" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="800" />
+  <NewLine Num="1" UId="801" />
+  <Access Scope="GlobalVariable" UId="802">
+    <Symbol UId="803">
+      <Component Name="ROLL_State" UId="804">
+        <BooleanAttribute Name="HasQuotes" UId="805">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="806" />
+      <Component Name="M" UId="807">
+        <Token Text="[" UId="808" />
+        <Access Scope="LiteralConstant" UId="809">
+          <Constant UId="810">
+            <ConstantValue UId="812">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="813" />
+        <Blank Num="1" UId="814" />
+        <Access Scope="LiteralConstant" UId="815">
+          <Constant UId="816">
+            <ConstantValue UId="818">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="819" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="820" />
+  <Token Text=":=" UId="821" />
+  <Blank Num="1" UId="822" />
+  <Access Scope="LocalVariable" UId="823">
+    <Symbol UId="824">
+      <Component Name="r" UId="825" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="826" />
+  <NewLine Num="1" UId="827" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="828">
+    <Text UId="829"> PB25, STEP 5 network 7</Text>
+  </LineComment>
+  <NewLine Num="1" UId="830" />
+  <Access Scope="LocalVariable" UId="831">
+    <Symbol UId="832">
+      <Component Name="a2" UId="833" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="834" />
+  <Token Text=":=" UId="835" />
+  <Blank Num="1" UId="836" />
+  <Access Scope="LocalVariable" UId="837">
+    <Symbol UId="838">
+      <Component Name="a1" UId="839" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="840" />
+  <NewLine Num="1" UId="841" />
+  <Access Scope="LocalVariable" UId="842">
+    <Symbol UId="843">
+      <Component Name="a1" UId="844" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="845" />
+  <Token Text=":=" UId="846" />
+  <Blank Num="1" UId="847" />
+  <Access Scope="Call" UId="848">
+    <CallInfo UId="849" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="851">
+        <Component Name="ROLL_GetM" UId="850" />
+      </Instance>
+      <Token Text="(" UId="852" />
+      <Parameter Name="FirstByte" UId="853">
+        <Blank Num="1" UId="854" />
+        <Token Text=":=" UId="855" />
+        <Blank Num="1" UId="856" />
+        <Access Scope="LiteralConstant" UId="857">
+          <Constant UId="858">
+            <ConstantValue UId="860">10</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="861" />
+      <Blank Num="1" UId="862" />
+      <Parameter Name="Width" UId="863">
+        <Blank Num="1" UId="864" />
+        <Token Text=":=" UId="865" />
+        <Blank Num="1" UId="866" />
+        <Access Scope="LiteralConstant" UId="867">
+          <Constant UId="868">
+            <ConstantValue UId="870">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="872" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="873" />
+  <NewLine Num="1" UId="874" />
+  <Access Scope="LocalVariable" UId="875">
+    <Symbol UId="876">
+      <Component Name="a2" UId="877" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="878" />
+  <Token Text=":=" UId="879" />
+  <Blank Num="1" UId="880" />
+  <Access Scope="LocalVariable" UId="881">
+    <Symbol UId="882">
+      <Component Name="a1" UId="883" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="884" />
+  <NewLine Num="1" UId="885" />
+  <Access Scope="LocalVariable" UId="886">
+    <Symbol UId="887">
+      <Component Name="a1" UId="888" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="889" />
+  <Token Text=":=" UId="890" />
+  <Blank Num="1" UId="891" />
+  <Access Scope="TypedConstant" UId="892">
+    <Constant UId="893">
+      <ConstantValue UId="894">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="895" />
+  <NewLine Num="1" UId="896" />
+  <Access Scope="LocalVariable" UId="897">
+    <Symbol UId="898">
+      <Component Name="comparisonResults" UId="899">
+        <Token Text="[" UId="900" />
+        <Access Scope="LiteralConstant" UId="901">
+          <Constant UId="902">
+            <ConstantValue UId="904">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="905" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="906" />
+  <Token Text=":=" UId="907" />
+  <Blank Num="1" UId="908" />
+  <Token Text="(" UId="909" />
+  <Access Scope="Call" UId="910">
+    <Instruction Name="WORD_TO_INT" UId="911">
+      <Token Text="(" UId="912" />
+      <NamelessParameter UId="913">
+        <Access Scope="LocalVariable" UId="914">
+          <Symbol UId="915">
+            <Component Name="a2" UId="916" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="918" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="919" />
+  <Token Text="&lt;&gt;" UId="920" />
+  <Blank Num="1" UId="921" />
+  <Access Scope="Call" UId="922">
+    <Instruction Name="WORD_TO_INT" UId="923">
+      <Token Text="(" UId="924" />
+      <NamelessParameter UId="925">
+        <Access Scope="LocalVariable" UId="926">
+          <Symbol UId="927">
+            <Component Name="a1" UId="928" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="930" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="931" />
+  <Token Text=";" UId="932" />
+  <NewLine Num="1" UId="933" />
+  <Access Scope="LocalVariable" UId="934">
+    <Symbol UId="935">
+      <Component Name="r" UId="936" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="937" />
+  <Token Text=":=" UId="938" />
+  <Blank Num="1" UId="939" />
+  <Access Scope="LocalVariable" UId="940">
+    <Symbol UId="941">
+      <Component Name="comparisonResults" UId="942">
+        <Token Text="[" UId="943" />
+        <Access Scope="LiteralConstant" UId="944">
+          <Constant UId="945">
+            <ConstantValue UId="947">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="948" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="949" />
+  <NewLine Num="1" UId="950" />
+  <Access Scope="GlobalVariable" UId="951">
+    <Symbol UId="952">
+      <Component Name="ROLL_State" UId="953">
+        <BooleanAttribute Name="HasQuotes" UId="954">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="955" />
+      <Component Name="M" UId="956">
+        <Token Text="[" UId="957" />
+        <Access Scope="LiteralConstant" UId="958">
+          <Constant UId="959">
+            <ConstantValue UId="961">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="962" />
+        <Blank Num="1" UId="963" />
+        <Access Scope="LiteralConstant" UId="964">
+          <Constant UId="965">
+            <ConstantValue UId="967">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="968" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="969" />
+  <Token Text=":=" UId="970" />
+  <Blank Num="1" UId="971" />
+  <Access Scope="LocalVariable" UId="972">
+    <Symbol UId="973">
+      <Component Name="r" UId="974" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="975" />
+  <NewLine Num="1" UId="976" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="977">
+    <Text UId="978"> PB25, STEP 5 network 8</Text>
+  </LineComment>
+  <NewLine Num="1" UId="979" />
+  <Access Scope="LocalVariable" UId="980">
+    <Symbol UId="981">
+      <Component Name="a2" UId="982" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="983" />
+  <Token Text=":=" UId="984" />
+  <Blank Num="1" UId="985" />
+  <Access Scope="LocalVariable" UId="986">
+    <Symbol UId="987">
+      <Component Name="a1" UId="988" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="989" />
+  <NewLine Num="1" UId="990" />
+  <Access Scope="LocalVariable" UId="991">
+    <Symbol UId="992">
+      <Component Name="a1" UId="993" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="994" />
+  <Token Text=":=" UId="995" />
+  <Blank Num="1" UId="996" />
+  <Access Scope="Call" UId="997">
+    <CallInfo UId="998" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1000">
+        <Component Name="ROLL_GetM" UId="999" />
+      </Instance>
+      <Token Text="(" UId="1001" />
+      <Parameter Name="FirstByte" UId="1002">
+        <Blank Num="1" UId="1003" />
+        <Token Text=":=" UId="1004" />
+        <Blank Num="1" UId="1005" />
+        <Access Scope="LiteralConstant" UId="1006">
+          <Constant UId="1007">
+            <ConstantValue UId="1009">11</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1010" />
+      <Blank Num="1" UId="1011" />
+      <Parameter Name="Width" UId="1012">
+        <Blank Num="1" UId="1013" />
+        <Token Text=":=" UId="1014" />
+        <Blank Num="1" UId="1015" />
+        <Access Scope="LiteralConstant" UId="1016">
+          <Constant UId="1017">
+            <ConstantValue UId="1019">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1021" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="1022" />
+  <NewLine Num="1" UId="1023" />
+  <Access Scope="LocalVariable" UId="1024">
+    <Symbol UId="1025">
+      <Component Name="a2" UId="1026" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1027" />
+  <Token Text=":=" UId="1028" />
+  <Blank Num="1" UId="1029" />
+  <Access Scope="LocalVariable" UId="1030">
+    <Symbol UId="1031">
+      <Component Name="a1" UId="1032" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1033" />
+  <NewLine Num="1" UId="1034" />
+  <Access Scope="LocalVariable" UId="1035">
+    <Symbol UId="1036">
+      <Component Name="a1" UId="1037" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1038" />
+  <Token Text=":=" UId="1039" />
+  <Blank Num="1" UId="1040" />
+  <Access Scope="TypedConstant" UId="1041">
+    <Constant UId="1042">
+      <ConstantValue UId="1043">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1044" />
+  <NewLine Num="1" UId="1045" />
+  <Access Scope="LocalVariable" UId="1046">
+    <Symbol UId="1047">
+      <Component Name="comparisonResults" UId="1048">
+        <Token Text="[" UId="1049" />
+        <Access Scope="LiteralConstant" UId="1050">
+          <Constant UId="1051">
+            <ConstantValue UId="1053">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1054" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1055" />
+  <Token Text=":=" UId="1056" />
+  <Blank Num="1" UId="1057" />
+  <Token Text="(" UId="1058" />
+  <Access Scope="Call" UId="1059">
+    <Instruction Name="WORD_TO_INT" UId="1060">
+      <Token Text="(" UId="1061" />
+      <NamelessParameter UId="1062">
+        <Access Scope="LocalVariable" UId="1063">
+          <Symbol UId="1064">
+            <Component Name="a2" UId="1065" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1067" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="1068" />
+  <Token Text="&lt;&gt;" UId="1069" />
+  <Blank Num="1" UId="1070" />
+  <Access Scope="Call" UId="1071">
+    <Instruction Name="WORD_TO_INT" UId="1072">
+      <Token Text="(" UId="1073" />
+      <NamelessParameter UId="1074">
+        <Access Scope="LocalVariable" UId="1075">
+          <Symbol UId="1076">
+            <Component Name="a1" UId="1077" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1079" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="1080" />
+  <Token Text=";" UId="1081" />
+  <NewLine Num="1" UId="1082" />
+  <Access Scope="LocalVariable" UId="1083">
+    <Symbol UId="1084">
+      <Component Name="r" UId="1085" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1086" />
+  <Token Text=":=" UId="1087" />
+  <Blank Num="1" UId="1088" />
+  <Access Scope="LocalVariable" UId="1089">
+    <Symbol UId="1090">
+      <Component Name="comparisonResults" UId="1091">
+        <Token Text="[" UId="1092" />
+        <Access Scope="LiteralConstant" UId="1093">
+          <Constant UId="1094">
+            <ConstantValue UId="1096">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1097" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1098" />
+  <NewLine Num="1" UId="1099" />
+  <Access Scope="GlobalVariable" UId="1100">
+    <Symbol UId="1101">
+      <Component Name="ROLL_State" UId="1102">
+        <BooleanAttribute Name="HasQuotes" UId="1103">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1104" />
+      <Component Name="M" UId="1105">
+        <Token Text="[" UId="1106" />
+        <Access Scope="LiteralConstant" UId="1107">
+          <Constant UId="1108">
+            <ConstantValue UId="1110">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="1111" />
+        <Blank Num="1" UId="1112" />
+        <Access Scope="LiteralConstant" UId="1113">
+          <Constant UId="1114">
+            <ConstantValue UId="1116">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1117" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1118" />
+  <Token Text=":=" UId="1119" />
+  <Blank Num="1" UId="1120" />
+  <Access Scope="LocalVariable" UId="1121">
+    <Symbol UId="1122">
+      <Component Name="r" UId="1123" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1124" />
+  <NewLine Num="1" UId="1125" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1126">
+    <Text UId="1127"> PB25, STEP 5 network 9</Text>
+  </LineComment>
+  <NewLine Num="1" UId="1128" />
+  <Access Scope="LocalVariable" UId="1129">
+    <Symbol UId="1130">
+      <Component Name="a2" UId="1131" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1132" />
+  <Token Text=":=" UId="1133" />
+  <Blank Num="1" UId="1134" />
+  <Access Scope="LocalVariable" UId="1135">
+    <Symbol UId="1136">
+      <Component Name="a1" UId="1137" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1138" />
+  <NewLine Num="1" UId="1139" />
+  <Access Scope="LocalVariable" UId="1140">
+    <Symbol UId="1141">
+      <Component Name="a1" UId="1142" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1143" />
+  <Token Text=":=" UId="1144" />
+  <Blank Num="1" UId="1145" />
+  <Access Scope="Call" UId="1146">
+    <CallInfo UId="1147" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1149">
+        <Component Name="ROLL_GetM" UId="1148" />
+      </Instance>
+      <Token Text="(" UId="1150" />
+      <Parameter Name="FirstByte" UId="1151">
+        <Blank Num="1" UId="1152" />
+        <Token Text=":=" UId="1153" />
+        <Blank Num="1" UId="1154" />
+        <Access Scope="LiteralConstant" UId="1155">
+          <Constant UId="1156">
+            <ConstantValue UId="1158">12</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1159" />
+      <Blank Num="1" UId="1160" />
+      <Parameter Name="Width" UId="1161">
+        <Blank Num="1" UId="1162" />
+        <Token Text=":=" UId="1163" />
+        <Blank Num="1" UId="1164" />
+        <Access Scope="LiteralConstant" UId="1165">
+          <Constant UId="1166">
+            <ConstantValue UId="1168">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1170" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="1171" />
+  <NewLine Num="1" UId="1172" />
+  <Access Scope="LocalVariable" UId="1173">
+    <Symbol UId="1174">
+      <Component Name="a2" UId="1175" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1176" />
+  <Token Text=":=" UId="1177" />
+  <Blank Num="1" UId="1178" />
+  <Access Scope="LocalVariable" UId="1179">
+    <Symbol UId="1180">
+      <Component Name="a1" UId="1181" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1182" />
+  <NewLine Num="1" UId="1183" />
+  <Access Scope="LocalVariable" UId="1184">
+    <Symbol UId="1185">
+      <Component Name="a1" UId="1186" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1187" />
+  <Token Text=":=" UId="1188" />
+  <Blank Num="1" UId="1189" />
+  <Access Scope="TypedConstant" UId="1190">
+    <Constant UId="1191">
+      <ConstantValue UId="1192">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1193" />
+  <NewLine Num="1" UId="1194" />
+  <Access Scope="LocalVariable" UId="1195">
+    <Symbol UId="1196">
+      <Component Name="comparisonResults" UId="1197">
+        <Token Text="[" UId="1198" />
+        <Access Scope="LiteralConstant" UId="1199">
+          <Constant UId="1200">
+            <ConstantValue UId="1202">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1203" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1204" />
+  <Token Text=":=" UId="1205" />
+  <Blank Num="1" UId="1206" />
+  <Token Text="(" UId="1207" />
+  <Access Scope="Call" UId="1208">
+    <Instruction Name="WORD_TO_INT" UId="1209">
+      <Token Text="(" UId="1210" />
+      <NamelessParameter UId="1211">
+        <Access Scope="LocalVariable" UId="1212">
+          <Symbol UId="1213">
+            <Component Name="a2" UId="1214" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1216" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="1217" />
+  <Token Text="&lt;&gt;" UId="1218" />
+  <Blank Num="1" UId="1219" />
+  <Access Scope="Call" UId="1220">
+    <Instruction Name="WORD_TO_INT" UId="1221">
+      <Token Text="(" UId="1222" />
+      <NamelessParameter UId="1223">
+        <Access Scope="LocalVariable" UId="1224">
+          <Symbol UId="1225">
+            <Component Name="a1" UId="1226" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1228" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="1229" />
+  <Token Text=";" UId="1230" />
+  <NewLine Num="1" UId="1231" />
+  <Access Scope="LocalVariable" UId="1232">
+    <Symbol UId="1233">
+      <Component Name="r" UId="1234" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1235" />
+  <Token Text=":=" UId="1236" />
+  <Blank Num="1" UId="1237" />
+  <Access Scope="LocalVariable" UId="1238">
+    <Symbol UId="1239">
+      <Component Name="comparisonResults" UId="1240">
+        <Token Text="[" UId="1241" />
+        <Access Scope="LiteralConstant" UId="1242">
+          <Constant UId="1243">
+            <ConstantValue UId="1245">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1246" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1247" />
+  <NewLine Num="1" UId="1248" />
+  <Access Scope="GlobalVariable" UId="1249">
+    <Symbol UId="1250">
+      <Component Name="ROLL_State" UId="1251">
+        <BooleanAttribute Name="HasQuotes" UId="1252">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1253" />
+      <Component Name="M" UId="1254">
+        <Token Text="[" UId="1255" />
+        <Access Scope="LiteralConstant" UId="1256">
+          <Constant UId="1257">
+            <ConstantValue UId="1259">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="1260" />
+        <Blank Num="1" UId="1261" />
+        <Access Scope="LiteralConstant" UId="1262">
+          <Constant UId="1263">
+            <ConstantValue UId="1265">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1266" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1267" />
+  <Token Text=":=" UId="1268" />
+  <Blank Num="1" UId="1269" />
+  <Access Scope="LocalVariable" UId="1270">
+    <Symbol UId="1271">
+      <Component Name="r" UId="1272" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1273" />
+  <NewLine Num="1" UId="1274" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1275">
+    <Text UId="1276"> PB25, STEP 5 network 10</Text>
+  </LineComment>
+  <NewLine Num="1" UId="1277" />
+  <Access Scope="LocalVariable" UId="1278">
+    <Symbol UId="1279">
+      <Component Name="a2" UId="1280" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1281" />
+  <Token Text=":=" UId="1282" />
+  <Blank Num="1" UId="1283" />
+  <Access Scope="LocalVariable" UId="1284">
+    <Symbol UId="1285">
+      <Component Name="a1" UId="1286" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1287" />
+  <NewLine Num="1" UId="1288" />
+  <Access Scope="LocalVariable" UId="1289">
+    <Symbol UId="1290">
+      <Component Name="a1" UId="1291" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1292" />
+  <Token Text=":=" UId="1293" />
+  <Blank Num="1" UId="1294" />
+  <Access Scope="Call" UId="1295">
+    <CallInfo UId="1296" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1298">
+        <Component Name="ROLL_GetM" UId="1297" />
+      </Instance>
+      <Token Text="(" UId="1299" />
+      <Parameter Name="FirstByte" UId="1300">
+        <Blank Num="1" UId="1301" />
+        <Token Text=":=" UId="1302" />
+        <Blank Num="1" UId="1303" />
+        <Access Scope="LiteralConstant" UId="1304">
+          <Constant UId="1305">
+            <ConstantValue UId="1307">13</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1308" />
+      <Blank Num="1" UId="1309" />
+      <Parameter Name="Width" UId="1310">
+        <Blank Num="1" UId="1311" />
+        <Token Text=":=" UId="1312" />
+        <Blank Num="1" UId="1313" />
+        <Access Scope="LiteralConstant" UId="1314">
+          <Constant UId="1315">
+            <ConstantValue UId="1317">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1319" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="1320" />
+  <NewLine Num="1" UId="1321" />
+  <Access Scope="LocalVariable" UId="1322">
+    <Symbol UId="1323">
+      <Component Name="a2" UId="1324" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1325" />
+  <Token Text=":=" UId="1326" />
+  <Blank Num="1" UId="1327" />
+  <Access Scope="LocalVariable" UId="1328">
+    <Symbol UId="1329">
+      <Component Name="a1" UId="1330" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1331" />
+  <NewLine Num="1" UId="1332" />
+  <Access Scope="LocalVariable" UId="1333">
+    <Symbol UId="1334">
+      <Component Name="a1" UId="1335" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1336" />
+  <Token Text=":=" UId="1337" />
+  <Blank Num="1" UId="1338" />
+  <Access Scope="TypedConstant" UId="1339">
+    <Constant UId="1340">
+      <ConstantValue UId="1341">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1342" />
+  <NewLine Num="1" UId="1343" />
+  <Access Scope="LocalVariable" UId="1344">
+    <Symbol UId="1345">
+      <Component Name="comparisonResults" UId="1346">
+        <Token Text="[" UId="1347" />
+        <Access Scope="LiteralConstant" UId="1348">
+          <Constant UId="1349">
+            <ConstantValue UId="1351">8</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1352" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1353" />
+  <Token Text=":=" UId="1354" />
+  <Blank Num="1" UId="1355" />
+  <Token Text="(" UId="1356" />
+  <Access Scope="Call" UId="1357">
+    <Instruction Name="WORD_TO_INT" UId="1358">
+      <Token Text="(" UId="1359" />
+      <NamelessParameter UId="1360">
+        <Access Scope="LocalVariable" UId="1361">
+          <Symbol UId="1362">
+            <Component Name="a2" UId="1363" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1365" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="1366" />
+  <Token Text="&lt;&gt;" UId="1367" />
+  <Blank Num="1" UId="1368" />
+  <Access Scope="Call" UId="1369">
+    <Instruction Name="WORD_TO_INT" UId="1370">
+      <Token Text="(" UId="1371" />
+      <NamelessParameter UId="1372">
+        <Access Scope="LocalVariable" UId="1373">
+          <Symbol UId="1374">
+            <Component Name="a1" UId="1375" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1377" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="1378" />
+  <Token Text=";" UId="1379" />
+  <NewLine Num="1" UId="1380" />
+  <Access Scope="LocalVariable" UId="1381">
+    <Symbol UId="1382">
+      <Component Name="r" UId="1383" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1384" />
+  <Token Text=":=" UId="1385" />
+  <Blank Num="1" UId="1386" />
+  <Access Scope="LocalVariable" UId="1387">
+    <Symbol UId="1388">
+      <Component Name="comparisonResults" UId="1389">
+        <Token Text="[" UId="1390" />
+        <Access Scope="LiteralConstant" UId="1391">
+          <Constant UId="1392">
+            <ConstantValue UId="1394">8</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1395" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1396" />
+  <NewLine Num="1" UId="1397" />
+  <Access Scope="GlobalVariable" UId="1398">
+    <Symbol UId="1399">
+      <Component Name="ROLL_State" UId="1400">
+        <BooleanAttribute Name="HasQuotes" UId="1401">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1402" />
+      <Component Name="M" UId="1403">
+        <Token Text="[" UId="1404" />
+        <Access Scope="LiteralConstant" UId="1405">
+          <Constant UId="1406">
+            <ConstantValue UId="1408">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="1409" />
+        <Blank Num="1" UId="1410" />
+        <Access Scope="LiteralConstant" UId="1411">
+          <Constant UId="1412">
+            <ConstantValue UId="1414">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1415" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1416" />
+  <Token Text=":=" UId="1417" />
+  <Blank Num="1" UId="1418" />
+  <Access Scope="LocalVariable" UId="1419">
+    <Symbol UId="1420">
+      <Component Name="r" UId="1421" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1422" />
+  <NewLine Num="1" UId="1423" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1424">
+    <Text UId="1425"> PB25, STEP 5 network 11</Text>
+  </LineComment>
+  <NewLine Num="1" UId="1426" />
+  <Access Scope="LocalVariable" UId="1427">
+    <Symbol UId="1428">
+      <Component Name="a2" UId="1429" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1430" />
+  <Token Text=":=" UId="1431" />
+  <Blank Num="1" UId="1432" />
+  <Access Scope="LocalVariable" UId="1433">
+    <Symbol UId="1434">
+      <Component Name="a1" UId="1435" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1436" />
+  <NewLine Num="1" UId="1437" />
+  <Access Scope="LocalVariable" UId="1438">
+    <Symbol UId="1439">
+      <Component Name="a1" UId="1440" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1441" />
+  <Token Text=":=" UId="1442" />
+  <Blank Num="1" UId="1443" />
+  <Access Scope="Call" UId="1444">
+    <CallInfo UId="1445" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1447">
+        <Component Name="ROLL_GetM" UId="1446" />
+      </Instance>
+      <Token Text="(" UId="1448" />
+      <Parameter Name="FirstByte" UId="1449">
+        <Blank Num="1" UId="1450" />
+        <Token Text=":=" UId="1451" />
+        <Blank Num="1" UId="1452" />
+        <Access Scope="LiteralConstant" UId="1453">
+          <Constant UId="1454">
+            <ConstantValue UId="1456">14</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1457" />
+      <Blank Num="1" UId="1458" />
+      <Parameter Name="Width" UId="1459">
+        <Blank Num="1" UId="1460" />
+        <Token Text=":=" UId="1461" />
+        <Blank Num="1" UId="1462" />
+        <Access Scope="LiteralConstant" UId="1463">
+          <Constant UId="1464">
+            <ConstantValue UId="1466">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1468" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="1469" />
+  <NewLine Num="1" UId="1470" />
+  <Access Scope="LocalVariable" UId="1471">
+    <Symbol UId="1472">
+      <Component Name="a2" UId="1473" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1474" />
+  <Token Text=":=" UId="1475" />
+  <Blank Num="1" UId="1476" />
+  <Access Scope="LocalVariable" UId="1477">
+    <Symbol UId="1478">
+      <Component Name="a1" UId="1479" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1480" />
+  <NewLine Num="1" UId="1481" />
+  <Access Scope="LocalVariable" UId="1482">
+    <Symbol UId="1483">
+      <Component Name="a1" UId="1484" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1485" />
+  <Token Text=":=" UId="1486" />
+  <Blank Num="1" UId="1487" />
+  <Access Scope="TypedConstant" UId="1488">
+    <Constant UId="1489">
+      <ConstantValue UId="1490">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1491" />
+  <NewLine Num="1" UId="1492" />
+  <Access Scope="LocalVariable" UId="1493">
+    <Symbol UId="1494">
+      <Component Name="comparisonResults" UId="1495">
+        <Token Text="[" UId="1496" />
+        <Access Scope="LiteralConstant" UId="1497">
+          <Constant UId="1498">
+            <ConstantValue UId="1500">9</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1501" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1502" />
+  <Token Text=":=" UId="1503" />
+  <Blank Num="1" UId="1504" />
+  <Token Text="(" UId="1505" />
+  <Access Scope="Call" UId="1506">
+    <Instruction Name="WORD_TO_INT" UId="1507">
+      <Token Text="(" UId="1508" />
+      <NamelessParameter UId="1509">
+        <Access Scope="LocalVariable" UId="1510">
+          <Symbol UId="1511">
+            <Component Name="a2" UId="1512" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1514" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="1515" />
+  <Token Text="&lt;&gt;" UId="1516" />
+  <Blank Num="1" UId="1517" />
+  <Access Scope="Call" UId="1518">
+    <Instruction Name="WORD_TO_INT" UId="1519">
+      <Token Text="(" UId="1520" />
+      <NamelessParameter UId="1521">
+        <Access Scope="LocalVariable" UId="1522">
+          <Symbol UId="1523">
+            <Component Name="a1" UId="1524" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1526" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="1527" />
+  <Token Text=";" UId="1528" />
+  <NewLine Num="1" UId="1529" />
+  <Access Scope="LocalVariable" UId="1530">
+    <Symbol UId="1531">
+      <Component Name="r" UId="1532" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1533" />
+  <Token Text=":=" UId="1534" />
+  <Blank Num="1" UId="1535" />
+  <Access Scope="LocalVariable" UId="1536">
+    <Symbol UId="1537">
+      <Component Name="comparisonResults" UId="1538">
+        <Token Text="[" UId="1539" />
+        <Access Scope="LiteralConstant" UId="1540">
+          <Constant UId="1541">
+            <ConstantValue UId="1543">9</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1544" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1545" />
+  <NewLine Num="1" UId="1546" />
+  <Access Scope="GlobalVariable" UId="1547">
+    <Symbol UId="1548">
+      <Component Name="ROLL_State" UId="1549">
+        <BooleanAttribute Name="HasQuotes" UId="1550">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1551" />
+      <Component Name="M" UId="1552">
+        <Token Text="[" UId="1553" />
+        <Access Scope="LiteralConstant" UId="1554">
+          <Constant UId="1555">
+            <ConstantValue UId="1557">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="1558" />
+        <Blank Num="1" UId="1559" />
+        <Access Scope="LiteralConstant" UId="1560">
+          <Constant UId="1561">
+            <ConstantValue UId="1563">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1564" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1565" />
+  <Token Text=":=" UId="1566" />
+  <Blank Num="1" UId="1567" />
+  <Access Scope="LocalVariable" UId="1568">
+    <Symbol UId="1569">
+      <Component Name="r" UId="1570" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1571" />
+  <NewLine Num="1" UId="1572" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1573">
+    <Text UId="1574"> PB25, STEP 5 network 12</Text>
+  </LineComment>
+  <NewLine Num="1" UId="1575" />
+  <Access Scope="LocalVariable" UId="1576">
+    <Symbol UId="1577">
+      <Component Name="a2" UId="1578" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1579" />
+  <Token Text=":=" UId="1580" />
+  <Blank Num="1" UId="1581" />
+  <Access Scope="LocalVariable" UId="1582">
+    <Symbol UId="1583">
+      <Component Name="a1" UId="1584" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1585" />
+  <NewLine Num="1" UId="1586" />
+  <Access Scope="LocalVariable" UId="1587">
+    <Symbol UId="1588">
+      <Component Name="a1" UId="1589" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1590" />
+  <Token Text=":=" UId="1591" />
+  <Blank Num="1" UId="1592" />
+  <Access Scope="Call" UId="1593">
+    <CallInfo UId="1594" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1596">
+        <Component Name="ROLL_GetM" UId="1595" />
+      </Instance>
+      <Token Text="(" UId="1597" />
+      <Parameter Name="FirstByte" UId="1598">
+        <Blank Num="1" UId="1599" />
+        <Token Text=":=" UId="1600" />
+        <Blank Num="1" UId="1601" />
+        <Access Scope="LiteralConstant" UId="1602">
+          <Constant UId="1603">
+            <ConstantValue UId="1605">15</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1606" />
+      <Blank Num="1" UId="1607" />
+      <Parameter Name="Width" UId="1608">
+        <Blank Num="1" UId="1609" />
+        <Token Text=":=" UId="1610" />
+        <Blank Num="1" UId="1611" />
+        <Access Scope="LiteralConstant" UId="1612">
+          <Constant UId="1613">
+            <ConstantValue UId="1615">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1617" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="1618" />
+  <NewLine Num="1" UId="1619" />
+  <Access Scope="LocalVariable" UId="1620">
+    <Symbol UId="1621">
+      <Component Name="a2" UId="1622" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1623" />
+  <Token Text=":=" UId="1624" />
+  <Blank Num="1" UId="1625" />
+  <Access Scope="LocalVariable" UId="1626">
+    <Symbol UId="1627">
+      <Component Name="a1" UId="1628" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1629" />
+  <NewLine Num="1" UId="1630" />
+  <Access Scope="LocalVariable" UId="1631">
+    <Symbol UId="1632">
+      <Component Name="a1" UId="1633" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1634" />
+  <Token Text=":=" UId="1635" />
+  <Blank Num="1" UId="1636" />
+  <Access Scope="TypedConstant" UId="1637">
+    <Constant UId="1638">
+      <ConstantValue UId="1639">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1640" />
+  <NewLine Num="1" UId="1641" />
+  <Access Scope="LocalVariable" UId="1642">
+    <Symbol UId="1643">
+      <Component Name="comparisonResults" UId="1644">
+        <Token Text="[" UId="1645" />
+        <Access Scope="LiteralConstant" UId="1646">
+          <Constant UId="1647">
+            <ConstantValue UId="1649">10</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1650" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1651" />
+  <Token Text=":=" UId="1652" />
+  <Blank Num="1" UId="1653" />
+  <Token Text="(" UId="1654" />
+  <Access Scope="Call" UId="1655">
+    <Instruction Name="WORD_TO_INT" UId="1656">
+      <Token Text="(" UId="1657" />
+      <NamelessParameter UId="1658">
+        <Access Scope="LocalVariable" UId="1659">
+          <Symbol UId="1660">
+            <Component Name="a2" UId="1661" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1663" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="1664" />
+  <Token Text="&lt;&gt;" UId="1665" />
+  <Blank Num="1" UId="1666" />
+  <Access Scope="Call" UId="1667">
+    <Instruction Name="WORD_TO_INT" UId="1668">
+      <Token Text="(" UId="1669" />
+      <NamelessParameter UId="1670">
+        <Access Scope="LocalVariable" UId="1671">
+          <Symbol UId="1672">
+            <Component Name="a1" UId="1673" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1675" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="1676" />
+  <Token Text=";" UId="1677" />
+  <NewLine Num="1" UId="1678" />
+  <Access Scope="LocalVariable" UId="1679">
+    <Symbol UId="1680">
+      <Component Name="r" UId="1681" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1682" />
+  <Token Text=":=" UId="1683" />
+  <Blank Num="1" UId="1684" />
+  <Access Scope="LocalVariable" UId="1685">
+    <Symbol UId="1686">
+      <Component Name="comparisonResults" UId="1687">
+        <Token Text="[" UId="1688" />
+        <Access Scope="LiteralConstant" UId="1689">
+          <Constant UId="1690">
+            <ConstantValue UId="1692">10</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1693" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1694" />
+  <NewLine Num="1" UId="1695" />
+  <Access Scope="GlobalVariable" UId="1696">
+    <Symbol UId="1697">
+      <Component Name="ROLL_State" UId="1698">
+        <BooleanAttribute Name="HasQuotes" UId="1699">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1700" />
+      <Component Name="M" UId="1701">
+        <Token Text="[" UId="1702" />
+        <Access Scope="LiteralConstant" UId="1703">
+          <Constant UId="1704">
+            <ConstantValue UId="1706">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="1707" />
+        <Blank Num="1" UId="1708" />
+        <Access Scope="LiteralConstant" UId="1709">
+          <Constant UId="1710">
+            <ConstantValue UId="1712">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1713" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1714" />
+  <Token Text=":=" UId="1715" />
+  <Blank Num="1" UId="1716" />
+  <Access Scope="LocalVariable" UId="1717">
+    <Symbol UId="1718">
+      <Component Name="r" UId="1719" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1720" />
+  <NewLine Num="1" UId="1721" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1722">
+    <Text UId="1723"> PB25, STEP 5 network 13</Text>
+  </LineComment>
+  <NewLine Num="1" UId="1724" />
+  <Access Scope="LocalVariable" UId="1725">
+    <Symbol UId="1726">
+      <Component Name="a2" UId="1727" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1728" />
+  <Token Text=":=" UId="1729" />
+  <Blank Num="1" UId="1730" />
+  <Access Scope="LocalVariable" UId="1731">
+    <Symbol UId="1732">
+      <Component Name="a1" UId="1733" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1734" />
+  <NewLine Num="1" UId="1735" />
+  <Access Scope="LocalVariable" UId="1736">
+    <Symbol UId="1737">
+      <Component Name="a1" UId="1738" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1739" />
+  <Token Text=":=" UId="1740" />
+  <Blank Num="1" UId="1741" />
+  <Access Scope="Call" UId="1742">
+    <CallInfo UId="1743" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1745">
+        <Component Name="ROLL_GetM" UId="1744" />
+      </Instance>
+      <Token Text="(" UId="1746" />
+      <Parameter Name="FirstByte" UId="1747">
+        <Blank Num="1" UId="1748" />
+        <Token Text=":=" UId="1749" />
+        <Blank Num="1" UId="1750" />
+        <Access Scope="LiteralConstant" UId="1751">
+          <Constant UId="1752">
+            <ConstantValue UId="1754">16</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1755" />
+      <Blank Num="1" UId="1756" />
+      <Parameter Name="Width" UId="1757">
+        <Blank Num="1" UId="1758" />
+        <Token Text=":=" UId="1759" />
+        <Blank Num="1" UId="1760" />
+        <Access Scope="LiteralConstant" UId="1761">
+          <Constant UId="1762">
+            <ConstantValue UId="1764">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1766" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="1767" />
+  <NewLine Num="1" UId="1768" />
+  <Access Scope="LocalVariable" UId="1769">
+    <Symbol UId="1770">
+      <Component Name="a2" UId="1771" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1772" />
+  <Token Text=":=" UId="1773" />
+  <Blank Num="1" UId="1774" />
+  <Access Scope="LocalVariable" UId="1775">
+    <Symbol UId="1776">
+      <Component Name="a1" UId="1777" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1778" />
+  <NewLine Num="1" UId="1779" />
+  <Access Scope="LocalVariable" UId="1780">
+    <Symbol UId="1781">
+      <Component Name="a1" UId="1782" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1783" />
+  <Token Text=":=" UId="1784" />
+  <Blank Num="1" UId="1785" />
+  <Access Scope="TypedConstant" UId="1786">
+    <Constant UId="1787">
+      <ConstantValue UId="1788">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1789" />
+  <NewLine Num="1" UId="1790" />
+  <Access Scope="LocalVariable" UId="1791">
+    <Symbol UId="1792">
+      <Component Name="comparisonResults" UId="1793">
+        <Token Text="[" UId="1794" />
+        <Access Scope="LiteralConstant" UId="1795">
+          <Constant UId="1796">
+            <ConstantValue UId="1798">11</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1799" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1800" />
+  <Token Text=":=" UId="1801" />
+  <Blank Num="1" UId="1802" />
+  <Token Text="(" UId="1803" />
+  <Access Scope="Call" UId="1804">
+    <Instruction Name="WORD_TO_INT" UId="1805">
+      <Token Text="(" UId="1806" />
+      <NamelessParameter UId="1807">
+        <Access Scope="LocalVariable" UId="1808">
+          <Symbol UId="1809">
+            <Component Name="a2" UId="1810" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1812" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="1813" />
+  <Token Text="&lt;&gt;" UId="1814" />
+  <Blank Num="1" UId="1815" />
+  <Access Scope="Call" UId="1816">
+    <Instruction Name="WORD_TO_INT" UId="1817">
+      <Token Text="(" UId="1818" />
+      <NamelessParameter UId="1819">
+        <Access Scope="LocalVariable" UId="1820">
+          <Symbol UId="1821">
+            <Component Name="a1" UId="1822" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1824" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="1825" />
+  <Token Text=";" UId="1826" />
+  <NewLine Num="1" UId="1827" />
+  <Access Scope="LocalVariable" UId="1828">
+    <Symbol UId="1829">
+      <Component Name="r" UId="1830" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1831" />
+  <Token Text=":=" UId="1832" />
+  <Blank Num="1" UId="1833" />
+  <Access Scope="LocalVariable" UId="1834">
+    <Symbol UId="1835">
+      <Component Name="comparisonResults" UId="1836">
+        <Token Text="[" UId="1837" />
+        <Access Scope="LiteralConstant" UId="1838">
+          <Constant UId="1839">
+            <ConstantValue UId="1841">11</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1842" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1843" />
+  <NewLine Num="1" UId="1844" />
+  <Access Scope="GlobalVariable" UId="1845">
+    <Symbol UId="1846">
+      <Component Name="ROLL_State" UId="1847">
+        <BooleanAttribute Name="HasQuotes" UId="1848">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1849" />
+      <Component Name="M" UId="1850">
+        <Token Text="[" UId="1851" />
+        <Access Scope="LiteralConstant" UId="1852">
+          <Constant UId="1853">
+            <ConstantValue UId="1855">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="1856" />
+        <Blank Num="1" UId="1857" />
+        <Access Scope="LiteralConstant" UId="1858">
+          <Constant UId="1859">
+            <ConstantValue UId="1861">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1862" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1863" />
+  <Token Text=":=" UId="1864" />
+  <Blank Num="1" UId="1865" />
+  <Access Scope="LocalVariable" UId="1866">
+    <Symbol UId="1867">
+      <Component Name="r" UId="1868" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1869" />
+  <NewLine Num="1" UId="1870" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1871">
+    <Text UId="1872"> PB25, STEP 5 network 14</Text>
+  </LineComment>
+  <NewLine Num="1" UId="1873" />
+  <Access Scope="LocalVariable" UId="1874">
+    <Symbol UId="1875">
+      <Component Name="a2" UId="1876" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1877" />
+  <Token Text=":=" UId="1878" />
+  <Blank Num="1" UId="1879" />
+  <Access Scope="LocalVariable" UId="1880">
+    <Symbol UId="1881">
+      <Component Name="a1" UId="1882" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1883" />
+  <NewLine Num="1" UId="1884" />
+  <Access Scope="LocalVariable" UId="1885">
+    <Symbol UId="1886">
+      <Component Name="a1" UId="1887" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1888" />
+  <Token Text=":=" UId="1889" />
+  <Blank Num="1" UId="1890" />
+  <Access Scope="Call" UId="1891">
+    <CallInfo UId="1892" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1894">
+        <Component Name="ROLL_GetM" UId="1893" />
+      </Instance>
+      <Token Text="(" UId="1895" />
+      <Parameter Name="FirstByte" UId="1896">
+        <Blank Num="1" UId="1897" />
+        <Token Text=":=" UId="1898" />
+        <Blank Num="1" UId="1899" />
+        <Access Scope="LiteralConstant" UId="1900">
+          <Constant UId="1901">
+            <ConstantValue UId="1903">17</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1904" />
+      <Blank Num="1" UId="1905" />
+      <Parameter Name="Width" UId="1906">
+        <Blank Num="1" UId="1907" />
+        <Token Text=":=" UId="1908" />
+        <Blank Num="1" UId="1909" />
+        <Access Scope="LiteralConstant" UId="1910">
+          <Constant UId="1911">
+            <ConstantValue UId="1913">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="1915" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="1916" />
+  <NewLine Num="1" UId="1917" />
+  <Access Scope="LocalVariable" UId="1918">
+    <Symbol UId="1919">
+      <Component Name="a2" UId="1920" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1921" />
+  <Token Text=":=" UId="1922" />
+  <Blank Num="1" UId="1923" />
+  <Access Scope="LocalVariable" UId="1924">
+    <Symbol UId="1925">
+      <Component Name="a1" UId="1926" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1927" />
+  <NewLine Num="1" UId="1928" />
+  <Access Scope="LocalVariable" UId="1929">
+    <Symbol UId="1930">
+      <Component Name="a1" UId="1931" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1932" />
+  <Token Text=":=" UId="1933" />
+  <Blank Num="1" UId="1934" />
+  <Access Scope="TypedConstant" UId="1935">
+    <Constant UId="1936">
+      <ConstantValue UId="1937">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1938" />
+  <NewLine Num="1" UId="1939" />
+  <Access Scope="LocalVariable" UId="1940">
+    <Symbol UId="1941">
+      <Component Name="comparisonResults" UId="1942">
+        <Token Text="[" UId="1943" />
+        <Access Scope="LiteralConstant" UId="1944">
+          <Constant UId="1945">
+            <ConstantValue UId="1947">12</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1948" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1949" />
+  <Token Text=":=" UId="1950" />
+  <Blank Num="1" UId="1951" />
+  <Token Text="(" UId="1952" />
+  <Access Scope="Call" UId="1953">
+    <Instruction Name="WORD_TO_INT" UId="1954">
+      <Token Text="(" UId="1955" />
+      <NamelessParameter UId="1956">
+        <Access Scope="LocalVariable" UId="1957">
+          <Symbol UId="1958">
+            <Component Name="a2" UId="1959" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1961" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="1962" />
+  <Token Text="&lt;&gt;" UId="1963" />
+  <Blank Num="1" UId="1964" />
+  <Access Scope="Call" UId="1965">
+    <Instruction Name="WORD_TO_INT" UId="1966">
+      <Token Text="(" UId="1967" />
+      <NamelessParameter UId="1968">
+        <Access Scope="LocalVariable" UId="1969">
+          <Symbol UId="1970">
+            <Component Name="a1" UId="1971" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="1973" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="1974" />
+  <Token Text=";" UId="1975" />
+  <NewLine Num="1" UId="1976" />
+  <Access Scope="LocalVariable" UId="1977">
+    <Symbol UId="1978">
+      <Component Name="r" UId="1979" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1980" />
+  <Token Text=":=" UId="1981" />
+  <Blank Num="1" UId="1982" />
+  <Access Scope="LocalVariable" UId="1983">
+    <Symbol UId="1984">
+      <Component Name="comparisonResults" UId="1985">
+        <Token Text="[" UId="1986" />
+        <Access Scope="LiteralConstant" UId="1987">
+          <Constant UId="1988">
+            <ConstantValue UId="1990">12</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="1991" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1992" />
+  <NewLine Num="1" UId="1993" />
+  <Access Scope="GlobalVariable" UId="1994">
+    <Symbol UId="1995">
+      <Component Name="ROLL_State" UId="1996">
+        <BooleanAttribute Name="HasQuotes" UId="1997">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="1998" />
+      <Component Name="M" UId="1999">
+        <Token Text="[" UId="2000" />
+        <Access Scope="LiteralConstant" UId="2001">
+          <Constant UId="2002">
+            <ConstantValue UId="2004">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2005" />
+        <Blank Num="1" UId="2006" />
+        <Access Scope="LiteralConstant" UId="2007">
+          <Constant UId="2008">
+            <ConstantValue UId="2010">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2011" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2012" />
+  <Token Text=":=" UId="2013" />
+  <Blank Num="1" UId="2014" />
+  <Access Scope="LocalVariable" UId="2015">
+    <Symbol UId="2016">
+      <Component Name="r" UId="2017" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2018" />
+  <NewLine Num="1" UId="2019" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="2020">
+    <Text UId="2021"> PB25, STEP 5 network 15</Text>
+  </LineComment>
+  <NewLine Num="1" UId="2022" />
+  <Access Scope="LocalVariable" UId="2023">
+    <Symbol UId="2024">
+      <Component Name="a2" UId="2025" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2026" />
+  <Token Text=":=" UId="2027" />
+  <Blank Num="1" UId="2028" />
+  <Access Scope="LocalVariable" UId="2029">
+    <Symbol UId="2030">
+      <Component Name="a1" UId="2031" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2032" />
+  <NewLine Num="1" UId="2033" />
+  <Access Scope="LocalVariable" UId="2034">
+    <Symbol UId="2035">
+      <Component Name="a1" UId="2036" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2037" />
+  <Token Text=":=" UId="2038" />
+  <Blank Num="1" UId="2039" />
+  <Access Scope="Call" UId="2040">
+    <CallInfo UId="2041" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="2043">
+        <Component Name="ROLL_GetM" UId="2042" />
+      </Instance>
+      <Token Text="(" UId="2044" />
+      <Parameter Name="FirstByte" UId="2045">
+        <Blank Num="1" UId="2046" />
+        <Token Text=":=" UId="2047" />
+        <Blank Num="1" UId="2048" />
+        <Access Scope="LiteralConstant" UId="2049">
+          <Constant UId="2050">
+            <ConstantValue UId="2052">18</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2053" />
+      <Blank Num="1" UId="2054" />
+      <Parameter Name="Width" UId="2055">
+        <Blank Num="1" UId="2056" />
+        <Token Text=":=" UId="2057" />
+        <Blank Num="1" UId="2058" />
+        <Access Scope="LiteralConstant" UId="2059">
+          <Constant UId="2060">
+            <ConstantValue UId="2062">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2064" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="2065" />
+  <NewLine Num="1" UId="2066" />
+  <Access Scope="LocalVariable" UId="2067">
+    <Symbol UId="2068">
+      <Component Name="a2" UId="2069" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2070" />
+  <Token Text=":=" UId="2071" />
+  <Blank Num="1" UId="2072" />
+  <Access Scope="LocalVariable" UId="2073">
+    <Symbol UId="2074">
+      <Component Name="a1" UId="2075" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2076" />
+  <NewLine Num="1" UId="2077" />
+  <Access Scope="LocalVariable" UId="2078">
+    <Symbol UId="2079">
+      <Component Name="a1" UId="2080" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2081" />
+  <Token Text=":=" UId="2082" />
+  <Blank Num="1" UId="2083" />
+  <Access Scope="TypedConstant" UId="2084">
+    <Constant UId="2085">
+      <ConstantValue UId="2086">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="2087" />
+  <NewLine Num="1" UId="2088" />
+  <Access Scope="LocalVariable" UId="2089">
+    <Symbol UId="2090">
+      <Component Name="comparisonResults" UId="2091">
+        <Token Text="[" UId="2092" />
+        <Access Scope="LiteralConstant" UId="2093">
+          <Constant UId="2094">
+            <ConstantValue UId="2096">13</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2097" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2098" />
+  <Token Text=":=" UId="2099" />
+  <Blank Num="1" UId="2100" />
+  <Token Text="(" UId="2101" />
+  <Access Scope="Call" UId="2102">
+    <Instruction Name="WORD_TO_INT" UId="2103">
+      <Token Text="(" UId="2104" />
+      <NamelessParameter UId="2105">
+        <Access Scope="LocalVariable" UId="2106">
+          <Symbol UId="2107">
+            <Component Name="a2" UId="2108" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="2110" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="2111" />
+  <Token Text="&lt;&gt;" UId="2112" />
+  <Blank Num="1" UId="2113" />
+  <Access Scope="Call" UId="2114">
+    <Instruction Name="WORD_TO_INT" UId="2115">
+      <Token Text="(" UId="2116" />
+      <NamelessParameter UId="2117">
+        <Access Scope="LocalVariable" UId="2118">
+          <Symbol UId="2119">
+            <Component Name="a1" UId="2120" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="2122" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="2123" />
+  <Token Text=";" UId="2124" />
+  <NewLine Num="1" UId="2125" />
+  <Access Scope="LocalVariable" UId="2126">
+    <Symbol UId="2127">
+      <Component Name="r" UId="2128" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2129" />
+  <Token Text=":=" UId="2130" />
+  <Blank Num="1" UId="2131" />
+  <Access Scope="LocalVariable" UId="2132">
+    <Symbol UId="2133">
+      <Component Name="comparisonResults" UId="2134">
+        <Token Text="[" UId="2135" />
+        <Access Scope="LiteralConstant" UId="2136">
+          <Constant UId="2137">
+            <ConstantValue UId="2139">13</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2140" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2141" />
+  <NewLine Num="1" UId="2142" />
+  <Access Scope="GlobalVariable" UId="2143">
+    <Symbol UId="2144">
+      <Component Name="ROLL_State" UId="2145">
+        <BooleanAttribute Name="HasQuotes" UId="2146">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2147" />
+      <Component Name="M" UId="2148">
+        <Token Text="[" UId="2149" />
+        <Access Scope="LiteralConstant" UId="2150">
+          <Constant UId="2151">
+            <ConstantValue UId="2153">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2154" />
+        <Blank Num="1" UId="2155" />
+        <Access Scope="LiteralConstant" UId="2156">
+          <Constant UId="2157">
+            <ConstantValue UId="2159">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2160" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2161" />
+  <Token Text=":=" UId="2162" />
+  <Blank Num="1" UId="2163" />
+  <Access Scope="LocalVariable" UId="2164">
+    <Symbol UId="2165">
+      <Component Name="r" UId="2166" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2167" />
+  <NewLine Num="1" UId="2168" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="2169">
+    <Text UId="2170"> PB25, STEP 5 network 16</Text>
+  </LineComment>
+  <NewLine Num="1" UId="2171" />
+  <Access Scope="LocalVariable" UId="2172">
+    <Symbol UId="2173">
+      <Component Name="a2" UId="2174" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2175" />
+  <Token Text=":=" UId="2176" />
+  <Blank Num="1" UId="2177" />
+  <Access Scope="LocalVariable" UId="2178">
+    <Symbol UId="2179">
+      <Component Name="a1" UId="2180" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2181" />
+  <NewLine Num="1" UId="2182" />
+  <Access Scope="LocalVariable" UId="2183">
+    <Symbol UId="2184">
+      <Component Name="a1" UId="2185" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2186" />
+  <Token Text=":=" UId="2187" />
+  <Blank Num="1" UId="2188" />
+  <Access Scope="Call" UId="2189">
+    <CallInfo UId="2190" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="2192">
+        <Component Name="ROLL_GetM" UId="2191" />
+      </Instance>
+      <Token Text="(" UId="2193" />
+      <Parameter Name="FirstByte" UId="2194">
+        <Blank Num="1" UId="2195" />
+        <Token Text=":=" UId="2196" />
+        <Blank Num="1" UId="2197" />
+        <Access Scope="LiteralConstant" UId="2198">
+          <Constant UId="2199">
+            <ConstantValue UId="2201">19</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="2202" />
+      <Blank Num="1" UId="2203" />
+      <Parameter Name="Width" UId="2204">
+        <Blank Num="1" UId="2205" />
+        <Token Text=":=" UId="2206" />
+        <Blank Num="1" UId="2207" />
+        <Access Scope="LiteralConstant" UId="2208">
+          <Constant UId="2209">
+            <ConstantValue UId="2211">8</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="2213" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="2214" />
+  <NewLine Num="1" UId="2215" />
+  <Access Scope="LocalVariable" UId="2216">
+    <Symbol UId="2217">
+      <Component Name="a2" UId="2218" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2219" />
+  <Token Text=":=" UId="2220" />
+  <Blank Num="1" UId="2221" />
+  <Access Scope="LocalVariable" UId="2222">
+    <Symbol UId="2223">
+      <Component Name="a1" UId="2224" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2225" />
+  <NewLine Num="1" UId="2226" />
+  <Access Scope="LocalVariable" UId="2227">
+    <Symbol UId="2228">
+      <Component Name="a1" UId="2229" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2230" />
+  <Token Text=":=" UId="2231" />
+  <Blank Num="1" UId="2232" />
+  <Access Scope="TypedConstant" UId="2233">
+    <Constant UId="2234">
+      <ConstantValue UId="2235">W#16#0000</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="2236" />
+  <NewLine Num="1" UId="2237" />
+  <Access Scope="LocalVariable" UId="2238">
+    <Symbol UId="2239">
+      <Component Name="comparisonResults" UId="2240">
+        <Token Text="[" UId="2241" />
+        <Access Scope="LiteralConstant" UId="2242">
+          <Constant UId="2243">
+            <ConstantValue UId="2245">14</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2246" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2247" />
+  <Token Text=":=" UId="2248" />
+  <Blank Num="1" UId="2249" />
+  <Token Text="(" UId="2250" />
+  <Access Scope="Call" UId="2251">
+    <Instruction Name="WORD_TO_INT" UId="2252">
+      <Token Text="(" UId="2253" />
+      <NamelessParameter UId="2254">
+        <Access Scope="LocalVariable" UId="2255">
+          <Symbol UId="2256">
+            <Component Name="a2" UId="2257" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="2259" />
+    </Instruction>
+  </Access>
+  <Blank Num="1" UId="2260" />
+  <Token Text="&lt;&gt;" UId="2261" />
+  <Blank Num="1" UId="2262" />
+  <Access Scope="Call" UId="2263">
+    <Instruction Name="WORD_TO_INT" UId="2264">
+      <Token Text="(" UId="2265" />
+      <NamelessParameter UId="2266">
+        <Access Scope="LocalVariable" UId="2267">
+          <Symbol UId="2268">
+            <Component Name="a1" UId="2269" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="2271" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="2272" />
+  <Token Text=";" UId="2273" />
+  <NewLine Num="1" UId="2274" />
+  <Access Scope="LocalVariable" UId="2275">
+    <Symbol UId="2276">
+      <Component Name="r" UId="2277" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2278" />
+  <Token Text=":=" UId="2279" />
+  <Blank Num="1" UId="2280" />
+  <Access Scope="LocalVariable" UId="2281">
+    <Symbol UId="2282">
+      <Component Name="comparisonResults" UId="2283">
+        <Token Text="[" UId="2284" />
+        <Access Scope="LiteralConstant" UId="2285">
+          <Constant UId="2286">
+            <ConstantValue UId="2288">14</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2289" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2290" />
+  <NewLine Num="1" UId="2291" />
+  <Access Scope="GlobalVariable" UId="2292">
+    <Symbol UId="2293">
+      <Component Name="ROLL_State" UId="2294">
+        <BooleanAttribute Name="HasQuotes" UId="2295">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2296" />
+      <Component Name="M" UId="2297">
+        <Token Text="[" UId="2298" />
+        <Access Scope="LiteralConstant" UId="2299">
+          <Constant UId="2300">
+            <ConstantValue UId="2302">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2303" />
+        <Blank Num="1" UId="2304" />
+        <Access Scope="LiteralConstant" UId="2305">
+          <Constant UId="2306">
+            <ConstantValue UId="2308">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2309" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2310" />
+  <Token Text=":=" UId="2311" />
+  <Blank Num="1" UId="2312" />
+  <Access Scope="LocalVariable" UId="2313">
+    <Symbol UId="2314">
+      <Component Name="r" UId="2315" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2316" />
+  <NewLine Num="1" UId="2317" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="2318">
+    <Text UId="2319"> PB25, STEP 5 network 17</Text>
+  </LineComment>
+  <NewLine Num="1" UId="2320" />
+  <Access Scope="LocalVariable" UId="2321">
+    <Symbol UId="2322">
+      <Component Name="r" UId="2323" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2324" />
+  <Token Text=":=" UId="2325" />
+  <Blank Num="1" UId="2326" />
+  <Token Text="(" UId="2327" />
+  <Access Scope="GlobalVariable" UId="2328">
+    <Symbol UId="2329">
+      <Component Name="ROLL_State" UId="2330">
+        <BooleanAttribute Name="HasQuotes" UId="2331">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2332" />
+      <Component Name="M" UId="2333">
+        <Token Text="[" UId="2334" />
+        <Access Scope="LiteralConstant" UId="2335">
+          <Constant UId="2336">
+            <ConstantValue UId="2338">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2339" />
+        <Blank Num="1" UId="2340" />
+        <Access Scope="LiteralConstant" UId="2341">
+          <Constant UId="2342">
+            <ConstantValue UId="2344">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2345" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2346" />
+  <Token Text="OR" UId="2347" />
+  <Blank Num="1" UId="2348" />
+  <Access Scope="GlobalVariable" UId="2349">
+    <Symbol UId="2350">
+      <Component Name="ROLL_State" UId="2351">
+        <BooleanAttribute Name="HasQuotes" UId="2352">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2353" />
+      <Component Name="M" UId="2354">
+        <Token Text="[" UId="2355" />
+        <Access Scope="LiteralConstant" UId="2356">
+          <Constant UId="2357">
+            <ConstantValue UId="2359">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2360" />
+        <Blank Num="1" UId="2361" />
+        <Access Scope="LiteralConstant" UId="2362">
+          <Constant UId="2363">
+            <ConstantValue UId="2365">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2366" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2367" />
+  <Token Text="OR" UId="2368" />
+  <Blank Num="1" UId="2369" />
+  <Access Scope="GlobalVariable" UId="2370">
+    <Symbol UId="2371">
+      <Component Name="ROLL_State" UId="2372">
+        <BooleanAttribute Name="HasQuotes" UId="2373">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2374" />
+      <Component Name="M" UId="2375">
+        <Token Text="[" UId="2376" />
+        <Access Scope="LiteralConstant" UId="2377">
+          <Constant UId="2378">
+            <ConstantValue UId="2380">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2381" />
+        <Blank Num="1" UId="2382" />
+        <Access Scope="LiteralConstant" UId="2383">
+          <Constant UId="2384">
+            <ConstantValue UId="2386">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2387" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2388" />
+  <Token Text="OR" UId="2389" />
+  <Blank Num="1" UId="2390" />
+  <Access Scope="GlobalVariable" UId="2391">
+    <Symbol UId="2392">
+      <Component Name="ROLL_State" UId="2393">
+        <BooleanAttribute Name="HasQuotes" UId="2394">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2395" />
+      <Component Name="M" UId="2396">
+        <Token Text="[" UId="2397" />
+        <Access Scope="LiteralConstant" UId="2398">
+          <Constant UId="2399">
+            <ConstantValue UId="2401">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2402" />
+        <Blank Num="1" UId="2403" />
+        <Access Scope="LiteralConstant" UId="2404">
+          <Constant UId="2405">
+            <ConstantValue UId="2407">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2408" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2409" />
+  <Token Text="OR" UId="2410" />
+  <Blank Num="1" UId="2411" />
+  <Access Scope="GlobalVariable" UId="2412">
+    <Symbol UId="2413">
+      <Component Name="ROLL_State" UId="2414">
+        <BooleanAttribute Name="HasQuotes" UId="2415">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2416" />
+      <Component Name="M" UId="2417">
+        <Token Text="[" UId="2418" />
+        <Access Scope="LiteralConstant" UId="2419">
+          <Constant UId="2420">
+            <ConstantValue UId="2422">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2423" />
+        <Blank Num="1" UId="2424" />
+        <Access Scope="LiteralConstant" UId="2425">
+          <Constant UId="2426">
+            <ConstantValue UId="2428">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2429" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2430" />
+  <Token Text="OR" UId="2431" />
+  <Blank Num="1" UId="2432" />
+  <Access Scope="GlobalVariable" UId="2433">
+    <Symbol UId="2434">
+      <Component Name="ROLL_State" UId="2435">
+        <BooleanAttribute Name="HasQuotes" UId="2436">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2437" />
+      <Component Name="M" UId="2438">
+        <Token Text="[" UId="2439" />
+        <Access Scope="LiteralConstant" UId="2440">
+          <Constant UId="2441">
+            <ConstantValue UId="2443">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2444" />
+        <Blank Num="1" UId="2445" />
+        <Access Scope="LiteralConstant" UId="2446">
+          <Constant UId="2447">
+            <ConstantValue UId="2449">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2450" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2451" />
+  <Token Text="OR" UId="2452" />
+  <Blank Num="1" UId="2453" />
+  <Access Scope="GlobalVariable" UId="2454">
+    <Symbol UId="2455">
+      <Component Name="ROLL_State" UId="2456">
+        <BooleanAttribute Name="HasQuotes" UId="2457">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2458" />
+      <Component Name="M" UId="2459">
+        <Token Text="[" UId="2460" />
+        <Access Scope="LiteralConstant" UId="2461">
+          <Constant UId="2462">
+            <ConstantValue UId="2464">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2465" />
+        <Blank Num="1" UId="2466" />
+        <Access Scope="LiteralConstant" UId="2467">
+          <Constant UId="2468">
+            <ConstantValue UId="2470">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2471" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2472" />
+  <Token Text="OR" UId="2473" />
+  <Blank Num="1" UId="2474" />
+  <Access Scope="GlobalVariable" UId="2475">
+    <Symbol UId="2476">
+      <Component Name="ROLL_State" UId="2477">
+        <BooleanAttribute Name="HasQuotes" UId="2478">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2479" />
+      <Component Name="M" UId="2480">
+        <Token Text="[" UId="2481" />
+        <Access Scope="LiteralConstant" UId="2482">
+          <Constant UId="2483">
+            <ConstantValue UId="2485">87</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2486" />
+        <Blank Num="1" UId="2487" />
+        <Access Scope="LiteralConstant" UId="2488">
+          <Constant UId="2489">
+            <ConstantValue UId="2491">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2492" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2493" />
+  <Token Text="OR" UId="2494" />
+  <Blank Num="1" UId="2495" />
+  <Access Scope="GlobalVariable" UId="2496">
+    <Symbol UId="2497">
+      <Component Name="ROLL_State" UId="2498">
+        <BooleanAttribute Name="HasQuotes" UId="2499">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2500" />
+      <Component Name="M" UId="2501">
+        <Token Text="[" UId="2502" />
+        <Access Scope="LiteralConstant" UId="2503">
+          <Constant UId="2504">
+            <ConstantValue UId="2506">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2507" />
+        <Blank Num="1" UId="2508" />
+        <Access Scope="LiteralConstant" UId="2509">
+          <Constant UId="2510">
+            <ConstantValue UId="2512">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2513" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2514" />
+  <Token Text="OR" UId="2515" />
+  <Blank Num="1" UId="2516" />
+  <Access Scope="GlobalVariable" UId="2517">
+    <Symbol UId="2518">
+      <Component Name="ROLL_State" UId="2519">
+        <BooleanAttribute Name="HasQuotes" UId="2520">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2521" />
+      <Component Name="M" UId="2522">
+        <Token Text="[" UId="2523" />
+        <Access Scope="LiteralConstant" UId="2524">
+          <Constant UId="2525">
+            <ConstantValue UId="2527">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2528" />
+        <Blank Num="1" UId="2529" />
+        <Access Scope="LiteralConstant" UId="2530">
+          <Constant UId="2531">
+            <ConstantValue UId="2533">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2534" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2535" />
+  <Token Text="OR" UId="2536" />
+  <Blank Num="1" UId="2537" />
+  <Access Scope="GlobalVariable" UId="2538">
+    <Symbol UId="2539">
+      <Component Name="ROLL_State" UId="2540">
+        <BooleanAttribute Name="HasQuotes" UId="2541">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2542" />
+      <Component Name="M" UId="2543">
+        <Token Text="[" UId="2544" />
+        <Access Scope="LiteralConstant" UId="2545">
+          <Constant UId="2546">
+            <ConstantValue UId="2548">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2549" />
+        <Blank Num="1" UId="2550" />
+        <Access Scope="LiteralConstant" UId="2551">
+          <Constant UId="2552">
+            <ConstantValue UId="2554">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2555" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2556" />
+  <Token Text="OR" UId="2557" />
+  <Blank Num="1" UId="2558" />
+  <Access Scope="GlobalVariable" UId="2559">
+    <Symbol UId="2560">
+      <Component Name="ROLL_State" UId="2561">
+        <BooleanAttribute Name="HasQuotes" UId="2562">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2563" />
+      <Component Name="M" UId="2564">
+        <Token Text="[" UId="2565" />
+        <Access Scope="LiteralConstant" UId="2566">
+          <Constant UId="2567">
+            <ConstantValue UId="2569">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2570" />
+        <Blank Num="1" UId="2571" />
+        <Access Scope="LiteralConstant" UId="2572">
+          <Constant UId="2573">
+            <ConstantValue UId="2575">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2576" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2577" />
+  <Token Text="OR" UId="2578" />
+  <Blank Num="1" UId="2579" />
+  <Access Scope="GlobalVariable" UId="2580">
+    <Symbol UId="2581">
+      <Component Name="ROLL_State" UId="2582">
+        <BooleanAttribute Name="HasQuotes" UId="2583">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2584" />
+      <Component Name="M" UId="2585">
+        <Token Text="[" UId="2586" />
+        <Access Scope="LiteralConstant" UId="2587">
+          <Constant UId="2588">
+            <ConstantValue UId="2590">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2591" />
+        <Blank Num="1" UId="2592" />
+        <Access Scope="LiteralConstant" UId="2593">
+          <Constant UId="2594">
+            <ConstantValue UId="2596">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2597" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2598" />
+  <Token Text="OR" UId="2599" />
+  <Blank Num="1" UId="2600" />
+  <Access Scope="GlobalVariable" UId="2601">
+    <Symbol UId="2602">
+      <Component Name="ROLL_State" UId="2603">
+        <BooleanAttribute Name="HasQuotes" UId="2604">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2605" />
+      <Component Name="M" UId="2606">
+        <Token Text="[" UId="2607" />
+        <Access Scope="LiteralConstant" UId="2608">
+          <Constant UId="2609">
+            <ConstantValue UId="2611">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2612" />
+        <Blank Num="1" UId="2613" />
+        <Access Scope="LiteralConstant" UId="2614">
+          <Constant UId="2615">
+            <ConstantValue UId="2617">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2618" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2619" />
+  <Token Text="OR" UId="2620" />
+  <Blank Num="1" UId="2621" />
+  <Access Scope="GlobalVariable" UId="2622">
+    <Symbol UId="2623">
+      <Component Name="ROLL_State" UId="2624">
+        <BooleanAttribute Name="HasQuotes" UId="2625">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2626" />
+      <Component Name="M" UId="2627">
+        <Token Text="[" UId="2628" />
+        <Access Scope="LiteralConstant" UId="2629">
+          <Constant UId="2630">
+            <ConstantValue UId="2632">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2633" />
+        <Blank Num="1" UId="2634" />
+        <Access Scope="LiteralConstant" UId="2635">
+          <Constant UId="2636">
+            <ConstantValue UId="2638">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2639" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="2640" />
+  <Token Text=";" UId="2641" />
+  <NewLine Num="1" UId="2642" />
+  <Access Scope="GlobalVariable" UId="2643">
+    <Symbol UId="2644">
+      <Component Name="ROLL_State" UId="2645">
+        <BooleanAttribute Name="HasQuotes" UId="2646">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2647" />
+      <Component Name="M" UId="2648">
+        <Token Text="[" UId="2649" />
+        <Access Scope="LiteralConstant" UId="2650">
+          <Constant UId="2651">
+            <ConstantValue UId="2653">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2654" />
+        <Blank Num="1" UId="2655" />
+        <Access Scope="LiteralConstant" UId="2656">
+          <Constant UId="2657">
+            <ConstantValue UId="2659">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2660" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2661" />
+  <Token Text=":=" UId="2662" />
+  <Blank Num="1" UId="2663" />
+  <Access Scope="LocalVariable" UId="2664">
+    <Symbol UId="2665">
+      <Component Name="r" UId="2666" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2667" />
+  <NewLine Num="1" UId="2668" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="2669">
+    <Text UId="2670"> PB25, STEP 5 network 18</Text>
+  </LineComment>
+  <NewLine Num="1" UId="2671" />
+  <Access Scope="LocalVariable" UId="2672">
+    <Symbol UId="2673">
+      <Component Name="r" UId="2674" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2675" />
+  <Token Text=":=" UId="2676" />
+  <Blank Num="1" UId="2677" />
+  <Token Text="(" UId="2678" />
+  <Access Scope="GlobalVariable" UId="2679">
+    <Symbol UId="2680">
+      <Component Name="ROLL_IO" UId="2681">
+        <BooleanAttribute Name="HasQuotes" UId="2682">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2683" />
+      <Component Name="Input" UId="2684">
+        <Token Text="[" UId="2685" />
+        <Access Scope="LiteralConstant" UId="2686">
+          <Constant UId="2687">
+            <ConstantValue UId="2689">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2690" />
+        <Blank Num="1" UId="2691" />
+        <Access Scope="LiteralConstant" UId="2692">
+          <Constant UId="2693">
+            <ConstantValue UId="2695">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2696" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2697" />
+  <Token Text="OR" UId="2698" />
+  <Blank Num="1" UId="2699" />
+  <Access Scope="GlobalVariable" UId="2700">
+    <Symbol UId="2701">
+      <Component Name="ROLL_State" UId="2702">
+        <BooleanAttribute Name="HasQuotes" UId="2703">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2704" />
+      <Component Name="M" UId="2705">
+        <Token Text="[" UId="2706" />
+        <Access Scope="LiteralConstant" UId="2707">
+          <Constant UId="2708">
+            <ConstantValue UId="2710">88</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2711" />
+        <Blank Num="1" UId="2712" />
+        <Access Scope="LiteralConstant" UId="2713">
+          <Constant UId="2714">
+            <ConstantValue UId="2716">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2717" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="2718" />
+  <Token Text=";" UId="2719" />
+  <NewLine Num="1" UId="2720" />
+  <Access Scope="GlobalVariable" UId="2721">
+    <Symbol UId="2722">
+      <Component Name="ROLL_IO" UId="2723">
+        <BooleanAttribute Name="HasQuotes" UId="2724">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2725" />
+      <Component Name="Output" UId="2726">
+        <Token Text="[" UId="2727" />
+        <Access Scope="LiteralConstant" UId="2728">
+          <Constant UId="2729">
+            <ConstantValue UId="2731">16</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2732" />
+        <Blank Num="1" UId="2733" />
+        <Access Scope="LiteralConstant" UId="2734">
+          <Constant UId="2735">
+            <ConstantValue UId="2737">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2738" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2739" />
+  <Token Text=":=" UId="2740" />
+  <Blank Num="1" UId="2741" />
+  <Access Scope="LocalVariable" UId="2742">
+    <Symbol UId="2743">
+      <Component Name="r" UId="2744" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2745" />
+  <NewLine Num="1" UId="2746" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="2747">
+    <Text UId="2748"> PB25, STEP 5 network 19</Text>
+  </LineComment>
+  <NewLine Num="1" UId="2749" />
+  <Access Scope="LocalVariable" UId="2750">
+    <Symbol UId="2751">
+      <Component Name="r" UId="2752" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2753" />
+  <Token Text=":=" UId="2754" />
+  <Blank Num="1" UId="2755" />
+  <Token Text="(" UId="2756" />
+  <Token Text="(" UId="2757" />
+  <Access Scope="GlobalVariable" UId="2758">
+    <Symbol UId="2759">
+      <Component Name="ROLL_State" UId="2760">
+        <BooleanAttribute Name="HasQuotes" UId="2761">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2762" />
+      <Component Name="M" UId="2763">
+        <Token Text="[" UId="2764" />
+        <Access Scope="LiteralConstant" UId="2765">
+          <Constant UId="2766">
+            <ConstantValue UId="2768">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2769" />
+        <Blank Num="1" UId="2770" />
+        <Access Scope="LiteralConstant" UId="2771">
+          <Constant UId="2772">
+            <ConstantValue UId="2774">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2775" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2776" />
+  <Token Text="AND" UId="2777" />
+  <Blank Num="1" UId="2778" />
+  <Access Scope="GlobalVariable" UId="2779">
+    <Symbol UId="2780">
+      <Component Name="ROLL_State" UId="2781">
+        <BooleanAttribute Name="HasQuotes" UId="2782">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2783" />
+      <Component Name="M" UId="2784">
+        <Token Text="[" UId="2785" />
+        <Access Scope="LiteralConstant" UId="2786">
+          <Constant UId="2787">
+            <ConstantValue UId="2789">31</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2790" />
+        <Blank Num="1" UId="2791" />
+        <Access Scope="LiteralConstant" UId="2792">
+          <Constant UId="2793">
+            <ConstantValue UId="2795">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2796" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="2797" />
+  <Blank Num="1" UId="2798" />
+  <Token Text="OR" UId="2799" />
+  <Blank Num="1" UId="2800" />
+  <Access Scope="GlobalVariable" UId="2801">
+    <Symbol UId="2802">
+      <Component Name="ROLL_IO" UId="2803">
+        <BooleanAttribute Name="HasQuotes" UId="2804">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2805" />
+      <Component Name="Input" UId="2806">
+        <Token Text="[" UId="2807" />
+        <Access Scope="LiteralConstant" UId="2808">
+          <Constant UId="2809">
+            <ConstantValue UId="2811">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2812" />
+        <Blank Num="1" UId="2813" />
+        <Access Scope="LiteralConstant" UId="2814">
+          <Constant UId="2815">
+            <ConstantValue UId="2817">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2818" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="2819" />
+  <Token Text=";" UId="2820" />
+  <NewLine Num="1" UId="2821" />
+  <Access Scope="GlobalVariable" UId="2822">
+    <Symbol UId="2823">
+      <Component Name="ROLL_IO" UId="2824">
+        <BooleanAttribute Name="HasQuotes" UId="2825">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2826" />
+      <Component Name="Output" UId="2827">
+        <Token Text="[" UId="2828" />
+        <Access Scope="LiteralConstant" UId="2829">
+          <Constant UId="2830">
+            <ConstantValue UId="2832">16</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2833" />
+        <Blank Num="1" UId="2834" />
+        <Access Scope="LiteralConstant" UId="2835">
+          <Constant UId="2836">
+            <ConstantValue UId="2838">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2839" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2840" />
+  <Token Text=":=" UId="2841" />
+  <Blank Num="1" UId="2842" />
+  <Access Scope="LocalVariable" UId="2843">
+    <Symbol UId="2844">
+      <Component Name="r" UId="2845" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2846" />
+  <NewLine Num="1" UId="2847" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="2848">
+    <Text UId="2849"> PB25, STEP 5 network 20</Text>
+  </LineComment>
+  <NewLine Num="1" UId="2850" />
+  <Access Scope="LocalVariable" UId="2851">
+    <Symbol UId="2852">
+      <Component Name="r" UId="2853" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2854" />
+  <Token Text=":=" UId="2855" />
+  <Blank Num="1" UId="2856" />
+  <Token Text="(" UId="2857" />
+  <Access Scope="GlobalVariable" UId="2858">
+    <Symbol UId="2859">
+      <Component Name="ROLL_IO" UId="2860">
+        <BooleanAttribute Name="HasQuotes" UId="2861">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2862" />
+      <Component Name="Input" UId="2863">
+        <Token Text="[" UId="2864" />
+        <Access Scope="LiteralConstant" UId="2865">
+          <Constant UId="2866">
+            <ConstantValue UId="2868">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2869" />
+        <Blank Num="1" UId="2870" />
+        <Access Scope="LiteralConstant" UId="2871">
+          <Constant UId="2872">
+            <ConstantValue UId="2874">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2875" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2876" />
+  <Token Text="OR" UId="2877" />
+  <Blank Num="1" UId="2878" />
+  <Access Scope="GlobalVariable" UId="2879">
+    <Symbol UId="2880">
+      <Component Name="ROLL_IO" UId="2881">
+        <BooleanAttribute Name="HasQuotes" UId="2882">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2883" />
+      <Component Name="Input" UId="2884">
+        <Token Text="[" UId="2885" />
+        <Access Scope="LiteralConstant" UId="2886">
+          <Constant UId="2887">
+            <ConstantValue UId="2889">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2890" />
+        <Blank Num="1" UId="2891" />
+        <Access Scope="LiteralConstant" UId="2892">
+          <Constant UId="2893">
+            <ConstantValue UId="2895">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2896" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="2897" />
+  <Token Text=";" UId="2898" />
+  <NewLine Num="1" UId="2899" />
+  <Access Scope="GlobalVariable" UId="2900">
+    <Symbol UId="2901">
+      <Component Name="ROLL_IO" UId="2902">
+        <BooleanAttribute Name="HasQuotes" UId="2903">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2904" />
+      <Component Name="Output" UId="2905">
+        <Token Text="[" UId="2906" />
+        <Access Scope="LiteralConstant" UId="2907">
+          <Constant UId="2908">
+            <ConstantValue UId="2910">16</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2911" />
+        <Blank Num="1" UId="2912" />
+        <Access Scope="LiteralConstant" UId="2913">
+          <Constant UId="2914">
+            <ConstantValue UId="2916">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2917" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2918" />
+  <Token Text=":=" UId="2919" />
+  <Blank Num="1" UId="2920" />
+  <Access Scope="LocalVariable" UId="2921">
+    <Symbol UId="2922">
+      <Component Name="r" UId="2923" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="2924" />
+  <NewLine Num="1" UId="2925" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="2926">
+    <Text UId="2927"> PB25, STEP 5 network 21</Text>
+  </LineComment>
+  <NewLine Num="1" UId="2928" />
+  <Access Scope="LocalVariable" UId="2929">
+    <Symbol UId="2930">
+      <Component Name="r" UId="2931" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="2932" />
+  <Token Text=":=" UId="2933" />
+  <Blank Num="1" UId="2934" />
+  <Token Text="(" UId="2935" />
+  <Token Text="(" UId="2936" />
+  <Token Text="(" UId="2937" />
+  <Token Text="NOT" UId="2938" />
+  <Blank Num="1" UId="2939" />
+  <Access Scope="GlobalVariable" UId="2940">
+    <Symbol UId="2941">
+      <Component Name="ROLL_State" UId="2942">
+        <BooleanAttribute Name="HasQuotes" UId="2943">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2944" />
+      <Component Name="M" UId="2945">
+        <Token Text="[" UId="2946" />
+        <Access Scope="LiteralConstant" UId="2947">
+          <Constant UId="2948">
+            <ConstantValue UId="2950">31</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2951" />
+        <Blank Num="1" UId="2952" />
+        <Access Scope="LiteralConstant" UId="2953">
+          <Constant UId="2954">
+            <ConstantValue UId="2956">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2957" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="2958" />
+  <Blank Num="1" UId="2959" />
+  <Token Text="AND" UId="2960" />
+  <Blank Num="1" UId="2961" />
+  <Access Scope="GlobalVariable" UId="2962">
+    <Symbol UId="2963">
+      <Component Name="ROLL_State" UId="2964">
+        <BooleanAttribute Name="HasQuotes" UId="2965">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2966" />
+      <Component Name="M" UId="2967">
+        <Token Text="[" UId="2968" />
+        <Access Scope="LiteralConstant" UId="2969">
+          <Constant UId="2970">
+            <ConstantValue UId="2972">28</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2973" />
+        <Blank Num="1" UId="2974" />
+        <Access Scope="LiteralConstant" UId="2975">
+          <Constant UId="2976">
+            <ConstantValue UId="2978">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="2979" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="2980" />
+  <Blank Num="1" UId="2981" />
+  <Token Text="OR" UId="2982" />
+  <Blank Num="1" UId="2983" />
+  <Token Text="(" UId="2984" />
+  <Access Scope="GlobalVariable" UId="2985">
+    <Symbol UId="2986">
+      <Component Name="ROLL_State" UId="2987">
+        <BooleanAttribute Name="HasQuotes" UId="2988">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="2989" />
+      <Component Name="M" UId="2990">
+        <Token Text="[" UId="2991" />
+        <Access Scope="LiteralConstant" UId="2992">
+          <Constant UId="2993">
+            <ConstantValue UId="2995">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="2996" />
+        <Blank Num="1" UId="2997" />
+        <Access Scope="LiteralConstant" UId="2998">
+          <Constant UId="2999">
+            <ConstantValue UId="3001">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3002" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3003" />
+  <Token Text="AND" UId="3004" />
+  <Blank Num="1" UId="3005" />
+  <Access Scope="GlobalVariable" UId="3006">
+    <Symbol UId="3007">
+      <Component Name="ROLL_State" UId="3008">
+        <BooleanAttribute Name="HasQuotes" UId="3009">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3010" />
+      <Component Name="M" UId="3011">
+        <Token Text="[" UId="3012" />
+        <Access Scope="LiteralConstant" UId="3013">
+          <Constant UId="3014">
+            <ConstantValue UId="3016">74</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3017" />
+        <Blank Num="1" UId="3018" />
+        <Access Scope="LiteralConstant" UId="3019">
+          <Constant UId="3020">
+            <ConstantValue UId="3022">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3023" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="3024" />
+  <Blank Num="1" UId="3025" />
+  <Token Text="OR" UId="3026" />
+  <Blank Num="1" UId="3027" />
+  <Access Scope="GlobalVariable" UId="3028">
+    <Symbol UId="3029">
+      <Component Name="ROLL_IO" UId="3030">
+        <BooleanAttribute Name="HasQuotes" UId="3031">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3032" />
+      <Component Name="Input" UId="3033">
+        <Token Text="[" UId="3034" />
+        <Access Scope="LiteralConstant" UId="3035">
+          <Constant UId="3036">
+            <ConstantValue UId="3038">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3039" />
+        <Blank Num="1" UId="3040" />
+        <Access Scope="LiteralConstant" UId="3041">
+          <Constant UId="3042">
+            <ConstantValue UId="3044">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3045" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="3046" />
+  <Token Text=";" UId="3047" />
+  <NewLine Num="1" UId="3048" />
+  <Access Scope="GlobalVariable" UId="3049">
+    <Symbol UId="3050">
+      <Component Name="ROLL_IO" UId="3051">
+        <BooleanAttribute Name="HasQuotes" UId="3052">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3053" />
+      <Component Name="Output" UId="3054">
+        <Token Text="[" UId="3055" />
+        <Access Scope="LiteralConstant" UId="3056">
+          <Constant UId="3057">
+            <ConstantValue UId="3059">16</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3060" />
+        <Blank Num="1" UId="3061" />
+        <Access Scope="LiteralConstant" UId="3062">
+          <Constant UId="3063">
+            <ConstantValue UId="3065">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3066" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3067" />
+  <Token Text=":=" UId="3068" />
+  <Blank Num="1" UId="3069" />
+  <Access Scope="LocalVariable" UId="3070">
+    <Symbol UId="3071">
+      <Component Name="r" UId="3072" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="3073" />
+  <NewLine Num="1" UId="3074" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="3075">
+    <Text UId="3076"> PB25, STEP 5 network 22</Text>
+  </LineComment>
+  <NewLine Num="1" UId="3077" />
+  <Access Scope="LocalVariable" UId="3078">
+    <Symbol UId="3079">
+      <Component Name="r" UId="3080" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3081" />
+  <Token Text=":=" UId="3082" />
+  <Blank Num="1" UId="3083" />
+  <Token Text="(" UId="3084" />
+  <Token Text="(" UId="3085" />
+  <Access Scope="GlobalVariable" UId="3086">
+    <Symbol UId="3087">
+      <Component Name="ROLL_State" UId="3088">
+        <BooleanAttribute Name="HasQuotes" UId="3089">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3090" />
+      <Component Name="M" UId="3091">
+        <Token Text="[" UId="3092" />
+        <Access Scope="LiteralConstant" UId="3093">
+          <Constant UId="3094">
+            <ConstantValue UId="3096">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3097" />
+        <Blank Num="1" UId="3098" />
+        <Access Scope="LiteralConstant" UId="3099">
+          <Constant UId="3100">
+            <ConstantValue UId="3102">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3103" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3104" />
+  <Token Text="AND" UId="3105" />
+  <Blank Num="1" UId="3106" />
+  <Access Scope="GlobalVariable" UId="3107">
+    <Symbol UId="3108">
+      <Component Name="ROLL_State" UId="3109">
+        <BooleanAttribute Name="HasQuotes" UId="3110">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3111" />
+      <Component Name="M" UId="3112">
+        <Token Text="[" UId="3113" />
+        <Access Scope="LiteralConstant" UId="3114">
+          <Constant UId="3115">
+            <ConstantValue UId="3117">31</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3118" />
+        <Blank Num="1" UId="3119" />
+        <Access Scope="LiteralConstant" UId="3120">
+          <Constant UId="3121">
+            <ConstantValue UId="3123">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3124" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="3125" />
+  <Blank Num="1" UId="3126" />
+  <Token Text="OR" UId="3127" />
+  <Blank Num="1" UId="3128" />
+  <Access Scope="GlobalVariable" UId="3129">
+    <Symbol UId="3130">
+      <Component Name="ROLL_IO" UId="3131">
+        <BooleanAttribute Name="HasQuotes" UId="3132">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3133" />
+      <Component Name="Input" UId="3134">
+        <Token Text="[" UId="3135" />
+        <Access Scope="LiteralConstant" UId="3136">
+          <Constant UId="3137">
+            <ConstantValue UId="3139">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3140" />
+        <Blank Num="1" UId="3141" />
+        <Access Scope="LiteralConstant" UId="3142">
+          <Constant UId="3143">
+            <ConstantValue UId="3145">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3146" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3147" />
+  <Token Text="OR" UId="3148" />
+  <Blank Num="1" UId="3149" />
+  <Access Scope="GlobalVariable" UId="3150">
+    <Symbol UId="3151">
+      <Component Name="ROLL_State" UId="3152">
+        <BooleanAttribute Name="HasQuotes" UId="3153">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3154" />
+      <Component Name="M" UId="3155">
+        <Token Text="[" UId="3156" />
+        <Access Scope="LiteralConstant" UId="3157">
+          <Constant UId="3158">
+            <ConstantValue UId="3160">31</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3161" />
+        <Blank Num="1" UId="3162" />
+        <Access Scope="LiteralConstant" UId="3163">
+          <Constant UId="3164">
+            <ConstantValue UId="3166">4</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3167" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="3168" />
+  <Token Text=";" UId="3169" />
+  <NewLine Num="1" UId="3170" />
+  <Access Scope="GlobalVariable" UId="3171">
+    <Symbol UId="3172">
+      <Component Name="ROLL_IO" UId="3173">
+        <BooleanAttribute Name="HasQuotes" UId="3174">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3175" />
+      <Component Name="Output" UId="3176">
+        <Token Text="[" UId="3177" />
+        <Access Scope="LiteralConstant" UId="3178">
+          <Constant UId="3179">
+            <ConstantValue UId="3181">16</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3182" />
+        <Blank Num="1" UId="3183" />
+        <Access Scope="LiteralConstant" UId="3184">
+          <Constant UId="3185">
+            <ConstantValue UId="3187">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3188" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3189" />
+  <Token Text=":=" UId="3190" />
+  <Blank Num="1" UId="3191" />
+  <Access Scope="LocalVariable" UId="3192">
+    <Symbol UId="3193">
+      <Component Name="r" UId="3194" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="3195" />
+  <NewLine Num="1" UId="3196" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="3197">
+    <Text UId="3198"> PB25, STEP 5 network 23</Text>
+  </LineComment>
+  <NewLine Num="1" UId="3199" />
+  <Access Scope="LocalVariable" UId="3200">
+    <Symbol UId="3201">
+      <Component Name="r" UId="3202" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3203" />
+  <Token Text=":=" UId="3204" />
+  <Blank Num="1" UId="3205" />
+  <Access Scope="GlobalVariable" UId="3206">
+    <Symbol UId="3207">
+      <Component Name="ROLL_IO" UId="3208">
+        <BooleanAttribute Name="HasQuotes" UId="3209">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3210" />
+      <Component Name="Input" UId="3211">
+        <Token Text="[" UId="3212" />
+        <Access Scope="LiteralConstant" UId="3213">
+          <Constant UId="3214">
+            <ConstantValue UId="3216">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3217" />
+        <Blank Num="1" UId="3218" />
+        <Access Scope="LiteralConstant" UId="3219">
+          <Constant UId="3220">
+            <ConstantValue UId="3222">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3223" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="3224" />
+  <NewLine Num="1" UId="3225" />
+  <Access Scope="GlobalVariable" UId="3226">
+    <Symbol UId="3227">
+      <Component Name="ROLL_IO" UId="3228">
+        <BooleanAttribute Name="HasQuotes" UId="3229">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3230" />
+      <Component Name="Output" UId="3231">
+        <Token Text="[" UId="3232" />
+        <Access Scope="LiteralConstant" UId="3233">
+          <Constant UId="3234">
+            <ConstantValue UId="3236">19</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3237" />
+        <Blank Num="1" UId="3238" />
+        <Access Scope="LiteralConstant" UId="3239">
+          <Constant UId="3240">
+            <ConstantValue UId="3242">3</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3243" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3244" />
+  <Token Text=":=" UId="3245" />
+  <Blank Num="1" UId="3246" />
+  <Access Scope="LocalVariable" UId="3247">
+    <Symbol UId="3248">
+      <Component Name="r" UId="3249" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="3250" />
+  <NewLine Num="1" UId="3251" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="3252">
+    <Text UId="3253"> PB25, STEP 5 network 24</Text>
+  </LineComment>
+  <NewLine Num="1" UId="3254" />
+  <Access Scope="LocalVariable" UId="3255">
+    <Symbol UId="3256">
+      <Component Name="r" UId="3257" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3258" />
+  <Token Text=":=" UId="3259" />
+  <Blank Num="1" UId="3260" />
+  <Token Text="(" UId="3261" />
+  <Token Text="(" UId="3262" />
+  <Token Text="(" UId="3263" />
+  <Token Text="(" UId="3264" />
+  <Access Scope="GlobalVariable" UId="3265">
+    <Symbol UId="3266">
+      <Component Name="ROLL_IO" UId="3267">
+        <BooleanAttribute Name="HasQuotes" UId="3268">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3269" />
+      <Component Name="Input" UId="3270">
+        <Token Text="[" UId="3271" />
+        <Access Scope="LiteralConstant" UId="3272">
+          <Constant UId="3273">
+            <ConstantValue UId="3275">14</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3276" />
+        <Blank Num="1" UId="3277" />
+        <Access Scope="LiteralConstant" UId="3278">
+          <Constant UId="3279">
+            <ConstantValue UId="3281">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3282" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3283" />
+  <Token Text="AND" UId="3284" />
+  <Blank Num="1" UId="3285" />
+  <Access Scope="GlobalVariable" UId="3286">
+    <Symbol UId="3287">
+      <Component Name="ROLL_State" UId="3288">
+        <BooleanAttribute Name="HasQuotes" UId="3289">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3290" />
+      <Component Name="M" UId="3291">
+        <Token Text="[" UId="3292" />
+        <Access Scope="LiteralConstant" UId="3293">
+          <Constant UId="3294">
+            <ConstantValue UId="3296">37</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3297" />
+        <Blank Num="1" UId="3298" />
+        <Access Scope="LiteralConstant" UId="3299">
+          <Constant UId="3300">
+            <ConstantValue UId="3302">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3303" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="3304" />
+  <Blank Num="1" UId="3305" />
+  <Token Text="OR" UId="3306" />
+  <Blank Num="1" UId="3307" />
+  <Access Scope="GlobalVariable" UId="3308">
+    <Symbol UId="3309">
+      <Component Name="ROLL_State" UId="3310">
+        <BooleanAttribute Name="HasQuotes" UId="3311">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3312" />
+      <Component Name="M" UId="3313">
+        <Token Text="[" UId="3314" />
+        <Access Scope="LiteralConstant" UId="3315">
+          <Constant UId="3316">
+            <ConstantValue UId="3318">53</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3319" />
+        <Blank Num="1" UId="3320" />
+        <Access Scope="LiteralConstant" UId="3321">
+          <Constant UId="3322">
+            <ConstantValue UId="3324">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3325" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="3326" />
+  <Blank Num="1" UId="3327" />
+  <Token Text="AND" UId="3328" />
+  <Blank Num="1" UId="3329" />
+  <Access Scope="GlobalVariable" UId="3330">
+    <Symbol UId="3331">
+      <Component Name="ROLL_IO" UId="3332">
+        <BooleanAttribute Name="HasQuotes" UId="3333">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3334" />
+      <Component Name="Input" UId="3335">
+        <Token Text="[" UId="3336" />
+        <Access Scope="LiteralConstant" UId="3337">
+          <Constant UId="3338">
+            <ConstantValue UId="3340">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3341" />
+        <Blank Num="1" UId="3342" />
+        <Access Scope="LiteralConstant" UId="3343">
+          <Constant UId="3344">
+            <ConstantValue UId="3346">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3347" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="3348" />
+  <Blank Num="1" UId="3349" />
+  <Token Text="OR" UId="3350" />
+  <Blank Num="1" UId="3351" />
+  <Token Text="(" UId="3352" />
+  <Access Scope="GlobalVariable" UId="3353">
+    <Symbol UId="3354">
+      <Component Name="ROLL_IO" UId="3355">
+        <BooleanAttribute Name="HasQuotes" UId="3356">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3357" />
+      <Component Name="Input" UId="3358">
+        <Token Text="[" UId="3359" />
+        <Access Scope="LiteralConstant" UId="3360">
+          <Constant UId="3361">
+            <ConstantValue UId="3363">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3364" />
+        <Blank Num="1" UId="3365" />
+        <Access Scope="LiteralConstant" UId="3366">
+          <Constant UId="3367">
+            <ConstantValue UId="3369">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3370" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3371" />
+  <Token Text="AND" UId="3372" />
+  <Blank Num="1" UId="3373" />
+  <Access Scope="GlobalVariable" UId="3374">
+    <Symbol UId="3375">
+      <Component Name="ROLL_State" UId="3376">
+        <BooleanAttribute Name="HasQuotes" UId="3377">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3378" />
+      <Component Name="M" UId="3379">
+        <Token Text="[" UId="3380" />
+        <Access Scope="LiteralConstant" UId="3381">
+          <Constant UId="3382">
+            <ConstantValue UId="3384">190</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3385" />
+        <Blank Num="1" UId="3386" />
+        <Access Scope="LiteralConstant" UId="3387">
+          <Constant UId="3388">
+            <ConstantValue UId="3390">6</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3391" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3392" />
+  <Token Text="AND" UId="3393" />
+  <Blank Num="1" UId="3394" />
+  <Access Scope="GlobalVariable" UId="3395">
+    <Symbol UId="3396">
+      <Component Name="ROLL_State" UId="3397">
+        <BooleanAttribute Name="HasQuotes" UId="3398">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3399" />
+      <Component Name="M" UId="3400">
+        <Token Text="[" UId="3401" />
+        <Access Scope="LiteralConstant" UId="3402">
+          <Constant UId="3403">
+            <ConstantValue UId="3405">20</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3406" />
+        <Blank Num="1" UId="3407" />
+        <Access Scope="LiteralConstant" UId="3408">
+          <Constant UId="3409">
+            <ConstantValue UId="3411">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3412" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="3413" />
+  <Token Text=")" UId="3414" />
+  <Token Text=";" UId="3415" />
+  <NewLine Num="1" UId="3416" />
+  <Token Text="IF" UId="3417" />
+  <Blank Num="1" UId="3418" />
+  <Access Scope="LocalVariable" UId="3419">
+    <Symbol UId="3420">
+      <Component Name="r" UId="3421" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3422" />
+  <Token Text="THEN" UId="3423" />
+  <NewLine Num="1" UId="3424" />
+  <Blank Num="4" UId="3425" />
+  <Access Scope="GlobalVariable" UId="3426">
+    <Symbol UId="3427">
+      <Component Name="ROLL_State" UId="3428">
+        <BooleanAttribute Name="HasQuotes" UId="3429">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3430" />
+      <Component Name="M" UId="3431">
+        <Token Text="[" UId="3432" />
+        <Access Scope="LiteralConstant" UId="3433">
+          <Constant UId="3434">
+            <ConstantValue UId="3436">71</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3437" />
+        <Blank Num="1" UId="3438" />
+        <Access Scope="LiteralConstant" UId="3439">
+          <Constant UId="3440">
+            <ConstantValue UId="3442">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3443" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3444" />
+  <Token Text=":=" UId="3445" />
+  <Blank Num="1" UId="3446" />
+  <Access Scope="LiteralConstant" UId="3447">
+    <Constant UId="3448">
+      <ConstantValue UId="3450">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="3451" />
+  <NewLine Num="1" UId="3452" />
+  <Token Text="END_IF" UId="3453" />
+  <Token Text=";" UId="3454" />
+  <NewLine Num="1" UId="3455" />
+  <Access Scope="LocalVariable" UId="3456">
+    <Symbol UId="3457">
+      <Component Name="r" UId="3458" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3459" />
+  <Token Text=":=" UId="3460" />
+  <Blank Num="1" UId="3461" />
+  <Token Text="(" UId="3462" />
+  <Token Text="(" UId="3463" />
+  <Access Scope="GlobalVariable" UId="3464">
+    <Symbol UId="3465">
+      <Component Name="ROLL_IO" UId="3466">
+        <BooleanAttribute Name="HasQuotes" UId="3467">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3468" />
+      <Component Name="Input" UId="3469">
+        <Token Text="[" UId="3470" />
+        <Access Scope="LiteralConstant" UId="3471">
+          <Constant UId="3472">
+            <ConstantValue UId="3474">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3475" />
+        <Blank Num="1" UId="3476" />
+        <Access Scope="LiteralConstant" UId="3477">
+          <Constant UId="3478">
+            <ConstantValue UId="3480">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3481" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3482" />
+  <Token Text="AND" UId="3483" />
+  <Blank Num="1" UId="3484" />
+  <Access Scope="GlobalVariable" UId="3485">
+    <Symbol UId="3486">
+      <Component Name="ROLL_State" UId="3487">
+        <BooleanAttribute Name="HasQuotes" UId="3488">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3489" />
+      <Component Name="M" UId="3490">
+        <Token Text="[" UId="3491" />
+        <Access Scope="LiteralConstant" UId="3492">
+          <Constant UId="3493">
+            <ConstantValue UId="3495">190</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3496" />
+        <Blank Num="1" UId="3497" />
+        <Access Scope="LiteralConstant" UId="3498">
+          <Constant UId="3499">
+            <ConstantValue UId="3501">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3502" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3503" />
+  <Token Text="AND" UId="3504" />
+  <Blank Num="1" UId="3505" />
+  <Access Scope="GlobalVariable" UId="3506">
+    <Symbol UId="3507">
+      <Component Name="ROLL_State" UId="3508">
+        <BooleanAttribute Name="HasQuotes" UId="3509">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3510" />
+      <Component Name="M" UId="3511">
+        <Token Text="[" UId="3512" />
+        <Access Scope="LiteralConstant" UId="3513">
+          <Constant UId="3514">
+            <ConstantValue UId="3516">20</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3517" />
+        <Blank Num="1" UId="3518" />
+        <Access Scope="LiteralConstant" UId="3519">
+          <Constant UId="3520">
+            <ConstantValue UId="3522">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3523" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="3524" />
+  <Blank Num="1" UId="3525" />
+  <Token Text="OR" UId="3526" />
+  <Blank Num="1" UId="3527" />
+  <Token Text="(" UId="3528" />
+  <Access Scope="GlobalVariable" UId="3529">
+    <Symbol UId="3530">
+      <Component Name="ROLL_IO" UId="3531">
+        <BooleanAttribute Name="HasQuotes" UId="3532">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3533" />
+      <Component Name="Input" UId="3534">
+        <Token Text="[" UId="3535" />
+        <Access Scope="LiteralConstant" UId="3536">
+          <Constant UId="3537">
+            <ConstantValue UId="3539">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3540" />
+        <Blank Num="1" UId="3541" />
+        <Access Scope="LiteralConstant" UId="3542">
+          <Constant UId="3543">
+            <ConstantValue UId="3545">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3546" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3547" />
+  <Token Text="AND" UId="3548" />
+  <Blank Num="1" UId="3549" />
+  <Access Scope="GlobalVariable" UId="3550">
+    <Symbol UId="3551">
+      <Component Name="ROLL_State" UId="3552">
+        <BooleanAttribute Name="HasQuotes" UId="3553">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3554" />
+      <Component Name="M" UId="3555">
+        <Token Text="[" UId="3556" />
+        <Access Scope="LiteralConstant" UId="3557">
+          <Constant UId="3558">
+            <ConstantValue UId="3560">37</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3561" />
+        <Blank Num="1" UId="3562" />
+        <Access Scope="LiteralConstant" UId="3563">
+          <Constant UId="3564">
+            <ConstantValue UId="3566">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3567" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="3568" />
+  <Token Text=")" UId="3569" />
+  <Token Text=";" UId="3570" />
+  <NewLine Num="1" UId="3571" />
+  <Token Text="IF" UId="3572" />
+  <Blank Num="1" UId="3573" />
+  <Access Scope="LocalVariable" UId="3574">
+    <Symbol UId="3575">
+      <Component Name="r" UId="3576" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3577" />
+  <Token Text="THEN" UId="3578" />
+  <NewLine Num="1" UId="3579" />
+  <Blank Num="4" UId="3580" />
+  <Access Scope="GlobalVariable" UId="3581">
+    <Symbol UId="3582">
+      <Component Name="ROLL_State" UId="3583">
+        <BooleanAttribute Name="HasQuotes" UId="3584">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3585" />
+      <Component Name="M" UId="3586">
+        <Token Text="[" UId="3587" />
+        <Access Scope="LiteralConstant" UId="3588">
+          <Constant UId="3589">
+            <ConstantValue UId="3591">71</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3592" />
+        <Blank Num="1" UId="3593" />
+        <Access Scope="LiteralConstant" UId="3594">
+          <Constant UId="3595">
+            <ConstantValue UId="3597">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3598" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3599" />
+  <Token Text=":=" UId="3600" />
+  <Blank Num="1" UId="3601" />
+  <Access Scope="LiteralConstant" UId="3602">
+    <Constant UId="3603">
+      <ConstantValue UId="3605">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="3606" />
+  <NewLine Num="1" UId="3607" />
+  <Token Text="END_IF" UId="3608" />
+  <Token Text=";" UId="3609" />
+  <NewLine Num="1" UId="3610" />
+  <Access Scope="LocalVariable" UId="3611">
+    <Symbol UId="3612">
+      <Component Name="r" UId="3613" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3614" />
+  <Token Text=":=" UId="3615" />
+  <Blank Num="1" UId="3616" />
+  <Access Scope="GlobalVariable" UId="3617">
+    <Symbol UId="3618">
+      <Component Name="ROLL_State" UId="3619">
+        <BooleanAttribute Name="HasQuotes" UId="3620">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3621" />
+      <Component Name="M" UId="3622">
+        <Token Text="[" UId="3623" />
+        <Access Scope="LiteralConstant" UId="3624">
+          <Constant UId="3625">
+            <ConstantValue UId="3627">71</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3628" />
+        <Blank Num="1" UId="3629" />
+        <Access Scope="LiteralConstant" UId="3630">
+          <Constant UId="3631">
+            <ConstantValue UId="3633">5</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3634" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="3635" />
+  <NewLine Num="1" UId="3636" />
+  <Access Scope="GlobalVariable" UId="3637">
+    <Symbol UId="3638">
+      <Component Name="ROLL_IO" UId="3639">
+        <BooleanAttribute Name="HasQuotes" UId="3640">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="3641" />
+      <Component Name="Output" UId="3642">
+        <Token Text="[" UId="3643" />
+        <Access Scope="LiteralConstant" UId="3644">
+          <Constant UId="3645">
+            <ConstantValue UId="3647">17</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="3648" />
+        <Blank Num="1" UId="3649" />
+        <Access Scope="LiteralConstant" UId="3650">
+          <Constant UId="3651">
+            <ConstantValue UId="3653">7</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="3654" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="3655" />
+  <Token Text=":=" UId="3656" />
+  <Blank Num="1" UId="3657" />
+  <Access Scope="LocalVariable" UId="3658">
+    <Symbol UId="3659">
+      <Component Name="r" UId="3660" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="3661" />
+  <NewLine Num="1" UId="3662" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="3663">
+    <Text UId="3664"> PB25, STEP 5 network 25</Text>
+  </LineComment>
+  <NewLine Num="1" UId="3665" />
+  <Token Text="RETURN" UId="3666" />
+  <Token Text=";" UId="3667" />
+  <NewLine Num="1" UId="3668" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="8" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="9" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

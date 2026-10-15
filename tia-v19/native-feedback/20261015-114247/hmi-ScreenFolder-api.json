@@ -1,0 +1,20 @@
+﻿{
+    "type":  "Siemens.Engineering.Hmi.Screen.ScreenSystemFolder",
+    "properties":  [
+                       "Folders : Siemens.Engineering.Hmi.Screen.ScreenUserFolderComposition",
+                       "Parent : Siemens.Engineering.IEngineeringObject",
+                       "Screens : Siemens.Engineering.Hmi.Screen.ScreenComposition",
+                       "Name : System.String"
+                   ],
+    "methods":  [
+                    "System.Object GetAttribute(System.String)",
+                    "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringAttributeInfo] GetAttributeInfos()",
+                    "Void SetAttribute(System.String, System.Object)"
+                ],
+    "attributes":  [
+                       {
+                           "name":  "Name",
+                           "access":  "Read"
+                       }
+                   ]
+}

@@ -1,0 +1,25 @@
+﻿{
+    "type":  "Siemens.Engineering.SW.PlcSoftware",
+    "properties":  [
+                       "BlockGroup : Siemens.Engineering.SW.Blocks.PlcBlockSystemGroup",
+                       "ExternalSourceGroup : Siemens.Engineering.SW.ExternalSources.PlcExternalSourceSystemGroup",
+                       "PlcAlarmTextlistGroup : Siemens.Engineering.SW.Alarm.TextLists.PlcAlarmTextlistGroup",
+                       "TagTableGroup : Siemens.Engineering.SW.Tags.PlcTagTableSystemGroup",
+                       "TechnologicalObjectGroup : Siemens.Engineering.SW.TechnologicalObjects.TechnologicalInstanceDBGroup",
+                       "TypeGroup : Siemens.Engineering.SW.Types.PlcTypeSystemGroup",
+                       "WatchAndForceTableGroup : Siemens.Engineering.SW.WatchAndForceTables.PlcWatchAndForceTableSystemGroup",
+                       "Name : System.String",
+                       "Parent : Siemens.Engineering.IEngineeringObject"
+                   ],
+    "methods":  [
+                    "System.Object GetAttribute(System.String)",
+                    "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringAttributeInfo] GetAttributeInfos()",
+                    "Void SetAttribute(System.String, System.Object)"
+                ],
+    "attributes":  [
+                       {
+                           "name":  "Name",
+                           "access":  "Read"
+                       }
+                   ]
+}

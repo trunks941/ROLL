@@ -1,0 +1,22 @@
+﻿{
+    "type":  "Siemens.Engineering.Hmi.Tag.TagTableComposition",
+    "properties":  [
+                       "Parent : Siemens.Engineering.IEngineeringObject",
+                       "Count : System.Int32",
+                       "IsReadOnly : System.Boolean",
+                       "Item : Siemens.Engineering.Hmi.Tag.TagTable"
+                   ],
+    "methods":  [
+                    "System.Collections.Generic.IList`1[Siemens.Engineering.Hmi.Tag.TagTable] Import(System.IO.FileInfo, Siemens.Engineering.ImportOptions)"
+                ],
+    "attributes":  [
+                       {
+                           "name":  "IsSystemObject",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "Name",
+                           "access":  "Read"
+                       }
+                   ]
+}

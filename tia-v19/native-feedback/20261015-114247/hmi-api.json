@@ -1,0 +1,35 @@
+﻿{
+    "type":  "Siemens.Engineering.Hmi.HmiTarget",
+    "properties":  [
+                       "Connections : Siemens.Engineering.Hmi.Communication.ConnectionComposition",
+                       "Cycles : Siemens.Engineering.Hmi.Cycle.CycleComposition",
+                       "GraphicLists : Siemens.Engineering.Hmi.TextGraphicList.GraphicListComposition",
+                       "ScreenFolder : Siemens.Engineering.Hmi.Screen.ScreenSystemFolder",
+                       "ScreenGlobalElements : Siemens.Engineering.Hmi.Screen.ScreenGlobalElements",
+                       "ScreenOverview : Siemens.Engineering.Hmi.Screen.ScreenOverview",
+                       "ScreenPopupFolder : Siemens.Engineering.Hmi.Screen.ScreenPopupSystemFolder",
+                       "ScreenSlideinFolder : Siemens.Engineering.Hmi.Screen.ScreenSlideinSystemFolder",
+                       "ScreenTemplateFolder : Siemens.Engineering.Hmi.Screen.ScreenTemplateSystemFolder",
+                       "TagFolder : Siemens.Engineering.Hmi.Tag.TagSystemFolder",
+                       "TextLists : Siemens.Engineering.Hmi.TextGraphicList.TextListComposition",
+                       "VBScriptFolder : Siemens.Engineering.Hmi.RuntimeScripting.VBScriptSystemFolder",
+                       "Author : System.String",
+                       "Name : System.String",
+                       "Parent : Siemens.Engineering.IEngineeringObject"
+                   ],
+    "methods":  [
+                    "System.Object GetAttribute(System.String)",
+                    "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringAttributeInfo] GetAttributeInfos()",
+                    "Void SetAttribute(System.String, System.Object)"
+                ],
+    "attributes":  [
+                       {
+                           "name":  "Author",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "Name",
+                           "access":  "Read"
+                       }
+                   ]
+}

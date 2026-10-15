@@ -123,7 +123,7 @@ BEGIN
     FOR #n := 0 TO (#Width / 8) - 1 DO
         #b := #FirstByte + #n;
         FOR #bit := 0 TO 7 DO
-            #mask := SHL(IN := W#16#0001, N := #bit + (#Width - 8 - 8 * #n));
+            #mask := SHL(IN := W#16#0001, N := INT_TO_USINT(#bit + (#Width - 8 - 8 * #n)));
             IF "ROLL_State".M[#b, #bit] THEN #result := #result OR #mask; END_IF;
         END_FOR;
     END_FOR;
@@ -146,8 +146,8 @@ BEGIN
         RETURN;
     END_IF;
     FOR #bit := 0 TO 7 DO
-        "ROLL_State".M[#FirstByte, #bit] := (#Value AND SHL(IN := W#16#0001, N := #bit + 8)) <> W#16#0000;
-        "ROLL_State".M[#FirstByte + 1, #bit] := (#Value AND SHL(IN := W#16#0001, N := #bit)) <> W#16#0000;
+        "ROLL_State".M[#FirstByte, #bit] := (#Value AND SHL(IN := W#16#0001, N := INT_TO_USINT(#bit + 8))) <> W#16#0000;
+        "ROLL_State".M[#FirstByte + 1, #bit] := (#Value AND SHL(IN := W#16#0001, N := INT_TO_USINT(#bit))) <> W#16#0000;
     END_FOR;
 END_FUNCTION
 

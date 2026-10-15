@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "previous_native_compiled_source_sha256": "be2f69d2ceb7c5b6ef90ed4b3bda1799f2ea1eb8381c1d44e12231fbf376d707",
+  "current_source_sha256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1",
+  "exactly_three_explicit_shift_count_conversions": true,
+  "other_bundle_changes": false,
+  "shift_count_domain": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "conversion_changes_values_in_domain": false,
+  "scope": "Full source comparison after removing only the three named conversion wrappers, plus range proof for every permitted Width/n/bit combination. No native SCL execution or compiler-warning clearance is claimed.",
+  "current_source_native_compiled": false
+}

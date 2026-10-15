@@ -1,0 +1,21 @@
+﻿{
+    "type":  "Siemens.Engineering.Hmi.Tag.TagSystemFolder",
+    "properties":  [
+                       "DefaultTagTable : Siemens.Engineering.Hmi.Tag.TagTable",
+                       "Folders : Siemens.Engineering.Hmi.Tag.TagUserFolderComposition",
+                       "Parent : Siemens.Engineering.IEngineeringObject",
+                       "TagTables : Siemens.Engineering.Hmi.Tag.TagTableComposition",
+                       "Name : System.String"
+                   ],
+    "methods":  [
+                    "System.Object GetAttribute(System.String)",
+                    "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringAttributeInfo] GetAttributeInfos()",
+                    "Void SetAttribute(System.String, System.Object)"
+                ],
+    "attributes":  [
+                       {
+                           "name":  "Name",
+                           "access":  "Read"
+                       }
+                   ]
+}
