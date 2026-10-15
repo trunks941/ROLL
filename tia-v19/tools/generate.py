@@ -24,6 +24,28 @@ def csv_rows(path):
         return list(csv.DictReader(f, delimiter=';'))
 
 
+def matching_native_feedback(source_hash):
+    """Attach external compiler evidence only to exactly matching source bytes."""
+    matches = []
+    for path in sorted((OUT / 'reports').glob('windows-feedback-*.json')):
+        item = json.loads(path.read_text(encoding='utf-8-sig'))
+        compilation = item.get('plcCompilation') or {}
+        if (item.get('sourceSHA256') == source_hash
+                and item.get('sourceGenerationSucceeded') is True
+                and item.get('sourceInventoryComplete') is True
+                and compilation.get('errorCount') == 0
+                and compilation.get('state') in ('Success', 'Warning')):
+            matches.append({
+                'report': str(path.relative_to(OUT)), 'project': item['project'],
+                'source_sha256': source_hash, 'plc_errors': 0,
+                'plc_warnings': compilation['warningCount'],
+                'retention_configured': item.get('retentionConfigured') is True,
+                'hmi_fully_configured': item.get('hmiFullyConfigured') is True,
+                'physical_io_configured': item.get('physicalIoConfigured') is True,
+            })
+    return max(matches, key=lambda item: item['project']) if matches else None
+
+
 def kt_word(text):
     match = re.fullmatch(r'(\d{1,3})\.([0-3])', text)
     if not match:
@@ -260,7 +282,6 @@ BEGIN
         'recipe_time_base_seconds': 1,
         'physical_outputs_default_enabled': False,
     }
-    write(OUT / 'reports/coverage.json', json.dumps(facts, indent=2, ensure_ascii=False) + '\n')
     runtime = (OUT / 'sources/00-runtime.scl').read_text()
     declarations, functions = runtime.split('FUNCTION "ROLL_GetM"', 1)
     combined = [declarations, (OUT / 'sources/01-data.scl').read_text(), 'FUNCTION "ROLL_GetM"' + functions,
@@ -270,6 +291,16 @@ BEGIN
     hashes = {str(path.relative_to(OUT)): hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted((OUT / 'sources').glob('*.scl'))}
     hashes['ROLL_ALL.scl'] = hashlib.sha256((OUT / 'ROLL_ALL.scl').read_bytes()).hexdigest()
     write(OUT / 'reports/source-hashes.json', json.dumps(hashes, indent=2) + '\n')
+    native = matching_native_feedback(hashes['ROLL_ALL.scl'])
+    facts['native_validation'] = native
+    for row in coverage:
+        row['tia_compiled'] = native is not None
+    if native:
+        facts['status'] = 'SCL generated; matching external TIA V19 PLC compilation evidence found; HMI and physical commissioning pending'
+        facts['unresolved'].remove('TIA compilation')
+        if native['retention_configured']:
+            facts['unresolved'][0] = 'online RS120 bits 4/5 and physical restart/power-loss tests'
+    write(OUT / 'reports/coverage.json', json.dumps(facts, indent=2, ensure_ascii=False) + '\n')
     print(f'Generated {len(blocks)} PB functions, {sum(x["executable_rows"] for x in coverage)} executable MC5 positions; 2 confirmed recipes; runtime DB15/19.')
 
 

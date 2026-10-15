@@ -1,11 +1,12 @@
 {
   "success": true,
   "retentionScenarios": 4,
-  "genericCreationScenarios": 2,
+  "emptyCreationInfoScenarios": 1,
   "interfaceMetadataScenarios": 1,
+  "hmiCreateCalls": 0,
   "parserVersion": "7.4.6",
-  "scope": "retention import/compile/export ordering with native XML fixtures and API doubles; explicit generic HMI creation and discovery with an API double",
+  "scope": "retention import/compile/export ordering with native XML fixtures and API doubles; empty Comfort HMI creation info discovery with an explicit-interface API double",
   "nativeTiaExecuted": false,
   "nativeHmiCreationVerified": false,
-  "builderSHA256": "82d4807a17e3ee28ee5e05ac671a87667f9196286ed0440dad00f1b1715f5df1"
+  "builderSHA256": "b2ab4f26cfe040496286eab8f4bea737f0c216857ad2427a849e4df2e443a279"
 }

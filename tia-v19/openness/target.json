@@ -15,6 +15,7 @@
   "catalogIdentifiersVerifiedLocally": false,
   "cpuIdentifierObservedInUserTia": "OrderNumber:6ES7 513-1AM03-0AB0/V3.1",
   "hmiIdentifierObservedInUserTia": "OrderNumber:6AV2 124-0JC01-0AX0/17.0.0.0",
+  "hmiNativeCreationSupported": false,
   "deliveredCpuFirmwareKnown": false,
   "physicalIoConfigured": false,
   "hmiScreenControlsConfigured": false

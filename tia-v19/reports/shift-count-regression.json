@@ -24,5 +24,8 @@
   ],
   "conversion_changes_values_in_domain": false,
   "scope": "Full source comparison after removing only the three named conversion wrappers, plus range proof for every permitted Width/n/bit combination. No native SCL execution or compiler-warning clearance is claimed.",
-  "current_source_native_compiled": false
+  "current_source_native_compiled": true,
+  "native_validation_report": "reports/windows-feedback-2026-10-15-120907-compiled.json",
+  "native_plc_errors": 0,
+  "native_plc_warnings": 1
 }

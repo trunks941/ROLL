@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "inventoryScenarios": 1,
+  "requirementScenarios": 4,
+  "mutationCallGuardPassed": true,
+  "parserVersion": "7.4.6",
+  "scope": "nested HMI inventory and template completeness diagnostics on data doubles; exporter AST mutation-call guard",
+  "nativeTiaExecuted": false,
+  "nativeHmiExportVerified": false,
+  "exporterSHA256": "f5f25680aeda8d97c6bc93e7f70467cbbf803f43c3fd75eb4073c5de0def4b6a"
+}

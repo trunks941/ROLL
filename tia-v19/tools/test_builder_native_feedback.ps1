@@ -5,7 +5,7 @@ $tokens = $null
 $errors = $null
 $ast = [System.Management.Automation.Language.Parser]::ParseFile($Builder, [ref]$tokens, [ref]$errors)
 if ($errors.Count -gt 0) { throw 'Builder parsing failed.' }
-foreach ($name in @('Compiler-Messages', 'Configure-Retention', 'Get-EngineeringCompositionMethod', 'Get-EngineeringCreationInfos', 'New-EngineeringItem', 'Export-ApiDescription')) {
+foreach ($name in @('Compiler-Messages', 'Configure-Retention', 'Get-EngineeringCompositionMethod', 'Get-EngineeringCreationInfos', 'Export-ApiDescription')) {
     $definition = $ast.Find({ param($node) $node -is [System.Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -eq $name }, $true)
     if ($null -eq $definition) { throw "Missing function: $name" }
     . ([scriptblock]::Create($definition.Extent.Text))
@@ -34,7 +34,7 @@ namespace RollTest {
     public class ExplicitComposition : Siemens.Engineering.IEngineeringComposition {
         public int Calls;
         IList<Siemens.Engineering.EngineeringCreationInfo> Siemens.Engineering.IEngineeringComposition.GetCreationInfos() {
-            return new [] { new Siemens.Engineering.EngineeringCreationInfo { Type = typeof(Screen), AttributeInfos = new [] { "Name" } } };
+            return new Siemens.Engineering.EngineeringCreationInfo[0];
         }
         object Siemens.Engineering.IEngineeringComposition.Create(Type type, IEnumerable<KeyValuePair<string, object>> attributes) {
             if (type != typeof(Screen)) throw new Exception("Wrong native Type");
@@ -124,24 +124,22 @@ try {
         if ($scenario -eq 'success' -and $report.retentionPlcCompilation.errorCount -ne 0) { throw 'Compilation result missing.' }
     }
     $composition = New-Object RollTest.ExplicitComposition
-    $screen = New-EngineeringItem $composition 'Screen' @{ Name = 'Przeglad' }
-    if ($screen.Name -ne 'Przeglad' -or $composition.Calls -ne 1) { throw 'Generic explicit-interface creation failed.' }
-    $rejected = $false
-    try { New-EngineeringItem $composition 'UnsupportedType' @{ Name = 'Wrong' } | Out-Null } catch { $rejected = $true }
-    if (-not $rejected -or $composition.Calls -ne 1) { throw 'Unsupported native type was not rejected before creation.' }
+    $creationInfos = @(Get-EngineeringCreationInfos $composition)
+    if ($creationInfos.Count -ne 0 -or $composition.Calls -ne 0) { throw 'Empty native creation information must remain empty; Create must not be called.' }
+    if ($null -ne $ast.Find({ param($node) $node -is [System.Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -eq 'New-EngineeringItem' }, $true)) { throw 'Unsupported HMI creation helper was not removed.' }
     $runDirectory = $testDirectory
     Export-ApiDescription $composition 'composition-api.json'
     $description = Get-Content -LiteralPath (Join-Path $testDirectory 'composition-api.json') -Raw | ConvertFrom-Json
-    if ($description.creationInfos[0].type -ne 'RollTest.Screen' -or $description.interfaces.Count -ne 1) { throw 'Explicit interface metadata was not exported.' }
+    if ($description.creationInfos.Count -ne 0 -or $description.interfaces.Count -ne 1) { throw 'Explicit interface metadata was not exported.' }
     $result = [ordered]@{
-        success = $true; retentionScenarios = 4; genericCreationScenarios = 2; interfaceMetadataScenarios = 1
+        success = $true; retentionScenarios = 4; emptyCreationInfoScenarios = 1; interfaceMetadataScenarios = 1; hmiCreateCalls = $composition.Calls
         parserVersion = $PSVersionTable.PSVersion.ToString()
-        scope = 'retention import/compile/export ordering with native XML fixtures and API doubles; explicit generic HMI creation and discovery with an API double'
+        scope = 'retention import/compile/export ordering with native XML fixtures and API doubles; empty Comfort HMI creation info discovery with an explicit-interface API double'
         nativeTiaExecuted = $false; nativeHmiCreationVerified = $false
         builderSHA256 = (Get-FileHash -LiteralPath $Builder -Algorithm SHA256).Hash.ToLowerInvariant()
     }
     $result | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $root 'reports/builder-native-feedback-tests.json') -Encoding UTF8
-    Write-Host 'Passed: 4 retention scenarios, 2 generic creation scenarios, 1 metadata export. Native TIA was not executed.'
+    Write-Host 'Passed: 4 retention scenarios, empty HMI creation info with no Create call, metadata export. Native TIA was not executed.'
 } finally {
     Remove-Item -LiteralPath $testDirectory -Recurse -Force
 }

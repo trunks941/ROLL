@@ -1,0 +1,732 @@
+{
+  "project": "ROLL_20261015_120907_bfeaa0",
+  "sourceSHA256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1",
+  "sourceGenerationSucceeded": true,
+  "sourceInventoryComplete": true,
+  "sourceInventoryMissing": [],
+  "cpuCatalogIdentifier": "OrderNumber:6ES7 513-1AM03-0AB0/V3.1",
+  "hmiCatalogIdentifier": "OrderNumber:6AV2 124-0JC01-0AX0/17.0.0.0",
+  "plcCompilation": {
+    "state": "Warning",
+    "errorCount": 0,
+    "warningCount": 1,
+    "messages": [
+      {
+        "state": "Warning",
+        "description": "",
+        "path": "ROLL_CPU1513"
+      },
+      {
+        "state": "Success",
+        "description": "",
+        "path": "Program blocks"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_GetM (FC1)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_SetMWord (FC2)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_GetDW (FC3)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_TimerOp (FC6)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_TimerValue (FC7)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_CounterOp (FC8)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_AdvanceTime (FC9)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_FB69 (FC10)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_ShowRecipe (FC11)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_FB90 (FC12)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_FB111 (FC13)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB2 (FC14)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB3 (FC15)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB4 (FC16)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB7 (FC17)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB8 (FC18)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB9 (FC19)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB10 (FC20)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB13 (FC21)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB14 (FC22)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB15 (FC23)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB16 (FC24)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB17 (FC25)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB18 (FC26)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB19 (FC27)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB20 (FC28)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB21 (FC29)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB23 (FC30)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB24 (FC31)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB25 (FC32)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB50 (FC33)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB51 (FC34)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_PB52 (FC35)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_HmiExchange (FC38)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_Cycle (FC39)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "OB100 (OB100)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_State (DB1)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_DB15 (DB4)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_DB19 (DB5)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_DB205 (DB8)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_Recipe1 (DB6)"
+      },
+      {
+        "state": "Success",
+        "description": "Block was successfully compiled.",
+        "path": "ROLL_Recipe2 (DB7)"
+      },
+      {
+        "state": "Warning",
+        "description": "",
+        "path": "General warnings"
+      },
+      {
+        "state": "Warning",
+        "description": "Inputs or outputs are used that do not exist in the configured hardware.",
+        "path": ""
+      },
+      {
+        "state": "Warning",
+        "description": "Compiling finished (errors: 0; warnings: 1)",
+        "path": ""
+      }
+    ]
+  },
+  "retentionConfigured": true,
+  "retentionChecks": [
+    {
+      "block": "ROLL_State",
+      "verified": true,
+      "message": null
+    },
+    {
+      "block": "ROLL_DB15",
+      "verified": true,
+      "message": null
+    },
+    {
+      "block": "ROLL_DB19",
+      "verified": true,
+      "message": null
+    },
+    {
+      "block": "ROLL_DB205",
+      "verified": true,
+      "message": null
+    },
+    {
+      "block": "ROLL_Recipe1",
+      "verified": true,
+      "message": null
+    },
+    {
+      "block": "ROLL_Recipe2",
+      "verified": true,
+      "message": null
+    }
+  ],
+  "hmiCompilation": {
+    "state": "Error",
+    "errorCount": 1,
+    "warningCount": 0,
+    "messages": [
+      {
+        "state": "Error",
+        "description": "",
+        "path": "ROLL_TP900_Station"
+      },
+      {
+        "state": "Information",
+        "description": "Software compilation started.",
+        "path": ""
+      },
+      {
+        "state": "Error",
+        "description": "",
+        "path": "Runtime settings"
+      },
+      {
+        "state": "Error",
+        "description": "A start screen has not been configured.",
+        "path": ""
+      },
+      {
+        "state": "Information",
+        "description": "Software compilation completed (device version: 17.0.0.0).",
+        "path": ""
+      },
+      {
+        "state": "Error",
+        "description": "Compiling aborted (errors: 1; warnings: 0)",
+        "path": ""
+      }
+    ]
+  },
+  "nativeScreens": [],
+  "hmiFullyConfigured": false,
+  "physicalIoConfigured": false,
+  "hardwareIoValidated": false,
+  "machineTested": false,
+  "downloadsPerformed": false,
+  "warnings": [
+    "Probe tag creation: Expected one installed creation type 'Tag', found 0. No guessed API type is used.",
+    "Screen creation Przeglad : Expected one installed creation type 'Screen', found 0. No guessed API type is used.",
+    "Screen creation Receptury : Expected one installed creation type 'Screen', found 0. No guessed API type is used.",
+    "Screen creation Reczny : Expected one installed creation type 'Screen', found 0. No guessed API type is used.",
+    "Screen creation Alarmy : Expected one installed creation type 'Screen', found 0. No guessed API type is used.",
+    "Screen creation Nastawy : Expected one installed creation type 'Screen', found 0. No guessed API type is used.",
+    "Screen creation ROLL_ApiProbe : Expected one installed creation type 'Screen', found 0. No guessed API type is used."
+  ],
+  "errors": [],
+  "original_archive": "ROLL_20261015_120907_bfeaa0_raport.zip",
+  "original_archive_sha256": "bca4be983f1592ecd2f278f32334125c2bb9c1a92065893008ef3a027d5dc1b7",
+  "native_export_files": [
+    {
+      "path": "hmi-Connections-api.json",
+      "bytes": 4020,
+      "sha256": "e91aeafc9f535b4e7110b3bd3c9812d6798fbf62471e9e9b479536b8b5522b45"
+    },
+    {
+      "path": "hmi-ScreenFolder-api.json",
+      "bytes": 5457,
+      "sha256": "8b92fd2f0ddf3add333b389119d02bfdf71fb5aa12c95da6c0bfd2e4c3a93995"
+    },
+    {
+      "path": "hmi-TagFolder-api.json",
+      "bytes": 5495,
+      "sha256": "3c2252bfd64bc83ab181522970992b619192b26e9f43bb256c9d2b74fded642f"
+    },
+    {
+      "path": "hmi-api.json",
+      "bytes": 9148,
+      "sha256": "a1b845b325a2a4e681b00ff9c6363211dc5616e67fe2ac70095b9699f1849f33"
+    },
+    {
+      "path": "hmi-probe-tags-api.json",
+      "bytes": 5431,
+      "sha256": "25eac9ea48302ffae2a45bb1b8c8c1058146d58302782016491c12bc11d25867"
+    },
+    {
+      "path": "hmi-probe-tags.xml",
+      "bytes": 1448,
+      "sha256": "4063e660890c7780aa7a25878f444aaa23aa5eb83b52bc29514fd27471120c7e"
+    },
+    {
+      "path": "hmi-screens-composition-api.json",
+      "bytes": 3965,
+      "sha256": "9c3f2da5ba6a4a918af79121eace2b39b584679d237189700419a0b7101f5e2e"
+    },
+    {
+      "path": "hmi-tag-table-api.json",
+      "bytes": 5431,
+      "sha256": "25eac9ea48302ffae2a45bb1b8c8c1058146d58302782016491c12bc11d25867"
+    },
+    {
+      "path": "hmi-tag-tables-composition-api.json",
+      "bytes": 4191,
+      "sha256": "0f75d793fd2a2459b0a2ddadb46508ea5241a2b531c0486f6c278a4dc6734d31"
+    },
+    {
+      "path": "hmi-tags-composition-api.json",
+      "bytes": 3935,
+      "sha256": "8e6b057a41cc4e61a60e83ebe0230fe089be85a23ebbe4c83ac1d545fd2c2eaf"
+    },
+    {
+      "path": "native-blocks/OB1.xml",
+      "bytes": 4934,
+      "sha256": "8873042dc58e4381659d8267505c865b74c55b72d19154a76913d4915a0f390a"
+    },
+    {
+      "path": "native-blocks/OB100.xml",
+      "bytes": 26894,
+      "sha256": "548072efa47f84d2969669e35bd3ac1380bd444e6f09a31f5fa855f64130ca02"
+    },
+    {
+      "path": "native-blocks/ROLL_AdvanceTime.xml",
+      "bytes": 28288,
+      "sha256": "e462dc6aaee46634eaa275fcd848f5cdea8b68420a4ca63300e3bb0aa9cecf79"
+    },
+    {
+      "path": "native-blocks/ROLL_CounterOp.xml",
+      "bytes": 25825,
+      "sha256": "aab034cd98bf82fdcd9b19d18814d08f194bd27d2018c8c59a7ad04337a7c9b7"
+    },
+    {
+      "path": "native-blocks/ROLL_Cycle.xml",
+      "bytes": 39999,
+      "sha256": "3c09d1da313f73fa16d27eaa21322006c8754ffb25631b439c16868bc42801f8"
+    },
+    {
+      "path": "native-blocks/ROLL_DB15.xml",
+      "bytes": 16394,
+      "sha256": "63295cd8d0a13590d6b5312fcc9157cf78a029247bce2898c8702c709222f5fb"
+    },
+    {
+      "path": "native-blocks/ROLL_DB19.xml",
+      "bytes": 16394,
+      "sha256": "2c8b4cebb9c2968a7e72c1a8acd0210eece213f73060e5b9a5f56c3e67071f30"
+    },
+    {
+      "path": "native-blocks/ROLL_DB205.xml",
+      "bytes": 4415,
+      "sha256": "3d6eed8f97cbdf2820ebbee0faa46cac549efea52cdb4df1f4e01eff5be752df"
+    },
+    {
+      "path": "native-blocks/ROLL_DecodeBCD.xml",
+      "bytes": 13993,
+      "sha256": "75bd4235dbf05ba4715ec8b83938d5206153f2551c450674703701243c3141d5"
+    },
+    {
+      "path": "native-blocks/ROLL_EncodeSeconds.xml",
+      "bytes": 11355,
+      "sha256": "cf04c8bbb19ec56706ee2c22765060305a3deae5bbf532712095c5b29dbe843c"
+    },
+    {
+      "path": "native-blocks/ROLL_FB111.xml",
+      "bytes": 47845,
+      "sha256": "1484d73b484848e71b841b97ba1aa1f56a337948db2088d431a4553bbb91abb1"
+    },
+    {
+      "path": "native-blocks/ROLL_FB69.xml",
+      "bytes": 8808,
+      "sha256": "1dac6ab817567a406813ef5059c3771b20fe20966485d4a81e1c942bbe8ed31b"
+    },
+    {
+      "path": "native-blocks/ROLL_FB90.xml",
+      "bytes": 25318,
+      "sha256": "7805322a3864a379ad474c30a3b3843b8ce4ab24ef2158090694126801aa502f"
+    },
+    {
+      "path": "native-blocks/ROLL_GetDW.xml",
+      "bytes": 10412,
+      "sha256": "afe38218d14806263616654197aa31cf4691aea0bdd9b8511d308349c200bd67"
+    },
+    {
+      "path": "native-blocks/ROLL_GetM.xml",
+      "bytes": 18373,
+      "sha256": "952c815566ef5aa739bca92286a553ca981dcdbdc50e6aa67e88c64e6f0d952a"
+    },
+    {
+      "path": "native-blocks/ROLL_HMI.xml",
+      "bytes": 21828,
+      "sha256": "6ddd3a6662f72c0e579b6a3a3455c43f6dc38bb6d7da5e7e02d20ed7a4ab540f"
+    },
+    {
+      "path": "native-blocks/ROLL_HmiExchange.xml",
+      "bytes": 160083,
+      "sha256": "e4cd74a80f31a8571c7ccd7afd57f277826b135654fdcad49fee587d744ddb64"
+    },
+    {
+      "path": "native-blocks/ROLL_IO.xml",
+      "bytes": 9082,
+      "sha256": "9ffe00df3915b3e43b31e1c298a332a399176e3f6616deb6752d98cc3262421c"
+    },
+    {
+      "path": "native-blocks/ROLL_PB10.xml",
+      "bytes": 695982,
+      "sha256": "277219d416c8a328a5785be6cd83956286c92ce4da33d43acf8f7dd7d00cfa5f"
+    },
+    {
+      "path": "native-blocks/ROLL_PB13.xml",
+      "bytes": 551203,
+      "sha256": "d6352404754b83a00b32cd4352a4c855c5d48d8544b453bf91ca8f53214d548d"
+    },
+    {
+      "path": "native-blocks/ROLL_PB14.xml",
+      "bytes": 200214,
+      "sha256": "981f2685297c8be1526cf2acba39dd4597dd35f6e94898cf37dc47886fb81576"
+    },
+    {
+      "path": "native-blocks/ROLL_PB15.xml",
+      "bytes": 85484,
+      "sha256": "07720118c989cd692738c77afa83edc52eb82e436dee59034037ef821378fc2c"
+    },
+    {
+      "path": "native-blocks/ROLL_PB16.xml",
+      "bytes": 339796,
+      "sha256": "2cc56ea95cf81e1c49c82fe4a7c8f6c353da64aa22f8afa35cd98a099d57df76"
+    },
+    {
+      "path": "native-blocks/ROLL_PB17.xml",
+      "bytes": 272299,
+      "sha256": "aa2d257102ea703ec2a3b37438ae87a18eb511304b80a79b343e1032ab07e5a9"
+    },
+    {
+      "path": "native-blocks/ROLL_PB18.xml",
+      "bytes": 179775,
+      "sha256": "a3abc84ece9112fb7a53ee071f25acf8c81744e4726147a93eba05134129ea85"
+    },
+    {
+      "path": "native-blocks/ROLL_PB19.xml",
+      "bytes": 121188,
+      "sha256": "137a418046f494ea04e5327791b1c55b8c7d7882d80c5e6dc2365a15c4b2c601"
+    },
+    {
+      "path": "native-blocks/ROLL_PB2.xml",
+      "bytes": 718567,
+      "sha256": "2e105538de9d9dc3174585f6439796acced346a5c08226b349bc625ebb95ed4b"
+    },
+    {
+      "path": "native-blocks/ROLL_PB20.xml",
+      "bytes": 459263,
+      "sha256": "ffe2d3bbf046123bc7f783ec9ada256c5368c4ba514d42d16959633f667dc06e"
+    },
+    {
+      "path": "native-blocks/ROLL_PB21.xml",
+      "bytes": 440133,
+      "sha256": "27f73a42158a9253500c06952e5f40fbeeeac1c10ba3a3ec4951a5485dcd76e7"
+    },
+    {
+      "path": "native-blocks/ROLL_PB23.xml",
+      "bytes": 130267,
+      "sha256": "cea9bc43654854c76214ef6c38920c31007dd95acf526bf0b20425e2999924c1"
+    },
+    {
+      "path": "native-blocks/ROLL_PB24.xml",
+      "bytes": 28047,
+      "sha256": "3b190a831f296470e0c87b54f622f2166a6c58f09aab3f9f85888315ecdc8706"
+    },
+    {
+      "path": "native-blocks/ROLL_PB25.xml",
+      "bytes": 164564,
+      "sha256": "daecc84d69927668a4286e821bd03f805e62a59b56983a63978d1e201e6283e1"
+    },
+    {
+      "path": "native-blocks/ROLL_PB3.xml",
+      "bytes": 109362,
+      "sha256": "ae4b399c2e0c808da07c35d77ad0fea2096dfbd1db54ed8bef503c44a2f4b888"
+    },
+    {
+      "path": "native-blocks/ROLL_PB4.xml",
+      "bytes": 167691,
+      "sha256": "c3b43bc59f33ffd2335041a54050002c4a0544ca6100abc207b04010467bde51"
+    },
+    {
+      "path": "native-blocks/ROLL_PB50.xml",
+      "bytes": 19873,
+      "sha256": "538682268ad02e0116cca26badd0a78e20ed8b9fae28cb90987f8106a9f57424"
+    },
+    {
+      "path": "native-blocks/ROLL_PB51.xml",
+      "bytes": 44208,
+      "sha256": "00014aea4f2631bd0f3236005d4f4461caf05bd84c83f62f9c3d518f9933aab4"
+    },
+    {
+      "path": "native-blocks/ROLL_PB52.xml",
+      "bytes": 120063,
+      "sha256": "951efcf57a10f752a1bff243bcadfaf8716951c3da04fab8cfcad44ca4442503"
+    },
+    {
+      "path": "native-blocks/ROLL_PB7.xml",
+      "bytes": 183327,
+      "sha256": "67f0ffe5c00df9317563f3ed81f35793479bb1bf62d279f9b71579b77e8deeb3"
+    },
+    {
+      "path": "native-blocks/ROLL_PB8.xml",
+      "bytes": 91511,
+      "sha256": "245262785c037a265be20a52fcb5d6d1731eed5d04c7faea7f0b8f3679aeaa9a"
+    },
+    {
+      "path": "native-blocks/ROLL_PB9.xml",
+      "bytes": 692398,
+      "sha256": "1fabd3aee0ca8095e8daa31a48541d57d31196f81451609101c896ed1b87a1d3"
+    },
+    {
+      "path": "native-blocks/ROLL_ReadInputs.xml",
+      "bytes": 164929,
+      "sha256": "d33082d41457dd9ff7a5164f0eed10a236376c13f41c03d5a1d48c23202b2db3"
+    },
+    {
+      "path": "native-blocks/ROLL_Recipe1.xml",
+      "bytes": 4417,
+      "sha256": "4c25f2269bc2abb08511ed039e96e89e7ae3247c461dda1c8403aa5e74df5e42"
+    },
+    {
+      "path": "native-blocks/ROLL_Recipe2.xml",
+      "bytes": 4416,
+      "sha256": "45a3ad26b6b143a4c4f76b0730047016ac37676726d02244fbf54af97a820881"
+    },
+    {
+      "path": "native-blocks/ROLL_SetMWord.xml",
+      "bytes": 13754,
+      "sha256": "bed83a4f4d52dcaaa4758a0bb601e360b59da33310c712e42f2cfc3c34fec7d2"
+    },
+    {
+      "path": "native-blocks/ROLL_ShowRecipe.xml",
+      "bytes": 21598,
+      "sha256": "07e701c5e631881d3ffc8558f9424097fd83ed460ccfead5ee9e1059e7622e19"
+    },
+    {
+      "path": "native-blocks/ROLL_State.xml",
+      "bytes": 5993,
+      "sha256": "7bd84d79384c380045ce9a95d5f33c8778e80d530bb4a41fccd44c21f89eae71"
+    },
+    {
+      "path": "native-blocks/ROLL_TimerOp.xml",
+      "bytes": 39247,
+      "sha256": "ce66049818ebc9d2ac6ea96171f872761628d7187dbf5e61977c6417aa45403b"
+    },
+    {
+      "path": "native-blocks/ROLL_TimerValue.xml",
+      "bytes": 11523,
+      "sha256": "0885195eee4bc0179139608bc95afe1154ccb8aa69cd220cff6d8a17922d42c0"
+    },
+    {
+      "path": "native-blocks/ROLL_WriteOutputs.xml",
+      "bytes": 123483,
+      "sha256": "3a621b84ff705244d9f7d2cbc6c6939a9a4e8591236bdf48c36955e12703df81"
+    },
+    {
+      "path": "native-retention/ROLL_DB15-before-retention.xml",
+      "bytes": 16397,
+      "sha256": "2db9e4f9028fcdf41d1ed3ec8922d2f94047b9e95d08d7a06cbd9314a90ff752"
+    },
+    {
+      "path": "native-retention/ROLL_DB15-retain-import.xml",
+      "bytes": 16394,
+      "sha256": "59d315d2e0965b2db5c2417b8294ee8f98d6c9c6fcddfcf8b4b8d99622e2c85b"
+    },
+    {
+      "path": "native-retention/ROLL_DB15-retention-check.xml",
+      "bytes": 16393,
+      "sha256": "3f5a05dbdd106add1fb51a052fdd2fdd555af2f580f45f64e3998e7695c418cc"
+    },
+    {
+      "path": "native-retention/ROLL_DB19-before-retention.xml",
+      "bytes": 16397,
+      "sha256": "0a4e9925ae71eda1872a1658d981d3836dfb41a48a8b61030d8ba80220ca9155"
+    },
+    {
+      "path": "native-retention/ROLL_DB19-retain-import.xml",
+      "bytes": 16394,
+      "sha256": "dcd43016fb60f62f0c7ae1b214769b3c0e56e959028a599cdc09c0446829e373"
+    },
+    {
+      "path": "native-retention/ROLL_DB19-retention-check.xml",
+      "bytes": 16393,
+      "sha256": "dacf69ce98e35d3195d605f6bcbc056ffe63214487b784fabdf2c46a1592fd4f"
+    },
+    {
+      "path": "native-retention/ROLL_DB205-before-retention.xml",
+      "bytes": 4418,
+      "sha256": "26c09ea288ce61ea59b11fc798e60cf8b517f7a68a0621bbc7f136a5e27736b4"
+    },
+    {
+      "path": "native-retention/ROLL_DB205-retain-import.xml",
+      "bytes": 4415,
+      "sha256": "dcdf3623d21f49c1662e72ae96e49869a6bef9768f7c059ba9775a771fa6a3cd"
+    },
+    {
+      "path": "native-retention/ROLL_DB205-retention-check.xml",
+      "bytes": 4415,
+      "sha256": "e533fbdfeac785d3e81d96b16fa77c9cffe675ecc50060f6a4cb3868ad727218"
+    },
+    {
+      "path": "native-retention/ROLL_Recipe1-before-retention.xml",
+      "bytes": 4420,
+      "sha256": "bb14060e49faea6f873caaf973af7d3a2594095bc5ed2dee0ecf429ea784c2f1"
+    },
+    {
+      "path": "native-retention/ROLL_Recipe1-retain-import.xml",
+      "bytes": 4417,
+      "sha256": "d9a49f1379265b59e360cb82645a3b588c9fb6dc87587d41a76e99a42828651b"
+    },
+    {
+      "path": "native-retention/ROLL_Recipe1-retention-check.xml",
+      "bytes": 4417,
+      "sha256": "fe330904a53758c9eae5c758fc0ed6c30370e7601f8bf1c413d547802a4a8996"
+    },
+    {
+      "path": "native-retention/ROLL_Recipe2-before-retention.xml",
+      "bytes": 4420,
+      "sha256": "9dba4ab22c331d46142c6b99450a0ad5ef86d5187a15a79e2b8ed7c552af5b15"
+    },
+    {
+      "path": "native-retention/ROLL_Recipe2-retain-import.xml",
+      "bytes": 4417,
+      "sha256": "a6ea40f5b5ea4e8032a008f473bb25af1063b3387f7801e930f9482664ed4715"
+    },
+    {
+      "path": "native-retention/ROLL_Recipe2-retention-check.xml",
+      "bytes": 4417,
+      "sha256": "9adfa64e775e321065261a1cf80c3ca499168df72c0d2eea2c544dd9bfbe6e39"
+    },
+    {
+      "path": "native-retention/ROLL_State-before-retention.xml",
+      "bytes": 6005,
+      "sha256": "ce4ecf1a5c1664d0c3d0f76043fa9adeaabeefaaa386004e6a7c4a547250b363"
+    },
+    {
+      "path": "native-retention/ROLL_State-retain-import.xml",
+      "bytes": 5993,
+      "sha256": "bd3f18f4631e8e778f4e3fc3e0ca0403f840215c9e1ef77b3692dd7ec66cf18a"
+    },
+    {
+      "path": "native-retention/ROLL_State-retention-check.xml",
+      "bytes": 5993,
+      "sha256": "b795042716c02d573366bbc04e7ac465694d0f7d6ff5447d8a2f77ff8d0e9525"
+    },
+    {
+      "path": "plc-api.json",
+      "bytes": 7738,
+      "sha256": "c5746337ae7c1f9e7ab6566ba2ad6e554c26b57a42db21dd1349dc4170175aa1"
+    }
+  ],
+  "hmiDiagnosis": "Native IEngineeringComposition.GetCreationInfos returns an empty list for screens, tags, tag tables and connections. Generic Create does not supply supported creation. Native import/export is exposed; a screen template from the TIA editor is required. HMI compilation fails because no start screen exists."
+}

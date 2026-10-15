@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "status": "SCL generated; local TIA V19 compilation required",
+  "status": "SCL generated; matching external TIA V19 PLC compilation evidence found; HMI and physical commissioning pending",
   "pb_count": 22,
   "pb_coverage": [
     {
@@ -9,7 +9,7 @@
       "executable_rows": 549,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB3",
@@ -17,7 +17,7 @@
       "executable_rows": 65,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB4",
@@ -25,7 +25,7 @@
       "executable_rows": 101,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB7",
@@ -33,7 +33,7 @@
       "executable_rows": 164,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB8",
@@ -41,7 +41,7 @@
       "executable_rows": 88,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB9",
@@ -49,7 +49,7 @@
       "executable_rows": 599,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB10",
@@ -57,7 +57,7 @@
       "executable_rows": 603,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB13",
@@ -65,7 +65,7 @@
       "executable_rows": 607,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB14",
@@ -73,7 +73,7 @@
       "executable_rows": 227,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB15",
@@ -81,7 +81,7 @@
       "executable_rows": 71,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB16",
@@ -89,7 +89,7 @@
       "executable_rows": 378,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB17",
@@ -97,7 +97,7 @@
       "executable_rows": 305,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB18",
@@ -105,7 +105,7 @@
       "executable_rows": 213,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB19",
@@ -113,7 +113,7 @@
       "executable_rows": 111,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB20",
@@ -121,7 +121,7 @@
       "executable_rows": 398,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB21",
@@ -129,7 +129,7 @@
       "executable_rows": 441,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB23",
@@ -137,7 +137,7 @@
       "executable_rows": 129,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB24",
@@ -145,7 +145,7 @@
       "executable_rows": 19,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB25",
@@ -153,7 +153,7 @@
       "executable_rows": 123,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB50",
@@ -161,7 +161,7 @@
       "executable_rows": 11,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB51",
@@ -169,7 +169,7 @@
       "executable_rows": 32,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     },
     {
       "block": "PB52",
@@ -177,7 +177,7 @@
       "executable_rows": 84,
       "source": "02-process.scl",
       "method": "ordered SCL from MC5 verified against native STEP 5",
-      "tia_compiled": false
+      "tia_compiled": true
     }
   ],
   "adaptations": {
@@ -204,8 +204,7 @@
     "FB96"
   ],
   "unresolved": [
-    "TIA compilation",
-    "native retention properties and online RS120 bits 4/5",
+    "online RS120 bits 4/5 and physical restart/power-loss tests",
     "CPU catalog/firmware",
     "configured physical I/O and electrical grouping",
     "TP900 connection, tags, screen controls and alarm import",
@@ -225,5 +224,15 @@
     "automatic_feeding": false
   },
   "recipe_time_base_seconds": 1,
-  "physical_outputs_default_enabled": false
+  "physical_outputs_default_enabled": false,
+  "native_validation": {
+    "report": "reports/windows-feedback-2026-10-15-120907-compiled.json",
+    "project": "ROLL_20261015_120907_bfeaa0",
+    "source_sha256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1",
+    "plc_errors": 0,
+    "plc_warnings": 1,
+    "retention_configured": true,
+    "hmi_fully_configured": false,
+    "physical_io_configured": false
+  }
 }

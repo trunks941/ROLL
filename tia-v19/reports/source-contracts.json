@@ -7,7 +7,18 @@
   "manual_functions": 14,
   "source_bundle_sha256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1",
   "known_native_identifier_conflicts": [],
-  "tia_compiled": false,
+  "tia_compiled": true,
+  "native_validation": {
+    "report": "reports/windows-feedback-2026-10-15-120907-compiled.json",
+    "project": "ROLL_20261015_120907_bfeaa0",
+    "source_sha256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1",
+    "plc_errors": 0,
+    "plc_warnings": 1,
+    "retention_configured": true,
+    "hmi_fully_configured": false,
+    "physical_io_configured": false
+  },
+  "native_tia_executed_by_this_check": false,
   "hmi_native_binding_verified": false,
   "hardware_io_verified": false
 }

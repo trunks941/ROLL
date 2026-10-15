@@ -298,5 +298,8 @@ if __name__ == '__main__':
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     report = {'test_count': result.testsRun, 'failures': len(result.failures), 'errors': len(result.errors), 'success': result.wasSuccessful(), 'pb_state_comparisons': 880 if result.wasSuccessful() else None, 'tia_compiled': False, 'runtime_scl_executed': False, 'physical_machine_tested': False, 'scope': 'direct MC5 PB registers vs generated PB SCL subset in Python; shared timer/counter model'}
     report['source_sha256'] = {name: hashlib.sha256((gen.OUT / name).read_bytes()).hexdigest() for name in ['sources/02-process.scl', 'sources/04-hmi-cycle.scl', 'ROLL_ALL.scl']}
+    report['native_tia_executed_by_this_test'] = False
+    report['native_validation'] = gen.matching_native_feedback(report['source_sha256']['ROLL_ALL.scl'])
+    report['tia_compiled'] = report['native_validation'] is not None
     (gen.OUT / 'reports/conversion-tests.json').write_text(json.dumps(report, indent=2) + '\n')
     raise SystemExit(0 if result.wasSuccessful() else 1)

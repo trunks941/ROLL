@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <DocumentInfo>
+    <Created>2026-10-15T10:10:35.0325176Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Basic/Comfort/Advanced</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </Product>
+      <Product>
+        <DisplayName>WinCC Unified</DisplayName>
+        <DisplayVersion>V19</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>ROLL_FB69</Name>
+      <Namespace />
+      <Number>10</Number>
+      <ProgrammingLanguage>SCL</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <NewLine Num="1" UId="21" />
+  <Token Text="IF" UId="22" />
+  <Blank Num="1" UId="23" />
+  <Access Scope="GlobalVariable" UId="24">
+    <Symbol UId="25">
+      <Component Name="ROLL_State" UId="26">
+        <BooleanAttribute Name="HasQuotes" UId="27">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="28" />
+      <Component Name="M" UId="29">
+        <Token Text="[" UId="30" />
+        <Access Scope="LiteralConstant" UId="31">
+          <Constant UId="32">
+            <ConstantValue UId="34">240</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="35" />
+        <Blank Num="1" UId="36" />
+        <Access Scope="LiteralConstant" UId="37">
+          <Constant UId="38">
+            <ConstantValue UId="40">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="41" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="42" />
+  <Token Text="AND" UId="43" />
+  <Blank Num="1" UId="44" />
+  <Access Scope="GlobalVariable" UId="45">
+    <Symbol UId="46">
+      <Component Name="ROLL_State" UId="47">
+        <BooleanAttribute Name="HasQuotes" UId="48">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="49" />
+      <Component Name="M" UId="50">
+        <Token Text="[" UId="51" />
+        <Access Scope="LiteralConstant" UId="52">
+          <Constant UId="53">
+            <ConstantValue UId="55">240</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="," UId="56" />
+        <Blank Num="1" UId="57" />
+        <Access Scope="LiteralConstant" UId="58">
+          <Constant UId="59">
+            <ConstantValue UId="61">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="62" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="63" />
+  <Token Text="THEN" UId="64" />
+  <NewLine Num="1" UId="65" />
+  <Blank Num="4" UId="66" />
+  <Access Scope="Call" UId="67">
+    <CallInfo UId="68" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="70">
+        <Component Name="ROLL_SetMWord" UId="69" />
+      </Instance>
+      <Token Text="(" UId="71" />
+      <Parameter Name="FirstByte" UId="72">
+        <Blank Num="1" UId="73" />
+        <Token Text=":=" UId="74" />
+        <Blank Num="1" UId="75" />
+        <Access Scope="LiteralConstant" UId="76">
+          <Constant UId="77">
+            <ConstantValue UId="79">240</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="80" />
+      <NewLine Num="1" UId="81" />
+      <Blank Num="20" UId="82" />
+      <Parameter Name="Value" UId="83">
+        <Blank Num="1" UId="84" />
+        <Token Text=":=" UId="85" />
+        <Blank Num="1" UId="86" />
+        <Access Scope="TypedConstant" UId="87">
+          <Constant UId="88">
+            <ConstantValue UId="89">W#16#2005</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="90" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="91" />
+  <NewLine Num="1" UId="92" />
+  <Token Text="ELSE" UId="93" />
+  <NewLine Num="1" UId="94" />
+  <Blank Num="4" UId="95" />
+  <Access Scope="Call" UId="96">
+    <CallInfo UId="97" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="99">
+        <Component Name="ROLL_SetMWord" UId="98" />
+      </Instance>
+      <Token Text="(" UId="100" />
+      <Parameter Name="FirstByte" UId="101">
+        <Blank Num="1" UId="102" />
+        <Token Text=":=" UId="103" />
+        <Blank Num="1" UId="104" />
+        <Access Scope="LiteralConstant" UId="105">
+          <Constant UId="106">
+            <ConstantValue UId="108">240</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="109" />
+      <NewLine Num="1" UId="110" />
+      <Blank Num="20" UId="111" />
+      <Parameter Name="Value" UId="112">
+        <Blank Num="1" UId="113" />
+        <Token Text=":=" UId="114" />
+        <Blank Num="1" UId="115" />
+        <Access Scope="TypedConstant" UId="116">
+          <Constant UId="117">
+            <ConstantValue UId="118">W#16#1005</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="119" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="120" />
+  <NewLine Num="1" UId="121" />
+  <Token Text="END_IF" UId="122" />
+  <Token Text=";" UId="123" />
+  <NewLine Num="1" UId="124" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="8" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="9" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

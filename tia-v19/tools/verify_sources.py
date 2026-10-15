@@ -53,14 +53,19 @@ def main():
     assert target['physicalIoConfigured'] is False
     coverage = json.loads((gen.OUT / 'reports/coverage.json').read_text())
     assert coverage['pb_count'] == 22
-    assert all(row['tia_compiled'] is False for row in coverage['pb_coverage'])
+    native = gen.matching_native_feedback(hashes['ROLL_ALL.scl'])
+    assert coverage.get('native_validation') == native
+    assert all(row['tia_compiled'] is (native is not None) for row in coverage['pb_coverage'])
+    assert gen.matching_native_feedback('0' * 64) is None
     result = {
         'source_contract_checks_passed': True,
         'function_definitions': len(functions), 'unique_named_definitions': len(definitions),
         'unresolved_function_calls': [], 'hmi_scalars': len(interface), 'manual_functions': len(manual),
         'source_bundle_sha256': hashes['ROLL_ALL.scl'],
         'known_native_identifier_conflicts': conflicts,
-        'tia_compiled': False, 'hmi_native_binding_verified': False, 'hardware_io_verified': False,
+        'tia_compiled': native is not None, 'native_validation': native,
+        'native_tia_executed_by_this_check': False,
+        'hmi_native_binding_verified': False, 'hardware_io_verified': False,
     }
     (gen.OUT / 'reports/source-contracts.json').write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps(result))

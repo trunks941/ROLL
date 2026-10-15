@@ -1,0 +1,70 @@
+﻿{
+    "type":  "Siemens.Engineering.Hmi.Screen.ScreenComposition",
+    "properties":  [
+                       "Parent : Siemens.Engineering.IEngineeringObject",
+                       "Count : System.Int32",
+                       "IsReadOnly : System.Boolean",
+                       "Item : Siemens.Engineering.Hmi.Screen.Screen"
+                   ],
+    "methods":  [
+                    "System.Collections.Generic.IList`1[Siemens.Engineering.Hmi.Screen.Screen] Import(System.IO.FileInfo, Siemens.Engineering.ImportOptions)"
+                ],
+    "interfaces":  [
+                       {
+                           "methods":  [
+                                           "Int32 get_Count()",
+                                           "Boolean get_IsReadOnly()",
+                                           "Siemens.Engineering.IEngineeringObject get_Item(Int32)",
+                                           "Boolean Contains(Siemens.Engineering.IEngineeringObject)",
+                                           "Int32 IndexOf(Siemens.Engineering.IEngineeringObject)",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringInvocationInfo] GetInvocationInfos()",
+                                           "System.Object Invoke(System.String, System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.Type,System.Object]])",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringCreationInfo] GetCreationInfos()",
+                                           "Siemens.Engineering.IEngineeringObject Create(System.Type, System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.String,System.Object]])"
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringComposition"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringCompositionOrObject"
+                       },
+                       {
+                           "methods":  [
+                                           "Siemens.Engineering.IEngineeringObject get_Parent()"
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringInstance"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.Private.IInternalCompositionAccess"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.Private.IInternalCollectionAccess"
+                       },
+                       {
+                           "methods":  [
+                                           "System.Object GetBoxedContract()"
+                                       ],
+                           "type":  "Siemens.Engineering.Private.IInternalInstanceAccess"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.Private.IInternalBaseAccess"
+                       }
+                   ],
+    "count":  0,
+    "attributeReadError":  "Method invocation failed because [Siemens.Engineering.Hmi.Screen.ScreenComposition] does not contain a method named \u0027GetAttributeInfos\u0027.",
+    "compositionReadError":  "Method invocation failed because [Siemens.Engineering.Hmi.Screen.ScreenComposition] does not contain a method named \u0027GetCompositionInfos\u0027.",
+    "creationInfos":  [
+
+                      ]
+}

@@ -150,8 +150,8 @@ function Export-ApiDescription($Object, [string]$FileName) {
 }
 
 function Get-EngineeringCompositionMethod($Composition, [string]$Name) {
-    # HMI compositions expose creation through the explicit generic interface,
-    # rather than the one-argument typed Create used by some PLC compositions.
+    # Inspect the explicit generic interface. Its presence alone does not imply
+    # creation support: native Comfort HMI reports empty GetCreationInfos.
     foreach ($interface in $Composition.GetType().GetInterfaces()) {
         if ($interface.FullName -eq 'Siemens.Engineering.IEngineeringComposition') {
             $method = $interface.GetMethods() | Where-Object { $_.Name -eq $Name } | Select-Object -First 1
@@ -164,22 +164,6 @@ function Get-EngineeringCompositionMethod($Composition, [string]$Name) {
 function Get-EngineeringCreationInfos($Composition) {
     $method = Get-EngineeringCompositionMethod $Composition 'GetCreationInfos'
     return $method.Invoke($Composition, [object[]]@())
-}
-
-function New-EngineeringItem($Composition, [string]$TypeName, [hashtable]$Attributes) {
-    $choices = @(Get-EngineeringCreationInfos $Composition | Where-Object { $_.Type.Name -eq $TypeName })
-    if ($choices.Count -ne 1) { throw "Expected one installed creation type '$TypeName', found $($choices.Count). No guessed API type is used." }
-    $method = Get-EngineeringCompositionMethod $Composition 'Create'
-    if ($method.GetParameters().Count -ne 2 -or $method.GetParameters()[0].ParameterType -ne [Type]) {
-        throw 'Unexpected generic Create signature; see composition API metadata.'
-    }
-    $values = New-Object 'System.Collections.Generic.Dictionary[string,object]'
-    foreach ($key in $Attributes.Keys) { $values.Add([string]$key, $Attributes[$key]) }
-    $arguments = New-Object object[] 2
-    $arguments[0] = $choices[0].Type
-    # Reflection does not unwrap a PSObject inside object[] arguments.
-    $arguments[1] = $values.PSObject.BaseObject
-    return $method.Invoke($Composition, $arguments)
 }
 
 function Export-HmiObject($Object, [string]$BaseName) {
@@ -340,51 +324,23 @@ try {
     foreach ($property in @('ScreenFolder', 'TagFolder', 'Connections', 'AlarmClasses', 'DiscreteAlarms')) {
         if ($null -ne $hmi.PSObject.Properties[$property]) { Export-ApiDescription $hmi.$property ('hmi-' + $property + '-api.json') }
     }
-    if ($null -ne $hmi.PSObject.Properties['TagFolder'] -and $null -ne $hmi.TagFolder.PSObject.Properties['TagTables']) {
+    # The native V19 report exposes no creation infos for Comfort screens,
+    # tag tables, tags or connections. Use native import/export, not Create.
+    if ($null -ne $hmi.PSObject.Properties['TagFolder']) {
         Export-ApiDescription $hmi.TagFolder.TagTables 'hmi-tag-tables-composition-api.json'
-        try {
-            # Export the default table as well: it provides a native schema even
-            # when creation is unavailable in this installed HMI API.
-            $tagTable = $hmi.TagFolder.DefaultTagTable
-            if ($null -eq $tagTable) { $tagTable = New-EngineeringItem $hmi.TagFolder.TagTables 'TagTable' @{ Name = 'ROLL' } }
-            Export-ApiDescription $tagTable 'hmi-tag-table-api.json'
+        $tagTable = $hmi.TagFolder.DefaultTagTable
+        if ($null -ne $tagTable) {
             Export-ApiDescription $tagTable.Tags 'hmi-tags-composition-api.json'
-            try {
-                $probeTag = New-EngineeringItem $tagTable.Tags 'Tag' @{ Name = 'BuilderProbe' }
-                Export-ApiDescription $probeTag 'hmi-tag-api.json'
-            } catch { $report.warnings += 'Probe tag creation: ' + $_.Exception.Message }
-            Export-HmiObject $tagTable 'hmi-probe-tags'
-        } catch { $report.warnings += 'HMI tag table: ' + $_.Exception.Message }
-    }
-    # Create native screen objects through the installed API. Controls, tags,
-    # connection and alarms require actual WinCC V19 export schema from this run.
-    # Never import invented XML or present blank screens as an operational HMI.
-    if ($null -ne $hmi.PSObject.Properties['ScreenFolder'] -and $null -ne $hmi.ScreenFolder.PSObject.Properties['Screens']) {
-        Export-ApiDescription $hmi.ScreenFolder.Screens 'hmi-screens-composition-api.json'
-        $screens = $hmi.ScreenFolder.Screens
-        foreach ($screenName in @($config.screenNames) + @('ROLL_ApiProbe')) {
-            try {
-                $screen = New-EngineeringItem $screens 'Screen' @{ Name = [string]$screenName }
-                $report.nativeScreens += [string]$screenName
-                if ($null -ne $screen.PSObject.Properties['ScreenItems']) { Export-ApiDescription $screen.ScreenItems ('screen-' + $screenName + '-items-api.json') }
-                if ($screenName -eq 'ROLL_ApiProbe' -and $null -ne $screen.PSObject.Properties['ScreenItems']) {
-                    foreach ($itemType in @('Button', 'TextField', 'IOField', 'AlarmView')) {
-                        try {
-                            $item = New-EngineeringItem $screen.ScreenItems $itemType @{ Name = 'Probe_' + $itemType }
-                            Export-ApiDescription $item ('hmi-item-' + $itemType + '-api.json')
-                            foreach ($property in $item.GetType().GetProperties()) {
-                                if ($property.PropertyType.FullName -like 'Siemens.Engineering.Hmi.*' -and $property.Name -ne 'Parent') {
-                                    try { Export-ApiDescription $item.($property.Name) ('hmi-item-' + $itemType + '-' + $property.Name + '-api.json') } catch { $report.warnings += "Probe item metadata $itemType/$($property.Name): $($_.Exception.Message)" }
-                                }
-                            }
-                        } catch { $report.warnings += "Probe item $itemType : $($_.Exception.Message)" }
-                    }
-                }
-                Export-ApiDescription $screen ('screen-' + $screenName + '-api.json')
-            } catch { $report.warnings += "Screen creation $screenName : $($_.Exception.Message)" }
+            Export-HmiObject $tagTable 'hmi-default-tags'
         }
-    } else {
-        $report.warnings += 'Installed HMI API exposes a different screen interface; see hmi-api.json.'
+    }
+    if ($null -ne $hmi.PSObject.Properties['ScreenFolder']) {
+        Export-ApiDescription $hmi.ScreenFolder.Screens 'hmi-screens-composition-api.json'
+        $report.nativeScreens = @($hmi.ScreenFolder.Screens | ForEach-Object { [string]$_.Name })
+    }
+    if ($report.nativeScreens.Count -eq 0) {
+        $report.nextAction = 'Prepare the WZOR_ROLL screen in the saved project using HMI_WZOR.md, then run EKSPORTUJ_WZOR_HMI.cmd while that project is open. Rebuilding another blank project does not supply an HMI template.'
+        $report.warnings += 'Comfort HMI native creation is unavailable (empty GetCreationInfos). Native screen/tag/connection templates from the TIA editor are required.'
     }
     try {
         $hmiCompiler = Get-Service $hmi 'Siemens.Engineering.Compiler.ICompilable'
