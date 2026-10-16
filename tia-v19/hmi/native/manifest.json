@@ -1,0 +1,142 @@
+{
+  "format": 1,
+  "status": "offline HMI review import; native V19 compilation pending",
+  "connection": "ROLL_PLC",
+  "table": "ROLL_TP900_Tags",
+  "tag_count": 53,
+  "screens": [
+    {
+      "name": "ROLL_Przeglad",
+      "number": 101,
+      "objects": 28
+    },
+    {
+      "name": "ROLL_Receptury",
+      "number": 102,
+      "objects": 43
+    },
+    {
+      "name": "ROLL_Reczny",
+      "number": 103,
+      "objects": 26
+    },
+    {
+      "name": "ROLL_Alarmy",
+      "number": 104,
+      "objects": 18
+    },
+    {
+      "name": "ROLL_Nastawy",
+      "number": 105,
+      "objects": 22
+    }
+  ],
+  "original_screen_required": "WZOR_ROLL",
+  "tag_prefix": "ROLL_",
+  "culture": "en-US",
+  "captions_language": "pl-PL",
+  "plc_source_sha256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1",
+  "plc_source_changed": false,
+  "native_compiled": false,
+  "downloads_performed": false,
+  "physical_machine_tested": false,
+  "locked_actions": [
+    "all_generated_operator_commands",
+    "editable_fields",
+    "GroundHeld",
+    "WorkHeld",
+    "recipe_load",
+    "recipe_save_apply",
+    "parameter_save"
+  ],
+  "pending": [
+    "global heartbeat configuration",
+    "confirmed payload transfer and request/ack commands",
+    "native alarm definitions and acknowledgement mapping",
+    "native import/compile",
+    "physical I/O"
+  ],
+  "source_provenance": {
+    "archive": "ROLL_HMI_WZOR_20261016_103516_d82103_eksport.zip",
+    "archive_sha256": "ab8ca9952f6b7870a5c80766a8786e7c03f4a744c554c4cdc08fa029eaf2da60",
+    "source_screen_file": "001_Screen_WZOR_ROLL.xml",
+    "source_tag_file": "002_TagTable_Default_tag_table.xml",
+    "screen_source_sha256": "d69d6ac7cc950872384c6b9d5e4a0c6729bd57618306d29c1a25c461025b9a3c",
+    "tags_source_sha256": "822c681969d60954c343a0eb4e5a34c775163e446eade0cd945d1c8d45a54aa0",
+    "native_alarm_view_exported": false,
+    "io_process_tag": "WzorLiczba",
+    "screen_dimensions": [
+      800,
+      480
+    ],
+    "native_culture": "en-US"
+  },
+  "format_references": [
+    {
+      "url": "https://github.com/caoyixian06/TiaMcpServer",
+      "commit": "44cc125bcd0d3f9611bfe4a1a2e6668932b137e5",
+      "paths": [
+        "templates/v17-calibration/screen_zonghuamian_export.xml",
+        "Services/HmiActionCatalog.cs"
+      ],
+      "scope": "Interoperability facts: ActivateScreen argument names, link/literal representation, and SetTag signature; no third-party source code copied; not V19 native validation"
+    }
+  ],
+  "files": [
+    {
+      "path": "tags/ROLL_TP900_Tags.xml",
+      "category": "tags",
+      "sha256": "9739c7d748e10090d264bdeea657d01c6697224f5959a80e8995660c2d106010"
+    },
+    {
+      "path": "skeletons/ROLL_Alarmy.xml",
+      "category": "skeletons",
+      "sha256": "1c8599db5204318e38a436299e57367dfe5ca6c97cd7d3993c5b8d67f631ff35"
+    },
+    {
+      "path": "skeletons/ROLL_Nastawy.xml",
+      "category": "skeletons",
+      "sha256": "4535e7bb24301125c646721547ccfe70c94e3d7474e3c07886eaab0704eab444"
+    },
+    {
+      "path": "skeletons/ROLL_Przeglad.xml",
+      "category": "skeletons",
+      "sha256": "bf6f4a67a3987495c856c01c96f38ccf367aeca6827fa540821bf6b9e01c1daa"
+    },
+    {
+      "path": "skeletons/ROLL_Receptury.xml",
+      "category": "skeletons",
+      "sha256": "fbdc0e2576f0fc8866218ee65457cf12902c3dd578fbc8f50b1220abcf05fc6f"
+    },
+    {
+      "path": "skeletons/ROLL_Reczny.xml",
+      "category": "skeletons",
+      "sha256": "66f0e2ad0eaa5403034cfa899f3327e2d2d264a864f27d9fd1dd1f56f977959f"
+    },
+    {
+      "path": "screens/ROLL_Alarmy.xml",
+      "category": "screens",
+      "sha256": "32b1a10b186d80694ae0b2b8f8e8927ad8e96a9952ff4fd203663f908fddfbe6"
+    },
+    {
+      "path": "screens/ROLL_Nastawy.xml",
+      "category": "screens",
+      "sha256": "dcade5d6f2f655e435d35221cbdb2faec186434ebcf571cec075beb4c638667b"
+    },
+    {
+      "path": "screens/ROLL_Przeglad.xml",
+      "category": "screens",
+      "sha256": "4a7b8970b7823c0f71ced9931bb70f50233d4435952be0b50e8e14149852515f"
+    },
+    {
+      "path": "screens/ROLL_Receptury.xml",
+      "category": "screens",
+      "sha256": "ba3f6a3fa8ed06b687687b51771ad536083f747852c96509ed00a179ff4d2f57"
+    },
+    {
+      "path": "screens/ROLL_Reczny.xml",
+      "category": "screens",
+      "sha256": "c884fd5e400bd17eea3844d31ddd3ec65c36f983a3e385f48bbe6536f4ebe6c1"
+    }
+  ]
+}

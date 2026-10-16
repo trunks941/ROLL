@@ -89,10 +89,10 @@ function Get-HmiSeedRequirements($Screens, $TagTables, [int]$ConnectionCount, $C
     if (@($Screens).Count -eq 0) { $missing += 'No screen. Add WZOR_ROLL in the TIA editor.' }
     $itemCount = 0
     foreach ($screen in $Screens) { $itemCount += [int]$screen.itemCount }
-    if ($itemCount -lt 4) { $missing += 'Fewer than four screen objects. Add a text field, button, numeric I/O field and alarm view.' }
+    if ($itemCount -lt 3) { $missing += 'Fewer than three exportable screen objects. A text field, button and numeric I/O field are required.' }
     $types = @($Screens | ForEach-Object { $_.itemTypes } | Where-Object { $_ })
     if ($types.Count -gt 0) {
-        foreach ($required in @('Hmi.Screen.TextField', 'Hmi.Screen.Button', 'Hmi.Screen.IOField', 'Hmi.Screen.AlarmView')) {
+        foreach ($required in @('Hmi.Screen.TextField', 'Hmi.Screen.Button', 'Hmi.Screen.IOField')) {
             if ($required -notin $types) { $missing += "Missing native control: $required." }
         }
     }
@@ -185,6 +185,10 @@ try {
         } elseif ($entry.Kind -eq 'Connections') { $report.connectionCount++ }
     }
     $report.connectionReferenceNames = @($report.connectionReferenceNames | Sort-Object -Unique)
+    $exportedTypes = @($report.screens | ForEach-Object { $_.itemTypes })
+    if ('Hmi.Screen.AlarmView' -notin $exportedTypes) {
+        $report.warnings += 'Alarm view is not present in the XML. This does not establish absence from the TIA screen; preserve the existing project and control. It is not a template export blocker.'
+    }
     if ($report.connectionCount -eq 0 -and $report.connectionReferenceNames.Count -gt 0) {
         $report.warnings += 'Tags reference HMI connections, but the API exported no connection definitions. Preserve the configured connection in the existing project. This does not prove the connection is absent.'
     }

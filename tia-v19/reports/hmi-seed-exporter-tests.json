@@ -2,11 +2,11 @@
   "success": true,
   "inventoryScenarios": 1,
   "requirementScenarios": 4,
-  "nativeXmlFixtureScenarios": 3,
+  "nativeXmlFixtureScenarios": 4,
   "mutationCallGuardPassed": true,
   "parserVersion": "7.4.6",
   "scope": "nested HMI inventory and completeness diagnostics on data doubles; real native XML layered controls, unbound IO and connection-reference regression; exporter AST mutation-call guard",
   "nativeTiaExecuted": false,
   "nativeHmiExportVerified": false,
-  "exporterSHA256": "46ec1efd56e1fbfffd22a9270dabe253e2077e643b481229a1fa8fea147c279b"
+  "exporterSHA256": "39556e63c5d9a46c384781213809816654802b97caf6a0cd8ca41298fa3238a2"
 }

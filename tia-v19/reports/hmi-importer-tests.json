@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "parserVersion": "7.4.6",
+  "archiveApiDoubleScenarios": 3,
+  "manifestScenarios": 2,
+  "sourceArchiveOrderPassed": true,
+  "nativeTiaExecuted": false,
+  "nativeProjectArchiveVerified": false,
+  "nativeHmiImportVerified": false,
+  "importerSHA256": "7121279968f7857ee5fdf3a9d86ae9f3bbc468c356053949a9edf45eb14c305f"
+}

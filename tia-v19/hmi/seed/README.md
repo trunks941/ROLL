@@ -1,9 +1,9 @@
 # Wzór HMI z 16.10.2026
 
-XML pochodzi z natywnego eksportu użytkownika `ROLL_HMI_WZOR_20261016_080615_914505_eksport.zip`. Zachowano bajty oryginalnego ekranu i tabeli tagów.
+Bieżące `WZOR_ROLL.xml` i `tags.xml` pochodzą z eksportu `ROLL_HMI_WZOR_20261016_103516_d82103_eksport.zip`. Pochodzenie i sumy są w `provenance.json`. Zachowano oryginalne bajty.
 
-Ekran ma cztery obiekty: przycisk, pole I/O, tekst i okrąg. Przycisk ustawia/kasuje `WzorPrzycisk`, a animacja okręgu korzysta z `WzorStan`. Pole I/O nie ma powiązania z tagiem; brakuje widoku alarmów. To wzór częściowy, nie gotowe ekrany operatorskie.
+Ekran zawiera przycisk, pole I/O powiązane z WzorLiczba, tekst i okrąg z animacją WzorStan. Widok alarmów jest widoczny w GUI użytkownika, lecz pomijany w XML. Nie wymagamy jego ponownego dodawania/eksportu; importer zachowuje WZOR_ROLL w kopii całego projektu.
 
-Tabela zawiera trzy tagi. Dwa zewnętrzne odwołują się do `ROLL_PLC`; brak definicji połączenia w eksporcie nie potwierdza jego braku w projekcie. Zachowaj istniejący projekt i jego połączenie.
+`WZOR_ROLL-unbound-regression.xml` jest starszym wzorem z 08:06, używanym do testu wykrywania brakującego powiązania pola I/O. Nie jest bieżącym ekranem do importu.
 
-Poprzedni eksporter podał błędnie zero obiektów, ponieważ `Screen` nie udostępnia ich jako publicznej właściwości API. Poprawka odczytuje obiekty z warstw XML. [Analiza i sumy](../../reports/hmi-seed-audit-2026-10-16.json).
+`../native` zawiera kandydatów pięciu ekranów i tagów do lokalnego importu/kompilacji, a nie potwierdzony natywny projekt. [Instrukcja](../../HMI_IMPORT.md).

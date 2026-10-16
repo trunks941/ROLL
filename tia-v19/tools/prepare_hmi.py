@@ -62,7 +62,7 @@ def main():
     assert len(manual) == 14
     csv_write(gen.OUT / 'hmi/manual-functions.csv', manual)
     screens = {
-        'status': 'specification; native WinCC controls and binding pending local API/export',
+        'status': 'specification; native review assets generated separately; runtime commands and local compilation pending',
         'panel': 'TP900 Comfort 6AV2124-0JC01-0AX0', 'language': 'pl-PL',
         'screens': [
             {'name': 'Przeglad', 'title': 'Przegląd maszyny', 'content': ['Stacje 1–4', 'Wózek i bęben', 'Aktywny program', 'Status połączenia']},

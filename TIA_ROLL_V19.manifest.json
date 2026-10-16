@@ -1,11 +1,11 @@
 {
   "package": "TIA_ROLL_V19.zip",
-  "status": "PLC source unchanged and native compilation confirmed. Partial HMI seed received: four layered controls; IO field tag and alarm view still required. Exporter now audits actual screen XML and distinguishes connection references from exported definitions.",
-  "sha256": "d78f184dec97225b77703cd185249e2a8950740664be86e779090e4444e24805",
-  "bytes": 118316,
-  "file_count": 45,
+  "status": "Native HMI review package: 5 screens, 53 tags, 137 controls. IMPORTUJ_HMI.cmd archives the saved source, retrieves a separate copy, imports tags/skeletons/screens and compiles HMI locally. All generated operator commands and editing are locked pending heartbeat/transaction completion and native validation.",
+  "sha256": "c4e7847bfb0e0c00e8471a1032f5fef4be9118c884f4e3826d83b97d9a7b4a8f",
+  "bytes": 184434,
+  "file_count": 69,
   "current_source_sha256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1",
-  "tia_compiled": true,
+  "tia_compiled": false,
   "native_plc_errors": 0,
   "native_plc_warnings": 1,
   "retention_verified_in_native_exports": true,
@@ -22,14 +22,29 @@
       "sha256": "f25b0af4896dd434311512d7dcb118e2fbfe91ee79bacb08d141e420a2b9461f"
     },
     {
+      "path": "tia-v19/HMI_IMPORT.md",
+      "bytes": 6190,
+      "sha256": "8a6516843d806bd8d47bd978f0feec1abf5e63c62f36cd9cf8d1ad3154be86e2"
+    },
+    {
       "path": "tia-v19/HMI_WZOR.md",
-      "bytes": 5270,
-      "sha256": "6f374337692c684ecc006b2825a00c2fa607b2251e84d3c110f9fcfcd3f461b6"
+      "bytes": 4541,
+      "sha256": "cc18c36d79951ac9bc031a81e5d668b9d22a9e9ae295bc1ed54ed4659e2d4245"
+    },
+    {
+      "path": "tia-v19/IMPORTUJ_HMI.cmd",
+      "bytes": 517,
+      "sha256": "02615b761cd26c321fc71d5d5ae98fa0947e1bdad18aa97c3cf7f3728d6afe4a"
+    },
+    {
+      "path": "tia-v19/PODGLAD_HMI.html",
+      "bytes": 17797,
+      "sha256": "ceb55a4c8d95c18fb941512f45c0ee1043e4b97f7d3b4c50dc06b16b0307e4c2"
     },
     {
       "path": "tia-v19/README.md",
-      "bytes": 13502,
-      "sha256": "bef5ea5cc4725a57526b925fd1012347666ba79fcd968d31aaef3ce60ccd3adc"
+      "bytes": 14532,
+      "sha256": "b5018dc8a7fe6f56a9b82802af00f305d84165cf1e888fa2c66a61244168e83b"
     },
     {
       "path": "tia-v19/ROLL_ALL.scl",
@@ -42,6 +57,11 @@
       "sha256": "2f83efa2030a3514528f4ba2c8fea515fd7a96b5c31c6b4c5f4765777d30ee65"
     },
     {
+      "path": "tia-v19/hmi/heartbeat/ROLL_HeartbeatTick.vbs",
+      "bytes": 769,
+      "sha256": "22260d89f2ecc56d58aec7706ca11cfe34d9d73452e238cf7c40dd53b59bc31b"
+    },
+    {
       "path": "tia-v19/hmi/interface.csv",
       "bytes": 3938,
       "sha256": "cd4d04a4ce9f70618f3efcca61b0fc5c6870d443ae3f829740dd77aef5a4f648"
@@ -52,24 +72,94 @@
       "sha256": "99d815aae795a06a20421729cab128938485a2feecd825b6fafb493ebaec55f1"
     },
     {
+      "path": "tia-v19/hmi/native/manifest.json",
+      "bytes": 4366,
+      "sha256": "0aa22cddf46a7fca87822f16005867245efb5c6d0ba9cf143efde49eba16e7a4"
+    },
+    {
+      "path": "tia-v19/hmi/native/screens/ROLL_Alarmy.xml",
+      "bytes": 85533,
+      "sha256": "32b1a10b186d80694ae0b2b8f8e8927ad8e96a9952ff4fd203663f908fddfbe6"
+    },
+    {
+      "path": "tia-v19/hmi/native/screens/ROLL_Nastawy.xml",
+      "bytes": 95598,
+      "sha256": "dcade5d6f2f655e435d35221cbdb2faec186434ebcf571cec075beb4c638667b"
+    },
+    {
+      "path": "tia-v19/hmi/native/screens/ROLL_Przeglad.xml",
+      "bytes": 105381,
+      "sha256": "4a7b8970b7823c0f71ced9931bb70f50233d4435952be0b50e8e14149852515f"
+    },
+    {
+      "path": "tia-v19/hmi/native/screens/ROLL_Receptury.xml",
+      "bytes": 180864,
+      "sha256": "ba3f6a3fa8ed06b687687b51771ad536083f747852c96509ed00a179ff4d2f57"
+    },
+    {
+      "path": "tia-v19/hmi/native/screens/ROLL_Reczny.xml",
+      "bytes": 196513,
+      "sha256": "c884fd5e400bd17eea3844d31ddd3ec65c36f983a3e385f48bbe6536f4ebe6c1"
+    },
+    {
+      "path": "tia-v19/hmi/native/skeletons/ROLL_Alarmy.xml",
+      "bytes": 2276,
+      "sha256": "1c8599db5204318e38a436299e57367dfe5ca6c97cd7d3993c5b8d67f631ff35"
+    },
+    {
+      "path": "tia-v19/hmi/native/skeletons/ROLL_Nastawy.xml",
+      "bytes": 2277,
+      "sha256": "4535e7bb24301125c646721547ccfe70c94e3d7474e3c07886eaab0704eab444"
+    },
+    {
+      "path": "tia-v19/hmi/native/skeletons/ROLL_Przeglad.xml",
+      "bytes": 2278,
+      "sha256": "bf6f4a67a3987495c856c01c96f38ccf367aeca6827fa540821bf6b9e01c1daa"
+    },
+    {
+      "path": "tia-v19/hmi/native/skeletons/ROLL_Receptury.xml",
+      "bytes": 2279,
+      "sha256": "fbdc0e2576f0fc8866218ee65457cf12902c3dd578fbc8f50b1220abcf05fc6f"
+    },
+    {
+      "path": "tia-v19/hmi/native/skeletons/ROLL_Reczny.xml",
+      "bytes": 2276,
+      "sha256": "66f0e2ad0eaa5403034cfa899f3327e2d2d264a864f27d9fd1dd1f56f977959f"
+    },
+    {
+      "path": "tia-v19/hmi/native/tags/ROLL_TP900_Tags.xml",
+      "bytes": 155889,
+      "sha256": "9739c7d748e10090d264bdeea657d01c6697224f5959a80e8995660c2d106010"
+    },
+    {
       "path": "tia-v19/hmi/screens.json",
-      "bytes": 2073,
-      "sha256": "6215c268e3dd31b22294d699a451fa94b9a50a760d87f7ace3ab4ec184ea5e0e"
+      "bytes": 2104,
+      "sha256": "161108b075ebea90dad70e572ab161445a58a9b34571c70532bc909579e3ebde"
     },
     {
       "path": "tia-v19/hmi/seed/README.md",
-      "bytes": 876,
-      "sha256": "5a4d4baaedfab985c22c0134e4a43ba3b2e46ae31fc3306f72d82750353db90a"
+      "bytes": 813,
+      "sha256": "79e3bbc3803be06a8dd5697d5537e0fa866c16d5e964615b20f7e0295f3743af"
     },
     {
-      "path": "tia-v19/hmi/seed/WZOR_ROLL.xml",
+      "path": "tia-v19/hmi/seed/WZOR_ROLL-unbound-regression.xml",
       "bytes": 17771,
       "sha256": "2d367f09b217d0a262f77d2269b5f811c1890f436b69f876f60c94ec1551876a"
     },
     {
+      "path": "tia-v19/hmi/seed/WZOR_ROLL.xml",
+      "bytes": 18516,
+      "sha256": "d69d6ac7cc950872384c6b9d5e4a0c6729bd57618306d29c1a25c461025b9a3c"
+    },
+    {
+      "path": "tia-v19/hmi/seed/provenance.json",
+      "bytes": 602,
+      "sha256": "c4e3271147d537ccb806a17ba7f43b3677891d84bd714fcd354314f1cbc06048"
+    },
+    {
       "path": "tia-v19/hmi/seed/tags.xml",
       "bytes": 10196,
-      "sha256": "634eea3e24dc8e7ff745a9e8946a05550efd12eee95dad343cfdfbe7a258477b"
+      "sha256": "822c681969d60954c343a0eb4e5a34c775163e446eade0cd945d1c8d45a54aa0"
     },
     {
       "path": "tia-v19/openness/Build-Roll.ps1",
@@ -78,8 +168,13 @@
     },
     {
       "path": "tia-v19/openness/Export-HmiSeed.ps1",
-      "bytes": 13624,
-      "sha256": "46ec1efd56e1fbfffd22a9270dabe253e2077e643b481229a1fa8fea147c279b"
+      "bytes": 13946,
+      "sha256": "39556e63c5d9a46c384781213809816654802b97caf6a0cd8ca41298fa3238a2"
+    },
+    {
+      "path": "tia-v19/openness/Import-RollHmi.ps1",
+      "bytes": 16484,
+      "sha256": "7121279968f7857ee5fdf3a9d86ae9f3bbc468c356053949a9edf45eb14c305f"
     },
     {
       "path": "tia-v19/openness/target.json",
@@ -112,6 +207,11 @@
       "sha256": "7c3e4bf48d179529785647872f562b9eb5b81bc12a19b7c718d00bcdf1867930"
     },
     {
+      "path": "tia-v19/reports/hmi-importer-tests.json",
+      "bytes": 341,
+      "sha256": "c6f4c2428c0bdf4b256f854f0973c7958653d7a04a8f566b5e81ff41f72ed198"
+    },
+    {
       "path": "tia-v19/reports/hmi-seed-audit-2026-10-16.json",
       "bytes": 1255,
       "sha256": "32525e74151f800698321b0ce6f8a08b90123c81ac7ab1e53bf11177b25ea49c"
@@ -119,7 +219,12 @@
     {
       "path": "tia-v19/reports/hmi-seed-exporter-tests.json",
       "bytes": 525,
-      "sha256": "3618b4fd930b20b629e98ae14fd13c6d9a29155250c48f36c80722e8d362cec8"
+      "sha256": "7b64bc2b8ac16b681bca1074576455169b5ad2f229cabcfd6ebbb434552c87bb"
+    },
+    {
+      "path": "tia-v19/reports/native-hmi-checks.json",
+      "bytes": 513,
+      "sha256": "bdcd292cd4f417816624343c9c0b30c471acfc511502d73151c88d615c84688d"
     },
     {
       "path": "tia-v19/reports/native-identifier-regression.json",
@@ -207,9 +312,14 @@
       "sha256": "49f121f378f924782802f4e67ecd977fdd431b176f9a86157726bd49bd6eb59d"
     },
     {
+      "path": "tia-v19/tools/generate_native_hmi.py",
+      "bytes": 21084,
+      "sha256": "ae648e157b81f41d229a24cfc4ffcf2b9aa417baca28321f3d611d82cd30e9f5"
+    },
+    {
       "path": "tia-v19/tools/prepare_hmi.py",
-      "bytes": 5880,
-      "sha256": "d277beac741dec161850006647ba34820f3902ed5535f72fe61b965effb3eb9a"
+      "bytes": 5911,
+      "sha256": "92d10fba489625bd05b8e4c58e1c86b19a1b081f065d175110875152c69c7d07"
     },
     {
       "path": "tia-v19/tools/test_builder_diagnostics.ps1",
@@ -227,14 +337,24 @@
       "sha256": "56a27e5a5c51a94b28a1b237d925f598d1342e28cd24d8b70e10c1e3e2f64e8e"
     },
     {
+      "path": "tia-v19/tools/test_hmi_importer.ps1",
+      "bytes": 4704,
+      "sha256": "70ab29f116318ca36ac337c2c63eebed2ae2c9150584b85d52f29e4701fce7ee"
+    },
+    {
       "path": "tia-v19/tools/test_hmi_seed_exporter.ps1",
-      "bytes": 5305,
-      "sha256": "2b6500267a2ca801216fca26f5f853480b7c9cd190ee3b2fb12d9e51a32793be"
+      "bytes": 5657,
+      "sha256": "b814007d60e402afcb1bfd372ec31bd67bc3db57d5ea2f264b6d7ed8695b8680"
     },
     {
       "path": "tia-v19/tools/test_native_evidence.py",
       "bytes": 1724,
       "sha256": "9763b814edae59dc2fea5e81650f416837fa58838463c1e38b6eba090e58946f"
+    },
+    {
+      "path": "tia-v19/tools/test_native_hmi.py",
+      "bytes": 6725,
+      "sha256": "3aba0c3a59c60469acd839af2182785ade655e3c274537109f8d9a0daa3896b1"
     },
     {
       "path": "tia-v19/tools/verify_sources.py",
@@ -243,5 +363,14 @@
     }
   ],
   "seed_native_export_received": true,
-  "seed_complete": false
+  "seed_complete": true,
+  "plc_source_native_compiled": true,
+  "hmi_native_compiled": false,
+  "project_native_build_verified": false,
+  "seed_complete_for_review_assets": true,
+  "hmi_native_screen_count": 5,
+  "hmi_native_tag_count": 53,
+  "hmi_native_object_count": 137,
+  "hmi_operator_commands_locked": true,
+  "hmi_importer_native_execution_verified": false
 }

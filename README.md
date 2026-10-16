@@ -4,7 +4,9 @@ Komplet materiałów zgromadzonych podczas analizy maszyny Karl Roll KS04201. G�
 
 **TIA V19:** [instrukcja i narzędzia](tia-v19/README.md), [źródło PLC ROLL_ALL.scl](tia-v19/ROLL_ALL.scl). Raport z 15.10.2026, godz. 12:09 potwierdził kompilację aktualnego PLC: **0 błędów, 1 ostrzeżenie** dotyczące nieprzypisanych modułów I/O, oraz retencję sześciu DB. CPU i TP900 są utworzone w zapisanym projekcie użytkownika. W repozytorium są źródła, narzędzia i natywne eksporty; pełny `.ap19` pozostał na komputerze z TIA.
 
-**Teraz: [uzupełnienie wzoru HMI przesłanego 16.10 i ponowny eksport](tia-v19/HMI_WZOR.md)**. Wzór zawiera przycisk, tekst, pole I/O i lampkę. Pozostaje powiązać pole z `WzorLiczba` i dodać widok alarmów. Poprawiono błędne liczenie obiektów przez eksporter. Comfort API udostępnia import/eksport, ale nie tworzenie ekranów i tagów. Nie należy ponawiać budowy pustego panelu. Docelowe kontrolki, połączenie, alarmy i fizyczne I/O pozostają do wykonania.
+**Teraz: [import pięciu ekranów HMI do kopii projektu](tia-v19/HMI_IMPORT.md)**. Są przygotowane 53 tagi, 137 obiektów i podgląd HTML. `IMPORTUJ_HMI.cmd` tworzy archiwum źródła, odtwarza oddzielną kopię i importuje HMI bez zmiany PLC. Import/kompilacja WinCC wymaga lokalnego V19. Edycja i polecenia operatorskie nowych ekranów pozostają zablokowane do czasu dokończenia obsługi heartbeat i transakcji.
+
+Ostatni wzór ma poprawne powiązanie pola I/O. Widok alarmów jest w edytorze, ale pomijany w XML; zachowujemy go przez kopię całego projektu. Nie trzeba ponawiać jego eksportu. Fizyczne I/O, alarmy maszyny i pełne polecenia HMI nadal wymagają dokończenia.
 
 - [Mapa migracji](migration-ROLL/MAPA_MIGRACJI.md)
 - [Wariant modułów I/O S7](migration-ROLL/hardware_review/DOBOR_IO_S7.md)

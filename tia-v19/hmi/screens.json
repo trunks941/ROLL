@@ -1,5 +1,5 @@
 {
-  "status": "specification; native WinCC controls and binding pending local API/export",
+  "status": "specification; native review assets generated separately; runtime commands and local compilation pending",
   "panel": "TP900 Comfort 6AV2124-0JC01-0AX0",
   "language": "pl-PL",
   "screens": [

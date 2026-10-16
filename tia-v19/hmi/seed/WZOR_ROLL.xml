@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V19" />
   <DocumentInfo>
-    <Created>2026-10-16T06:06:29.0251816Z</Created>
+    <Created>2026-10-16T08:35:17.5230422Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -230,11 +230,11 @@
               <DataFormat>Decimal</DataFormat>
               <EdgeStyle>Double</EdgeStyle>
               <Enabled>true</Enabled>
-              <FieldLength>10</FieldLength>
+              <FieldLength>5</FieldLength>
               <FitToLargest>false</FitToLargest>
               <Flashing>None</Flashing>
               <ForeColor>49, 52, 74</ForeColor>
-              <FormatPattern>9999999</FormatPattern>
+              <FormatPattern>s99999</FormatPattern>
               <Height>32</Height>
               <HiddenInput>false</HiddenInput>
               <HorizontalAlignment>Left</HorizontalAlignment>
@@ -278,9 +278,26 @@
                   </MultilingualTextItem>
                 </ObjectList>
               </MultilingualText>
+              <Hmi.Screen.Property ID="1B" CompositionName="Properties">
+                <AttributeList>
+                  <Name>ProcessValue</Name>
+                </AttributeList>
+                <ObjectList>
+                  <Hmi.Dynamic.TagConnectionDynamic ID="1C" CompositionName="Dynamic">
+                    <AttributeList>
+                      <Indirect>false</Indirect>
+                    </AttributeList>
+                    <LinkList>
+                      <Tag TargetID="@OpenLink">
+                        <Name>WzorLiczba</Name>
+                      </Tag>
+                    </LinkList>
+                  </Hmi.Dynamic.TagConnectionDynamic>
+                </ObjectList>
+              </Hmi.Screen.Property>
             </ObjectList>
           </Hmi.Screen.IOField>
-          <Hmi.Screen.TextField ID="1B" CompositionName="ScreenItems">
+          <Hmi.Screen.TextField ID="1E" CompositionName="ScreenItems">
             <AttributeList>
               <BackColor>255, 255, 255</BackColor>
               <BackFillStyle>Transparent</BackFillStyle>
@@ -308,9 +325,9 @@
               <Width>84</Width>
             </AttributeList>
             <ObjectList>
-              <Hmi.Globalization.MultiLingualFont ID="1C" CompositionName="Font">
+              <Hmi.Globalization.MultiLingualFont ID="1F" CompositionName="Font">
                 <ObjectList>
-                  <Hmi.Globalization.FontItem ID="1D" CompositionName="Items">
+                  <Hmi.Globalization.FontItem ID="20" CompositionName="Items">
                     <AttributeList>
                       <Culture>en-US</Culture>
                       <FontFamily>Tahoma</FontFamily>
@@ -320,9 +337,9 @@
                   </Hmi.Globalization.FontItem>
                 </ObjectList>
               </Hmi.Globalization.MultiLingualFont>
-              <MultilingualText ID="1E" CompositionName="Text">
+              <MultilingualText ID="21" CompositionName="Text">
                 <ObjectList>
-                  <MultilingualTextItem ID="1F" CompositionName="Items">
+                  <MultilingualTextItem ID="22" CompositionName="Items">
                     <AttributeList>
                       <Culture>en-US</Culture>
                       <Text><body><p>Wzór ROLL</p></body></Text>
@@ -332,7 +349,7 @@
               </MultilingualText>
             </ObjectList>
           </Hmi.Screen.TextField>
-          <Hmi.Screen.Circle ID="20" CompositionName="ScreenItems">
+          <Hmi.Screen.Circle ID="23" CompositionName="ScreenItems">
             <AttributeList>
               <BackColor>217, 217, 217</BackColor>
               <BackFillStyle>Solid</BackFillStyle>
@@ -350,19 +367,19 @@
               <Width>48</Width>
             </AttributeList>
             <ObjectList>
-              <Hmi.Dynamic.RangeAppearanceAnimation ID="21" CompositionName="Animations">
+              <Hmi.Dynamic.RangeAppearanceAnimation ID="24" CompositionName="Animations">
                 <AttributeList>
                   <Name>RangeAppearanceAnimation</Name>
                 </AttributeList>
                 <ObjectList>
-                  <Hmi.Dynamic.TagElementTrigger ID="22" CompositionName="RangeTag">
+                  <Hmi.Dynamic.TagElementTrigger ID="25" CompositionName="RangeTag">
                     <LinkList>
                       <Tag TargetID="@OpenLink">
                         <Name>WzorStan</Name>
                       </Tag>
                     </LinkList>
                   </Hmi.Dynamic.TagElementTrigger>
-                  <Hmi.Dynamic.Range ID="25" CompositionName="RangeValues">
+                  <Hmi.Dynamic.Range ID="28" CompositionName="RangeValues">
                     <AttributeList>
                       <BackColor>217, 217, 217</BackColor>
                       <FlashingType>No</FlashingType>
@@ -371,7 +388,7 @@
                       <UpperLimit>0</UpperLimit>
                     </AttributeList>
                   </Hmi.Dynamic.Range>
-                  <Hmi.Dynamic.Range ID="26" CompositionName="RangeValues">
+                  <Hmi.Dynamic.Range ID="29" CompositionName="RangeValues">
                     <AttributeList>
                       <BackColor>51, 153, 102</BackColor>
                       <FlashingType>No</FlashingType>

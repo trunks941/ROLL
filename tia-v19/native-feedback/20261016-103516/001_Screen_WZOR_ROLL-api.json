@@ -1,0 +1,85 @@
+﻿{
+    "type":  "Siemens.Engineering.Hmi.Screen.Screen",
+    "properties":  [
+                       "Parent : Siemens.Engineering.IEngineeringObject",
+                       "Name : System.String"
+                   ],
+    "methods":  [
+                    "System.Object GetAttribute(System.String)",
+                    "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringAttributeInfo] GetAttributeInfos()",
+                    "Void SetAttribute(System.String, System.Object)",
+                    "Void Export(System.IO.FileInfo, Siemens.Engineering.ExportOptions)"
+                ],
+    "interfaces":  [
+                       {
+                           "methods":  [
+                                           "Siemens.Engineering.IEngineeringCompositionOrObject GetComposition(System.String)",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringCompositionInfo] GetCompositionInfos()",
+                                           "System.Object GetAttribute(System.String)",
+                                           "System.Collections.Generic.IList`1[System.Object] GetAttributes(System.Collections.Generic.IEnumerable`1[System.String])",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringAttributeInfo] GetAttributeInfos()",
+                                           "Void SetAttribute(System.String, System.Object)",
+                                           "Void SetAttributes(System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.String,System.Object]])",
+                                           "Void SetAttributes(System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.String,System.Object]], Siemens.Engineering.AttributeDelegate)",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringInvocationInfo] GetInvocationInfos()",
+                                           "System.Object Invoke(System.String, System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.Type,System.Object]])",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringCreationInfo] GetCreationInfos(System.String)",
+                                           "Siemens.Engineering.IEngineeringObject Create(System.String, System.Type, System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.String,System.Object]])"
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringObject"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringCompositionOrObject"
+                       },
+                       {
+                           "methods":  [
+                                           "Siemens.Engineering.IEngineeringObject get_Parent()"
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringInstance"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.Library.MasterCopies.IMasterCopySource"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.Private.IInternalObjectAccess"
+                       },
+                       {
+                           "methods":  [
+                                           "System.Object GetBoxedContract()"
+                                       ],
+                           "type":  "Siemens.Engineering.Private.IInternalInstanceAccess"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.Private.IInternalBaseAccess"
+                       },
+                       {
+                           "methods":  [
+                                           "T GetService[T]()",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringServiceInfo] GetServiceInfos()"
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringServiceProvider"
+                       }
+                   ],
+    "attributes":  [
+                       {
+                           "name":  "Name",
+                           "access":  "Read"
+                       }
+                   ],
+    "compositions":  [
+
+                     ],
+    "creationReadError":  "Composition does not expose IEngineeringComposition.GetCreationInfos. See the API report."
+}

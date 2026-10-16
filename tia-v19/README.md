@@ -2,7 +2,9 @@
 
 Raport użytkownika z **15.10.2026, godz. 12:09** potwierdził kompilację bieżącego źródła PLC: **0 błędów, 1 ostrzeżenie** dotyczące nieskonfigurowanych modułów I/O. Retencja wszystkich sześciu DB jest potwierdzona natywnym eksportem. Utworzono CPU i TP900, a projekt `.ap19` zapisano na komputerze użytkownika. Chmura nie uruchamia TIA; w paczce są źródła i narzędzia, bez pełnego projektu `.ap19`.
 
-**Aktualny krok: uzupełnij przesłany ekran `WZOR_ROLL`: przypisz `WzorLiczba` do pola I/O i dodaj widok alarmów. [Instrukcja uzupełnienia](HMI_WZOR.md). Następnie uruchom poprawiony `EKSPORTUJ_WZOR_HMI.cmd` i przekaż nowy ZIP.** Eksport z 16.10 zawiera już poprawny przycisk, tekst, okrąg z animacją i trzy tagi. Poprzedni wynik zero obiektów był błędem eksportera, poprawionym przez analizę warstw XML. Nie uruchamiaj teraz ponownie budowy nowego projektu. Ekrany operatorskie, połączenia i fizyczne I/O nadal wymagają dokończenia.
+**Aktualny krok: [pierwszy import wygenerowanych ekranów do kopii istniejącego projektu](HMI_IMPORT.md).** Paczka ma 5 ekranów, 53 tagi i 137 obiektów. Uruchom **`IMPORTUJ_HMI.cmd`** z zapisanym projektem ROLL otwartym w TIA i przekaż `ROLL_HMI_IMPORT_…_raport.zip`. Skrypt archiwizuje źródło, odtwarza oddzielną kopię i dopiero w niej importuje HMI. Podgląd układu jest w `PODGLAD_HMI.html`.
+
+Wzór jest już wystarczający: ostatni eksport potwierdza pole I/O powiązane z `WzorLiczba`. Alarm view jest widoczny w GUI, ale pomijany przez XML; nie wymagamy kolejnego identycznego eksportu. Zachowujemy go przez archiwizację pełnego projektu i pozostawienie `WZOR_ROLL` bez importu zastępującego jego zawartość. Edycja i wszystkie polecenia operatorskie nowych ekranów są w pierwszej wersji wyłączone. **Natywna kompilacja nowego HMI, heartbeat i pełna obsługa poleceń pozostają do potwierdzenia/dokończenia.**
 
 ## Budowa nowego projektu — do odtworzenia od początku
 
@@ -37,9 +39,11 @@ Skrypt tworzy dokładną CPU **6ES7513-1AM03-0AB0** oraz **TP900 Comfort 6AV2124
 
 Raport 12:09 wykazał, że `GetCreationInfos` zwraca puste listy dla ekranów, tagów, tabel i połączeń Comfort. Samo istnienie ogólnego interfejsu `Create` nie daje obsługi tworzenia tych obiektów. Poprzednie założenie o tej możliwości oraz test z atrapą API nie potwierdziły zachowania WinCC. Builder nie ponawia już tych prób. Kompilator HMI zgłosił jeden błąd: brak ekranu startowego.
 
-Do budowy potrzebny jest wzór z edytora. [Instrukcja HMI](HMI_WZOR.md) opisuje jeden ekran z czterema obiektami, trzy tagi i połączenie do istniejącej CPU. `EKSPORTUJ_WZOR_HMI.cmd` eksportuje obiekty z już otwartego projektu; nie zapisuje ani nie modyfikuje jego konfiguracji. Dla kilku otwartych projektów pozwala wybrać nazwę. XML, opisy API i raport trafiają do osobnej paczki ZIP. Eksport nie jest kopią całego projektu, dlatego zachowaj projekt ze wzorem, połączeniem i ekranem startowym.
+Wzór z edytora został dostarczony. `tools/generate_native_hmi.py` klonuje jego prawdziwe obiekty, tworzy tagi i pięć ekranów oraz osobne puste ekrany do pierwszego etapu importu. Wszystkie odwołania między ekranami są rozwiązywane po utworzeniu ich nazw; źródłowy `WZOR_ROLL` i jego niewyeksportowany alarm view pozostają w kopii pełnego projektu.
 
-**Przyciski operatorskie, pola, zmienne, połączenie PLC, alarmy i zdarzenie heartbeat nie są jeszcze skonfigurowane w docelowych ekranach.** Wzór ma dostarczyć rzeczywistego formatu importu. `hmi/interface.csv` i `hmi/screens.json` są specyfikacją, nie gotowym importem WinCC.
+[Instrukcja importu](HMI_IMPORT.md) opisuje działania i ograniczenia. Importer nie zmienia PLC, modułów ani uprawnień i nie wgrywa niczego do urządzeń. Własne ekrany mają numery 101–105 oraz prefiks `ROLL_`; kolizje nazw/numerów zatrzymują pracę przed zamknięciem źródła. Native XML i formaty zdarzeń wymagają sprawdzenia w lokalnym V19; źródła i odniesienia są opisane w `hmi/native/manifest.json`.
+
+`hmi/interface.csv` i `hmi/screens.json` pozostają kontraktem funkcjonalnym. Utworzenie plików XML i poprawne odwołania nie oznaczają jeszcze gotowych poleceń operatorskich, potwierdzonego zapisu danych ani natywnej kompilacji HMI.
 
 Dobór i wstawienie modułów S7, przypisanie zacisków i niezależnych torów zasilania pozostają odrębnym krokiem. Podstawą są [wariant I/O](../migration-ROLL/hardware_review/S7-IO-layout-variant.csv) oraz [grupy zasilania](../migration-ROLL/hardware_review/S7-output-supply-assignment.csv). Skrypt nie zgaduje końcowych MLFB modułów.
 
@@ -57,7 +61,7 @@ Dobór i wstawienie modułów S7, przypisanie zacisków i niezależnych torów z
 
 **7 kontroli przeszło**, w tym **880 porównań stanów 22 PB**: bezpośrednie wykonanie rejestrów instrukcji MC5 przeciw wykonaniu wygenerowanego podzbioru SCL w Pythonie. Dodatkowo sprawdzono wielokrotne cewki, zapis VKE, migawki porównań, liczby ze znakiem, nakładanie M/MB/MW, receptury i adresy I/O. Obie strony porównania używają wspólnego modelu timerów/liczników; nie stanowi to niezależnego testu ich odpowiedników SCL.
 
-Sprawdzono parser PowerShell, rozpoznanie błędu grupy Openness (pięć przypadków), obsługę wyniku generowania źródła (dwa przypadki z atrapą API), kolejność import/kompilacja/eksport i wykrywanie błędów retencji (cztery scenariusze na natywnych XML z atrapą API), odczyt pustej listy typów tworzenia HMI bez wywołania `Create` oraz eksport metadanych. Dla eksportera sprawdzono zagnieżdżone foldery ekranów i tagów, cztery scenariusze braków wzoru i brak wywołań zmieniających konfigurację projektu. Trzy kontrole na rzeczywistym XML z 16.10 potwierdzają cztery obiekty w warstwach, brak tagu pola I/O oraz odwołanie do ROLL_PLC mimo braku eksportu definicji połączenia. Kontrole w chmurze nie uruchamiają TIA ani WinCC. [Wynik kontroli PB](reports/conversion-tests.json), [kontrole buildera](reports/builder-native-feedback-tests.json), [historyczna regresja nazw](reports/native-identifier-regression.json), [zakres trzech konwersji](reports/shift-count-regression.json) i [sumy źródeł](reports/source-hashes.json) rozdzielają sprawdzenia aktualnej wersji od wyniku natywnego dokładnie wskazanej wersji.
+Sprawdzono parser PowerShell, rozpoznanie błędu grupy Openness (pięć przypadków), obsługę wyniku generowania źródła (dwa przypadki z atrapą API), kolejność import/kompilacja/eksport i wykrywanie błędów retencji (cztery scenariusze na natywnych XML z atrapą API), odczyt pustej listy typów tworzenia HMI bez wywołania `Create` oraz eksport metadanych. Dla eksportera sprawdzono zagnieżdżone foldery ekranów i tagów, cztery scenariusze braków wzoru i brak wywołań zmieniających konfigurację projektu. Trzy kontrole na rzeczywistym XML z 16.10 potwierdzają cztery obiekty w warstwach, wykrywanie pola bez tagu w starszym wzorze, poprawnego powiązania w ostatnim wzorze oraz odwołania do ROLL_PLC mimo braku eksportu definicji połączenia. Brak alarm view w XML nie jest blokadą eksportu. Dodatkowo sprawdzono 53 tagi i 137 obiektów nowego HMI, odwołania nawigacji, geometrię, blokady przycisków, warianty publicznego API archiwizacji i kontrolę sum importu. Kontrole w chmurze nie uruchamiają TIA ani WinCC. [Wynik kontroli PB](reports/conversion-tests.json), [kontrole buildera](reports/builder-native-feedback-tests.json), [historyczna regresja nazw](reports/native-identifier-regression.json), [zakres trzech konwersji](reports/shift-count-regression.json) i [sumy źródeł](reports/source-hashes.json) rozdzielają sprawdzenia aktualnej wersji od wyniku natywnego dokładnie wskazanej wersji.
 
 Odtwarzanie źródeł i kontroli w Linux/Python 3:
 
@@ -68,8 +72,10 @@ python3 tia-v19/tools/prepare_hmi.py
 python3 tia-v19/tools/test_conversion.py
 python3 tia-v19/tools/verify_sources.py
 python3 tia-v19/tools/test_native_evidence.py
+python3 tia-v19/tools/generate_native_hmi.py
+python3 tia-v19/tools/test_native_hmi.py
 ```
 
-Kontrole PowerShell: `tools/check_powershell.ps1`, `tools/test_builder_diagnostics.ps1`, `tools/test_builder_native_feedback.ps1` i `tools/test_hmi_seed_exporter.ps1`. Kontrola retencji wymaga pełnego repozytorium z natywnymi eksportami w `native-feedback`; paczka budowy ich nie zawiera. Kontrole nie uruchamiają TIA ani nie zmieniają uprawnień Windows.
+Kontrole PowerShell: `tools/check_powershell.ps1`, `tools/test_builder_diagnostics.ps1`, `tools/test_builder_native_feedback.ps1` , `tools/test_hmi_seed_exporter.ps1` i `tools/test_hmi_importer.ps1`. Kontrola retencji wymaga pełnego repozytorium z natywnymi eksportami w `native-feedback`; paczka budowy ich nie zawiera. Kontrole nie uruchamiają TIA ani nie zmieniają uprawnień Windows.
 
 Ręczny import awaryjny: w nowym projekcie TIA dodaj odpowiednią CPU, w jej „External source files / Zewnętrzne pliki źródłowe” dodaj `ROLL_ALL.scl`, wybierz „Generate blocks from source / Generuj bloki ze źródła”, następnie kompilację całego programu. Zastąpienie domyślnego OB1 wykonuj tylko w tym nowym projekcie. Przekaż pełne komunikaty błędów wraz z numerami linii. Ta ścieżka nie tworzy ekranów HMI ani raportu API potrzebnego do ich automatyzacji.

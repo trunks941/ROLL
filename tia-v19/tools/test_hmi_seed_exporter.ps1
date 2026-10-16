@@ -39,21 +39,24 @@ if (@(Get-HmiSeedRequirements @() @() 0).Count -ne 4) { throw 'Empty sample not 
 if (@(Get-HmiSeedRequirements @([pscustomobject]@{ itemCount = 1 }) $goodTables 1).Count -ne 1) { throw 'Missing controls not diagnosed.' }
 if (@(Get-HmiSeedRequirements $goodScreens @([pscustomobject]@{ tagCount = 2 }) 1).Count -ne 1) { throw 'Missing tag not diagnosed.' }
 $seed = Join-Path (Split-Path -Parent $PSScriptRoot) 'hmi/seed'
-$summary = Get-HmiSeedScreenSummary (Join-Path $seed 'WZOR_ROLL.xml')
+$summary = Get-HmiSeedScreenSummary (Join-Path $seed 'WZOR_ROLL-unbound-regression.xml')
 if ($summary.itemCount -ne 4 -or $summary.itemCountSource -ne 'native_screen_xml') { throw 'Actual layered screen controls were not counted.' }
 if ($summary.itemTypes -notcontains 'Hmi.Screen.Circle' -or $summary.itemTypes -contains 'Hmi.Screen.AlarmView') { throw 'Actual control types were not identified.' }
 if ($summary.unboundIoFields.Count -ne 1 -or $summary.unboundIoFields[0] -ne 'I/O field_1') { throw 'Unbound native I/O field was not detected.' }
 $references = @(Get-HmiSeedConnectionReferences (Join-Path $seed 'tags.xml'))
 if ($references.Count -ne 1 -or $references[0] -ne 'ROLL_PLC') { throw 'Connection reference deduplication failed.' }
 $gaps = @(Get-HmiSeedRequirements @($summary) $goodTables 0 $references)
-if ($gaps.Count -ne 2 -or @($gaps | Where-Object { $_ -like '*AlarmView*' }).Count -ne 1 -or @($gaps | Where-Object { $_ -like '*WzorLiczba*' }).Count -ne 1) { throw 'Native sample must identify only the alarm view and I/O assignment gaps, not a missing connection.' }
+if ($gaps.Count -ne 1 -or @($gaps | Where-Object { $_ -like '*WzorLiczba*' }).Count -ne 1) { throw 'Old native sample must identify the I/O assignment gap; the alarm view and connection must not be false blockers.' }
+$bound = Get-HmiSeedScreenSummary (Join-Path $seed 'WZOR_ROLL.xml')
+if ($bound.itemCount -ne 4 -or $bound.unboundIoFields.Count -ne 0) { throw 'Latest native sample must expose four controls and a bound I/O field.' }
+if (@(Get-HmiSeedRequirements @($bound) $goodTables 0 $references).Count -ne 0) { throw 'Latest sample must be usable without requiring re-export of the alarm view.' }
 $result = [ordered]@{
     success = $true; inventoryScenarios = 1; requirementScenarios = 4
-    nativeXmlFixtureScenarios = 3
+    nativeXmlFixtureScenarios = 4
     mutationCallGuardPassed = $true; parserVersion = $PSVersionTable.PSVersion.ToString()
     scope = 'nested HMI inventory and completeness diagnostics on data doubles; real native XML layered controls, unbound IO and connection-reference regression; exporter AST mutation-call guard'
     nativeTiaExecuted = $false; nativeHmiExportVerified = $false
     exporterSHA256 = (Get-FileHash -LiteralPath $Exporter -Algorithm SHA256).Hash.ToLowerInvariant()
 }
 $result | ConvertTo-Json | Set-Content -LiteralPath (Join-Path (Split-Path -Parent $PSScriptRoot) 'reports/hmi-seed-exporter-tests.json') -Encoding UTF8
-Write-Host 'Passed: nested inventory, 4 requirement scenarios, 3 native XML fixture scenarios and exporter mutation-call guard. Native TIA was not executed.'
+Write-Host 'Passed: nested inventory, 4 requirement scenarios, 4 native XML fixture scenarios and exporter mutation-call guard. Native TIA was not executed.'

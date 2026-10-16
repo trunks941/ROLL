@@ -1,0 +1,15 @@
+{
+  "archive": "ROLL_HMI_WZOR_20261016_103516_d82103_eksport.zip",
+  "archive_sha256": "ab8ca9952f6b7870a5c80766a8786e7c03f4a744c554c4cdc08fa029eaf2da60",
+  "source_screen_file": "001_Screen_WZOR_ROLL.xml",
+  "source_tag_file": "002_TagTable_Default_tag_table.xml",
+  "screen_source_sha256": "d69d6ac7cc950872384c6b9d5e4a0c6729bd57618306d29c1a25c461025b9a3c",
+  "tags_source_sha256": "822c681969d60954c343a0eb4e5a34c775163e446eade0cd945d1c8d45a54aa0",
+  "native_alarm_view_exported": false,
+  "io_process_tag": "WzorLiczba",
+  "screen_dimensions": [
+    800,
+    480
+  ],
+  "native_culture": "en-US"
+}
