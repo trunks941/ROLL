@@ -13,7 +13,7 @@ $runDirectory = Join-Path $OutputDirectory ('ROLL_HMI_WZOR_' + (Get-Date -Format
 [IO.Directory]::CreateDirectory($runDirectory) | Out-Null
 $report = [ordered]@{
     status = 'starting'; project = $null; hmi = $null
-    screens = @(); tagTables = @(); connectionCount = 0
+    screens = @(); tagTables = @(); connectionCount = 0; connectionReferenceNames = @()
     requirementsMissing = @(); exports = @(); warnings = @(); errors = @()
     projectSavedByExporter = $false; engineeringObjectsChanged = $false
     nativeBindingsValidated = $false; runtimeSettingsValidated = $false
@@ -56,16 +56,53 @@ function Get-HmiSeedInventory($Hmi) {
     return $objects
 }
 
-function Get-HmiSeedRequirements($Screens, $TagTables, [int]$ConnectionCount) {
+function Get-HmiSeedScreenSummary([string]$FileName) {
+    # Comfort Screen exposes Name through Openness, while controls reside in
+    # ScreenLayer/ObjectList in its XML. A missing ScreenItems API property is
+    # not evidence of an empty screen.
+    $xml = New-Object Xml.XmlDocument
+    $xml.Load($FileName)
+    $screen = $xml.SelectSingleNode("//*[local-name()='Hmi.Screen.Screen']")
+    if ($null -eq $screen) { throw 'Export contains no native Comfort screen.' }
+    $items = @($screen.SelectNodes(".//*[@CompositionName='ScreenItems']"))
+    $unboundIo = @()
+    foreach ($item in $items) {
+        if ($item.LocalName -eq 'Hmi.Screen.IOField' -and $item.SelectNodes(".//*[local-name()='LinkList']/*/*[local-name()='Name']").Count -eq 0) {
+            $unboundIo += $item.SelectSingleNode("./*[local-name()='AttributeList']/*[local-name()='ObjectName']").InnerText
+        }
+    }
+    return [pscustomobject]@{
+        name = $screen.SelectSingleNode("./*[local-name()='AttributeList']/*[local-name()='Name']").InnerText
+        itemCount = $items.Count; itemTypes = @($items | ForEach-Object { $_.LocalName })
+        unboundIoFields = $unboundIo; itemCountSource = 'native_screen_xml'
+    }
+}
+
+function Get-HmiSeedConnectionReferences([string]$FileName) {
+    $xml = New-Object Xml.XmlDocument
+    $xml.Load($FileName)
+    return @($xml.SelectNodes("//*[local-name()='Hmi.Tag.Tag']/*[local-name()='LinkList']/*[local-name()='Connection']/*[local-name()='Name']") | ForEach-Object { $_.InnerText } | Sort-Object -Unique)
+}
+
+function Get-HmiSeedRequirements($Screens, $TagTables, [int]$ConnectionCount, $ConnectionReferences = @()) {
     $missing = @()
     if (@($Screens).Count -eq 0) { $missing += 'No screen. Add WZOR_ROLL in the TIA editor.' }
     $itemCount = 0
     foreach ($screen in $Screens) { $itemCount += [int]$screen.itemCount }
     if ($itemCount -lt 4) { $missing += 'Fewer than four screen objects. Add a text field, button, numeric I/O field and alarm view.' }
+    $types = @($Screens | ForEach-Object { $_.itemTypes } | Where-Object { $_ })
+    if ($types.Count -gt 0) {
+        foreach ($required in @('Hmi.Screen.TextField', 'Hmi.Screen.Button', 'Hmi.Screen.IOField', 'Hmi.Screen.AlarmView')) {
+            if ($required -notin $types) { $missing += "Missing native control: $required." }
+        }
+    }
+    foreach ($screen in $Screens) {
+        foreach ($field in $screen.unboundIoFields) { $missing += "I/O field '$field' has no exported link. Assign its process tag to WzorLiczba in TIA." }
+    }
     $tagCount = 0
     foreach ($table in $TagTables) { $tagCount += [int]$table.tagCount }
     if ($tagCount -lt 3) { $missing += 'Fewer than three HMI tags. See HMI_WZOR.md.' }
-    if ($ConnectionCount -lt 1) { $missing += 'No HMI connection. Configure ROLL_PLC to the project CPU.' }
+    if ($ConnectionCount -lt 1 -and @($ConnectionReferences).Count -eq 0) { $missing += 'No exported HMI connection or connection reference. Check ROLL_PLC in the TIA project.' }
     return $missing
 }
 
@@ -76,6 +113,7 @@ function Export-SeedObject($Entry, [int]$Index) {
         $path = Join-Path $runDirectory ($baseName + '.xml')
         $Entry.NativeObject.Export((New-Object IO.FileInfo($path)), [Siemens.Engineering.ExportOptions]::WithDefaults)
         $report.exports += [ordered]@{ kind = $Entry.Kind; folder = $Entry.Folder; name = $Entry.Name; file = $baseName + '.xml'; sha256 = (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() }
+        return $path
     } catch { $report.warnings += "Export $($Entry.Kind)/$($Entry.Name): $($_.Exception.Message)" }
 }
 
@@ -128,27 +166,32 @@ try {
     else { throw "Cannot select one Comfort HMI target; specify -HmiName. Found: $($targets.Count)." }
     $report.hmi = [string]$hmi.Name
     Export-ApiDescription $hmi 'hmi-api.json'
+    Export-ApiDescription $hmi.Connections 'hmi-connections-api.json'
     $inventory = @(Get-HmiSeedInventory $hmi)
     $index = 0
     foreach ($entry in $inventory) {
         $index++
-        Export-SeedObject $entry $index
+        $exportPath = Export-SeedObject $entry $index
         if ($entry.Kind -eq 'Screen') {
-            $items = @()
-            if ($null -ne $entry.NativeObject.PSObject.Properties['ScreenItems']) { $items = @($entry.NativeObject.ScreenItems) }
-            $report.screens += [ordered]@{ name = $entry.Name; folder = $entry.Folder; itemCount = $items.Count; itemTypes = @($items | ForEach-Object { $_.GetType().FullName }) }
-            $itemIndex = 0
-            foreach ($item in $items) { $itemIndex++; Export-ApiDescription $item ('screen-' + $index + '-item-' + $itemIndex + '-api.json') }
+            if ($exportPath) {
+                $summary = Get-HmiSeedScreenSummary $exportPath
+                $report.screens += [ordered]@{ name = $entry.Name; folder = $entry.Folder; itemCount = $summary.itemCount; itemTypes = $summary.itemTypes; unboundIoFields = $summary.unboundIoFields; itemCountSource = $summary.itemCountSource }
+            }
         } elseif ($entry.Kind -eq 'TagTable') {
             $report.tagTables += [ordered]@{ name = $entry.Name; folder = $entry.Folder; tagCount = @($entry.NativeObject.Tags).Count }
             $tagIndex = 0
             foreach ($tag in $entry.NativeObject.Tags) { $tagIndex++; Export-ApiDescription $tag ('table-' + $index + '-tag-' + $tagIndex + '-api.json') }
+            if ($exportPath) { $report.connectionReferenceNames += @(Get-HmiSeedConnectionReferences $exportPath) }
         } elseif ($entry.Kind -eq 'Connections') { $report.connectionCount++ }
     }
-    $report.requirementsMissing = @(Get-HmiSeedRequirements $report.screens $report.tagTables $report.connectionCount)
+    $report.connectionReferenceNames = @($report.connectionReferenceNames | Sort-Object -Unique)
+    if ($report.connectionCount -eq 0 -and $report.connectionReferenceNames.Count -gt 0) {
+        $report.warnings += 'Tags reference HMI connections, but the API exported no connection definitions. Preserve the configured connection in the existing project. This does not prove the connection is absent.'
+    }
+    $report.requirementsMissing = @(Get-HmiSeedRequirements $report.screens $report.tagTables $report.connectionCount $report.connectionReferenceNames)
     if (@($report.exports | Where-Object { $_.kind -eq 'Screen' }).Count -eq 0) { $report.requirementsMissing += 'No screen XML was exported. See warnings.' }
     if (@($report.exports | Where-Object { $_.kind -eq 'TagTable' }).Count -eq 0) { $report.requirementsMissing += 'No tag table XML was exported. See warnings.' }
-    if (@($report.exports | Where-Object { $_.kind -eq 'Connections' }).Count -eq 0) { $report.requirementsMissing += 'No connection XML was exported. See warnings.' }
+    if ($report.connectionCount -gt 0 -and @($report.exports | Where-Object { $_.kind -eq 'Connections' }).Count -eq 0) { $report.requirementsMissing += 'Connection objects exist, but their XML export failed. See warnings.' }
     $report.status = 'exported'
     $exitCode = 0
     if ($report.requirementsMissing.Count -gt 0) { $report.status = 'exported_with_gaps'; $exitCode = 2 }

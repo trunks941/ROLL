@@ -1,0 +1,183 @@
+{
+  "status": "exported_with_gaps",
+  "project": "ROLL_20261015_120907_bfeaa0",
+  "hmi": "HMI_RT_1",
+  "screens": [
+    {
+      "name": "WZOR_ROLL",
+      "folder": "ScreenFolder",
+      "itemCount": 0,
+      "itemTypes": []
+    }
+  ],
+  "tagTables": [
+    {
+      "name": "Default tag table",
+      "folder": "TagFolder",
+      "tagCount": 3
+    }
+  ],
+  "connectionCount": 0,
+  "requirementsMissing": [
+    "Fewer than four screen objects. Add a text field, button, numeric I/O field and alarm view.",
+    "No HMI connection. Configure ROLL_PLC to the project CPU.",
+    "No connection XML was exported. See warnings."
+  ],
+  "exports": [
+    {
+      "kind": "Screen",
+      "folder": "ScreenFolder",
+      "name": "WZOR_ROLL",
+      "file": "001_Screen_WZOR_ROLL.xml",
+      "sha256": "2d367f09b217d0a262f77d2269b5f811c1890f436b69f876f60c94ec1551876a"
+    },
+    {
+      "kind": "TagTable",
+      "folder": "TagFolder",
+      "name": "Default tag table",
+      "file": "002_TagTable_Default_tag_table.xml",
+      "sha256": "634eea3e24dc8e7ff745a9e8946a05550efd12eee95dad343cfdfbe7a258477b"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "100 ms",
+      "file": "003_Cycles_100_ms.xml",
+      "sha256": "31336a88806f1a857d37bf09c495a7353676c8e336b6f95b2a81a8f5fd1e367e"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "250 ms",
+      "file": "004_Cycles_250_ms.xml",
+      "sha256": "08a57c23a7402d34a2ea172695b7e556a226f2208c537eae6bd2c968537cd014"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "500 ms",
+      "file": "005_Cycles_500_ms.xml",
+      "sha256": "76e8e0a49589330d59ddfacc48a6929140cf4d6c8b82f72768bbf482dddf7d50"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "1 s",
+      "file": "006_Cycles_1_s.xml",
+      "sha256": "6240a10e07933d291a452b11028ff6dbdae5dde5d3b4d98017cc1da2d94ac6ec"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "2 s",
+      "file": "007_Cycles_2_s.xml",
+      "sha256": "c03e7acc1b2fa0493828ea8ae4ca6ae91054a524f047eb7b502abe97aac2daf2"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "5 s",
+      "file": "008_Cycles_5_s.xml",
+      "sha256": "f0db351940edba64327ef864e8b5ba5eadc7ab1b3a23e3d09fa83a3201b12334"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "10 s",
+      "file": "009_Cycles_10_s.xml",
+      "sha256": "28157e2d69f967c5064620006ddd6d143fbb858ead821d4fd330f7e00f6889ca"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "1 min",
+      "file": "010_Cycles_1_min.xml",
+      "sha256": "29ce9132cdf6bdd66b73c31bc7de2d73fcad00e62f1d79eb2cc0f3ab308d36d2"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "5 min",
+      "file": "011_Cycles_5_min.xml",
+      "sha256": "2cf3effd10def330ea85367d775dda63c3cb9a4008461ebd50163f23b3a26e60"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "10 min",
+      "file": "012_Cycles_10_min.xml",
+      "sha256": "9d66f78a684b0c39f7068079f6729140912fa3f80d1d726e90f5d8a1d20d78a5"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "1 h",
+      "file": "013_Cycles_1_h.xml",
+      "sha256": "d2c985c39a37ba1ae3d2c96499b9749609d4f6b986e796f6758dea8e0338c587"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "1 d",
+      "file": "014_Cycles_1_d.xml",
+      "sha256": "2b11f5791ae125c02a198560582c579c33f1c3e7136c7140a4aaced7939fb257"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "UponChange",
+      "file": "015_Cycles_UponChange.xml",
+      "sha256": "105146658c82f46617eba707d89e7ecf3e3d6007d7c09e9943acfd20c7ba4256"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "125 ms",
+      "file": "016_Cycles_125_ms.xml",
+      "sha256": "95eec6691ee8a40e2eef3624fe5fb7b6514f5ebee4199134a0af98aef21fcf88"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "Default cycle 1",
+      "file": "017_Cycles_Default_cycle_1.xml",
+      "sha256": "045f34f32d40722396bfda500fbeb9d09bfbf136f4309ac4498078e724fb2c8a"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "Default cycle 2",
+      "file": "018_Cycles_Default_cycle_2.xml",
+      "sha256": "50224586ad07129902dde9286e88b936b58e4f65c215f267ae261fe8f7c365c7"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "Default cycle 3",
+      "file": "019_Cycles_Default_cycle_3.xml",
+      "sha256": "d6ea3381bb33e1a2aa40a5f0271fbc2d53871a6a5cb68a70920a3075be329c08"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "Default cycle 4",
+      "file": "020_Cycles_Default_cycle_4.xml",
+      "sha256": "8c4f4f138e6b310a5750442f2a2878f0e4f28c8aab7d59bbfb956fe7832a8a1f"
+    },
+    {
+      "kind": "Cycles",
+      "folder": "Cycles",
+      "name": "Default cycle 5",
+      "file": "021_Cycles_Default_cycle_5.xml",
+      "sha256": "42fbb99eb440bbaadb2af795bf5c8b36b4fcff239ca5d37febac40f1899e540c"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "projectSavedByExporter": false,
+  "engineeringObjectsChanged": false,
+  "nativeBindingsValidated": false,
+  "runtimeSettingsValidated": false,
+  "downloadsPerformed": false,
+  "finished": "2026-10-16T08:06:31.1056155+02:00"
+}

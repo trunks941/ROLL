@@ -2,6 +2,17 @@
 
 PLC z raportu `ROLL_20261015_120907_bfeaa0` kompiluje się bez błędów; retencja sześciu DB została potwierdzona. WinCC Comfort udostępnia import/eksport HMI, ale jego `GetCreationInfos` dla ekranów, tagów i połączeń jest puste. Potrzebny jest wzór utworzony w edytorze, zawierający rzeczywisty format obiektów, zdarzeń oraz symbolicznego adresowania PLC. Wzór nie musi mieć docelowego wyglądu.
 
+## Uzupełnienie wzoru przesłanego 16.10.2026
+
+Ekran `WZOR_ROLL` zawiera już przycisk z poprawnymi zdarzeniami Press/Release, pole I/O, tekst oraz okrąg z poprawną animacją `WzorStan`. Zachowaj te elementy. Do wykonania pozostają dwie czynności:
+
+1. Zaznacz **I/O field_1** → **Properties / Właściwości → General / Ogólne** → **Process tag / Zmienna procesowa** i wybierz **`WzorLiczba`**. W przesłanym XML pole nie ma żadnego powiązania z tagiem.
+2. Z przybornika **Toolbox → Controls / Kontrolki** przeciągnij na ekran **Alarm view / Widok alarmów**. Wystarczą ustawienia domyślne.
+
+Zapisz projekt, pozostaw go otwarty i uruchom z aktualnej paczki **`EKSPORTUJ_WZOR_HMI.cmd`**. Prześlij nowy `ROLL_HMI_WZOR_…_eksport.zip`.
+
+Poprzedni eksporter błędnie policzył zero obiektów, ponieważ w API `Screen` nie udostępnia kolekcji kontrolek. Nowa wersja liczy je w warstwach natywnego XML. Zachowaj istniejące połączenie `ROLL_PLC`: jego nazwę potwierdzają odwołania w dwóch tagach. Brak eksportu definicji połączenia nie potwierdza jego braku w projekcie; eksporter zapisuje tę sytuację jako ograniczenie odczytu, a nie polecenie utworzenia drugiego połączenia.
+
 ## 1. Otwórz zapisany projekt
 
 W TIA V19 otwórz plik `ROLL_20261015_120907_bfeaa0.ap19` z podkatalogów `Dokumenty\ROLL_TIA_V19`. Przejdź do widoku projektu i panelu `ROLL_TP900`. Zachowaj ten projekt do dalszej pracy. Aktualnego programu PLC nie trzeba ponownie generować.

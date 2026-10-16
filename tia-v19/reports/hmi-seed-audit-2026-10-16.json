@@ -1,0 +1,41 @@
+{
+  "project": "ROLL_20261015_120907_bfeaa0",
+  "hmi": "HMI_RT_1",
+  "original_archive": "ROLL_HMI_WZOR_20261016_080615_914505_eksport.zip",
+  "original_archive_sha256": "2a5e4e9f62072ad2abf0e9cf21899a58b3a3d88264a0c8ef2b4cf6deb2f8811c",
+  "screen": "WZOR_ROLL",
+  "screen_item_count_from_xml": 4,
+  "item_types": [
+    "Hmi.Screen.Button",
+    "Hmi.Screen.IOField",
+    "Hmi.Screen.TextField",
+    "Hmi.Screen.Circle"
+  ],
+  "exporter_reported_item_count": 0,
+  "exporter_count_was_wrong": true,
+  "button_press_setbit_release_resetbit": true,
+  "circle_animation_tag": "WzorStan",
+  "io_field_has_no_tag_link": true,
+  "alarm_view_present": false,
+  "tag_count": 3,
+  "connection_references": [
+    "ROLL_PLC"
+  ],
+  "connection_definition_exported": false,
+  "connection_absent_from_project": null,
+  "required_user_edits": [
+    "Assign WzorLiczba to the numeric I/O field process tag",
+    "Add a native alarm view control"
+  ],
+  "native_generated_hmi_import_tested": false,
+  "source_files": [
+    {
+      "path": "WZOR_ROLL.xml",
+      "sha256": "2d367f09b217d0a262f77d2269b5f811c1890f436b69f876f60c94ec1551876a"
+    },
+    {
+      "path": "tags.xml",
+      "sha256": "634eea3e24dc8e7ff745a9e8946a05550efd12eee95dad343cfdfbe7a258477b"
+    }
+  ]
+}

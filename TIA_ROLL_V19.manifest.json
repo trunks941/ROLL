@@ -1,9 +1,9 @@
 {
   "package": "TIA_ROLL_V19.zip",
-  "status": "PLC native compilation confirmed: 0 errors, 1 physical I/O warning, retention verified in six DBs. Comfort HMI requires an editor-created template; use EKSPORTUJ_WZOR_HMI.cmd with the open project.",
-  "sha256": "ee09eeac5bb7f3f82f7634fde2e9a9a7ad7807ecd70bc08e4dfa42ea6a9387c9",
-  "bytes": 111007,
-  "file_count": 41,
+  "status": "PLC source unchanged and native compilation confirmed. Partial HMI seed received: four layered controls; IO field tag and alarm view still required. Exporter now audits actual screen XML and distinguishes connection references from exported definitions.",
+  "sha256": "d78f184dec97225b77703cd185249e2a8950740664be86e779090e4444e24805",
+  "bytes": 118316,
+  "file_count": 45,
   "current_source_sha256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1",
   "tia_compiled": true,
   "native_plc_errors": 0,
@@ -23,13 +23,13 @@
     },
     {
       "path": "tia-v19/HMI_WZOR.md",
-      "bytes": 4063,
-      "sha256": "16298f10932b8ee6cb97dc7944211e6b006c89a13125efd0c0a4be2ba153ac85"
+      "bytes": 5270,
+      "sha256": "6f374337692c684ecc006b2825a00c2fa607b2251e84d3c110f9fcfcd3f461b6"
     },
     {
       "path": "tia-v19/README.md",
-      "bytes": 13180,
-      "sha256": "8252cc88e113bc6f841e983d3d0817bf2d3c1945491e2089696df333a2489030"
+      "bytes": 13502,
+      "sha256": "bef5ea5cc4725a57526b925fd1012347666ba79fcd968d31aaef3ce60ccd3adc"
     },
     {
       "path": "tia-v19/ROLL_ALL.scl",
@@ -57,14 +57,29 @@
       "sha256": "6215c268e3dd31b22294d699a451fa94b9a50a760d87f7ace3ab4ec184ea5e0e"
     },
     {
+      "path": "tia-v19/hmi/seed/README.md",
+      "bytes": 876,
+      "sha256": "5a4d4baaedfab985c22c0134e4a43ba3b2e46ae31fc3306f72d82750353db90a"
+    },
+    {
+      "path": "tia-v19/hmi/seed/WZOR_ROLL.xml",
+      "bytes": 17771,
+      "sha256": "2d367f09b217d0a262f77d2269b5f811c1890f436b69f876f60c94ec1551876a"
+    },
+    {
+      "path": "tia-v19/hmi/seed/tags.xml",
+      "bytes": 10196,
+      "sha256": "634eea3e24dc8e7ff745a9e8946a05550efd12eee95dad343cfdfbe7a258477b"
+    },
+    {
       "path": "tia-v19/openness/Build-Roll.ps1",
       "bytes": 23995,
       "sha256": "b2ab4f26cfe040496286eab8f4bea737f0c216857ad2427a849e4df2e443a279"
     },
     {
       "path": "tia-v19/openness/Export-HmiSeed.ps1",
-      "bytes": 10843,
-      "sha256": "f5f25680aeda8d97c6bc93e7f70467cbbf803f43c3fd75eb4073c5de0def4b6a"
+      "bytes": 13624,
+      "sha256": "46ec1efd56e1fbfffd22a9270dabe253e2077e643b481229a1fa8fea147c279b"
     },
     {
       "path": "tia-v19/openness/target.json",
@@ -97,9 +112,14 @@
       "sha256": "7c3e4bf48d179529785647872f562b9eb5b81bc12a19b7c718d00bcdf1867930"
     },
     {
+      "path": "tia-v19/reports/hmi-seed-audit-2026-10-16.json",
+      "bytes": 1255,
+      "sha256": "32525e74151f800698321b0ce6f8a08b90123c81ac7ab1e53bf11177b25ea49c"
+    },
+    {
       "path": "tia-v19/reports/hmi-seed-exporter-tests.json",
-      "bytes": 418,
-      "sha256": "77a83b13a4f9b24bddc220ed78481239c29e096877fcc07fd36fb762167ba0e0"
+      "bytes": 525,
+      "sha256": "3618b4fd930b20b629e98ae14fd13c6d9a29155250c48f36c80722e8d362cec8"
     },
     {
       "path": "tia-v19/reports/native-identifier-regression.json",
@@ -208,8 +228,8 @@
     },
     {
       "path": "tia-v19/tools/test_hmi_seed_exporter.ps1",
-      "bytes": 3973,
-      "sha256": "5273bb033e3facd3750a5e0b74e8cba2f447896a1e778bac95ce609c6b01fc47"
+      "bytes": 5305,
+      "sha256": "2b6500267a2ca801216fca26f5f853480b7c9cd190ee3b2fb12d9e51a32793be"
     },
     {
       "path": "tia-v19/tools/test_native_evidence.py",
@@ -221,5 +241,7 @@
       "bytes": 4274,
       "sha256": "4ab3048e2386a9c520735876dc58e93a0f8a3e1b9285c640bc8b86ed7287ab6b"
     }
-  ]
+  ],
+  "seed_native_export_received": true,
+  "seed_complete": false
 }
