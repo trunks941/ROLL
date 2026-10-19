@@ -5,11 +5,12 @@
   "tag_count": 53,
   "screen_count": 5,
   "objects": 137,
+  "circles": 15,
   "tag_links": 37,
   "navigation_actions": 26,
   "manual_selectors": 14,
   "held_buttons": 2,
   "locked_buttons": 25,
   "scope": "candidate XML identities, hashes, geometry, tag/screen references, selector ordering and locks; not Siemens schema/native runtime validation",
-  "native_manifest_sha256": "0aa22cddf46a7fca87822f16005867245efb5c6d0ba9cf143efde49eba16e7a4"
+  "native_manifest_sha256": "87a05f2e42941729750699c8ffffb52270fdeedcd3eaaaccc49263218d54c2da"
 }

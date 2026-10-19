@@ -2,12 +2,14 @@
   "success": true,
   "parserVersion": "7.4.6",
   "archiveApiDoubleScenarios": 12,
-  "manifestScenarios": 2,
+  "manifestScenarios": 5,
+  "circleRejectionScenarios": 3,
   "sourceArchiveOrderPassed": true,
+  "savedCopyBeforeImportOrderPassed": true,
   "completeArchiveFileNamePassed": true,
   "archiveFailureDiagnosticsPassed": true,
   "nativeTiaExecuted": false,
   "nativeProjectArchiveVerified": false,
   "nativeHmiImportVerified": false,
-  "importerSHA256": "03f0f379cbbc00b5275c4d1ffbca3a96b3e49302ad5dc1c4d75b1746435c0d4f"
+  "importerSHA256": "6904bcab379b5908cd528c67c0402b51be546d02d1639dc94d9eb8c7b29a31c0"
 }

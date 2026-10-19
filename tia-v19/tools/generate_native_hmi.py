@@ -90,6 +90,12 @@ def clone_item(kind, name, x, y, width, height, font=13):
     obj = copy.deepcopy(TEMPLATES['Hmi.Screen.' + kind])
     for key, value in dict(ObjectName=name, Left=x, Top=y, Width=width, Height=height).items():
         attr(obj, key, value)
+    if kind == 'Circle':
+        # V19 treats Radius as dependent on Width, but import validates both.
+        # The seed's radius (24) must not survive resizing its diameter to 20.
+        if width <= 0 or width != height or width % 2:
+            raise ValueError('Circle requires equal, positive, even width and height')
+        attr(obj, 'Radius', width // 2)
     for field in obj.findall('.//Hmi.Globalization.FontItem/AttributeList/FontSize'):
         field.text = str(font)
     # The seed text field sizes itself to fit. Fix its geometry for predictable
@@ -387,6 +393,8 @@ def main():
                     culture='en-US', captions_language='pl-PL',
                     plc_source_sha256=hashlib.sha256((ROOT / 'ROLL_ALL.scl').read_bytes()).hexdigest(),
                     plc_source_changed=False, native_compiled=False,
+                    native_geometry_rules={'Circle': 'Width == Height == 2 * Radius'},
+                    native_geometry_feedback='reports/hmi-import-feedback-2026-10-19-070814.json',
                     downloads_performed=False, physical_machine_tested=False,
                     locked_actions=['all_generated_operator_commands', 'editable_fields', 'GroundHeld', 'WorkHeld', 'recipe_load', 'recipe_save_apply', 'parameter_save'],
                     pending=['global heartbeat configuration', 'confirmed payload transfer and request/ack commands',

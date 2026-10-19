@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop'
 $tokens = $null; $errors = $null
 $ast = [System.Management.Automation.Language.Parser]::ParseFile($Importer, [ref]$tokens, [ref]$errors)
 if ($errors.Count -gt 0) { throw ($errors | Out-String) }
-foreach ($name in @('New-RollProjectArchive', 'Assert-RollHmiManifest')) {
+foreach ($name in @('New-RollProjectArchive', 'Assert-RollCircleGeometry', 'Assert-RollHmiManifest')) {
     $definition = $ast.Find({ param($node) $node -is [System.Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -eq $name }, $true)
     if ($null -eq $definition) { throw "Missing function: $name" }
     . ([scriptblock]::Create($definition.Extent.Text))
@@ -103,19 +103,40 @@ try {
     $rejected = $false
     try { Assert-RollHmiManifest $copy | Out-Null } catch { $rejected = $true }
     if (-not $rejected) { throw 'Changed native assets must be rejected before attaching to TIA.' }
+    # Correct hashes must not conceal an invalid native property dependency.
+    # The first case reproduces V19's actual 20px / Radius=24 rejection.
+    $screenEntry = @($manifest.files | Where-Object { $_.path -eq 'screens/ROLL_Alarmy.xml' })[0]
+    foreach ($case in @(@{ Property = 'Radius'; Value = '24' }, @{ Property = 'Height'; Value = '22' }, @{ Property = 'Width'; Value = '0' })) {
+        $screenPath = Join-Path $copy $screenEntry.path
+        Copy-Item -LiteralPath (Join-Path $native $screenEntry.path) -Destination $screenPath -Force
+        $document = New-Object Xml.XmlDocument
+        $document.Load($screenPath)
+        $document.SelectSingleNode('//Hmi.Screen.Circle/AttributeList/' + $case.Property).InnerText = $case.Value
+        $document.Save($screenPath)
+        $bad = Get-Content -LiteralPath (Join-Path $native 'manifest.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+        @($bad.files | Where-Object { $_.path -eq $screenEntry.path })[0].sha256 = (Get-FileHash -LiteralPath $screenPath -Algorithm SHA256).Hash.ToLowerInvariant()
+        $bad | ConvertTo-Json -Depth 20 | Set-Content -LiteralPath (Join-Path $copy 'manifest.json') -Encoding UTF8
+        $rejected = $false
+        try { Assert-RollHmiManifest $copy | Out-Null } catch { $rejected = $_.Exception.Message -like 'Invalid circle geometry*' }
+        if (-not $rejected) { throw "Invalid $($case.Property) must be rejected before attaching to TIA, even with a correct file hash." }
+    }
     $calls = @($ast.FindAll({ param($node) $node -is [System.Management.Automation.Language.InvokeMemberExpressionAst] }, $true))
     if (@($calls | Where-Object { $_.Member.Value -in @('Download','GenerateBlocksFromSource','SetAttribute','SetAttributes','CreateWithItem') }).Count -ne 0) { throw 'Importer contains an unexpected PLC/hardware mutation.' }
     $close = $ast.Extent.Text.IndexOf('$source.Close()')
     $archive = $ast.Extent.Text.IndexOf('$archive = New-RollProjectArchive')
     if ($archive -lt 0 -or $close -le $archive) { throw 'Source must be archived before close.' }
     if ($ast.Extent.Text -notmatch "New-RollProjectArchive .*'ROLL_HMI_SOURCE\.zap19'") { throw 'Importer must pass the complete archive file name.' }
+    $checkpoint = $ast.Extent.Text.IndexOf('$report.copySavedBeforeImport = $true')
+    $imports = $ast.Extent.Text.IndexOf("foreach (`$category in @('tags', 'skeletons', 'screens'))")
+    if ($checkpoint -lt 0 -or $imports -le $checkpoint) { throw 'Retrieved copy must be saved before any native import.' }
     $result = [ordered]@{
         success = $true; parserVersion = $PSVersionTable.PSVersion.ToString()
-        archiveApiDoubleScenarios = 12; manifestScenarios = 2; sourceArchiveOrderPassed = $true
+        archiveApiDoubleScenarios = 12; manifestScenarios = 5; circleRejectionScenarios = 3; sourceArchiveOrderPassed = $true
+        savedCopyBeforeImportOrderPassed = $true
         completeArchiveFileNamePassed = $true; archiveFailureDiagnosticsPassed = $true
         nativeTiaExecuted = $false; nativeProjectArchiveVerified = $false; nativeHmiImportVerified = $false
         importerSHA256 = (Get-FileHash -LiteralPath $Importer -Algorithm SHA256).Hash.ToLowerInvariant()
     }
     $result | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $root 'reports/hmi-importer-tests.json') -Encoding UTF8
-    Write-Host 'Passed: importer parser, 12 archive API/name/failure scenarios, 2 manifest scenarios and archive-before-close ordering. Native TIA was not executed.'
+    Write-Host 'Passed: importer parser, 12 archive API/name/failure scenarios, 5 manifest/geometry scenarios and archive/checkpoint ordering. Native TIA was not executed.'
 } finally { Remove-Item -LiteralPath $temporary -Recurse -Force }

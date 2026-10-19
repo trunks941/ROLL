@@ -996,7 +996,7 @@
               <Height>20</Height>
               <Left>696</Left>
               <ObjectName>ROLL_Receptury_Circle_007</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>58</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>
@@ -2748,7 +2748,7 @@
               <Height>20</Height>
               <Left>18</Left>
               <ObjectName>ROLL_Receptury_Circle_031</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>331</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>
@@ -3118,7 +3118,7 @@
               <Height>20</Height>
               <Left>408</Left>
               <ObjectName>ROLL_Receptury_Circle_035</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>331</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>

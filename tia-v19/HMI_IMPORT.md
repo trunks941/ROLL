@@ -4,14 +4,16 @@ Paczka zawiera **5 ekranów, 53 tagi i 137 obiektów**, wygenerowanych na podsta
 
 To wersja do sprawdzenia importu i kompilacji w lokalnym **TIA V19 / WinCC Advanced**. W chmurze sprawdzono odwołania, geometrię, typy tagów i skrypt importu z atrapami API. Natywny importer i kompilator WinCC muszą ją jeszcze zaakceptować.
 
-**Poprawka po raporcie z 19.10, godz. 06:52:** poprzednia próba zatrzymała się przy weryfikacji archiwum, przed zamknięciem źródła i importem HMI. Skrypt przekazuje teraz pełną nazwę `ROLL_HMI_SOURCE.zap19` zamiast nazwy bez rozszerzenia. Raport zapisuje również sygnaturę wywołania, tryb archiwizacji i nazwy/rozmiary utworzonych plików w `archiveAttempt`. Przetestowano przypadki braku pliku, pustego pliku, innej nazwy i wyjątku API; żaden nie pozwala przejść do zamknięcia oryginału. Poprawkę trzeba jeszcze potwierdzić w TIA. Pobierz nową paczkę i ponów poniższe kroki na tym samym źródłowym projekcie; nie trzeba odtwarzać wzoru ani zmieniać widoku alarmów.
+**Poprawka po raporcie z 19.10, godz. 07:08:** archiwizacja, odtworzenie kopii, import tabeli tagów i pięciu pustych ekranów przeszły w TIA. Pierwszy pełny ekran został odrzucony: lampka o wymiarach 20×20 zachowała `Radius=24` ze wzoru, zamiast wymaganego `10`. Generator poprawia teraz wszystkie 15 lampek, a importer sprawdza tę zależność przed połączeniem z TIA. Dodano zapis kopii przed importem i po każdej ukończonej kategorii; raport zachowuje jej ścieżkę oraz nazwę aktualnie importowanego pliku także przy błędzie. Poprawiony import pełnych ekranów i kompilacja wymagają następnej próby w TIA.
+
+Po poprzednim błędzie sesja TIA została unieważniona i zapis kopii nie powiódł się. Jeśli TIA się zamknęło, uruchom je ponownie. Otwórz **pierwotny projekt z `WZOR_ROLL`**, spoza katalogów `ROLL_HMI_IMPORT_…\project-copy`. Częściowa kopia może już zawierać tagi i puste ekrany; importer celowo odrzuci ich nadpisanie. Nie trzeba odtwarzać wzoru ani zmieniać widoku alarmów.
 
 ## Co uruchomić teraz
 
 1. Pobierz aktualny `TIA_ROLL_V19.zip` i rozpakuj do nowego katalogu. Zachowaj cały podkatalog `tia-v19`.
 2. W TIA V19 otwórz **dotychczasowy projekt `ROLL_20261015_120907_bfeaa0` z ekranem `WZOR_ROLL`**, widokiem alarmów i połączeniem `ROLL_PLC`. Zapisz go i pozostaw otwarty.
 3. Uruchom **`tia-v19\IMPORTUJ_HMI.cmd`**. Gdy TIA zapyta o dostęp Openness, zezwól temu lokalnemu skryptowi. Przy kilku otwartych projektach wybierz właściwy numer w konsoli.
-4. Skrypt sprawdzi pliki importu i kolizje nazw, utworzy archiwum `.zap19`, zamknie zapisane źródło i odtworzy **oddzielną kopię** w `Dokumenty\ROLL_TIA_V19\ROLL_HMI_IMPORT_…\project-copy`. Następnie zaimportuje tagi, puste ekrany i ich zawartość, uruchomi kompilator HMI oraz zapisze kopię. Poczekaj na wynik w konsoli.
+4. Skrypt sprawdzi pliki importu, geometrię lampek i kolizje nazw, utworzy archiwum `.zap19`, zamknie zapisane źródło i odtworzy **oddzielną kopię** w `Dokumenty\ROLL_TIA_V19\ROLL_HMI_IMPORT_…\project-copy`. Zapisze ją przed importem, następnie zaimportuje tagi, puste ekrany i ich zawartość, zapisując każdy ukończony etap. Uruchomi kompilator HMI oraz zapisze wynik. Poczekaj na wynik w konsoli.
 5. **Prześlij `ROLL_HMI_IMPORT_…_raport.zip`.** Pełne archiwum projektu i `.ap19` pozostają na Twoim komputerze; paczka raportu zawiera JSON i dostępne eksporty nowych ekranów.
 
 Jeżeli TIA zgłasza niezapisane zmiany, zapisz projekt przed uruchomieniem. Importer blokuje edycję GUI na czas pracy przez standardowy dostęp wyłączny Openness. Nie uruchamiaj go na projekcie zawierającym już ekrany `ROLL_*` z tej paczki: pierwsza wersja celowo odmawia nadpisywania istniejących ekranów i kolidujących tagów.

@@ -1,0 +1,8 @@
+﻿[
+    "Siemens.Engineering.Project Open(System.IO.FileInfo)",
+    "Siemens.Engineering.Project Open(System.IO.FileInfo, Siemens.Engineering.UmacDelegate)",
+    "Siemens.Engineering.Project Open(System.IO.FileInfo, Siemens.Engineering.UmacDelegate, Siemens.Engineering.ProjectOpenMode)",
+    "Siemens.Engineering.Project Retrieve(System.IO.FileInfo, System.IO.DirectoryInfo)",
+    "Siemens.Engineering.Project Retrieve(System.IO.FileInfo, System.IO.DirectoryInfo, Siemens.Engineering.UmacDelegate)",
+    "Siemens.Engineering.Project Retrieve(System.IO.FileInfo, System.IO.DirectoryInfo, Siemens.Engineering.UmacDelegate, Siemens.Engineering.ProjectOpenMode)"
+]

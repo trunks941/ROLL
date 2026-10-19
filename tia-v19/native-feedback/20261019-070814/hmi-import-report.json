@@ -1,0 +1,78 @@
+{
+  "status": "blocked",
+  "phase": "import_screens",
+  "sourceProject": "ROLL_20261015_120907_bfeaa0",
+  "sourceArchive": "<local-user-documents>/ROLL_TIA_V19/ROLL_HMI_IMPORT_20261019_070814_4a8117/backup/ROLL_HMI_SOURCE.zap19",
+  "sourceArchiveSHA256": "8703ba41bd89371bde68ecca2326fc36f95d26f20b82183d844ecc1c385599e3",
+  "archiveAttempt": {
+    "requestedFileName": "ROLL_HMI_SOURCE.zap19",
+    "method": "Void Archive(System.IO.DirectoryInfo, System.String, Siemens.Engineering.ProjectArchivationMode)",
+    "mode": "Compressed",
+    "returnedWithoutException": true,
+    "files": [
+      {
+        "name": "ROLL_HMI_SOURCE.zap19",
+        "bytes": 7749672
+      }
+    ],
+    "expectedFileVerified": true
+  },
+  "projectFile": null,
+  "originalProjectModified": false,
+  "originalReopenedAfterRetrieveFailure": false,
+  "sourceArchivedBeforeClose": true,
+  "copyRetrieved": true,
+  "hmi": "HMI_RT_1",
+  "imported": [
+    {
+      "category": "tags",
+      "path": "tags/ROLL_TP900_Tags.xml",
+      "sha256": "9739c7d748e10090d264bdeea657d01c6697224f5959a80e8995660c2d106010"
+    },
+    {
+      "category": "skeletons",
+      "path": "skeletons/ROLL_Alarmy.xml",
+      "sha256": "1c8599db5204318e38a436299e57367dfe5ca6c97cd7d3993c5b8d67f631ff35"
+    },
+    {
+      "category": "skeletons",
+      "path": "skeletons/ROLL_Nastawy.xml",
+      "sha256": "4535e7bb24301125c646721547ccfe70c94e3d7474e3c07886eaab0704eab444"
+    },
+    {
+      "category": "skeletons",
+      "path": "skeletons/ROLL_Przeglad.xml",
+      "sha256": "bf6f4a67a3987495c856c01c96f38ccf367aeca6827fa540821bf6b9e01c1daa"
+    },
+    {
+      "category": "skeletons",
+      "path": "skeletons/ROLL_Receptury.xml",
+      "sha256": "fbdc0e2576f0fc8866218ee65457cf12902c3dd578fbc8f50b1220abcf05fc6f"
+    },
+    {
+      "category": "skeletons",
+      "path": "skeletons/ROLL_Reczny.xml",
+      "sha256": "66f0e2ad0eaa5403034cfa899f3327e2d2d264a864f27d9fd1dd1f56f977959f"
+    }
+  ],
+  "hmiCompilation": null,
+  "errors": [
+    "System.Management.Automation.MethodInvocationException: Exception calling \"Import\" with \"2\" argument(s): \"Error when calling method 'Import' of type 'Siemens.Engineering.Hmi.Screen.ScreenComposition'.\r\n\r\nCannot create the 'Hmi.Screen.Circle' object with Simatic ML ID '63' at line number 988 at line position 12.\r\n\r\nError when calling method 'Create' of type 'Siemens.Engineering.Hmi.Screen.IScreenItemComposition'.\r\n\r\nThe dependent property \"Radius\" of object \"ROLL_Alarmy_Circle_007\" in \"ROLL_Alarmy\" has an invalid value. The recommended value is \"10\" because the main property \"Width\" has the value \"20\".\r\nThe dependent property \"Radius\" of object \"ROLL_Alarmy_Circle_007\" in \"ROLL_Alarmy\" has an invalid value. The recommended value is \"10\" because the main property \"Width\" has the value \"20\".\" ---> Siemens.Engineering.NonRecoverableException: Error when calling method 'Import' of type 'Siemens.Engineering.Hmi.Screen.ScreenComposition'.\r\n\r\nCannot create the 'Hmi.Screen.Circle' object with Simatic ML ID '63' at line number 988 at line position 12.\r\n\r\nError when calling method 'Create' of type 'Siemens.Engineering.Hmi.Screen.IScreenItemComposition'.\r\n\r\nThe dependent property \"Radius\" of object \"ROLL_Alarmy_Circle_007\" in \"ROLL_Alarmy\" has an invalid value. The recommended value is \"10\" because the main property \"Width\" has the value \"20\".\r\nThe dependent property \"Radius\" of object \"ROLL_Alarmy_Circle_007\" in \"ROLL_Alarmy\" has an invalid value. The recommended value is \"10\" because the main property \"Width\" has the value \"20\".\r\n   at Siemens.Engineering.Private.Session.Siemens.Engineering.Private.IInstanceSession.InvokeFunc[T,TC](LifetimeContractHandle`1 lifetimeContractHandle, String name, IEnumerable`1 parameters, String fullName)\r\n   at Siemens.Engineering.Private.InternalInstanceAccess`2.InvokeFunc[T](String name, IEnumerable`1 parameters)\r\n   at Siemens.Engineering.Hmi.Screen.ScreenComposition.Import(FileInfo path, ImportOptions importOptions)\r\n   at CallSite.Target(Closure , CallSite , Object , Object , Object )\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)",
+    "Copy save: Exception calling \"Save\" with \"0\" argument(s): \"Access to a disposed object of type 'Siemens.Engineering.Project' is not possible.\n\nTIA Portal has either been disposed or stopped running.\""
+  ],
+  "warnings": [
+    "Post-import native export: Expected one Comfort HMI and the ROLL_HMI PLC DB in the selected ROLL project."
+  ],
+  "plcSourceChanged": false,
+  "hardwareChanged": false,
+  "securityChanged": false,
+  "originalScreenPreservedInProjectCopy": true,
+  "alarmViewPresenceProgrammaticallyVerified": false,
+  "hmiFullyConfigured": false,
+  "heartbeatConfigured": false,
+  "physicalIoConfigured": false,
+  "machineTested": false,
+  "downloadsPerformed": false,
+  "reportArchive": "<local-user-documents>/ROLL_TIA_V19/ROLL_HMI_IMPORT_20261019_070814_4a8117_raport.zip",
+  "finished": "2026-10-19T07:08:41.7422215+02:00"
+}

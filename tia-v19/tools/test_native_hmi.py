@@ -35,7 +35,7 @@ def main():
         tags[name] = kind
     assert len(tags) == manifest['tag_count'] == 53
     names = {entry['name'] for entry in manifest['screens']} | {'WZOR_ROLL'}
-    counts = dict(objects=0, tag_links=0, navigation_actions=0, manual_selectors=0, held_buttons=0, locked_buttons=0)
+    counts = dict(objects=0, circles=0, tag_links=0, navigation_actions=0, manual_selectors=0, held_buttons=0, locked_buttons=0)
     seen_numbers = set()
     for spec in manifest['screens']:
         path = 'screens/' + spec['name'] + '.xml'
@@ -54,6 +54,10 @@ def main():
             fields = item.find('AttributeList')
             x,y,w,h = [int(fields.findtext(key)) for key in ('Left','Top','Width','Height')]
             assert 0 <= x < 800 and 0 <= y < 480 and w > 0 and h > 0 and x+w <= 800 and y+h <= 480, (path,fields.findtext('ObjectName'))
+            if item.tag == 'Hmi.Screen.Circle':
+                counts['circles'] += 1
+                radius = int(fields.findtext('Radius'))
+                assert w == h == 2 * radius, (path, fields.findtext('ObjectName'), w, h, radius)
             for tag in item.findall('.//Hmi.Dynamic.TagConnectionDynamic/LinkList/Tag/Name') + item.findall('.//Hmi.Dynamic.TagElementTrigger/LinkList/Tag/Name'):
                 assert tag.text in tags, (path,tag.text)
                 counts['tag_links'] += 1
@@ -99,6 +103,7 @@ def main():
                     assert events['Release'].findtext('.//Hmi.Event.FunctionListEntry/AttributeList/Name') == 'ResetBit'
         assert all(item.tag != 'Hmi.Screen.AlarmView' for item in items), 'Do not invent an unsupported alarm view export'
     assert counts['objects'] == 137 and counts['manual_selectors'] == 14
+    assert counts['circles'] == 15
     assert counts['held_buttons'] == 2 and counts['locked_buttons'] == 25
     assert counts['navigation_actions'] == 26
     result = dict(success=True, native_tia_executed=False, native_hmi_compiled=False,

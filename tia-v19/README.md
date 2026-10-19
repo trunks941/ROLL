@@ -4,6 +4,8 @@ Raport użytkownika z **15.10.2026, godz. 12:09** potwierdził kompilację bież
 
 **Aktualny krok: [pierwszy import wygenerowanych ekranów do kopii istniejącego projektu](HMI_IMPORT.md).** Paczka ma 5 ekranów, 53 tagi i 137 obiektów. Uruchom **`IMPORTUJ_HMI.cmd`** z zapisanym projektem ROLL otwartym w TIA i przekaż `ROLL_HMI_IMPORT_…_raport.zip`. Skrypt archiwizuje źródło, odtwarza oddzielną kopię i dopiero w niej importuje HMI. Podgląd układu jest w `PODGLAD_HMI.html`.
 
+[Raport z 19.10, godz. 07:08](reports/hmi-import-feedback-2026-10-19-070814.json) potwierdził poprawne utworzenie archiwum, odtworzenie kopii oraz przyjęcie tabeli tagów i pięciu pustych ekranów przez V19. Obecna poprawka usuwa niespójność promienia wszystkich 15 lampek, na której zatrzymał się import pierwszego pełnego ekranu. Przed następną próbą otwórz pierwotny projekt z `WZOR_ROLL`, spoza katalogów `ROLL_HMI_IMPORT_…\project-copy`. Poprawkę pełnych ekranów trzeba jeszcze potwierdzić w TIA.
+
 Wzór jest już wystarczający: ostatni eksport potwierdza pole I/O powiązane z `WzorLiczba`. Alarm view jest widoczny w GUI, ale pomijany przez XML; nie wymagamy kolejnego identycznego eksportu. Zachowujemy go przez archiwizację pełnego projektu i pozostawienie `WZOR_ROLL` bez importu zastępującego jego zawartość. Edycja i wszystkie polecenia operatorskie nowych ekranów są w pierwszej wersji wyłączone. **Natywna kompilacja nowego HMI, heartbeat i pełna obsługa poleceń pozostają do potwierdzenia/dokończenia.**
 
 ## Budowa nowego projektu — do odtworzenia od początku

@@ -996,7 +996,7 @@
               <Height>20</Height>
               <Left>696</Left>
               <ObjectName>ROLL_Przeglad_Circle_007</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>58</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>
@@ -1241,7 +1241,7 @@
               <Height>20</Height>
               <Left>418</Left>
               <ObjectName>ROLL_Przeglad_Circle_011</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>106</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>
@@ -1623,7 +1623,7 @@
               <Height>20</Height>
               <Left>418</Left>
               <ObjectName>ROLL_Przeglad_Circle_017</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>153</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>
@@ -1731,7 +1731,7 @@
               <Height>20</Height>
               <Left>418</Left>
               <ObjectName>ROLL_Przeglad_Circle_019</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>200</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>
@@ -1839,7 +1839,7 @@
               <Height>20</Height>
               <Left>418</Left>
               <ObjectName>ROLL_Przeglad_Circle_021</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>247</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>
@@ -1947,7 +1947,7 @@
               <Height>20</Height>
               <Left>418</Left>
               <ObjectName>ROLL_Przeglad_Circle_023</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>294</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>

@@ -15,7 +15,8 @@ $report = [ordered]@{
     status = 'starting'; phase = 'prerequisites'; sourceProject = $null
     sourceArchive = $null; sourceArchiveSHA256 = $null; archiveAttempt = $null; projectFile = $null
     originalProjectModified = $false; originalReopenedAfterRetrieveFailure = $false
-    sourceArchivedBeforeClose = $false; copyRetrieved = $false; hmi = $null
+    sourceArchivedBeforeClose = $false; copyRetrieved = $false; copySavedBeforeImport = $false; hmi = $null
+    savedImportCategories = @(); currentImportFile = $null
     imported = @(); hmiCompilation = $null; errors = @(); warnings = @()
     plcSourceChanged = $false; hardwareChanged = $false; securityChanged = $false
     originalScreenPreservedInProjectCopy = $false; alarmViewPresenceProgrammaticallyVerified = $false; hmiFullyConfigured = $false
@@ -95,6 +96,17 @@ function New-RollProjectArchive($Project, [string]$Directory, [string]$FileName,
     return $files[0]
 }
 
+function Assert-RollCircleGeometry([Xml.XmlDocument]$Document, [string]$Context) {
+    foreach ($circle in $Document.SelectNodes('//Hmi.Screen.Circle')) {
+        $width = [int]$circle.SelectSingleNode('AttributeList/Width').InnerText
+        $height = [int]$circle.SelectSingleNode('AttributeList/Height').InnerText
+        $radius = [int]$circle.SelectSingleNode('AttributeList/Radius').InnerText
+        if ($width -le 0 -or $width -ne $height -or $width -ne 2 * $radius) {
+            throw "Invalid circle geometry in ${Context}: Width=$width, Height=$height, Radius=$radius. Expected Width = Height = 2 * Radius. No TIA import was attempted."
+        }
+    }
+}
+
 function Assert-RollHmiManifest([string]$Directory) {
     $manifest = Get-Content -LiteralPath (Join-Path $Directory 'manifest.json') -Raw -Encoding UTF8 | ConvertFrom-Json
     if ($manifest.format -ne 1 -or $manifest.native_compiled -ne $false -or $manifest.plc_source_changed -ne $false) { throw 'Unexpected HMI review manifest.' }
@@ -102,6 +114,11 @@ function Assert-RollHmiManifest([string]$Directory) {
         if ($entry.category -notin @('tags', 'skeletons', 'screens') -or $entry.path -notmatch '^(tags|skeletons|screens)/[A-Za-z0-9_]+\.xml$' -or $entry.path -notlike ($entry.category + '/*')) { throw 'Invalid native import path/category.' }
         $path = Join-Path $Directory $entry.path
         if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sha256) { throw "HMI asset hash mismatch: $($entry.path)" }
+        if ($entry.category -eq 'screens') {
+            $document = New-Object Xml.XmlDocument
+            $document.Load($path)
+            Assert-RollCircleGeometry $document $entry.path
+        }
     }
     if (@($manifest.files | Where-Object { $_.category -eq 'tags' }).Count -ne 1 -or
         @($manifest.files | Where-Object { $_.category -eq 'skeletons' }).Count -ne 5 -or
@@ -217,10 +234,16 @@ try {
         try { $tia.Projects.Open((New-Object IO.FileInfo($originalPath))) | Out-Null; $report.originalReopenedAfterRetrieveFailure = $true } catch { $report.warnings += 'Original project reopen: ' + $_.Exception.Message }
         throw
     }
+    $report.projectFile = $project.Path.FullName
     $hmi = Get-RollHmiTarget $project
     if (@(Get-HmiSeedInventory $hmi | Where-Object { $_.Kind -eq 'Screen' -and $_.Name -eq $manifest.original_screen_required }).Count -ne 1) { throw 'Retrieved project does not contain the original WZOR_ROLL screen.' }
     $report.originalScreenPreservedInProjectCopy = $true
     $report.hmi = [string]$hmi.Name
+    # Native import failures can invalidate the TIA session. Persist the path
+    # and a usable checkpoint before the first import, not only in finally.
+    $report.phase = 'save_copy_before_import'
+    $project.Save()
+    $report.copySavedBeforeImport = $true
     Export-ApiDescription $hmi.VBScriptFolder 'hmi-vbscript-folder-api.json'
     Export-ApiDescription $hmi.VBScriptFolder.VBScripts 'hmi-vbscripts-composition-api.json'
     Export-ApiDescription $hmi.ScreenGlobalElements 'hmi-global-elements-api.json'
@@ -230,11 +253,16 @@ try {
         $report.phase = 'import_' + $category
         Write-Host ('Import HMI: ' + $category)
         foreach ($entry in @($manifest.files | Where-Object { $_.category -eq $category })) {
+            $report.currentImportFile = $entry.path
             $file = New-Object IO.FileInfo((Join-Path $nativeDirectory $entry.path))
             if ($category -eq 'tags') { $hmi.TagFolder.TagTables.Import($file, [Siemens.Engineering.ImportOptions]::Override) | Out-Null }
             else { $hmi.ScreenFolder.Screens.Import($file, [Siemens.Engineering.ImportOptions]::Override) | Out-Null }
             $report.imported += [ordered]@{ category = $category; path = $entry.path; sha256 = $entry.sha256 }
+            $report.currentImportFile = $null
         }
+        $report.phase = 'save_' + $category
+        $project.Save()
+        $report.savedImportCategories += $category
     }
     $report.phase = 'compile_hmi'
     Write-Host 'Uruchamiam kompilacje WinCC V19 w kopii projektu.'

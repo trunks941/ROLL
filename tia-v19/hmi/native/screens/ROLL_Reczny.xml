@@ -996,7 +996,7 @@
               <Height>20</Height>
               <Left>696</Left>
               <ObjectName>ROLL_Reczny_Circle_007</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>58</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>

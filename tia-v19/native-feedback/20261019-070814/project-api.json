@@ -1,0 +1,214 @@
+﻿{
+    "type":  "Siemens.Engineering.Project",
+    "properties":  [
+                       "Parent : Siemens.Engineering.IEngineeringObject",
+                       "Comment : Siemens.Engineering.MultilingualText",
+                       "DeviceGroups : Siemens.Engineering.HW.DeviceUserGroupComposition",
+                       "Devices : Siemens.Engineering.HW.DeviceComposition",
+                       "Graphics : Siemens.Engineering.Hmi.Globalization.MultiLingualGraphicComposition",
+                       "HistoryEntries : Siemens.Engineering.HistoryEntryComposition",
+                       "HwUtilities : Siemens.Engineering.HW.Utilities.HardwareUtilityComposition",
+                       "LanguageSettings : Siemens.Engineering.LanguageSettings",
+                       "PlantViews : Siemens.Engineering.HmiUnified.Cpm.PlantViewComposition",
+                       "ProjectLibrary : Siemens.Engineering.Library.ProjectLibrary",
+                       "Subnets : Siemens.Engineering.HW.SubnetComposition",
+                       "UngroupedDevicesGroup : Siemens.Engineering.HW.DeviceSystemGroup",
+                       "UsedProducts : Siemens.Engineering.UsedProductComposition",
+                       "Author : System.String",
+                       "Copyright : System.String",
+                       "CreationTime : System.DateTime",
+                       "Family : System.String",
+                       "IsModified : System.Boolean",
+                       "IsPrimary : System.Boolean",
+                       "IsSimulationDuringBlockCompilationEnabled : System.Boolean",
+                       "IsVirtualPlcDuringBlockCompilationEnabled : System.Boolean",
+                       "LastModified : System.DateTime",
+                       "LastModifiedBy : System.String",
+                       "Name : System.String",
+                       "Path : System.IO.FileInfo",
+                       "Size : System.Int64",
+                       "Version : System.String"
+                   ],
+    "methods":  [
+                    "System.Object GetAttribute(System.String)",
+                    "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringAttributeInfo] GetAttributeInfos()",
+                    "Void SetAttribute(System.String, System.Object)"
+                ],
+    "interfaces":  [
+                       {
+                           "methods":  [
+                                           "Siemens.Engineering.IEngineeringCompositionOrObject GetComposition(System.String)",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringCompositionInfo] GetCompositionInfos()",
+                                           "System.Object GetAttribute(System.String)",
+                                           "System.Collections.Generic.IList`1[System.Object] GetAttributes(System.Collections.Generic.IEnumerable`1[System.String])",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringAttributeInfo] GetAttributeInfos()",
+                                           "Void SetAttribute(System.String, System.Object)",
+                                           "Void SetAttributes(System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.String,System.Object]])",
+                                           "Void SetAttributes(System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.String,System.Object]], Siemens.Engineering.AttributeDelegate)",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringInvocationInfo] GetInvocationInfos()",
+                                           "System.Object Invoke(System.String, System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.Type,System.Object]])",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringCreationInfo] GetCreationInfos(System.String)",
+                                           "Siemens.Engineering.IEngineeringObject Create(System.String, System.Type, System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.String,System.Object]])"
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringObject"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringCompositionOrObject"
+                       },
+                       {
+                           "methods":  [
+                                           "Siemens.Engineering.IEngineeringObject get_Parent()"
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringInstance"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.ITransactionSupport"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.Library.MasterCopies.IMasterCopyTarget"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.Private.IInternalObjectAccess"
+                       },
+                       {
+                           "methods":  [
+                                           "System.Object GetBoxedContract()"
+                                       ],
+                           "type":  "Siemens.Engineering.Private.IInternalInstanceAccess"
+                       },
+                       {
+                           "methods":  [
+
+                                       ],
+                           "type":  "Siemens.Engineering.Private.IInternalBaseAccess"
+                       },
+                       {
+                           "methods":  [
+                                           "T GetService[T]()",
+                                           "System.Collections.Generic.IList`1[Siemens.Engineering.EngineeringServiceInfo] GetServiceInfos()"
+                                       ],
+                           "type":  "Siemens.Engineering.IEngineeringServiceProvider"
+                       }
+                   ],
+    "attributes":  [
+                       {
+                           "name":  "Author",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "Copyright",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "CreationTime",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "Family",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "IsModified",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "IsPrimary",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "IsSimulationDuringBlockCompilationEnabled",
+                           "access":  "ReadWrite"
+                       },
+                       {
+                           "name":  "IsVirtualPlcDuringBlockCompilationEnabled",
+                           "access":  "ReadWrite"
+                       },
+                       {
+                           "name":  "LastModified",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "LastModifiedBy",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "Name",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "Path",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "Size",
+                           "access":  "Read"
+                       },
+                       {
+                           "name":  "Version",
+                           "access":  "Read"
+                       }
+                   ],
+    "compositions":  [
+                         {
+                             "name":  "Comment",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "DeviceGroups",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "Devices",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "Graphics",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "HistoryEntries",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "HwUtilities",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "LanguageSettings",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "PlantViews",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "ProjectLibrary",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "Subnets",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "UngroupedDevicesGroup",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         },
+                         {
+                             "name":  "UsedProducts",
+                             "description":  "Siemens.Engineering.EngineeringCompositionInfo"
+                         }
+                     ],
+    "creationReadError":  "Composition does not expose IEngineeringComposition.GetCreationInfos. See the API report."
+}

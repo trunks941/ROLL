@@ -1,0 +1,117 @@
+{
+  "report_archive": "ROLL_HMI_IMPORT_20261019_070814_4a8117_raport.zip",
+  "archive_sha256": "497800ccaa64ff074d99a98c65a0f06c71795c07623bcb21b5925b40255feef0",
+  "source_project": "ROLL_20261015_120907_bfeaa0",
+  "status": "blocked",
+  "phase": "import_screens",
+  "native_archive_verified": true,
+  "native_retrieve_verified": true,
+  "archive_bytes": 7749672,
+  "original_screen_present_in_retrieved_copy": true,
+  "tag_table_native_import_returned_successfully": true,
+  "empty_screens_native_import_returned_successfully": 5,
+  "accepted_files": [
+    {
+      "category": "tags",
+      "path": "tags/ROLL_TP900_Tags.xml",
+      "sha256": "9739c7d748e10090d264bdeea657d01c6697224f5959a80e8995660c2d106010",
+      "current_asset_sha256_matches": true
+    },
+    {
+      "category": "skeletons",
+      "path": "skeletons/ROLL_Alarmy.xml",
+      "sha256": "1c8599db5204318e38a436299e57367dfe5ca6c97cd7d3993c5b8d67f631ff35",
+      "current_asset_sha256_matches": true
+    },
+    {
+      "category": "skeletons",
+      "path": "skeletons/ROLL_Nastawy.xml",
+      "sha256": "4535e7bb24301125c646721547ccfe70c94e3d7474e3c07886eaab0704eab444",
+      "current_asset_sha256_matches": true
+    },
+    {
+      "category": "skeletons",
+      "path": "skeletons/ROLL_Przeglad.xml",
+      "sha256": "bf6f4a67a3987495c856c01c96f38ccf367aeca6827fa540821bf6b9e01c1daa",
+      "current_asset_sha256_matches": true
+    },
+    {
+      "category": "skeletons",
+      "path": "skeletons/ROLL_Receptury.xml",
+      "sha256": "fbdc0e2576f0fc8866218ee65457cf12902c3dd578fbc8f50b1220abcf05fc6f",
+      "current_asset_sha256_matches": true
+    },
+    {
+      "category": "skeletons",
+      "path": "skeletons/ROLL_Reczny.xml",
+      "sha256": "66f0e2ad0eaa5403034cfa899f3327e2d2d264a864f27d9fd1dd1f56f977959f",
+      "current_asset_sha256_matches": true
+    }
+  ],
+  "full_screens_imported": 0,
+  "hmi_compiled": false,
+  "plc_source_changed": false,
+  "downloads_performed": false,
+  "error_object": "ROLL_Alarmy_Circle_007",
+  "error_properties": {
+    "Width": 20,
+    "Height": 20,
+    "Radius": 24,
+    "recommendedRadius": 10
+  },
+  "exception_type": "Siemens.Engineering.NonRecoverableException",
+  "copy_save_failed_after_session_disposed": true,
+  "diagnosis": "Resized native circles retained the seed Radius=24 while Width and Height were set to 20. V19 rejected the dependent Radius property. The subsequent save failed because the TIA session was disposed.",
+  "fix": "Recompute Radius for every resized circle; preflight checks Width == Height == 2 * Radius before attaching to TIA. Persist project path and save a checkpoint before native imports and after each completed category.",
+  "native_fix_verified": false,
+  "redactions": [
+    "Local Windows account paths in sourceArchive and reportArchive"
+  ],
+  "files": [
+    {
+      "path": "hmi-global-elements-api.json",
+      "original_sha256": "add1b4448b6a0c05996c1cab2169d885a61f2c213a152086efc10e38a055697c",
+      "repository_sha256": "add1b4448b6a0c05996c1cab2169d885a61f2c213a152086efc10e38a055697c"
+    },
+    {
+      "path": "hmi-import-report.json",
+      "original_sha256": "17bb61b0f7b4ce9a774a32a49a80ce2af242250ec47f8fb62fd473059b764f37",
+      "repository_sha256": "3ceea4662d0e348541e131917d24c1fd0be4b66533a2b40c777ce10213582392"
+    },
+    {
+      "path": "hmi-screen-template-folder-api.json",
+      "original_sha256": "19fabf1a44f382688170003566ae1da496743c74b98d7d9d638d76d3f67cd91c",
+      "repository_sha256": "19fabf1a44f382688170003566ae1da496743c74b98d7d9d638d76d3f67cd91c"
+    },
+    {
+      "path": "hmi-vbscript-folder-api.json",
+      "original_sha256": "6334439c050826027be2a200673ad8ebe8dec35c083d25069b085df1c925753d",
+      "repository_sha256": "6334439c050826027be2a200673ad8ebe8dec35c083d25069b085df1c925753d"
+    },
+    {
+      "path": "hmi-vbscripts-composition-api.json",
+      "original_sha256": "b02c9e39fc74665450b159acfdb03e28c1b2a0842ab7129f759e9b7e0c53b217",
+      "repository_sha256": "b02c9e39fc74665450b159acfdb03e28c1b2a0842ab7129f759e9b7e0c53b217"
+    },
+    {
+      "path": "project-api.json",
+      "original_sha256": "0abf951971778fff61d3d2a00d65224e3711f001a3844382b6fa32abc5fa5d90",
+      "repository_sha256": "0abf951971778fff61d3d2a00d65224e3711f001a3844382b6fa32abc5fa5d90"
+    },
+    {
+      "path": "project-composition-methods.json",
+      "original_sha256": "bb177111bdc76c9bed995fec3b863826e1673130ced9a0e946bd7a3b0693f505",
+      "repository_sha256": "bb177111bdc76c9bed995fec3b863826e1673130ced9a0e946bd7a3b0693f505"
+    },
+    {
+      "path": "project-language-settings-api.json",
+      "original_sha256": "fe263d046cf1dfc8e396a0065780356e8256b1bceafa7e486a061b6c95ee2a14",
+      "repository_sha256": "fe263d046cf1dfc8e396a0065780356e8256b1bceafa7e486a061b6c95ee2a14"
+    },
+    {
+      "path": "project-methods.json",
+      "original_sha256": "133eb09c86c7eee8122328e55cc606882e17f694f3c3051c8c46d650efcce417",
+      "repository_sha256": "133eb09c86c7eee8122328e55cc606882e17f694f3c3051c8c46d650efcce417"
+    }
+  ]
+}

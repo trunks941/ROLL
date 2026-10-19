@@ -8,7 +8,7 @@ Komplet materiałów zgromadzonych podczas analizy maszyny Karl Roll KS04201. G�
 
 Ostatni wzór ma poprawne powiązanie pola I/O. Widok alarmów jest w edytorze, ale pomijany w XML; zachowujemy go przez kopię całego projektu. Nie trzeba ponawiać jego eksportu. Fizyczne I/O, alarmy maszyny i pełne polecenia HMI nadal wymagają dokończenia.
 
-Raport importu HMI z 19.10, godz. 06:52 wskazuje zatrzymanie przed zamknięciem źródła i importem. Aktualna paczka poprawia nazwę archiwum na pełne `ROLL_HMI_SOURCE.zap19` i dodaje diagnostykę utworzonych plików. Należy ponownie uruchomić `IMPORTUJ_HMI.cmd` na dotychczasowym projekcie; wynik kompilacji HMI pozostaje niepotwierdzony.
+Raport z 19.10, godz. 07:08 potwierdza archiwizację, odtworzenie kopii, import tabeli tagów i pięciu pustych ekranów. Pełny ekran został odrzucony z powodu promienia lampki niespójnego z jej średnicą. Aktualna paczka poprawia wszystkie 15 lampek, sprawdza ich geometrię przed importem i zapisuje kopię po kolejnych etapach. Należy ponowić `IMPORTUJ_HMI.cmd` na pierwotnym projekcie z `WZOR_ROLL`, spoza katalogów kopii importera. Kompilacja HMI pozostaje niepotwierdzona.
 
 - [Mapa migracji](migration-ROLL/MAPA_MIGRACJI.md)
 - [Wariant modułów I/O S7](migration-ROLL/hardware_review/DOBOR_IO_S7.md)

@@ -38,6 +38,10 @@
   "plc_source_sha256": "020d153c27c8a7c0adb7b5ada7887c2d8d3021e04975e660ca2107c1abb4e4c1",
   "plc_source_changed": false,
   "native_compiled": false,
+  "native_geometry_rules": {
+    "Circle": "Width == Height == 2 * Radius"
+  },
+  "native_geometry_feedback": "reports/hmi-import-feedback-2026-10-19-070814.json",
   "downloads_performed": false,
   "physical_machine_tested": false,
   "locked_actions": [
@@ -116,27 +120,27 @@
     {
       "path": "screens/ROLL_Alarmy.xml",
       "category": "screens",
-      "sha256": "32b1a10b186d80694ae0b2b8f8e8927ad8e96a9952ff4fd203663f908fddfbe6"
+      "sha256": "1ee08252e24a5175fb733dc6bb0529b9ea35c74a775ade343510d4287309c233"
     },
     {
       "path": "screens/ROLL_Nastawy.xml",
       "category": "screens",
-      "sha256": "dcade5d6f2f655e435d35221cbdb2faec186434ebcf571cec075beb4c638667b"
+      "sha256": "2f45185d933c9be4239a0ffd772928ef8c4fb0a8b1990a470092c7bc9912e8d3"
     },
     {
       "path": "screens/ROLL_Przeglad.xml",
       "category": "screens",
-      "sha256": "4a7b8970b7823c0f71ced9931bb70f50233d4435952be0b50e8e14149852515f"
+      "sha256": "8d5c1c85b9465b47a22304f89a0ca802478fe5f93ed4f5f3c104f47ef6a8f27a"
     },
     {
       "path": "screens/ROLL_Receptury.xml",
       "category": "screens",
-      "sha256": "ba3f6a3fa8ed06b687687b51771ad536083f747852c96509ed00a179ff4d2f57"
+      "sha256": "38b86b857ff332033080e28c049745e487ccf4cd84a665ba035045e24ef29046"
     },
     {
       "path": "screens/ROLL_Reczny.xml",
       "category": "screens",
-      "sha256": "c884fd5e400bd17eea3844d31ddd3ec65c36f983a3e385f48bbe6536f4ebe6c1"
+      "sha256": "49b818bcd9edcf59f6f684a7def50e6095a18978f162af7b5aa57b4048fabc27"
     }
   ]
 }

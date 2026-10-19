@@ -996,7 +996,7 @@
               <Height>20</Height>
               <Left>696</Left>
               <ObjectName>ROLL_Alarmy_Circle_007</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>58</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>
@@ -1333,7 +1333,7 @@
               <Height>20</Height>
               <Left>418</Left>
               <ObjectName>ROLL_Alarmy_Circle_011</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>194</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>
@@ -1715,7 +1715,7 @@
               <Height>20</Height>
               <Left>18</Left>
               <ObjectName>ROLL_Alarmy_Circle_017</ObjectName>
-              <Radius>24</Radius>
+              <Radius>10</Radius>
               <TabIndex>-1</TabIndex>
               <Top>368</Top>
               <UseDesignColorSchema>false</UseDesignColorSchema>
