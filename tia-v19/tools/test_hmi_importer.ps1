@@ -15,21 +15,42 @@ namespace RollHmiTest {
     public enum ArchiveMode { Compressed, Uncompressed }
     public class EnumArchive {
         public bool Called;
+        public string ReceivedName;
         public void Archive(DirectoryInfo directory, string name, ArchiveMode mode) {
             if(mode != ArchiveMode.Compressed) throw new Exception("Wrong archive mode");
-            Called=true; File.WriteAllText(Path.Combine(directory.FullName,name+".zap19"),"API double only");
+            Called=true; ReceivedName=name;
+            File.WriteAllText(Path.Combine(directory.FullName,name),"API double only");
         }
     }
     public class LegacyArchive {
         public bool Called;
         public void Archive(DirectoryInfo directory, string name, bool discardRestorableData) {
             if(discardRestorableData) throw new Exception("Restorable data must be retained");
-            Called=true; File.WriteAllText(Path.Combine(directory.FullName,name+".zap19"),"API double only");
+            Called=true; File.WriteAllText(Path.Combine(directory.FullName,name),"API double only");
         }
     }
     public class UnsupportedArchive {
         public bool Called;
         public void Archive(DirectoryInfo directory, string name, bool unknownFlag) { Called=true; }
+    }
+    public class EmptyArchive {
+        public void Archive(DirectoryInfo directory, string name, ArchiveMode mode) {
+            File.WriteAllText(Path.Combine(directory.FullName,name),"");
+        }
+    }
+    public class MissingArchive {
+        public void Archive(DirectoryInfo directory, string name, ArchiveMode mode) { }
+    }
+    public class WrongNameArchive {
+        public void Archive(DirectoryInfo directory, string name, ArchiveMode mode) {
+            File.WriteAllText(Path.Combine(directory.FullName,"extensionless-target"),"API double only");
+        }
+    }
+    public class ThrowingArchive {
+        public void Archive(DirectoryInfo directory, string name, ArchiveMode mode) {
+            File.WriteAllText(Path.Combine(directory.FullName,"partial.tmp"),"API double only");
+            throw new InvalidOperationException("Archive API failure");
+        }
     }
 }
 '@
@@ -38,13 +59,38 @@ $temporary = Join-Path ([IO.Path]::GetTempPath()) ('roll-hmi-import-tests-' + [G
 try {
     foreach ($type in @('EnumArchive','LegacyArchive')) {
         $project = New-Object ('RollHmiTest.' + $type)
-        $file = New-RollProjectArchive $project (Join-Path $temporary $type) 'source'
-        if (-not $project.Called -or -not $file.Exists) { throw 'Archive API adaptation failed.' }
+        $diagnostics = [ordered]@{}
+        $file = New-RollProjectArchive $project (Join-Path $temporary $type) 'source.zap19' $diagnostics
+        if (-not $project.Called -or -not $file.Exists -or $file.Name -ne 'source.zap19' -or
+            -not $diagnostics.returnedWithoutException -or -not $diagnostics.expectedFileVerified -or
+            $diagnostics.requestedFileName -ne 'source.zap19' -or $diagnostics.files.Count -ne 1) { throw 'Archive API adaptation or diagnostics failed.' }
     }
     $unsupported = New-Object RollHmiTest.UnsupportedArchive
     $rejected = $false
-    try { New-RollProjectArchive $unsupported (Join-Path $temporary 'unsupported') 'source' | Out-Null } catch { $rejected = $true }
+    try { New-RollProjectArchive $unsupported (Join-Path $temporary 'unsupported') 'source.zap19' | Out-Null } catch { $rejected = $true }
     if (-not $rejected -or $unsupported.Called) { throw 'Unknown archive flags must not be guessed.' }
+    $invalidNames = @('source', 'source.zip', '../source.zap19', '..\source.zap19')
+    foreach ($name in $invalidNames) {
+        $project = New-Object RollHmiTest.EnumArchive
+        $rejected = $false
+        try { New-RollProjectArchive $project (Join-Path $temporary 'invalid-name') $name | Out-Null } catch { $rejected = $true }
+        if (-not $rejected -or $project.Called) { throw "Incomplete or invalid archive name accepted: $name" }
+    }
+    $project = New-Object RollHmiTest.EnumArchive
+    $rejected = $false
+    try { New-RollProjectArchive $project (Join-Path $temporary 'EnumArchive') 'source.zap19' | Out-Null } catch { $rejected = $true }
+    if (-not $rejected -or $project.Called) { throw 'Existing backup must not be overwritten.' }
+    foreach ($type in @('EmptyArchive','MissingArchive','WrongNameArchive','ThrowingArchive')) {
+        $project = New-Object ('RollHmiTest.' + $type)
+        $diagnostics = [ordered]@{}
+        $rejected = $false
+        try { New-RollProjectArchive $project (Join-Path $temporary $type) 'source.zap19' $diagnostics | Out-Null } catch { $rejected = $true }
+        if (-not $rejected -or $diagnostics.expectedFileVerified -or -not $diagnostics.method) { throw "Unverified archive accepted: $type" }
+        if ($type -eq 'ThrowingArchive') {
+            if ($diagnostics.returnedWithoutException -or $diagnostics.files[0].name -ne 'partial.tmp') { throw 'Archive API failure lost its file diagnostics.' }
+        } elseif (-not $diagnostics.returnedWithoutException) { throw 'Archive return status missing.' }
+        if ($type -eq 'WrongNameArchive' -and $diagnostics.files[0].name -ne 'extensionless-target') { throw 'Unexpected archive file name missing from diagnostics.' }
+    }
     $root = Split-Path -Parent $PSScriptRoot
     $native = Join-Path $root 'hmi/native'
     $manifest = Assert-RollHmiManifest $native
@@ -62,12 +108,14 @@ try {
     $close = $ast.Extent.Text.IndexOf('$source.Close()')
     $archive = $ast.Extent.Text.IndexOf('$archive = New-RollProjectArchive')
     if ($archive -lt 0 -or $close -le $archive) { throw 'Source must be archived before close.' }
+    if ($ast.Extent.Text -notmatch "New-RollProjectArchive .*'ROLL_HMI_SOURCE\.zap19'") { throw 'Importer must pass the complete archive file name.' }
     $result = [ordered]@{
         success = $true; parserVersion = $PSVersionTable.PSVersion.ToString()
-        archiveApiDoubleScenarios = 3; manifestScenarios = 2; sourceArchiveOrderPassed = $true
+        archiveApiDoubleScenarios = 12; manifestScenarios = 2; sourceArchiveOrderPassed = $true
+        completeArchiveFileNamePassed = $true; archiveFailureDiagnosticsPassed = $true
         nativeTiaExecuted = $false; nativeProjectArchiveVerified = $false; nativeHmiImportVerified = $false
         importerSHA256 = (Get-FileHash -LiteralPath $Importer -Algorithm SHA256).Hash.ToLowerInvariant()
     }
     $result | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $root 'reports/hmi-importer-tests.json') -Encoding UTF8
-    Write-Host 'Passed: importer parser, 3 archive API scenarios, 2 manifest scenarios and archive-before-close ordering. Native TIA was not executed.'
+    Write-Host 'Passed: importer parser, 12 archive API/name/failure scenarios, 2 manifest scenarios and archive-before-close ordering. Native TIA was not executed.'
 } finally { Remove-Item -LiteralPath $temporary -Recurse -Force }

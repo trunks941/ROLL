@@ -1,11 +1,13 @@
 {
   "success": true,
   "parserVersion": "7.4.6",
-  "archiveApiDoubleScenarios": 3,
+  "archiveApiDoubleScenarios": 12,
   "manifestScenarios": 2,
   "sourceArchiveOrderPassed": true,
+  "completeArchiveFileNamePassed": true,
+  "archiveFailureDiagnosticsPassed": true,
   "nativeTiaExecuted": false,
   "nativeProjectArchiveVerified": false,
   "nativeHmiImportVerified": false,
-  "importerSHA256": "7121279968f7857ee5fdf3a9d86ae9f3bbc468c356053949a9edf45eb14c305f"
+  "importerSHA256": "03f0f379cbbc00b5275c4d1ffbca3a96b3e49302ad5dc1c4d75b1746435c0d4f"
 }

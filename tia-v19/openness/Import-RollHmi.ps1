@@ -13,7 +13,7 @@ $runDirectory = Join-Path $OutputDirectory ('ROLL_HMI_IMPORT_' + (Get-Date -Form
 [IO.Directory]::CreateDirectory($runDirectory) | Out-Null
 $report = [ordered]@{
     status = 'starting'; phase = 'prerequisites'; sourceProject = $null
-    sourceArchive = $null; sourceArchiveSHA256 = $null; projectFile = $null
+    sourceArchive = $null; sourceArchiveSHA256 = $null; archiveAttempt = $null; projectFile = $null
     originalProjectModified = $false; originalReopenedAfterRetrieveFailure = $false
     sourceArchivedBeforeClose = $false; copyRetrieved = $false; hmi = $null
     imported = @(); hmiCompilation = $null; errors = @(); warnings = @()
@@ -28,8 +28,21 @@ $project = $null
 $originalPath = $null
 $exitCode = 1
 
-function New-RollProjectArchive($Project, [string]$Directory, [string]$Name) {
+function New-RollProjectArchive($Project, [string]$Directory, [string]$FileName, [System.Collections.IDictionary]$Diagnostics = $null) {
+    # Archive's targetName is a complete file name. Openness does not supply
+    # the extension on our behalf. Do not close the source on an unverified copy.
+    if ($FileName -notmatch '^[A-Za-z0-9_][A-Za-z0-9_.-]*\.zap19$') { throw 'Archive requires a complete .zap19 file name without a directory.' }
     [IO.Directory]::CreateDirectory($Directory) | Out-Null
+    $expectedPath = Join-Path $Directory $FileName
+    if (Test-Path -LiteralPath $expectedPath) { throw 'Archive destination already exists. It will not be overwritten.' }
+    if ($null -ne $Diagnostics) {
+        $Diagnostics['requestedFileName'] = $FileName
+        $Diagnostics['method'] = $null
+        $Diagnostics['mode'] = $null
+        $Diagnostics['returnedWithoutException'] = $false
+        $Diagnostics['files'] = @()
+        $Diagnostics['expectedFileVerified'] = $false
+    }
     $methods = @($Project.GetType().GetMethods() | Where-Object {
         $_.Name -eq 'Archive' -and $_.GetParameters().Count -eq 3 -and
         $_.GetParameters()[0].ParameterType -eq [IO.DirectoryInfo] -and
@@ -60,11 +73,25 @@ function New-RollProjectArchive($Project, [string]$Directory, [string]$Name) {
     $arguments = New-Object object[] 3
     $directoryInfo = New-Object IO.DirectoryInfo($Directory)
     $arguments[0] = $directoryInfo.PSObject.BaseObject
-    $arguments[1] = $Name
+    $arguments[1] = $FileName
     $arguments[2] = $mode.PSObject.BaseObject
-    $selected.Invoke($Project, $arguments) | Out-Null
+    if ($null -ne $Diagnostics) {
+        $Diagnostics['method'] = $selected.ToString()
+        $Diagnostics['mode'] = [string]$mode
+    }
+    try {
+        $selected.Invoke($Project, $arguments) | Out-Null
+        if ($null -ne $Diagnostics) { $Diagnostics['returnedWithoutException'] = $true }
+    } finally {
+        if ($null -ne $Diagnostics) {
+            $Diagnostics['files'] = @(Get-ChildItem -LiteralPath $Directory -File | ForEach-Object {
+                [ordered]@{ name = $_.Name; bytes = $_.Length }
+            })
+        }
+    }
     $files = @(Get-ChildItem -LiteralPath $Directory -File | Where-Object { $_.Extension -eq '.zap19' })
-    if ($files.Count -ne 1 -or $files[0].Length -eq 0) { throw 'Archive did not produce exactly one nonempty .zap19. Original project will not be closed.' }
+    if ($files.Count -ne 1 -or $files[0].Name -ne $FileName -or $files[0].Length -eq 0) { throw "Archive did not produce the expected nonempty $FileName. Original project will not be closed; see archiveAttempt in the report." }
+    if ($null -ne $Diagnostics) { $Diagnostics['expectedFileVerified'] = $true }
     return $files[0]
 }
 
@@ -167,11 +194,13 @@ try {
     if ($source.IsModified) { throw 'Save the source project in TIA before importing. The script has not changed it.' }
     Export-ApiDescription $source 'project-api.json'
     @($source.GetType().GetMethods() | Where-Object { $_.Name -in @('Archive', 'Close', 'Save') } | ForEach-Object { $_.ToString() }) | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $runDirectory 'project-methods.json') -Encoding UTF8
+    @($tia.Projects.GetType().GetMethods() | Where-Object { $_.Name -in @('Open', 'Retrieve') } | ForEach-Object { $_.ToString() }) | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $runDirectory 'project-composition-methods.json') -Encoding UTF8
     $sourceHmi = Get-RollHmiTarget $source
     Assert-RollHmiSource $sourceHmi $manifest
     $report.phase = 'archive_source'
     Write-Host 'Tworze archiwum zapisanego projektu. Zrodlo pozostanie zachowane.'
-    $archive = New-RollProjectArchive $source (Join-Path $runDirectory 'backup') 'ROLL_HMI_SOURCE'
+    $report.archiveAttempt = [ordered]@{}
+    $archive = New-RollProjectArchive $source (Join-Path $runDirectory 'backup') 'ROLL_HMI_SOURCE.zap19' $report.archiveAttempt
     $report.sourceArchive = $archive.FullName
     $report.sourceArchiveSHA256 = (Get-FileHash -LiteralPath $archive.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
     $report.sourceArchivedBeforeClose = $true

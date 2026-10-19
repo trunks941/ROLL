@@ -1,0 +1,31 @@
+{
+  "status": "blocked",
+  "phase": "archive_source",
+  "sourceProject": "ROLL_20261015_120907_bfeaa0",
+  "sourceArchive": null,
+  "sourceArchiveSHA256": null,
+  "projectFile": null,
+  "originalProjectModified": false,
+  "originalReopenedAfterRetrieveFailure": false,
+  "sourceArchivedBeforeClose": false,
+  "copyRetrieved": false,
+  "hmi": null,
+  "imported": [],
+  "hmiCompilation": null,
+  "errors": [
+    "System.Management.Automation.RuntimeException: Archive did not produce exactly one nonempty .zap19. Original project will not be closed."
+  ],
+  "warnings": [],
+  "plcSourceChanged": false,
+  "hardwareChanged": false,
+  "securityChanged": false,
+  "originalScreenPreservedInProjectCopy": false,
+  "alarmViewPresenceProgrammaticallyVerified": false,
+  "hmiFullyConfigured": false,
+  "heartbeatConfigured": false,
+  "physicalIoConfigured": false,
+  "machineTested": false,
+  "downloadsPerformed": false,
+  "reportArchive": "<local-user-documents>/ROLL_TIA_V19/ROLL_HMI_IMPORT_20261019_065217_eee7f6_raport.zip",
+  "finished": "2026-10-19T06:52:37.5324349+02:00"
+}

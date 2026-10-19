@@ -1,0 +1,5 @@
+﻿[
+    "Void Archive(System.IO.DirectoryInfo, System.String, Siemens.Engineering.ProjectArchivationMode)",
+    "Void Close()",
+    "Void Save()"
+]

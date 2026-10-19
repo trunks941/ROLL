@@ -1,0 +1,39 @@
+{
+  "report_archive": "ROLL_HMI_IMPORT_20261019_065217_eee7f6_raport.zip",
+  "archive_sha256": "d5e4a3bde5f548d4943fde56729d60e1c492c99a304e7a20894cb7caa4be4186",
+  "source_project": "ROLL_20261015_120907_bfeaa0",
+  "status": "blocked",
+  "phase": "archive_source",
+  "observed_archive_signature": "Void Archive(System.IO.DirectoryInfo, System.String, Siemens.Engineering.ProjectArchivationMode)",
+  "archive_call_returned_without_exception": true,
+  "expected_nonempty_zap19_not_found": true,
+  "original_project_closed": false,
+  "copy_retrieved": false,
+  "imported_files": 0,
+  "hmi_compiled": false,
+  "plc_source_changed": false,
+  "downloads_performed": false,
+  "diagnosis": "Importer passed extensionless targetName and then searched only for .zap19. Original report did not list actual output files; their names are unknown.",
+  "fix": "Pass complete ROLL_HMI_SOURCE.zap19 filename; require exactly that nonempty archive before close; record method, mode and produced file names/sizes even on failure.",
+  "native_fix_verified": false,
+  "redactions": [
+    "Local Windows account path in reportArchive"
+  ],
+  "files": [
+    {
+      "path": "hmi-import-report.json",
+      "original_sha256": "cba81de47c58249f9f77ac03c9bf8f7ef84cb25fe498497d5fb142bc44ec3d58",
+      "repository_sha256": "d03bafe744fffc387a33a8a1d1f1cc8ebf09a0cfe32b94377ba697d429205bdd"
+    },
+    {
+      "path": "project-api.json",
+      "original_sha256": "0abf951971778fff61d3d2a00d65224e3711f001a3844382b6fa32abc5fa5d90",
+      "repository_sha256": "0abf951971778fff61d3d2a00d65224e3711f001a3844382b6fa32abc5fa5d90"
+    },
+    {
+      "path": "project-methods.json",
+      "original_sha256": "133eb09c86c7eee8122328e55cc606882e17f694f3c3051c8c46d650efcce417",
+      "repository_sha256": "133eb09c86c7eee8122328e55cc606882e17f694f3c3051c8c46d650efcce417"
+    }
+  ]
+}

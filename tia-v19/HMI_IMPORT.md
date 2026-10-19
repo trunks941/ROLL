@@ -4,6 +4,8 @@ Paczka zawiera **5 ekranów, 53 tagi i 137 obiektów**, wygenerowanych na podsta
 
 To wersja do sprawdzenia importu i kompilacji w lokalnym **TIA V19 / WinCC Advanced**. W chmurze sprawdzono odwołania, geometrię, typy tagów i skrypt importu z atrapami API. Natywny importer i kompilator WinCC muszą ją jeszcze zaakceptować.
 
+**Poprawka po raporcie z 19.10, godz. 06:52:** poprzednia próba zatrzymała się przy weryfikacji archiwum, przed zamknięciem źródła i importem HMI. Skrypt przekazuje teraz pełną nazwę `ROLL_HMI_SOURCE.zap19` zamiast nazwy bez rozszerzenia. Raport zapisuje również sygnaturę wywołania, tryb archiwizacji i nazwy/rozmiary utworzonych plików w `archiveAttempt`. Przetestowano przypadki braku pliku, pustego pliku, innej nazwy i wyjątku API; żaden nie pozwala przejść do zamknięcia oryginału. Poprawkę trzeba jeszcze potwierdzić w TIA. Pobierz nową paczkę i ponów poniższe kroki na tym samym źródłowym projekcie; nie trzeba odtwarzać wzoru ani zmieniać widoku alarmów.
+
 ## Co uruchomić teraz
 
 1. Pobierz aktualny `TIA_ROLL_V19.zip` i rozpakuj do nowego katalogu. Zachowaj cały podkatalog `tia-v19`.
